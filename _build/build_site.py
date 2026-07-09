@@ -1,0 +1,196 @@
+#!/usr/bin/env python3
+"""
+Static site generator for Nick Metcalf's colorist portfolio (ProdCo-style).
+
+Reads:  data/site.json, data/projects.json, assets/thumbs/, assets/stills/
+Writes: index.html, contact/index.html, and one folder per project slug.
+
+Run:    python3 _build/build_site.py
+"""
+import os, json, re, html, sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SITE = json.load(open(os.path.join(ROOT, 'data', 'site.json')))
+PROJECTS = json.load(open(os.path.join(ROOT, 'data', 'projects.json')))
+
+def esc(s): return html.escape(str(s or ''), quote=True)
+
+def linkify(line):
+    """Turn @handles into instagram links."""
+    if not SITE.get('linkify_handles'): return esc(line)
+    out, last = [], 0
+    for m in re.finditer(r'@([A-Za-z0-9_\.]+)', line):
+        out.append(esc(line[last:m.start()]))
+        h = m.group(1).rstrip('.')
+        out.append('<a href="https://instagram.com/%s" target="_blank" rel="noopener">@%s</a>' % (esc(h), esc(h)))
+        last = m.start() + 1 + len(h)
+    out.append(esc(line[last:]))
+    return ''.join(out)
+
+def vimeo_id(v):
+    if not v: return ''
+    m = re.search(r'(\d{6,})', str(v))
+    return m.group(1) if m else ''
+
+def page(body_class, title, content, inline_vars='', depth=0):
+    rel = '../' * depth
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{esc(title)}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+<link rel="stylesheet" href="{rel}css/main.css">
+{inline_vars}</head>
+<body class="{body_class}">
+{content}
+<script src="{rel}js/main.js"></script>
+</body>
+</html>
+'''
+
+def header(active='', depth=0):
+    rel = '../' * depth
+    links = []
+    for n in SITE['nav']:
+        cls = n['slot'] + (' link-active' if n['href'] == active else '')
+        tgt = ' target="_blank" rel="noopener"' if n.get('external') else ''
+        if n.get('external'):
+            href = n['href']
+        else:
+            href = rel + n['href'].lstrip('/')
+            if href == '': href = './'
+        links.append(f'\t<a class="{cls}" href="{esc(href)}"{tgt}>{esc(n["label"])}</a>')
+    return '<header>\n' + '\n'.join(links) + '\n</header>'
+
+def footer():
+    return ('<footer>\n\t<div id="toggle-mode"><span class="white"></span><span class="black"></span></div>\n'
+            '\t<span class="first"></span>\n\t<span class="middle"></span>\n\t<span class="last"></span>\n</footer>')
+
+def card_first_line(p):
+    c, t = p.get('client',''), p.get('title','')
+    return f'{c} | {t}' if c and t else (t or c)
+
+def visible_projects():
+    """Visible projects, renumbered W001.. in chronological order at build time."""
+    hide = set(SITE.get('hide_groups', []))
+    vis = [p for p in PROJECTS if p.get('group') not in hide and not p.get('hidden')]
+    vis.sort(key=lambda x: x['number'])  # preserve catalog (chronological) order
+    for i, p in enumerate(vis, 1):
+        p['number'] = f'W{i:03d}'
+    return vis
+
+# ---------------- Works index ----------------
+def build_index():
+    cards = []
+    rel = ''  # depth 0
+    for p in sorted(visible_projects(), key=lambda x: x['number'], reverse=True):
+        slug = p['slug']
+        t100 = f'assets/thumbs/{slug}-100.jpg'
+        t600 = f'assets/thumbs/{slug}-600.jpg'
+        has_thumb = os.path.exists(os.path.join(ROOT, t600))
+        img = (f'<img class="thumb lazy" src="{t100}" data-src="{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
+               if has_thumb else '<img class="thumb" alt="">')
+        director = p.get('director') or '&nbsp;'
+        third = p.get('third_line') or '&nbsp;'
+        cards.append(f'''\t\t<div class="module-project">
+\t\t\t<div class="module-project_number">{esc(p['number'])}</div>
+\t\t\t<a class="module-project_link" href="{slug}/">{img}</a>
+\t\t\t<div class="module-project_info">
+\t\t\t\t<div>{esc(card_first_line(p))}</div>
+\t\t\t\t<div class="module-project_info-title">{esc(director) if director != '&nbsp;' else director}</div>
+\t\t\t\t<div>{esc(third) if third != '&nbsp;' else third}</div>
+\t\t\t</div>
+\t\t</div>''')
+    content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n\t<div class="module-videos">\n'
+               + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
+    write('index.html', page('page-works page-index', f'{SITE["site_name"]} — Works', content))
+
+# ---------------- Project pages ----------------
+def build_projects():
+    vis = sorted(visible_projects(), key=lambda x: x['number'])
+    for i, p in enumerate(vis):
+        slug = p['slug']
+        prev_p = vis[i-1] if i > 0 else vis[-1]
+        next_p = vis[i+1] if i < len(vis)-1 else vis[0]
+
+        # media block: vimeo embed if a link exists, otherwise the single video thumbnail (like ProdCo)
+        vid = vimeo_id(p.get('vimeo'))
+        if vid:
+            media = (f'<div class="vimeo_wrapper"><div style="padding:56.25% 0 0 0;position:relative;">'
+                     f'<iframe src="https://player.vimeo.com/video/{vid}?badge=0&autopause=0&player_id=0" '
+                     f'frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" '
+                     f'style="position:absolute;top:0;left:0;width:100%;height:100%;" '
+                     f'title="{esc(card_first_line(p))}"></iframe></div>'
+                     f'<script src="https://player.vimeo.com/api/player.js"></script></div>')
+        else:
+            hero = f'assets/thumbs/{slug}-1600.jpg'
+            if not os.path.exists(os.path.join(ROOT, hero)):
+                hero = f'assets/thumbs/{slug}-600.jpg'
+            media = (f'<img class="thumb lazy" src="../assets/thumbs/{slug}-100.jpg" data-src="../{hero}" alt="{esc(card_first_line(p))}">'
+                     if os.path.exists(os.path.join(ROOT, hero)) else '')
+
+        # credits
+        creds = []
+        for line in (p.get('credits') or '').split('\n'):
+            if not line.strip():
+                creds.append('<p class="spacer">&nbsp;</p>')
+            else:
+                creds.append(f'<p>{linkify(line)}</p>')
+        credits_html = f'<div class="project-credits">\n{chr(10).join(creds)}\n</div>' if p.get('credits') else ''
+
+        director = p.get('director') or ''
+        content = f'''<main>
+\t<div id="single-bar">
+\t\t<a id="prev" href="../{prev_p['slug']}/">&lt;</a>
+\t\t<a id="close" href="../">[ CLOSE ]</a>
+\t\t<a id="next" href="../{next_p['slug']}/">&gt;</a>
+\t</div>
+\t<div id="project-container">
+\t\t<div class="module-project_info">
+\t\t\t<div>{esc(card_first_line(p))}</div>
+\t\t\t<div class="module-project_info-title">{esc(director)}</div>
+\t\t\t<div>{esc(p.get('third_line') or '')}</div>
+\t\t</div>
+\t\t<div id="project-videos">
+\t\t\t{media}
+\t\t</div>
+{credits_html}
+\t</div>
+</main>'''
+        inline = '<style>\n:root{\n\t--color-bg: black;\n\t--color-text: white;\n}\n</style>\n'
+        write(os.path.join(slug, 'index.html'),
+              page('page-project', f'{SITE["site_name"]} — {card_first_line(p)}', content, inline_vars=inline, depth=1))
+
+# ---------------- Contact ----------------
+def build_contact():
+    c = SITE['contact']
+    intro = '\n'.join(f'\t<p>{esc(l)}</p>' for l in c.get('intro', []))
+    sections = []
+    for s in c.get('sections', []):
+        lines = '\n'.join(
+            f'\t\t<p><a href="{esc(l["href"])}" target="_blank" rel="noopener">{esc(l["text"])}</a></p>'
+            if l.get('href') else f'\t\t<p>{esc(l["text"])}</p>'
+            for l in s.get('lines', []))
+        sections.append(f'''\t<div class="contact-section">
+\t\t<p class="contact-section_title">{esc(s['title'])}</p>
+\t\t<div class="contact-section_content">
+{lines}
+\t\t</div>
+\t</div>''')
+    content = (f'<div id="content-wrapper">\n{header("/contact/", 1)}\n<main>\n'
+               f'\t<div>\n{intro}\n\t</div>\n' + '\n'.join(sections) + f'\n</main>\n{footer()}\n</div>')
+    write(os.path.join('contact', 'index.html'),
+          page('page-contact', f'{SITE["site_name"]} — Contact', content, depth=1))
+
+def write(rel, content):
+    path = os.path.join(ROOT, rel)
+    os.makedirs(os.path.dirname(path), exist_ok=True) if os.path.dirname(rel) else None
+    open(path, 'w', encoding='utf-8').write(content)
+    print('wrote', rel)
+
+if __name__ == '__main__':
+    build_index()
+    build_projects()
+    build_contact()
+    print(f'done — {len(visible_projects())} projects')
