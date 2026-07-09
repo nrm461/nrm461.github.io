@@ -493,6 +493,24 @@ video.no-autoplay{
 	height: var(--height-text);
 }
 
+/* Archive filters
+==================================== */
+#archive-filters{
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--gap-small) 2ch;
+}
+.archive-filter{
+	text-transform: uppercase;
+}
+.desktop .archive-filter:hover,
+.archive-filter.active{
+	text-decoration: underline;
+}
+.module-project.filtered-out{
+	display: none;
+}
+
 /* Contact
 ==================================== */
 .page-contact main{

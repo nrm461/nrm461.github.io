@@ -18,7 +18,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Shake Vagabond/070Shake_Vagabond_USUV72405467.mov",
   "stills": [],
-  "number": "W001"
+  "number": "W001",
+  "selected": true
  },
  {
   "slug": "lisa-x-tyla-when-im-with-you",
@@ -48,7 +49,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_tyla_Lisa/stills/1.12.1_1.12.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_tyla_Lisa/stills/1.12.2_1.12.2.jpg"
   ],
-  "number": "W002"
+  "number": "W002",
+  "selected": true
  },
  {
   "slug": "nigo-x-nike-waf3-fm-nigos-world",
@@ -78,7 +80,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/nike nigo/stills/1.5.1_1.5.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/nike nigo/stills/1.6.1_1.6.1.jpg"
   ],
-  "number": "W003"
+  "number": "W003",
+  "selected": true
  },
  {
   "slug": "function-health-long-live-moms",
@@ -108,7 +111,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/functional_health_DC/stills/1.2.1_1.2.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/functional_health_DC/stills/1.24.1_1.24.1.jpg"
   ],
-  "number": "W004"
+  "number": "W004",
+  "selected": true
  },
  {
   "slug": "ultrasound",
@@ -118,8 +122,8 @@
   "director": "Julian Lamadrid",
   "director_raw": "@julianlamadrid",
   "production": "",
-  "category": "Short Film",
-  "third_line": "Short Film",
+  "category": "Long Form",
+  "third_line": "Long Form",
   "vimeo": "",
   "credits": "Ultrasound\n\nDirector: @julianlamadrid\nDP: @filmtonyvalles\nSteadicam: @sawyer.oubre\nProducer: @ximenalamadrid @genevieveoliviadunning\nEdit:\nColor: @Nick__metcalf @raremedium.tv",
   "group": "posted",
@@ -138,7 +142,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/short_film_Ultrasound/stills/18__ULTRASOUND (FOR COLOR - PRO RES 4444XQ)_1.8.2.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/short_film_Ultrasound/stills/18__ULTRASOUND (FOR COLOR - PRO RES 4444XQ)_1.8.3.jpg"
   ],
-  "number": "W005"
+  "number": "W005",
+  "selected": true
  },
  {
   "slug": "converse-x-doraemon-doraemon-chuck-70-collection",
@@ -165,7 +170,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Converse_Doraemon/ig_selects/1.1.4_1.1.4.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Converse_Doraemon/ig_selects/1.1.5_1.1.5.jpg"
   ],
-  "number": "W006"
+  "number": "W006",
+  "selected": true
  },
  {
   "slug": "tom-sachs-x-nikecraft-x-nike-a-brief-history-of-the-mars-yar",
@@ -195,7 +201,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Nike_My3_0_Tom_Sachs/ig_stills/7.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Nike_My3_0_Tom_Sachs/stills/1.107.1_1.107.1.jpg"
   ],
-  "number": "W007"
+  "number": "W007",
+  "selected": true
  },
  {
   "slug": "danna-paola-khe-calor",
@@ -225,7 +232,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_Danna_Paola_Khe_Calor/stills/1.129.1_1.129.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_Danna_Paola_Khe_Calor/stills/1.138.1_1.138.1.jpg"
   ],
-  "number": "W008"
+  "number": "W008",
+  "selected": true
  },
  {
   "slug": "amber-mark-music-video",
@@ -255,7 +263,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/mv amber mark/stills/Still 2025-09-24 113344_1.138.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/mv amber mark/stills/Still 2025-09-24 113344_1.139.1.jpg"
   ],
-  "number": "W009"
+  "number": "W009",
+  "selected": true
  },
  {
   "slug": "therabody-glo-your-own-way-with-kendalljenner",
@@ -265,7 +274,7 @@
   "director": "Talia Collis",
   "director_raw": "@taliacollis",
   "production": "",
-  "category": "Commercial",
+  "category": "Beauty",
   "third_line": "Commercial",
   "vimeo": "",
   "credits": "@Therabody\nGlo Your Own Way with @kendallJenner\n\nDirector: @taliacollis\nDP: @htatlinhtut\nEdit: @thomasgoldser @avenues.studio\nColor: @Nick__metcalf @raremedium.tv\n\nCreative Direction @gatescreative\nProducer @lindsayjnelson\n1st AD @bxtourville\nMovement Director @sadierwilking\nStylist @danixmichelle\nMakeup Artist @shelbysmithmakeup\nHair Stylist @hairinel\nSet Designer @avavillafane\nAdditional Editing @millie.gray_\nVFX Artist @maxcoltt\nSound Design & Mix @whykaisofly @concret.form\nComposer @itsabear @royhollandertalent\nGaffer @asdfwhat\nAgent @pm_artists @natpfister",
@@ -285,7 +294,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Therabody/stills/Still 2025-11-03 155013_1.1.8.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Therabody/stills/Still 2025-11-03 155013_1.1.9.jpg"
   ],
-  "number": "W010"
+  "number": "W010",
+  "selected": true
  },
  {
   "slug": "de-beers-director-s-cut",
@@ -315,7 +325,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/De_Beers_DC_J3362/stills/24_Version 1_DEBEERS_DC_PRORESHQ_1.24.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/De_Beers_DC_J3362/stills/29_Version 1_DEBEERS_DC_PRORESHQ_1.29.1.jpg"
   ],
-  "number": "W011"
+  "number": "W011",
+  "selected": true
  },
  {
   "slug": "fujii-kaze-love-like-this",
@@ -345,7 +356,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Fuji_Kaze/stills/1.27.1_1.27.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Fuji_Kaze/stills/1.3.1_1.3.1.jpg"
   ],
-  "number": "W012"
+  "number": "W012",
+  "selected": true
  },
  {
   "slug": "rivian-milk-run",
@@ -375,7 +387,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Rivian_Summer_2025/stills/1.6.1_1.6.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Rivian_Summer_2025/stills/1.79.2_1.79.2.jpg"
   ],
-  "number": "W013"
+  "number": "W013",
+  "selected": true
  },
  {
   "slug": "pura-scents-of-place",
@@ -402,7 +415,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/pura/ig_selects/08.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/pura/ig_selects/cover.jpg"
   ],
-  "number": "W014"
+  "number": "W014",
+  "selected": true
  },
  {
   "slug": "maria-isabel-suiza",
@@ -432,7 +446,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Music_Video_Maria_Isabel_Suiza_J3424/stills/María Isabel - Suiza (Official Video) - G010005727081U 3x2.mov_1.33.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Music_Video_Maria_Isabel_Suiza_J3424/stills/María Isabel - Suiza (Official Video) - G010005727081U 3x2.mov_1.78.1.jpg"
   ],
-  "number": "W015"
+  "number": "W015",
+  "selected": true
  },
  {
   "slug": "070-shake-if-youre-free",
@@ -462,7 +477,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_070shake/stills/070SHAKE_MINE_MV_12A_2880x2160.mov_1.27.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_070shake/stills/070SHAKE_MINE_MV_12A_2880x2160.mov_1.6.1.jpg"
   ],
-  "number": "W016"
+  "number": "W016",
+  "selected": true
  },
  {
   "slug": "instax-forever",
@@ -492,7 +508,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/instax/stills/InstaxForever_DC_4K_422HQ.mov_1.37.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/instax/stills/InstaxForever_DC_4K_422HQ.mov_1.38.1.jpg"
   ],
-  "number": "W017"
+  "number": "W017",
+  "selected": true
  },
  {
   "slug": "trapped",
@@ -502,8 +519,8 @@
   "director": "Sam Cutler-Kreutz & David Cutler-Kreutz",
   "director_raw": "@samcutlerkreutz & @davidcutlerkreutz",
   "production": "",
-  "category": "Short Film",
-  "third_line": "Short Film",
+  "category": "Long Form",
+  "third_line": "Long Form",
   "vimeo": "",
   "credits": "Trapped\n\nDirector: @samcutlerkreutz & @davidcutlerkreutz\nDP: @gabrielconnelly\nEdit: @caitlincarr_\nColor: @Nick__metcalf\n\nStarring @iamjaviermolina\n\nWith @kw.richards, @matt.woodwardd, @joelpmeyers, @lukecawley1, @ethn.jnes, Aedan Jayce, Kamron Toosi, @brad.pickett.589, @dremurillo\n\nProducers: @silvia215, @tarasheffer, @ajmorsanutto\nCostume Design: @karenrboyer\nSound designer/re-recording mixer: @itstgates\nCasting Director: @kastingkiko\nLine Producer: @itsmegancat\nAssociate Producer: @abbyatkeson\nMusic by @freya.berkhout\nAssistant director: ajmorsanutto\n1st AC: @son.of_zorn\n2nd AC: Jet Cafuli\nSound Mixer: @yvesarmand\nBoom Op: Shari Rosenfeld\nGaffer: @spoopell\nKey grip: @k1ng_visual\nFoley By: @alchemypostsound\nADR: @brendan_roche_, @soundloungeny",
   "group": "posted",
@@ -522,7 +539,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/short film trapped/stills/Trapped Final ONLINE +1.5db - FOR EXPORT.mp4_1.139.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/short film trapped/stills/Trapped Final ONLINE +1.5db - FOR EXPORT.mp4_1.143.1.jpg"
   ],
-  "number": "W018"
+  "number": "W018",
+  "selected": true
  },
  {
   "slug": "becky-g-epa",
@@ -552,7 +570,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/mv_becky_G/stills/BeckyG_EPA_FULL_Native Aspect Ratio_Revised_ProResHQ_051526.mov_1.127.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/mv_becky_G/stills/BeckyG_EPA_FULL_Native Aspect Ratio_Revised_ProResHQ_051526.mov_1.140.1.jpg"
   ],
-  "number": "W019"
+  "number": "W019",
+  "selected": true
  },
  {
   "slug": "fidelity-living-the-dream",
@@ -582,7 +601,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/fidelity DC/stills/OFF_FDY_LH_DC_V16_PRORES4444_GRADE.mov_1.25.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/fidelity DC/stills/OFF_FDY_LH_DC_V16_PRORES4444_GRADE.mov_1.26.1.jpg"
   ],
-  "number": "W020"
+  "number": "W020",
+  "selected": true
  },
  {
   "slug": "ecos-brand-film",
@@ -603,7 +623,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/ECOS Brand Film.mov",
   "stills": [],
-  "number": "W021"
+  "number": "W021",
+  "selected": false
  },
  {
   "slug": "r88-r88",
@@ -624,7 +645,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/230307_R88_60s_1920x1080_04_CM.mov",
   "stills": [],
-  "number": "W022"
+  "number": "W022",
+  "selected": false
  },
  {
   "slug": "university-of-arizona-wonder",
@@ -645,7 +667,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/UofA_Wonder_30_16x9.mp4",
   "stills": [],
-  "number": "W023"
+  "number": "W023",
+  "selected": false
  },
  {
   "slug": "maybelline-wwm-directors-cut",
@@ -666,7 +689,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Maybelline_WWM_DC/20250604_MYB_WWM_OPENER_DC_MSTR.mov",
   "stills": [],
-  "number": "W024"
+  "number": "W024",
+  "selected": false
  },
  {
   "slug": "dockers-dockers",
@@ -687,7 +711,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Dockers/Dad Pants 06 v02 FINAL.mp4",
   "stills": [],
-  "number": "W025"
+  "number": "W025",
+  "selected": false
  },
  {
   "slug": "free-people-free-people",
@@ -717,7 +742,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Free People/stills/Still 2025-08-27 103833_1.24.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Free People/stills/Still 2025-08-27 103833_1.28.1.jpg"
   ],
-  "number": "W026"
+  "number": "W026",
+  "selected": false
  },
  {
   "slug": "inca-rail-magic-is-on-the-road",
@@ -747,7 +773,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Inca Rail/stills/Still 2025-09-09 122027_1.25.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Inca Rail/stills/Still 2025-09-09 122027_1.3.1.jpg"
   ],
-  "number": "W027"
+  "number": "W027",
+  "selected": false
  },
  {
   "slug": "ring-burglar",
@@ -768,7 +795,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/ring burglar/Ring_BurglarDC_Final_422HQ.mov",
   "stills": [],
-  "number": "W028"
+  "number": "W028",
+  "selected": false
  },
  {
   "slug": "keebler-chips-deluxe",
@@ -789,7 +817,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Keebler_Chips_Deluxe_J3288/US_CHD_VSD_MUL_VID15_MP4_ShopNow_NA_NA_NA_KeeblerChipsDeluxeCRUNCHFEPNEW_GENERIC.mov",
   "stills": [],
-  "number": "W029"
+  "number": "W029",
+  "selected": false
  },
  {
   "slug": "logan-rice-e-dayton-st",
@@ -799,8 +828,8 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Short Film",
-  "third_line": "Short Film",
+  "category": "Long Form",
+  "third_line": "Long Form",
   "vimeo": "",
   "credits": "",
   "group": "current",
@@ -810,7 +839,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Logan Rice Short/E Dayton St_422-hq_Final.mov",
   "stills": [],
-  "number": "W030"
+  "number": "W030",
+  "selected": false
  },
  {
   "slug": "pit-stop-pit-stop",
@@ -820,8 +850,8 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Short Film",
-  "third_line": "Short Film",
+  "category": "Long Form",
+  "third_line": "Long Form",
   "vimeo": "",
   "credits": "",
   "group": "current",
@@ -831,7 +861,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Pit Stop/PIT STOP_final rev 0226_PRORES.mov",
   "stills": [],
-  "number": "W031"
+  "number": "W031",
+  "selected": false
  },
  {
   "slug": "agcf-ballet",
@@ -861,7 +892,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/agcf ballet/Stills/5.TIF",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/agcf ballet/Stills/56.TIF"
   ],
-  "number": "W032"
+  "number": "W032",
+  "selected": false
  },
  {
   "slug": "sisters-sisters",
@@ -871,8 +903,8 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Short Film",
-  "third_line": "Short Film",
+  "category": "Long Form",
+  "third_line": "Long Form",
   "vimeo": "",
   "credits": "",
   "group": "current",
@@ -882,7 +914,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Sisters/FULL_SISTERS_HD_2025.mov",
   "stills": [],
-  "number": "W033"
+  "number": "W033",
+  "selected": false
  },
  {
   "slug": "tao-homecoming",
@@ -903,7 +936,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Tao Home Coming/Homecoming_Final_3x2_HD_h264.mp4",
   "stills": [],
-  "number": "W034"
+  "number": "W034",
+  "selected": false
  },
  {
   "slug": "stooper-stooper",
@@ -913,8 +947,8 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Short Film",
-  "third_line": "Short Film",
+  "category": "Long Form",
+  "third_line": "Long Form",
   "vimeo": "",
   "credits": "",
   "group": "current",
@@ -933,7 +967,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/short_film_stooper/masters/stills/Untitled_1.1.16.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/short_film_stooper/masters/stills/Untitled_1.1.17.jpg"
   ],
-  "number": "W035"
+  "number": "W035",
+  "selected": false
  },
  {
   "slug": "expedia-directors-cut",
@@ -963,7 +998,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Expedia_DC/stills/EXPEDIA_DC_FINAL_EDL.00_00_17_08.Still007.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Expedia_DC/stills/EXPEDIA_DC_FINAL_EDL.00_00_25_20.Still008.jpg"
   ],
-  "number": "W036"
+  "number": "W036",
+  "selected": false
  },
  {
   "slug": "hera-age-your-way",
@@ -984,7 +1020,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/hera/master/Hera-AgeYourWay-LongForm-1440x1080.mov",
   "stills": [],
-  "number": "W037"
+  "number": "W037",
+  "selected": false
  },
  {
   "slug": "h-r-block-a-successful-life",
@@ -1005,7 +1042,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/H&R_DC/HRBlock_SuccessfulLife_DC_Master_1080P_H264.mp4",
   "stills": [],
-  "number": "W038"
+  "number": "W038",
+  "selected": false
  },
  {
   "slug": "vanity-fair-x-lululemon-24-hours-to-the-fullest",
@@ -1026,7 +1064,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/lululemon_24hr/master/24-hours-to-the-fullest-frances-tiafoe.mp4",
   "stills": [],
-  "number": "W039"
+  "number": "W039",
+  "selected": false
  },
  {
   "slug": "nissan-built-for-happy-chaos-dc",
@@ -1055,7 +1094,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Nissan Roos Bro/stills/Nissan_Happy_Chaos_CONFORM_5.13.mov_1.35.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Nissan Roos Bro/stills/Nissan_Happy_Chaos_CONFORM_5.13.mov_1.5.1.jpg"
   ],
-  "number": "W040"
+  "number": "W040",
+  "selected": false
  },
  {
   "slug": "garmin-ironman-dc",
@@ -1085,7 +1125,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/garmin DC/stills/OFF_FDY_LH_DC_V16_PRORES4444_GRADE.mov_1.37.1_1.33.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/garmin DC/stills/OFF_FDY_LH_DC_V16_PRORES4444_GRADE.mov_1.37.1_1.34.1.jpg"
   ],
-  "number": "W041"
+  "number": "W041",
+  "selected": false
  },
  {
   "slug": "mary-kay-brand-campaign",
@@ -1108,7 +1149,8 @@
   "stills": [
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/mary kay/AE Collect/16x9/MARY_KAY_GFX_ANIM_v001/(Footage)/2_ASSETS/raster/MKbglightpink.jpg"
   ],
-  "number": "W042"
+  "number": "W042",
+  "selected": false
  },
  {
   "slug": "nike-x-skims-nikeskims-spring-26",
@@ -1131,7 +1173,8 @@
   "stills": [
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/nike skims/ig_selects/cover.jpg"
   ],
-  "number": "W043"
+  "number": "W043",
+  "selected": false
  },
  {
   "slug": "okara-the-auction",
@@ -1152,7 +1195,8 @@
   "thumb_src": "",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Okara/OKARA_THEAUCTION422.mov",
   "stills": [],
-  "number": "W044"
+  "number": "W044",
+  "selected": false
  },
  {
   "slug": "benson-boone-the-time-of-my-life",
@@ -1182,6 +1226,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/benson boone/stills/BB TTOML MASTER 01.mov_1.15.1.jpg",
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/benson boone/stills/BB TTOML MASTER 01.mov_1.18.1.jpg"
   ],
-  "number": "W045"
+  "number": "W045",
+  "selected": false
  }
 ]

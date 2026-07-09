@@ -174,7 +174,12 @@ def main():
         n = 2
         while slug in slugs: slug = f'{slug}-{n}'; n += 1
         slugs.add(slug)
-        thumb_src = e['stills'][len(e['stills'])//2] if e['stills'] else (e['other_imgs'][0] if e['other_imgs'] else '')
+        # A file named _thumb.* anywhere in the project folder always wins
+        explicit = [f for f in e['stills'] + e['other_imgs']
+                    if os.path.basename(f).lower().startswith('_thumb')]
+        thumb_src = (explicit[0] if explicit else
+                     e['stills'][len(e['stills'])//2] if e['stills'] else
+                     (e['other_imgs'][0] if e['other_imgs'] else ''))
         video_src = e['videos'][0] if e['videos'] else ''
         ok = make_thumbs(slug, thumb_src, video_src)
         entry = {

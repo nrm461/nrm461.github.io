@@ -47,6 +47,24 @@
 	});
 })();
 
+/* Archive category filtering */
+(function(){
+	var filters = document.querySelectorAll('.archive-filter');
+	if(!filters.length) return;
+	var cards = document.querySelectorAll('.module-project');
+	Array.prototype.forEach.call(filters, function(f){
+		f.addEventListener('click', function(){
+			Array.prototype.forEach.call(filters, function(x){ x.classList.remove('active'); });
+			f.classList.add('active');
+			var cat = f.getAttribute('data-filter');
+			Array.prototype.forEach.call(cards, function(c){
+				var show = (cat === 'all') || (c.getAttribute('data-category') === cat);
+				c.classList.toggle('filtered-out', !show);
+			});
+		});
+	});
+})();
+
 /* Prev / next keyboard navigation on project pages */
 (function(){
 	var prev = document.getElementById('prev'), next = document.getElementById('next'), close = document.getElementById('close');

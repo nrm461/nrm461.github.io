@@ -80,31 +80,46 @@ def visible_projects():
         p['number'] = f'W{i:03d}'
     return vis
 
-# ---------------- Works index ----------------
-def build_index():
-    cards = []
-    rel = ''  # depth 0
-    for p in sorted(visible_projects(), key=lambda x: x['number'], reverse=True):
-        slug = p['slug']
-        t100 = f'assets/thumbs/{slug}-100.jpg'
-        t600 = f'assets/thumbs/{slug}-600.jpg'
-        has_thumb = os.path.exists(os.path.join(ROOT, t600))
-        img = (f'<img class="thumb lazy" src="{t100}" data-src="{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
-               if has_thumb else '<img class="thumb" alt="">')
-        director = p.get('director') or '&nbsp;'
-        third = p.get('third_line') or '&nbsp;'
-        cards.append(f'''\t\t<div class="module-project">
-\t\t\t<div class="module-project_number">{esc(p['number'])}</div>
-\t\t\t<a class="module-project_link" href="{slug}/">{img}</a>
+# ---------------- Works / Archive grids ----------------
+def card_html(p, rel=''):
+    slug = p['slug']
+    t100 = f'assets/thumbs/{slug}-100.jpg'
+    t600 = f'assets/thumbs/{slug}-600.jpg'
+    has_thumb = os.path.exists(os.path.join(ROOT, t600))
+    img = (f'<img class="thumb lazy" src="{rel}{t100}" data-src="{rel}{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
+           if has_thumb else '<img class="thumb" alt="">')
+    director = p.get('director') or ''
+    number = p['number'].lstrip('W')  # display as 020, not W020
+    cat = esc(p.get('category') or '')
+    dir_html = f'<div class="module-project_info-title">{esc(director)}</div>' if director else '<div class="module-project_info-title">&nbsp;</div>'
+    return f'''\t\t<div class="module-project" data-category="{cat}">
+\t\t\t<div class="module-project_number">{esc(number)}</div>
+\t\t\t<a class="module-project_link" href="{rel}{slug}/">{img}</a>
 \t\t\t<div class="module-project_info">
 \t\t\t\t<div>{esc(card_first_line(p))}</div>
-\t\t\t\t<div class="module-project_info-title">{esc(director) if director != '&nbsp;' else director}</div>
-\t\t\t\t<div>{esc(third) if third != '&nbsp;' else third}</div>
+{dir_html}
 \t\t\t</div>
-\t\t</div>''')
+\t\t</div>'''
+
+def build_index():
+    sel = [p for p in visible_projects() if p.get('selected')]
+    cards = [card_html(p) for p in sorted(sel, key=lambda x: x['number'], reverse=True)]
     content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n\t<div class="module-videos">\n'
                + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
-    write('index.html', page('page-works page-index', f'{SITE["site_name"]} — Works', content))
+    write('index.html', page('page-works page-index', f'{SITE["site_name"]} — Work', content))
+
+def build_archive():
+    vis = sorted(visible_projects(), key=lambda x: x['number'], reverse=True)
+    cards = [card_html(p, rel='../') for p in vis]
+    cats = SITE.get('categories', [])
+    filters = ['\t\t<span class="archive-filter trigger active" data-filter="all">[ ALL ]</span>']
+    for c in cats:
+        filters.append(f'\t\t<span class="archive-filter trigger" data-filter="{esc(c)}">{esc(c)}</span>')
+    content = (f'<div id="content-wrapper">\n{header("/archive/", 1)}\n<main>\n'
+               f'\t<div id="archive-filters">\n' + '\n'.join(filters) + '\n\t</div>\n'
+               f'\t<div class="module-videos">\n' + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
+    write(os.path.join('archive', 'index.html'),
+          page('page-works page-index page-archive', f'{SITE["site_name"]} — Archive', content, depth=1))
 
 # ---------------- Project pages ----------------
 def build_projects():
@@ -150,7 +165,6 @@ def build_projects():
 \t\t<div class="module-project_info">
 \t\t\t<div>{esc(card_first_line(p))}</div>
 \t\t\t<div class="module-project_info-title">{esc(director)}</div>
-\t\t\t<div>{esc(p.get('third_line') or '')}</div>
 \t\t</div>
 \t\t<div id="project-videos">
 \t\t\t{media}
@@ -191,6 +205,7 @@ def write(rel, content):
 
 if __name__ == '__main__':
     build_index()
+    build_archive()
     build_projects()
     build_contact()
     print(f'done — {len(visible_projects())} projects')

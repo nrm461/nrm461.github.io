@@ -3,27 +3,66 @@
   "site_title": "Nick Metcalf — Colorist",
   "base_url": "",
   "nav": [
-    { "label": "M1. WORKS", "href": "/", "slot": "first" },
-    { "label": "M2. CONTACT", "href": "/contact/", "slot": "middle" },
-    { "label": "M3. INSTAGRAM", "href": "https://instagram.com/nick__metcalf", "slot": "last", "external": true }
+    {
+      "label": "WORK",
+      "href": "/",
+      "slot": "first"
+    },
+    {
+      "label": "ARCHIVE",
+      "href": "/archive/",
+      "slot": "middle"
+    },
+    {
+      "label": "CONTACT",
+      "href": "/contact/",
+      "slot": "last"
+    }
   ],
   "contact": {
-    "intro": ["NICK METCALF", "COLORIST"],
+    "intro": [
+      "NICK METCALF",
+      "COLORIST"
+    ],
     "sections": [
       {
         "title": "[ EMAIL ]",
-        "lines": [ { "text": "NICHOLASMETCALF@GMAIL.COM", "href": "mailto:nicholasmetcalf@gmail.com" } ]
+        "lines": [
+          {
+            "text": "NICHOLASMETCALF@GMAIL.COM",
+            "href": "mailto:nicholasmetcalf@gmail.com"
+          }
+        ]
       },
       {
         "title": "[ INSTAGRAM ]",
-        "lines": [ { "text": "@NICK__METCALF", "href": "https://instagram.com/nick__metcalf" } ]
+        "lines": [
+          {
+            "text": "@NICK__METCALF",
+            "href": "https://instagram.com/nick__metcalf"
+          }
+        ]
       },
       {
         "title": "[ STUDIO ]",
-        "lines": [ { "text": "RARE MEDIUM", "href": "https://raremedium.tv" } ]
+        "lines": [
+          {
+            "text": "RARE MEDIUM",
+            "href": "https://raremedium.tv"
+          }
+        ]
       }
     ]
   },
-  "hide_groups": ["current", "pass"],
-  "linkify_handles": true
+  "hide_groups": [
+    "current",
+    "pass"
+  ],
+  "linkify_handles": true,
+  "categories": [
+    "Commercial",
+    "Music Video",
+    "Beauty",
+    "Long Form"
+  ]
 }
