@@ -32,6 +32,16 @@ def vimeo_id(v):
     m = re.search(r'(\d{6,})', str(v))
     return m.group(1) if m else ''
 
+def asset_version():
+    """Cache-busting stamp from the newest of css/js file mtimes."""
+    t = 0
+    for f in ('css/main.css', 'js/main.js'):
+        p = os.path.join(ROOT, f)
+        if os.path.exists(p): t = max(t, int(os.path.getmtime(p)))
+    return str(t)
+
+VER = asset_version()
+
 def page(body_class, title, content, inline_vars='', depth=0):
     rel = '../' * depth
     return f'''<!DOCTYPE html>
@@ -40,11 +50,11 @@ def page(body_class, title, content, inline_vars='', depth=0):
 <meta charset="utf-8">
 <title>{esc(title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-<link rel="stylesheet" href="{rel}css/main.css">
+<link rel="stylesheet" href="{rel}css/main.css?v={VER}">
 {inline_vars}</head>
 <body class="{body_class}">
 {content}
-<script src="{rel}js/main.js"></script>
+<script src="{rel}js/main.js?v={VER}"></script>
 </body>
 </html>
 '''
