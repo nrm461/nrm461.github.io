@@ -1,0 +1,39 @@
+# Nick Metcalf — Colorist Portfolio
+
+Live at **https://nrm461.github.io** · Design modeled on prodco.xyz/works
+
+## How it works
+
+Everything is generated from two files:
+
+- `data/site.json` — site name, nav, contact page, which groups are visible
+- `data/projects.json` — one entry per job (client, title, director, credits, vimeo link, etc.)
+
+Edit either file, rebuild, publish. Never edit the HTML files directly — they get overwritten.
+
+## Common tasks (or just ask Claude)
+
+**Add a new job** (new folder in _MASTERS with a `_credits.txt`):
+```
+python3 _build/add_work.py --masters "/Volumes/Suite/rare_medium/_Personal_Folders/nick_m/_MASTERS"
+python3 _build/build_site.py
+bash _build/publish.sh "Add <job name>"
+```
+
+**Add a Vimeo link to a project:** put the URL in that project's `"vimeo"` field
+in `data/projects.json`, then rebuild + publish. The project page switches from
+the thumbnail to the video player automatically.
+
+**Fix a name/title/credit:** edit the project's entry in `data/projects.json`,
+rebuild + publish.
+
+**Hide a project:** add `"hidden": true` to its entry.
+
+## Notes
+
+- `token/git-token` holds the GitHub access token. It is git-ignored — never
+  commit or share it.
+- Font: the original site uses a licensed font ("OCRF"). This site falls back to
+  Courier. To use the real font, license it and save it as `fonts/ocrf.woff2`.
+- Numbering (W001…) is assigned automatically to visible projects in
+  chronological order at build time.
