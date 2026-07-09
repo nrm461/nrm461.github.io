@@ -99,11 +99,9 @@ def card_html(p, rel=''):
     img = (f'<img class="thumb lazy" src="{rel}{t100}" data-src="{rel}{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
            if has_thumb else '<img class="thumb" alt="">')
     director = p.get('director') or ''
-    number = p['number'].lstrip('W')  # display as 020, not W020
     cat = esc(p.get('category') or '')
     dir_html = f'<div class="module-project_info-title">{esc(director)}</div>' if director else '<div class="module-project_info-title">&nbsp;</div>'
     return f'''\t\t<div class="module-project" data-category="{cat}">
-\t\t\t<div class="module-project_number">{esc(number)}</div>
 \t\t\t<a class="module-project_link" href="{rel}{slug}/">{img}</a>
 \t\t\t<div class="module-project_info">
 \t\t\t\t<div>{esc(card_first_line(p))}</div>
