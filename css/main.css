@@ -47,7 +47,7 @@
 	--colX2: calc(var(--col)*2);
 }
 @media (max-width: 1920px){
-	:root{ --col: 5; }
+	:root{ --col: 4; }
 }
 @media (max-width: 1024px){
 	:root{ --col: 3; }
