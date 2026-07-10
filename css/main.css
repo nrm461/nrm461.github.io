@@ -560,7 +560,7 @@ img.thumb + .video-label{
 	display: block;
 }
 @media (max-width: 768px){
-	.project-gallery{ grid-template-columns: repeat(2, 1fr); }
+	.project-gallery{ grid-template-columns: 1fr; }
 }
 .local_video_wrapper video{
 	width: 100%;
