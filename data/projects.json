@@ -1546,10 +1546,10 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Cows menu.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Cows menu - burger king.MOV",
   "number": "W056",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
-  "sel_order": 19,
-  "arch_order": 141
+  "arch_order": 141,
+  "carousel": false
  },
  {
   "slug": "versace-clans-of-versace",
