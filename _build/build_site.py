@@ -96,8 +96,15 @@ def card_html(p, rel=''):
     t100 = f'assets/thumbs/{slug}-100.jpg'
     t600 = f'assets/thumbs/{slug}-600.jpg'
     has_thumb = os.path.exists(os.path.join(ROOT, t600))
-    img = (f'<img class="thumb lazy" src="{rel}{t100}" data-src="{rel}{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
-           if has_thumb else '<img class="thumb" alt="">')
+    car_dir = os.path.join(ROOT, 'assets', 'carousel', slug)
+    car_imgs = sorted(os.listdir(car_dir)) if (p.get('carousel') and os.path.isdir(car_dir)) else []
+    if car_imgs:
+        slides = ''.join(f'<img src="{rel}assets/carousel/{slug}/{esc(f)}" alt="" loading="lazy">' for f in car_imgs)
+        img = f'<div class="thumb-carousel">{slides}</div>'
+    elif has_thumb:
+        img = f'<img class="thumb lazy" src="{rel}{t100}" data-src="{rel}{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
+    else:
+        img = '<img class="thumb" alt="">'
     director = p.get('director') or ''
     cat = esc(p.get('category') or '')
     dir_html = f'<div class="module-project_info-title">{esc(director)}</div>' if director else '<div class="module-project_info-title">&nbsp;</div>'
