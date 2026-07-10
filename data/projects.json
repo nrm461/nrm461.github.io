@@ -2067,10 +2067,10 @@
   "thumb_src": "_ig/C8oPIR6vtBt.jpg",
   "video_src": "",
   "number": "W080",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
-  "sel_order": 18,
-  "arch_order": 156
+  "arch_order": 156,
+  "carousel": false
  },
  {
   "slug": "maria-isabel-drove-u-crazy",
