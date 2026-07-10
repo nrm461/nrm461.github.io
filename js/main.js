@@ -65,6 +65,26 @@
 	});
 })();
 
+/* Mobile swipe navigation between project pages */
+(function(){
+	var prev = document.getElementById('prev'), next = document.getElementById('next');
+	if(!prev || !next || !document.body.classList.contains('page-project')) return;
+	var x0 = null, y0 = null;
+	document.addEventListener('touchstart', function(e){
+		if(e.target.closest('iframe, .thumb-carousel')) return;
+		x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+	}, {passive:true});
+	document.addEventListener('touchend', function(e){
+		if(x0 === null) return;
+		var dx = e.changedTouches[0].clientX - x0;
+		var dy = e.changedTouches[0].clientY - y0;
+		x0 = y0 = null;
+		if(Math.abs(dx) > 70 && Math.abs(dx) > Math.abs(dy) * 2){
+			window.location = dx < 0 ? next.href : prev.href;
+		}
+	}, {passive:true});
+})();
+
 /* Prev / next keyboard navigation on project pages */
 (function(){
 	var prev = document.getElementById('prev'), next = document.getElementById('next'), close = document.getElementById('close');

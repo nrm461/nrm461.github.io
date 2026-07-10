@@ -128,7 +128,7 @@ def credits_v2_html(p):
             continue
         out_rest.append(l)
     while out_rest and out_rest[-1] == '': out_rest.pop()
-    labels = {'Director':'Director','DP':'DP','Edit':'Edit','Color':'Color','Production':'Production'}
+    labels = {'Director':'Dir.','DP':'DP','Edit':'Edit','Color':'Color','Production':'Prod Co.'}
     hero_html = '\n'.join(f'<p>{labels[k]}: {linkify(v)}</p>' for k, v in ((k, hero[k]) for k, _ in HERO_ROLES if k in hero))
     rest_html = '\n'.join('<p class="spacer">&nbsp;</p>' if not l.strip() else f'<p>{linkify(l)}</p>' for l in out_rest)
     return (f'<div class="project-credits credits-v2">\n<div class="credits-hero">\n{hero_html}\n</div>\n'
@@ -209,17 +209,8 @@ def build_projects():
             media = (f'<img class="thumb lazy" src="../assets/thumbs/{slug}-100.jpg" data-src="../{hero}" alt="{esc(card_first_line(p))}">'
                      if os.path.exists(os.path.join(ROOT, hero)) else '')
 
-        # credits
-        if p.get('credits_v2'):
-            credits_html = credits_v2_html(p)
-        else:
-            creds = []
-            for line in (p.get('credits') or '').split('\n'):
-                if not line.strip():
-                    creds.append('<p class="spacer">&nbsp;</p>')
-                else:
-                    creds.append(f'<p>{linkify(line)}</p>')
-            credits_html = f'<div class="project-credits">\n{chr(10).join(creds)}\n</div>' if p.get('credits') else ''
+        # credits (v2 everywhere: hero roles + rest, mobile shows hero only)
+        credits_html = credits_v2_html(p) if p.get('credits') else ''
 
         director = p.get('director') or ''
         content = f'''<main>
