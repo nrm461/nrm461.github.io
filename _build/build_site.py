@@ -140,8 +140,11 @@ def build_projects():
         # media block: vimeo embed if a link exists, otherwise the single video thumbnail (like ProdCo)
         vid = vimeo_id(p.get('vimeo'))
         if vid:
+            params = ('badge=0&autopause=0&player_id=0&title=0&byline=0&portrait=0'
+                      '&vimeo_logo=0&pip=0&cc=0&transcript=0&airplay=0&chromecast=0'
+                      '&watch_full_video=0&dnt=1')
             media = (f'<div class="vimeo_wrapper"><div style="padding:56.25% 0 0 0;position:relative;">'
-                     f'<iframe src="https://player.vimeo.com/video/{vid}?badge=0&autopause=0&player_id=0" '
+                     f'<iframe src="https://player.vimeo.com/video/{vid}?{params}" '
                      f'frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" '
                      f'style="position:absolute;top:0;left:0;width:100%;height:100%;" '
                      f'title="{esc(card_first_line(p))}"></iframe></div>'
