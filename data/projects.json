@@ -1195,7 +1195,7 @@
  {
   "slug": "nike-x-skims-nikeskims-spring-26",
   "client": "Nike x SKIMS",
-  "title": "NikeSKIMS Spring 26’",
+  "title": "NikeSKIMS",
   "featuring": "featuring @lalalalisa_m",
   "director": "@sergiovsreis",
   "director_raw": "@sergiovsreis",
@@ -1215,7 +1215,8 @@
   ],
   "number": "W043",
   "selected": true,
-  "sel_order": 5
+  "sel_order": 5,
+  "carousel": false
  },
  {
   "slug": "okara-the-auction",
