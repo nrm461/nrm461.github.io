@@ -5269,7 +5269,7 @@
   "category": "Commercial",
   "vimeo": "",
   "credits": "",
-  "group": "posted",
+  "group": "hidden",
   "folder": "CAMPAIGN",
   "number": "W223",
   "children": [
@@ -5278,6 +5278,8 @@
    "oscar-mayer-neighbor",
    "oscar-mayer-knock-knock"
   ],
-  "arch_order": 58
+  "arch_order": 58,
+  "selected": false,
+  "carousel": false
  }
 ]
