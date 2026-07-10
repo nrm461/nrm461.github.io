@@ -42,7 +42,12 @@ button:disabled{ opacity:.4; cursor:default; }
 .frow .note{ width:100%; padding-left:120px; opacity:.55; font-size:11px; }
 #m-actions{ display:flex; gap:10px; margin-top:14px; }
 #car-list{ display:flex; gap:6px; flex-wrap:wrap; padding-left:120px; width:100%; }
-#car-list img{ width:72px; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--line); }
+.car-tile{ position:relative; cursor:grab; }
+.car-tile.dragging{ opacity:.35; }
+.car-tile img{ width:96px; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--line); display:block; pointer-events:none; }
+.car-tile .x{ position:absolute; top:2px; right:2px; background:#fff; border:1px solid #000; width:16px; height:16px;
+  line-height:14px; text-align:center; padding:0; font-size:11px; }
+.car-tile .badge{ position:absolute; bottom:2px; left:2px; background:#fff; font-size:9px; padding:0 3px; border:1px solid #000; }
 </style>
 </head>
 <body>
@@ -81,8 +86,10 @@ Every save republishes the site itself in ~2 min.
     <div class="note">one per line, "Role: name @handle" — Dir/DP/Edit/Color/Prod Co float to the top automatically</div></div>
   <div class="frow"><label>On landing</label><input type="checkbox" id="m-selected"></div>
   <div class="frow"><label>Hidden</label><input type="checkbox" id="m-hidden"></div>
+  <div class="frow"><label>Gallery</label><input type="checkbox" id="m-gallery">
+    <div class="note">show carousel stills under the credits on desktop (rows of 3)</div></div>
   <div class="frow"><label>Carousel</label><input type="file" id="m-car" multiple accept="image/*">
-    <div class="note">adds images to this project&rsquo;s mobile swipe carousel (hero thumb stays first)</div>
+    <div class="note">first image = mobile swipe hero. Drag tiles to reorder, &times; to delete. Applied on save.</div>
     <div id="car-list"></div></div>
   <div id="m-actions">
     <button id="m-save">Save project</button>
@@ -230,51 +237,94 @@ async function replaceThumb(el,file){
 /* ---- modal ---- */
 const M={ov:$('#overlay'),box:$('#modal'),t:$('#m-title'),client:$('#m-client'),title:$('#m-titlef'),
   director:$('#m-director'),cat:$('#m-category'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
-  sel:$('#m-selected'),hid:$('#m-hidden'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status')};
+  sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status')};
+/* carousel working set: [{name?:'03.jpg' (existing), blob?:Blob (new), url:preview}] */
+let carItems=[], carHadFiles=false;
+async function loadCarousel(slug){
+  carItems=[]; carHadFiles=false; M.carList.innerHTML='';
+  const g=await fetch(API+'assets/carousel/'+slug,{headers:tok()?hdrs():{}});
+  if(g.status===200){
+    const files=(await g.json()).filter(f=>/\.(jpe?g|png)$/i.test(f.name)).sort((a,b)=>a.name.localeCompare(b.name));
+    carItems=files.map(f=>({name:f.name,url:f.download_url}));
+    carHadFiles=carItems.length>0;
+  }
+  renderCar();
+}
+function renderCar(){
+  M.carList.innerHTML='';
+  carItems.forEach((it,i)=>{
+    const d=document.createElement('div');
+    d.className='car-tile'; d.draggable=true; d.dataset.i=i;
+    d.innerHTML=`<img src="${it.url}"><button class="x">&times;</button>`+(i===0?'<span class="badge">HERO</span>':'');
+    d.querySelector('.x').addEventListener('click',e=>{ e.stopPropagation(); carItems.splice(i,1); renderCar(); });
+    d.addEventListener('dragstart',()=>{ d.classList.add('dragging'); M.carList._drag=i; });
+    d.addEventListener('dragend',()=>d.classList.remove('dragging'));
+    d.addEventListener('dragover',e=>{
+      e.preventDefault();
+      const from=M.carList._drag, to=i;
+      if(from===undefined||from===to) return;
+      const [m]=carItems.splice(from,1); carItems.splice(to,0,m);
+      M.carList._drag=to; renderCar();
+    });
+    M.carList.appendChild(d);
+  });
+}
 function openModal(p){
   editing=p;
   M.t.textContent='Edit — '+p.slug;
   M.client.value=p.client||''; M.title.value=p.title||''; M.director.value=p.director||'';
   M.cat.value=p.category||'Commercial'; M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
   M.credits.value=p.credits||''; M.sel.checked=!!p.selected; M.hid.checked=(p.group==='hidden');
-  M.car.value=''; M.carList.innerHTML=''; M.st.textContent='';
+  M.gal.checked=!!p.gallery;
+  M.car.value=''; M.st.textContent='';
   M.ov.style.display='block'; M.box.style.display='block';
+  loadCarousel(p.slug);
 }
 function closeModal(){ M.ov.style.display='none'; M.box.style.display='none'; editing=null; }
 $('#m-cancel').addEventListener('click',closeModal);
 M.ov.addEventListener('click',closeModal);
-M.car.addEventListener('change',()=>{
-  M.carList.innerHTML='';
-  [...M.car.files].forEach(f=>{ const i=document.createElement('img'); i.src=URL.createObjectURL(f); M.carList.appendChild(i); });
+M.car.addEventListener('change',async()=>{
+  for(const f of [...M.car.files]){
+    const img=await loadImg(f);
+    const blob=await fit(img,900,506,false);
+    carItems.push({blob,url:URL.createObjectURL(blob)});
+  }
+  M.car.value=''; renderCar();
 });
+async function syncCarousel(slug){
+  /* rewrite the folder so files are 00.jpg.. in the current tile order */
+  const g=await fetch(API+'assets/carousel/'+slug,{headers:hdrs()});
+  const existing=g.status===200?(await g.json()).filter(f=>/\.(jpe?g|png)$/i.test(f.name)):[];
+  const bySha={}; existing.forEach(f=>bySha[f.name]=f.sha);
+  // fetch blobs of surviving originals (before overwriting anything)
+  for(const it of carItems){
+    if(!it.blob){ const r=await fetch(it.url); it.blob=await r.blob(); }
+  }
+  for(let i=0;i<carItems.length;i++){
+    const target=String(i).padStart(2,'0')+'.jpg';
+    const it=carItems[i];
+    if(it.name===target) continue; // already in place
+    M.st.textContent=`carousel: writing ${target}…`;
+    await ghPutBlob(`assets/carousel/${slug}/${target}`,it.blob,'admin: carousel '+slug);
+  }
+  // delete leftovers beyond the new length
+  for(const f of existing){
+    const idx=parseInt(f.name,10);
+    if(isNaN(idx)||idx>=carItems.length){
+      M.st.textContent=`carousel: removing ${f.name}…`;
+      await fetch(API+`assets/carousel/${slug}/${f.name}`,{method:'DELETE',headers:hdrs(),
+        body:JSON.stringify({message:'admin: carousel remove',sha:f.sha,branch:BRANCH})});
+    }
+  }
+}
 $('#m-save').addEventListener('click', async()=>{
   if(!tok()) return M.st.textContent='paste your GitHub token first';
   const p=editing; M.st.textContent='saving…';
   try{
-    // carousel uploads first
-    const files=[...M.car.files];
-    let carAdded=false;
-    if(files.length){
-      // find current max index by probing existing 00..: use project flag; upload as timestamped safe names
-      let idx=1;
-      while(idx<40){ // probe for a free slot
-        const head=await fetch(`${RAW}assets/carousel/${p.slug}/${String(idx).padStart(2,'0')}.jpg?t=${Date.now()}`,{method:'HEAD'});
-        if(!head.ok) break; idx++;
-      }
-      // ensure 00.jpg hero exists (from current 600 thumb)
-      const h=await fetch(`${RAW}assets/carousel/${p.slug}/00.jpg?t=${Date.now()}`,{method:'HEAD'});
-      if(!h.ok){
-        const tr=await fetch(`${RAW}assets/thumbs/${p.slug}-600.jpg?t=${Date.now()}`);
-        if(tr.ok) await ghPutBlob(`assets/carousel/${p.slug}/00.jpg`,await tr.blob(),'admin: carousel hero '+p.slug);
-      }
-      for(const f of files){
-        M.st.textContent=`uploading carousel ${idx-0}/${files.length+idx-1}…`;
-        const img=await loadImg(f);
-        await ghPutBlob(`assets/carousel/${p.slug}/${String(idx).padStart(2,'0')}.jpg`,await fit(img,900,506,false),'admin: carousel '+p.slug);
-        idx++;
-      }
-      carAdded=true;
-    }
+    const carChanged = (carHadFiles && carItems.length===0)
+                       || carItems.some((it,i)=>it.name!==String(i).padStart(2,'0')+'.jpg');
+    if(carChanged) await syncCarousel(p.slug);
+    const carAdded = carItems.length>0;
     // project fields
     M.st.textContent='saving project…';
     const {sha,data}=await ghGetJson('data/projects.json');
@@ -288,7 +338,8 @@ $('#m-save').addEventListener('click', async()=>{
     if(M.sel.checked && q.sel_order===undefined) q.sel_order=999;
     if(!M.sel.checked) delete q.sel_order;
     q.group=M.hid.checked?'hidden':(q.group==='hidden'?'posted':q.group);
-    if(carAdded) q.carousel=true;
+    q.carousel=carAdded;
+    if(M.gal.checked) q.gallery=true; else delete q.gallery;
     await ghPutJson('data/projects.json',data,sha,'admin: edit '+p.slug);
     projects=data;
     M.st.textContent='saved — live in ~2 min';
