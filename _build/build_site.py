@@ -129,7 +129,10 @@ def credits_v2_html(p):
         out_rest.append(l)
     while out_rest and out_rest[-1] == '': out_rest.pop()
     labels = {'Director':'Dir.','DP':'DP','Edit':'Edit','Color':'Color','Production':'Prod Co.'}
-    hero_html = '\n'.join(f'<p>{labels[k]}: {linkify(v)}</p>' for k, v in ((k, hero[k]) for k, _ in HERO_ROLES if k in hero))
+    def lab(k):
+        l = labels[k]
+        return l + ' ' if l.endswith('.') else l + ': '
+    hero_html = '\n'.join(f'<p>{lab(k)}{linkify(hero[k])}</p>' for k, _ in HERO_ROLES if k in hero)
     rest_html = '\n'.join('<p class="spacer">&nbsp;</p>' if not l.strip() else f'<p>{linkify(l)}</p>' for l in out_rest)
     return (f'<div class="project-credits credits-v2">\n<div class="credits-hero">\n{hero_html}\n</div>\n'
             + (f'<div class="credits-rest">\n<p class="spacer">&nbsp;</p>\n{rest_html}\n</div>\n' if rest_html else '')
