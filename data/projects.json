@@ -2137,10 +2137,10 @@
   "thumb_src": "_ig/DBRlIM6vLcx.jpg",
   "video_src": "",
   "number": "W083",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "sel_order": 20,
-  "arch_order": 135
+  "arch_order": 135,
+  "carousel": false
  },
  {
   "slug": "merit-america-merit-america",
