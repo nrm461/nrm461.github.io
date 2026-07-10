@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>Site Admin — Reorder & Thumbs</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{ --bg:#fff; --fg:#000; --line:#ddd; }
+*{ box-sizing:border-box; }
+body{ margin:0; font:12px/1.5 "Courier New",monospace; background:var(--bg); color:var(--fg); }
+header{ display:flex; gap:16px; align-items:center; padding:14px 20px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; flex-wrap:wrap; }
+h1{ font-size:13px; margin:0; text-transform:uppercase; }
+button, input{ font:inherit; padding:6px 12px; border:1px solid var(--fg); background:var(--bg); color:var(--fg); cursor:pointer; }
+button:disabled{ opacity:.4; cursor:default; }
+#token{ width:260px; }
+.tab{ border:none; text-decoration:underline; padding:6px 4px; }
+.tab.active{ font-weight:bold; text-decoration:none; }
+#status{ margin-left:auto; max-width:340px; }
+#grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:18px; padding:20px; }
+.card{ cursor:grab; border:1px solid transparent; }
+.card.dragging{ opacity:.35; }
+.card.dropover{ border:1px dashed var(--fg); }
+.card img{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#eee; pointer-events:none; }
+.card .cap{ padding:4px 0; text-transform:uppercase; }
+.card .num{ opacity:.5; }
+.card.filedrop{ outline:3px solid #0a0; outline-offset:-3px; }
+.hint{ padding:0 20px 20px; opacity:.6; }
+.busy{ outline:3px solid #fa0 !important; }
+.done{ outline:3px solid #0a0 !important; }
+.fail{ outline:3px solid #f00 !important; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Admin</h1>
+  <button class="tab active" data-view="landing">Landing order</button>
+  <button class="tab" data-view="archive">Archive</button>
+  <button class="tab" data-view="hidden">Hidden</button>
+  <input id="token" type="password" placeholder="GitHub token (saved locally)">
+  <button id="save" disabled>Save order</button>
+  <span id="status">…</span>
+</header>
+<div class="hint">
+Drag cards to reorder (landing view only) then hit SAVE ORDER. Drop a JPEG/PNG file onto any card in any view to replace its
+thumbnail (uploads 3 sizes automatically). Changes rebuild &amp; publish themselves in ~2 min.
+</div>
+<div id="grid"></div>
+<script>
+const OWNER='nrm461', REPO='nrm461.github.io', BRANCH='main';
+const API=`https://api.github.com/repos/${OWNER}/${REPO}/contents/`;
+let projects=[], view='landing', dirty=false;
+
+const $=s=>document.querySelector(s);
+const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save');
+tokenEl.value=localStorage.getItem('ghtoken')||'';
+tokenEl.addEventListener('change',()=>localStorage.setItem('ghtoken',tokenEl.value.trim()));
+const tok=()=>tokenEl.value.trim();
+const hdrs=()=>({'Authorization':'token '+tok(),'Content-Type':'application/json'});
+const say=t=>statusEl.textContent=t;
+
+async function load(){
+  say('loading projects…');
+  const r=await fetch(`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/projects.json?t=`+Date.now());
+  projects=await r.json();
+  render();
+  say('ready');
+}
+function listFor(v){
+  if(v==='landing') return projects.filter(p=>p.selected).sort((a,b)=>(a.sel_order??9999)-(b.sel_order??9999));
+  if(v==='hidden')  return projects.filter(p=>p.group==='hidden');
+  return projects.filter(p=>!['hidden','rolled','current','pass'].includes(p.group)&&p.group==='posted')
+                 .sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
+}
+function render(){
+  grid.innerHTML='';
+  const list=listFor(view);
+  list.forEach((p,i)=>{
+    const el=document.createElement('div');
+    el.className='card'; el.draggable=(view==='landing'); el.dataset.slug=p.slug;
+    const cap=(p.client&&p.title)?`${p.client} | ${p.title}`:(p.title||p.client||p.slug);
+    el.innerHTML=`<img src="https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/assets/thumbs/${p.slug}-600.jpg?t=${Date.now()}" onerror="this.style.opacity=.15">
+      <div class="cap"><span class="num">${String(i+1).padStart(2,'0')}</span> ${cap}</div>`;
+    wire(el); grid.appendChild(el);
+  });
+  saveBtn.disabled=!(view==='landing');
+}
+/* ---- drag to reorder (landing) ---- */
+let dragEl=null;
+function wire(el){
+  el.addEventListener('dragstart',e=>{ if(view!=='landing'||e.dataTransfer.files.length)return; dragEl=el; el.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; });
+  el.addEventListener('dragend',()=>{ el.classList.remove('dragging'); dragEl=null; });
+  el.addEventListener('dragover',e=>{
+    e.preventDefault();
+    if(dragEl&&dragEl!==el&&view==='landing'){
+      const r=el.getBoundingClientRect();
+      const before=(e.clientX-r.left)<r.width/2;
+      grid.insertBefore(dragEl, before?el:el.nextSibling);
+      dirty=true; say('order changed — not saved');
+    } else if(!dragEl){ el.classList.add('filedrop'); }
+  });
+  el.addEventListener('dragleave',()=>el.classList.remove('filedrop'));
+  el.addEventListener('drop',async e=>{
+    e.preventDefault(); el.classList.remove('filedrop');
+    const f=e.dataTransfer.files&&e.dataTransfer.files[0];
+    if(f&&/^image\//.test(f.type)) await replaceThumb(el, f);
+    else if(view==='landing') renumber();
+  });
+}
+function renumber(){ [...grid.children].forEach((el,i)=>{ el.querySelector('.num').textContent=String(i+1).padStart(2,'0'); }); }
+grid.addEventListener('drop',e=>{ if(view==='landing'){ e.preventDefault(); renumber(); } });
+grid.addEventListener('dragover',e=>e.preventDefault());
+
+/* ---- save order ---- */
+saveBtn.addEventListener('click', async()=>{
+  if(!tok()) return say('paste your GitHub token first');
+  say('saving order…'); saveBtn.disabled=true;
+  const order=[...grid.children].map(el=>el.dataset.slug);
+  const g=await fetch(API+'data/projects.json',{headers:hdrs()});
+  const gj=await g.json();
+  const cur=JSON.parse(decodeURIComponent(escape(atob(gj.content.replace(/\n/g,'')))));
+  cur.forEach(p=>{ const i=order.indexOf(p.slug); if(p.selected||i>=0){ if(i>=0){ p.selected=true; p.sel_order=i; } else { p.selected=false; delete p.sel_order; } } });
+  const body=btoa(unescape(encodeURIComponent(JSON.stringify(cur,null,1))));
+  const put=await fetch(API+'data/projects.json',{method:'PUT',headers:hdrs(),
+    body:JSON.stringify({message:'admin: landing order',content:body,sha:gj.sha,branch:BRANCH})});
+  say(put.ok?'saved — site rebuilds itself in ~2 min':'save failed: '+put.status);
+  saveBtn.disabled=false; dirty=false;
+  projects=cur;
+});
+
+/* ---- thumbnail replacement ---- */
+function fit(img,w,h,cover){
+  const c=document.createElement('canvas');
+  if(cover){ c.width=w; c.height=h;
+    const s=Math.max(w/img.width,h/img.height), dw=img.width*s, dh=img.height*s;
+    c.getContext('2d').drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
+  } else { const s=Math.min(w/img.width,1); c.width=Math.round(img.width*s); c.height=Math.round(img.height*s);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height); }
+  return new Promise(r=>c.toBlob(r,'image/jpeg',0.88));
+}
+async function putFile(path, blob, msg){
+  const b64=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result.split(',')[1]);fr.readAsDataURL(blob);});
+  const g=await fetch(API+path,{headers:hdrs()});
+  const sha=g.status===200?(await g.json()).sha:undefined;
+  const body={message:msg,content:b64,branch:BRANCH}; if(sha)body.sha=sha;
+  const put=await fetch(API+path,{method:'PUT',headers:hdrs(),body:JSON.stringify(body)});
+  if(!put.ok) throw new Error(path+' → '+put.status);
+}
+async function replaceThumb(el,file){
+  if(!tok()) return say('paste your GitHub token first');
+  const slug=el.dataset.slug;
+  el.classList.add('busy'); say('uploading thumb for '+slug+'…');
+  try{
+    const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=URL.createObjectURL(file); });
+    const b1600=await fit(img,1600,900,false);
+    const b600 =await fit(img,600,338,true);
+    const s=document.createElement('canvas'); s.width=100; s.height=56;
+    s.getContext('2d').drawImage(img,0,0,100,56);
+    const b100=await new Promise(r=>s.toBlob(r,'image/jpeg',0.7));
+    await putFile(`assets/thumbs/${slug}-1600.jpg`,b1600,'admin: thumb '+slug);
+    await putFile(`assets/thumbs/${slug}-600.jpg`, b600 ,'admin: thumb '+slug);
+    await putFile(`assets/thumbs/${slug}-100.jpg`, b100 ,'admin: thumb '+slug);
+    el.querySelector('img').src=URL.createObjectURL(b600);
+    el.classList.remove('busy'); el.classList.add('done');
+    say(slug+' updated — rebuilds in ~2 min');
+  }catch(err){ el.classList.remove('busy'); el.classList.add('fail'); say('failed: '+err.message); }
+}
+
+/* ---- tabs ---- */
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  if(dirty && view==='landing' && !confirm('Discard unsaved order?')) return;
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  t.classList.add('active'); view=t.dataset.view; dirty=false; render();
+}));
+load();
+</script>
+</body>
+</html>

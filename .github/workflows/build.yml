@@ -1,0 +1,32 @@
+name: Rebuild site
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'assets/thumbs/**'
+      - 'assets/carousel/**'
+      - '_build/**'
+      - 'css/**'
+      - 'js/**'
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # avoid rebuild loops from our own commit
+    if: "!contains(github.event.head_commit.message, '[auto-build]')"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Build
+        run: python3 _build/build_site.py
+      - name: Commit built pages
+        run: |
+          git config user.name "auto-build"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "[auto-build] regenerate pages"
+          git push
