@@ -608,10 +608,14 @@ img.thumb + .video-label{
 .archive-filter{
 	text-transform: uppercase;
 }
-.desktop .archive-filter:hover,
-.archive-filter.active{
+.desktop .archive-filter:hover{
 	text-decoration: underline;
 }
+.archive-filter.active{
+	text-decoration: none;
+}
+.archive-filter.active::before{ content: '[ '; }
+.archive-filter.active::after{ content: ' ]'; }
 .module-project.filtered-out{
 	display: none;
 }

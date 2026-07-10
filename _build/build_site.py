@@ -201,7 +201,7 @@ def build_archive():
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
     cards = [card_html(p, rel='../') for p in vis]
     cats = SITE.get('categories', [])
-    filters = ['\t\t<span class="archive-filter trigger active" data-filter="all">[ ALL ]</span>']
+    filters = ['\t\t<span class="archive-filter trigger active" data-filter="all">ALL</span>']
     for c in cats:
         filters.append(f'\t\t<span class="archive-filter trigger" data-filter="{esc(c)}">{esc(c)}</span>')
     content = (f'<div id="content-wrapper">\n{header("/archive/", 1)}\n<main>\n'
