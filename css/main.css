@@ -159,11 +159,9 @@ body{
 
 /* Dark Mode
 ==================================== */
-@media (min-width: 1025px){
-	.dark-mode{
-		--color-bg: black;
-		--color-text: white;
-	}
+.dark-mode{
+	--color-bg: black;
+	--color-text: white;
 }
 
 /* Nav
@@ -295,6 +293,7 @@ footer > span{
 .dark-mode .black{ background-color: var(--color-bg); }
 @media (max-width: 1024px){
 	#toggle-mode{ justify-content: flex-end; }
+	#toggle-mode > span{ width: 18px; height: 18px; }
 }
 
 /* Media
