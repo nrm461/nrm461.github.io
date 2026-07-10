@@ -48,6 +48,9 @@ button:disabled{ opacity:.4; cursor:default; }
 .car-tile .x{ position:absolute; top:2px; right:2px; background:#fff; border:1px solid #000; width:16px; height:16px;
   line-height:14px; text-align:center; padding:0; font-size:11px; }
 .car-tile .badge{ position:absolute; bottom:2px; left:2px; background:#fff; font-size:9px; padding:0 3px; border:1px solid #000; }
+.kid{ display:flex; align-items:center; gap:8px; border:1px solid var(--line); padding:3px 8px; margin-bottom:4px; cursor:grab; }
+.kid.dragging{ opacity:.35; }
+.kid .rm{ margin-left:auto; border:1px solid #000; background:#fff; padding:0 6px; font-size:11px; }
 </style>
 </head>
 <body>
@@ -84,6 +87,15 @@ Every save republishes the site itself in ~2 min.
     <div class="note">queued for Claude to scrape credits from on the next pass</div></div>
   <div class="frow"><label>Credits</label><textarea id="m-credits"></textarea>
     <div class="note">one per line, "Role: name @handle" — Dir/DP/Edit/Color/Prod Co float to the top automatically</div></div>
+  <div class="frow"><label>Thumbnail</label><input type="file" id="m-thumb" accept="image/*">
+    <div class="note">replaces the card + player thumbnail (all sizes, incl. carousel hero if one exists)</div></div>
+  <div class="frow" id="m-kids-row" style="display:none"><label>Campaign spots</label>
+    <div style="flex:1;min-width:200px">
+      <div id="kids-list"></div>
+      <input type="text" id="kids-add" list="all-slugs" placeholder="add spot by slug…" style="width:100%;margin-top:6px">
+      <datalist id="all-slugs"></datalist>
+    </div>
+    <div class="note">order here = order of videos on the page. Removing a spot returns it to the archive.</div></div>
   <div class="frow"><label>On landing</label><input type="checkbox" id="m-selected"></div>
   <div class="frow"><label>Hidden</label><input type="checkbox" id="m-hidden"></div>
   <div class="frow"><label>Gallery</label><input type="checkbox" id="m-gallery">
@@ -240,7 +252,32 @@ async function replaceThumb(el,file){
 /* ---- modal ---- */
 const M={ov:$('#overlay'),box:$('#modal'),t:$('#m-title'),client:$('#m-client'),title:$('#m-titlef'),
   director:$('#m-director'),cat:$('#m-category'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
-  sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status')};
+  sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status'),
+  thumb:$('#m-thumb'),kidsRow:$('#m-kids-row'),kidsList:$('#kids-list'),kidsAdd:$('#kids-add'),slugList:$('#all-slugs')};
+/* campaign spots (children) editing */
+let kids=[];
+function renderKids(){
+  M.kidsList.innerHTML='';
+  kids.forEach((s,i)=>{
+    const d=document.createElement('div'); d.className='kid'; d.draggable=true;
+    const pr=projects.find(x=>x.slug===s);
+    d.innerHTML=`<span>${String(i+1).padStart(2,'0')} ${pr?capOf(pr):s}</span><button class="rm">remove</button>`;
+    d.querySelector('.rm').addEventListener('click',()=>{ kids.splice(i,1); renderKids(); });
+    d.addEventListener('dragstart',()=>{ d.classList.add('dragging'); M.kidsList._drag=i; });
+    d.addEventListener('dragend',()=>d.classList.remove('dragging'));
+    d.addEventListener('dragover',e=>{
+      e.preventDefault();
+      const from=M.kidsList._drag; if(from===undefined||from===i) return;
+      const [m]=kids.splice(from,1); kids.splice(i,0,m); M.kidsList._drag=i; renderKids();
+    });
+    M.kidsList.appendChild(d);
+  });
+}
+M.kidsAdd&&M.kidsAdd.addEventListener('change',()=>{
+  const s=M.kidsAdd.value.trim();
+  if(s&&projects.find(x=>x.slug===s)&&!kids.includes(s)){ kids.push(s); renderKids(); }
+  M.kidsAdd.value='';
+});
 /* carousel working set: [{name?:'03.jpg' (existing), blob?:Blob (new), url:preview}] */
 let carItems=[], carHadFiles=false;
 async function loadCarousel(slug){
@@ -279,7 +316,14 @@ function openModal(p){
   M.cat.value=p.category||'Commercial'; M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
   M.credits.value=p.credits||''; M.sel.checked=!!p.selected; M.hid.checked=(p.group==='hidden');
   M.gal.checked=!!p.gallery;
-  M.car.value=''; M.st.textContent='';
+  M.car.value=''; M.thumb.value=''; M.st.textContent='';
+  kids=(p.children||[]).slice();
+  M.kidsRow.style.display=p.children?'flex':'none';
+  if(p.children){
+    M.slugList.innerHTML=projects.filter(x=>x.group!=='current'&&x.group!=='pass')
+      .map(x=>`<option value="${x.slug}">`).join('');
+    renderKids();
+  }
   M.ov.style.display='block'; M.box.style.display='block';
   loadCarousel(p.slug);
 }
@@ -324,8 +368,20 @@ $('#m-save').addEventListener('click', async()=>{
   if(!tok()) return M.st.textContent='paste your GitHub token first';
   const p=editing; M.st.textContent='saving…';
   try{
+    // thumbnail replacement from the modal
+    if(M.thumb.files.length){
+      M.st.textContent='uploading thumbnail…';
+      const img=await loadImg(M.thumb.files[0]);
+      await ghPutBlob(`assets/thumbs/${p.slug}-1600.jpg`,await fit(img,1600,900,false),'admin: thumb '+p.slug);
+      await ghPutBlob(`assets/thumbs/${p.slug}-600.jpg`, await fit(img,600,338,true),'admin: thumb '+p.slug);
+      await ghPutBlob(`assets/thumbs/${p.slug}-100.jpg`, await fit(img,100,56,true),'admin: thumb '+p.slug);
+      if(carItems.length){ // keep carousel hero in sync
+        carItems[0]={blob:await fit(img,900,506,false),url:URL.createObjectURL(await fit(img,600,338,true))};
+      }
+    }
     const carChanged = (carHadFiles && carItems.length===0)
-                       || carItems.some((it,i)=>it.name!==String(i).padStart(2,'0')+'.jpg');
+                       || carItems.some((it,i)=>it.name!==String(i).padStart(2,'0')+'.jpg')
+                       || (M.thumb.files.length&&carItems.length);
     if(carChanged) await syncCarousel(p.slug);
     const carAdded = carItems.length>0;
     // project fields
@@ -343,6 +399,13 @@ $('#m-save').addEventListener('click', async()=>{
     q.group=M.hid.checked?'hidden':(q.group==='hidden'?'posted':q.group);
     q.carousel=carAdded;
     if(M.gal.checked) q.gallery=true; else delete q.gallery;
+    // campaign spots: apply add/remove/reorder
+    if(q.children){
+      const before=q.children;
+      q.children=kids.slice();
+      before.filter(s=>!kids.includes(s)).forEach(s=>{ const c=data.find(x=>x.slug===s); if(c) c.group='posted'; });
+      kids.forEach(s=>{ const c=data.find(x=>x.slug===s); if(c&&s!==q.slug) c.group='rolled'; });
+    }
     await ghPutJson('data/projects.json',data,sha,'admin: edit '+p.slug);
     projects=data;
     M.st.textContent='saved — live in ~2 min';
