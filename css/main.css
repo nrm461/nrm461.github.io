@@ -555,9 +555,9 @@ img.thumb + .video-label{
 }
 .project-gallery img{
 	width: 100%;
-	aspect-ratio: 4 / 5;
-	object-fit: cover;
+	height: auto;
 	display: block;
+	align-self: start;
 }
 @media (max-width: 768px){
 	.project-gallery{ grid-template-columns: 1fr; }
