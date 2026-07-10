@@ -3,56 +3,102 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
-<title>Site Admin — Reorder & Thumbs</title>
+<title>Site Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 :root{ --bg:#fff; --fg:#000; --line:#ddd; }
 *{ box-sizing:border-box; }
 body{ margin:0; font:12px/1.5 "Courier New",monospace; background:var(--bg); color:var(--fg); }
-header{ display:flex; gap:16px; align-items:center; padding:14px 20px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; flex-wrap:wrap; }
+header{ display:flex; gap:14px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; flex-wrap:wrap; }
 h1{ font-size:13px; margin:0; text-transform:uppercase; }
-button, input{ font:inherit; padding:6px 12px; border:1px solid var(--fg); background:var(--bg); color:var(--fg); cursor:pointer; }
+button, input, select, textarea{ font:inherit; padding:6px 10px; border:1px solid var(--fg); background:var(--bg); color:var(--fg); }
+button{ cursor:pointer; }
 button:disabled{ opacity:.4; cursor:default; }
-#token{ width:260px; }
-.tab{ border:none; text-decoration:underline; padding:6px 4px; }
+#token{ width:220px; } #search{ width:180px; }
+.tab{ border:none; text-decoration:underline; padding:6px 2px; }
 .tab.active{ font-weight:bold; text-decoration:none; }
-#status{ margin-left:auto; max-width:340px; }
+#status{ margin-left:auto; max-width:360px; }
 #grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:18px; padding:20px; }
-.card{ cursor:grab; border:1px solid transparent; }
+.card{ cursor:grab; border:1px solid transparent; position:relative; }
 .card.dragging{ opacity:.35; }
-.card.dropover{ border:1px dashed var(--fg); }
 .card img{ width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#eee; pointer-events:none; }
 .card .cap{ padding:4px 0; text-transform:uppercase; }
 .card .num{ opacity:.5; }
+.card .edit{ position:absolute; top:6px; right:6px; background:#fff; border:1px solid #000; padding:2px 8px; font-size:11px; }
+.card .flags{ position:absolute; top:6px; left:6px; display:flex; gap:4px; }
+.flag{ background:#fff; border:1px solid #000; padding:1px 6px; font-size:10px; }
 .card.filedrop{ outline:3px solid #0a0; outline-offset:-3px; }
-.hint{ padding:0 20px 20px; opacity:.6; }
-.busy{ outline:3px solid #fa0 !important; }
-.done{ outline:3px solid #0a0 !important; }
-.fail{ outline:3px solid #f00 !important; }
+.hint{ padding:0 20px 16px; opacity:.6; }
+.busy{ outline:3px solid #fa0 !important; } .done{ outline:3px solid #0a0 !important; } .fail{ outline:3px solid #f00 !important; }
+/* modal */
+#overlay{ display:none; position:fixed; inset:0; background:rgba(0,0,0,.45); z-index:9; }
+#modal{ display:none; position:fixed; z-index:10; top:4vh; left:50%; transform:translateX(-50%);
+  width:min(680px,94vw); max-height:92vh; overflow:auto; background:var(--bg); border:1px solid var(--fg); padding:20px; }
+#modal h2{ font-size:13px; margin:0 0 12px; text-transform:uppercase; }
+.frow{ display:flex; gap:10px; margin-bottom:10px; align-items:center; flex-wrap:wrap; }
+.frow label{ width:110px; flex:none; text-transform:uppercase; font-size:11px; }
+.frow input[type=text], .frow select{ flex:1; min-width:200px; }
+.frow textarea{ flex:1; min-width:200px; height:170px; }
+.frow .note{ width:100%; padding-left:120px; opacity:.55; font-size:11px; }
+#m-actions{ display:flex; gap:10px; margin-top:14px; }
+#car-list{ display:flex; gap:6px; flex-wrap:wrap; padding-left:120px; width:100%; }
+#car-list img{ width:72px; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--line); }
 </style>
 </head>
 <body>
 <header>
   <h1>Admin</h1>
-  <button class="tab active" data-view="landing">Landing order</button>
+  <button class="tab active" data-view="landing">Landing</button>
   <button class="tab" data-view="archive">Archive</button>
   <button class="tab" data-view="hidden">Hidden</button>
-  <input id="token" type="password" placeholder="GitHub token (saved locally)">
+  <input id="search" type="search" placeholder="filter…">
+  <input id="token" type="password" placeholder="GitHub token">
   <button id="save" disabled>Save order</button>
   <span id="status">…</span>
 </header>
 <div class="hint">
-Drag cards to reorder (landing view only) then hit SAVE ORDER. Drop a JPEG/PNG file onto any card in any view to replace its
-thumbnail (uploads 3 sizes automatically). Changes rebuild &amp; publish themselves in ~2 min.
+Drag to reorder (landing) → SAVE ORDER. Drop an image file on a card to replace its thumbnail.
+Click EDIT on any card to change titles, credits, Vimeo link, landing/hidden status, or to upload carousel images.
+Every save republishes the site itself in ~2 min.
 </div>
 <div id="grid"></div>
+
+<div id="overlay"></div>
+<div id="modal">
+  <h2 id="m-title">Edit</h2>
+  <div class="frow"><label>Client</label><input type="text" id="m-client"></div>
+  <div class="frow"><label>Title</label><input type="text" id="m-titlef"></div>
+  <div class="frow"><label>Director</label><input type="text" id="m-director"></div>
+  <div class="frow"><label>Category</label>
+    <select id="m-category">
+      <option>Commercial</option><option>Music Video</option><option>Beauty</option><option>Long Form</option>
+    </select></div>
+  <div class="frow"><label>Vimeo link</label><input type="text" id="m-vimeo" placeholder="https://vimeo.com/123456789">
+    <div class="note">paste the plain video URL — the player is styled automatically</div></div>
+  <div class="frow"><label>IG post link</label><input type="text" id="m-ig" placeholder="https://www.instagram.com/p/…">
+    <div class="note">queued for Claude to scrape credits from on the next pass</div></div>
+  <div class="frow"><label>Credits</label><textarea id="m-credits"></textarea>
+    <div class="note">one per line, "Role: name @handle" — Dir/DP/Edit/Color/Prod Co float to the top automatically</div></div>
+  <div class="frow"><label>On landing</label><input type="checkbox" id="m-selected"></div>
+  <div class="frow"><label>Hidden</label><input type="checkbox" id="m-hidden"></div>
+  <div class="frow"><label>Carousel</label><input type="file" id="m-car" multiple accept="image/*">
+    <div class="note">adds images to this project&rsquo;s mobile swipe carousel (hero thumb stays first)</div>
+    <div id="car-list"></div></div>
+  <div id="m-actions">
+    <button id="m-save">Save project</button>
+    <button id="m-cancel">Cancel</button>
+    <span id="m-status"></span>
+  </div>
+</div>
+
 <script>
 const OWNER='nrm461', REPO='nrm461.github.io', BRANCH='main';
 const API=`https://api.github.com/repos/${OWNER}/${REPO}/contents/`;
-let projects=[], view='landing', dirty=false;
+const RAW=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`;
+let projects=[], view='landing', dirty=false, editing=null;
 
 const $=s=>document.querySelector(s);
-const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save');
+const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save'), searchEl=$('#search');
 tokenEl.value=localStorage.getItem('ghtoken')||'';
 tokenEl.addEventListener('change',()=>localStorage.setItem('ghtoken',tokenEl.value.trim()));
 const tok=()=>tokenEl.value.trim();
@@ -60,42 +106,51 @@ const hdrs=()=>({'Authorization':'token '+tok(),'Content-Type':'application/json
 const say=t=>statusEl.textContent=t;
 
 async function load(){
-  say('loading projects…');
-  const r=await fetch(`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/data/projects.json?t=`+Date.now());
+  say('loading…');
+  const r=await fetch(RAW+'data/projects.json?t='+Date.now());
   projects=await r.json();
-  render();
-  say('ready');
+  render(); say('ready');
 }
 function listFor(v){
-  if(v==='landing') return projects.filter(p=>p.selected).sort((a,b)=>(a.sel_order??9999)-(b.sel_order??9999));
-  if(v==='hidden')  return projects.filter(p=>p.group==='hidden');
-  return projects.filter(p=>!['hidden','rolled','current','pass'].includes(p.group)&&p.group==='posted')
-                 .sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
+  let l;
+  if(v==='landing') l=projects.filter(p=>p.selected).sort((a,b)=>(a.sel_order??9999)-(b.sel_order??9999));
+  else if(v==='hidden') l=projects.filter(p=>p.group==='hidden');
+  else l=projects.filter(p=>p.group==='posted').sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
+  const q=searchEl.value.trim().toLowerCase();
+  if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
+  return l;
 }
+function capOf(p){ return (p.client&&p.title)?`${p.client} | ${p.title}`:(p.title||p.client||p.slug); }
 function render(){
   grid.innerHTML='';
-  const list=listFor(view);
-  list.forEach((p,i)=>{
+  listFor(view).forEach((p,i)=>{
     const el=document.createElement('div');
-    el.className='card'; el.draggable=(view==='landing'); el.dataset.slug=p.slug;
-    const cap=(p.client&&p.title)?`${p.client} | ${p.title}`:(p.title||p.client||p.slug);
-    el.innerHTML=`<img src="https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/assets/thumbs/${p.slug}-600.jpg?t=${Date.now()}" onerror="this.style.opacity=.15">
-      <div class="cap"><span class="num">${String(i+1).padStart(2,'0')}</span> ${cap}</div>`;
+    el.className='card'; el.draggable=(view==='landing'&&!searchEl.value); el.dataset.slug=p.slug;
+    const flags=[p.selected?'<span class="flag">LANDING</span>':'',
+                 p.group==='hidden'?'<span class="flag">HIDDEN</span>':'',
+                 (!p.vimeo&&!p.children)?'<span class="flag">NO VIDEO</span>':'',
+                 p.ig_url?'<span class="flag">IG QUEUED</span>':''].join('');
+    el.innerHTML=`<img src="${RAW}assets/thumbs/${p.slug}-600.jpg?t=${Date.now()}" onerror="this.style.opacity=.15">
+      <div class="flags">${flags}</div>
+      <button class="edit">EDIT</button>
+      <div class="cap"><span class="num">${String(i+1).padStart(2,'0')}</span> ${capOf(p)}</div>`;
+    el.querySelector('.edit').addEventListener('click',e=>{ e.stopPropagation(); openModal(p); });
     wire(el); grid.appendChild(el);
   });
-  saveBtn.disabled=!(view==='landing');
+  saveBtn.disabled=!(view==='landing'&&!searchEl.value);
 }
-/* ---- drag to reorder (landing) ---- */
+searchEl.addEventListener('input',render);
+
+/* ---- drag reorder + thumb drop ---- */
 let dragEl=null;
 function wire(el){
-  el.addEventListener('dragstart',e=>{ if(view!=='landing'||e.dataTransfer.files.length)return; dragEl=el; el.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; });
+  el.addEventListener('dragstart',e=>{ if(!el.draggable||e.dataTransfer.files.length)return; dragEl=el; el.classList.add('dragging'); });
   el.addEventListener('dragend',()=>{ el.classList.remove('dragging'); dragEl=null; });
   el.addEventListener('dragover',e=>{
     e.preventDefault();
-    if(dragEl&&dragEl!==el&&view==='landing'){
+    if(dragEl&&dragEl!==el){
       const r=el.getBoundingClientRect();
-      const before=(e.clientX-r.left)<r.width/2;
-      grid.insertBefore(dragEl, before?el:el.nextSibling);
+      grid.insertBefore(dragEl,(e.clientX-r.left)<r.width/2?el:el.nextSibling);
       dirty=true; say('order changed — not saved');
     } else if(!dragEl){ el.classList.add('filedrop'); }
   });
@@ -103,72 +158,147 @@ function wire(el){
   el.addEventListener('drop',async e=>{
     e.preventDefault(); el.classList.remove('filedrop');
     const f=e.dataTransfer.files&&e.dataTransfer.files[0];
-    if(f&&/^image\//.test(f.type)) await replaceThumb(el, f);
-    else if(view==='landing') renumber();
+    if(f&&/^image\//.test(f.type)) await replaceThumb(el,f);
+    else renumber();
   });
 }
 function renumber(){ [...grid.children].forEach((el,i)=>{ el.querySelector('.num').textContent=String(i+1).padStart(2,'0'); }); }
-grid.addEventListener('drop',e=>{ if(view==='landing'){ e.preventDefault(); renumber(); } });
 grid.addEventListener('dragover',e=>e.preventDefault());
+grid.addEventListener('drop',e=>{ e.preventDefault(); renumber(); });
 
-/* ---- save order ---- */
-saveBtn.addEventListener('click', async()=>{
-  if(!tok()) return say('paste your GitHub token first');
-  say('saving order…'); saveBtn.disabled=true;
-  const order=[...grid.children].map(el=>el.dataset.slug);
-  const g=await fetch(API+'data/projects.json',{headers:hdrs()});
+/* ---- github io ---- */
+async function ghGetJson(path){
+  const g=await fetch(API+path,{headers:hdrs()});
+  if(g.status!==200) throw new Error(path+' GET '+g.status);
   const gj=await g.json();
-  const cur=JSON.parse(decodeURIComponent(escape(atob(gj.content.replace(/\n/g,'')))));
-  cur.forEach(p=>{ const i=order.indexOf(p.slug); if(p.selected||i>=0){ if(i>=0){ p.selected=true; p.sel_order=i; } else { p.selected=false; delete p.sel_order; } } });
-  const body=btoa(unescape(encodeURIComponent(JSON.stringify(cur,null,1))));
-  const put=await fetch(API+'data/projects.json',{method:'PUT',headers:hdrs(),
-    body:JSON.stringify({message:'admin: landing order',content:body,sha:gj.sha,branch:BRANCH})});
-  say(put.ok?'saved — site rebuilds itself in ~2 min':'save failed: '+put.status);
-  saveBtn.disabled=false; dirty=false;
-  projects=cur;
-});
-
-/* ---- thumbnail replacement ---- */
-function fit(img,w,h,cover){
-  const c=document.createElement('canvas');
-  if(cover){ c.width=w; c.height=h;
-    const s=Math.max(w/img.width,h/img.height), dw=img.width*s, dh=img.height*s;
-    c.getContext('2d').drawImage(img,(w-dw)/2,(h-dh)/2,dw,dh);
-  } else { const s=Math.min(w/img.width,1); c.width=Math.round(img.width*s); c.height=Math.round(img.height*s);
-    c.getContext('2d').drawImage(img,0,0,c.width,c.height); }
-  return new Promise(r=>c.toBlob(r,'image/jpeg',0.88));
+  return {sha:gj.sha, data:JSON.parse(decodeURIComponent(escape(atob(gj.content.replace(/\n/g,'')))))};
 }
-async function putFile(path, blob, msg){
+async function ghPutJson(path,obj,sha,msg){
+  const body=btoa(unescape(encodeURIComponent(JSON.stringify(obj,null,1))));
+  const put=await fetch(API+path,{method:'PUT',headers:hdrs(),
+    body:JSON.stringify({message:msg,content:body,sha,branch:BRANCH})});
+  if(!put.ok) throw new Error(path+' PUT '+put.status);
+}
+async function ghPutBlob(path,blob,msg){
   const b64=await new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result.split(',')[1]);fr.readAsDataURL(blob);});
   const g=await fetch(API+path,{headers:hdrs()});
   const sha=g.status===200?(await g.json()).sha:undefined;
   const body={message:msg,content:b64,branch:BRANCH}; if(sha)body.sha=sha;
   const put=await fetch(API+path,{method:'PUT',headers:hdrs(),body:JSON.stringify(body)});
-  if(!put.ok) throw new Error(path+' → '+put.status);
+  if(!put.ok) throw new Error(path+' PUT '+put.status);
+}
+
+/* ---- save landing order ---- */
+saveBtn.addEventListener('click', async()=>{
+  if(!tok()) return say('paste your GitHub token first');
+  say('saving order…'); saveBtn.disabled=true;
+  try{
+    const order=[...grid.children].map(el=>el.dataset.slug);
+    const {sha,data}=await ghGetJson('data/projects.json');
+    data.forEach(p=>{ const i=order.indexOf(p.slug);
+      if(i>=0){ p.selected=true; p.sel_order=i; } else if(p.selected){ p.selected=false; delete p.sel_order; } });
+    await ghPutJson('data/projects.json',data,sha,'admin: landing order');
+    projects=data; dirty=false; say('saved — live in ~2 min');
+  }catch(e){ say('failed: '+e.message); }
+  saveBtn.disabled=false;
+});
+
+/* ---- image helpers ---- */
+function loadImg(file){ return new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=URL.createObjectURL(file); }); }
+function fit(img,w,h,cover){
+  const c=document.createElement('canvas');
+  if(cover){ c.width=w;c.height=h; const s=Math.max(w/img.width,h/img.height);
+    c.getContext('2d').drawImage(img,(w-img.width*s)/2,(h-img.height*s)/2,img.width*s,img.height*s);
+  } else { const s=Math.min(w/img.width,1); c.width=Math.round(img.width*s); c.height=Math.round(img.height*s);
+    c.getContext('2d').drawImage(img,0,0,c.width,c.height); }
+  return new Promise(r=>c.toBlob(r,'image/jpeg',0.88));
 }
 async function replaceThumb(el,file){
   if(!tok()) return say('paste your GitHub token first');
   const slug=el.dataset.slug;
   el.classList.add('busy'); say('uploading thumb for '+slug+'…');
   try{
-    const img=await new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=URL.createObjectURL(file); });
-    const b1600=await fit(img,1600,900,false);
-    const b600 =await fit(img,600,338,true);
-    const s=document.createElement('canvas'); s.width=100; s.height=56;
-    s.getContext('2d').drawImage(img,0,0,100,56);
-    const b100=await new Promise(r=>s.toBlob(r,'image/jpeg',0.7));
-    await putFile(`assets/thumbs/${slug}-1600.jpg`,b1600,'admin: thumb '+slug);
-    await putFile(`assets/thumbs/${slug}-600.jpg`, b600 ,'admin: thumb '+slug);
-    await putFile(`assets/thumbs/${slug}-100.jpg`, b100 ,'admin: thumb '+slug);
-    el.querySelector('img').src=URL.createObjectURL(b600);
-    el.classList.remove('busy'); el.classList.add('done');
-    say(slug+' updated — rebuilds in ~2 min');
+    const img=await loadImg(file);
+    await ghPutBlob(`assets/thumbs/${slug}-1600.jpg`,await fit(img,1600,900,false),'admin: thumb '+slug);
+    await ghPutBlob(`assets/thumbs/${slug}-600.jpg`, await fit(img,600,338,true),'admin: thumb '+slug);
+    await ghPutBlob(`assets/thumbs/${slug}-100.jpg`, await fit(img,100,56,true),'admin: thumb '+slug);
+    el.querySelector('img').src=URL.createObjectURL(await fit(img,600,338,true));
+    el.classList.remove('busy'); el.classList.add('done'); say(slug+' thumb updated — live in ~2 min');
   }catch(err){ el.classList.remove('busy'); el.classList.add('fail'); say('failed: '+err.message); }
 }
 
+/* ---- modal ---- */
+const M={ov:$('#overlay'),box:$('#modal'),t:$('#m-title'),client:$('#m-client'),title:$('#m-titlef'),
+  director:$('#m-director'),cat:$('#m-category'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
+  sel:$('#m-selected'),hid:$('#m-hidden'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status')};
+function openModal(p){
+  editing=p;
+  M.t.textContent='Edit — '+p.slug;
+  M.client.value=p.client||''; M.title.value=p.title||''; M.director.value=p.director||'';
+  M.cat.value=p.category||'Commercial'; M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
+  M.credits.value=p.credits||''; M.sel.checked=!!p.selected; M.hid.checked=(p.group==='hidden');
+  M.car.value=''; M.carList.innerHTML=''; M.st.textContent='';
+  M.ov.style.display='block'; M.box.style.display='block';
+}
+function closeModal(){ M.ov.style.display='none'; M.box.style.display='none'; editing=null; }
+$('#m-cancel').addEventListener('click',closeModal);
+M.ov.addEventListener('click',closeModal);
+M.car.addEventListener('change',()=>{
+  M.carList.innerHTML='';
+  [...M.car.files].forEach(f=>{ const i=document.createElement('img'); i.src=URL.createObjectURL(f); M.carList.appendChild(i); });
+});
+$('#m-save').addEventListener('click', async()=>{
+  if(!tok()) return M.st.textContent='paste your GitHub token first';
+  const p=editing; M.st.textContent='saving…';
+  try{
+    // carousel uploads first
+    const files=[...M.car.files];
+    let carAdded=false;
+    if(files.length){
+      // find current max index by probing existing 00..: use project flag; upload as timestamped safe names
+      let idx=1;
+      while(idx<40){ // probe for a free slot
+        const head=await fetch(`${RAW}assets/carousel/${p.slug}/${String(idx).padStart(2,'0')}.jpg?t=${Date.now()}`,{method:'HEAD'});
+        if(!head.ok) break; idx++;
+      }
+      // ensure 00.jpg hero exists (from current 600 thumb)
+      const h=await fetch(`${RAW}assets/carousel/${p.slug}/00.jpg?t=${Date.now()}`,{method:'HEAD'});
+      if(!h.ok){
+        const tr=await fetch(`${RAW}assets/thumbs/${p.slug}-600.jpg?t=${Date.now()}`);
+        if(tr.ok) await ghPutBlob(`assets/carousel/${p.slug}/00.jpg`,await tr.blob(),'admin: carousel hero '+p.slug);
+      }
+      for(const f of files){
+        M.st.textContent=`uploading carousel ${idx-0}/${files.length+idx-1}…`;
+        const img=await loadImg(f);
+        await ghPutBlob(`assets/carousel/${p.slug}/${String(idx).padStart(2,'0')}.jpg`,await fit(img,900,506,false),'admin: carousel '+p.slug);
+        idx++;
+      }
+      carAdded=true;
+    }
+    // project fields
+    M.st.textContent='saving project…';
+    const {sha,data}=await ghGetJson('data/projects.json');
+    const q=data.find(x=>x.slug===p.slug);
+    if(!q) throw new Error('slug not found');
+    q.client=M.client.value.trim(); q.title=M.title.value.trim(); q.director=M.director.value.trim();
+    q.category=M.cat.value; q.vimeo=M.vimeo.value.trim(); q.credits=M.credits.value;
+    const ig=M.ig.value.trim();
+    if(ig){ q.ig_url=ig; q.needs_credits=true; } else { delete q.ig_url; delete q.needs_credits; }
+    q.selected=M.sel.checked;
+    if(M.sel.checked && q.sel_order===undefined) q.sel_order=999;
+    if(!M.sel.checked) delete q.sel_order;
+    q.group=M.hid.checked?'hidden':(q.group==='hidden'?'posted':q.group);
+    if(carAdded) q.carousel=true;
+    await ghPutJson('data/projects.json',data,sha,'admin: edit '+p.slug);
+    projects=data;
+    M.st.textContent='saved — live in ~2 min';
+    setTimeout(()=>{ closeModal(); render(); },700);
+  }catch(e){ M.st.textContent='failed: '+e.message; }
+});
+
 /* ---- tabs ---- */
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
-  if(dirty && view==='landing' && !confirm('Discard unsaved order?')) return;
+  if(dirty&&view==='landing'&&!confirm('Discard unsaved order?'))return;
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
   t.classList.add('active'); view=t.dataset.view; dirty=false; render();
 }));
