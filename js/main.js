@@ -65,6 +65,22 @@
 	});
 })();
 
+/* Video facade: click swaps thumbnail for autoplaying Vimeo player */
+(function(){
+	var f = document.querySelector('.video-facade');
+	if(!f) return;
+	f.addEventListener('click', function(){
+		var id = f.getAttribute('data-vimeo');
+		var params = 'badge=0&autopause=0&player_id=0&title=0&byline=0&portrait=0' +
+			'&vimeo_logo=0&pip=0&cc=0&transcript=0&airplay=0&chromecast=0' +
+			'&watch_full_video=0&dnt=1&autoplay=1';
+		var box = f.querySelector('div');
+		box.innerHTML = '<iframe src="https://player.vimeo.com/video/' + id + '?' + params +
+			'" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="video"></iframe>';
+		f.style.cursor = 'default';
+	}, {once:true});
+})();
+
 /* Mobile swipe navigation between project pages */
 (function(){
 	var prev = document.getElementById('prev'), next = document.getElementById('next');

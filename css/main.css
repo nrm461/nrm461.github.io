@@ -495,6 +495,47 @@ video.no-autoplay{
 .local_video_wrapper{
 	width: 100%;
 }
+
+/* Video facade: our thumbnail + play button, swaps to Vimeo on click */
+.video-facade{
+	width: 100%;
+	cursor: pointer;
+}
+.video-facade img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.video-facade iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.video-facade .play-btn{
+	position: absolute;
+	left: var(--margin-sides);
+	bottom: var(--margin-sides);
+	width: 0;
+	height: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	border-top: 11px solid transparent;
+	border-bottom: 11px solid transparent;
+	border-left: 18px solid #fff;
+	cursor: pointer;
+	filter: drop-shadow(0 0 6px rgba(0,0,0,0.35));
+}
+.desktop .video-facade:hover .play-btn{
+	border-left-color: #fff;
+	opacity: 0.85;
+}
 .local_video_wrapper video{
 	width: 100%;
 	display: block;
