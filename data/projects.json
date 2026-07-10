@@ -1238,7 +1238,8 @@
   "stills": [],
   "number": "W044",
   "selected": true,
-  "sel_order": 1
+  "sel_order": 1,
+  "carousel": true
  },
  {
   "slug": "benson-boone-the-time-of-my-life",
