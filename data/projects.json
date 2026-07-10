@@ -52,7 +52,7 @@
   ],
   "number": "W002",
   "selected": true,
-  "sel_order": 12,
+  "sel_order": 11,
   "carousel": true
  },
  {
@@ -599,7 +599,7 @@
   ],
   "number": "W019",
   "selected": true,
-  "sel_order": 15,
+  "sel_order": 6,
   "arch_order": 5,
   "carousel": true
  },
@@ -1614,7 +1614,7 @@
   "number": "W060",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "sel_order": 17
+  "sel_order": 18
  },
  {
   "slug": "chevrolet-walter-in-the-winter",
@@ -1863,7 +1863,7 @@
   "number": "W071",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
-  "sel_order": 22,
+  "sel_order": 15,
   "arch_order": 131
  },
  {
@@ -1932,7 +1932,7 @@
   "number": "W074",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
-  "sel_order": 6,
+  "sel_order": 13,
   "arch_order": 157
  },
  {
@@ -2002,7 +2002,7 @@
   "number": "W077",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
-  "sel_order": 13
+  "sel_order": 12
  },
  {
   "slug": "montell-fish-who-did-you-touch",
@@ -2736,7 +2736,7 @@
   "video_src": "",
   "number": "W114",
   "selected": true,
-  "sel_order": 11,
+  "sel_order": 17,
   "arch_order": 155
  },
  {
