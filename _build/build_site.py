@@ -118,7 +118,8 @@ def card_html(p, rel=''):
 
 def build_index():
     sel = [p for p in visible_projects() if p.get('selected')]
-    cards = [card_html(p) for p in sorted(sel, key=lambda x: x['number'], reverse=True)]
+    # explicit reel order when sel_order present; fall back to number desc
+    cards = [card_html(p) for p in sorted(sel, key=lambda x: (x.get('sel_order', 9999), -int(x['number'][1:])))]
     content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n\t<div class="module-videos">\n'
                + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
     write('index.html', page('page-works page-index', f'{SITE["site_name"]} — Work', content))

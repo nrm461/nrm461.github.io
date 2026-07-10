@@ -19,7 +19,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Shake Vagabond/070Shake_Vagabond_USUV72405467.mov",
   "stills": [],
   "number": "W001",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "lisa-x-tyla-when-im-with-you",
@@ -50,7 +50,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_tyla_Lisa/stills/1.12.2_1.12.2.jpg"
   ],
   "number": "W002",
-  "selected": true
+  "selected": true,
+  "sel_order": 12
  },
  {
   "slug": "nigo-x-nike-waf3-fm-nigos-world",
@@ -81,7 +82,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/nike nigo/stills/1.6.1_1.6.1.jpg"
   ],
   "number": "W003",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "function-health-long-live-moms",
@@ -112,7 +113,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/functional_health_DC/stills/1.24.1_1.24.1.jpg"
   ],
   "number": "W004",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "ultrasound",
@@ -143,7 +144,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/short_film_Ultrasound/stills/18__ULTRASOUND (FOR COLOR - PRO RES 4444XQ)_1.8.3.jpg"
   ],
   "number": "W005",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "converse-x-doraemon-doraemon-chuck-70-collection",
@@ -171,7 +172,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Converse_Doraemon/ig_selects/1.1.5_1.1.5.jpg"
   ],
   "number": "W006",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "tom-sachs-x-nikecraft-x-nike-a-brief-history-of-the-mars-yar",
@@ -202,7 +203,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Nike_My3_0_Tom_Sachs/stills/1.107.1_1.107.1.jpg"
   ],
   "number": "W007",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "danna-paola-khe-calor",
@@ -233,7 +234,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_Danna_Paola_Khe_Calor/stills/1.138.1_1.138.1.jpg"
   ],
   "number": "W008",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "amber-mark-let-me-love-you",
@@ -264,7 +265,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/mv amber mark/stills/Still 2025-09-24 113344_1.139.1.jpg"
   ],
   "number": "W009",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "therabody-glo-your-own-way-with-kendalljenner",
@@ -295,7 +296,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Therabody/stills/Still 2025-11-03 155013_1.1.9.jpg"
   ],
   "number": "W010",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "de-beers-director-s-cut",
@@ -326,7 +327,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/De_Beers_DC_J3362/stills/29_Version 1_DEBEERS_DC_PRORESHQ_1.29.1.jpg"
   ],
   "number": "W011",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "fujii-kaze-love-like-this",
@@ -357,7 +358,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Fuji_Kaze/stills/1.3.1_1.3.1.jpg"
   ],
   "number": "W012",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "rivian-milk-run",
@@ -388,7 +389,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Rivian_Summer_2025/stills/1.79.2_1.79.2.jpg"
   ],
   "number": "W013",
-  "selected": true
+  "selected": true,
+  "sel_order": 7
  },
  {
   "slug": "pura-scents-of-place",
@@ -416,7 +418,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/pura/ig_selects/cover.jpg"
   ],
   "number": "W014",
-  "selected": true
+  "selected": true,
+  "sel_order": 3
  },
  {
   "slug": "maria-isabel-suiza",
@@ -447,7 +450,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Music_Video_Maria_Isabel_Suiza_J3424/stills/María Isabel - Suiza (Official Video) - G010005727081U 3x2.mov_1.78.1.jpg"
   ],
   "number": "W015",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "070-shake-if-youre-free",
@@ -478,7 +481,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/MV_070shake/stills/070SHAKE_MINE_MV_12A_2880x2160.mov_1.6.1.jpg"
   ],
   "number": "W016",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "instax-forever",
@@ -509,7 +512,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/instax/stills/InstaxForever_DC_4K_422HQ.mov_1.38.1.jpg"
   ],
   "number": "W017",
-  "selected": true
+  "selected": true,
+  "sel_order": 2
  },
  {
   "slug": "trapped",
@@ -540,7 +544,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/short film trapped/stills/Trapped Final ONLINE +1.5db - FOR EXPORT.mp4_1.143.1.jpg"
   ],
   "number": "W018",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "becky-g-epa",
@@ -571,7 +575,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/mv_becky_G/stills/BeckyG_EPA_FULL_Native Aspect Ratio_Revised_ProResHQ_051526.mov_1.140.1.jpg"
   ],
   "number": "W019",
-  "selected": true
+  "selected": true,
+  "sel_order": 15
  },
  {
   "slug": "fidelity-living-the-dream",
@@ -602,7 +607,7 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/fidelity DC/stills/OFF_FDY_LH_DC_V16_PRORES4444_GRADE.mov_1.26.1.jpg"
   ],
   "number": "W020",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "ecos-brand-film",
@@ -840,7 +845,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Logan Rice Short/E Dayton St_422-hq_Final.mov",
   "stills": [],
   "number": "W030",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "pit-stop-pit-stop",
@@ -915,7 +920,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Sisters/FULL_SISTERS_HD_2025.mov",
   "stills": [],
   "number": "W033",
-  "selected": true
+  "selected": false
  },
  {
   "slug": "tao-homecoming",
@@ -1095,7 +1100,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Nissan Roos Bro/stills/Nissan_Happy_Chaos_CONFORM_5.13.mov_1.5.1.jpg"
   ],
   "number": "W040",
-  "selected": true
+  "selected": true,
+  "sel_order": 4
  },
  {
   "slug": "garmin-ironman-dc",
@@ -1174,7 +1180,8 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/nike skims/ig_selects/cover.jpg"
   ],
   "number": "W043",
-  "selected": false
+  "selected": true,
+  "sel_order": 5
  },
  {
   "slug": "okara-the-auction",
@@ -1228,7 +1235,8 @@
   ],
   "number": "W045",
   "selected": true,
-  "carousel": true
+  "carousel": true,
+  "sel_order": 27
  },
  {
   "slug": "vogue-hunter-season",
@@ -1315,8 +1323,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Color up close.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Color up close - sephora.mp4",
   "number": "W049",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
+  "sel_order": 24
  },
  {
   "slug": "skittles-the-witch",
@@ -1337,8 +1346,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/The witch.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/The Witch - Skittles.mov",
   "number": "W050",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/",
+  "sel_order": 25
  },
  {
   "slug": "harley-davidson-united-we-will-ride",
@@ -1469,8 +1479,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Cows menu.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Cows menu - burger king.MOV",
   "number": "W056",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
+  "sel_order": 19
  },
  {
   "slug": "versace-clans-of-versace",
@@ -1521,8 +1532,8 @@
   "client": "Miu Miu",
   "title": "More",
   "featuring": "",
-  "director": "",
-  "director_raw": "",
+  "director": "@gvsgvs",
+  "director_raw": "@gvsgvs",
   "production": "",
   "category": "Beauty",
   "third_line": "Beauty",
@@ -1535,8 +1546,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/More.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/More - miu miu .mp4",
   "number": "W059",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
+  "sel_order": 16
  },
  {
   "slug": "hennessy-more-is-made-by-the-many",
@@ -1557,8 +1569,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/More is made by many.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/More is made by many - hennessy.mov",
   "number": "W060",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
+  "sel_order": 17
  },
  {
   "slug": "chevrolet-walter-in-the-winter",
@@ -1601,16 +1614,17 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Beautiful magnolia.PNG",
   "video_src": "",
   "number": "W062",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
+  "sel_order": 10
  },
  {
   "slug": "crypto-com-fortune-favors-the-brave",
   "client": "Crypto.com",
   "title": "Fortune Favors the Brave",
   "featuring": "",
-  "director": "",
-  "director_raw": "",
+  "director": "Wally Pfister",
+  "director_raw": "Wally Pfister",
   "production": "",
   "category": "Commercial",
   "third_line": "Commercial",
@@ -1623,8 +1637,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Fortune favors the brave.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Fortune favors the brave - crypto.mp4",
   "number": "W063",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
+  "sel_order": 14
  },
  {
   "slug": "ny-presbyterian-peter",
@@ -1799,8 +1814,9 @@
   "thumb_src": "_ig/C2O-4hpO0uo.jpg",
   "video_src": "",
   "number": "W071",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
+  "sel_order": 22
  },
  {
   "slug": "louis-vuitton-virgil-abloh-tribute",
@@ -1865,8 +1881,9 @@
   "thumb_src": "_ig/C2PBQ5IOYb_.jpg",
   "video_src": "",
   "number": "W074",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
+  "sel_order": 6
  },
  {
   "slug": "equinox-circuit-breaker",
@@ -1931,8 +1948,9 @@
   "thumb_src": "_ig/C8XmuOrvYwU.jpg",
   "video_src": "",
   "number": "W077",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
+  "sel_order": 13
  },
  {
   "slug": "montell-fish-who-did-you-touch",
@@ -1997,8 +2015,9 @@
   "thumb_src": "_ig/C8oPIR6vtBt.jpg",
   "video_src": "",
   "number": "W080",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
+  "sel_order": 18
  },
  {
   "slug": "maria-isabel-drove-u-crazy",
@@ -2041,8 +2060,9 @@
   "thumb_src": "_ig/DB-blSrPHLh.jpg",
   "video_src": "",
   "number": "W082",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
+  "sel_order": 1
  },
  {
   "slug": "070-shake-winter-baby",
@@ -2063,8 +2083,9 @@
   "thumb_src": "_ig/DBRlIM6vLcx.jpg",
   "video_src": "",
   "number": "W083",
-  "selected": false,
-  "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/"
+  "selected": true,
+  "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
+  "sel_order": 20
  },
  {
   "slug": "merit-america-merit-america",
@@ -2150,7 +2171,8 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Denim.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/denim - polo.mp4",
   "number": "W087",
-  "selected": false
+  "selected": true,
+  "sel_order": 26
  },
  {
   "slug": "versace-faces-of-versace",
@@ -2406,8 +2428,8 @@
  },
  {
   "slug": "race-of-the-gentleman",
-  "client": "",
-  "title": "Race of the Gentleman",
+  "client": "Harley-Davidson",
+  "title": "Race of the Gentlemen",
   "featuring": "",
   "director": "",
   "director_raw": "",
@@ -2423,7 +2445,8 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Race of the gentleman .PNG",
   "video_src": "",
   "number": "W103",
-  "selected": false
+  "selected": true,
+  "sel_order": 23
  },
  {
   "slug": "pnc-summer",
@@ -2592,5 +2615,93 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Yoonmi - monse.mp4",
   "number": "W111",
   "selected": false
+ },
+ {
+  "slug": "de-beers-unlike-anything",
+  "client": "De Beers",
+  "title": "Unlike Anything",
+  "featuring": "",
+  "director": "Matt Baron",
+  "director_raw": "Matt Baron",
+  "production": "",
+  "category": "Commercial",
+  "third_line": "Commercial",
+  "vimeo": "",
+  "credits": "",
+  "group": "posted",
+  "needs_review": true,
+  "mtime": 0,
+  "folder": "SLATE",
+  "thumb_src": "",
+  "video_src": "",
+  "number": "W112",
+  "selected": true,
+  "sel_order": 8
+ },
+ {
+  "slug": "function-health-mothers-day",
+  "client": "Function Health",
+  "title": "Mother's Day",
+  "featuring": "",
+  "director": "@savvylou_",
+  "director_raw": "@savvylou_",
+  "production": "",
+  "category": "Commercial",
+  "third_line": "Commercial",
+  "vimeo": "",
+  "credits": "",
+  "group": "posted",
+  "needs_review": true,
+  "mtime": 0,
+  "folder": "SLATE",
+  "thumb_src": "",
+  "video_src": "",
+  "number": "W113",
+  "selected": true,
+  "sel_order": 9
+ },
+ {
+  "slug": "terminal-27-vermeil-hues",
+  "client": "Terminal 27",
+  "title": "Vermeil Hues",
+  "featuring": "",
+  "director": "",
+  "director_raw": "",
+  "production": "",
+  "category": "Commercial",
+  "third_line": "Commercial",
+  "vimeo": "",
+  "credits": "",
+  "group": "posted",
+  "needs_review": true,
+  "mtime": 0,
+  "folder": "SLATE",
+  "thumb_src": "",
+  "video_src": "",
+  "number": "W114",
+  "selected": true,
+  "sel_order": 11
+ },
+ {
+  "slug": "coke-evergreen",
+  "client": "Coke",
+  "title": "Evergreen",
+  "featuring": "",
+  "director": "",
+  "director_raw": "",
+  "production": "",
+  "category": "Commercial",
+  "third_line": "Commercial",
+  "vimeo": "",
+  "credits": "",
+  "group": "posted",
+  "needs_review": true,
+  "mtime": 0,
+  "folder": "SLATE",
+  "thumb_src": "",
+  "video_src": "",
+  "number": "W115",
+  "selected": true,
+  "sel_order": 21
  }
 ]
