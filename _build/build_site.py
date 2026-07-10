@@ -83,12 +83,24 @@ def card_first_line(p):
 
 def visible_projects():
     """Visible projects, renumbered W001.. in chronological order at build time."""
-    hide = set(SITE.get('hide_groups', []))
+    hide = set(SITE.get('hide_groups', [])) | {'hidden', 'rolled'}
     vis = [p for p in PROJECTS if p.get('group') not in hide and not p.get('hidden')]
     vis.sort(key=lambda x: x['number'])  # preserve catalog (chronological) order
     for i, p in enumerate(vis, 1):
         p['number'] = f'W{i:03d}'
     return vis
+
+def hidden_projects():
+    """Projects moved off the public site; listed only on the unlinked /hidden/ page."""
+    hid = [p for p in PROJECTS if p.get('group') == 'hidden']
+    hid.sort(key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
+    return hid
+
+def project_by_slug(slug):
+    for p in PROJECTS:
+        if p['slug'] == slug:
+            return p
+    return None
 
 HERO_ROLES = [
     ('Director',   re.compile(r'^\s*(writer\s*\+\s*)?(director|directed by|dir)\b(?!.*(photography|assist))', re.I)),
@@ -188,31 +200,53 @@ def build_archive():
     write(os.path.join('archive', 'index.html'),
           page('page-works page-index page-archive', f'{SITE["site_name"]} — Archive', content, depth=1))
 
+def build_hidden():
+    """Archive-style page of hidden jobs. Deliberately unlinked from all navigation."""
+    hid = hidden_projects()
+    cards = [card_html(p, rel='../') for p in hid]
+    content = (f'<div id="content-wrapper">\n{header("", 1)}\n<main>\n'
+               f'\t<div class="module-videos">\n' + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
+    content = f'<meta name="robots" content="noindex">\n{content}'
+    write(os.path.join('hidden', 'index.html'),
+          page('page-works page-index page-archive page-hidden', f'{SITE["site_name"]} — Hidden', content, depth=1))
+
 # ---------------- Project pages ----------------
+def media_block(p, label=''):
+    """One video slot: facade when a Vimeo id exists, else plain hero image."""
+    slug = p['slug']
+    vid = vimeo_id(p.get('vimeo'))
+    hero = f'assets/thumbs/{slug}-1600.jpg'
+    if not os.path.exists(os.path.join(ROOT, hero)):
+        hero = f'assets/thumbs/{slug}-600.jpg'
+    label_html = f'<div class="video-label">{esc(label)}</div>\n' if label else ''
+    if vid:
+        return (f'{label_html}<div class="video-facade" data-vimeo="{vid}" title="{esc(card_first_line(p))}">'
+                f'<div style="padding:56.25% 0 0 0;position:relative;">'
+                f'<img src="../{hero}" alt="{esc(card_first_line(p))}" loading="eager">'
+                f'<button class="play-btn" aria-label="Play"></button>'
+                f'</div></div>')
+    if os.path.exists(os.path.join(ROOT, hero)):
+        return (f'{label_html}<img class="thumb lazy" src="../assets/thumbs/{slug}-100.jpg" data-src="../{hero}" alt="{esc(card_first_line(p))}">')
+    return label_html
+
 def build_projects():
     vis = sorted(visible_projects(), key=lambda x: x['number'])
-    for i, p in enumerate(vis):
+    hid = hidden_projects()
+    for i, p in enumerate(vis + hid):
+        in_hidden = p.get('group') == 'hidden'
+        ring = hid if in_hidden else vis
+        j = ring.index(p)
         slug = p['slug']
-        prev_p = vis[i-1] if i > 0 else vis[-1]
-        next_p = vis[i+1] if i < len(vis)-1 else vis[0]
+        prev_p = ring[j-1] if j > 0 else ring[-1]
+        next_p = ring[j+1] if j < len(ring)-1 else ring[0]
+        close_href = '../hidden/' if in_hidden else '../'
 
-        # media block: facade (our thumbnail + play button) that swaps to autoplaying Vimeo on click
-        vid = vimeo_id(p.get('vimeo'))
-        if vid:
-            hero = f'assets/thumbs/{slug}-1600.jpg'
-            if not os.path.exists(os.path.join(ROOT, hero)):
-                hero = f'assets/thumbs/{slug}-600.jpg'
-            media = (f'<div class="video-facade" data-vimeo="{vid}" title="{esc(card_first_line(p))}">'
-                     f'<div style="padding:56.25% 0 0 0;position:relative;">'
-                     f'<img src="../{hero}" alt="{esc(card_first_line(p))}" loading="eager">'
-                     f'<button class="play-btn" aria-label="Play"></button>'
-                     f'</div></div>')
+        # media: campaign parents stack every child video; singles get one slot
+        if p.get('children'):
+            kids = [project_by_slug(k) for k in p['children']]
+            media = '\n\t\t\t'.join(media_block(k, label=k.get('title', '')) for k in kids if k)
         else:
-            hero = f'assets/thumbs/{slug}-1600.jpg'
-            if not os.path.exists(os.path.join(ROOT, hero)):
-                hero = f'assets/thumbs/{slug}-600.jpg'
-            media = (f'<img class="thumb lazy" src="../assets/thumbs/{slug}-100.jpg" data-src="../{hero}" alt="{esc(card_first_line(p))}">'
-                     if os.path.exists(os.path.join(ROOT, hero)) else '')
+            media = media_block(p)
 
         # credits (v2 everywhere: hero roles + rest, mobile shows hero only)
         credits_html = credits_v2_html(p) if p.get('credits') else ''
@@ -221,7 +255,7 @@ def build_projects():
         content = f'''<main>
 \t<div id="single-bar">
 \t\t<a id="prev" href="../{prev_p['slug']}/">&lt;</a>
-\t\t<a id="close" href="../">[ CLOSE ]</a>
+\t\t<a id="close" href="{close_href}">[ CLOSE ]</a>
 \t\t<a id="next" href="../{next_p['slug']}/">&gt;</a>
 \t</div>
 \t<div id="project-container">
@@ -268,6 +302,7 @@ def write(rel, content):
 if __name__ == '__main__':
     build_index()
     build_archive()
+    build_hidden()
     build_projects()
     build_contact()
-    print(f'done — {len(visible_projects())} projects')
+    print(f'done — {len(visible_projects())} visible, {len(hidden_projects())} hidden')

@@ -294,7 +294,7 @@ footer > span{
 .dark-mode .white{ background-color: var(--color-text); }
 .dark-mode .black{ background-color: var(--color-bg); }
 @media (max-width: 1024px){
-	#toggle-mode{ display: none; }
+	#toggle-mode{ justify-content: flex-end; }
 }
 
 /* Media
@@ -536,6 +536,17 @@ video.no-autoplay{
 .desktop .video-facade:hover .play-btn{
 	border-left-color: #fff;
 	opacity: 0.85;
+}
+/* Campaign pages: several stacked videos with small labels */
+.video-facade + .video-label,
+.video-facade + .video-facade,
+img.thumb + .video-label{
+	margin-top: var(--gap-cols, 20px);
+}
+.video-label{
+	font-size: var(--font-size, 12px);
+	text-transform: uppercase;
+	margin-bottom: 6px;
 }
 .local_video_wrapper video{
 	width: 100%;
