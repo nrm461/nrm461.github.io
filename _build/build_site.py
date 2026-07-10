@@ -252,6 +252,15 @@ def build_projects():
         # credits (v2 everywhere: hero roles + rest, mobile shows hero only)
         credits_html = credits_v2_html(p) if p.get('credits') else ''
 
+        # optional gallery: carousel stills below the credits
+        if p.get('gallery'):
+            gdir = os.path.join(ROOT, 'assets', 'carousel', slug)
+            gimgs = sorted(f for f in (os.listdir(gdir) if os.path.isdir(gdir) else [])
+                           if f.lower().endswith(('.jpg', '.jpeg', '.png')) and not f.startswith('00'))
+            if gimgs:
+                tiles = '\n'.join(f'<img class="lazy" data-src="../assets/carousel/{slug}/{esc(f)}" alt="">' for f in gimgs)
+                credits_html += f'\n<div class="project-gallery">\n{tiles}\n</div>'
+
         director = p.get('director') or ''
         content = f'''<main>
 \t<div id="single-bar">

@@ -546,6 +546,22 @@ img.thumb + .video-label{
 	text-transform: uppercase;
 	margin-bottom: 6px;
 }
+/* Gallery: carousel stills below the credits on project pages */
+.project-gallery{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--gap-cols, 15px);
+	margin-top: var(--gap-rows, 45px);
+}
+.project-gallery img{
+	width: 100%;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	display: block;
+}
+@media (max-width: 768px){
+	.project-gallery{ grid-template-columns: repeat(2, 1fr); }
+}
 .local_video_wrapper video{
 	width: 100%;
 	display: block;
