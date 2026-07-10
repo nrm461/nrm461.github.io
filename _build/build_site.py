@@ -145,7 +145,7 @@ def card_html(p, rel=''):
     t600 = f'assets/thumbs/{slug}-600.jpg'
     has_thumb = os.path.exists(os.path.join(ROOT, t600))
     car_dir = os.path.join(ROOT, 'assets', 'carousel', slug)
-    car_imgs = sorted(os.listdir(car_dir)) if (p.get('carousel') and os.path.isdir(car_dir)) else []
+    car_imgs = sorted(f for f in os.listdir(car_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))) if (p.get('carousel') and os.path.isdir(car_dir)) else []
     if car_imgs:
         slides = ''.join(f'<img src="{rel}assets/carousel/{slug}/{esc(f)}" alt="" loading="lazy">' for f in car_imgs)
         img = f'<div class="thumb-carousel">{slides}</div>'
