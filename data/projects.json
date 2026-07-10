@@ -5218,7 +5218,7 @@
   "category": "Commercial",
   "vimeo": "",
   "credits": "",
-  "group": "posted",
+  "group": "hidden",
   "folder": "CAMPAIGN",
   "number": "W221",
   "children": [
@@ -5228,7 +5228,9 @@
    "homesense-too-bright",
    "homesense-spinning-pillows"
   ],
-  "arch_order": 34
+  "arch_order": 34,
+  "selected": false,
+  "carousel": false
  },
  {
   "slug": "rivian",
