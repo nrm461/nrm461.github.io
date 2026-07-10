@@ -1236,7 +1236,8 @@
   "number": "W045",
   "selected": true,
   "carousel": true,
-  "sel_order": 0
+  "sel_order": 0,
+  "credits_v2": true
  },
  {
   "slug": "vogue-hunter-season",

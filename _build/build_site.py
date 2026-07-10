@@ -90,6 +90,51 @@ def visible_projects():
         p['number'] = f'W{i:03d}'
     return vis
 
+HERO_ROLES = [
+    ('Director',   re.compile(r'^\s*(writer\s*\+\s*)?(director|directed by|dir)\b(?!.*(photography|assist))', re.I)),
+    ('DP',         re.compile(r'^\s*(dp|dop|director of photography|cinematograph)', re.I)),
+    ('Edit',       re.compile(r'^\s*(edit|editor)\b(?!.*house)', re.I)),
+    ('Color',      re.compile(r'^\s*(colou?r|colorist|colourist)\b(?!\s*(producer|assist))', re.I)),
+    ('Production', re.compile(r'^\s*(production|prod)\s*(company|co)?\s*[:\-]', re.I)),
+]
+
+def credits_v2_html(p):
+    """Hero credits (Dir/DP/Edit/Color/ProdCo) + gap + the rest. Mobile shows hero only."""
+    lines = [l for l in (p.get('credits') or '').split('\n')]
+    hero = {}
+    rest, seen_role = [], False
+    for l in lines:
+        s = l.strip()
+        if not s:
+            rest.append('')
+            continue
+        matched = False
+        for key, pat in HERO_ROLES:
+            if key not in hero and pat.search(s) and ('producer' not in s.lower() or key == 'Production'):
+                # normalize the label, keep the value
+                val = re.sub(r'^[^:\-]*[:\-]\s*', '', s) if (':' in s or ' - ' in s) else re.sub(pat, '', s).strip()
+                hero[key] = val or s
+                matched = True
+                seen_role = True
+                break
+        if not matched:
+            if not seen_role:
+                continue  # drop client/title/featuring header lines
+            rest.append(l)
+    # trim leading/duplicate blanks in rest
+    out_rest = []
+    for l in rest:
+        if l == '' and (not out_rest or out_rest[-1] == ''):
+            continue
+        out_rest.append(l)
+    while out_rest and out_rest[-1] == '': out_rest.pop()
+    labels = {'Director':'Director','DP':'DP','Edit':'Edit','Color':'Color','Production':'Production'}
+    hero_html = '\n'.join(f'<p>{labels[k]}: {linkify(v)}</p>' for k, v in ((k, hero[k]) for k, _ in HERO_ROLES if k in hero))
+    rest_html = '\n'.join('<p class="spacer">&nbsp;</p>' if not l.strip() else f'<p>{linkify(l)}</p>' for l in out_rest)
+    return (f'<div class="project-credits credits-v2">\n<div class="credits-hero">\n{hero_html}\n</div>\n'
+            + (f'<div class="credits-rest">\n<p class="spacer">&nbsp;</p>\n{rest_html}\n</div>\n' if rest_html else '')
+            + '</div>')
+
 # ---------------- Works / Archive grids ----------------
 def card_html(p, rel=''):
     slug = p['slug']
@@ -165,13 +210,16 @@ def build_projects():
                      if os.path.exists(os.path.join(ROOT, hero)) else '')
 
         # credits
-        creds = []
-        for line in (p.get('credits') or '').split('\n'):
-            if not line.strip():
-                creds.append('<p class="spacer">&nbsp;</p>')
-            else:
-                creds.append(f'<p>{linkify(line)}</p>')
-        credits_html = f'<div class="project-credits">\n{chr(10).join(creds)}\n</div>' if p.get('credits') else ''
+        if p.get('credits_v2'):
+            credits_html = credits_v2_html(p)
+        else:
+            creds = []
+            for line in (p.get('credits') or '').split('\n'):
+                if not line.strip():
+                    creds.append('<p class="spacer">&nbsp;</p>')
+                else:
+                    creds.append(f'<p>{linkify(line)}</p>')
+            credits_html = f'<div class="project-credits">\n{chr(10).join(creds)}\n</div>' if p.get('credits') else ''
 
         director = p.get('director') or ''
         content = f'''<main>

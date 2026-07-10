@@ -522,6 +522,14 @@ video.no-autoplay{
 .project-credits p.spacer{
 	height: var(--height-text);
 }
+.credits-v2 .credits-hero{
+	break-inside: avoid;
+}
+@media (max-width: 500px){
+	.credits-v2 .credits-rest{
+		display: none;
+	}
+}
 
 /* Archive filters
 ==================================== */
