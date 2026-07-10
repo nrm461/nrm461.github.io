@@ -241,14 +241,13 @@ footer > span{
 	}
 }
 
-/*Pos*/
-.first{ grid-column: 4 / 8; }
-.middle{ grid-column: 8 / 12; }
-.last{ grid-column: 12 / -1; }
-@media (max-width: 1920px){
-	.first{ grid-column: 3 / 6; }
-	.middle{ grid-column: 6 / 9; }
-	.last{ grid-column: 9 / -1; }
+/*Pos — header/footer always use the same 8-col geometry so links stay put on wide screens*/
+.first{ grid-column: 3 / 6; }
+.middle{ grid-column: 6 / 9; }
+.last{ grid-column: 9 / -1; }
+@media (min-width: 1025px){
+	header,
+	footer{ grid-template-columns: repeat(8, 1fr); }
 }
 @media (min-width: 1025px){
 	.middle{ left: calc(var(--gap-cols)/2*-1); }
