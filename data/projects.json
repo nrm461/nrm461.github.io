@@ -1657,9 +1657,9 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Beautiful magnolia.PNG",
   "video_src": "",
   "number": "W062",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
-  "sel_order": 21
+  "carousel": false
  },
  {
   "slug": "crypto-com-fortune-favors-the-brave",
