@@ -2825,7 +2825,7 @@
   "third_line": "Commercial",
   "vimeo": "",
   "credits": "",
-  "group": "posted",
+  "group": "hidden",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/925",
@@ -2834,7 +2834,8 @@
   "number": "W117",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 1
+  "arch_order": 1,
+  "carousel": false
  },
  {
   "slug": "bandit-summer-2026",
