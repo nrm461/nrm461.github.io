@@ -32,7 +32,7 @@
   "production": "@aguitainc",
   "category": "Music Video",
   "third_line": "Music Video",
-  "vimeo": "",
+  "vimeo": "https://vimeo.com/1208687437",
   "credits": "@lalalalisa_m ft @tyla\nWhen I\u2019m With You\n\nDirector: @oliviadecamps\nDP: @oli_millar\nEdit: @hrishibardhan\nColor: @Nick__metcalf @raremedium.tv\nProduction: @aguitainc\n\nCreative Director: @emjanggg\nExecutive Producer: @yamelthompson @v_rawrr\nHead of Production: @ellen.romero\nProducer: @jamiarceoo\nExecutive Coordinator: @jessicavolpato\n2nd Unit DP: @gabrielconnelly\nEmber DP: @zezzeldine\nProduction Designer: @terr_watson3\n\nLabel: @wearelloud @rcarecords\nVideo Commissioner & Label Producer: @ellymack\nLabel Producer: @karinajlopezz\nProduction Manager: @brohemiaraspberry\nProduction Coordinator: @evanicolesim\nOn-Set Production Coordinator: @noahdonnelly_\nEM: @i_am_kathy_i\n\nSound Studio: @concret.form\nSound Design & Mix: @@whykaisofly\nBeauty: @whiterhinovfx, @daniel.saldivar_\nVFX: @hush_vfx",
   "group": "posted",
   "needs_review": false,
@@ -52,7 +52,7 @@
   ],
   "number": "W002",
   "selected": true,
-  "sel_order": 12,
+  "sel_order": 13,
   "carousel": true
  },
  {
@@ -163,7 +163,7 @@
   "third_line": "AFTRHRS",
   "vimeo": "https://vimeo.com/1208682992",
   "credits": "@converse @dorachan_official\nDoraemon Chuck 70 collection\n\nDirector: @kings0l0m0n\nDP: @dougdurant\nEdit: @joshwehle\nColor: @nick__metcalf @raremedium.tv\nProduction: @aftrhrs.tv",
-  "group": "posted",
+  "group": "hidden",
   "needs_review": false,
   "mtime": 1751922594.0,
   "folder": "Converse_Doraemon",
@@ -192,7 +192,7 @@
   "third_line": "Broadway 2000",
   "vimeo": "",
   "credits": "@tomsachs @nikecraft @nike\nA BRIEF HISTORY OF THE MARS YARD\n\nDirector: @Kings0l0m0n\nDP: @dougdurant\nEdit: @giovannipautran @goodlooknyc\nColor: @nick__metcalf @raremedium.tv\nProduction: @Broadwaytwothousand @aftrhrs.tv\n\nFull film on youtube.com/NIKE\n\nLine Producer @reamseyeview\nProducer @sofijamz\n\n2nd Unit DP/B Cam Operator @jrclanet\n1st AC @ginnyhub\n1st AC @sather_kyle\n2nd AC  @_eileeny_\n2nd AC @arbestie\n\nGaffer @ArielNehorayoff\nBBE @dmgettens\nKey Grip @dkapovv\nBBG @tsurtle\n\nSound @1tonycharles_\n\nDIT @ftbrehm Special Operations Studio\n\nAssistant Editor @sarahnphoenix\nOriginal score @woodhall\nSound design @public_sound\nVFX @danny_m_garcia_ @cognitiveconcepts\nPost producer Michael \u201cFlex\u201d Flexner\n\nPA Tiger Cortes\nPA Jason Amendolara\nPA Lemoye Otis\nPA Vash Parra\nPA Chloe Stewart\n\nFor Tom Sachs\u2019 Studio\n\nWriter/Producer @howiekahn\nDesign Director @fililati\nProject Lead @mcsmith15\n\nSet:\n@______dtb______\n@sun__quest\n@buzz_works\n@barn_red_barn\n@stephen____lau\n\nFor NIKE\n\nLeo Sandino Taylor Global VP\n@groteskito Sr Global Creative Director\n@Benoich Global Marketing Director\n@gozimonu Global marketing manager\n@gelatinous__Cube Copy Writer\n\nThank you Mark Parker + NASA\n\nExecutive Producers @kings0l0m0n @biggieschmaltz",
-  "group": "posted",
+  "group": "hidden",
   "needs_review": false,
   "mtime": 1752078894.0,
   "folder": "Nike_My3_0_Tom_Sachs",
@@ -435,7 +435,7 @@
   ],
   "number": "W014",
   "selected": true,
-  "sel_order": 3,
+  "sel_order": 4,
   "arch_order": 19,
   "carousel": true
  },
@@ -533,7 +533,7 @@
   ],
   "number": "W017",
   "selected": true,
-  "sel_order": 2,
+  "sel_order": 3,
   "arch_order": 11,
   "carousel": true
  },
@@ -599,7 +599,7 @@
   ],
   "number": "W019",
   "selected": true,
-  "sel_order": 15,
+  "sel_order": 16,
   "arch_order": 5,
   "carousel": true
  },
@@ -1133,7 +1133,7 @@
   ],
   "number": "W040",
   "selected": true,
-  "sel_order": 4,
+  "sel_order": 5,
   "carousel": true
  },
  {
@@ -1202,7 +1202,7 @@
   "production": "@apstudioinc",
   "category": "Commercial",
   "third_line": "AP Studio",
-  "vimeo": "",
+  "vimeo": "https://vimeo.com/1208691053",
   "credits": "@nike @skims\nNikeSKIMS Spring 26\u2019\nfeaturing @lalalalisa_m\n\nDirector: @sergiovsreis\nDP: @jakescottdp\nEdit: @markvrhs @sergiovsreis\nColor: @Nick__metcalf @raremedium.tv\nProduction: @apstudioinc",
   "group": "posted",
   "needs_review": false,
@@ -1215,7 +1215,7 @@
   ],
   "number": "W043",
   "selected": true,
-  "sel_order": 5
+  "sel_order": 6
  },
  {
   "slug": "okara-the-auction",
@@ -1237,7 +1237,8 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Okara/OKARA_THEAUCTION422.mov",
   "stills": [],
   "number": "W044",
-  "selected": false
+  "selected": true,
+  "sel_order": 1
  },
  {
   "slug": "benson-boone-the-time-of-my-life",
@@ -1359,9 +1360,8 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Color up close.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Color up close - sephora.mp4",
   "number": "W049",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
-  "sel_order": 24,
   "arch_order": 146
  },
  {
@@ -1383,9 +1383,8 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/The witch.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/The Witch - Skittles.mov",
   "number": "W050",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/",
-  "sel_order": 25,
   "arch_order": 143
  },
  {
@@ -1521,7 +1520,7 @@
   "number": "W056",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
-  "sel_order": 19,
+  "sel_order": 20,
   "arch_order": 141
  },
  {
@@ -1589,7 +1588,7 @@
   "number": "W059",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
-  "sel_order": 16,
+  "sel_order": 17,
   "arch_order": 133
  },
  {
@@ -1613,7 +1612,7 @@
   "number": "W060",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "sel_order": 17
+  "sel_order": 18
  },
  {
   "slug": "chevrolet-walter-in-the-winter",
@@ -1658,7 +1657,7 @@
   "number": "W062",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
-  "sel_order": 10
+  "sel_order": 11
  },
  {
   "slug": "crypto-com-fortune-favors-the-brave",
@@ -1681,7 +1680,7 @@
   "number": "W063",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
-  "sel_order": 14,
+  "sel_order": 15,
   "arch_order": 137
  },
  {
@@ -1931,7 +1930,7 @@
   "number": "W074",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
-  "sel_order": 6,
+  "sel_order": 7,
   "arch_order": 157
  },
  {
@@ -2001,7 +2000,7 @@
   "number": "W077",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
-  "sel_order": 13
+  "sel_order": 14
  },
  {
   "slug": "montell-fish-who-did-you-touch",
@@ -2068,7 +2067,7 @@
   "number": "W080",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
-  "sel_order": 18,
+  "sel_order": 19,
   "arch_order": 156
  },
  {
@@ -2114,7 +2113,7 @@
   "number": "W082",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
-  "sel_order": 1,
+  "sel_order": 2,
   "arch_order": 124
  },
  {
@@ -2138,7 +2137,7 @@
   "number": "W083",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "sel_order": 20,
+  "sel_order": 21,
   "arch_order": 135
  },
  {
@@ -2226,8 +2225,7 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Denim.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/denim - polo.mp4",
   "number": "W087",
-  "selected": true,
-  "sel_order": 26
+  "selected": false
  },
  {
   "slug": "versace-faces-of-versace",
@@ -2500,8 +2498,7 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Race of the gentleman .PNG",
   "video_src": "",
   "number": "W103",
-  "selected": true,
-  "sel_order": 23
+  "selected": false
  },
  {
   "slug": "pnc-summer",
@@ -2691,7 +2688,7 @@
   "video_src": "",
   "number": "W112",
   "selected": true,
-  "sel_order": 8,
+  "sel_order": 9,
   "arch_order": 21
  },
  {
@@ -2704,7 +2701,7 @@
   "production": "",
   "category": "Commercial",
   "third_line": "Commercial",
-  "vimeo": "",
+  "vimeo": "https://vimeo.com/1208685038",
   "credits": "",
   "group": "posted",
   "needs_review": true,
@@ -2714,7 +2711,7 @@
   "video_src": "",
   "number": "W113",
   "selected": true,
-  "sel_order": 9,
+  "sel_order": 10,
   "arch_order": 68
  },
  {
@@ -2737,7 +2734,7 @@
   "video_src": "",
   "number": "W114",
   "selected": true,
-  "sel_order": 11,
+  "sel_order": 12,
   "arch_order": 155
  },
  {
@@ -2759,8 +2756,7 @@
   "thumb_src": "",
   "video_src": "",
   "number": "W115",
-  "selected": true,
-  "sel_order": 21,
+  "selected": false,
   "arch_order": 128
  },
  {
@@ -3120,7 +3116,7 @@
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208691053",
   "credits": "",
-  "group": "posted",
+  "group": "pass",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/823",
@@ -3994,7 +3990,7 @@
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208686253",
   "credits": "",
-  "group": "posted",
+  "group": "hidden",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/519",
@@ -4454,7 +4450,7 @@
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208682999",
   "credits": "",
-  "group": "posted",
+  "group": "hidden",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/395",
@@ -5006,7 +5002,7 @@
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208689185",
   "credits": "",
-  "group": "posted",
+  "group": "hidden",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/258",
@@ -5222,7 +5218,7 @@
   ],
   "arch_order": 48,
   "selected": true,
-  "sel_order": 7
+  "sel_order": 8
  },
  {
   "slug": "oscar-mayer",

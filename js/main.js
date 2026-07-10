@@ -65,6 +65,23 @@
 	});
 })();
 
+/* Remember grid scroll position: restore when returning via [CLOSE] / back */
+(function(){
+	if(!document.body.classList.contains('page-index') && !document.body.classList.contains('page-works')) return;
+	var key = 'scroll:' + location.pathname;
+	try{
+		var saved = sessionStorage.getItem(key);
+		if(saved !== null){
+			var y = parseInt(saved, 10);
+			window.scrollTo(0, y);
+			window.addEventListener('load', function(){ window.scrollTo(0, y); });
+		}
+	}catch(e){}
+	window.addEventListener('pagehide', function(){
+		try{ sessionStorage.setItem(key, String(window.scrollY || window.pageYOffset || 0)); }catch(e){}
+	});
+})();
+
 /* Video facades: click swaps thumbnail for autoplaying Vimeo player (supports multiple per page) */
 (function(){
 	var facades = document.querySelectorAll('.video-facade');
