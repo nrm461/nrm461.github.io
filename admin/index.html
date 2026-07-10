@@ -229,6 +229,9 @@ async function replaceThumb(el,file){
     await ghPutBlob(`assets/thumbs/${slug}-1600.jpg`,await fit(img,1600,900,false),'admin: thumb '+slug);
     await ghPutBlob(`assets/thumbs/${slug}-600.jpg`, await fit(img,600,338,true),'admin: thumb '+slug);
     await ghPutBlob(`assets/thumbs/${slug}-100.jpg`, await fit(img,100,56,true),'admin: thumb '+slug);
+    // carousel projects show 00.jpg as the card hero — keep it in sync
+    const c=await fetch(`${RAW}assets/carousel/${slug}/00.jpg?t=${Date.now()}`,{method:'HEAD'});
+    if(c.ok) await ghPutBlob(`assets/carousel/${slug}/00.jpg`,await fit(img,900,506,false),'admin: carousel hero '+slug);
     el.querySelector('img').src=URL.createObjectURL(await fit(img,600,338,true));
     el.classList.remove('busy'); el.classList.add('done'); say(slug+' thumb updated — live in ~2 min');
   }catch(err){ el.classList.remove('busy'); el.classList.add('fail'); say('failed: '+err.message); }

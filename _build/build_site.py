@@ -151,16 +151,25 @@ def credits_v2_html(p):
             + (f'<div class="credits-rest">\n<p class="spacer">&nbsp;</p>\n{rest_html}\n</div>\n' if rest_html else '')
             + '</div>')
 
+def img_bust(rel_path):
+    """cache-buster tied to image content so replaced thumbs show up right after a rebuild"""
+    import hashlib
+    fp = os.path.join(ROOT, rel_path)
+    if not os.path.exists(fp):
+        return rel_path
+    h = hashlib.md5(open(fp, 'rb').read()).hexdigest()[:8]
+    return f'{rel_path}?v={h}'
+
 # ---------------- Works / Archive grids ----------------
 def card_html(p, rel=''):
     slug = p['slug']
-    t100 = f'assets/thumbs/{slug}-100.jpg'
-    t600 = f'assets/thumbs/{slug}-600.jpg'
-    has_thumb = os.path.exists(os.path.join(ROOT, t600))
+    t100 = img_bust(f'assets/thumbs/{slug}-100.jpg')
+    t600 = img_bust(f'assets/thumbs/{slug}-600.jpg')
+    has_thumb = os.path.exists(os.path.join(ROOT, f'assets/thumbs/{slug}-600.jpg'))
     car_dir = os.path.join(ROOT, 'assets', 'carousel', slug)
     car_imgs = sorted(f for f in os.listdir(car_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))) if (p.get('carousel') and os.path.isdir(car_dir)) else []
     if car_imgs:
-        slides = ''.join(f'<img src="{rel}assets/carousel/{slug}/{esc(f)}" alt="" loading="lazy">' for f in car_imgs)
+        slides = ''.join(f'<img src="{rel}{img_bust(f"assets/carousel/{slug}/{f}")}" alt="" loading="lazy">' for f in car_imgs)
         img = f'<div class="thumb-carousel">{slides}</div>'
     elif has_thumb:
         img = f'<img class="thumb lazy" src="{rel}{t100}" data-src="{rel}{t600}" alt="{esc(SITE["site_name"])}: {esc(p.get("director") or card_first_line(p))} (Thumbnail)">'
@@ -223,11 +232,11 @@ def media_block(p, label=''):
     if vid:
         return (f'{label_html}<div class="video-facade" data-vimeo="{vid}" title="{esc(card_first_line(p))}">'
                 f'<div style="padding:56.25% 0 0 0;position:relative;">'
-                f'<img src="../{hero}" alt="{esc(card_first_line(p))}" loading="eager">'
+                f'<img src="../{img_bust(hero)}" alt="{esc(card_first_line(p))}" loading="eager">'
                 f'<button class="play-btn" aria-label="Play"></button>'
                 f'</div></div>')
     if os.path.exists(os.path.join(ROOT, hero)):
-        return (f'{label_html}<img class="thumb lazy" src="../assets/thumbs/{slug}-100.jpg" data-src="../{hero}" alt="{esc(card_first_line(p))}">')
+        return (f'{label_html}<img class="thumb lazy" src="../{img_bust(f"assets/thumbs/{slug}-100.jpg")}" data-src="../{img_bust(hero)}" alt="{esc(card_first_line(p))}">')
     return label_html
 
 def build_projects():
