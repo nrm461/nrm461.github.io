@@ -173,7 +173,10 @@ def build_index():
     write('index.html', page('page-works page-index', f'{SITE["site_name"]} — Work', content))
 
 def build_archive():
-    vis = sorted(visible_projects(), key=lambda x: x['number'], reverse=True)
+    # chronological, newest first: Slate library rank when known,
+    # unranked items interleave after ranked ones by number (newest of the rest first)
+    vis = sorted(visible_projects(),
+                 key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
     cards = [card_html(p, rel='../') for p in vis]
     cats = SITE.get('categories', [])
     filters = ['\t\t<span class="archive-filter trigger active" data-filter="all">[ ALL ]</span>']
