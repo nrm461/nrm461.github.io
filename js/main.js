@@ -65,6 +65,28 @@
 	});
 })();
 
+/* Navigation context: arrows on project pages follow the grid you came from */
+(function(){
+	var b = document.body.classList;
+	try{
+		if(b.contains('page-hidden')) sessionStorage.setItem('navctx', 'hidden');
+		else if(b.contains('page-archive')) sessionStorage.setItem('navctx', 'archive');
+		else if(b.contains('page-index')) sessionStorage.setItem('navctx', 'landing');
+	}catch(e){}
+	if(!b.contains('page-project') || !window.NAV_LISTS) return;
+	var ctx = 'archive';
+	try{ ctx = sessionStorage.getItem('navctx') || 'archive'; }catch(e){}
+	var slug = location.pathname.replace(/\/+$/, '').split('/').pop();
+	var list = window.NAV_LISTS[ctx] || [];
+	if(list.indexOf(slug) === -1){ ctx = 'archive'; list = window.NAV_LISTS.archive || []; }
+	var i = list.indexOf(slug);
+	if(i === -1) return;
+	var prev = document.getElementById('prev'), next = document.getElementById('next'), close = document.getElementById('close');
+	if(prev) prev.href = '../' + list[(i - 1 + list.length) % list.length] + '/';
+	if(next) next.href = '../' + list[(i + 1) % list.length] + '/';
+	if(close) close.href = ctx === 'archive' ? '../archive/' : (ctx === 'hidden' ? '../hidden/' : '../');
+})();
+
 /* Remember grid scroll position: restore when returning via [CLOSE] / back */
 (function(){
 	if(!document.body.classList.contains('page-index') && !document.body.classList.contains('page-works')) return;

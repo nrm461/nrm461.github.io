@@ -54,6 +54,7 @@ def page(body_class, title, content, inline_vars='', depth=0):
 {inline_vars}</head>
 <body class="{body_class}">
 {content}
+<script src="{rel}js/nav-data.js?v={VER}"></script>
 <script src="{rel}js/main.js?v={VER}"></script>
 </body>
 </html>
@@ -299,10 +300,22 @@ def write(rel, content):
     open(path, 'w', encoding='utf-8').write(content)
     print('wrote', rel)
 
+def build_navdata():
+    """Ordered slug lists so project-page arrows can follow the grid the visitor came from."""
+    vis = visible_projects()
+    landing = [p['slug'] for p in sorted([p for p in vis if p.get('selected')],
+               key=lambda x: (x.get('sel_order', 9999), -int(x['number'][1:])))]
+    archive = [p['slug'] for p in sorted(vis,
+               key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))]
+    hidden = [p['slug'] for p in hidden_projects()]
+    data = json.dumps({'landing': landing, 'archive': archive, 'hidden': hidden})
+    write(os.path.join('js', 'nav-data.js'), 'window.NAV_LISTS=' + data + ';\n')
+
 if __name__ == '__main__':
     build_index()
     build_archive()
     build_hidden()
     build_projects()
     build_contact()
+    build_navdata()
     print(f'done — {len(visible_projects())} visible, {len(hidden_projects())} hidden')
