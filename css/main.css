@@ -519,18 +519,19 @@ video.no-autoplay{
 }
 .video-facade .play-btn{
 	position: absolute;
-	left: var(--margin-sides);
-	bottom: var(--margin-sides);
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 	width: 0;
 	height: 0;
 	padding: 0;
 	background: none;
 	border: none;
-	border-top: 11px solid transparent;
-	border-bottom: 11px solid transparent;
-	border-left: 18px solid #fff;
+	border-top: 14px solid transparent;
+	border-bottom: 14px solid transparent;
+	border-left: 23px solid #fff;
 	cursor: pointer;
-	filter: drop-shadow(0 0 6px rgba(0,0,0,0.35));
+	filter: drop-shadow(0 0 8px rgba(0,0,0,0.4));
 }
 .desktop .video-facade:hover .play-btn{
 	border-left-color: #fff;
