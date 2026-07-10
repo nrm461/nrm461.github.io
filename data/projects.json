@@ -480,9 +480,10 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Music_Video_Maria_Isabel_Suiza_J3424/stills/María Isabel - Suiza (Official Video) - G010005727081U 3x2.mov_1.78.1.jpg"
   ],
   "number": "W015",
-  "selected": false,
+  "selected": true,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "sel_order": 999
  },
  {
   "slug": "070-shake-if-youre-free",
