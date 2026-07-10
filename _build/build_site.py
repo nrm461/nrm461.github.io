@@ -224,7 +224,6 @@ def build_projects():
 \t<div id="project-container">
 \t\t<div class="module-project_info">
 \t\t\t<div>{esc(card_first_line(p))}</div>
-\t\t\t<div class="module-project_info-title">{esc(director)}</div>
 \t\t</div>
 \t\t<div id="project-videos">
 \t\t\t{media}
