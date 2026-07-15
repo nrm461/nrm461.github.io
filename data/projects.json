@@ -2602,31 +2602,6 @@
   ]
  },
  {
-  "slug": "race-of-the-gentleman",
-  "client": "Harley-Davidson",
-  "title": "Race of the Gentlemen",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:race of the gentleman",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Race of the gentleman .PNG",
-  "video_src": "",
-  "number": "W103",
-  "selected": false,
-  "arch_order": 118,
-  "categories": [
-   "Commercial"
-  ]
- },
- {
   "slug": "pnc-summer",
   "client": "PNC",
   "title": "Summer",
