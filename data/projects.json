@@ -2420,31 +2420,6 @@
   ]
  },
  {
-  "slug": "versace-faces-of-versace",
-  "client": "Versace",
-  "title": "Faces of Versace",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "https://vimeo.com/1208618070",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:faces of versace",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Faces of versace.PNG",
-  "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Faces of Versace - versace.mp4",
-  "number": "W088",
-  "selected": false,
-  "arch_order": 96,
-  "categories": [
-   "Commercial"
-  ]
- },
- {
   "slug": "beats-above-the-noise",
   "client": "Beats",
   "title": "Above The Noise",
