@@ -1143,7 +1143,8 @@
   "delivered": "2026-02-13",
   "arch_order": 9,
   "sel_order": 7,
-  "carousel": true
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "vanity-fair-x-lululemon-24-hours-to-the-fullest",
@@ -1285,7 +1286,8 @@
   "selected": true,
   "sel_order": 5,
   "carousel": true,
-  "arch_order": 6
+  "arch_order": 6,
+  "gallery": true
  },
  {
   "slug": "okara-the-auction",
