@@ -1681,7 +1681,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
   "sel_order": 19,
   "arch_order": 88,
-  "carousel": false
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "hennessy-more-is-made-by-the-many",
