@@ -1200,7 +1200,8 @@
   "sel_order": 4,
   "carousel": true,
   "delivered": "2026-05-06",
-  "arch_order": 3
+  "arch_order": 3,
+  "gallery": true
  },
  {
   "slug": "garmin-ironman-dc",
@@ -2232,7 +2233,8 @@
   "sel_order": 15,
   "arch_order": 35,
   "delivered": "2024-09-30",
-  "carousel": true
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "070-shake-winter-baby",
@@ -2866,7 +2868,8 @@
   "sel_order": 11,
   "arch_order": 24,
   "delivered": "2025-04-22",
-  "carousel": true
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "terminal-27-vermeil-hues",
@@ -5462,7 +5465,8 @@
   "selected": true,
   "sel_order": 10,
   "delivered": "2025-05-01",
-  "carousel": true
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "oscar-mayer",
