@@ -3146,7 +3146,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Car",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208613984",
   "credits": "",
@@ -3161,9 +3161,9 @@
   "delivered": "2026-07-08",
   "arch_order": 52,
   "categories": [
-   "Commercial",
    "Car"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "monse-yoonmi",
