@@ -2721,9 +2721,9 @@
   "delivered": "2025-08-06",
   "arch_order": 64,
   "categories": [
-   "Commercial",
-   "Fashion"
-  ]
+   "Commercial"
+  ],
+  "carousel": false
  },
  {
   "slug": "estee-lauder-double-wear",
