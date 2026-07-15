@@ -101,7 +101,8 @@
   "gallery": true,
   "delivered": "2025-04-03",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -211,7 +212,8 @@
   "gallery": true,
   "delivered": "2025-04-25",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -246,7 +248,8 @@
   "selected": false,
   "delivered": "2025-05-29",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -400,7 +403,8 @@
   "arch_order": 10,
   "sel_order": 12,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -477,7 +481,8 @@
   "gallery": true,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -1324,7 +1329,8 @@
   "arch_order": 3,
   "gallery": true,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1420,7 +1426,8 @@
   "arch_order": 6,
   "gallery": true,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1517,7 +1524,8 @@
   "delivered": "2024-09-30",
   "arch_order": 73,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1544,7 +1552,8 @@
   "delivered": "2024-09-30",
   "arch_order": 69,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -1674,7 +1683,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FnUDKLV-s/",
   "arch_order": 136,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1726,7 +1736,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2Gc6uALZHW/",
   "arch_order": 99,
   "categories": [
-   "Beauty"
+   "Beauty",
+   "Fashion"
   ]
  },
  {
@@ -1752,7 +1763,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2GdLffLvHe/",
   "arch_order": 77,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1806,7 +1818,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MMh_qsk6w/",
   "arch_order": 134,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1833,7 +1846,8 @@
   "delivered": "2024-09-30",
   "arch_order": 70,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -1862,7 +1876,8 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Beauty"
+   "Beauty",
+   "Fashion"
   ]
  },
  {
@@ -1915,7 +1930,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOri5sRaF/",
   "arch_order": 59,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2049,7 +2065,8 @@
   "delivered": "2024-09-30",
   "arch_order": 76,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2075,7 +2092,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O7vSkO3F7/",
   "arch_order": 130,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2101,7 +2119,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O8DZ2OYXZ/",
   "arch_order": 129,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2129,7 +2148,8 @@
   "delivered": "2025-01-15",
   "carousel": false,
   "categories": [
-   "Beauty"
+   "Beauty",
+   "Fashion"
   ]
  },
  {
@@ -2210,7 +2230,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O_PNTug3t/",
   "arch_order": 128,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2237,7 +2258,8 @@
   "arch_order": 45,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2321,7 +2343,8 @@
   "arch_order": 37,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2350,7 +2373,8 @@
   "arch_order": 30,
   "gallery": true,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2403,7 +2427,8 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8hpZ9XMRd3/",
   "arch_order": 126,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2619,7 +2644,8 @@
   "selected": false,
   "arch_order": 98,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2644,7 +2670,8 @@
   "selected": false,
   "arch_order": 96,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2695,7 +2722,8 @@
   "delivered": "2025-08-06",
   "arch_order": 64,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -2747,7 +2775,8 @@
   "delivered": "2026-04-10",
   "arch_order": 15,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2823,7 +2852,8 @@
   "delivered": "2026-04-10",
   "arch_order": 16,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2849,7 +2879,8 @@
   "delivered": "2024-09-30",
   "arch_order": 71,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2875,7 +2906,8 @@
   "delivered": "2024-09-30",
   "arch_order": 80,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -2901,7 +2933,8 @@
   "delivered": "2024-09-30",
   "arch_order": 97,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3051,7 +3084,8 @@
   "selected": false,
   "arch_order": 91,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3076,7 +3110,8 @@
   "selected": false,
   "arch_order": 90,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3127,7 +3162,8 @@
   "delivered": "2026-07-08",
   "arch_order": 52,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -3178,7 +3214,8 @@
   "arch_order": 28,
   "delivered": "2025-10-28",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3372,7 +3409,8 @@
   "arch_order": 11,
   "delivered": "2026-05-06",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -3454,7 +3492,8 @@
   "carousel": false,
   "delivered": "2026-04-14",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3482,7 +3521,8 @@
   "carousel": false,
   "delivered": "2026-02-04",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -3725,7 +3765,8 @@
   "carousel": false,
   "delivered": "2026-01-10",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3863,7 +3904,8 @@
   "arch_order": 17,
   "delivered": "2025-10-15",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3884,7 +3926,8 @@
   "credits": "",
   "carousel": false,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -3911,7 +3954,8 @@
   "arch_order": 18,
   "delivered": "2025-10-15",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -4073,7 +4117,8 @@
   "arch_order": 21,
   "delivered": "2025-10-13",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4100,7 +4145,8 @@
   "arch_order": 33,
   "delivered": "2025-09-17",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4127,7 +4173,8 @@
   "arch_order": 53,
   "delivered": "2025-06-23",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4182,7 +4229,8 @@
   "carousel": false,
   "delivered": "2025-08-11",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -4209,7 +4257,8 @@
   "arch_order": 49,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4236,7 +4285,8 @@
   "arch_order": 51,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4263,7 +4313,8 @@
   "arch_order": 52,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4290,7 +4341,8 @@
   "arch_order": 54,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4318,7 +4370,8 @@
   "carousel": false,
   "delivered": "2025-08-04",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4345,7 +4398,8 @@
   "arch_order": 58,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4372,7 +4426,8 @@
   "arch_order": 62,
   "delivered": "2025-05-01",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4881,7 +4936,8 @@
   "arch_order": 82,
   "delivered": "2026-04-10",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -4988,7 +5044,8 @@
   "arch_order": 87,
   "delivered": "2025-01-15",
   "categories": [
-   "Beauty"
+   "Beauty",
+   "Fashion"
   ]
  },
  {
@@ -5306,7 +5363,8 @@
   "arch_order": 60,
   "delivered": "2026-04-10",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -5334,7 +5392,8 @@
   "delivered": "2026-07-08",
   "carousel": false,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -5439,7 +5498,8 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 56,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -5466,7 +5526,8 @@
   "arch_order": 48,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -5522,7 +5583,8 @@
   "arch_order": 61,
   "delivered": "2026-04-10",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -5548,7 +5610,8 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 65,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ],
   "carousel": false
  },
@@ -5708,7 +5771,8 @@
   "arch_order": 67,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
@@ -5734,7 +5798,8 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 57,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -5818,7 +5883,8 @@
   "delivered": "2024-09-30",
   "carousel": false,
   "categories": [
-   "Beauty"
+   "Beauty",
+   "Fashion"
   ]
  },
  {
@@ -5898,7 +5964,8 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 81,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -6030,7 +6097,8 @@
   "arch_order": 68,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -6056,7 +6124,8 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 86,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Fashion"
   ]
  },
  {
@@ -6163,7 +6232,8 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ]
  },
  {
