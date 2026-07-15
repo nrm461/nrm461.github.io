@@ -53,7 +53,7 @@
   ],
   "number": "W002",
   "selected": true,
-  "sel_order": 11,
+  "sel_order": 12,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
@@ -502,7 +502,7 @@
   "selected": true,
   "carousel": true,
   "gallery": true,
-  "sel_order": 999,
+  "sel_order": 9,
   "delivered": "2026-02-09",
   "arch_order": 22
  },
@@ -1672,7 +1672,7 @@
   "number": "W059",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
-  "sel_order": 16,
+  "sel_order": 17,
   "arch_order": 102,
   "carousel": false
  },
@@ -1697,7 +1697,7 @@
   "number": "W060",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "sel_order": 18,
+  "sel_order": 19,
   "arch_order": 133
  },
  {
@@ -1769,7 +1769,7 @@
   "number": "W063",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
-  "sel_order": 14,
+  "sel_order": 15,
   "arch_order": 103
  },
  {
@@ -1957,7 +1957,7 @@
   "number": "W071",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
-  "sel_order": 15,
+  "sel_order": 16,
   "arch_order": 63,
   "delivered": "2024-09-30"
  },
@@ -2029,7 +2029,7 @@
   "number": "W074",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
-  "sel_order": 13,
+  "sel_order": 14,
   "arch_order": 70,
   "delivered": "2024-09-30"
  },
@@ -2102,7 +2102,7 @@
   "number": "W077",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
-  "sel_order": 12,
+  "sel_order": 13,
   "carousel": false,
   "arch_order": 127
  },
@@ -2834,7 +2834,7 @@
   "video_src": "",
   "number": "W112",
   "selected": true,
-  "sel_order": 9,
+  "sel_order": 10,
   "arch_order": 28,
   "delivered": "2025-10-28"
  },
@@ -2858,7 +2858,7 @@
   "video_src": "",
   "number": "W113",
   "selected": true,
-  "sel_order": 10,
+  "sel_order": 11,
   "arch_order": 42,
   "delivered": "2025-04-22"
  },
@@ -2882,7 +2882,7 @@
   "video_src": "",
   "number": "W114",
   "selected": true,
-  "sel_order": 17,
+  "sel_order": 18,
   "arch_order": 68,
   "delivered": "2024-09-30"
  },
