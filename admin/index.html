@@ -66,7 +66,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <span id="status">…</span>
 </header>
 <div class="hint">
-Drag to reorder (landing & archive) → SAVE ORDER. Drop an image file on a card to replace its thumbnail.
+Drag to reorder (landing & archive) — saves automatically a moment after you drop (SAVE ORDER also works). Drop an image file on a card to replace its thumbnail.
 Click EDIT on any card to change titles, credits, Vimeo link, landing/hidden status, or to upload carousel images.
 Every save republishes the site itself in ~2 min.
 </div>
@@ -181,7 +181,7 @@ searchEl.addEventListener('input',render);
 let dragEl=null;
 function wire(el){
   el.addEventListener('dragstart',e=>{ if(!el.draggable||e.dataTransfer.files.length)return; dragEl=el; el.classList.add('dragging'); });
-  el.addEventListener('dragend',()=>{ el.classList.remove('dragging'); dragEl=null; });
+  el.addEventListener('dragend',()=>{ el.classList.remove('dragging'); dragEl=null; if(dirty) scheduleAutosave(); });
   el.addEventListener('dragover',e=>{
     e.preventDefault();
     if(dragEl&&dragEl!==el){
@@ -224,9 +224,12 @@ async function ghPutBlob(path,blob,msg){
   if(!put.ok) throw new Error(path+' PUT '+put.status);
 }
 
-/* ---- save landing / archive order ---- */
-saveBtn.addEventListener('click', async()=>{
-  if(!tok()) return say('paste your GitHub token first');
+/* ---- save landing / archive order (manual button + auto-save) ---- */
+let saving=false, autosaveTimer=null, resaveQueued=false;
+async function saveOrder(){
+  if(!tok()){ say('paste your GitHub token first'); return; }
+  if(saving){ resaveQueued=true; return; }   // coalesce a reorder that lands mid-save
+  saving=true;
   const mode=view;   // 'landing' -> sel_order ; 'archive' -> arch_order
   say('saving '+mode+' order…'); saveBtn.disabled=true;
   try{
@@ -245,8 +248,18 @@ saveBtn.addEventListener('click', async()=>{
     }
     projects=data; dirty=false; say('saved — live in ~2 min');
   }catch(e){ say('failed: '+e.message); }
-  saveBtn.disabled=false;
-});
+  saving=false; saveBtn.disabled=false;
+  if(resaveQueued){ resaveQueued=false; if(dirty) saveOrder(); }
+}
+saveBtn.addEventListener('click', saveOrder);
+/* auto-save a moment after the user stops dragging (debounced) */
+function scheduleAutosave(){
+  clearTimeout(autosaveTimer);
+  if(!dirty) return;
+  if(!tok()){ say('order changed — paste your token and it will auto-save'); return; }
+  say('order changed — auto-saving…');
+  autosaveTimer=setTimeout(()=>{ if(dirty) saveOrder(); }, 1200);
+}
 
 /* ---- image helpers ---- */
 function loadImg(file){ return new Promise((res,rej)=>{ const i=new Image(); i.onload=()=>res(i); i.onerror=rej; i.src=URL.createObjectURL(file); }); }
