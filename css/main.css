@@ -635,6 +635,13 @@ img.thumb + .video-label{
 	display: flex;
 	flex-wrap: wrap;
 	gap: var(--gap-small) 2ch;
+	/* keep the category filters visible while scrolling — sticky just under the header
+	   (JS sets `top` to the current header height so it adapts across breakpoints) */
+	position: sticky;
+	top: 0;
+	z-index: 8;
+	background: var(--color-bg);
+	padding: var(--gap-small) 0;
 }
 .archive-filter{
 	text-transform: uppercase;

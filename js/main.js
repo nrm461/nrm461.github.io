@@ -165,3 +165,14 @@
 		if(e.key === 'Escape' && close) window.location = close.href;
 	});
 })();
+
+/* Archive: pin the category filters just below the header while scrolling */
+(function(){
+	var af = document.getElementById('archive-filters');
+	if(!af) return;
+	var header = document.querySelector('header');
+	function place(){ af.style.top = (header ? Math.round(header.getBoundingClientRect().height) : 0) + 'px'; }
+	place();
+	window.addEventListener('resize', place);
+	window.addEventListener('load', place);
+})();
