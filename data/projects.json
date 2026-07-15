@@ -1761,9 +1761,9 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2GdLffLvHe/",
   "arch_order": 77,
   "categories": [
-   "Commercial",
-   "Fashion"
-  ]
+   "Commercial"
+  ],
+  "carousel": false
  },
  {
   "slug": "burger-king-cows-menu",
