@@ -6084,7 +6084,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Fashion",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208694423",
   "credits": "",
@@ -6100,9 +6100,9 @@
   "arch_order": 68,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial",
    "Fashion"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "tiffany-co-jewlery",
