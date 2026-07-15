@@ -325,11 +325,12 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/Therabody/stills/Still 2025-11-03 155013_1.1.9.jpg"
   ],
   "number": "W010",
-  "selected": false,
+  "selected": true,
   "arch_order": 34,
   "carousel": true,
   "gallery": true,
-  "delivered": "2025-09-15"
+  "delivered": "2025-09-15",
+  "sel_order": 999
  },
  {
   "slug": "de-beers-director-s-cut",
