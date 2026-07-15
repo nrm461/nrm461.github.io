@@ -2110,8 +2110,9 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
   "sel_order": 16,
-  "carousel": false,
-  "arch_order": 32
+  "carousel": true,
+  "arch_order": 32,
+  "gallery": true
  },
  {
   "slug": "montell-fish-who-did-you-touch",
