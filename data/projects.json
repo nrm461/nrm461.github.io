@@ -678,11 +678,12 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/fidelity DC/stills/OFF_FDY_LH_DC_V16_PRORES4444_GRADE.mov_1.26.1.jpg"
   ],
   "number": "W020",
-  "selected": false,
+  "selected": true,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-03-11",
-  "arch_order": 9
+  "arch_order": 9,
+  "sel_order": 999
  },
  {
   "slug": "ecos-brand-film",
