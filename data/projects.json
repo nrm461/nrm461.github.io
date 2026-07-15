@@ -2865,7 +2865,8 @@
   "selected": true,
   "sel_order": 11,
   "arch_order": 24,
-  "delivered": "2025-04-22"
+  "delivered": "2025-04-22",
+  "carousel": true
  },
  {
   "slug": "terminal-27-vermeil-hues",
