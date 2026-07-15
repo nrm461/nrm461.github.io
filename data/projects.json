@@ -1908,7 +1908,7 @@
   "director": "@graysorrenti",
   "director_raw": "@graysorrenti",
   "production": "",
-  "category": "Commercial",
+  "category": "Beauty",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208682679",
   "credits": "@calvinklein \n‘Calvins or Nothing’\n\nDir @graysorrenti \nEdit @soverrysoft \nColor @nick__metcalf \nPost Prod @micharoundtheworld\nMix @lonesome_audio\n@artpartner",
@@ -1922,7 +1922,8 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O9rsFuxWC/",
   "arch_order": 49,
-  "delivered": "2025-01-15"
+  "delivered": "2025-01-15",
+  "carousel": false
  },
  {
   "slug": "michaels-here-for-the-makers",
