@@ -2602,33 +2602,6 @@
   ]
  },
  {
-  "slug": "cadillac-made-for-summer-nights",
-  "client": "Cadillac",
-  "title": "Made For Summer Nights",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "https://vimeo.com/1208612632",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:made for summer nights",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Made for summer nights.PNG",
-  "video_src": "",
-  "number": "W100",
-  "selected": false,
-  "delivered": "2024-09-30",
-  "arch_order": 80,
-  "categories": [
-   "Commercial",
-   "Car"
-  ]
- },
- {
   "slug": "vogue-nyfw",
   "client": "Vogue",
   "title": "NYFW",
