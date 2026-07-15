@@ -1280,7 +1280,7 @@
   "number": "W043",
   "selected": true,
   "sel_order": 5,
-  "carousel": false,
+  "carousel": true,
   "arch_order": 138
  },
  {
