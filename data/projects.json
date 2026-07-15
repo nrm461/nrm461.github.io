@@ -5461,7 +5461,7 @@
   "selected": true,
   "sel_order": 10,
   "delivered": "2025-05-01",
-  "carousel": false
+  "carousel": true
  },
  {
   "slug": "oscar-mayer",
