@@ -3173,7 +3173,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Fashion",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208614066",
   "credits": "",
@@ -3187,8 +3187,9 @@
   "selected": false,
   "arch_order": 87,
   "categories": [
-   "Commercial"
-  ]
+   "Fashion"
+  ],
+  "carousel": false
  },
  {
   "slug": "de-beers-unlike-anything",
