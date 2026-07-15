@@ -3451,7 +3451,7 @@
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208687693",
   "credits": "Director: @__henrydacosta__\nDP: @gabrielconnelly\nEdit: @tobyheard\nColor: @nick__metcalf\nProduction: @fieldunit\n\nFor @vanityfair & @lululemon, featuring @bigfoe1998\nExecutive Producers: @alec__ernest @oscarblyons\nProducer: @jessthiel\nPhotographer: @jesse_lizotte\nStylist: @zoeyradfordscott\nProduction Designer: @the1andorly\nComposer: @romekboyer_sound\nSound: @g.s.sound",
-  "group": "posted",
+  "group": "rolled",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/785",
@@ -3462,6 +3462,24 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 17,
   "delivered": "2025-10-15"
+ },
+ {
+  "slug": "lululemon-24-hours-to-the-fullest",
+  "client": "Lululemon",
+  "title": "24 Hours To The Fullest",
+  "director": "@__henrydacosta__",
+  "category": "Commercial",
+  "children": [
+   "lululemon-24-hours-to-the-fullest-jordan-clarkson",
+   "lululemon-24-hours-to-the-fullest-frances-tiafoe"
+  ],
+  "group": "posted",
+  "selected": true,
+  "sel_order": 20,
+  "number": "W138",
+  "arch_order": 18,
+  "vimeo": "",
+  "credits": ""
  },
  {
   "slug": "lululemon-24-hours-to-the-fullest-jordan-clarkson",
@@ -3475,7 +3493,7 @@
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208687747",
   "credits": "Director: @__henrydacosta__\nDP: @gabrielconnelly\nEdit: @tobyheard\nColor: @nick__metcalf\nProduction: @fieldunit\n\nFor @vanityfair & @lululemon, featuring @bigfoe1998\nExecutive Producers: @alec__ernest @oscarblyons\nProducer: @jessthiel\nPhotographer: @jesse_lizotte\nStylist: @zoeyradfordscott\nProduction Designer: @the1andorly\nComposer: @romekboyer_sound\nSound: @g.s.sound",
-  "group": "posted",
+  "group": "rolled",
   "needs_review": true,
   "mtime": 0,
   "folder": "SLATE:/admin/media/clips/edit/784",
