@@ -437,7 +437,7 @@ async function syncCarousel(slug){
 }
 $('#m-save').addEventListener('click', async()=>{
   if(!tok()) return M.st.textContent='paste your GitHub token first';
-  const p=editing; M.st.textContent='saving…';
+  const p=editing; M.st.textContent='saving…'; let thumbPreview=null;
   try{
     // thumbnail replacement from the modal
     if(M.thumb.files.length){
@@ -446,6 +446,7 @@ $('#m-save').addEventListener('click', async()=>{
       await ghPutBlob(`assets/thumbs/${p.slug}-1600.jpg`,await fit(img,1600,900,false),'admin: thumb '+p.slug);
       await ghPutBlob(`assets/thumbs/${p.slug}-600.jpg`, await fit(img,600,338,true),'admin: thumb '+p.slug);
       await ghPutBlob(`assets/thumbs/${p.slug}-100.jpg`, await fit(img,100,56,true),'admin: thumb '+p.slug);
+      thumbPreview=URL.createObjectURL(await fit(img,600,338,true));  // instant local preview so the card updates before GitHub's cache does
       if(carItems.length){ // the curated thumbnail is always the carousel hero (00.jpg)
         const hero={blob:await fit(img,900,506,false),url:URL.createObjectURL(await fit(img,600,338,true))};
         if(carHadFiles) carItems[0]=hero;   // existing carousel: replace the hero slot
@@ -490,8 +491,10 @@ $('#m-save').addEventListener('click', async()=>{
     }
     await ghPutJson('data/projects.json',data,sha,'admin: edit '+p.slug);
     projects=data;
-    M.st.textContent='saved — live in ~2 min';
-    setTimeout(()=>{ closeModal(); render(); },700);
+    M.st.textContent = thumbPreview ? 'saved — thumbnail updated, live on the site in ~2 min' : 'saved — live in ~2 min';
+    setTimeout(()=>{ closeModal(); render();
+      if(thumbPreview){ const c=[...grid.children].find(el=>el.dataset.slug===p.slug); if(c) c.querySelector('img').src=thumbPreview; }
+    },700);
   }catch(e){ M.st.textContent='failed: '+e.message; }
 });
 
