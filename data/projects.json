@@ -2871,7 +2871,7 @@
   "client": "Terminal 27",
   "title": "Vermeil Hues",
   "featuring": "",
-  "director": "Logan Rice",
+  "director": "@logansrice",
   "director_raw": "Logan Rice",
   "production": "",
   "category": "Commercial",
@@ -2888,7 +2888,8 @@
   "selected": true,
   "sel_order": 18,
   "arch_order": 43,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "carousel": false
  },
  {
   "slug": "coke-evergreen",
