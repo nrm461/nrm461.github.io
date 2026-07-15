@@ -100,7 +100,7 @@ Every save republishes the site itself in ~2 min.
   <div class="frow"><label>On landing</label><input type="checkbox" id="m-selected"></div>
   <div class="frow"><label>Hidden</label><input type="checkbox" id="m-hidden"></div>
   <div class="frow"><label>Gallery</label><input type="checkbox" id="m-gallery">
-    <div class="note">show carousel stills under the credits on desktop (rows of 3)</div></div>
+    <div class="note">show carousel stills under the credits on desktop (rows of 3) — auto-enabled when you add a carousel</div></div>
   <div class="frow"><label>Carousel</label><input type="file" id="m-car" multiple accept="image/*">
     <div class="note">your curated thumbnail is always the card hero — these stills follow it (card swipe + desktop gallery). Drag to reorder, &times; to delete. Applied on save.</div>
     <div id="car-list"></div></div>
@@ -375,6 +375,7 @@ M.car.addEventListener('change',async()=>{
     const blob=await fit(img,900,506,false);
     carItems.push({blob,url:URL.createObjectURL(blob)});
   }
+  if(M.car.files.length) M.gal.checked=true;  // added carousel stills -> auto-enable the desktop gallery
   M.car.value=''; renderCar();
 });
 async function syncCarousel(slug){
@@ -447,7 +448,8 @@ $('#m-save').addEventListener('click', async()=>{
     if(!M.sel.checked) delete q.sel_order;
     q.group=M.hid.checked?'hidden':(q.group==='hidden'?'posted':q.group);
     q.carousel=carAdded;
-    if(M.gal.checked) q.gallery=true; else delete q.gallery;
+    // a carousel's stills should always show on desktop too, so enabling a carousel auto-enables the gallery
+    if((carAdded && carItems.length>1) || M.gal.checked) q.gallery=true; else delete q.gallery;
     // campaign spots: apply add/remove/reorder
     if(q.children){
       const before=q.children;
