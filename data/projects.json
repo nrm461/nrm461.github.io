@@ -5534,7 +5534,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Car",
+  "category": "",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208684638",
   "credits": "",
@@ -5549,9 +5549,7 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 62,
   "delivered": "2026-04-10",
-  "categories": [
-   "Car"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
