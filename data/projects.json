@@ -2038,7 +2038,9 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
   "sel_order": 17,
   "arch_order": 45,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "equinox-circuit-breaker",
