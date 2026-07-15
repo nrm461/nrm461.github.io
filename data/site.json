@@ -47,7 +47,8 @@
   },
   "hide_groups": [
     "current",
-    "pass"
+    "pass",
+    "broken"
   ],
   "linkify_handles": true,
   "categories": [

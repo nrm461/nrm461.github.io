@@ -652,8 +652,11 @@ img.thumb + .video-label{
 .archive-filter.active{
 	text-decoration: none;
 }
-.archive-filter.active::before{ content: '[ '; }
-.archive-filter.active::after{ content: ' ]'; }
+/* reserve the bracket space on every filter so the row doesn't shift when one is highlighted */
+.archive-filter::before{ content: '[ '; visibility: hidden; }
+.archive-filter::after{ content: ' ]'; visibility: hidden; }
+.archive-filter.active::before,
+.archive-filter.active::after{ visibility: visible; }
 .module-project.filtered-out{
 	display: none;
 }

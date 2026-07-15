@@ -26,6 +26,7 @@ button:disabled{ opacity:.4; cursor:default; }
 .card .num{ opacity:.5; }
 .card .edit{ position:absolute; top:6px; right:6px; background:#fff; border:1px solid #000; padding:2px 8px; font-size:11px; }
 .card .hide-btn{ position:absolute; right:6px; bottom:34px; background:#fff; border:1px solid #000; padding:2px 8px; font-size:11px; }
+.card .broken-btn{ position:absolute; right:6px; bottom:60px; background:#fff; border:1px solid #000; padding:2px 8px; font-size:11px; }
 .card .flags{ position:absolute; top:6px; left:6px; display:flex; gap:4px; }
 .flag{ background:#fff; border:1px solid #000; padding:1px 6px; font-size:10px; }
 .flag-cat{ background:#000; color:#fff; }
@@ -62,6 +63,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <button class="tab active" data-view="landing">Landing</button>
   <button class="tab" data-view="archive">Archive</button>
   <button class="tab" data-view="hidden">Hidden</button>
+  <button class="tab" data-view="broken">Broken</button>
   <select id="catfilter" title="filter by category"><option value="">All categories</option></select>
   <input id="search" type="search" placeholder="filter…">
   <input id="token" type="password" placeholder="GitHub token">
@@ -112,6 +114,7 @@ Every save republishes the site itself in ~2 min.
     <button id="m-save">Save project</button>
     <button id="m-cancel">Cancel</button>
     <span id="m-status"></span>
+    <button id="m-delete" style="margin-left:auto;border-color:#c00;color:#c00">Delete…</button>
   </div>
 </div>
 
@@ -169,6 +172,7 @@ function listFor(v){
   let l;
   if(v==='landing') l=projects.filter(p=>p.selected).sort((a,b)=>(a.sel_order??9999)-(b.sel_order??9999));
   else if(v==='hidden') l=projects.filter(p=>p.group==='hidden');
+  else if(v==='broken') l=projects.filter(p=>p.group==='broken');
   else l=projects.filter(p=>p.group==='posted').sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
   const q=searchEl.value.trim().toLowerCase();
   if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
@@ -177,6 +181,18 @@ function listFor(v){
   return l;
 }
 function capOf(p){ return (p.client&&p.title)?`${p.client} | ${p.title}`:(p.title||p.client||p.slug); }
+async function moveGroup(slug, target, verb){
+  if(!tok()) return say('paste your GitHub token first');
+  say(verb+' '+slug+'…');
+  try{
+    const {sha,data}=await ghGetJson('data/projects.json');
+    const q=data.find(x=>x.slug===slug); if(!q) throw new Error('not found');
+    q.group=target;
+    if(target!=='posted'){ q.selected=false; delete q.sel_order; }   // leaving the visible site
+    await ghPutJson('data/projects.json',data,sha,'admin: '+verb+' '+slug);
+    projects=data; say(slug+' → '+target+' — live in ~2 min'); render();
+  }catch(err){ say('failed: '+err.message); }
+}
 function render(){
   grid.innerHTML='';
   listFor(view).forEach((p,i)=>{
@@ -192,24 +208,17 @@ function render(){
     el.innerHTML=`<img src="${RAW}assets/thumbs/${p.slug}-600.jpg?t=${Date.now()}" onerror="this.style.opacity=.15">
       <div class="flags">${flags}</div>
       <button class="edit">EDIT</button>
-      <button class="hide-btn">${p.group==='hidden'?'UNHIDE':'HIDE'}</button>
+      ${p.group!=='broken'?'<button class="broken-btn">BROKEN</button>':''}
+      <button class="hide-btn">${p.group==='broken'?'UNBREAK':(p.group==='hidden'?'UNHIDE':'HIDE')}</button>
       <div class="cap"><span class="num">${String(i+1).padStart(2,'0')}</span> ${capOf(p)}</div>`;
     el.querySelector('.edit').addEventListener('click',e=>{ e.stopPropagation(); openModal(p); });
-    el.querySelector('.hide-btn').addEventListener('click',async e=>{
-      e.stopPropagation();
-      if(!tok()) return say('paste your GitHub token first');
-      const toHidden=p.group!=='hidden';
-      el.classList.add('busy'); say((toHidden?'hiding ':'unhiding ')+p.slug+'…');
-      try{
-        const {sha,data}=await ghGetJson('data/projects.json');
-        const q=data.find(x=>x.slug===p.slug);
-        q.group=toHidden?'hidden':'posted';
-        if(toHidden){ q.selected=false; delete q.sel_order; }
-        await ghPutJson('data/projects.json',data,sha,'admin: '+(toHidden?'hide ':'unhide ')+p.slug);
-        projects=data; el.classList.remove('busy');
-        say(p.slug+(toHidden?' hidden':' restored')+' — live in ~2 min'); render();
-      }catch(err){ el.classList.remove('busy'); el.classList.add('fail'); say('failed: '+err.message); }
+    el.querySelector('.hide-btn').addEventListener('click',e=>{ e.stopPropagation();
+      const target = p.group==='broken' ? 'hidden' : (p.group==='hidden' ? 'posted' : 'hidden');
+      const verb   = p.group==='broken' ? 'unbreak' : (p.group==='hidden' ? 'unhide' : 'hide');
+      moveGroup(p.slug, target, verb);
     });
+    const bb=el.querySelector('.broken-btn');
+    if(bb) bb.addEventListener('click',e=>{ e.stopPropagation(); moveGroup(p.slug,'broken','break'); });
     wire(el); grid.appendChild(el);
   });
   saveBtn.disabled=!((view==='landing'||view==='archive')&&!searchEl.value);
@@ -527,6 +536,23 @@ $('#m-save').addEventListener('click', async()=>{
     setTimeout(()=>{ closeModal(); render();
       if(thumbPreview){ const c=[...grid.children].find(el=>el.dataset.slug===p.slug); if(c) c.querySelector('img').src=thumbPreview; }
     },700);
+  }catch(e){ M.st.textContent='failed: '+e.message; }
+});
+/* fully delete an entry from the site data */
+$('#m-delete').addEventListener('click', async()=>{
+  if(!tok()) return M.st.textContent='paste your GitHub token first';
+  const p=editing;
+  if(!confirm('Permanently delete "'+p.slug+'" from the site? This removes the entry from the data (its image files stay in the repo). This cannot be undone from the admin.')) return;
+  M.st.textContent='deleting…';
+  try{
+    const {sha,data}=await ghGetJson('data/projects.json');
+    const self=data.find(x=>x.slug===p.slug);
+    if(self&&self.children) self.children.forEach(cs=>{ const c=data.find(x=>x.slug===cs); if(c&&c.group==='rolled') c.group='posted'; });  // un-roll a campaign's children
+    data.forEach(x=>{ if(x.children) x.children=x.children.filter(cs=>cs!==p.slug); });   // drop it from any parent
+    const next=data.filter(x=>x.slug!==p.slug);
+    await ghPutJson('data/projects.json',next,sha,'admin: delete '+p.slug);
+    projects=next; M.st.textContent='deleted — live in ~2 min';
+    setTimeout(()=>{ closeModal(); render(); },700);
   }catch(e){ M.st.textContent='failed: '+e.message; }
 });
 
