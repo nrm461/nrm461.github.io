@@ -366,7 +366,7 @@
   "gallery": true,
   "delivered": "2025-10-28",
   "arch_order": 10,
-  "sel_order": 17
+  "sel_order": 15
  },
  {
   "slug": "fujii-kaze-love-like-this",
@@ -684,7 +684,7 @@
   "gallery": true,
   "delivered": "2026-03-11",
   "arch_order": 8,
-  "sel_order": 18
+  "sel_order": 16
  },
  {
   "slug": "ecos-brand-film",
@@ -2034,7 +2034,7 @@
   "number": "W074",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
-  "sel_order": 15,
+  "sel_order": 17,
   "arch_order": 45,
   "delivered": "2024-09-30"
  },
@@ -2886,7 +2886,7 @@
   "video_src": "",
   "number": "W114",
   "selected": true,
-  "sel_order": 16,
+  "sel_order": 18,
   "arch_order": 43,
   "delivered": "2024-09-30"
  },
