@@ -5495,9 +5495,9 @@
   "arch_order": 47,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial",
-   "Car"
-  ]
+   "Commercial"
+  ],
+  "carousel": false
  },
  {
   "slug": "maria-isabel-i-drove-you-crazy",
