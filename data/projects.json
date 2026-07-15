@@ -505,7 +505,7 @@
   "gallery": true,
   "sel_order": 9,
   "delivered": "2026-02-09",
-  "arch_order": 3
+  "arch_order": 4
  },
  {
   "slug": "070-shake-if-youre-free",
@@ -573,7 +573,7 @@
   "number": "W017",
   "selected": true,
   "sel_order": 2,
-  "arch_order": 4,
+  "arch_order": 5,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-23"
@@ -644,7 +644,7 @@
   "number": "W019",
   "selected": true,
   "sel_order": 6,
-  "arch_order": 6,
+  "arch_order": 7,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-13"
@@ -1198,7 +1198,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-06",
-  "arch_order": 7
+  "arch_order": 3
  },
  {
   "slug": "garmin-ironman-dc",
@@ -1284,7 +1284,7 @@
   "selected": true,
   "sel_order": 5,
   "carousel": true,
-  "arch_order": 5
+  "arch_order": 6
  },
  {
   "slug": "okara-the-auction",
