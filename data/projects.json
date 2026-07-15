@@ -1672,7 +1672,7 @@
   "number": "W059",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
-  "sel_order": 17,
+  "sel_order": 18,
   "arch_order": 102,
   "carousel": false
  },
@@ -1697,7 +1697,7 @@
   "number": "W060",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "sel_order": 19,
+  "sel_order": 17,
   "arch_order": 133
  },
  {
@@ -1769,7 +1769,7 @@
   "number": "W063",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
-  "sel_order": 15,
+  "sel_order": 19,
   "arch_order": 103
  },
  {
@@ -1957,7 +1957,7 @@
   "number": "W071",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
-  "sel_order": 16,
+  "sel_order": 15,
   "arch_order": 63,
   "delivered": "2024-09-30"
  },
@@ -2882,7 +2882,7 @@
   "video_src": "",
   "number": "W114",
   "selected": true,
-  "sel_order": 18,
+  "sel_order": 16,
   "arch_order": 68,
   "delivered": "2024-09-30"
  },
