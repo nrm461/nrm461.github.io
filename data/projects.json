@@ -5026,7 +5026,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Music Video",
+  "category": "",
   "third_line": "Music Video",
   "vimeo": "https://vimeo.com/1208683189",
   "credits": "",
@@ -5042,9 +5042,7 @@
   "arch_order": 26,
   "carousel": true,
   "gallery": true,
-  "categories": [
-   "Music Video"
-  ]
+  "categories": []
  },
  {
   "slug": "blue-fox-entertainment-lost-on-a-mountain-in-maine-trailer",
