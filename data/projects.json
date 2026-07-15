@@ -2548,33 +2548,6 @@
   ]
  },
  {
-  "slug": "ford-lightning",
-  "client": "Ford",
-  "title": "Lightning",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "https://vimeo.com/1208613559",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:lightning",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Lightning.PNG",
-  "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Lightning - ford.mp4",
-  "number": "W098",
-  "selected": false,
-  "delivered": "2026-04-10",
-  "arch_order": 16,
-  "categories": [
-   "Commercial",
-   "Car"
-  ]
- },
- {
   "slug": "subaru-love",
   "client": "Subaru",
   "title": "Love",
