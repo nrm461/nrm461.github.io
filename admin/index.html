@@ -84,9 +84,8 @@ Every save republishes the site itself in ~2 min.
   <div class="frow"><label>Title</label><input type="text" id="m-titlef"></div>
   <div class="frow"><label>Director</label><input type="text" id="m-director"></div>
   <div class="frow"><label>Category</label>
-    <select id="m-category">
-      <option>Commercial</option><option>Music Video</option><option>Beauty</option><option>Long Form</option>
-    </select></div>
+    <div id="m-cats" style="flex:1;min-width:200px;display:flex;flex-wrap:wrap;gap:4px 16px"></div>
+    <div class="note">a project can live in multiple categories — check all that apply</div></div>
   <div class="frow"><label>Vimeo link</label><input type="text" id="m-vimeo" placeholder="https://vimeo.com/123456789">
     <div class="note">paste the plain video URL — the player is styled automatically</div></div>
   <div class="frow"><label>IG post link</label><input type="text" id="m-ig" placeholder="https://www.instagram.com/p/…">
@@ -143,6 +142,8 @@ let projects=[], view='landing', dirty=false, editing=null;
 const $=s=>document.querySelector(s);
 const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save'), searchEl=$('#search'), catEl=$('#catfilter');
 const filtering=()=>!!(searchEl.value||catEl.value);
+const CATORDER=['Commercial','Music Video','Beauty','Long Form','Fashion','Car'];
+const catsOf=p=>((p.categories&&p.categories.length)?p.categories:(p.category?[p.category]:[])).filter(Boolean);
 tokenEl.value=localStorage.getItem('ghtoken')||'';
 tokenEl.addEventListener('change',()=>localStorage.setItem('ghtoken',tokenEl.value.trim()));
 const tok=()=>tokenEl.value.trim();
@@ -157,8 +158,8 @@ async function load(){
   render(); say('ready');
 }
 function populateCats(){
-  const order=['Commercial','Music Video','Beauty','Long Form'];
-  const cats=[...new Set(projects.map(p=>p.category).filter(Boolean))];
+  const order=CATORDER;
+  const cats=[...new Set(projects.flatMap(catsOf))];
   cats.sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b);});
   const cur=catEl.value;
   catEl.innerHTML='<option value="">All categories</option>'+cats.map(c=>`<option value="${c}">${c}</option>`).join('');
@@ -172,7 +173,7 @@ function listFor(v){
   const q=searchEl.value.trim().toLowerCase();
   if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
   const c=catEl.value;
-  if(c) l=l.filter(p=>(p.category||'')===c);
+  if(c) l=l.filter(p=>catsOf(p).includes(c));
   return l;
 }
 function capOf(p){ return (p.client&&p.title)?`${p.client} | ${p.title}`:(p.title||p.client||p.slug); }
@@ -181,8 +182,9 @@ function render(){
   listFor(view).forEach((p,i)=>{
     const el=document.createElement('div');
     el.className='card'; el.draggable=((view==='landing'||view==='archive')&&!filtering()); el.dataset.slug=p.slug;
-    const cat=(p.category||'—').replace(/&/g,'&amp;').replace(/</g,'&lt;');
-    const flags=[`<span class="flag flag-cat">${cat}</span>`,
+    const catList=catsOf(p);
+    const catBadges=(catList.length?catList:['—']).map(c=>`<span class="flag flag-cat">${String(c).replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span>`).join('');
+    const flags=[catBadges,
                  p.selected?'<span class="flag">LANDING</span>':'',
                  p.group==='hidden'?'<span class="flag">HIDDEN</span>':'',
                  (!p.vimeo&&!p.children)?'<span class="flag">NO VIDEO</span>':'',
@@ -328,7 +330,7 @@ async function replaceThumb(el,file){
 
 /* ---- modal ---- */
 const M={ov:$('#overlay'),box:$('#modal'),t:$('#m-title'),client:$('#m-client'),title:$('#m-titlef'),
-  director:$('#m-director'),cat:$('#m-category'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
+  director:$('#m-director'),catsBox:$('#m-cats'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
   sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status'),
   thumb:$('#m-thumb'),kidsRow:$('#m-kids-row'),kidsList:$('#kids-list'),kidsAdd:$('#kids-add'),slugList:$('#all-slugs'),
   fileinfo:$('#m-fileinfo')};
@@ -387,6 +389,11 @@ function renderCar(){
     M.carList.appendChild(d);
   });
 }
+function renderCatChecks(sel){
+  sel=sel||[];
+  M.catsBox.innerHTML=CATORDER.map(c=>`<label style="width:auto;flex:none;text-transform:none;display:inline-flex;align-items:center;gap:5px;font-size:12px"><input type="checkbox" value="${c}"${sel.includes(c)?' checked':''}> ${c}</label>`).join('');
+}
+function selectedCats(){ return CATORDER.filter(c=>{const el=M.catsBox.querySelector('input[value="'+c+'"]'); return el&&el.checked;}); }
 function openModal(p){
   editing=p;
   M.t.textContent='Edit — '+p.slug;
@@ -401,7 +408,7 @@ function openModal(p){
     }
   })();
   M.client.value=p.client||''; M.title.value=p.title||''; M.director.value=p.director||'';
-  M.cat.value=p.category||'Commercial'; M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
+  renderCatChecks(catsOf(p)); M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
   M.credits.value=p.credits||''; M.sel.checked=!!p.selected; M.hid.checked=(p.group==='hidden');
   M.gal.checked=!!p.gallery;
   M.car.value=''; M.thumb.value=''; M.st.textContent='';
@@ -490,7 +497,7 @@ $('#m-save').addEventListener('click', async()=>{
     const q=data.find(x=>x.slug===p.slug);
     if(!q) throw new Error('slug not found');
     q.client=M.client.value.trim(); q.title=M.title.value.trim(); q.director=M.director.value.trim();
-    q.category=M.cat.value; q.vimeo=M.vimeo.value.trim(); q.credits=M.credits.value;
+    q.categories=selectedCats(); q.category=q.categories[0]||''; q.vimeo=M.vimeo.value.trim(); q.credits=M.credits.value;
     const ig=M.ig.value.trim();
     if(ig){ q.ig_url=ig; q.needs_credits=true; } else { delete q.ig_url; delete q.needs_credits; }
     q.selected=M.sel.checked;
@@ -565,7 +572,7 @@ C.save.addEventListener('click', async()=>{
     }
     const fp=data.find(x=>x.slug===front)||{};
     const sels=data.filter(p=>p.selected&&typeof p.sel_order==='number').map(p=>p.sel_order);
-    const parent={ slug, client, title, director:fp.director||'', category:fp.category||'Commercial',
+    const parent={ slug, client, title, director:fp.director||'', categories:catsOf(fp), category:catsOf(fp)[0]||'Commercial',
       children:cSpots.slice(), group:'posted', selected:true, sel_order:(sels.length?Math.max(...sels)+1:0),
       number:fp.number||'W999', arch_order:fp.arch_order, vimeo:'', credits:'' };
     cSpots.forEach(s=>{ const c=data.find(x=>x.slug===s); if(c){ c.group='rolled'; c.selected=false; delete c.sel_order; } });

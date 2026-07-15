@@ -23,7 +23,10 @@
   "arch_order": 18,
   "delivered": "2024-12-31",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "lisa-x-tyla-when-im-with-you",
@@ -59,7 +62,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
-  "arch_order": 16
+  "arch_order": 16,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "nigo-x-nike-waf3-fm-nigos-world",
@@ -93,7 +99,10 @@
   "selected": false,
   "carousel": true,
   "gallery": true,
-  "delivered": "2025-04-03"
+  "delivered": "2025-04-03",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "function-health-long-live-moms",
@@ -128,7 +137,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-04-22",
-  "arch_order": 43
+  "arch_order": 43,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ultrasound",
@@ -163,7 +175,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-01-27",
-  "arch_order": 47
+  "arch_order": 47,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "converse-x-doraemon-doraemon-chuck-70-collection",
@@ -194,7 +209,10 @@
   "selected": false,
   "carousel": true,
   "gallery": true,
-  "delivered": "2025-04-25"
+  "delivered": "2025-04-25",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "tom-sachs-x-nikecraft-x-nike-a-brief-history-of-the-mars-yar",
@@ -226,7 +244,10 @@
   ],
   "number": "W007",
   "selected": false,
-  "delivered": "2025-05-29"
+  "delivered": "2025-05-29",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "danna-paola-khe-calor",
@@ -261,7 +282,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-08",
-  "arch_order": 38
+  "arch_order": 38,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "amber-mark-let-me-love-you",
@@ -296,7 +320,10 @@
   "arch_order": 12,
   "carousel": true,
   "gallery": true,
-  "delivered": "2025-08-19"
+  "delivered": "2025-08-19",
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "therabody-glo-your-own-way-with-kendalljenner",
@@ -332,7 +359,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
-  "sel_order": 13
+  "sel_order": 13,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "de-beers-director-s-cut",
@@ -368,7 +398,10 @@
   "gallery": true,
   "delivered": "2025-10-28",
   "arch_order": 10,
-  "sel_order": 12
+  "sel_order": 12,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "fujii-kaze-love-like-this",
@@ -403,7 +436,10 @@
   "arch_order": 14,
   "carousel": true,
   "gallery": true,
-  "delivered": "2025-07-30"
+  "delivered": "2025-07-30",
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "rivian-milk-run",
@@ -439,7 +475,10 @@
   "arch_order": 55,
   "carousel": true,
   "gallery": true,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "pura-scents-of-place",
@@ -472,7 +511,10 @@
   "arch_order": 2,
   "carousel": true,
   "gallery": true,
-  "delivered": "2026-01-16"
+  "delivered": "2026-01-16",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "maria-isabel-suiza",
@@ -508,7 +550,10 @@
   "gallery": true,
   "sel_order": 8,
   "delivered": "2026-02-09",
-  "arch_order": 4
+  "arch_order": 4,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "070-shake-if-youre-free",
@@ -543,7 +588,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 15
+  "arch_order": 15,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "instax-forever",
@@ -579,7 +627,10 @@
   "arch_order": 5,
   "carousel": true,
   "gallery": true,
-  "delivered": "2026-01-23"
+  "delivered": "2026-01-23",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "trapped",
@@ -614,7 +665,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 25
+  "arch_order": 25,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "becky-g-epa",
@@ -650,7 +704,10 @@
   "arch_order": 7,
   "carousel": true,
   "gallery": true,
-  "delivered": "2026-05-13"
+  "delivered": "2026-05-13",
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "fidelity-living-the-dream",
@@ -686,7 +743,10 @@
   "gallery": true,
   "delivered": "2026-03-11",
   "arch_order": 8,
-  "sel_order": 9
+  "sel_order": 9,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ecos-brand-film",
@@ -708,7 +768,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/ECOS Brand Film.mov",
   "stills": [],
   "number": "W021",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "r88-r88",
@@ -730,7 +793,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/230307_R88_60s_1920x1080_04_CM.mov",
   "stills": [],
   "number": "W022",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "university-of-arizona-wonder",
@@ -752,7 +818,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/UofA_Wonder_30_16x9.mp4",
   "stills": [],
   "number": "W023",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "maybelline-wwm-directors-cut",
@@ -774,7 +843,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Maybelline_WWM_DC/20250604_MYB_WWM_OPENER_DC_MSTR.mov",
   "stills": [],
   "number": "W024",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "dockers-dockers",
@@ -796,7 +868,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/Dockers/Dad Pants 06 v02 FINAL.mp4",
   "stills": [],
   "number": "W025",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "free-people-free-people",
@@ -829,7 +904,10 @@
   "number": "W026",
   "selected": false,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "inca-rail-magic-is-on-the-road",
@@ -862,7 +940,10 @@
   "number": "W027",
   "selected": false,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ring-burglar",
@@ -884,7 +965,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_PASS/ring burglar/Ring_BurglarDC_Final_422HQ.mov",
   "stills": [],
   "number": "W028",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "keebler-chips-deluxe",
@@ -907,7 +991,10 @@
   "stills": [],
   "number": "W029",
   "selected": false,
-  "arch_order": 6
+  "arch_order": 6,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "logan-rice-e-dayton-st",
@@ -932,7 +1019,10 @@
   "selected": false,
   "arch_order": 21,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "pit-stop-pit-stop",
@@ -954,7 +1044,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Pit Stop/PIT STOP_final rev 0226_PRORES.mov",
   "stills": [],
   "number": "W031",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "agcf-ballet",
@@ -985,7 +1078,10 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/agcf ballet/Stills/56.TIF"
   ],
   "number": "W032",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "sisters-sisters",
@@ -1009,7 +1105,10 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 20
+  "arch_order": 20,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "tao-homecoming",
@@ -1031,7 +1130,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/Tao Home Coming/Homecoming_Final_3x2_HD_h264.mp4",
   "stills": [],
   "number": "W034",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "stooper-stooper",
@@ -1066,7 +1168,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 32
+  "arch_order": 32,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "expedia-directors-cut",
@@ -1098,7 +1203,10 @@
   ],
   "number": "W036",
   "selected": false,
-  "arch_order": 31
+  "arch_order": 31,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hera-age-your-way",
@@ -1121,7 +1229,10 @@
   "stills": [],
   "number": "W037",
   "selected": false,
-  "arch_order": 28
+  "arch_order": 28,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "h-r-block-a-successful-life",
@@ -1148,7 +1259,10 @@
   "arch_order": 9,
   "sel_order": 7,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "vanity-fair-x-lululemon-24-hours-to-the-fullest",
@@ -1170,7 +1284,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/lululemon_24hr/master/24-hours-to-the-fullest-frances-tiafoe.mp4",
   "stills": [],
   "number": "W039",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "nissan-built-for-happy-chaos-dc",
@@ -1205,7 +1322,10 @@
   "carousel": true,
   "delivered": "2026-05-06",
   "arch_order": 3,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "garmin-ironman-dc",
@@ -1240,7 +1360,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 13
+  "arch_order": 13,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "mary-kay-brand-campaign",
@@ -1264,7 +1387,10 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/mary kay/AE Collect/16x9/MARY_KAY_GFX_ANIM_v001/(Footage)/2_ASSETS/raster/MKbglightpink.jpg"
   ],
   "number": "W042",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "nike-x-skims-nikeskims-spring-26",
@@ -1292,7 +1418,10 @@
   "sel_order": 5,
   "carousel": true,
   "arch_order": 6,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "okara-the-auction",
@@ -1319,7 +1448,10 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-06-08",
-  "arch_order": 1
+  "arch_order": 1,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "benson-boone-the-time-of-my-life",
@@ -1356,7 +1488,10 @@
   "credits_v2": true,
   "gallery": true,
   "delivered": "2026-06-25",
-  "arch_order": 0
+  "arch_order": 0,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "vogue-hunter-season",
@@ -1380,7 +1515,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/CzTEqDSOCuc/",
   "delivered": "2024-09-30",
-  "arch_order": 73
+  "arch_order": 73,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "subaru-paddle-out",
@@ -1404,7 +1542,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C14krdOreP0/",
   "delivered": "2024-09-30",
-  "arch_order": 69
+  "arch_order": 69,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "sony-pursuit",
@@ -1427,7 +1568,10 @@
   "number": "W048",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FdpXlr2ev/",
-  "arch_order": 76
+  "arch_order": 76,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "sephora-color-up-close",
@@ -1450,7 +1594,10 @@
   "number": "W049",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
-  "arch_order": 84
+  "arch_order": 84,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "skittles-the-witch",
@@ -1473,7 +1620,10 @@
   "number": "W050",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/",
-  "arch_order": 82
+  "arch_order": 82,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "harley-davidson-united-we-will-ride",
@@ -1496,7 +1646,10 @@
   "number": "W051",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2Fm9rtrxHj/",
-  "arch_order": 108
+  "arch_order": 108,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "polo-ralph-lauren-wear-your-story",
@@ -1519,7 +1672,10 @@
   "number": "W052",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FnUDKLV-s/",
-  "arch_order": 136
+  "arch_order": 136,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "muay-thai",
@@ -1542,7 +1698,10 @@
   "number": "W053",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FnezIruzj/",
-  "arch_order": 74
+  "arch_order": 74,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "tiffany-co-rose-gold",
@@ -1565,7 +1724,10 @@
   "number": "W054",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2Gc6uALZHW/",
-  "arch_order": 99
+  "arch_order": 99,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "new-balance-london",
@@ -1588,7 +1750,10 @@
   "number": "W055",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2GdLffLvHe/",
-  "arch_order": 77
+  "arch_order": 77,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "burger-king-cows-menu",
@@ -1613,7 +1778,10 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
   "arch_order": 58,
   "carousel": false,
-  "delivered": "2025-03-25"
+  "delivered": "2025-03-25",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "versace-clans-of-versace",
@@ -1636,7 +1804,10 @@
   "number": "W057",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MMh_qsk6w/",
-  "arch_order": 134
+  "arch_order": 134,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "carhartt-fit-for-the-next-frontier",
@@ -1660,7 +1831,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MMotbMd-Y/",
   "delivered": "2024-09-30",
-  "arch_order": 70
+  "arch_order": 70,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "miu-miu-more",
@@ -1686,7 +1860,10 @@
   "sel_order": 19,
   "arch_order": 79,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "hennessy-more-is-made-by-the-many",
@@ -1710,7 +1887,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
   "arch_order": 34,
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "chevrolet-walter-in-the-winter",
@@ -1733,7 +1913,10 @@
   "number": "W061",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOri5sRaF/",
-  "arch_order": 59
+  "arch_order": 59,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "estee-lauder-beautiful-magnolia",
@@ -1758,7 +1941,10 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
   "carousel": false,
   "delivered": "2026-06-16",
-  "arch_order": 63
+  "arch_order": 63,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "crypto-com-fortune-favors-the-brave",
@@ -1782,7 +1968,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
   "arch_order": 80,
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ny-presbyterian-peter",
@@ -1805,7 +1994,10 @@
   "number": "W064",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O4Xu9uklg/",
-  "arch_order": 131
+  "arch_order": 131,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "smartwater-smart-finds-a-way",
@@ -1828,7 +2020,10 @@
   "number": "W065",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O5IJqO4zw/",
-  "arch_order": 50
+  "arch_order": 50,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hummer-ev",
@@ -1852,7 +2047,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O6J6RONi9/",
   "delivered": "2024-09-30",
-  "arch_order": 76
+  "arch_order": 76,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "gmc-the-road-to-nowhere",
@@ -1875,7 +2073,10 @@
   "number": "W067",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O7vSkO3F7/",
-  "arch_order": 130
+  "arch_order": 130,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "schon-lotus",
@@ -1898,7 +2099,10 @@
   "number": "W068",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O8DZ2OYXZ/",
-  "arch_order": 129
+  "arch_order": 129,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "calvin-klein-calvins-or-nothing",
@@ -1923,7 +2127,10 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O9rsFuxWC/",
   "arch_order": 49,
   "delivered": "2025-01-15",
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "michaels-here-for-the-makers",
@@ -1947,7 +2154,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-vniue-M/",
   "arch_order": 36,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "seattle-kraken-release-the-kraken",
@@ -1972,7 +2182,10 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
   "arch_order": 44,
   "delivered": "2024-09-30",
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "louis-vuitton-virgil-abloh-tribute",
@@ -1995,7 +2208,10 @@
   "number": "W072",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O_PNTug3t/",
-  "arch_order": 128
+  "arch_order": 128,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rimowa-made-for-meaningful-travel",
@@ -2019,7 +2235,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PAPgWO4g2/",
   "arch_order": 45,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "troye-sivan-got-me-started",
@@ -2046,7 +2265,10 @@
   "arch_order": 42,
   "delivered": "2024-09-30",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "equinox-circuit-breaker",
@@ -2070,7 +2292,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBi_xuJoQ/",
   "arch_order": 46,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "vogue-swear-to-garde",
@@ -2094,7 +2319,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8NJ4r3PSG7/",
   "arch_order": 37,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "salomon-x-lart-de-lautomobile-dont-trust-garage",
@@ -2120,7 +2348,10 @@
   "sel_order": 16,
   "carousel": true,
   "arch_order": 30,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "montell-fish-who-did-you-touch",
@@ -2144,7 +2375,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8fg96vvkxn/",
   "delivered": "2024-09-30",
-  "arch_order": 43
+  "arch_order": 43,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "untitled-automotive",
@@ -2167,7 +2401,10 @@
   "number": "W079",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8hpZ9XMRd3/",
-  "arch_order": 126
+  "arch_order": 126,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "dua-lipa-dance-the-night",
@@ -2192,7 +2429,10 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
   "arch_order": 39,
   "carousel": false,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "maria-isabel-drove-u-crazy",
@@ -2216,7 +2456,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8peocfv-Oa/",
   "delivered": "2026-02-09",
-  "arch_order": 23
+  "arch_order": 23,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "alfa-beer-the-subtle-things",
@@ -2243,7 +2486,10 @@
   "arch_order": 33,
   "delivered": "2024-09-30",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "070-shake-winter-baby",
@@ -2268,7 +2514,10 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
   "arch_order": 23,
   "carousel": false,
-  "delivered": "2024-11-30"
+  "delivered": "2024-11-30",
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "merit-america-merit-america",
@@ -2292,7 +2541,10 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-bquDPa7A/",
   "delivered": "2024-09-30",
-  "arch_order": 78
+  "arch_order": 78,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "caruso",
@@ -2315,7 +2567,10 @@
   "number": "W085",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DR2SqTSkZE4/",
-  "arch_order": 125
+  "arch_order": 125,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "pnc-cello",
@@ -2337,7 +2592,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Cello - PNC.MOV",
   "number": "W086",
   "selected": false,
-  "arch_order": 73
+  "arch_order": 73,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "polo-ralph-lauren-denim",
@@ -2359,7 +2617,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/denim - polo.mp4",
   "number": "W087",
   "selected": false,
-  "arch_order": 98
+  "arch_order": 98,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "versace-faces-of-versace",
@@ -2381,7 +2642,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Faces of Versace - versace.mp4",
   "number": "W088",
   "selected": false,
-  "arch_order": 96
+  "arch_order": 96,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "beats-above-the-noise",
@@ -2403,7 +2667,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Above the noise - beats.MOV",
   "number": "W089",
   "selected": false,
-  "arch_order": 72
+  "arch_order": 72,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "adidas-alphaedge",
@@ -2426,7 +2693,10 @@
   "number": "W090",
   "selected": false,
   "delivered": "2025-08-06",
-  "arch_order": 64
+  "arch_order": 64,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "estee-lauder-double-wear",
@@ -2449,7 +2719,10 @@
   "number": "W093",
   "selected": false,
   "delivered": "2026-06-16",
-  "arch_order": 62
+  "arch_order": 62,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "ford-f-150",
@@ -2472,7 +2745,10 @@
   "number": "W094",
   "selected": false,
   "delivered": "2026-04-10",
-  "arch_order": 15
+  "arch_order": 15,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "future-is-fearless",
@@ -2494,7 +2770,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/future is fearless.mp4",
   "number": "W096",
   "selected": false,
-  "arch_order": 95
+  "arch_order": 95,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "primary-childrens-hospital-lets-conquer",
@@ -2516,7 +2795,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Let’s Conquer - Primary children’s.MOV",
   "number": "W097",
   "selected": false,
-  "arch_order": 94
+  "arch_order": 94,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ford-lightning",
@@ -2539,7 +2821,10 @@
   "number": "W098",
   "selected": false,
   "delivered": "2026-04-10",
-  "arch_order": 16
+  "arch_order": 16,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "subaru-love",
@@ -2562,7 +2847,10 @@
   "number": "W099",
   "selected": false,
   "delivered": "2024-09-30",
-  "arch_order": 71
+  "arch_order": 71,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "cadillac-made-for-summer-nights",
@@ -2585,7 +2873,10 @@
   "number": "W100",
   "selected": false,
   "delivered": "2024-09-30",
-  "arch_order": 80
+  "arch_order": 80,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "vogue-nyfw",
@@ -2608,7 +2899,10 @@
   "number": "W101",
   "selected": false,
   "delivered": "2024-09-30",
-  "arch_order": 97
+  "arch_order": 97,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "purist",
@@ -2630,7 +2924,10 @@
   "video_src": "",
   "number": "W102",
   "selected": false,
-  "arch_order": 93
+  "arch_order": 93,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "race-of-the-gentleman",
@@ -2652,7 +2949,10 @@
   "video_src": "",
   "number": "W103",
   "selected": false,
-  "arch_order": 118
+  "arch_order": 118,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "pnc-summer",
@@ -2674,7 +2974,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Summer - PNC.mov",
   "number": "W104",
   "selected": false,
-  "arch_order": 99
+  "arch_order": 99,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "super-she-super-she",
@@ -2696,7 +2999,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Super She - super she.MOV",
   "number": "W105",
   "selected": false,
-  "arch_order": 116
+  "arch_order": 116,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "harley-davidson-the-lineage",
@@ -2718,7 +3024,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/The lineage - Harley Davidson .mp4",
   "number": "W106",
   "selected": false,
-  "arch_order": 115
+  "arch_order": 115,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "reebok-this-is-classic",
@@ -2740,7 +3049,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/This is classic - rebook.mov",
   "number": "W107",
   "selected": false,
-  "arch_order": 91
+  "arch_order": 91,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "polo-ralph-lauren-timeless-america",
@@ -2762,7 +3074,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Timeless america - polo.MOV",
   "number": "W108",
   "selected": false,
-  "arch_order": 90
+  "arch_order": 90,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "apple-watch-series-7",
@@ -2784,7 +3099,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Watch series 7 - apple.MOV",
   "number": "W109",
   "selected": false,
-  "arch_order": 89
+  "arch_order": 89,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "lincoln-wish-list",
@@ -2807,7 +3125,10 @@
   "number": "W110",
   "selected": false,
   "delivered": "2026-07-08",
-  "arch_order": 52
+  "arch_order": 52,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "monse-yoonmi",
@@ -2829,7 +3150,10 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Yoonmi - monse.mp4",
   "number": "W111",
   "selected": false,
-  "arch_order": 87
+  "arch_order": 87,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "de-beers-unlike-anything",
@@ -2852,7 +3176,10 @@
   "number": "W112",
   "selected": false,
   "arch_order": 28,
-  "delivered": "2025-10-28"
+  "delivered": "2025-10-28",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "function-health-mothers-day",
@@ -2878,7 +3205,10 @@
   "arch_order": 22,
   "delivered": "2025-04-22",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "terminal-27-vermeil-hues",
@@ -2904,7 +3234,10 @@
   "arch_order": 40,
   "delivered": "2024-09-30",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "coke-evergreen",
@@ -2927,7 +3260,10 @@
   "number": "W115",
   "selected": false,
   "arch_order": 38,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hills-pet-nutrition-try-again-cats-urinary-condition",
@@ -2952,7 +3288,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 0,
   "carousel": false,
-  "delivered": "2026-06-26"
+  "delivered": "2026-06-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hills-pet-nutrition-try-again-dog-s-derm-condition",
@@ -2977,7 +3316,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 1,
   "carousel": false,
-  "delivered": "2026-06-26"
+  "delivered": "2026-06-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "bandit-summer-2026",
@@ -3001,7 +3343,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 3,
-  "delivered": "2026-05-26"
+  "delivered": "2026-05-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "nissan-happy-chaos",
@@ -3025,7 +3370,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 11,
-  "delivered": "2026-05-06"
+  "delivered": "2026-05-06",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "kalshi-9-iron",
@@ -3049,7 +3397,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 7,
-  "delivered": "2026-03-23"
+  "delivered": "2026-03-23",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "kalshi-public-course",
@@ -3073,7 +3424,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 8,
-  "delivered": "2026-03-23"
+  "delivered": "2026-03-23",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "tory-burch-spf26",
@@ -3098,7 +3452,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 9,
   "carousel": false,
-  "delivered": "2026-04-14"
+  "delivered": "2026-04-14",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "toyota-grandma",
@@ -3123,7 +3480,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 10,
   "carousel": false,
-  "delivered": "2026-02-04"
+  "delivered": "2026-02-04",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "fidelity-living-the-dream-director-s-cut",
@@ -3147,7 +3507,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 8,
-  "delivered": "2026-03-11"
+  "delivered": "2026-03-11",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "casamigos-fifa-world-cup-2026tm",
@@ -3171,7 +3534,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 13,
-  "delivered": "2026-04-21"
+  "delivered": "2026-04-21",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "nature-s-bounty-you-are-bountiful",
@@ -3195,7 +3561,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 52,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ollie-feed-the-obsession",
@@ -3219,7 +3588,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 15,
-  "delivered": "2026-05-26"
+  "delivered": "2026-05-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ollie-first-love",
@@ -3243,7 +3615,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 16,
-  "delivered": "2026-05-26"
+  "delivered": "2026-05-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ollie-healthy-boys",
@@ -3267,7 +3642,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 17,
-  "delivered": "2026-05-26"
+  "delivered": "2026-05-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ollie-mom-mode",
@@ -3291,7 +3669,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 18,
-  "delivered": "2026-05-26"
+  "delivered": "2026-05-26",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "nike-lisa-x-nikeskims",
@@ -3314,7 +3695,10 @@
   "number": "W131",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 20
+  "arch_order": 20,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "tory-burch-spr26",
@@ -3339,7 +3723,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 22,
   "carousel": false,
-  "delivered": "2026-01-10"
+  "delivered": "2026-01-10",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "pura-bed",
@@ -3365,7 +3752,10 @@
   "arch_order": 26,
   "delivered": "2025-12-03",
   "ig_url": "https://www.instagram.com/p/DTx88sqlMcQ/?img_index=1",
-  "needs_credits": true
+  "needs_credits": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "callaway-believe-in-faster",
@@ -3389,7 +3779,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 27,
-  "delivered": "2026-01-16"
+  "delivered": "2026-01-16",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "estee-lauder-joy-unwrapped",
@@ -3413,7 +3806,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 19,
-  "delivered": "2026-06-16"
+  "delivered": "2026-06-16",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "ulta-12-days-of-giftmas",
@@ -3438,7 +3834,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 30,
   "carousel": false,
-  "delivered": "2026-02-20"
+  "delivered": "2026-02-20",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "lululemon-24-hours-to-the-fullest-frances-tiafoe",
@@ -3462,7 +3861,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 17,
-  "delivered": "2025-10-15"
+  "delivered": "2025-10-15",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "lululemon-24-hours-to-the-fullest",
@@ -3480,7 +3882,10 @@
   "arch_order": 17,
   "vimeo": "",
   "credits": "",
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "lululemon-24-hours-to-the-fullest-jordan-clarkson",
@@ -3504,7 +3909,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 18,
-  "delivered": "2025-10-15"
+  "delivered": "2025-10-15",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "homesense-pillows",
@@ -3528,7 +3936,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 34,
-  "delivered": "2025-09-02"
+  "delivered": "2025-09-02",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "homesense-lamp",
@@ -3552,7 +3963,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 35,
-  "delivered": "2025-09-02"
+  "delivered": "2025-09-02",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "homesense-glass",
@@ -3576,7 +3990,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 36,
-  "delivered": "2025-09-02"
+  "delivered": "2025-09-02",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "homesense-too-bright",
@@ -3600,7 +4017,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 37,
-  "delivered": "2025-09-02"
+  "delivered": "2025-09-02",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "homesense-spinning-pillows",
@@ -3624,7 +4044,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 38,
-  "delivered": "2025-09-02"
+  "delivered": "2025-09-02",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ford-x-google-trans-america-trail",
@@ -3648,7 +4071,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 21,
-  "delivered": "2025-10-13"
+  "delivered": "2025-10-13",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hyundai-the-playlist",
@@ -3672,7 +4098,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 33,
-  "delivered": "2025-09-17"
+  "delivered": "2025-09-17",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ford-expedition-launch",
@@ -3696,7 +4125,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 53,
-  "delivered": "2025-06-23"
+  "delivered": "2025-06-23",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "incarail",
@@ -3720,7 +4152,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 44,
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "levi-s-built-to-last",
@@ -3745,7 +4180,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 46,
   "carousel": false,
-  "delivered": "2025-08-11"
+  "delivered": "2025-08-11",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian-saving-summer-director-s-cut",
@@ -3769,7 +4207,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 49,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian-bayou-director-s-cut",
@@ -3793,7 +4234,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 51,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian-milk-run-director-s-cut",
@@ -3817,7 +4261,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 52,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian-last-lemonade-standing-director-s-cut",
@@ -3841,7 +4288,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 54,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "audi-bred-for-track",
@@ -3866,7 +4316,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 52,
   "carousel": false,
-  "delivered": "2025-08-04"
+  "delivered": "2025-08-04",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian-bayou",
@@ -3890,7 +4343,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 58,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian-last-lemonade-standing",
@@ -3914,7 +4370,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 62,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "oscar-mayer-raft",
@@ -3938,7 +4397,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 58,
-  "delivered": "2025-05-19"
+  "delivered": "2025-05-19",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "oscar-mayer-grill-marks",
@@ -3962,7 +4424,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 59,
-  "delivered": "2026-05-18"
+  "delivered": "2026-05-18",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "oscar-mayer-neighbor",
@@ -3986,7 +4451,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 60,
-  "delivered": "2026-05-18"
+  "delivered": "2026-05-18",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "oscar-mayer-knock-knock",
@@ -4010,7 +4478,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 61,
-  "delivered": "2026-05-18"
+  "delivered": "2026-05-18",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "banyan-nio-banyan-dc",
@@ -4033,7 +4504,10 @@
   "number": "W160",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 55
+  "arch_order": 55,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "maybelline-new-york-primer-donnas-stealing-hearts",
@@ -4058,7 +4532,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 64,
   "carousel": false,
-  "delivered": "2025-05-07"
+  "delivered": "2025-05-07",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "maybelline-new-york-primer-donnas-grip-it-and-sip-it",
@@ -4083,7 +4560,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 65,
   "carousel": false,
-  "delivered": "2025-05-07"
+  "delivered": "2025-05-07",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "maybelline-new-york-primer-donnas-unleash-the-drama",
@@ -4108,7 +4588,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 66,
   "carousel": false,
-  "delivered": "2025-05-07"
+  "delivered": "2025-05-07",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "brooklinen-anniversary",
@@ -4132,7 +4615,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 69,
-  "delivered": "2025-03-24"
+  "delivered": "2025-03-24",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "get-your-guide-book-forward-to-it",
@@ -4156,7 +4642,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 44,
-  "delivered": "2025-04-10"
+  "delivered": "2025-04-10",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "trillium-gift-of-life-network-life-lessons-director-s-cut",
@@ -4180,7 +4669,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 28,
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "marina-cuntissimo",
@@ -4204,7 +4696,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 73,
-  "delivered": "2025-04-06"
+  "delivered": "2025-04-06",
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "dirty",
@@ -4227,7 +4722,10 @@
   "number": "W168",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 47
+  "arch_order": 47,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hershey-enjoy-the-encore-cups-cover",
@@ -4250,7 +4748,10 @@
   "number": "W169",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 77
+  "arch_order": 77,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "banyan-nio",
@@ -4273,7 +4774,10 @@
   "number": "W170",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 41
+  "arch_order": 41,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "starbucks-matcha",
@@ -4296,7 +4800,10 @@
   "number": "W171",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 79
+  "arch_order": 79,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "chips-ahoy-qualitytime",
@@ -4319,7 +4826,10 @@
   "number": "W172",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 80
+  "arch_order": 80,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "apple-bigger-screen-epic-durability",
@@ -4342,7 +4852,10 @@
   "number": "W173",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 81
+  "arch_order": 81,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ford-make-it-personal",
@@ -4366,7 +4879,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 82,
-  "delivered": "2026-04-10"
+  "delivered": "2026-04-10",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "dirty-trailer",
@@ -4389,7 +4905,10 @@
   "number": "W175",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 75
+  "arch_order": 75,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "cellotape-mag-the-strangers",
@@ -4413,7 +4932,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 85,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "undercover-third-eye",
@@ -4437,7 +4959,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 86,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "calvin-klein-lily-collins-finds-her-dream-looks",
@@ -4461,7 +4986,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 87,
-  "delivered": "2025-01-15"
+  "delivered": "2025-01-15",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "cuco-feat-jean-carter-my-45",
@@ -4486,7 +5014,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 26,
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Music Video"
+  ]
  },
  {
   "slug": "blue-fox-entertainment-lost-on-a-mountain-in-maine-trailer",
@@ -4509,7 +5040,10 @@
   "number": "W180",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 89
+  "arch_order": 89,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "crystal-swan-trailer",
@@ -4532,7 +5066,10 @@
   "number": "W181",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 90
+  "arch_order": 90,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "bravo-burkina-trailer",
@@ -4555,7 +5092,10 @@
   "number": "W182",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 91
+  "arch_order": 91,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "samuel-goldwyn-films-snakehead-official-trailer",
@@ -4578,7 +5118,10 @@
   "number": "W183",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 92
+  "arch_order": 92,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "ign-a-great-divide-official-trailer",
@@ -4602,7 +5145,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 93,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "boil-alert-trailer",
@@ -4627,7 +5173,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 94,
   "carousel": false,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "apple-tv-palm-royale-official-trailer",
@@ -4650,7 +5199,10 @@
   "number": "W186",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 95
+  "arch_order": 95,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "warner-brothers-barbie-official-trailer",
@@ -4673,7 +5225,10 @@
   "number": "W187",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 96
+  "arch_order": 96,
+  "categories": [
+   "Long Form"
+  ]
  },
  {
   "slug": "estrella-vive-tu-estrella",
@@ -4696,7 +5251,10 @@
   "number": "W188",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 97
+  "arch_order": 97,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "coors-desk-matt",
@@ -4719,7 +5277,10 @@
   "number": "W189",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 98
+  "arch_order": 98,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ford-it-s-time",
@@ -4743,7 +5304,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 60,
-  "delivered": "2026-04-10"
+  "delivered": "2026-04-10",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "lincoln-wish-for-the-wonderful",
@@ -4768,7 +5332,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 1,
   "delivered": "2026-07-08",
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "estee-laudre-estee-lauder",
@@ -4792,7 +5359,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 66,
-  "delivered": "2026-06-16"
+  "delivered": "2026-06-16",
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "harley-davison-ride-of-the-gentelmen",
@@ -4815,7 +5385,10 @@
   "number": "W193",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 88
+  "arch_order": 88,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "harley-davidson-the-linage",
@@ -4838,7 +5411,10 @@
   "number": "W194",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 92
+  "arch_order": 92,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "gmc-nowhere",
@@ -4861,7 +5437,10 @@
   "number": "W195",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 56
+  "arch_order": 56,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "mobil-1-break-free",
@@ -4885,7 +5464,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 48,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "maria-isabel-i-drove-you-crazy",
@@ -4911,7 +5493,10 @@
   "arch_order": 35,
   "delivered": "2026-02-09",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ford-f-150-lightning-director-s-cut",
@@ -4935,7 +5520,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 61,
-  "delivered": "2026-04-10"
+  "delivered": "2026-04-10",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "2021-05-24-grade-deigo-dc-nick-1",
@@ -4958,7 +5546,10 @@
   "number": "W199",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 65
+  "arch_order": 65,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "pnc-today-is-the-day",
@@ -4981,7 +5572,10 @@
   "number": "W200",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 78
+  "arch_order": 78,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "mick-jenkins-drowning",
@@ -5004,7 +5598,10 @@
   "number": "W201",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 100
+  "arch_order": 100,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "wdytln-h-264-files",
@@ -5027,7 +5624,10 @@
   "number": "W202",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 39
+  "arch_order": 39,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "whoop-alex-honnold",
@@ -5051,7 +5651,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 30,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "lenovo-copilot",
@@ -5075,7 +5678,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 51,
-  "delivered": "2024-11-30"
+  "delivered": "2024-11-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "cadillac-summer-nights",
@@ -5099,7 +5705,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 67,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "louis-vuitton-virgial-abloh-tribute",
@@ -5122,7 +5731,10 @@
   "number": "W206",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 57
+  "arch_order": 57,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "marines-usmc",
@@ -5145,7 +5757,10 @@
   "number": "W207",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 29
+  "arch_order": 29,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "cadillac-lift-off",
@@ -5171,7 +5786,10 @@
   "arch_order": 27,
   "delivered": "2024-09-30",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "vogue-world-paris",
@@ -5196,7 +5814,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 54,
   "delivered": "2024-09-30",
-  "carousel": false
+  "carousel": false,
+  "categories": [
+   "Beauty"
+  ]
  },
  {
   "slug": "revlon-colorstay",
@@ -5221,7 +5842,10 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 132,
   "carousel": false,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "hennesy-more-is-made-by-many",
@@ -5244,7 +5868,10 @@
   "number": "W211",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 104
+  "arch_order": 104,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "versace-the-clans-of-versace",
@@ -5267,7 +5894,10 @@
   "number": "W212",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 81
+  "arch_order": 81,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "mcdonalds-the-saweetie-meal",
@@ -5290,7 +5920,10 @@
   "number": "W213",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 142
+  "arch_order": 142,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "primary-children-s-victory",
@@ -5313,7 +5946,10 @@
   "number": "W214",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 83
+  "arch_order": 83,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "maybelline-naomi-osaka",
@@ -5337,7 +5973,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 31,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "super-she-supershe-island",
@@ -5360,7 +5999,10 @@
   "number": "W216",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 85
+  "arch_order": 85,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "vogue-stand-on-the-word",
@@ -5384,7 +6026,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 68,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "tiffany-co-jewlery",
@@ -5407,7 +6052,10 @@
   "number": "W218",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 86
+  "arch_order": 86,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "merit-america-amy-s-story",
@@ -5431,7 +6079,10 @@
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 41,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ollie",
@@ -5454,7 +6105,10 @@
   ],
   "arch_order": 9,
   "delivered": "2026-05-26",
-  "selected": false
+  "selected": false,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "homesense",
@@ -5479,7 +6133,10 @@
   "arch_order": 34,
   "selected": false,
   "carousel": false,
-  "delivered": "2025-09-02"
+  "delivered": "2025-09-02",
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "rivian",
@@ -5502,7 +6159,10 @@
   "sel_order": 10,
   "delivered": "2025-05-01",
   "carousel": true,
-  "gallery": true
+  "gallery": true,
+  "categories": [
+   "Commercial"
+  ]
  },
  {
   "slug": "oscar-mayer",
@@ -5526,6 +6186,9 @@
   "arch_order": 58,
   "selected": false,
   "carousel": false,
-  "delivered": "2026-05-18"
+  "delivered": "2026-05-18",
+  "categories": [
+   "Commercial"
+  ]
  }
 ]

@@ -15,6 +15,13 @@ PROJECTS = json.load(open(os.path.join(ROOT, 'data', 'projects.json')))
 
 def esc(s): return html.escape(str(s or ''), quote=True)
 
+def cats(p):
+    """A project's categories as a list (supports multi-category; falls back to the legacy single field)."""
+    cs = p.get('categories')
+    if not cs:
+        cs = [p['category']] if p.get('category') else []
+    return [c for c in cs if c]
+
 def linkify(line):
     """Turn @handles into instagram links."""
     if not SITE.get('linkify_handles'): return esc(line)
@@ -176,7 +183,7 @@ def card_html(p, rel=''):
     else:
         img = '<img class="thumb" alt="">'
     director = p.get('director') or ''
-    cat = esc(p.get('category') or '')
+    cat = esc('|'.join(cats(p)))   # pipe-delimited so a card can match multiple archive filters
     dir_html = f'<div class="module-project_info-title">{esc(director)}</div>' if director else '<div class="module-project_info-title">&nbsp;</div>'
     return f'''\t\t<div class="module-project" data-category="{cat}">
 \t\t\t<a class="module-project_link" href="{rel}{slug}/">{img}</a>

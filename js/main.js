@@ -58,7 +58,8 @@
 			f.classList.add('active');
 			var cat = f.getAttribute('data-filter');
 			Array.prototype.forEach.call(cards, function(c){
-				var show = (cat === 'all') || (c.getAttribute('data-category') === cat);
+				var dc = c.getAttribute('data-category') || '';
+				var show = (cat === 'all') || (('|' + dc + '|').indexOf('|' + cat + '|') !== -1);
 				c.classList.toggle('filtered-out', !show);
 			});
 		});
