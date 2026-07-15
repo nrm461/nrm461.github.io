@@ -2628,31 +2628,6 @@
   ]
  },
  {
-  "slug": "purist",
-  "client": "",
-  "title": "Purist",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:purist",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Purist.PNG",
-  "video_src": "",
-  "number": "W102",
-  "selected": false,
-  "arch_order": 93,
-  "categories": [
-   "Commercial"
-  ]
- },
- {
   "slug": "race-of-the-gentleman",
   "client": "Harley-Davidson",
   "title": "Race of the Gentlemen",
