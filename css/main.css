@@ -337,6 +337,18 @@ video.no-autoplay{
 	grid-gap: var(--gap-rows) var(--gap-cols);
 }
 
+/* Landing grid only: lock to 4-across, dropping straight to 2-across on small
+   screens (skip the 3-, 7- and 1-across steps) so rows stay even. Keep the
+   landing count a multiple of 4 for perfectly full rows. Archive is untouched. */
+.page-index:not(.page-archive) .module-videos{
+	grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 768px){
+	.page-index:not(.page-archive) .module-videos{
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
 /* Card: video
 ======================================== */
 .module-project{
