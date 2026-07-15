@@ -21,7 +21,9 @@
   "number": "W001",
   "selected": false,
   "arch_order": 19,
-  "delivered": "2024-12-31"
+  "delivered": "2024-12-31",
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "lisa-x-tyla-when-im-with-you",
