@@ -911,10 +911,10 @@
  },
  {
   "slug": "logan-rice-e-dayton-st",
-  "client": "Logan Rice",
+  "client": "",
   "title": "E Dayton St",
   "featuring": "",
-  "director": "",
+  "director": "@logansrice",
   "director_raw": "",
   "production": "",
   "category": "Long Form",
@@ -930,7 +930,9 @@
   "stills": [],
   "number": "W030",
   "selected": false,
-  "arch_order": 23
+  "arch_order": 23,
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "pit-stop-pit-stop",
