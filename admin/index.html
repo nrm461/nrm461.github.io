@@ -28,6 +28,8 @@ button:disabled{ opacity:.4; cursor:default; }
 .card .hide-btn{ position:absolute; right:6px; bottom:34px; background:#fff; border:1px solid #000; padding:2px 8px; font-size:11px; }
 .card .flags{ position:absolute; top:6px; left:6px; display:flex; gap:4px; }
 .flag{ background:#fff; border:1px solid #000; padding:1px 6px; font-size:10px; }
+.flag-cat{ background:#000; color:#fff; }
+#catfilter{ max-width:150px; }
 .card.filedrop{ outline:3px solid #0a0; outline-offset:-3px; }
 .hint{ padding:0 20px 16px; opacity:.6; }
 .busy{ outline:3px solid #fa0 !important; } .done{ outline:3px solid #0a0 !important; } .fail{ outline:3px solid #f00 !important; }
@@ -60,6 +62,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <button class="tab active" data-view="landing">Landing</button>
   <button class="tab" data-view="archive">Archive</button>
   <button class="tab" data-view="hidden">Hidden</button>
+  <select id="catfilter" title="filter by category"><option value="">All categories</option></select>
   <input id="search" type="search" placeholder="filter…">
   <input id="token" type="password" placeholder="GitHub token">
   <button id="save" disabled>Save order</button>
@@ -138,7 +141,8 @@ const RAW=`https://raw.githubusercontent.com/${OWNER}/${REPO}/${BRANCH}/`;
 let projects=[], view='landing', dirty=false, editing=null;
 
 const $=s=>document.querySelector(s);
-const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save'), searchEl=$('#search');
+const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save'), searchEl=$('#search'), catEl=$('#catfilter');
+const filtering=()=>!!(searchEl.value||catEl.value);
 tokenEl.value=localStorage.getItem('ghtoken')||'';
 tokenEl.addEventListener('change',()=>localStorage.setItem('ghtoken',tokenEl.value.trim()));
 const tok=()=>tokenEl.value.trim();
@@ -149,7 +153,16 @@ async function load(){
   say('loading…');
   const r=await fetch(RAW+'data/projects.json?t='+Date.now());
   projects=await r.json();
+  populateCats();
   render(); say('ready');
+}
+function populateCats(){
+  const order=['Commercial','Music Video','Beauty','Long Form'];
+  const cats=[...new Set(projects.map(p=>p.category).filter(Boolean))];
+  cats.sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b);});
+  const cur=catEl.value;
+  catEl.innerHTML='<option value="">All categories</option>'+cats.map(c=>`<option value="${c}">${c}</option>`).join('');
+  catEl.value=cur;
 }
 function listFor(v){
   let l;
@@ -158,6 +171,8 @@ function listFor(v){
   else l=projects.filter(p=>p.group==='posted').sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
   const q=searchEl.value.trim().toLowerCase();
   if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
+  const c=catEl.value;
+  if(c) l=l.filter(p=>(p.category||'')===c);
   return l;
 }
 function capOf(p){ return (p.client&&p.title)?`${p.client} | ${p.title}`:(p.title||p.client||p.slug); }
@@ -165,8 +180,10 @@ function render(){
   grid.innerHTML='';
   listFor(view).forEach((p,i)=>{
     const el=document.createElement('div');
-    el.className='card'; el.draggable=((view==='landing'||view==='archive')&&!searchEl.value); el.dataset.slug=p.slug;
-    const flags=[p.selected?'<span class="flag">LANDING</span>':'',
+    el.className='card'; el.draggable=((view==='landing'||view==='archive')&&!filtering()); el.dataset.slug=p.slug;
+    const cat=(p.category||'—').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    const flags=[`<span class="flag flag-cat">${cat}</span>`,
+                 p.selected?'<span class="flag">LANDING</span>':'',
                  p.group==='hidden'?'<span class="flag">HIDDEN</span>':'',
                  (!p.vimeo&&!p.children)?'<span class="flag">NO VIDEO</span>':'',
                  p.ig_url?'<span class="flag">IG QUEUED</span>':''].join('');
@@ -193,9 +210,10 @@ function render(){
     });
     wire(el); grid.appendChild(el);
   });
-  saveBtn.disabled=!((view==='landing'||view==='archive')&&!searchEl.value);
+  saveBtn.disabled=!((view==='landing'||view==='archive')&&!filtering());
 }
 searchEl.addEventListener('input',render);
+catEl.addEventListener('change',render);
 
 /* ---- drag reorder + thumb drop ---- */
 let dragEl=null;
