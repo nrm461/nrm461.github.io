@@ -361,11 +361,12 @@
    "/sessions/funny-compassionate-bohr/mnt/_MASTERS/_POSTED/De_Beers_DC_J3362/stills/29_Version 1_DEBEERS_DC_PRORESHQ_1.29.1.jpg"
   ],
   "number": "W011",
-  "selected": false,
+  "selected": true,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-10-28",
-  "arch_order": 11
+  "arch_order": 11,
+  "sel_order": 999
  },
  {
   "slug": "fujii-kaze-love-like-this",
