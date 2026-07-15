@@ -75,6 +75,7 @@ Every save republishes the site itself in ~2 min.
 <div id="overlay"></div>
 <div id="modal">
   <h2 id="m-title">Edit</h2>
+  <div id="m-fileinfo" style="margin:-6px 0 12px;font-size:11px;line-height:1.5;opacity:.8;user-select:all;-webkit-user-select:all;word-break:break-all"></div>
   <div class="frow"><label>Client</label><input type="text" id="m-client"></div>
   <div class="frow"><label>Title</label><input type="text" id="m-titlef"></div>
   <div class="frow"><label>Director</label><input type="text" id="m-director"></div>
@@ -292,7 +293,8 @@ async function replaceThumb(el,file){
 const M={ov:$('#overlay'),box:$('#modal'),t:$('#m-title'),client:$('#m-client'),title:$('#m-titlef'),
   director:$('#m-director'),cat:$('#m-category'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
   sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status'),
-  thumb:$('#m-thumb'),kidsRow:$('#m-kids-row'),kidsList:$('#kids-list'),kidsAdd:$('#kids-add'),slugList:$('#all-slugs')};
+  thumb:$('#m-thumb'),kidsRow:$('#m-kids-row'),kidsList:$('#kids-list'),kidsAdd:$('#kids-add'),slugList:$('#all-slugs'),
+  fileinfo:$('#m-fileinfo')};
 /* campaign spots (children) editing */
 let kids=[];
 function renderKids(){
@@ -351,6 +353,16 @@ function renderCar(){
 function openModal(p){
   editing=p;
   M.t.textContent='Edit — '+p.slug;
+  (function(){
+    const e=s=>String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    const vfile=String(p.video_src||'').split('/').pop();
+    let loc=''; if(p.video_src){ const i=String(p.video_src).indexOf('_MASTERS'); loc = i>=0 ? String(p.video_src).slice(i) : String(p.video_src); }
+    if(vfile){
+      M.fileinfo.innerHTML='📄 Video file: <b>'+e(vfile)+'</b>'+(loc?'<br><span style="opacity:.7">in '+e(loc.replace(vfile,'').replace(/\/$/,''))+'</span>':'');
+    } else {
+      M.fileinfo.innerHTML='📄 Video file: <b>not recorded</b>'+(p.folder?' &middot; master folder: <b>'+e(p.folder)+'</b>':'');
+    }
+  })();
   M.client.value=p.client||''; M.title.value=p.title||''; M.director.value=p.director||'';
   M.cat.value=p.category||'Commercial'; M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
   M.credits.value=p.credits||''; M.sel.checked=!!p.selected; M.hid.checked=(p.group==='hidden');
