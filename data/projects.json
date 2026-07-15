@@ -2854,32 +2854,6 @@
   "carousel": false
  },
  {
-  "slug": "de-beers-unlike-anything",
-  "client": "De Beers",
-  "title": "Unlike Anything",
-  "featuring": "",
-  "director": "Matt Baron",
-  "director_raw": "Matt Baron",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "https://vimeo.com/1208683741",
-  "credits": "Director: @baron_films\nDP: @maxgoldmandp\nColor: @nick__metcalf\nProduction: @wearepartizan\n\nMD / EP: @tauscherlisa\nEP: @ep.kimi\nHOP: @__ani__m__\nProducer: @lamos11\nService Co: @twentyfourseven_______tv\nProduction Designer: Sole Montenegro\nJewelry Stylist: @jocelyne_beaudoin",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "SLATE",
-  "thumb_src": "",
-  "video_src": "",
-  "number": "W112",
-  "selected": false,
-  "arch_order": 28,
-  "delivered": "2025-10-28",
-  "categories": [
-   "Commercial"
-  ]
- },
- {
   "slug": "function-health-mothers-day",
   "client": "Function Health",
   "title": "Mother's Day",
