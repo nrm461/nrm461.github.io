@@ -5529,5 +5529,22 @@
   "categories": [
    "Commercial"
   ]
+ },
+ {
+  "slug": "maybelline-be-you",
+  "client": "Maybelline",
+  "title": "Be You",
+  "director": "Madeline Clayton",
+  "director_raw": "Madeline Clayton",
+  "categories": [
+   "Commercial",
+   "Beauty"
+  ],
+  "category": "Commercial",
+  "group": "posted",
+  "selected": false,
+  "vimeo": "https://vimeo.com/355641548",
+  "credits": "@maybelline\nBe You\n\nDirector: Madeline Clayton\nProd Co: Mustache\nDP: @carella\nEdit: Dylan J Edwards\nColor: @nick__metcalf",
+  "number": "W224"
  }
 ]
