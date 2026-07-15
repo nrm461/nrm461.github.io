@@ -5442,7 +5442,7 @@
  {
   "slug": "rivian",
   "client": "Rivian",
-  "title": "",
+  "title": "Milk Run",
   "featuring": "",
   "director": "@elielford",
   "production": "@iconoclast.tv @goodgate.tv",
@@ -5464,7 +5464,8 @@
   "arch_order": 27,
   "selected": true,
   "sel_order": 9,
-  "delivered": "2025-05-01"
+  "delivered": "2025-05-01",
+  "carousel": false
  },
  {
   "slug": "oscar-mayer",
