@@ -2677,31 +2677,6 @@
   ]
  },
  {
-  "slug": "harley-davidson-the-lineage",
-  "client": "Harley-Davidson",
-  "title": "The Lineage",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "https://vimeo.com/1208613676",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:the lineage",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/The lineage.PNG",
-  "video_src": "/sessions/funny-compassionate-bohr/mnt/old/The lineage - Harley Davidson .mp4",
-  "number": "W106",
-  "selected": false,
-  "arch_order": 115,
-  "categories": [
-   "Commercial"
-  ]
- },
- {
   "slug": "reebok-this-is-classic",
   "client": "Reebok",
   "title": "This Is Classic",
