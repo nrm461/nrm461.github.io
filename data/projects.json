@@ -5483,7 +5483,7 @@
   "director": "@camerongoold",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Car",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208685589",
   "credits": "@gmc\nThe Road to Nowhere \n\nDir @camerongoold\nDP @sidunga and @tobiasempi\nEditor @typackard\nColor @nick__metcalf\nEP - John Quinn and Gianfilippo Pedrotti\n @monument_los_angeles \nProducer - Seth Levin\n1st AD - @matthewwatersinc \nSound Designer - Tyler Packard\n\nAgency Producer - @grimmmer \nAgency Creative Directors:\nSteve Glinski\nAndy Ozark\nKevin Pereira\n@apeacock612 \n@jmariucci \nYanlin Sun\n\nGMC Advertising Manager - Tim O' Neill\nAssistant Manager - Michael White\nAssistant Marketing Manager - William Mellon\nProduct Manager - Ryan Robbins\n\nArt Director - Gabrael Wilson\nKey Grip - Mitch Stelling\nGaffer - Chris Gerding\n@performancefilmworks\nCamer Car Driver - Brian Mussetter\nCamera Car Crane - John Carone\nCamera Car Tech - Danny Nichols\nPrecision Driver - @rhysmillenracing \nDrone - @overridefilms @pj16 @hazzmat\nSound - Wesley Thompson\nScript Supervisor - Beki Peter\nVTR - Doug Birdsell\n\nCast:\n@mdehenau \n@overlandbound \n@stevenallerick \n@carbondalecomedy \n@porternotes\nAle Parker \nDanielle Johnson",
@@ -5498,9 +5498,9 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 56,
   "categories": [
-   "Commercial",
    "Car"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "mobil-1-break-free",
