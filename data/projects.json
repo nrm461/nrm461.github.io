@@ -1844,9 +1844,9 @@
   "delivered": "2024-09-30",
   "arch_order": 70,
   "categories": [
-   "Commercial",
-   "Fashion"
-  ]
+   "Commercial"
+  ],
+  "carousel": false
  },
  {
   "slug": "miu-miu-more",
