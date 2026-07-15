@@ -257,6 +257,19 @@ footer > span{
 	.last{ justify-self: flex-end; }
 }
 
+/* Header nav: WORK / ARCHIVE / CONTACT centered as one group, at any width
+   (resize-robust). Footer intentionally keeps the original grid geometry. */
+header{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	column-gap: clamp(2rem, 5vw, 5rem);
+	row-gap: var(--gap-small);
+}
+header > a{ left: auto !important; }        /* cancel old .middle nudge; flex handles spacing */
+header::after{ content: none !important; }  /* drop the tablet-width right divider */
+
 /*Rules (header lines removed by request; footer keeps its rules)*/
 @media (min-width: 501px){
 	footer > span::before{
