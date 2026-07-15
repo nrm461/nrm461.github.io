@@ -666,7 +666,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 25,
+  "arch_order": 26,
   "categories": [
    "Long Form"
   ]
@@ -1169,7 +1169,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 32,
+  "arch_order": 33,
   "categories": [
    "Long Form"
   ]
@@ -1788,7 +1788,7 @@
   "number": "W060",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "arch_order": 34,
+  "arch_order": 35,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -2031,7 +2031,7 @@
   "number": "W070",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-vniue-M/",
-  "arch_order": 36,
+  "arch_order": 37,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2198,7 +2198,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
   "sel_order": 16,
   "carousel": true,
-  "arch_order": 30,
+  "arch_order": 31,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -2280,7 +2280,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
   "sel_order": 15,
-  "arch_order": 33,
+  "arch_order": 34,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2309,7 +2309,7 @@
   "number": "W083",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "arch_order": 23,
+  "arch_order": 24,
   "carousel": false,
   "delivered": "2024-11-30",
   "categories": [
@@ -2337,7 +2337,7 @@
   "number": "W085",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DR2SqTSkZE4/",
-  "arch_order": 37,
+  "arch_order": 23,
   "categories": [
    "Long Form"
   ],
@@ -4055,7 +4055,7 @@
   "number": "W166",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 28,
+  "arch_order": 29,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -4400,7 +4400,7 @@
   "number": "W179",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 26,
+  "arch_order": 27,
   "carousel": true,
   "gallery": true,
   "categories": []
@@ -4856,7 +4856,7 @@
   "number": "W197",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 35,
+  "arch_order": 36,
   "delivered": "2026-02-09",
   "carousel": true,
   "gallery": true,
@@ -5098,7 +5098,7 @@
   "number": "W207",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 29,
+  "arch_order": 30,
   "categories": [
    "Commercial"
   ]
@@ -5124,7 +5124,7 @@
   "number": "W208",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 27,
+  "arch_order": 28,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -5467,7 +5467,7 @@
   "children": [
    "rivian-milk-run"
   ],
-  "arch_order": 24,
+  "arch_order": 25,
   "selected": true,
   "sel_order": 10,
   "delivered": "2025-05-01",
@@ -5538,7 +5538,7 @@
   "vimeo": "https://vimeo.com/1210344062",
   "credits": "@agcfbrand\nUnità\n\nDirector: @xaviernunezv\nDP: @mchlkttnbl\nProd Co: @action_lines\nGaffer: @ryanwinnicki\n1st AC: @douglas_l_birch\nCamera: @panavisionofficial\nColor: @nick__metcalf\nFeaturing: @victoriajaiani, @jeraldm",
   "number": "W225",
-  "arch_order": 31,
+  "arch_order": 32,
   "carousel": true,
   "gallery": true
  }
