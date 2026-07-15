@@ -5837,7 +5837,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Car",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208682580",
   "credits": "",
@@ -5855,7 +5855,6 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Commercial",
    "Car"
   ]
  },
