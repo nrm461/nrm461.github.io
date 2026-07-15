@@ -2897,7 +2897,8 @@
   "sel_order": 18,
   "arch_order": 43,
   "delivered": "2024-09-30",
-  "carousel": false
+  "carousel": true,
+  "gallery": true
  },
  {
   "slug": "coke-evergreen",
