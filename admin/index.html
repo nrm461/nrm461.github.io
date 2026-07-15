@@ -63,6 +63,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <input id="search" type="search" placeholder="filter…">
   <input id="token" type="password" placeholder="GitHub token">
   <button id="save" disabled>Save order</button>
+  <button id="combine">+ Combine</button>
   <span id="status">…</span>
 </header>
 <div class="hint">
@@ -109,6 +110,24 @@ Every save republishes the site itself in ~2 min.
     <button id="m-save">Save project</button>
     <button id="m-cancel">Cancel</button>
     <span id="m-status"></span>
+  </div>
+</div>
+
+<div id="cmodal" style="display:none;position:fixed;z-index:10;top:4vh;left:50%;transform:translateX(-50%);width:min(680px,94vw);max-height:92vh;overflow:auto;background:var(--bg);border:1px solid var(--fg);padding:20px">
+  <h2 style="font-size:13px;margin:0 0 12px;text-transform:uppercase">Combine into a campaign</h2>
+  <div class="frow"><label>Client</label><input type="text" id="c-client" placeholder="e.g. Lululemon"></div>
+  <div class="frow"><label>Title</label><input type="text" id="c-title" placeholder="e.g. 24 Hours To The Fullest"></div>
+  <div class="frow"><label>Spots</label>
+    <div style="flex:1;min-width:200px">
+      <div id="c-list"></div>
+      <input type="text" id="c-add" list="all-slugs" placeholder="add spot by slug…" style="width:100%;margin-top:6px">
+      <div class="note">Add 2+ existing spots. The FIRST one fronts the card (its thumbnail) and plays first; drag to reorder. On save they fold into one landing card and their videos stack on its page.</div>
+    </div>
+  </div>
+  <div id="m-actions">
+    <button id="c-save">Create campaign</button>
+    <button id="c-cancel">Cancel</button>
+    <span id="c-status"></span>
   </div>
 </div>
 
@@ -482,6 +501,61 @@ document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
   t.classList.add('active'); view=t.dataset.view; dirty=false; render();
 }));
+/* ---- combine spots into a campaign (creates a dedicated parent card) ---- */
+const C={btn:$('#combine'),box:$('#cmodal'),client:$('#c-client'),title:$('#c-title'),list:$('#c-list'),add:$('#c-add'),save:$('#c-save'),cancel:$('#c-cancel'),st:$('#c-status')};
+let cSpots=[];
+function renderCSpots(){
+  C.list.innerHTML='';
+  cSpots.forEach((s,i)=>{
+    const pr=projects.find(x=>x.slug===s);
+    const d=document.createElement('div'); d.className='kid'; d.draggable=true;
+    d.innerHTML=`<span>${i===0?'◆ FRONT — ':String(i+1).padStart(2,'0')+' '}${pr?capOf(pr):s}</span><button class="rm">remove</button>`;
+    d.querySelector('.rm').addEventListener('click',()=>{ cSpots.splice(i,1); renderCSpots(); });
+    d.addEventListener('dragstart',()=>{ d.classList.add('dragging'); C.list._drag=i; });
+    d.addEventListener('dragend',()=>d.classList.remove('dragging'));
+    d.addEventListener('dragover',e=>{ e.preventDefault(); const from=C.list._drag; if(from===undefined||from===i)return; const [m]=cSpots.splice(from,1); cSpots.splice(i,0,m); C.list._drag=i; renderCSpots(); });
+    C.list.appendChild(d);
+  });
+}
+C.add.addEventListener('change',()=>{ const s=C.add.value.trim(); if(s&&projects.find(x=>x.slug===s)&&!cSpots.includes(s)){ cSpots.push(s); renderCSpots(); } C.add.value=''; });
+C.btn.addEventListener('click',()=>{
+  cSpots=[]; C.client.value=''; C.title.value=''; C.st.textContent=''; renderCSpots();
+  M.slugList.innerHTML=projects.filter(x=>x.group!=='current'&&x.group!=='pass'&&!x.children).map(x=>`<option value="${x.slug}">`).join('');
+  M.ov.style.display='block'; C.box.style.display='block';
+});
+function closeC(){ M.ov.style.display='none'; C.box.style.display='none'; }
+C.cancel.addEventListener('click',closeC);
+function slugify(s){ return String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+C.save.addEventListener('click', async()=>{
+  if(!tok()) return C.st.textContent='paste your GitHub token first';
+  const title=C.title.value.trim(), client=C.client.value.trim();
+  if(!title) return C.st.textContent='enter a title';
+  if(cSpots.length<2) return C.st.textContent='add at least 2 spots';
+  C.save.disabled=true;
+  try{
+    const front=cSpots[0];
+    const {sha,data}=await ghGetJson('data/projects.json');
+    let slug=slugify((client?client+' ':'')+title)||'campaign';
+    if(data.find(x=>x.slug===slug)){ let n=2; while(data.find(x=>x.slug===slug+'-'+n)) n++; slug=slug+'-'+n; }
+    for(const sz of [100,600,1600]){
+      C.st.textContent='copying thumbnail '+sz+'…';
+      const r=await fetch(`${RAW}assets/thumbs/${front}-${sz}.jpg?t=`+Date.now());
+      if(r.ok) await ghPutBlob(`assets/thumbs/${slug}-${sz}.jpg`, await r.blob(), 'admin: campaign thumb '+slug);
+    }
+    const fp=data.find(x=>x.slug===front)||{};
+    const sels=data.filter(p=>p.selected&&typeof p.sel_order==='number').map(p=>p.sel_order);
+    const parent={ slug, client, title, director:fp.director||'', category:fp.category||'Commercial',
+      children:cSpots.slice(), group:'posted', selected:true, sel_order:(sels.length?Math.max(...sels)+1:0),
+      number:fp.number||'W999', arch_order:fp.arch_order, vimeo:'', credits:'' };
+    cSpots.forEach(s=>{ const c=data.find(x=>x.slug===s); if(c){ c.group='rolled'; c.selected=false; delete c.sel_order; } });
+    const i=data.findIndex(x=>x.slug===front); data.splice(i<0?data.length:i,0,parent);
+    C.st.textContent='saving…';
+    await ghPutJson('data/projects.json',data,sha,'admin: combine into campaign '+slug);
+    projects=data; C.st.textContent='campaign created — live in ~2 min';
+    setTimeout(()=>{ closeC(); render(); }, 900);
+  }catch(e){ C.st.textContent='failed: '+e.message; }
+  C.save.disabled=false;
+});
 load();
 </script>
 </body>
