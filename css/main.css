@@ -264,11 +264,17 @@ header{
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	column-gap: clamp(2rem, 5vw, 5rem);
+	column-gap: clamp(2rem, 9vw, 7rem);   /* tablet / default spacing */
 	row-gap: var(--gap-small);
 }
 header > a{ left: auto !important; }        /* cancel old .middle nudge; flex handles spacing */
 header::after{ content: none !important; }  /* drop the tablet-width right divider */
+@media (min-width: 1025px){
+	header{ column-gap: clamp(6rem, 31vw, 48rem); }  /* desktop: restore the wide, airy WORK/ARCHIVE/CONTACT spacing (centered) */
+}
+@media (max-width: 500px){
+	header{ column-gap: 2rem; }                       /* phones: one snug centered row */
+}
 
 /*Rules (header lines removed by request; footer keeps its rules)*/
 @media (min-width: 501px){
