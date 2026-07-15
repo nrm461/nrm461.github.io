@@ -3808,7 +3808,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Beauty",
+  "category": "",
   "third_line": "Beauty",
   "vimeo": "https://vimeo.com/1208684289",
   "credits": "",
@@ -3823,9 +3823,8 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 19,
   "delivered": "2026-06-16",
-  "categories": [
-   "Beauty"
-  ]
+  "categories": [],
+  "carousel": false
  },
  {
   "slug": "ulta-12-days-of-giftmas",
