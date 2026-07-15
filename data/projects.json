@@ -1698,10 +1698,10 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/More is made by many.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/More is made by many - hennessy.mov",
   "number": "W060",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "sel_order": 17,
-  "arch_order": 38
+  "arch_order": 38,
+  "carousel": false
  },
  {
   "slug": "chevrolet-walter-in-the-winter",
