@@ -20,7 +20,7 @@
   "stills": [],
   "number": "W001",
   "selected": false,
-  "arch_order": 35,
+  "arch_order": 24,
   "delivered": "2024-12-31"
  },
  {
@@ -57,7 +57,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
-  "arch_order": 29
+  "arch_order": 32
  },
  {
   "slug": "nigo-x-nike-waf3-fm-nigos-world",
@@ -291,7 +291,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 20,
+  "arch_order": 14,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19"
@@ -326,7 +326,7 @@
   ],
   "number": "W010",
   "selected": true,
-  "arch_order": 19,
+  "arch_order": 13,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
@@ -365,7 +365,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-10-28",
-  "arch_order": 15
+  "arch_order": 12
  },
  {
   "slug": "fujii-kaze-love-like-this",
@@ -397,7 +397,7 @@
   ],
   "number": "W012",
   "selected": false,
-  "arch_order": 24,
+  "arch_order": 16,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-30"
@@ -540,7 +540,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 12
+  "arch_order": 17
  },
  {
   "slug": "instax-forever",
@@ -1003,7 +1003,7 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 33
+  "arch_order": 26
  },
  {
   "slug": "tao-homecoming",
@@ -1233,7 +1233,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 14
+  "arch_order": 15
  },
  {
   "slug": "mary-kay-brand-campaign",
@@ -1419,7 +1419,7 @@
   "number": "W048",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FdpXlr2ev/",
-  "arch_order": 72
+  "arch_order": 71
  },
  {
   "slug": "sephora-color-up-close",
@@ -1442,7 +1442,7 @@
   "number": "W049",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
-  "arch_order": 88
+  "arch_order": 85
  },
  {
   "slug": "skittles-the-witch",
@@ -1465,7 +1465,7 @@
   "number": "W050",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/",
-  "arch_order": 86
+  "arch_order": 83
  },
  {
   "slug": "harley-davidson-united-we-will-ride",
@@ -1580,7 +1580,7 @@
   "number": "W055",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2GdLffLvHe/",
-  "arch_order": 76
+  "arch_order": 74
  },
  {
   "slug": "burger-king-cows-menu",
@@ -1603,7 +1603,7 @@
   "number": "W056",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
-  "arch_order": 32,
+  "arch_order": 35,
   "carousel": false,
   "delivered": "2025-03-25"
  },
@@ -1676,7 +1676,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
   "sel_order": 18,
-  "arch_order": 83,
+  "arch_order": 80,
   "carousel": false
  },
  {
@@ -1749,7 +1749,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
   "carousel": false,
   "delivered": "2026-06-16",
-  "arch_order": 28
+  "arch_order": 31
  },
  {
   "slug": "crypto-com-fortune-favors-the-brave",
@@ -1773,7 +1773,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
   "sel_order": 19,
-  "arch_order": 84
+  "arch_order": 81
  },
  {
   "slug": "ny-presbyterian-peter",
@@ -1819,7 +1819,7 @@
   "number": "W065",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O5IJqO4zw/",
-  "arch_order": 82
+  "arch_order": 79
  },
  {
   "slug": "hummer-ev",
@@ -1912,7 +1912,7 @@
   "number": "W069",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O9rsFuxWC/",
-  "arch_order": 34,
+  "arch_order": 36,
   "delivered": "2025-01-15"
  },
  {
@@ -2008,7 +2008,7 @@
   "number": "W073",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PAPgWO4g2/",
-  "arch_order": 38,
+  "arch_order": 39,
   "delivered": "2024-09-30"
  },
  {
@@ -2057,7 +2057,7 @@
   "number": "W075",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBi_xuJoQ/",
-  "arch_order": 40,
+  "arch_order": 41,
   "delivered": "2024-09-30"
  },
  {
@@ -2227,7 +2227,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
   "sel_order": 7,
-  "arch_order": 43,
+  "arch_order": 23,
   "delivered": "2024-09-30",
   "carousel": true
  },
@@ -2252,7 +2252,7 @@
   "number": "W083",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "arch_order": 37,
+  "arch_order": 38,
   "carousel": false,
   "delivered": "2024-11-30"
  },
@@ -2412,7 +2412,7 @@
   "number": "W090",
   "selected": false,
   "delivered": "2025-08-06",
-  "arch_order": 21
+  "arch_order": 22
  },
  {
   "slug": "estee-lauder-double-wear",
@@ -2435,7 +2435,7 @@
   "number": "W093",
   "selected": false,
   "delivered": "2026-06-16",
-  "arch_order": 27
+  "arch_order": 30
  },
  {
   "slug": "ford-f-150",
@@ -2502,7 +2502,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Let’s Conquer - Primary children’s.MOV",
   "number": "W097",
   "selected": false,
-  "arch_order": 97
+  "arch_order": 96
  },
  {
   "slug": "ford-lightning",
@@ -2616,7 +2616,7 @@
   "video_src": "",
   "number": "W102",
   "selected": false,
-  "arch_order": 96
+  "arch_order": 95
  },
  {
   "slug": "race-of-the-gentleman",
@@ -2660,7 +2660,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Summer - PNC.mov",
   "number": "W104",
   "selected": false,
-  "arch_order": 95
+  "arch_order": 94
  },
  {
   "slug": "super-she-super-she",
@@ -2726,7 +2726,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/This is classic - rebook.mov",
   "number": "W107",
   "selected": false,
-  "arch_order": 94
+  "arch_order": 92
  },
  {
   "slug": "polo-ralph-lauren-timeless-america",
@@ -2748,7 +2748,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Timeless america - polo.MOV",
   "number": "W108",
   "selected": false,
-  "arch_order": 93
+  "arch_order": 91
  },
  {
   "slug": "apple-watch-series-7",
@@ -2770,7 +2770,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Watch series 7 - apple.MOV",
   "number": "W109",
   "selected": false,
-  "arch_order": 92
+  "arch_order": 90
  },
  {
   "slug": "lincoln-wish-list",
@@ -2793,7 +2793,7 @@
   "number": "W110",
   "selected": false,
   "delivered": "2026-07-08",
-  "arch_order": 23
+  "arch_order": 27
  },
  {
   "slug": "monse-yoonmi",
@@ -2815,7 +2815,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Yoonmi - monse.mp4",
   "number": "W111",
   "selected": false,
-  "arch_order": 91
+  "arch_order": 88
  },
  {
   "slug": "de-beers-unlike-anything",
@@ -2861,7 +2861,7 @@
   "number": "W113",
   "selected": true,
   "sel_order": 11,
-  "arch_order": 31,
+  "arch_order": 34,
   "delivered": "2025-04-22"
  },
  {
@@ -3394,7 +3394,7 @@
   "number": "W135",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 22,
+  "arch_order": 25,
   "delivered": "2026-06-16"
  },
  {
@@ -3443,7 +3443,7 @@
   "number": "W137",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 16,
+  "arch_order": 19,
   "delivered": "2025-10-15"
  },
  {
@@ -3467,7 +3467,7 @@
   "number": "W138",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 17,
+  "arch_order": 20,
   "delivered": "2025-10-15"
  },
  {
@@ -3611,7 +3611,7 @@
   "number": "W144",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 18,
+  "arch_order": 21,
   "delivered": "2025-10-13"
  },
  {
@@ -3659,7 +3659,7 @@
   "number": "W146",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 25,
+  "arch_order": 28,
   "delivered": "2025-06-23"
  },
  {
@@ -4752,7 +4752,7 @@
   "number": "W192",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 26,
+  "arch_order": 29,
   "delivered": "2026-06-16"
  },
  {
@@ -4776,7 +4776,7 @@
   "number": "W193",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 71
+  "arch_order": 89
  },
  {
   "slug": "harley-davidson-the-linage",
@@ -4799,7 +4799,7 @@
   "number": "W194",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 73
+  "arch_order": 93
  },
  {
   "slug": "gmc-nowhere",
@@ -4822,7 +4822,7 @@
   "number": "W195",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 74
+  "arch_order": 72
  },
  {
   "slug": "mobil-1-break-free",
@@ -4845,7 +4845,7 @@
   "number": "W196",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 39,
+  "arch_order": 40,
   "delivered": "2024-09-30"
  },
  {
@@ -4869,7 +4869,7 @@
   "number": "W197",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 13,
+  "arch_order": 18,
   "delivered": "2026-02-09"
  },
  {
@@ -4917,7 +4917,7 @@
   "number": "W199",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 75
+  "arch_order": 73
  },
  {
   "slug": "pnc-today-is-the-day",
@@ -4940,7 +4940,7 @@
   "number": "W200",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 77
+  "arch_order": 75
  },
  {
   "slug": "mick-jenkins-drowning",
@@ -4963,7 +4963,7 @@
   "number": "W201",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 78
+  "arch_order": 97
  },
  {
   "slug": "wdytln-h-264-files",
@@ -4986,7 +4986,7 @@
   "number": "W202",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 79
+  "arch_order": 76
  },
  {
   "slug": "whoop-alex-honnold",
@@ -5009,7 +5009,7 @@
   "number": "W203",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 41,
+  "arch_order": 42,
   "delivered": "2024-09-30"
  },
  {
@@ -5033,7 +5033,7 @@
   "number": "W204",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 36,
+  "arch_order": 37,
   "delivered": "2024-11-30"
  },
  {
@@ -5057,7 +5057,7 @@
   "number": "W205",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 42,
+  "arch_order": 43,
   "delivered": "2024-09-30"
  },
  {
@@ -5081,7 +5081,7 @@
   "number": "W206",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 80
+  "arch_order": 77
  },
  {
   "slug": "marines-usmc",
@@ -5104,7 +5104,7 @@
   "number": "W207",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 81
+  "arch_order": 78
  },
  {
   "slug": "cadillac-lift-off",
@@ -5223,7 +5223,7 @@
   "number": "W212",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 85
+  "arch_order": 82
  },
  {
   "slug": "mcdonalds-the-saweetie-meal",
@@ -5269,7 +5269,7 @@
   "number": "W214",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 87
+  "arch_order": 84
  },
  {
   "slug": "maybelline-naomi-osaka",
@@ -5316,7 +5316,7 @@
   "number": "W216",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 89
+  "arch_order": 86
  },
  {
   "slug": "vogue-stand-on-the-word",
@@ -5363,7 +5363,7 @@
   "number": "W218",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 90
+  "arch_order": 87
  },
  {
   "slug": "merit-america-amy-s-story",
@@ -5459,7 +5459,7 @@
    "rivian-last-lemonade-standing-director-s-cut",
    "rivian-saving-summer-director-s-cut"
   ],
-  "arch_order": 30,
+  "arch_order": 33,
   "selected": true,
   "sel_order": 9,
   "delivered": "2025-05-01"
