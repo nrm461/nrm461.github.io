@@ -684,7 +684,7 @@
   "gallery": true,
   "delivered": "2026-03-11",
   "arch_order": 8,
-  "sel_order": 10
+  "sel_order": 9
  },
  {
   "slug": "ecos-brand-film",
@@ -5457,7 +5457,7 @@
   ],
   "arch_order": 27,
   "selected": true,
-  "sel_order": 9,
+  "sel_order": 10,
   "delivered": "2025-05-01",
   "carousel": false
  },
