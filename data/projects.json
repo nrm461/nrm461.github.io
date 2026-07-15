@@ -53,7 +53,7 @@
   ],
   "number": "W002",
   "selected": true,
-  "sel_order": 11,
+  "sel_order": 13,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
@@ -330,7 +330,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
-  "sel_order": 13
+  "sel_order": 14
  },
  {
   "slug": "de-beers-director-s-cut",
@@ -684,7 +684,7 @@
   "gallery": true,
   "delivered": "2026-03-11",
   "arch_order": 8,
-  "sel_order": 14
+  "sel_order": 10
  },
  {
   "slug": "ecos-brand-film",
@@ -2862,7 +2862,7 @@
   "video_src": "",
   "number": "W113",
   "selected": true,
-  "sel_order": 10,
+  "sel_order": 11,
   "arch_order": 25,
   "delivered": "2025-04-22"
  },
