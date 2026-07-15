@@ -330,7 +330,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
-  "sel_order": 15
+  "sel_order": 13
  },
  {
   "slug": "de-beers-director-s-cut",
@@ -2032,7 +2032,7 @@
   "number": "W074",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
-  "sel_order": 14,
+  "sel_order": 15,
   "arch_order": 49,
   "delivered": "2024-09-30"
  },
@@ -2105,7 +2105,7 @@
   "number": "W077",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
-  "sel_order": 13,
+  "sel_order": 14,
   "carousel": false,
   "arch_order": 106
  },
