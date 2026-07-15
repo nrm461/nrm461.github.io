@@ -2298,7 +2298,7 @@
   "director": "@91.rules",
   "director_raw": "@91.rules",
   "production": "",
-  "category": "Commercial",
+  "category": "Fashion",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208684138",
   "credits": "@equinox\nCircuit Breaker\n\nDir @91.rules\nDP @zoesimone.y\nEdit @mahferraz\nColor @nick__metcalf\n\nProduction Design: Michael Younker @Michael.younker\nStylist: Daniel Gaines @dzgaines\nMUA: Allie Smith @alliesmithmakeup\n\nTalent: Berta Amelinaite @bertainnyc , Julian Cardona @julian_C , Jack Shippy @jack_shippy , Sarah Deberry @_shesbliss_\n\nVP ECD: Will Mayer @willhmayer\nSenior Producer: Delia Liu @deliasliu\nArt Director: Alelli Tanghal @alelli\nAssociate Art Director: Connor Kelly @connorjkelly\nMovement Director: Chris Vo @cvo_nyc\nHead of Social Media: Michael Sullivan @mikeysul\nBTS photographer: Grayson Drake @graysondrake\n\nProduction Company: @naviavision\nProducer: Taylor Latorre @taylormarielatorre\nProduction Manager/AD: Kit Pilosof @Kittenpilo \n\nEditor: Mah Ferraz @mahferraz \nAssistant Editor: Alexi Rose @alexirosemedia + Sky Kim @skylovesjuice \nSound & Music: @concret.form\nSound Design: Raphael Ajuelos @rphljls\nComposer: @nfivexs\nGfx: Simon Kounovsky @axonbody\nColorist: Nick Metcalf @nick__metcalf",
@@ -2314,8 +2314,9 @@
   "arch_order": 46,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial"
-  ]
+   "Fashion"
+  ],
+  "carousel": false
  },
  {
   "slug": "vogue-swear-to-garde",
