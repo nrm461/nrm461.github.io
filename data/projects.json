@@ -5538,6 +5538,8 @@
   "vimeo": "https://vimeo.com/1210344062",
   "credits": "@agcfbrand\nUnità\n\nDirector: @xaviernunezv\nDP: @mchlkttnbl\nProd Co: @action_lines\nGaffer: @ryanwinnicki\n1st AC: @douglas_l_birch\nCamera: @panavisionofficial\nColor: @nick__metcalf\nFeaturing: @victoriajaiani, @jeraldm",
   "number": "W225",
-  "arch_order": 0
+  "arch_order": 0,
+  "carousel": true,
+  "gallery": true
  }
 ]
