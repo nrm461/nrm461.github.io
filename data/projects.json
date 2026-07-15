@@ -3474,12 +3474,12 @@
    "lululemon-24-hours-to-the-fullest-frances-tiafoe"
   ],
   "group": "posted",
-  "selected": true,
-  "sel_order": 20,
+  "selected": false,
   "number": "W138",
   "arch_order": 18,
   "vimeo": "",
-  "credits": ""
+  "credits": "",
+  "carousel": false
  },
  {
   "slug": "lululemon-24-hours-to-the-fullest-jordan-clarkson",
