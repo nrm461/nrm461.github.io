@@ -6104,15 +6104,15 @@
  {
   "slug": "tiffany-co-jewlery",
   "client": "Tiffany & Co",
-  "title": "Jewlery",
+  "title": "Rose Gold",
   "featuring": "",
-  "director": "",
+  "director": "Steven Meisel",
   "director_raw": "",
   "production": "",
   "category": "Commercial",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208693598",
-  "credits": "",
+  "credits": "@tiffanyandco \n‘Rose Gold’\n\nSteven Meisel\nCD: @alegb21 \nDP: Tom Schopler\nColor: @nick__metcalf",
   "group": "posted",
   "needs_review": true,
   "mtime": 0,
@@ -6126,7 +6126,8 @@
   "categories": [
    "Commercial",
    "Fashion"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "merit-america-amy-s-story",
