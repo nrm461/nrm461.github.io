@@ -159,7 +159,7 @@ async function load(){
 }
 function populateCats(){
   const order=CATORDER;
-  const cats=[...new Set([...CATORDER, ...projects.flatMap(catsOf)])];
+  const cats=CATORDER.slice();   // canonical list only — stray/legacy categories never appear as a filter
   cats.sort((a,b)=>{const ia=order.indexOf(a),ib=order.indexOf(b);return (ia<0?99:ia)-(ib<0?99:ib)||a.localeCompare(b);});
   const cur=catEl.value;
   catEl.innerHTML='<option value="">All categories</option>'+cats.map(c=>`<option value="${c}">${c}</option>`).join('');
