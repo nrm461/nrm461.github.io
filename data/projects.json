@@ -291,7 +291,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 21,
+  "arch_order": 20,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19"
@@ -326,7 +326,7 @@
   ],
   "number": "W010",
   "selected": true,
-  "arch_order": 20,
+  "arch_order": 19,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
@@ -365,7 +365,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-10-28",
-  "arch_order": 16
+  "arch_order": 15
  },
  {
   "slug": "fujii-kaze-love-like-this",
@@ -466,7 +466,7 @@
   "number": "W014",
   "selected": true,
   "sel_order": 3,
-  "arch_order": 3,
+  "arch_order": 2,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-16"
@@ -505,7 +505,7 @@
   "gallery": true,
   "sel_order": 8,
   "delivered": "2026-02-09",
-  "arch_order": 4
+  "arch_order": 3
  },
  {
   "slug": "070-shake-if-youre-free",
@@ -540,7 +540,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 13
+  "arch_order": 12
  },
  {
   "slug": "instax-forever",
@@ -573,7 +573,7 @@
   "number": "W017",
   "selected": true,
   "sel_order": 2,
-  "arch_order": 5,
+  "arch_order": 4,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-23"
@@ -644,7 +644,7 @@
   "number": "W019",
   "selected": true,
   "sel_order": 6,
-  "arch_order": 6,
+  "arch_order": 5,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-13"
@@ -682,7 +682,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-03-11",
-  "arch_order": 11
+  "arch_order": 10
  },
  {
   "slug": "ecos-brand-film",
@@ -1139,7 +1139,7 @@
   "number": "W038",
   "selected": true,
   "delivered": "2026-02-13",
-  "arch_order": 12,
+  "arch_order": 11,
   "sel_order": 999,
   "carousel": false
  },
@@ -1198,7 +1198,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-06",
-  "arch_order": 7
+  "arch_order": 6
  },
  {
   "slug": "garmin-ironman-dc",
@@ -1233,7 +1233,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 15
+  "arch_order": 14
  },
  {
   "slug": "mary-kay-brand-campaign",
@@ -1311,7 +1311,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-06-08",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "benson-boone-the-time-of-my-life",
@@ -1348,7 +1348,7 @@
   "credits_v2": true,
   "gallery": true,
   "delivered": "2026-06-25",
-  "arch_order": 1
+  "arch_order": 0
  },
  {
   "slug": "vogue-hunter-season",
@@ -2412,7 +2412,7 @@
   "number": "W090",
   "selected": false,
   "delivered": "2025-08-06",
-  "arch_order": 22
+  "arch_order": 21
  },
  {
   "slug": "estee-lauder-double-wear",
@@ -3128,7 +3128,7 @@
   "number": "W124",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 10,
+  "arch_order": 9,
   "delivered": "2026-03-11"
  },
  {
@@ -3394,7 +3394,7 @@
   "number": "W135",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 2,
+  "arch_order": 22,
   "delivered": "2026-06-16"
  },
  {
@@ -3443,7 +3443,7 @@
   "number": "W137",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 17,
+  "arch_order": 16,
   "delivered": "2025-10-15"
  },
  {
@@ -3467,7 +3467,7 @@
   "number": "W138",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 18,
+  "arch_order": 17,
   "delivered": "2025-10-15"
  },
  {
@@ -3611,7 +3611,7 @@
   "number": "W144",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 19,
+  "arch_order": 18,
   "delivered": "2025-10-13"
  },
  {
@@ -4703,7 +4703,7 @@
   "number": "W190",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 8,
+  "arch_order": 7,
   "delivered": "2026-04-10"
  },
  {
@@ -4869,7 +4869,7 @@
   "number": "W197",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 14,
+  "arch_order": 13,
   "delivered": "2026-02-09"
  },
  {
@@ -4893,7 +4893,7 @@
   "number": "W198",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 9,
+  "arch_order": 8,
   "delivered": "2026-04-10"
  },
  {
