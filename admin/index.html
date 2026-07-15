@@ -142,7 +142,7 @@ let projects=[], view='landing', dirty=false, editing=null;
 const $=s=>document.querySelector(s);
 const tokenEl=$('#token'), statusEl=$('#status'), grid=$('#grid'), saveBtn=$('#save'), searchEl=$('#search'), catEl=$('#catfilter');
 const filtering=()=>!!(searchEl.value||catEl.value);
-const CATORDER=['Commercial','Music Video','Beauty','Long Form','Fashion','Car'];
+const CATORDER=['Commercial','Music Video','Beauty','Long Form','Car'];
 const catsOf=p=>((p.categories&&p.categories.length)?p.categories:(p.category?[p.category]:[])).filter(Boolean);
 tokenEl.value=localStorage.getItem('ghtoken')||'';
 tokenEl.addEventListener('change',()=>localStorage.setItem('ghtoken',tokenEl.value.trim()));
@@ -181,7 +181,7 @@ function render(){
   grid.innerHTML='';
   listFor(view).forEach((p,i)=>{
     const el=document.createElement('div');
-    el.className='card'; el.draggable=((view==='landing'||view==='archive')&&!filtering()); el.dataset.slug=p.slug;
+    el.className='card'; el.draggable=((view==='landing'||view==='archive')&&!searchEl.value); el.dataset.slug=p.slug;
     const catList=catsOf(p);
     const catBadges=(catList.length?catList:['—']).map(c=>`<span class="flag flag-cat">${String(c).replace(/&/g,'&amp;').replace(/</g,'&lt;')}</span>`).join('');
     const flags=[catBadges,
@@ -212,7 +212,7 @@ function render(){
     });
     wire(el); grid.appendChild(el);
   });
-  saveBtn.disabled=!((view==='landing'||view==='archive')&&!filtering());
+  saveBtn.disabled=!((view==='landing'||view==='archive')&&!searchEl.value);
 }
 searchEl.addEventListener('input',render);
 catEl.addEventListener('change',render);
@@ -273,17 +273,24 @@ async function saveOrder(){
   const mode=view;   // 'landing' -> sel_order ; 'archive' -> arch_order
   say('saving '+mode+' order…'); saveBtn.disabled=true;
   try{
-    const order=[...grid.children].map(el=>el.dataset.slug);
+    const gridOrder=[...grid.children].map(el=>el.dataset.slug);   // visible cards, in their new order
     const {sha,data}=await ghGetJson('data/projects.json');
+    // Reslot: keep non-visible items in place; drop the visible items into the slots they
+    // already occupied, in their new order. Works whether or not a category filter is active,
+    // so reordering within Car/etc. stays consistent with the full (unfiltered) order.
+    function reslot(full){
+      const vis=new Set(gridOrder), q=gridOrder.slice(), out=[];
+      full.forEach(s=>out.push(vis.has(s)? q.shift() : s));
+      q.forEach(s=>out.push(s));   // visible items not in the full list (unlikely) go last
+      return out;
+    }
     if(mode==='archive'){
-      // grid shows every posted project (save is disabled while filtered), so this
-      // sets a complete manual archive order. Note: a monday delivered-date re-sort
-      // will reassign arch_order and override this.
-      order.forEach((slug,i)=>{ const p=data.find(x=>x.slug===slug); if(p) p.arch_order=i; });
+      const full=data.filter(p=>p.group==='posted').sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000)).map(p=>p.slug);
+      reslot(full).forEach((slug,i)=>{ const p=data.find(x=>x.slug===slug); if(p) p.arch_order=i; });
       await ghPutJson('data/projects.json',data,sha,'admin: archive order');
     } else {
-      data.forEach(p=>{ const i=order.indexOf(p.slug);
-        if(i>=0){ p.selected=true; p.sel_order=i; } else if(p.selected){ p.selected=false; delete p.sel_order; } });
+      const full=data.filter(p=>p.selected).sort((a,b)=>(a.sel_order??9999)-(b.sel_order??9999)).map(p=>p.slug);
+      reslot(full).forEach((slug,i)=>{ const p=data.find(x=>x.slug===slug); if(p){ p.selected=true; p.sel_order=i; } });
       await ghPutJson('data/projects.json',data,sha,'admin: landing order');
     }
     projects=data; dirty=false; say('saved — live in ~2 min');

@@ -101,8 +101,7 @@
   "gallery": true,
   "delivered": "2025-04-03",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -212,8 +211,7 @@
   "gallery": true,
   "delivered": "2025-04-25",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -248,8 +246,7 @@
   "selected": false,
   "delivered": "2025-05-29",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -1425,8 +1422,7 @@
   "gallery": true,
   "categories": [
    "Commercial",
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ]
  },
  {
@@ -1523,8 +1519,7 @@
   "delivered": "2024-09-30",
   "arch_order": 73,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -1682,8 +1677,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FnUDKLV-s/",
   "arch_order": 136,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -1735,8 +1729,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2Gc6uALZHW/",
   "arch_order": 99,
   "categories": [
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ]
  },
  {
@@ -1817,8 +1810,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MMh_qsk6w/",
   "arch_order": 134,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -1875,8 +1867,7 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ]
  },
  {
@@ -2118,8 +2109,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O8DZ2OYXZ/",
   "arch_order": 129,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -2147,8 +2137,7 @@
   "delivered": "2025-01-15",
   "carousel": false,
   "categories": [
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ]
  },
  {
@@ -2229,8 +2218,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O_PNTug3t/",
   "arch_order": 128,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -2314,9 +2302,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBi_xuJoQ/",
   "arch_order": 46,
   "delivered": "2024-09-30",
-  "categories": [
-   "Fashion"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
@@ -2342,9 +2328,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8NJ4r3PSG7/",
   "arch_order": 37,
   "delivered": "2024-09-30",
-  "categories": [
-   "Fashion"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
@@ -2373,8 +2357,7 @@
   "arch_order": 30,
   "gallery": true,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -2645,8 +2628,7 @@
   "selected": false,
   "arch_order": 92,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -2671,8 +2653,7 @@
   "selected": false,
   "arch_order": 96,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -2934,8 +2915,7 @@
   "delivered": "2024-09-30",
   "arch_order": 97,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -3110,9 +3090,7 @@
   "number": "W108",
   "selected": false,
   "arch_order": 87,
-  "categories": [
-   "Fashion"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
@@ -3188,9 +3166,7 @@
   "number": "W111",
   "selected": false,
   "arch_order": 84,
-  "categories": [
-   "Fashion"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
@@ -3216,8 +3192,7 @@
   "arch_order": 28,
   "delivered": "2025-10-28",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -3494,8 +3469,7 @@
   "carousel": false,
   "delivered": "2026-04-14",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -3767,8 +3741,7 @@
   "carousel": false,
   "delivered": "2026-01-10",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -3906,8 +3879,7 @@
   "arch_order": 17,
   "delivered": "2025-10-15",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -3955,8 +3927,7 @@
   "arch_order": 18,
   "delivered": "2025-10-15",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -4230,8 +4201,7 @@
   "carousel": false,
   "delivered": "2025-08-11",
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -5045,8 +5015,7 @@
   "arch_order": 87,
   "delivered": "2025-01-15",
   "categories": [
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ]
  },
  {
@@ -5804,8 +5773,7 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 56,
   "categories": [
-   "Commercial",
-   "Fashion"
+   "Commercial"
   ]
  },
  {
@@ -5887,9 +5855,7 @@
   "arch_order": 54,
   "delivered": "2024-09-30",
   "carousel": false,
-  "categories": [
-   "Fashion"
-  ]
+  "categories": []
  },
  {
   "slug": "revlon-colorstay",
@@ -5968,8 +5934,7 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 78,
   "categories": [
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ],
   "carousel": false
  },
@@ -6048,9 +6013,7 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 31,
   "delivered": "2024-09-30",
-  "categories": [
-   "Fashion"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
@@ -6102,9 +6065,7 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 65,
   "delivered": "2024-09-30",
-  "categories": [
-   "Fashion"
-  ],
+  "categories": [],
   "carousel": false
  },
  {
@@ -6130,8 +6091,7 @@
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
   "arch_order": 83,
   "categories": [
-   "Beauty",
-   "Fashion"
+   "Beauty"
   ],
   "carousel": false
  },
