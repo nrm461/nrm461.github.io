@@ -502,7 +502,7 @@
   "selected": true,
   "carousel": true,
   "gallery": true,
-  "sel_order": 9,
+  "sel_order": 8,
   "delivered": "2026-02-09",
   "arch_order": 22
  },
@@ -5458,7 +5458,7 @@
   ],
   "arch_order": 41,
   "selected": true,
-  "sel_order": 8,
+  "sel_order": 9,
   "delivered": "2025-05-01"
  },
  {
