@@ -52,18 +52,28 @@
 	var filters = document.querySelectorAll('.archive-filter');
 	if(!filters.length) return;
 	var cards = document.querySelectorAll('.module-project');
-	Array.prototype.forEach.call(filters, function(f){
-		f.addEventListener('click', function(){
-			Array.prototype.forEach.call(filters, function(x){ x.classList.remove('active'); });
-			f.classList.add('active');
-			var cat = f.getAttribute('data-filter');
-			Array.prototype.forEach.call(cards, function(c){
-				var dc = c.getAttribute('data-category') || '';
-				var show = (cat === 'all') || (('|' + dc + '|').indexOf('|' + cat + '|') !== -1);
-				c.classList.toggle('filtered-out', !show);
-			});
+	function chipFor(cat){
+		var found = null;
+		Array.prototype.forEach.call(filters, function(f){ if(f.getAttribute('data-filter') === cat) found = f; });
+		return found;
+	}
+	function applyFilter(cat){
+		if(!chipFor(cat)) cat = 'all';
+		Array.prototype.forEach.call(filters, function(x){ x.classList.toggle('active', x.getAttribute('data-filter') === cat); });
+		Array.prototype.forEach.call(cards, function(c){
+			var dc = c.getAttribute('data-category') || '';
+			var show = (cat === 'all') || (('|' + dc + '|').indexOf('|' + cat + '|') !== -1);
+			c.classList.toggle('filtered-out', !show);
 		});
+		try{ sessionStorage.setItem('archiveFilter', cat); }catch(e){}
+	}
+	Array.prototype.forEach.call(filters, function(f){
+		f.addEventListener('click', function(){ applyFilter(f.getAttribute('data-filter')); });
 	});
+	/* re-apply the last-used filter (e.g. after closing a project and returning to the archive) */
+	var saved = 'all';
+	try{ saved = sessionStorage.getItem('archiveFilter') || 'all'; }catch(e){}
+	if(saved !== 'all') applyFilter(saved);
 })();
 
 /* Navigation context: arrows on project pages follow the grid you came from */
