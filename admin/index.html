@@ -102,7 +102,7 @@ Every save republishes the site itself in ~2 min.
   <div class="frow"><label>Gallery</label><input type="checkbox" id="m-gallery">
     <div class="note">show carousel stills under the credits on desktop (rows of 3)</div></div>
   <div class="frow"><label>Carousel</label><input type="file" id="m-car" multiple accept="image/*">
-    <div class="note">first image = mobile swipe hero. Drag tiles to reorder, &times; to delete. Applied on save.</div>
+    <div class="note">your curated thumbnail is always the card hero — these stills follow it (card swipe + desktop gallery). Drag to reorder, &times; to delete. Applied on save.</div>
     <div id="car-list"></div></div>
   <div id="m-actions">
     <button id="m-save">Save project</button>
@@ -392,9 +392,19 @@ $('#m-save').addEventListener('click', async()=>{
       await ghPutBlob(`assets/thumbs/${p.slug}-1600.jpg`,await fit(img,1600,900,false),'admin: thumb '+p.slug);
       await ghPutBlob(`assets/thumbs/${p.slug}-600.jpg`, await fit(img,600,338,true),'admin: thumb '+p.slug);
       await ghPutBlob(`assets/thumbs/${p.slug}-100.jpg`, await fit(img,100,56,true),'admin: thumb '+p.slug);
-      if(carItems.length){ // keep carousel hero in sync
-        carItems[0]={blob:await fit(img,900,506,false),url:URL.createObjectURL(await fit(img,600,338,true))};
+      if(carItems.length){ // the curated thumbnail is always the carousel hero (00.jpg)
+        const hero={blob:await fit(img,900,506,false),url:URL.createObjectURL(await fit(img,600,338,true))};
+        if(carHadFiles) carItems[0]=hero;   // existing carousel: replace the hero slot
+        else carItems.unshift(hero);         // brand-new carousel: lead with the thumbnail, stills follow
       }
+    } else if(!carHadFiles && carItems.length){
+      // Brand-new carousel without a fresh thumbnail upload: seed the hero (00.jpg) from the existing
+      // curated thumbnail so newly uploaded stills don't hijack the landing-grid card.
+      try{
+        const r=await fetch(`${RAW}assets/thumbs/${p.slug}-1600.jpg?t=${Date.now()}`);
+        if(r.ok){ const himg=await loadImg(await r.blob()); const hero=await fit(himg,900,506,false);
+          carItems.unshift({blob:hero,url:URL.createObjectURL(hero)}); }
+      }catch(e){}
     }
     const carChanged = (carHadFiles && carItems.length===0)
                        || carItems.some((it,i)=>it.name!==String(i).padStart(2,'0')+'.jpg')
