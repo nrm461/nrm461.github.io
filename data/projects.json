@@ -2734,7 +2734,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Beauty",
+  "category": "",
   "third_line": "Beauty",
   "vimeo": "https://vimeo.com/1208613376",
   "credits": "",
@@ -2748,9 +2748,8 @@
   "selected": false,
   "delivered": "2026-06-16",
   "arch_order": 60,
-  "categories": [
-   "Beauty"
-  ]
+  "categories": [],
+  "carousel": false
  },
  {
   "slug": "ford-f-150",
