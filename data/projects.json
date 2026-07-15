@@ -3095,7 +3095,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Fashion",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208615716",
   "credits": "",
@@ -3109,9 +3109,9 @@
   "selected": false,
   "arch_order": 90,
   "categories": [
-   "Commercial",
    "Fashion"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "apple-watch-series-7",
