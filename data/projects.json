@@ -1960,11 +1960,11 @@
   "thumb_src": "_ig/C2O-4hpO0uo.jpg",
   "video_src": "",
   "number": "W071",
-  "selected": true,
+  "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
-  "sel_order": 16,
   "arch_order": 47,
-  "delivered": "2024-09-30"
+  "delivered": "2024-09-30",
+  "carousel": false
  },
  {
   "slug": "louis-vuitton-virgil-abloh-tribute",
