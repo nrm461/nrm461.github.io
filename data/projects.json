@@ -2257,9 +2257,9 @@
   "arch_order": 45,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial",
-   "Fashion"
-  ]
+   "Commercial"
+  ],
+  "carousel": false
  },
  {
   "slug": "troye-sivan-got-me-started",
