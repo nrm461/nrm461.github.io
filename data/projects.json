@@ -5567,7 +5567,7 @@
   "director": "",
   "director_raw": "",
   "production": "",
-  "category": "Commercial",
+  "category": "Car",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208684638",
   "credits": "",
@@ -5583,9 +5583,9 @@
   "arch_order": 61,
   "delivered": "2026-04-10",
   "categories": [
-   "Commercial",
    "Car"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "2021-05-24-grade-deigo-dc-nick-1",
