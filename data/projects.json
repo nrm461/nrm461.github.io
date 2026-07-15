@@ -5527,8 +5527,8 @@
  },
  {
   "slug": "2021-05-24-grade-deigo-dc-nick-1",
-  "client": "",
-  "title": "2021_05_24_grade_deigo_dc_nick (1)",
+  "client": "Ford",
+  "title": "It's Time",
   "featuring": "",
   "director": "",
   "director_raw": "",
@@ -5549,7 +5549,8 @@
   "arch_order": 65,
   "categories": [
    "Commercial"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "pnc-today-is-the-day",
