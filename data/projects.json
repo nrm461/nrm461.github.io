@@ -2325,7 +2325,7 @@
   "director": "@bardiazeinali",
   "director_raw": "@bardiazeinali",
   "production": "",
-  "category": "Commercial",
+  "category": "Fashion",
   "third_line": "Commercial",
   "vimeo": "https://vimeo.com/1208694426",
   "credits": "En garde!  @voguemagazine\n\nDir @bardiazeinali\nDP @marcellrev\nEdit @modern.post @willhtown\nColor @nick__metcalf\nProduced by: @northsix\nStylist: @vanessareidofficial\nPost Production Supervision: @sadinbrooklyn\nProduction Design: @dannyhyland\nHair: @mustafayanaz\nMakeup: @hiromi_ueda\nNails: @hanaegoumri\nMovement Director: @ericvonchristison\nFilmed At: @racingclubdefrance_officiel\nMusic Supervision: @awkwardly_jess\nSound: @concret.form\nSound Design + Mix: @rphljls\nSound Editor: @inesc_adam\nModel: @gigihadid\nTalent: @isabelle.huppert\nFencers: tifainejoulie @vantroostromane @kelly_lusinier",
@@ -2341,9 +2341,9 @@
   "arch_order": 37,
   "delivered": "2024-09-30",
   "categories": [
-   "Commercial",
    "Fashion"
-  ]
+  ],
+  "carousel": false
  },
  {
   "slug": "salomon-x-lart-de-lautomobile-dont-trust-garage",
