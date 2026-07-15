@@ -2497,33 +2497,6 @@
   "carousel": false
  },
  {
-  "slug": "ford-f-150",
-  "client": "Ford",
-  "title": "F-150",
-  "featuring": "",
-  "director": "",
-  "director_raw": "",
-  "production": "",
-  "category": "Commercial",
-  "third_line": "Commercial",
-  "vimeo": "https://vimeo.com/1208613444",
-  "credits": "",
-  "group": "hidden",
-  "needs_review": true,
-  "mtime": 0,
-  "folder": "OLD:f-150",
-  "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/F-150.PNG",
-  "video_src": "/sessions/funny-compassionate-bohr/mnt/old/F-150 - ford.MOV",
-  "number": "W094",
-  "selected": false,
-  "delivered": "2026-04-10",
-  "arch_order": 15,
-  "categories": [
-   "Commercial",
-   "Car"
-  ]
- },
- {
   "slug": "future-is-fearless",
   "client": "",
   "title": "Future Is Fearless",
