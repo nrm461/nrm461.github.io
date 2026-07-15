@@ -66,7 +66,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <span id="status">…</span>
 </header>
 <div class="hint">
-Drag to reorder (landing) → SAVE ORDER. Drop an image file on a card to replace its thumbnail.
+Drag to reorder (landing & archive) → SAVE ORDER. Drop an image file on a card to replace its thumbnail.
 Click EDIT on any card to change titles, credits, Vimeo link, landing/hidden status, or to upload carousel images.
 Every save republishes the site itself in ~2 min.
 </div>
@@ -145,7 +145,7 @@ function render(){
   grid.innerHTML='';
   listFor(view).forEach((p,i)=>{
     const el=document.createElement('div');
-    el.className='card'; el.draggable=(view==='landing'&&!searchEl.value); el.dataset.slug=p.slug;
+    el.className='card'; el.draggable=((view==='landing'||view==='archive')&&!searchEl.value); el.dataset.slug=p.slug;
     const flags=[p.selected?'<span class="flag">LANDING</span>':'',
                  p.group==='hidden'?'<span class="flag">HIDDEN</span>':'',
                  (!p.vimeo&&!p.children)?'<span class="flag">NO VIDEO</span>':'',
@@ -173,7 +173,7 @@ function render(){
     });
     wire(el); grid.appendChild(el);
   });
-  saveBtn.disabled=!(view==='landing'&&!searchEl.value);
+  saveBtn.disabled=!((view==='landing'||view==='archive')&&!searchEl.value);
 }
 searchEl.addEventListener('input',render);
 
@@ -224,16 +224,25 @@ async function ghPutBlob(path,blob,msg){
   if(!put.ok) throw new Error(path+' PUT '+put.status);
 }
 
-/* ---- save landing order ---- */
+/* ---- save landing / archive order ---- */
 saveBtn.addEventListener('click', async()=>{
   if(!tok()) return say('paste your GitHub token first');
-  say('saving order…'); saveBtn.disabled=true;
+  const mode=view;   // 'landing' -> sel_order ; 'archive' -> arch_order
+  say('saving '+mode+' order…'); saveBtn.disabled=true;
   try{
     const order=[...grid.children].map(el=>el.dataset.slug);
     const {sha,data}=await ghGetJson('data/projects.json');
-    data.forEach(p=>{ const i=order.indexOf(p.slug);
-      if(i>=0){ p.selected=true; p.sel_order=i; } else if(p.selected){ p.selected=false; delete p.sel_order; } });
-    await ghPutJson('data/projects.json',data,sha,'admin: landing order');
+    if(mode==='archive'){
+      // grid shows every posted project (save is disabled while filtered), so this
+      // sets a complete manual archive order. Note: a monday delivered-date re-sort
+      // will reassign arch_order and override this.
+      order.forEach((slug,i)=>{ const p=data.find(x=>x.slug===slug); if(p) p.arch_order=i; });
+      await ghPutJson('data/projects.json',data,sha,'admin: archive order');
+    } else {
+      data.forEach(p=>{ const i=order.indexOf(p.slug);
+        if(i>=0){ p.selected=true; p.sel_order=i; } else if(p.selected){ p.selected=false; delete p.sel_order; } });
+      await ghPutJson('data/projects.json',data,sha,'admin: landing order');
+    }
     projects=data; dirty=false; say('saved — live in ~2 min');
   }catch(e){ say('failed: '+e.message); }
   saveBtn.disabled=false;
@@ -442,7 +451,7 @@ $('#m-save').addEventListener('click', async()=>{
 
 /* ---- tabs ---- */
 document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
-  if(dirty&&view==='landing'&&!confirm('Discard unsaved order?'))return;
+  if(dirty&&(view==='landing'||view==='archive')&&!confirm('Discard unsaved order?'))return;
   document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
   t.classList.add('active'); view=t.dataset.view; dirty=false; render();
 }));
