@@ -1136,9 +1136,11 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/_MASTERS/H&R_DC/HRBlock_SuccessfulLife_DC_Master_1080P_H264.mp4",
   "stills": [],
   "number": "W038",
-  "selected": false,
+  "selected": true,
   "delivered": "2026-02-13",
-  "arch_order": 19
+  "arch_order": 19,
+  "sel_order": 999,
+  "carousel": false
  },
  {
   "slug": "vanity-fair-x-lululemon-24-hours-to-the-fullest",
