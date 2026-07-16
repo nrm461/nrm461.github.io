@@ -48,7 +48,8 @@
   "hide_groups": [
     "current",
     "pass",
-    "broken"
+    "broken",
+    "vimeo_batch"
   ],
   "linkify_handles": true,
   "categories": [
