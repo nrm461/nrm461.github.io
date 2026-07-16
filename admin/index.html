@@ -64,6 +64,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <button class="tab" data-view="archive">Archive</button>
   <button class="tab" data-view="hidden">Hidden</button>
   <button class="tab" data-view="broken">Broken</button>
+  <button class="tab" data-view="vbatch">Vimeo Batch</button>
   <select id="catfilter" title="filter by category"><option value="">All categories</option></select>
   <input id="search" type="search" placeholder="filter…">
   <input id="token" type="password" placeholder="GitHub token">
@@ -173,6 +174,7 @@ function listFor(v){
   if(v==='landing') l=projects.filter(p=>p.selected).sort((a,b)=>(a.sel_order??9999)-(b.sel_order??9999));
   else if(v==='hidden') l=projects.filter(p=>p.group==='hidden');
   else if(v==='broken') l=projects.filter(p=>p.group==='broken');
+  else if(v==='vbatch') l=projects.filter(p=>p.group==='vimeo_batch');
   else l=projects.filter(p=>p.group==='posted').sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
   const q=searchEl.value.trim().toLowerCase();
   if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
