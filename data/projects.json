@@ -5712,9 +5712,10 @@
   "group": "hidden",
   "selected": false,
   "vimeo": "https://vimeo.com/1013704000",
-  "credits": "Stuart Weitzman | How Lovely To Be A Woman\n\nDirector: Matvey Fiks\nDP: Matt Ballard\nStylist: Camilla Nickerson\nEdit: Cabin Edit\nEditor: Matt Schaff\nColor: Company 3\nColorist: @nick__metcalf\nTalent: Issa Rae, Lucy Liu, Aly Raisman, Ming Xi, Christy Turlington",
+  "credits": "Stuart Weitzman | How Lovely To Be A Woman\n\nDirector: Matvey Fiks\nDP: Matt Ballard\nStylist: Camilla Nickerson\nEdit: Cabin Edit\nEditor: Matt Schaff\nColorist: @nick__metcalf\nTalent: Issa Rae, Lucy Liu, Aly Raisman, Ming Xi, Christy Turlington",
   "number": "W904",
-  "arch_order": 0
+  "arch_order": 0,
+  "carousel": false
  },
  {
   "slug": "soundcloud-next-wave-new-york",
