@@ -104,6 +104,12 @@ def hidden_projects():
     hid.sort(key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
     return hid
 
+def batch_projects():
+    """Projects moved off the public site; listed only on the unlinked /hidden/ page."""
+    bat = [p for p in PROJECTS if p.get('group') == 'vimeo_batch']
+    bat.sort(key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
+    return bat
+
 def project_by_slug(slug):
     for p in PROJECTS:
         if p['slug'] == slug:
@@ -227,6 +233,16 @@ def build_hidden():
     write(os.path.join('hidden', 'index.html'),
           page('page-works page-index page-archive page-hidden', f'{SITE["site_name"]} — Hidden', content, depth=1))
 
+def build_batch():
+    """Archive-style page of staged Vimeo-batch jobs. Unlinked from all navigation."""
+    bat = batch_projects()
+    cards = [card_html(p, rel='../') for p in bat]
+    content = (f'<div id="content-wrapper">\n{header("", 1)}\n<main>\n'
+               f'\t<div class="module-videos">\n' + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
+    content = f'<meta name="robots" content="noindex">\n{content}'
+    write(os.path.join('vimeo-batch', 'index.html'),
+          page('page-works page-index page-archive page-hidden', f'{SITE["site_name"]} — Vimeo Batch', content, depth=1))
+
 # ---------------- Project pages ----------------
 def media_block(p, label=''):
     """One video slot: facade when a Vimeo id exists, else plain hero image."""
@@ -249,14 +265,16 @@ def media_block(p, label=''):
 def build_projects():
     vis = sorted(visible_projects(), key=lambda x: x['number'])
     hid = hidden_projects()
-    for i, p in enumerate(vis + hid):
+    bat = batch_projects()
+    for i, p in enumerate(vis + hid + bat):
         in_hidden = p.get('group') == 'hidden'
-        ring = hid if in_hidden else vis
+        in_batch = p.get('group') == 'vimeo_batch'
+        ring = bat if in_batch else (hid if in_hidden else vis)
         j = ring.index(p)
         slug = p['slug']
         prev_p = ring[j-1] if j > 0 else ring[-1]
         next_p = ring[j+1] if j < len(ring)-1 else ring[0]
-        close_href = '../hidden/' if in_hidden else '../'
+        close_href = '../vimeo-batch/' if in_batch else ('../hidden/' if in_hidden else '../')
 
         # media: campaign parents stack every child video; singles get one slot
         if p.get('children'):
@@ -341,6 +359,7 @@ if __name__ == '__main__':
     build_index()
     build_archive()
     build_hidden()
+    build_batch()
     build_projects()
     build_contact()
     build_navdata()
