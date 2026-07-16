@@ -683,3 +683,19 @@ img.thumb + .video-label{
 .contact-section_title{
 	margin-bottom: var(--height-text);
 }
+
+
+/* ---- Responsive refinements (mobile nav, landing 1-up, filters) ---- */
+/* Two-thumbnail width: spread WORK / ARCHIVE / CONTACT edge to edge */
+@media (min-width: 501px) and (max-width: 768px){
+	header{ justify-content: space-between; column-gap: 1rem; }
+}
+/* Phones: vertical, left-justified nav + single-column landing + vertical archive filters */
+@media (max-width: 500px){
+	header{ flex-direction: column; align-items: flex-start; justify-content: flex-start; column-gap: 0; row-gap: var(--gap-small); }
+	.page-index:not(.page-archive) .module-videos{ grid-template-columns: 1fr; }
+	#archive-filters{ flex-direction: column; align-items: flex-start; }
+}
+/* Hide Beauty + Long Form filter chips for now (projects keep the category) */
+.archive-filter[data-filter="Beauty"],
+.archive-filter[data-filter="Long Form"]{ display: none; }
