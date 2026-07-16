@@ -705,14 +705,14 @@ img.thumb + .video-label{
 .archive-filter[data-filter="Beauty"],
 .archive-filter[data-filter="Long Form"]{ display: none; }
 
-/* Mobile: flush-left filter chips aligned with the nav. The active chip's
-   brackets are positioned absolutely so they hang just outside the label
-   instead of taking layout space — the text stays put (and stays aligned with
-   the other chips) whether or not it's highlighted. */
+/* Mobile: filter chips indented a touch so the active chip's opening bracket
+   lines up with the left edge of the thumbnails. Brackets are positioned
+   absolutely (in the reserved left padding / just past the label) so the text
+   never shifts and every chip stays aligned whether highlighted or not. */
 @media (max-width: 500px){
-	.archive-filter{ position: relative; }
+	.archive-filter{ position: relative; padding-left: 1.25ch; }
 	.archive-filter::before,
 	.archive-filter::after{ content: none; }
-	.archive-filter.active::before{ content: '[ '; position: absolute; right: 100%; white-space: pre; visibility: visible; }
-	.archive-filter.active::after{ content: ' ]'; position: absolute; left: 100%; white-space: pre; visibility: visible; }
+	.archive-filter.active::before{ content: '['; position: absolute; left: 0; visibility: visible; }
+	.archive-filter.active::after{ content: ']'; position: absolute; left: 100%; margin-left: 0.3ch; visibility: visible; }
 }
