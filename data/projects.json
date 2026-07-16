@@ -282,7 +282,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-08",
-  "arch_order": 42,
+  "arch_order": 27,
   "categories": [
    "Music Video"
   ]
@@ -5602,7 +5602,7 @@
   "vimeo": "https://vimeo.com/1116225435",
   "credits": "Tokischa | Perreo Llorando\n\nDirector: Bertram\nProduction: Jenzar Films\nExecutive Producer: Jennifer Zarzuela\nDP: Gaul Porat\nProduction Designer: Gabriel Duque\nStylist: Paula Machado\nColor: @nick__metcalf",
   "number": "W232",
-  "arch_order": 27,
+  "arch_order": 42,
   "carousel": false
  },
  {
