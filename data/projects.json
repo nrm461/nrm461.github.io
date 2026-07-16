@@ -355,7 +355,7 @@
   ],
   "number": "W010",
   "selected": true,
-  "arch_order": 12,
+  "arch_order": 11,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
@@ -397,7 +397,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-10-28",
-  "arch_order": 10,
+  "arch_order": 9,
   "sel_order": 11,
   "categories": [
    "Commercial"
@@ -509,7 +509,7 @@
   "number": "W014",
   "selected": true,
   "sel_order": 3,
-  "arch_order": 3,
+  "arch_order": 2,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-16",
@@ -551,7 +551,7 @@
   "gallery": true,
   "sel_order": 8,
   "delivered": "2026-02-09",
-  "arch_order": 11,
+  "arch_order": 10,
   "categories": [
    "Music Video"
   ]
@@ -625,7 +625,7 @@
   "number": "W017",
   "selected": true,
   "sel_order": 2,
-  "arch_order": 5,
+  "arch_order": 4,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-23",
@@ -702,7 +702,7 @@
   "number": "W019",
   "selected": true,
   "sel_order": 6,
-  "arch_order": 7,
+  "arch_order": 6,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-13",
@@ -743,7 +743,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-03-11",
-  "arch_order": 8,
+  "arch_order": 7,
   "categories": [
    "Commercial"
   ]
@@ -1256,7 +1256,7 @@
   "number": "W038",
   "selected": true,
   "delivered": "2026-02-13",
-  "arch_order": 9,
+  "arch_order": 8,
   "sel_order": 7,
   "carousel": true,
   "gallery": true,
@@ -1321,7 +1321,7 @@
   "sel_order": 4,
   "carousel": true,
   "delivered": "2026-05-06",
-  "arch_order": 4,
+  "arch_order": 3,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -1417,7 +1417,7 @@
   "selected": true,
   "sel_order": 5,
   "carousel": true,
-  "arch_order": 6,
+  "arch_order": 5,
   "gallery": true,
   "categories": [
    "Commercial",
@@ -1449,7 +1449,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-06-08",
-  "arch_order": 2,
+  "arch_order": 1,
   "categories": [
    "Commercial"
   ]
@@ -6592,6 +6592,6 @@
   "vimeo": "https://vimeo.com/1157296221",
   "credits": "Thorne | Now You Know\n\nDir: Jack Begert\nDP: Gabriel Crawford Connelly Prod: Biscuit\nColor: @nick__metcalf Shot on 35mm",
   "number": "W957",
-  "arch_order": 1
+  "arch_order": 12
  }
 ]
