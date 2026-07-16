@@ -278,8 +278,9 @@ def build_projects():
 
         # media: campaign parents stack every child video; singles get one slot
         if p.get('children'):
-            kids = [project_by_slug(k) for k in p['children']]
-            media = '\n\t\t\t'.join(media_block(k, label=k.get('title', '')) for k in kids if k)
+            kids = [k for k in (project_by_slug(k) for k in p['children']) if k]
+            show_labels = len(kids) > 1
+            media = '\n\t\t\t'.join(media_block(k, label=(k.get('title', '') if show_labels else '')) for k in kids)
         else:
             media = media_block(p)
 
