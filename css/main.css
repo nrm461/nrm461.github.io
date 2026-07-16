@@ -686,8 +686,8 @@ img.thumb + .video-label{
 
 
 /* ---- Responsive refinements (mobile nav, landing 1-up, filters) ---- */
-/* Two-thumbnail width: spread WORK / ARCHIVE / CONTACT edge to edge */
-@media (min-width: 501px) and (max-width: 768px){
+/* Two- and three-thumbnail width: spread WORK / ARCHIVE / CONTACT edge to edge */
+@media (min-width: 501px) and (max-width: 1024px){
 	header{ justify-content: space-between; column-gap: 1rem; }
 }
 /* Phones: vertical, left-justified nav + single-column landing + vertical archive filters */
