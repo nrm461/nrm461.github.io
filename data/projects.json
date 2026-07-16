@@ -5686,7 +5686,7 @@
   "slug": "kyle-mcneil-skys-song",
   "client": "Kyle McNeil",
   "title": "Sky's Song",
-  "director": "",
+  "director": "@elielford",
   "director_raw": "",
   "categories": [
    "Music Video"
@@ -5695,7 +5695,7 @@
   "group": "hidden",
   "selected": false,
   "vimeo": "https://vimeo.com/800375198",
-  "credits": "Kyle McNeil | Sky's Song\n\nDirected by Eliel Ford\nProduced by Brendan Garrett\nDP Emerson Duggan\nColor @nick__metcalf\nLab Metropolis Post",
+  "credits": "Kyle McNeil | Sky's Song\n\nDirected by @elielford\nProduced by Brendan Garrett\nDP Emerson Duggan\nColor @nick__metcalf\nLab Metropolis Post",
   "number": "W903",
   "arch_order": 0,
   "carousel": false
