@@ -596,7 +596,7 @@ img.thumb + .video-label{
 	align-self: start;
 }
 @media (max-width: 768px){
-	.project-gallery{ display: none; }
+	.project-gallery{ grid-template-columns: 1fr; }  /* mobile: single-column gallery */
 }
 .local_video_wrapper video{
 	width: 100%;
