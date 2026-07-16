@@ -70,6 +70,7 @@ button:disabled{ opacity:.4; cursor:default; }
   <input id="token" type="password" placeholder="GitHub token">
   <button id="save" disabled>Save order</button>
   <button id="combine">+ Combine</button>
+  <label id="mobgal-label" title="show carousel galleries on phones (single column)" style="font-size:12px;display:inline-flex;align-items:center;gap:4px"><input type="checkbox" id="mobgal"> mobile gallery</label>
   <span id="status">…</span>
 </header>
 <div class="hint">
@@ -619,6 +620,22 @@ C.save.addEventListener('click', async()=>{
   }catch(e){ C.st.textContent='failed: '+e.message; }
   C.save.disabled=false;
 });
+/* ---- global "mobile gallery" toggle (site.json) ---- */
+async function loadMobGal(){
+  try{ const {data}=await ghGetJson('data/site.json'); $('#mobgal').checked=!!data.mobile_gallery; }
+  catch(e){}
+}
+$('#mobgal').addEventListener('change',async()=>{
+  const el=$('#mobgal'); el.disabled=true;
+  try{
+    const {sha,data}=await ghGetJson('data/site.json');
+    data.mobile_gallery=el.checked;
+    await ghPutJson('data/site.json',data,sha,'admin: mobile gallery '+(el.checked?'on':'off'));
+    say('mobile gallery '+(el.checked?'on':'off')+' — live in ~2 min');
+  }catch(err){ alert('failed: '+err.message); el.checked=!el.checked; }
+  el.disabled=false;
+});
+loadMobGal();
 load();
 </script>
 </body>
