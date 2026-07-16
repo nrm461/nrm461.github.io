@@ -317,7 +317,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 13,
+  "arch_order": 15,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19",
@@ -433,7 +433,7 @@
   ],
   "number": "W012",
   "selected": false,
-  "arch_order": 15,
+  "arch_order": 17,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-30",
@@ -589,7 +589,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 17,
+  "arch_order": 13,
   "categories": [
    "Music Video"
   ]
