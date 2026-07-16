@@ -5689,15 +5689,16 @@
   "director": "",
   "director_raw": "",
   "categories": [
-   "Commercial"
+   "Music Video"
   ],
-  "category": "Commercial",
+  "category": "Music Video",
   "group": "hidden",
   "selected": false,
   "vimeo": "https://vimeo.com/800375198",
   "credits": "Kyle McNeil | Sky's Song\n\nDirected by Eliel Ford\nProduced by Brendan Garrett\nDP Emerson Duggan\nColor @nick__metcalf\nLab Metropolis Post",
   "number": "W903",
-  "arch_order": 0
+  "arch_order": 0,
+  "carousel": false
  },
  {
   "slug": "stuart-weitzman-how-lovely-to-be-a-woman",
