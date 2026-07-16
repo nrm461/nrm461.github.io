@@ -1869,11 +1869,12 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
   "arch_order": 85,
-  "carousel": false,
+  "carousel": true,
   "categories": [
    "Commercial"
   ],
-  "sel_order": 19
+  "sel_order": 19,
+  "gallery": true
  },
  {
   "slug": "ny-presbyterian-peter",
