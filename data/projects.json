@@ -359,7 +359,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
-  "sel_order": 13,
+  "sel_order": 12,
   "categories": [
    "Beauty"
   ]
@@ -398,7 +398,7 @@
   "gallery": true,
   "delivered": "2025-10-28",
   "arch_order": 9,
-  "sel_order": 12,
+  "sel_order": 11,
   "categories": [
    "Commercial"
   ]
@@ -1758,7 +1758,7 @@
   "number": "W059",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
-  "sel_order": 19,
+  "sel_order": 18,
   "arch_order": 76,
   "carousel": true,
   "gallery": true,
@@ -1874,7 +1874,7 @@
   "categories": [
    "Commercial"
   ],
-  "sel_order": 999
+  "sel_order": 19
  },
  {
   "slug": "ny-presbyterian-peter",
@@ -2114,7 +2114,7 @@
   "number": "W074",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
-  "sel_order": 17,
+  "sel_order": 16,
   "arch_order": 44,
   "delivered": "2024-09-30",
   "carousel": true,
@@ -2196,7 +2196,7 @@
   "number": "W077",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
-  "sel_order": 16,
+  "sel_order": 13,
   "carousel": true,
   "arch_order": 31,
   "gallery": true,
@@ -2720,7 +2720,7 @@
   "video_src": "",
   "number": "W113",
   "selected": true,
-  "sel_order": 11,
+  "sel_order": 10,
   "arch_order": 23,
   "delivered": "2025-04-22",
   "carousel": true,
@@ -2749,7 +2749,7 @@
   "video_src": "",
   "number": "W114",
   "selected": true,
-  "sel_order": 18,
+  "sel_order": 17,
   "arch_order": 42,
   "delivered": "2024-09-30",
   "carousel": true,
@@ -5467,7 +5467,7 @@
   ],
   "arch_order": 25,
   "selected": true,
-  "sel_order": 10,
+  "sel_order": 9,
   "delivered": "2025-05-01",
   "carousel": true,
   "gallery": true,
