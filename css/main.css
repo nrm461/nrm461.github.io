@@ -362,7 +362,7 @@ video.no-autoplay{
 .page-index:not(.page-archive) .module-videos{
 	grid-template-columns: repeat(4, 1fr);
 }
-@media (max-width: 768px){
+@media (max-width: 1024px){
 	.page-index:not(.page-archive) .module-videos{
 		grid-template-columns: repeat(2, 1fr);
 	}
