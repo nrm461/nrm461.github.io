@@ -5669,10 +5669,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/825921673",
-    "credits": "Lotus\n\nDIRECTOR: Shana Purnama DP: Gabriel Crawford Connelly EP: bigkid PRODUCER: Will Noyce STARRING: Zhong Mei, Rachel Lv, Alison Ho GAFFER: Ezra Robinson KEY GRIP: Luke Peterson 1AC: Alex Han 2AC: Steven Xie STEADICAM: Garet Jatsek STYLIST: Kaitlyn Vitug HMU: Denise Bugarín-Escamilla COLORIST: Nick Metcalf EDITOR: James Dayton SOUND DESIGN AND MIX: Joseph Kennemer",
+    "credits": "Lotus\n\nDIRECTOR: Shana Purnama\nDP: Gabriel Crawford Connelly\nEP: bigkid\nPRODUCER: Will Noyce\nSTARRING: Zhong Mei, Rachel Lv, Alison Ho\nGAFFER: Ezra Robinson\nKEY GRIP: Luke Peterson\n1AC: Alex Han\n2AC: Steven Xie\nSTEADICAM: Garet Jatsek\nSTYLIST: Kaitlyn Vitug\nHMU: Denise Bugarín-Escamilla\nCOLORIST: @nick__metcalf\nEDITOR: James Dayton\nSOUND DESIGN AND MIX: Joseph Kennemer",
     "number": "W900",
     "arch_order": 0
   },
@@ -5686,10 +5686,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/626861747",
-    "credits": "Gone Viral | Short Documentary\n\nDirector & Editor: Savannah O'Leary Producers: Savannah O'Leary & Artem Agafonov DP: Brennan Full Production Designer: Mikael Taylor Colorist: Nick Metcalf",
+    "credits": "Gone Viral | Short Documentary\n\nDirector &\nEditor: Savannah O'Leary\nProducers: Savannah O'Leary & Artem Agafonov\nDP: Brennan Full\nProduction Designer: Mikael Taylor\nColorist: @nick__metcalf",
     "number": "W901",
     "arch_order": 0
   },
@@ -5703,10 +5703,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/311182736",
-    "credits": "New Balance | ESTEBAN\n\nProd Company: BWGTBLD EP: Sebastian Cordes Producer: Klaudia Podsiadlo DP: Jakob Preischl Editor: Matthias Graatz Colorist: Nick Metcalf Sound Design & Mix: Moritz Staub",
+    "credits": "New Balance | ESTEBAN\n\nProd Company: BWGTBLD\nEP: Sebastian Cordes\nProducer: Klaudia Podsiadlo\nDP: Jakob Preischl\nEditor: Matthias Graatz\nColorist: @nick__metcalf\nSound Design & Mix: Moritz Staub",
     "number": "W902",
     "arch_order": 0
   },
@@ -5720,10 +5720,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/800375198",
-    "credits": "Kyle McNeil | Sky's Song\n\nDirected by Eliel Ford Produced by Brendan Garrett DP Emerson Duggan Color Nick Metcalf Lab Metropolis Post",
+    "credits": "Kyle McNeil | Sky's Song\n\nDirected by Eliel Ford\nProduced by Brendan Garrett\nDP Emerson Duggan\nColor @nick__metcalf\nLab Metropolis Post",
     "number": "W903",
     "arch_order": 0
   },
@@ -5737,10 +5737,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1013704000",
-    "credits": "Stuart Weitzman | How Lovely To Be A Woman\n\nDirector: Matvey Fiks DP: Matt Ballard Stylist: Camilla Nickerson Edit: Cabin Edit Editor: Matt Schaff Color: Company 3 Colorist: Nick Metcalf Talent: Issa Rae, Lucy Liu, Aly Raisman, Ming Xi, Christy Turlington",
+    "credits": "Stuart Weitzman | How Lovely To Be A Woman\n\nDirector: Matvey Fiks\nDP: Matt Ballard\nStylist: Camilla Nickerson\nEdit: Cabin Edit\nEditor: Matt Schaff\nColor: Company 3\nColorist: @nick__metcalf\nTalent: Issa Rae, Lucy Liu, Aly Raisman, Ming Xi, Christy Turlington",
     "number": "W904",
     "arch_order": 0
   },
@@ -5754,10 +5754,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/237138750",
-    "credits": "SoundCloud - Next Wave | New York\n\nDirector: Scott Perry Produced By: The FADER DP: Mikey Van Bueren Editor: Chris Beckman Color: Nick Metcalf at The Mill",
+    "credits": "SoundCloud - Next Wave | New York\n\nDirector: Scott Perry\nProduced By: The FADER\nDP: Mikey Van Bueren\nEditor: Chris Beckman\nColor: @nick__metcalf at The Mill",
     "number": "W905",
     "arch_order": 0
   },
@@ -5771,10 +5771,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/282570784",
-    "credits": "Google Pay | Camping Trip\n\nDirector: Tucker Bliss DP: Todd Martin Producer: Lisa Villamil Color: Nick Metcalf Agency: Mono Production Company: 1st Ave Machine",
+    "credits": "Google Pay | Camping Trip\n\nDirector: Tucker Bliss\nDP: Todd Martin\nProducer: Lisa Villamil\nColor: @nick__metcalf\nAgency: Mono\nProduction Company: 1st Ave Machine",
     "number": "W906",
     "arch_order": 0
   },
@@ -5788,10 +5788,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/723461305",
-    "credits": "Kaytee | Small in Show\n\nAgency: Droga5 NY Production Company: M ss ng P eces Director: Nick & Charles Editorial: Work Editorial Colorist: Nick Metcalf",
+    "credits": "Kaytee | Small in Show\n\nAgency: Droga5 NY\nProduction Company: M ss ng P eces\nDirector: Nick & Charles\nEditorial: Work Editorial\nColorist: @nick__metcalf",
     "number": "W907",
     "arch_order": 0
   },
@@ -5805,10 +5805,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/574194043",
-    "credits": "MONSE Fall 2021\n\nDirected and Edited by David Johnston 1st AC: Patrick Scanlon Colorist: Nick Metcalf",
+    "credits": "MONSE Fall 2021\n\nDirected and Edited by David Johnston\n1st AC: Patrick Scanlon\nColorist: @nick__metcalf",
     "number": "W908",
     "arch_order": 0
   },
@@ -5822,10 +5822,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/701816753",
-    "credits": "Hummer EV\n\nDirector: Josh Hayward EP: Scott Dodoro DP: Tommy Daguanno Producer: Andrew Denyer Color: Nick Metcalf Produced By: Local Boy Agency: Leo Burnett",
+    "credits": "Hummer EV\n\nDirector: Josh Hayward\nEP: Scott Dodoro\nDP: Tommy Daguanno\nProducer: Andrew Denyer\nColor: @nick__metcalf\nProduced By: Local Boy\nAgency: Leo Burnett",
     "number": "W909",
     "arch_order": 0
   },
@@ -5839,10 +5839,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/803216832",
-    "credits": "Woolrich SS23 | Unorthodox Outsiders\n\nDirector: @logansrice Prod Company: @pbj_inc DoP: @embo920 Colorist: @nick__metcalf",
+    "credits": "Woolrich SS23 | Unorthodox Outsiders\n\nDirector: @logansrice\nProd Company: @pbj_inc\nDoP: @embo920\nColorist: @nick__metcalf",
     "number": "W910",
     "arch_order": 0
   },
@@ -5856,10 +5856,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/576871351",
-    "credits": "Orangetheory Fitness | Made For More\n\nAgency: Tombras Production Co: Partizan Director: Matt Baron DP: Garrett Hardy Davis Editor: Paul La Calandra Color: Nick Metcalf VFX: I Love Dust",
+    "credits": "Orangetheory Fitness | Made For More\n\nAgency: Tombras\nProduction Co: Partizan\nDirector: Matt Baron\nDP: Garrett Hardy Davis\nEditor: Paul La Calandra\nColor: @nick__metcalf\nVFX: I Love Dust",
     "number": "W911",
     "arch_order": 0
   },
@@ -5873,10 +5873,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/995093416",
-    "credits": "A Living Wage | John's Story\n\nFor Merit America. Director: Savannah O'Leary Producer: Kieran Altmann DP: Jon Bregel Editor: Ethan Mitchell, Cut&Run Colorist: Nick Metcalf Composer: Michael Dragovic Featuring: John Wells",
+    "credits": "A Living Wage | John's Story\n\nFor Merit America.\nDirector: Savannah O'Leary\nProducer: Kieran Altmann\nDP: Jon Bregel\nEditor: Ethan Mitchell, Cut&Run\nColorist: @nick__metcalf\nComposer: Michael Dragovic\nFeaturing: John Wells",
     "number": "W912",
     "arch_order": 0
   },
@@ -5890,10 +5890,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/576545571",
-    "credits": "adidas Originals | Forum by NYC\n\nDirectors: JamsxBash Production: ArtClass Content Agency: Grow DP: Shannon Palmer Editor: Tyrone Rhabb Color: Nick Metcalf",
+    "credits": "adidas Originals | Forum by NYC\n\nDirectors: JamsxBash\nProduction: ArtClass Content\nAgency: Grow\nDP: Shannon Palmer\nEditor: Tyrone Rhabb\nColor: @nick__metcalf",
     "number": "W913",
     "arch_order": 0
   },
@@ -5907,10 +5907,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/217775903",
-    "credits": "Dan Auerbach | Waiting On A Song\n\nDirector: Bryan Schlam Producer: W. Ian Ross DP: Ben Carey Colorist: Nicholas Metcalf Starring: Tony Vogel, Hayley Orrantia",
+    "credits": "Dan Auerbach | Waiting On A Song\n\nDirector: Bryan Schlam\nProducer: W. Ian Ross\nDP: Ben Carey\nColorist: @nick__metcalf\nStarring: Tony Vogel, Hayley Orrantia",
     "number": "W914",
     "arch_order": 0
   },
@@ -5924,10 +5924,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/265808125",
-    "credits": "Free People | Moving Together\n\nDirected by Steven Brahms DP: Garrett Hardy Davis Editor: Drew Blatman Color: Nick Metcalf Producer: Cassidy Ellis",
+    "credits": "Free People | Moving Together\n\nDirected by Steven Brahms\nDP: Garrett Hardy Davis\nEditor: Drew Blatman\nColor: @nick__metcalf\nProducer: Cassidy Ellis",
     "number": "W915",
     "arch_order": 0
   },
@@ -5941,10 +5941,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1091044142",
-    "credits": "Stooper\n\nStarring: Emile Hirsch, Valor Hirsch Written and Directed by Bennett Watanabe Producers: Eliel Ford, Brendan Garrett DP: Emerson Duggan Editor: Neal Farmer Colorist: Nick Metcalf",
+    "credits": "Stooper\n\nStarring: Emile Hirsch, Valor Hirsch Written and Directed by Bennett Watanabe\nProducers: Eliel Ford, Brendan Garrett\nDP: Emerson Duggan\nEditor: Neal Farmer\nColorist: @nick__metcalf",
     "number": "W916",
     "arch_order": 0
   },
@@ -5958,10 +5958,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1168840427",
-    "credits": "H&R Block | Life Outside The Box\n\nAgency: Ogilvy Produced by: Reset Content DOP: Anthony Carella Editor: Dylan Edwards Edit House: Cabin Color: Nick Metcalf VFX: Framestore",
+    "credits": "H&R Block | Life Outside The Box\n\nAgency: Ogilvy\nProduced by: Reset Content\nDOP: Anthony Carella\nEditor: Dylan Edwards\nEdit House: Cabin\nColor: @nick__metcalf\nVFX: Framestore",
     "number": "W917",
     "arch_order": 0
   },
@@ -5975,10 +5975,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/214505269",
-    "credits": "Madden RMX\n\nDirector: Travis Hanour DP: Jeremiah Pitman Animation: RUFFMERCY Color: Nicholas Metcalf, The Mill",
+    "credits": "Madden RMX\n\nDirector: Travis Hanour\nDP: Jeremiah Pitman\nAnimation: RUFFMERCY\nColor: @nick__metcalf, The Mill",
     "number": "W918",
     "arch_order": 0
   },
@@ -5992,10 +5992,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/171625920",
-    "credits": "Xfinity | Shipyard\n\nAgency: Brownstein Group Director: Ricky Staub DP: Minka Farthing-Kohl Editor: Ricky Staub Color: The Mill Colorist: Nicholas Metcalf",
+    "credits": "Xfinity | Shipyard\n\nAgency: Brownstein Group\nDirector: Ricky Staub\nDP: Minka Farthing-Kohl\nEditor: Ricky Staub\nColor: The Mill\nColorist: @nick__metcalf",
     "number": "W919",
     "arch_order": 0
   },
@@ -6009,10 +6009,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1161665069",
-    "credits": "Nutrafol | Balance\n\nDirector: Jane Qian Agency: Unentitled Studio Production: Unentitled Studio x PaperNY Cinematographer: Matt Pothier Editor: Jason Beattie Colorist: Nick Metcalf",
+    "credits": "Nutrafol | Balance\n\nDirector: Jane Qian\nAgency: Unentitled Studio\nProduction: Unentitled Studio x PaperNY\nCinematographer: Matt Pothier\nEditor: Jason Beattie\nColorist: @nick__metcalf",
     "number": "W920",
     "arch_order": 0
   },
@@ -6026,10 +6026,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1073284892",
-    "credits": "Trillium Gift of Life Network | Life Lessons\n\nProduction: Alfredo Films Director: Savannah O'Leary Producer: Todd Huskisson DP: James Arthurs Editor: Leah Lalich, Nimiopere Colorist: Nick Metcalf",
+    "credits": "Trillium Gift of Life Network | Life Lessons\n\nProduction: Alfredo Films\nDirector: Savannah O'Leary\nProducer: Todd Huskisson\nDP: James Arthurs\nEditor: Leah Lalich, Nimiopere\nColorist: @nick__metcalf",
     "number": "W921",
     "arch_order": 0
   },
@@ -6043,10 +6043,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/330371893",
-    "credits": "Onni Boi | Tides\n\nProduction company: TIISTAI Director: Kristian Lindén DP: Max Smeds Color Grade: Nicholas Metcalf",
+    "credits": "Onni Boi | Tides\n\nProduction company: TIISTAI\nDirector: Kristian Lindén\nDP: Max Smeds\nColor Grade: @nick__metcalf",
     "number": "W922",
     "arch_order": 0
   },
@@ -6060,10 +6060,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/511786385",
-    "credits": "Insight Global | The Call\n\nAgency: D&S CoLab Director: Ashkan Memarian Production Company: Namesake DP: Sean Bagley Editor: Jai Shukla Color: Nicholas Metcalf",
+    "credits": "Insight Global | The Call\n\nAgency: D&S CoLab\nDirector: Ashkan Memarian\nProduction Company: Namesake\nDP: Sean Bagley\nEditor: Jai Shukla\nColor: @nick__metcalf",
     "number": "W923",
     "arch_order": 0
   },
@@ -6077,10 +6077,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/317754257",
-    "credits": "Charles Fauna | Another Good Person\n\nDirector+DP: Clean Fresh Air Editor: Gianluigi Carella Colorist: Nick Metcalf",
+    "credits": "Charles Fauna | Another Good Person\n\nDirector+DP: Clean Fresh Air\nEditor: Gianluigi Carella\nColorist: @nick__metcalf",
     "number": "W924",
     "arch_order": 0
   },
@@ -6094,10 +6094,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/330992102",
-    "credits": "Onni Boi | Tides (v2)\n\nProduction company: TIISTAI Director: Kristian Lindén DOP: Max Smeds Color Grade: Nicholas Metcalf",
+    "credits": "Onni Boi | Tides (v2)\n\nProduction company: TIISTAI\nDirector: Kristian Lindén\nDOP: Max Smeds\nColor Grade: @nick__metcalf",
     "number": "W925",
     "arch_order": 0
   },
@@ -6111,10 +6111,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/784841563",
-    "credits": "The Salvation Army | Love Beyond\n\nDirector: Ashkan Memarian Agency: Lerma Producer: John Hilton DP: Chris Lew Editor: Jai Shukla Color: Nicholas Metcalf",
+    "credits": "The Salvation Army | Love Beyond\n\nDirector: Ashkan Memarian\nAgency: Lerma\nProducer: John Hilton\nDP: Chris Lew\nEditor: Jai Shukla\nColor: @nick__metcalf",
     "number": "W926",
     "arch_order": 0
   },
@@ -6128,10 +6128,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/717693675",
-    "credits": "Estrella Jalisco | Vive Tu Estrella\n\nDirectors Cut. Directors: tomboy Agency: Pereira O'Dell Production Company: Greenpoint Pictures DP: Marcell Rev Editor: Nick Rondeau, Cabin Edit Color: Nicholas Metcalf",
+    "credits": "Estrella Jalisco | Vive Tu Estrella\n\nDirectors Cut. Directors: tomboy\nAgency: Pereira O'Dell\nProduction Company: Greenpoint Pictures\nDP: Marcell Rev\nEditor: Nick Rondeau, Cabin Edit\nColor: @nick__metcalf",
     "number": "W927",
     "arch_order": 0
   },
@@ -6145,10 +6145,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/860053539",
-    "credits": "Mahally\n\nProduction House: @done_house Director: @souhail.things DOP: @alattas0_0 Editor: @0fadi0 Color Grading: @company_3 @nick__metcalf",
+    "credits": "Mahally\n\nProduction House: @done_house\nDirector: @souhail.things\nDOP: @alattas0_0\nEditor: @0fadi0\nColor Grading: @company_3 @nick__metcalf",
     "number": "W928",
     "arch_order": 0
   },
@@ -6162,10 +6162,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/247039905",
-    "credits": "A Journey of Perpetual Wonderment | Ep. 3\n\nFor Marriott. Director: Shern Sharma Produced by: NBTV Studios DP: Anna Franquesa Solano Edited by: Filipe Zapelini Colorist: Nick Metcalf",
+    "credits": "A Journey of Perpetual Wonderment | Ep. 3\n\nFor Marriott.\nDirector: Shern Sharma\nProduced by: NBTV Studios\nDP: Anna Franquesa Solano Edited by: Filipe Zapelini\nColorist: @nick__metcalf",
     "number": "W929",
     "arch_order": 0
   },
@@ -6179,10 +6179,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1155325427",
-    "credits": "Toy Soldier | Soldier\n\nDirectors: Lulu Syracuse & Augie Syracuse Editor: Sid Williams Production Company: Florence DP: Jeremy Herron Color: Nick Metcalf",
+    "credits": "Toy Soldier | Soldier\n\nDirectors: Lulu Syracuse & Augie Syracuse\nEditor: Sid Williams\nProduction Company: Florence\nDP: Jeremy Herron\nColor: @nick__metcalf",
     "number": "W930",
     "arch_order": 0
   },
@@ -6196,10 +6196,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/471211002",
-    "credits": "Oculus | Play for Real\n\nDirected by Ryan Staake (Director's Cut) Agency: TBWA NY DP: Kevin Hayden Edit: Arcade VFX/CG: Ntropic Color: The Mill Senior Colorist: Nick Metcalf",
+    "credits": "Oculus | Play for Real\n\nDirected by Ryan Staake (Director's Cut)\nAgency: TBWA NY\nDP: Kevin Hayden\nEdit: Arcade VFX/CG: Ntropic\nColor: The Mill Senior\nColorist: @nick__metcalf",
     "number": "W931",
     "arch_order": 0
   },
@@ -6213,10 +6213,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/844049026",
-    "credits": "Samsung | More Than A Ringtone (Brickhead)\n\nDir: Henry DaCosta Prod Co: BrickHead DP: Gabriel Connelly Edit/VFX: Henry DaCosta Color: Nick Metcalf Featuring: Yaeji",
+    "credits": "Samsung | More Than A Ringtone (Brickhead)\n\nDir: Henry DaCosta\nProd Co: BrickHead\nDP: Gabriel Connelly Edit/VFX: Henry DaCosta\nColor: @nick__metcalf\nFeaturing: Yaeji",
     "number": "W932",
     "arch_order": 0
   },
@@ -6230,10 +6230,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1145421485",
-    "credits": "Filmsupply | Don't Forget To Breathe\n\nDirector: Nicholas Freeman Production Company: XX DOP: Gabriel Connelly Edit: Nick Freeman Colorist: Nick Metcalf",
+    "credits": "Filmsupply | Don't Forget To Breathe\n\nDirector: Nicholas Freeman\nProduction Company: XX\nDOP: Gabriel Connelly\nEdit: Nick Freeman\nColorist: @nick__metcalf",
     "number": "W933",
     "arch_order": 0
   },
@@ -6247,10 +6247,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1181223333",
-    "credits": "Tokischa | Perreo Llorando (Trailer)\n\nDir. Bertram Prod. Jennifer Zarzuela DP Miami Unit: Gaul Porat DP Montreal Unit: Gabriel Crawford Connelly Edit: Theo Le Sourd Color: Nick Metcalf",
+    "credits": "Tokischa | Perreo Llorando (Trailer)\n\nDir. Bertram Prod. Jennifer Zarzuela DP Miami Unit: Gaul Porat DP Montreal Unit: Gabriel Crawford Connelly\nEdit: Theo Le Sourd\nColor: @nick__metcalf",
     "number": "W934",
     "arch_order": 0
   },
@@ -6264,10 +6264,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/262664903",
-    "credits": "Opium Ink | Porcelain Doll\n\nDirector: Sophy Holland DP: Casey Showalter Editor: Matt Posey / PS260 Color: Nick Metcalf",
+    "credits": "Opium Ink | Porcelain Doll\n\nDirector: Sophy Holland\nDP: Casey Showalter\nEditor: Matt Posey / PS260\nColor: @nick__metcalf",
     "number": "W935",
     "arch_order": 0
   },
@@ -6281,10 +6281,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/396510817",
-    "credits": "VICIS | The Ice\n\nProduction: Monk Director: Travis Hanour DP: Travis Hanour Editor: Travis Hanour Color: The Mill Colorist: Nick Metcalf",
+    "credits": "VICIS | The Ice\n\nProduction: Monk\nDirector: Travis Hanour\nDP: Travis Hanour\nEditor: Travis Hanour\nColor: The Mill\nColorist: @nick__metcalf",
     "number": "W936",
     "arch_order": 0
   },
@@ -6298,10 +6298,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/190676072",
-    "credits": "Psychic Twin | Stop In Time\n\nDirected by Ashley Robicheaux and Jake Saner Cinematography: Jake Saner Editor: Stephen Michael Simon Colorist: Nick Metcalf",
+    "credits": "Psychic Twin | Stop In Time\n\nDirected by Ashley Robicheaux and Jake Saner\nCinematography: Jake Saner\nEditor: Stephen Michael Simon\nColorist: @nick__metcalf",
     "number": "W937",
     "arch_order": 0
   },
@@ -6315,10 +6315,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/743291259",
-    "credits": "GMC | The Official Vehicle of Nowhere\n\nDirector: Cameron Goold DP: Tobia Sempi and Sidney Unga Editor: Tyler Packard Colorist: Nick Metcalf Agency Creative Directors: Steve Glinski, Andy Ozark, Kevin Pereira",
+    "credits": "GMC | The Official Vehicle of Nowhere\n\nDirector: Cameron Goold\nDP: Tobia Sempi and Sidney Unga\nEditor: Tyler Packard\nColorist: @nick__metcalf Agency\nCreative Directors: Steve Glinski, Andy Ozark, Kevin Pereira",
     "number": "W938",
     "arch_order": 0
   },
@@ -6332,10 +6332,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/580427933",
-    "credits": "Ritz | Medal Moment\n\nDirector: Nicole Ackermann Production Company: Merman Editorial: Billy Sacdalan, MediaMonks Color: Nick Metcalf, The Mill VFX: The Mill Agency: The Martin Agency & MediaMonks",
+    "credits": "Ritz | Medal Moment\n\nDirector: Nicole Ackermann\nProduction Company: Merman\nEditorial: Billy Sacdalan, MediaMonks\nColor: @nick__metcalf, The Mill\nVFX: The Mill\nAgency: The Martin Agency & MediaMonks",
     "number": "W939",
     "arch_order": 0
   },
@@ -6349,10 +6349,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1140153829",
-    "credits": "Ford x Google | Taking Street View Off-Road\n\nAgency: @wknyc Production: @farmleague Director: @nicksokoloff DP: @calebhawkinsss Edit: @mattburke.edit VFX: @shepherd_vfx Colorist: @nick__metcalf",
+    "credits": "Ford x Google | Taking Street View Off-Road\n\nAgency: @wknyc\nProduction: @farmleague\nDirector: @nicksokoloff\nDP: @calebhawkinsss\nEdit: @mattburke.edit\nVFX: @shepherd_vfx\nColorist: @nick__metcalf",
     "number": "W940",
     "arch_order": 0
   },
@@ -6366,10 +6366,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/743567530",
-    "credits": "GMC Canyon | Nowhere\n\nDirector: Cameron Goold DP: Tobia Sempi and Sydney Unga Editor & Sound Design: Tyler Packard Colorist: Nick Metcalf VO: Will Arnett",
+    "credits": "GMC Canyon | Nowhere\n\nDirector: Cameron Goold\nDP: Tobia Sempi and Sydney Unga Editor &\nSound Design: Tyler Packard\nColorist: @nick__metcalf\nVO: Will Arnett",
     "number": "W941",
     "arch_order": 0
   },
@@ -6383,10 +6383,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1144734723",
-    "credits": "Hera | Age Your Way\n\nProducer: Taylor Russo Director: Savannah O'Leary DP: Steve McCord Editor: Ethan Mitchell Original Music: Mike Dragovic Colorist: Nick Metcalf",
+    "credits": "Hera | Age Your Way\n\nProducer: Taylor Russo\nDirector: Savannah O'Leary\nDP: Steve McCord\nEditor: Ethan Mitchell\nOriginal\nMusic: Mike Dragovic\nColorist: @nick__metcalf",
     "number": "W942",
     "arch_order": 0
   },
@@ -6400,10 +6400,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/683038942",
-    "credits": "RED Camera | The Frozen Few\n\nDirected By Jason Momoa DOP: @odeumfilms.tv Color: @nick__metcalf @mill_ny Mix: @decibelny",
+    "credits": "RED Camera | The Frozen Few\n\nDirected By Jason Momoa\nDOP: @odeumfilms.tv\nColor: @nick__metcalf @mill_ny Mix: @decibelny",
     "number": "W943",
     "arch_order": 0
   },
@@ -6417,10 +6417,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1136120334",
-    "credits": "GQ x Lululemon | Jordan Clarkson\n\n24 Hours to the Fullest. Director: @__henrydacosta__ Production: @fieldunit DP: @gabrielconnelly Editor: @tobyheard Color: @nick__metcalf",
+    "credits": "GQ x Lululemon | Jordan Clarkson\n\n24 Hours to the Fullest.\nDirector: @__henrydacosta__\nProduction: @fieldunit\nDP: @gabrielconnelly\nEditor: @tobyheard\nColor: @nick__metcalf",
     "number": "W944",
     "arch_order": 0
   },
@@ -6434,10 +6434,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/197895656",
-    "credits": "Lexus | Life's Roads (Director's Cut)\n\nDirector: Rob Chiu DP: Khalid Mohtaseb Editor: Rob Chiu Production Company: Iconoclast Colourist: Mark Wilenkin (Note: verify color credit)",
+    "credits": "Lexus | Life's Roads (Director's Cut)\n\nDirector: Rob Chiu\nDP: Khalid Mohtaseb\nEditor: Rob Chiu\nProduction Company: Iconoclast\nColourist: Mark Wilenkin (Note: verify color credit)",
     "number": "W945",
     "arch_order": 0
   },
@@ -6451,10 +6451,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/736518344",
-    "credits": "Valley Forge | Arts\n\nDirector/Editor: Steve Perrong Producer: Karl Leisch DP: Michael Faller Colorist: Nick Metcalf",
+    "credits": "Valley Forge | Arts\n\nDirector/Editor: Steve Perrong\nProducer: Karl Leisch\nDP: Michael Faller\nColorist: @nick__metcalf",
     "number": "W946",
     "arch_order": 0
   },
@@ -6468,10 +6468,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1198887518",
-    "credits": "Bandit | Sin Prisa (Summer 26)\n\nDirector: @henrykornaros DP: @gaulporat Edit: @astridxcedeno Edit House: @cabinedit Color: @nick__metcalf @raremedium.tv",
+    "credits": "Bandit | Sin Prisa (Summer 26)\n\nDirector: @henrykornaros\nDP: @gaulporat\nEdit: @astridxcedeno\nEdit House: @cabinedit\nColor: @nick__metcalf @raremedium.tv",
     "number": "W947",
     "arch_order": 0
   },
@@ -6485,10 +6485,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1185870737",
-    "credits": "Urban Stems | The Motherload\n\nDirector: Beau Sam DP: Peter Pascucci Editor: Kevin Tadge Colorist: Nick Metcalf, Rare Medium",
+    "credits": "Urban Stems | The Motherload\n\nDirector: Beau Sam\nDP: Peter Pascucci\nEditor: Kevin Tadge\nColorist: @nick__metcalf, Rare Medium",
     "number": "W948",
     "arch_order": 0
   },
@@ -6502,10 +6502,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1173787453",
-    "credits": "Red Bull Symphonic (Trailer)\n\nDirector/Producer: Mia Jamilano DP: Jeremy Herron Editor: Michael Del Rosario Colorist: Nick Metcalf Artist: Asake",
+    "credits": "Red Bull Symphonic (Trailer)\n\nDirector/Producer: Mia Jamilano\nDP: Jeremy Herron\nEditor: Michael Del Rosario\nColorist: @nick__metcalf Artist: Asake",
     "number": "W949",
     "arch_order": 0
   },
@@ -6519,10 +6519,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1161658046",
-    "credits": "Nutrafol | Women\n\nDirector: Jane Qian Agency: Unentitled Studio Production: Unentitled Studio x PaperNY Cinematographer: Matt Pothier Editor: Jason Beattie Colorist: Nick Metcalf",
+    "credits": "Nutrafol | Women\n\nDirector: Jane Qian\nAgency: Unentitled Studio\nProduction: Unentitled Studio x PaperNY\nCinematographer: Matt Pothier\nEditor: Jason Beattie\nColorist: @nick__metcalf",
     "number": "W950",
     "arch_order": 0
   },
@@ -6536,10 +6536,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1161444646",
-    "credits": "Weekend at Tory's\n\nStarring Alex Consani, Awar Odhiang and Hejia Li Directed by Talia Collis DOP: Cory Fraiman-Lott Editor: Talia Pasqua Colorist: Nick Metcalf",
+    "credits": "Weekend at Tory's\n\nStarring Alex Consani, Awar Odhiang and Hejia Li Directed by Talia Collis\nDOP: Cory Fraiman-Lott\nEditor: Talia Pasqua\nColorist: @nick__metcalf",
     "number": "W951",
     "arch_order": 0
   },
@@ -6553,10 +6553,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/995093072",
-    "credits": "A Living Wage | Amy's Story\n\nFor Merit America. Director: Savannah O'Leary Producer: Kieran Altmann DP: Jon Bregel Editor: Ethan Mitchell, Cut&Run Colorist: Nick Metcalf Composer: Michael Dragovic Featuring: Amy Laird",
+    "credits": "A Living Wage | Amy's Story\n\nFor Merit America.\nDirector: Savannah O'Leary\nProducer: Kieran Altmann\nDP: Jon Bregel\nEditor: Ethan Mitchell, Cut&Run\nColorist: @nick__metcalf\nComposer: Michael Dragovic\nFeaturing: Amy Laird",
     "number": "W952",
     "arch_order": 0
   },
@@ -6570,10 +6570,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/801433399",
-    "credits": "Corvette E-Ray | One Like None\n\nClient: Chevrolet Agency: Commonwealth Production: Local Boy Director: Luke Huxham DP: Tommy Daguanno Editor: Robert Frenette Colour: Nick Metcalf / Company 3 CGI: AFX Creative",
+    "credits": "Corvette E-Ray | One Like None\n\nClient: Chevrolet\nAgency: Commonwealth\nProduction: Local Boy\nDirector: Luke Huxham\nDP: Tommy Daguanno\nEditor: Robert Frenette\nColour: @nick__metcalf / Company 3\nCGI: AFX Creative",
     "number": "W953",
     "arch_order": 0
   },
@@ -6587,10 +6587,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/757683385",
-    "credits": "Vacations | Short Film\n\nFeaturing: Scott Kruse Director: Danny Corey DP: Kyle Messina Producer: Adam Battaglia Color by: Nick Metcalf",
+    "credits": "Vacations | Short Film\n\nFeaturing: Scott Kruse\nDirector: Danny Corey\nDP: Kyle Messina\nProducer: Adam Battaglia Color by: @nick__metcalf",
     "number": "W954",
     "arch_order": 0
   },
@@ -6604,10 +6604,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/683032420",
-    "credits": "Harley-Davidson | Pan America\n\nCreated by: @odeumfilms For @harleydavidson and @prideofgypsies Editor: @chrissyrabe Color and Mix: @nick_metcalf @mill_ny @decibelny",
+    "credits": "Harley-Davidson | Pan America\n\nCreated by: @odeumfilms For @harleydavidson and @prideofgypsies\nEditor: @chrissyrabe Color and Mix: @nick_metcalf @mill_ny @decibelny",
     "number": "W955",
     "arch_order": 0
   },
@@ -6621,10 +6621,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/805576563",
-    "credits": "Samsung | More Than A Ringtone\n\nDir: Henry DaCosta Prod Co: BrickHead DP: Gabriel Connelly Edit/VFX: Henry DaCosta Color: Nick Metcalf Featuring: Yaeji",
+    "credits": "Samsung | More Than A Ringtone\n\nDir: Henry DaCosta\nProd Co: BrickHead\nDP: Gabriel Connelly Edit/VFX: Henry DaCosta\nColor: @nick__metcalf\nFeaturing: Yaeji",
     "number": "W956",
     "arch_order": 0
   },
@@ -6638,10 +6638,10 @@
       "Commercial"
     ],
     "category": "Commercial",
-    "group": "vimeo_batch",
+    "group": "hidden",
     "selected": false,
     "vimeo": "https://vimeo.com/1157296221",
-    "credits": "Thorne | Now You Know\n\nDir: Jack Begert DP: Gabriel Crawford Connelly Prod: Biscuit Color: Nick Metcalf Shot on 35mm",
+    "credits": "Thorne | Now You Know\n\nDir: Jack Begert\nDP: Gabriel Crawford Connelly Prod: Biscuit\nColor: @nick__metcalf Shot on 35mm",
     "number": "W957",
     "arch_order": 0
   }
