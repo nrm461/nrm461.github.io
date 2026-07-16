@@ -5609,18 +5609,17 @@
   "slug": "lotus",
   "client": "",
   "title": "Lotus",
-  "director": "",
+  "director": "Shana Purnama",
   "director_raw": "",
-  "categories": [
-   "Commercial"
-  ],
-  "category": "Commercial",
+  "categories": [],
+  "category": "",
   "group": "hidden",
   "selected": false,
   "vimeo": "https://vimeo.com/825921673",
   "credits": "Lotus\n\nDIRECTOR: Shana Purnama\nDP: Gabriel Crawford Connelly\nEP: bigkid\nPRODUCER: Will Noyce\nSTARRING: Zhong Mei, Rachel Lv, Alison Ho\nGAFFER: Ezra Robinson\nKEY GRIP: Luke Peterson\n1AC: Alex Han\n2AC: Steven Xie\nSTEADICAM: Garet Jatsek\nSTYLIST: Kaitlyn Vitug\nHMU: Denise Bugarín-Escamilla\nCOLORIST: @nick__metcalf\nEDITOR: James Dayton\nSOUND DESIGN AND MIX: Joseph Kennemer",
   "number": "W900",
-  "arch_order": 0
+  "arch_order": 0,
+  "carousel": false
  },
  {
   "slug": "gone-viral-short-documentary",
