@@ -5814,12 +5814,13 @@
  },
  {
   "slug": "hummer-ev-vb",
-  "client": "",
-  "title": "Hummer EV",
+  "client": "Hummer",
+  "title": "EV",
   "director": "",
   "director_raw": "",
   "categories": [
-   "Commercial"
+   "Commercial",
+   "Car"
   ],
   "category": "Commercial",
   "group": "hidden",
@@ -5827,7 +5828,8 @@
   "vimeo": "https://vimeo.com/701816753",
   "credits": "Hummer EV\n\nDirector: Josh Hayward\nEP: Scott Dodoro\nDP: Tommy Daguanno\nProducer: Andrew Denyer\nColor: @nick__metcalf\nProduced By: Local Boy\nAgency: Leo Burnett",
   "number": "W909",
-  "arch_order": 0
+  "arch_order": 0,
+  "carousel": false
  },
  {
   "slug": "woolrich-ss23-unorthodox-outsiders",
