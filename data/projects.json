@@ -317,7 +317,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 14,
+  "arch_order": 13,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19",
@@ -1360,7 +1360,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 15,
+  "arch_order": 14,
   "categories": [
    "Commercial"
   ]
@@ -2282,7 +2282,7 @@
   "number": "W085",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DR2SqTSkZE4/",
-  "arch_order": 13,
+  "arch_order": 12,
   "categories": [
    "Long Form"
   ],
@@ -6592,6 +6592,6 @@
   "vimeo": "https://vimeo.com/1157296221",
   "credits": "Thorne | Now You Know\n\nDir: Jack Begert\nDP: Gabriel Crawford Connelly Prod: Biscuit\nColor: @nick__metcalf Shot on 35mm",
   "number": "W957",
-  "arch_order": 12
+  "arch_order": 15
  }
 ]
