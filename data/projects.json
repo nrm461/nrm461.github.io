@@ -1868,13 +1868,14 @@
   "thumb_src": "/sessions/funny-compassionate-bohr/mnt/old/Fortune favors the brave.PNG",
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Fortune favors the brave - crypto.mp4",
   "number": "W063",
-  "selected": false,
+  "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
   "arch_order": 77,
   "carousel": false,
   "categories": [
    "Commercial"
-  ]
+  ],
+  "sel_order": 999
  },
  {
   "slug": "ny-presbyterian-peter",
