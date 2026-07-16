@@ -316,7 +316,7 @@ def build_projects():
 </main>'''
         inline = '<style>\n:root{\n\t--color-bg: black;\n\t--color-text: white;\n}\n</style>\n'
         write(os.path.join(slug, 'index.html'),
-              page('page-project', f'{SITE["site_name"]} — {card_first_line(p)}', content, inline_vars=inline, depth=1))
+              page('page-project' + (' mobile-gallery' if SITE.get('mobile_gallery') else ''), f'{SITE["site_name"]} — {card_first_line(p)}', content, inline_vars=inline, depth=1))
 
 # ---------------- Contact ----------------
 def build_contact():
