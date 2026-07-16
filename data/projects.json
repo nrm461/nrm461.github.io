@@ -20,7 +20,7 @@
   "stills": [],
   "number": "W001",
   "selected": false,
-  "arch_order": 21,
+  "arch_order": 20,
   "delivered": "2024-12-31",
   "carousel": true,
   "gallery": true,
@@ -62,7 +62,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
-  "arch_order": 19,
+  "arch_order": 18,
   "categories": [
    "Music Video"
   ]
@@ -282,7 +282,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-08",
-  "arch_order": 44,
+  "arch_order": 43,
   "categories": [
    "Music Video"
   ]
@@ -317,7 +317,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 15,
+  "arch_order": 14,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19",
@@ -355,7 +355,7 @@
   ],
   "number": "W010",
   "selected": true,
-  "arch_order": 13,
+  "arch_order": 12,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
@@ -397,7 +397,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-10-28",
-  "arch_order": 11,
+  "arch_order": 10,
   "sel_order": 11,
   "categories": [
    "Commercial"
@@ -433,7 +433,7 @@
   ],
   "number": "W012",
   "selected": false,
-  "arch_order": 17,
+  "arch_order": 16,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-30",
@@ -509,7 +509,7 @@
   "number": "W014",
   "selected": true,
   "sel_order": 3,
-  "arch_order": 4,
+  "arch_order": 3,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-16",
@@ -551,7 +551,7 @@
   "gallery": true,
   "sel_order": 8,
   "delivered": "2026-02-09",
-  "arch_order": 12,
+  "arch_order": 11,
   "categories": [
    "Music Video"
   ]
@@ -589,7 +589,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 18,
+  "arch_order": 17,
   "categories": [
    "Music Video"
   ]
@@ -625,7 +625,7 @@
   "number": "W017",
   "selected": true,
   "sel_order": 2,
-  "arch_order": 6,
+  "arch_order": 5,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-23",
@@ -666,7 +666,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 29,
+  "arch_order": 28,
   "categories": [
    "Long Form"
   ]
@@ -702,7 +702,7 @@
   "number": "W019",
   "selected": true,
   "sel_order": 6,
-  "arch_order": 8,
+  "arch_order": 7,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-13",
@@ -743,7 +743,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-03-11",
-  "arch_order": 9,
+  "arch_order": 8,
   "categories": [
    "Commercial"
   ]
@@ -1017,7 +1017,7 @@
   "stills": [],
   "number": "W030",
   "selected": false,
-  "arch_order": 24,
+  "arch_order": 23,
   "carousel": true,
   "gallery": true,
   "categories": [
@@ -1105,7 +1105,7 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 23,
+  "arch_order": 22,
   "categories": [
    "Long Form"
   ]
@@ -1168,7 +1168,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 36,
+  "arch_order": 35,
   "categories": [
    "Long Form"
   ]
@@ -1256,7 +1256,7 @@
   "number": "W038",
   "selected": true,
   "delivered": "2026-02-13",
-  "arch_order": 10,
+  "arch_order": 9,
   "sel_order": 7,
   "carousel": true,
   "gallery": true,
@@ -1321,7 +1321,7 @@
   "sel_order": 4,
   "carousel": true,
   "delivered": "2026-05-06",
-  "arch_order": 5,
+  "arch_order": 4,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -1360,7 +1360,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 16,
+  "arch_order": 15,
   "categories": [
    "Commercial"
   ]
@@ -1417,7 +1417,7 @@
   "selected": true,
   "sel_order": 5,
   "carousel": true,
-  "arch_order": 7,
+  "arch_order": 6,
   "gallery": true,
   "categories": [
    "Commercial",
@@ -1449,7 +1449,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-06-08",
-  "arch_order": 3,
+  "arch_order": 2,
   "categories": [
    "Commercial"
   ]
@@ -1786,7 +1786,7 @@
   "number": "W060",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "arch_order": 39,
+  "arch_order": 38,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -1976,7 +1976,7 @@
   "number": "W070",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-vniue-M/",
-  "arch_order": 41,
+  "arch_order": 40,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2060,7 +2060,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
   "sel_order": 16,
-  "arch_order": 48,
+  "arch_order": 47,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2115,7 +2115,7 @@
   "number": "W076",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8NJ4r3PSG7/",
-  "arch_order": 42,
+  "arch_order": 41,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -2143,7 +2143,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
   "sel_order": 13,
   "carousel": true,
-  "arch_order": 34,
+  "arch_order": 33,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -2171,7 +2171,7 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8fg96vvkxn/",
   "delivered": "2024-09-30",
-  "arch_order": 49,
+  "arch_order": 48,
   "categories": [],
   "carousel": false
  },
@@ -2196,7 +2196,7 @@
   "number": "W080",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
-  "arch_order": 45,
+  "arch_order": 44,
   "carousel": false,
   "delivered": "2024-09-30",
   "categories": [
@@ -2225,7 +2225,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
   "sel_order": 15,
-  "arch_order": 38,
+  "arch_order": 37,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2254,7 +2254,7 @@
   "number": "W083",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "arch_order": 26,
+  "arch_order": 25,
   "carousel": false,
   "delivered": "2024-11-30",
   "categories": [
@@ -2282,7 +2282,7 @@
   "number": "W085",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DR2SqTSkZE4/",
-  "arch_order": 14,
+  "arch_order": 13,
   "categories": [
    "Long Form"
   ],
@@ -2666,7 +2666,7 @@
   "number": "W113",
   "selected": true,
   "sel_order": 10,
-  "arch_order": 25,
+  "arch_order": 24,
   "delivered": "2025-04-22",
   "carousel": true,
   "gallery": true,
@@ -2695,7 +2695,7 @@
   "number": "W114",
   "selected": true,
   "sel_order": 17,
-  "arch_order": 46,
+  "arch_order": 45,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2723,7 +2723,7 @@
   "video_src": "",
   "number": "W115",
   "selected": false,
-  "arch_order": 43,
+  "arch_order": 42,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -3158,7 +3158,7 @@
   "number": "W135",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 22,
+  "arch_order": 21,
   "delivered": "2026-06-16",
   "categories": [],
   "carousel": false
@@ -3231,7 +3231,7 @@
   "group": "posted",
   "selected": false,
   "number": "W138",
-  "arch_order": 20,
+  "arch_order": 19,
   "vimeo": "",
   "credits": "@bigfoe1998 for @vanityfair & @lululemon\n24 Hours To The Fullest\n\nDirector: @__henrydacosta__\nProduction Company: @fieldunit\nExecutive Producers: @alec__ernest @oscarblyons\nProducer: @jessthiel\nDP: @gabrielconnelly\nPhotographer: @jesse_lizotte\nStylist: @zoeyradfordscott\nPD: @the1andorly\nEditor: @tobyheard\nColor: @nick__metcalf\nComposer: @romekboyer_sound\nSound: @g.s.sound",
   "carousel": false,
@@ -3450,7 +3450,7 @@
   "number": "W145",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 37,
+  "arch_order": 36,
   "delivered": "2025-09-17",
   "categories": [
    "Commercial",
@@ -4000,7 +4000,7 @@
   "number": "W166",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 32,
+  "arch_order": 31,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -4345,7 +4345,7 @@
   "number": "W179",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 30,
+  "arch_order": 29,
   "carousel": true,
   "gallery": true,
   "categories": []
@@ -4801,7 +4801,7 @@
   "number": "W197",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 40,
+  "arch_order": 39,
   "delivered": "2026-02-09",
   "carousel": true,
   "gallery": true,
@@ -5041,7 +5041,7 @@
   "number": "W207",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 33,
+  "arch_order": 32,
   "categories": [
    "Commercial"
   ]
@@ -5067,7 +5067,7 @@
   "number": "W208",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 31,
+  "arch_order": 30,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -5334,7 +5334,7 @@
   "number": "W219",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 47,
+  "arch_order": 46,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -5410,7 +5410,7 @@
   "children": [
    "rivian-milk-run"
   ],
-  "arch_order": 27,
+  "arch_order": 26,
   "selected": true,
   "sel_order": 9,
   "delivered": "2025-05-01",
@@ -5481,7 +5481,7 @@
   "vimeo": "https://vimeo.com/1210344062",
   "credits": "@agcfbrand\nUnità\n\nDirector: @xaviernunezv\nDP: @mchlkttnbl\nProd Co: @action_lines\nGaffer: @ryanwinnicki\n1st AC: @douglas_l_birch\nCamera: @panavisionofficial\nColor: @nick__metcalf\nFeaturing: @victoriajaiani, @jeraldm",
   "number": "W225",
-  "arch_order": 35,
+  "arch_order": 34,
   "carousel": true,
   "gallery": true
  },
@@ -5602,7 +5602,7 @@
   "vimeo": "https://vimeo.com/1116225435",
   "credits": "Tokischa | Perreo Llorando\n\nDirector: Bertram\nProduction: Jenzar Films\nExecutive Producer: Jennifer Zarzuela\nDP: Gaul Porat\nProduction Designer: Gabriel Duque\nStylist: Paula Machado\nColor: @nick__metcalf",
   "number": "W232",
-  "arch_order": 28,
+  "arch_order": 27,
   "carousel": false
  },
  {
@@ -5774,7 +5774,7 @@
   "vimeo": "https://vimeo.com/701816753",
   "credits": "Hummer\n'EV'\n\nDir: @josh_hayward_\nDP: @tommydag\nColor @nick__metcalf\nExecutive Producer: Scott Dodoro\nDP: Tommy Daguanno\nAdditional Cinematographer: Eric Ulbrich\nProducer: Andrew Denyer\nStaring: Victor Ross\nDrone: Override Films\nCamera Car: Filmotechnic\nAdditional Score, Sound Design: Mount\nProduced By: Local Boy\nAgency: Leo Burnett\nExecutive Creative Director: Steve Glinski\nAssociate Creative Director: Kris Layher\nSenior Copywriter: Joe Rinaldi\nSenior Producer: Joan DiSalvo\nVP Account Director: Stacey Kogler",
   "number": "W909",
-  "arch_order": 50,
+  "arch_order": 49,
   "carousel": false
  },
  {
@@ -6183,7 +6183,7 @@
   "vimeo": "https://vimeo.com/1145421485",
   "credits": "Filmsupply | Don't Forget To Breathe\n\nDirector: Nicholas Freeman\nProduction Company: XX\nDOP: Gabriel Connelly\nEdit: Nick Freeman\nColorist: @nick__metcalf",
   "number": "W933",
-  "arch_order": 51
+  "arch_order": 50
  },
  {
   "slug": "tokischa-perreo-llorando-trailer",
@@ -6523,7 +6523,7 @@
   "vimeo": "https://vimeo.com/801433399",
   "credits": "Corvette E-Ray | One Like None\n\nClient: Chevrolet\nAgency: Commonwealth\nProduction: Local Boy\nDirector: Luke Huxham\nDP: Tommy Daguanno\nEditor: Robert Frenette\nColour: @nick__metcalf\nCGI: AFX Creative",
   "number": "W953",
-  "arch_order": 1,
+  "arch_order": 51,
   "carousel": false
  },
  {
@@ -6592,6 +6592,6 @@
   "vimeo": "https://vimeo.com/1157296221",
   "credits": "Thorne | Now You Know\n\nDir: Jack Begert\nDP: Gabriel Crawford Connelly Prod: Biscuit\nColor: @nick__metcalf Shot on 35mm",
   "number": "W957",
-  "arch_order": 2
+  "arch_order": 1
  }
 ]
