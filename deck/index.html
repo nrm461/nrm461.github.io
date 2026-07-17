@@ -87,20 +87,24 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 #ovtags b{color:var(--dim);letter-spacing:.1em;font-size:10px;margin-right:8px}
 .kwtag{display:inline-block;background:#1e1e22;border:1px solid var(--line);border-radius:3px;padding:1px 7px;margin:2px 3px 2px 0;cursor:pointer;font-size:10.5px}
 .kwtag:hover{border-color:var(--accent);color:#fff}
-#ovmeta{display:grid;grid-template-columns:136px 1fr;gap:7px 16px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
-#ovmeta span{font-size:11px;color:#c6c6cb}
-#ovmeta b{color:var(--dim);letter-spacing:.08em;font-size:10px;text-transform:uppercase;font-weight:600;margin-right:6px}
+#ovmeta{columns:3;column-gap:30px;padding:14px 0;border-bottom:1px solid var(--line)}
+.mrow{break-inside:avoid;-webkit-column-break-inside:avoid;font-size:11.5px;line-height:1.5;margin:0 0 7px}
+#ovmeta span{font-size:11.5px;color:#a6a6ad}
+#ovmeta b{color:#e6e6e9;letter-spacing:.04em;font-size:10.5px;text-transform:uppercase;font-weight:600;margin-right:7px}
 #ovmeta a{color:var(--accent);text-decoration:none}
 #ovmeta a:hover{text-decoration:underline}
 #ovadm{padding:12px 0;border-bottom:1px solid var(--line);display:none}
 #ovadm.on{display:block}
 #ovadm b{color:var(--accent);font-size:10px;letter-spacing:.08em}
 #ovadm select{margin-left:8px}
-#ovmorelbl{padding:16px 0 8px;font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700}
-#ovmore,#ovsim{display:flex;flex-wrap:wrap;gap:5px}
-#ovmore img,#ovsim img{height:84px;display:block;cursor:pointer;opacity:.85}
-#ovmore img:hover,#ovsim img:hover{opacity:1}
-#ovsimlbl{padding:16px 0 8px;font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700}
+#ovtabs{padding:18px 0 10px;font-size:11px;letter-spacing:.12em;font-weight:700;text-transform:uppercase}
+.ovtab{cursor:pointer;color:var(--dim)}
+.ovtab:hover{color:#fff}
+.ovtab.sel{color:var(--accent)}
+#ovtabs .sep{color:var(--line);margin:0 9px;cursor:default}
+.ovrow{display:flex;gap:5px;margin-bottom:5px}
+.ovrow img{display:block;cursor:pointer;opacity:.9;object-fit:cover;background:#000}
+.ovrow img:hover{opacity:1}
 .nav{position:fixed;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#e8e8ea;color:#000;border:0;font-size:16px;font-weight:700;cursor:pointer;z-index:31;display:flex;align-items:center;justify-content:center}
 .nav:hover{background:#fff}
 #prev{left:14px}#next{right:14px}
@@ -121,7 +125,7 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 @media(max-width:760px){
 	#side{position:fixed;left:0;top:52px;bottom:0;height:auto;z-index:20;transform:translateX(-100%);transition:transform .2s}
 	#side.open{transform:none}
-	#ovx{padding:12px 12px 50px}#ovmeta{grid-template-columns:108px 1fr}.nav{width:30px;height:30px}
+	#ovx{padding:12px 12px 50px}#ovmeta{columns:1}.nav{width:30px;height:30px}
 	#fmtpanel{width:100%}
 }
 #fbtn{display:none;background:#1a1a1e;border:1px solid var(--line);color:var(--fg);border-radius:3px;padding:5px 9px;font-size:10px;cursor:pointer}
@@ -172,10 +176,8 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 		<div id="ovadm"></div>
 		<div id="ovtags"></div>
 		<div id="ovmeta"></div>
-		<div id="ovmorelbl">MORE SHOTS FROM THIS FILM</div>
-		<div id="ovmore"></div>
-		<div id="ovsimlbl">SIMILAR SHOTS</div>
-		<div id="ovsim"></div>
+		<div id="ovtabs"><span id="tabsim" class="ovtab">Similar Shots</span><span class="sep">/</span><span id="tabmore" class="ovtab">More Shots From This Spot</span></div>
+		<div id="ovgrid"></div>
 	</div>
 </div>
 
@@ -229,7 +231,7 @@ const COLOR_LBL={red:'Red',orange:'Orange',yellow:'Yellow',green:'Green',teal:'T
 const SECTIONS=[
  {key:'film',label:'Film',type:'film',get:x=>[x.slug]},
  {key:'cats',label:'Genre',get:x=>x.cats},
- {key:'color',label:'Color',combo:1,hues:Object.keys(HUE_SW),classes:['warm','cool','mixed','sat','desat','sepia','bw'],get:x=>[x.hue,...x.cls],order:[...Object.keys(HUE_SW),'warm','cool','mixed','sat','desat','sepia','bw'],lblmap:COLOR_LBL},
+ {key:'color',label:'Color',combo:1,noscroll:1,hues:Object.keys(HUE_SW),classes:['warm','cool','mixed','sat','desat','sepia','bw'],get:x=>[x.hue,...x.cls],order:['cool','warm','mixed','sat','desat','sepia','bw',...Object.keys(HUE_SW)],lblmap:COLOR_LBL},
  {key:'pick',label:'Color Picker',type:'picker'},
  {key:'lum',label:'Brightness',get:x=>[lumBand(x.lum)+'_l'],order:['d_l','m_l','b_l']},
  {key:'fmt',label:'Format',get:x=>{const f=fmtOf(x);return f?[f]:[]},order:FMT_OPTS.map(o=>o[0]).filter(Boolean),lblmap:FMT_LBL},
@@ -299,7 +301,7 @@ function buildSidebar(){
 		if(s.order) keys=keys.filter(k=>s.order.indexOf(k)>=0).sort((a,b)=>s.order.indexOf(a)-s.order.indexOf(b));
 		else keys.sort((a,b)=>optName(s,a).toLowerCase()<optName(s,b).toLowerCase()?-1:1);
 		let list=b;
-		if(s.type==='film'||keys.length>14){
+		if((s.type==='film'||keys.length>14)&&!s.noscroll){
 			const fs=document.createElement('input'); fs.className='subsearch'; fs.placeholder=s.type==='film'?'find film…':'filter…'; fs.autocomplete='off';
 			fs.oninput=()=>{ list.querySelectorAll('.opt').forEach(o=>{o.style.display=o.dataset.t.includes(fs.value.toLowerCase())?'':'none';}); };
 			b.appendChild(fs);
@@ -413,6 +415,23 @@ function simScore(a,b){ let s=0;
 	return s;
 }
 let ovIdx=-1, ovList=[];
+let ovGridList=[], ovGridTab='sim';
+function justify(el,list,targetH){
+	el.innerHTML=''; if(!list||!list.length)return;
+	const W=el.clientWidth||960, GAP=5;
+	let i=0;
+	while(i<list.length){
+		let sum=0,j=i;
+		while(j<list.length){ sum+=list[j].ratio*targetH+GAP; j++; if(sum-GAP>=W)break; }
+		let denom=0; for(let k=i;k<j;k++)denom+=list[k].ratio*targetH;
+		let h=targetH*((W-GAP*((j-i)-1))/denom);
+		if(j>=list.length && (sum-GAP)<W) h=Math.min(h,targetH);
+		const row=document.createElement('div'); row.className='ovrow';
+		for(let k=i;k<j;k++){ const f=list[k]; const im=document.createElement('img'); im.src=src(f); im.loading='lazy'; im.style.height=Math.round(h)+'px'; im.style.width=Math.round(f.ratio*h)+'px'; const idx=k; im.onclick=()=>openOv(idx,list); row.appendChild(im); }
+		el.appendChild(row); i=j;
+	}
+}
+window.addEventListener('resize',()=>{ if($('ov').classList.contains('open')) justify($('ovgrid'),ovGridList,120); });
 function openOv(i,list){
 	ovList=list||shown; ovIdx=i; const x=ovList[i]; if(!x) return;
 	$('ovtitle').innerHTML=x.label.replace(' | ',' - &ldquo;')+(x.label.includes(' | ')?'&rdquo;':'')+' <span>('+(x.cats[0]||'')+')</span>';
@@ -436,7 +455,7 @@ function openOv(i,list){
 		['Flags',arrName(x,'fl')||'—'],['Format',fmtOf(x)?FMT_LBL[fmtOf(x)]:'—'],
 		['Watch',x.page&&x.pslug?'<a href="../'+x.pslug+'/" target="_blank">[ open film page ]</a>':'—'],
 	];
-	$('ovmeta').innerHTML=rows.map(r=>'<b>'+r[0]+'</b><span>'+r[1]+'</span>').join('');
+	$('ovmeta').innerHTML=rows.map(r=>'<div class="mrow"><b>'+r[0]+'</b><span>'+r[1]+'</span></div>').join('');
 	// admin per-still format override
 	const adm=$('ovadm');
 	if(ADMIN){
@@ -445,13 +464,15 @@ function openOv(i,list){
 		adm.innerHTML='<b>OVERRIDE FORMAT (this still):</b><select id="ovfmt">'+FMT_OPTS.map(o=>'<option value="'+o[0]+'"'+(o[0]===cur?' selected':'')+'>'+o[1]+'</option>').join('')+'</select> <span style="color:var(--dim);font-size:10px">film default: '+(FMT.films[x.slug]?FMT_LBL[FMT.films[x.slug]]:'none')+'</span>';
 		$('ovfmt').onchange=e=>{ if(e.target.value)FMT.frames[x.key]=e.target.value; else delete FMT.frames[x.key]; fmtDirty=true; $('fmtsave').disabled=false; };
 	} else adm.classList.remove('on');
-	const more=FRAMES.filter(f=>f.slug===x.slug&&f!==x).slice(0,24);
-	$('ovmore').innerHTML=''; more.forEach((f,mi)=>{const im=document.createElement('img');im.src=src(f);im.loading='lazy';im.onclick=()=>openOv(mi,more);$('ovmore').appendChild(im);});
-	$('ovmorelbl').style.display=more.length?'':'none';
-	const sim=FRAMES.filter(f=>f.slug!==x.slug).map(f=>[f,simScore(x,f)]).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,24).map(a=>a[0]);
-	$('ovsim').innerHTML=''; sim.forEach((f,si)=>{const im=document.createElement('img');im.src=src(f);im.loading='lazy';im.onclick=()=>openOv(si,sim);$('ovsim').appendChild(im);});
-	$('ovsimlbl').style.display=sim.length?'':'none';
+	const more=FRAMES.filter(f=>f.slug===x.slug&&f!==x).slice(0,60);
+	const sim=FRAMES.filter(f=>f.slug!==x.slug).map(f=>[f,simScore(x,f)]).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,60).map(a=>a[0]);
 	$('ov').classList.add('open'); $('ov').scrollTop=0; document.body.style.overflow='hidden';
+	$('tabmore').style.display=more.length?'':'none';
+	$('tabsim').style.display=sim.length?'':'none';
+	$('ovtabs').querySelector('.sep').style.display=(more.length&&sim.length)?'':'none';
+	const showTab=(w)=>{ $('tabsim').classList.toggle('sel',w==='sim'); $('tabmore').classList.toggle('sel',w==='more'); ovGridList=(w==='sim'?sim:more); ovGridTab=w; justify($('ovgrid'),ovGridList,120); };
+	$('tabsim').onclick=()=>showTab('sim'); $('tabmore').onclick=()=>showTab('more');
+	showTab(sim.length?'sim':'more');
 }
 function closeOv(){$('ov').classList.remove('open');document.body.style.overflow='';}
 $('ovclose').onclick=closeOv;
