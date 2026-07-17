@@ -189,7 +189,7 @@ try{ TAGS=await (await fetch('../data/deck_tags.json?_='+Date.now())).json(); }c
 try{ FMT=await (await fetch('../data/deck_format.json?_='+Date.now())).json(); }catch(e){}
 FMT.films=FMT.films||{}; FMT.frames=FMT.frames||{};
 
-/* ---------- flatten ---------- */
+/* flatten */
 const FRAMES=[];
 DATA.films.forEach((F,fi)=>{
 	const ratio=F.dar||16/9;
@@ -282,7 +282,7 @@ function buildSidebar(){
 		const counts={};
 		FRAMES.forEach(x=>{ if(passes(x,s.key)) s.get(x).forEach(v=>counts[v]=(counts[v]||0)+1); });
 		let keys=Object.keys(counts); state.sets[s.key].forEach(v=>{if(!keys.includes(v))keys.push(v);});
-		if(s.order) keys.sort((a,b)=>s.order.indexOf(a)-s.order.indexOf(b));
+		if(s.order) keys=keys.filter(k=>s.order.indexOf(k)>=0).sort((a,b)=>s.order.indexOf(a)-s.order.indexOf(b));
 		else keys.sort((a,b)=>optName(s,a).toLowerCase()<optName(s,b).toLowerCase()?-1:1);
 		let list=b;
 		if(s.type==='film'||keys.length>14){
