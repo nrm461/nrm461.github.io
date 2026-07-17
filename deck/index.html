@@ -74,18 +74,15 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 #ov.open{display:block}
 #ovx{max-width:1080px;margin:0 auto;padding:18px 56px 60px}
 #ovhead{display:flex;align-items:baseline;gap:12px;padding:6px 0 12px}
-#ovtitle{font-size:15px;letter-spacing:.06em;font-weight:700;text-transform:uppercase}
+#ovtitle{font-size:15px;letter-spacing:.06em;font-weight:700;text-transform:uppercase;cursor:pointer}
+#ovtitle:hover{color:var(--accent)}
 #ovtitle span{color:var(--dim);font-weight:400;font-size:11px;letter-spacing:0;text-transform:none}
 #ovclose{margin-left:auto;cursor:pointer;background:none;border:0;color:#fff;font-size:20px;line-height:1;padding:4px}
 #ovclose:hover{color:var(--accent)}
 #ovimg{width:100%;background:#000;display:block;max-height:64vh;object-fit:contain}
-#ovpal{display:flex;height:40px;margin-top:8px}
-#ovpal span{cursor:pointer;position:relative}
+#ovpal{display:flex;height:40px;margin-top:8px;gap:3px}
+#ovpal span{cursor:pointer;position:relative;flex:1 1 0;border:2px solid #fff;border-radius:2px}
 #ovpal span:hover::after{content:attr(data-h);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;background:#0007;text-shadow:0 0 4px #000;white-space:nowrap}
-#ovcredits{display:flex;flex-wrap:wrap;gap:5px 26px;padding:12px 0;border-bottom:1px solid var(--line)}
-#ovcredits:empty{display:none;padding:0;border:0}
-#ovcredits p{margin:0;font-size:11.5px;color:#dcdce0}
-#ovcredits b{color:var(--dim);letter-spacing:.09em;font-size:9.5px;text-transform:uppercase;font-weight:600;display:block;margin-bottom:1px}
 #ovtags{padding:12px 0;border-bottom:1px solid var(--line);color:#c6c6cb;font-size:11px;line-height:1.7}
 #ovtags b{color:var(--dim);letter-spacing:.1em;font-size:10px;margin-right:8px}
 .kwtag{display:inline-block;background:#1e1e22;border:1px solid var(--line);border-radius:3px;padding:1px 7px;margin:2px 3px 2px 0;cursor:pointer;font-size:10.5px}
@@ -100,9 +97,10 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 #ovadm b{color:var(--accent);font-size:10px;letter-spacing:.08em}
 #ovadm select{margin-left:8px}
 #ovmorelbl{padding:16px 0 8px;font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700}
-#ovmore{display:flex;flex-wrap:wrap;gap:5px}
-#ovmore img{height:84px;display:block;cursor:pointer;opacity:.85}
-#ovmore img:hover{opacity:1}
+#ovmore,#ovsim{display:flex;flex-wrap:wrap;gap:5px}
+#ovmore img,#ovsim img{height:84px;display:block;cursor:pointer;opacity:.85}
+#ovmore img:hover,#ovsim img:hover{opacity:1}
+#ovsimlbl{padding:16px 0 8px;font-size:11px;letter-spacing:.12em;color:var(--accent);font-weight:700}
 .nav{position:fixed;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:#e8e8ea;color:#000;border:0;font-size:16px;font-weight:700;cursor:pointer;z-index:31;display:flex;align-items:center;justify-content:center}
 .nav:hover{background:#fff}
 #prev{left:14px}#next{right:14px}
@@ -171,12 +169,13 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 		<div id="ovhead"><span id="ovtitle"></span><button id="ovclose">&#10005;</button></div>
 		<img id="ovimg" alt="">
 		<div id="ovpal"></div>
-		<div id="ovcredits"></div>
 		<div id="ovadm"></div>
 		<div id="ovtags"></div>
 		<div id="ovmeta"></div>
 		<div id="ovmorelbl">MORE SHOTS FROM THIS FILM</div>
 		<div id="ovmore"></div>
+		<div id="ovsimlbl">SIMILAR SHOTS</div>
+		<div id="ovsim"></div>
 	</div>
 </div>
 
@@ -201,7 +200,7 @@ DATA.films.forEach((F,fi)=>{
 	(F.frames||[]).forEach(fr=>{
 		const key=F.slug+'/'+fr[0];
 		const tg=TAGS[key]||{};
-		FRAMES.push({slug:F.slug,fi,label:F.label,cats:F.cats||[],arb:F.ar,ratio,page:F.page,pslug:F.page_slug,
+		FRAMES.push({slug:F.slug,fi,label:F.label,cats:F.cats||[],arb:F.ar,ratio,page:F.page,pslug:F.page_slug,rnd:Math.random(),
 			f:fr[0],key,pal:fr[1],wts:fr[2],hue:fr[3],h:fr[4],s:fr[5],lum:fr[6],cls:fr[7]||[],
 			fs:tg.fs||'',tod:tg.tod||'',ie:tg.ie||'',pp:(tg.pp===undefined?'':tg.pp),loc:tg.loc||'',
 			st:tg.st||[],cmp:tg.cmp||[],lt:tg.lt||[],lty:tg.lty||[],fl:tg.fl||[],kw:tg.kw||[]});
@@ -225,12 +224,12 @@ const NM={d_l:'Dark',m_l:'Mid',b_l:'Bright',
  prod:'Product',food:'Food',bev:'Beverage',veh:'Vehicle',logo:'Logo/branding',hand:'Hands',anim:'Animal/pet',scr:'Device screen',bty:'Beauty application',sprt:'Sport/action',dnc:'Dance/performance',drv:'Driving',
  '0':'None','1':'1','2':'2','3':'3','4':'4','5':'5','6':'6+'};
 const nm=v=>NM[v]||v;
+const COLOR_LBL={red:'Red',orange:'Orange',yellow:'Yellow',green:'Green',teal:'Teal',blue:'Blue',purple:'Purple',magenta:'Magenta',pink:'Pink',neutral:'Neutral',white:'White',black:'Black',warm:'Warm',cool:'Cool',mixed:'Mixed',sat:'Saturated',desat:'Desaturated',sepia:'Sepia',bw:'Black & White'};
 
 const SECTIONS=[
  {key:'film',label:'Film',type:'film',get:x=>[x.slug]},
- {key:'cats',label:'Category',get:x=>x.cats},
- {key:'hue',label:'Color',get:x=>[x.hue],sw:h=>HUE_SW[h],order:Object.keys(HUE_SW)},
- {key:'cls',label:'Color Class',get:x=>x.cls,order:['warm','cool','mixed','sat','desat','sepia','bw']},
+ {key:'cats',label:'Genre',get:x=>x.cats},
+ {key:'color',label:'Color',combo:1,hues:Object.keys(HUE_SW),classes:['warm','cool','mixed','sat','desat','sepia','bw'],get:x=>[x.hue,...x.cls],order:[...Object.keys(HUE_SW),'warm','cool','mixed','sat','desat','sepia','bw'],lblmap:COLOR_LBL},
  {key:'pick',label:'Color Picker',type:'picker'},
  {key:'lum',label:'Brightness',get:x=>[lumBand(x.lum)+'_l'],order:['d_l','m_l','b_l']},
  {key:'fmt',label:'Format',get:x=>{const f=fmtOf(x);return f?[f]:[]},order:FMT_OPTS.map(o=>o[0]).filter(Boolean),lblmap:FMT_LBL},
@@ -245,11 +244,12 @@ const SECTIONS=[
  {key:'pp',label:'Number of People',ai:1,get:x=>x.pp!==''?[String(x.pp)]:[],order:['0','1','2','3','4','5','6']},
  {key:'fl',label:'Commercial Flags',ai:1,multi:1,get:x=>x.fl,order:['prod','food','bev','veh','logo','hand','anim','scr','bty','sprt','dnc','drv']},
 ];
-const state={sets:{},pick:null,q:'',sort:'film'};
+const state={sets:{},pick:null,q:'',sort:'shuffle'};
 SECTIONS.forEach(s=>{if(s.type!=='picker')state.sets[s.key]=new Set();});
 const filmLabel={}; DATA.films.forEach(F=>filmLabel[F.slug]=F.label);
 let filmCr={}; try{ filmCr=await (await fetch('../data/deck_credits.json')).json(); }catch(e){}
-const openSecs=new Set(['hue']);
+const openSecs=new Set(['color']);
+const listScroll={};
 
 function hex2rgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function near(pal,rgb,tol){for(const p of pal){const r=parseInt(p.slice(0,2),16)-rgb[0],g=parseInt(p.slice(2,4),16)-rgb[1],b=parseInt(p.slice(4,6),16)-rgb[2];if(Math.sqrt(r*r*.6+g*g+b*b*.4)<tol)return true;}return false;}
@@ -260,6 +260,13 @@ function passes(x,skipKey){
 	for(const s of SECTIONS){
 		if(s.type==='picker'||s.key===skipKey) continue;
 		const set=state.sets[s.key]; if(!set||!set.size) continue;
+		if(s.combo){
+			const selH=[...set].filter(v=>s.hues.includes(v));
+			const selC=[...set].filter(v=>s.classes.includes(v));
+			if(selH.length && !selH.includes(x.hue)) return false;
+			if(selC.length && !selC.some(c=>x.cls.includes(c))) return false;
+			continue;
+		}
 		const vals=s.get(x);
 		if(!vals.some(v=>set.has(v))) return false;
 	}
@@ -268,6 +275,7 @@ function passes(x,skipKey){
 function optName(s,v){ return s.type==='film'?filmLabel[v]:(s.lblmap?s.lblmap[v]:nm(v)); }
 
 function buildSidebar(){
+	const sideScroll=$('side').scrollTop;
 	const root=$('secs'); root.innerHTML='';
 	SECTIONS.forEach(s=>{
 		if(s.ai&&!hasTags) return;
@@ -296,6 +304,7 @@ function buildSidebar(){
 			fs.oninput=()=>{ list.querySelectorAll('.opt').forEach(o=>{o.style.display=o.dataset.t.includes(fs.value.toLowerCase())?'':'none';}); };
 			b.appendChild(fs);
 			list=document.createElement('div'); list.className='scrolllist'; b.appendChild(list);
+			list.addEventListener('scroll',()=>{listScroll[s.key]=list.scrollTop;});
 		}
 		keys.forEach(v=>{
 			const on=state.sets[s.key].has(v);
@@ -305,7 +314,9 @@ function buildSidebar(){
 			o.querySelector('input').onchange=e=>{ e.target.checked?state.sets[s.key].add(v):state.sets[s.key].delete(v); apply(); };
 			list.appendChild(o);
 		});
+		if(list!==b) list.scrollTop=listScroll[s.key]||0;
 	});
+	$('side').scrollTop=sideScroll;
 }
 function buildChips(){
 	const c=$('chips'); c.innerHTML='';
@@ -373,38 +384,51 @@ function apply(){
 	shown=FRAMES.filter(x=>passes(x,null));
 	if(state.sort==='hue')shown.sort((a,b)=>(a.s<12)-(b.s<12)||a.h-b.h||a.lum-b.lum);
 	else if(state.sort==='lum')shown.sort((a,b)=>a.lum-b.lum);
-	else if(state.sort==='shuffle'){for(let i=shown.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shown[i],shown[j]]=[shown[j],shown[i]];}}
+	else if(state.sort==='shuffle')shown.sort((a,b)=>a.rnd-b.rnd);
 	const nf=new Set(shown.map(x=>x.slug)).size;
 	$('showing').innerHTML='Showing <b>'+shown.length.toLocaleString()+'</b> of '+FRAMES.length.toLocaleString()+' shots from <b>'+nf+'</b> films';
 	$('empty').style.display=shown.length?'none':'block';
 	window.scrollTo(0,0); resetGrid(); buildSidebar(); buildChips();
 	if(ADMIN)buildFmtPanel();
 }
-$('sort').onchange=e=>{state.sort=e.target.value;apply();};
+$('sort').value=state.sort; $('sort').onchange=e=>{state.sort=e.target.value;apply();};
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
 $('clearall').onclick=()=>{SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;state.q='';$('search').value='';apply();};
 $('fbtn').onclick=()=>$('side').classList.toggle('open');
 
 /* overlay */
 const arrName=(x,f)=>(x[f]||[]).map(nm).join(', ');
-let ovIdx=-1;
-function openOv(i){
-	ovIdx=i; const x=shown[i]; if(!x) return;
+function simScore(a,b){ let s=0;
+	if(a.hue===b.hue)s+=2;
+	s+=a.cls.filter(c=>b.cls.includes(c)).length*1.5;
+	s+=a.st.filter(v=>b.st.includes(v)).length*1.2;
+	s+=a.lt.filter(v=>b.lt.includes(v)).length;
+	s+=a.cmp.filter(v=>b.cmp.includes(v)).length*0.8;
+	s+=a.lty.filter(v=>b.lty.includes(v)).length*0.8;
+	if(a.fs&&a.fs===b.fs)s+=1;
+	if(a.tod&&a.tod===b.tod)s+=0.6;
+	if(a.ie&&a.ie===b.ie)s+=0.4;
+	if(a.pp!==''&&a.pp===b.pp)s+=0.4;
+	if(Math.abs(a.lum-b.lum)<18)s+=0.5;
+	return s;
+}
+let ovIdx=-1, ovList=[];
+function openOv(i,list){
+	ovList=list||shown; ovIdx=i; const x=ovList[i]; if(!x) return;
 	$('ovtitle').innerHTML=x.label.replace(' | ',' - &ldquo;')+(x.label.includes(' | ')?'&rdquo;':'')+' <span>('+(x.cats[0]||'')+')</span>';
+	$('ovtitle').onclick=()=>{ SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear()); state.pick=null;$('pickon')&&$('pickon').classList.remove('on'); state.q='';$('search').value=''; state.sets['film'].add(x.slug); closeOv(); apply(); };
 	$('ovimg').src=src(x);
-	const totw=x.wts.reduce((a,b)=>a+b,0)||1;
-	$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="flex:'+(x.wts[k]||1)+' 0 0;background:#'+p+'" data-h="#'+p+'"></span>').join('');
+	$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="background:#'+p+'" data-h="#'+p+'"></span>').join('');
 	$('ovpal').querySelectorAll('span').forEach(el=>el.onclick=()=>navigator.clipboard.writeText(el.dataset.h));
-	// credits (ShotDeck-style: Director / DP / Editor)
 	const cr=filmCr[x.slug]||{};
-	$('ovcredits').innerHTML=[['Director',cr.d],['Cinematographer',cr.dp],['Editor',cr.e]].filter(r=>r[1]).map(r=>'<p><b>'+r[0]+'</b>'+r[1]+'</p>').join('');
 	// tags line: keywords as clickable
 	const kwhtml=x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join('');
 	$('ovtags').innerHTML='<b>KEYWORDS</b><br>'+kwhtml;
 	$('ovtags').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
 	const TOD={d:'Day',n:'Night',du:'Dusk',da:'Dawn',sr:'Sunrise',ss:'Sunset'};
+	const credRows=[]; if(cr.d)credRows.push(['Director',cr.d]); if(cr.dp)credRows.push(['Cinematographer',cr.dp]); if(cr.e)credRows.push(['Editor',cr.e]);
 	const rows=[
-		['Film',x.label],['Category',x.cats.join(', ')||'—'],['Frame',x.f],
+		['Film',x.label],['Genre',x.cats.join(', ')||'—'],...credRows,['Frame',x.f],
 		['Color',nm(x.hue)+(x.cls.length?' · '+x.cls.map(nm).join(', '):'')],['Brightness',NM[lumBand(x.lum)+'_l']+' (lum '+x.lum+')'],['Aspect',x.arb],
 		['Frame Size',x.fs?nm(x.fs):'—'],['Shot Type',arrName(x,'st')||'—'],['Composition',arrName(x,'cmp')||'—'],
 		['Lighting',arrName(x,'lt')||'—'],['Lighting Type',arrName(x,'lty')||'—'],['Time of Day',TOD[x.tod]||'—'],
@@ -421,16 +445,19 @@ function openOv(i){
 		adm.innerHTML='<b>OVERRIDE FORMAT (this still):</b><select id="ovfmt">'+FMT_OPTS.map(o=>'<option value="'+o[0]+'"'+(o[0]===cur?' selected':'')+'>'+o[1]+'</option>').join('')+'</select> <span style="color:var(--dim);font-size:10px">film default: '+(FMT.films[x.slug]?FMT_LBL[FMT.films[x.slug]]:'none')+'</span>';
 		$('ovfmt').onchange=e=>{ if(e.target.value)FMT.frames[x.key]=e.target.value; else delete FMT.frames[x.key]; fmtDirty=true; $('fmtsave').disabled=false; };
 	} else adm.classList.remove('on');
-	const more=[]; for(let k=0;k<shown.length&&more.length<24;k++){ if(shown[k].slug===x.slug&&k!==i) more.push(k); }
-	$('ovmore').innerHTML=''; more.forEach(k=>{const im=document.createElement('img');im.src=src(shown[k]);im.loading='lazy';im.onclick=()=>openOv(k);$('ovmore').appendChild(im);});
+	const more=FRAMES.filter(f=>f.slug===x.slug&&f!==x).slice(0,24);
+	$('ovmore').innerHTML=''; more.forEach((f,mi)=>{const im=document.createElement('img');im.src=src(f);im.loading='lazy';im.onclick=()=>openOv(mi,more);$('ovmore').appendChild(im);});
 	$('ovmorelbl').style.display=more.length?'':'none';
+	const sim=FRAMES.filter(f=>f.slug!==x.slug).map(f=>[f,simScore(x,f)]).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,24).map(a=>a[0]);
+	$('ovsim').innerHTML=''; sim.forEach((f,si)=>{const im=document.createElement('img');im.src=src(f);im.loading='lazy';im.onclick=()=>openOv(si,sim);$('ovsim').appendChild(im);});
+	$('ovsimlbl').style.display=sim.length?'':'none';
 	$('ov').classList.add('open'); $('ov').scrollTop=0; document.body.style.overflow='hidden';
 }
 function closeOv(){$('ov').classList.remove('open');document.body.style.overflow='';}
 $('ovclose').onclick=closeOv;
 $('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOv();});
-$('prev').onclick=()=>openOv((ovIdx-1+shown.length)%shown.length);
-$('next').onclick=()=>openOv((ovIdx+1)%shown.length);
+$('prev').onclick=()=>openOv((ovIdx-1+ovList.length)%ovList.length,ovList);
+$('next').onclick=()=>openOv((ovIdx+1)%ovList.length,ovList);
 document.addEventListener('keydown',e=>{ if(!$('ov').classList.contains('open'))return; if(e.key==='Escape')closeOv(); if(e.key==='ArrowLeft')$('prev').click(); if(e.key==='ArrowRight')$('next').click(); });
 
 /* ---- FORMAT ADMIN ---- */
