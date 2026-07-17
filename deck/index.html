@@ -183,9 +183,9 @@ const HUE_SW={red:'#c33',orange:'#d73',yellow:'#cb2',green:'#4a4',teal:'#2a9',bl
 const FMT_OPTS=[['','—'],['f35','Film 35mm'],['f16','Film 16mm'],['s8','Film Super 8mm'],['f65','Film 65/70mm'],['imax','IMAX'],['tape','Tape'],['dig','Digital'],['dlf','Digital Large Format'],['anim','Animation']];
 const FMT_LBL=Object.fromEntries(FMT_OPTS);
 let DATA,TAGS={},FMT={films:{},frames:{}};
-try{ DATA=await (await fetch('../data/deck.json?_='+Date.now())).json(); }
+try{ DATA=await (await fetch('../data/deck.json')).json(); }
 catch(e){ $('empty').style.display='block'; $('empty').textContent='deck.json not found.'; return; }
-try{ TAGS=await (await fetch('../data/deck_tags.json?_='+Date.now())).json(); }catch(e){}
+try{ TAGS=await (await fetch('../data/deck_tags.json')).json(); }catch(e){}
 try{ FMT=await (await fetch('../data/deck_format.json?_='+Date.now())).json(); }catch(e){}
 FMT.films=FMT.films||{}; FMT.frames=FMT.frames||{};
 
@@ -310,34 +310,58 @@ function buildChips(){
 }
 
 /* justified grid */
-let shown=[],rowCursor=0;
-const TARGET_H=158, GAP=5, CHUNK_ROWS=30;
-function renderRows(){
-	const W=$('grid').clientWidth; if(W<50) return;
-	const frag=document.createDocumentFragment(); let rows=0;
-	while(rowCursor<shown.length && rows<CHUNK_ROWS){
-		let i=rowCursor,sum=0;
-		while(i<shown.length){ sum+=shown[i].ratio*TARGET_H+GAP; i++; if(sum-GAP>=W) break; }
-		const items=shown.slice(rowCursor,i);
-		let h=TARGET_H*((W-GAP*(items.length-1))/items.reduce((a,x)=>a+x.ratio*TARGET_H,0));
-		if(i>=shown.length && h>TARGET_H*1.3) h=TARGET_H;
-		const row=document.createElement('div'); row.className='row';
-		items.forEach((x,k)=>{
-			const cell=document.createElement('div'); cell.className='cell'+(ADMIN?' admtag':'');
-			cell.style.width=(x.ratio*h)+'px'; cell.style.height=h+'px';
-			cell.dataset.label=x.label; cell.dataset.i=rowCursor+k;
-			if(ADMIN){const f=fmtOf(x); if(f)cell.dataset.fmt=FMT_LBL[f];}
-			const img=document.createElement('img'); img.loading='lazy'; img.src=src(x); cell.appendChild(img);
-			cell.onclick=()=>openOv(+cell.dataset.i);
-			row.appendChild(cell);
-		});
-		frag.appendChild(row); rowCursor=i; rows++;
+let shown=[];
+const TARGET_H=158, GAP=5;
+let layout=[], totalH=0;
+const rendered=new Map();          // rowIndex -> row element (only visible rows live in DOM)
+function computeLayout(){
+	const W=$('grid').clientWidth; layout=[]; totalH=0; if(W<50) return;
+	let i=0, top=10;
+	while(i<shown.length){
+		let j=i,sum=0;
+		while(j<shown.length){ sum+=shown[j].ratio*TARGET_H+GAP; j++; if(sum-GAP>=W) break; }
+		let denom=0; for(let k=i;k<j;k++) denom+=shown[k].ratio*TARGET_H;
+		let h=TARGET_H*((W-GAP*((j-i)-1))/denom);
+		if(j>=shown.length && h>TARGET_H*1.3) h=TARGET_H;
+		layout.push({top,h,s:i,e:j}); top+=h+GAP; i=j;
 	}
-	$('grid').appendChild(frag);
-	$('more').textContent=rowCursor<shown.length?'· · ·':'';
+	totalH=top;
 }
-new IntersectionObserver(es=>{if(es[0].isIntersecting&&rowCursor<shown.length)renderRows();},{rootMargin:'1200px'}).observe($('more'));
-let rto; window.addEventListener('resize',()=>{clearTimeout(rto);rto=setTimeout(()=>{$('grid').innerHTML='';rowCursor=0;renderRows();},200);});
+function buildRow(ri){
+	const r=layout[ri];
+	const row=document.createElement('div'); row.className='row';
+	row.style.cssText='position:absolute;left:0;right:0;top:'+r.top+'px;margin:0';
+	for(let idx=r.s; idx<r.e; idx++){
+		const x=shown[idx];
+		const cell=document.createElement('div'); cell.className='cell'+(ADMIN?' admtag':'');
+		cell.style.width=(x.ratio*r.h)+'px'; cell.style.height=r.h+'px';
+		cell.dataset.label=x.label; cell.dataset.i=idx;
+		if(ADMIN){const f=fmtOf(x); if(f)cell.dataset.fmt=FMT_LBL[f];}
+		const img=document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=src(x); cell.appendChild(img);
+		cell.onclick=()=>openOv(idx);
+		row.appendChild(cell);
+	}
+	return row;
+}
+function firstRow(y){ let a=0,b=layout.length-1,ans=0; while(a<=b){const m=(a+b)>>1; if(layout[m].top+layout[m].h>=y){ans=m;b=m-1;}else a=m+1;} return ans<0?0:ans; }
+function lastRow(y){ let a=0,b=layout.length-1,ans=layout.length-1; while(a<=b){const m=(a+b)>>1; if(layout[m].top<=y){ans=m;a=m+1;}else b=m-1;} return ans<0?0:ans; }
+function renderVisible(){
+	if(!layout.length) return;
+	const sy=window.scrollY||window.pageYOffset||0;
+	const gt=$('grid').getBoundingClientRect().top + sy;   // grid's document offset
+	const buf=1200;
+	const lo=firstRow(sy-gt-buf), hi=lastRow(sy-gt+window.innerHeight+buf);
+	for(const [ri,el] of rendered){ if(ri<lo||ri>hi){ el.remove(); rendered.delete(ri); } }
+	for(let ri=lo; ri<=hi; ri++){ if(!rendered.has(ri)){ const el=buildRow(ri); $('grid').appendChild(el); rendered.set(ri,el); } }
+}
+function resetGrid(){
+	rendered.clear(); $('grid').innerHTML='';
+	computeLayout();
+	$('grid').style.position='relative'; $('grid').style.padding='0'; $('grid').style.height=totalH+'px';
+	renderVisible();
+}
+let raf=0; window.addEventListener('scroll',()=>{ if(raf) return; raf=requestAnimationFrame(()=>{ raf=0; renderVisible(); }); },{passive:true});
+let rto; window.addEventListener('resize',()=>{ clearTimeout(rto); rto=setTimeout(resetGrid,150); });
 
 function apply(){
 	shown=FRAMES.filter(x=>passes(x,null));
@@ -347,7 +371,7 @@ function apply(){
 	const nf=new Set(shown.map(x=>x.slug)).size;
 	$('showing').innerHTML='Showing <b>'+shown.length.toLocaleString()+'</b> of '+FRAMES.length.toLocaleString()+' shots from <b>'+nf+'</b> films';
 	$('empty').style.display=shown.length?'none':'block';
-	$('grid').innerHTML=''; rowCursor=0; renderRows(); buildSidebar(); buildChips();
+	window.scrollTo(0,0); resetGrid(); buildSidebar(); buildChips();
 	if(ADMIN)buildFmtPanel();
 }
 $('sort').onchange=e=>{state.sort=e.target.value;apply();};
