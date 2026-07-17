@@ -417,7 +417,7 @@ function renderProjectHeader(){
 	const n=shown.length;
 	ph.innerHTML='<a id="projback">&lsaquo; All shots</a><div id="projtitle">'+nice+'</div><div id="projmeta">'+n+' shot'+(n===1?'':'s')+(bits.length?' &nbsp;·&nbsp; '+bits.join(' &nbsp;·&nbsp; '):'')+'</div>';
 	$('projback').onclick=exitProject;
-	ph.style.display='';
+	ph.style.display='block';
 }
 function apply(){
 	shown=FRAMES.filter(x=>passes(x,null));
