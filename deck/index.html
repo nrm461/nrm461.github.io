@@ -189,7 +189,7 @@ try{ TAGS=await (await fetch('../data/deck_tags.json?_='+Date.now())).json(); }c
 try{ FMT=await (await fetch('../data/deck_format.json?_='+Date.now())).json(); }catch(e){}
 FMT.films=FMT.films||{}; FMT.frames=FMT.frames||{};
 
-/* flatten */
+/* ---------- flatten ---------- */
 const FRAMES=[];
 DATA.films.forEach((F,fi)=>{
 	const ratio=F.dar||16/9;
