@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nick Metcalf — Deck</title>
+<style>
+:root{--bg:#0b0b0c;--fg:#ececed;--dim:#6a6a70;--line:#212124;}
+*{box-sizing:border-box}
+html{scrollbar-color:#333 var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:13px/1.45 ui-monospace,'SF Mono',Menlo,Courier,monospace;}
+a{color:inherit}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 18px;z-index:5;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.brand{letter-spacing:.16em;font-weight:600}
+.back{color:var(--dim);text-decoration:none;font-size:11px;letter-spacing:.1em}
+.back:hover{color:var(--fg)}
+#count{color:var(--dim);margin-left:auto;font-size:11px}
+#bars{border-bottom:1px solid var(--line)}
+.bar{display:flex;flex-wrap:wrap;gap:14px;padding:9px 18px;align-items:center}
+.bar+.bar{border-top:1px dashed #17171a}
+.grp{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.lbl{color:var(--dim);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.chip{cursor:pointer;border:1px solid var(--line);border-radius:2px;padding:4px 9px;font-size:11px;background:transparent;color:var(--fg);user-select:none;display:inline-flex;align-items:center;gap:6px}
+.chip.on{border-color:var(--fg);background:#fff;color:#000}
+.chip.on .sw{border-color:#0006}
+.sw{width:11px;height:11px;border-radius:50%;display:inline-block;border:1px solid #ffffff2b}
+.reset{color:var(--dim);cursor:pointer;font-size:11px;text-decoration:underline;background:none;border:0;font-family:inherit}
+select,input[type=search]{background:#111;border:1px solid var(--line);color:var(--fg);font:11px ui-monospace,Menlo,monospace;padding:4px 6px;border-radius:2px;max-width:260px}
+input[type=color]{width:26px;height:22px;padding:0;border:1px solid var(--line);background:#111;border-radius:2px;cursor:pointer}
+input[type=range]{width:80px;accent-color:#888}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;padding:16px}
+@media(max-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;padding:10px}}
+.card{border:1px solid var(--line);border-radius:3px;overflow:hidden;background:#111;cursor:pointer}
+.card img{width:100%;display:block;aspect-ratio:16/9;object-fit:contain;background:#000}
+.pal{display:flex;height:11px}
+.pal span{flex:1}
+.meta{padding:5px 8px;color:var(--dim);font-size:10px;display:flex;justify-content:space-between;gap:6px}
+.meta b{color:var(--fg);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#more{padding:20px;text-align:center;color:var(--dim);font-size:11px}
+#lb{position:fixed;inset:0;background:#000c;display:none;z-index:20;align-items:center;justify-content:center;padding:24px}
+#lb.open{display:flex}
+#lbx{max-width:min(1100px,94vw);background:var(--bg);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+#lbx img{width:100%;display:block;background:#000;max-height:70vh;object-fit:contain}
+#lbi{padding:10px 14px;font-size:11px;color:var(--dim);display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+#lbi b{color:var(--fg);font-weight:500}
+#lbi a{color:var(--fg)}
+.hex{cursor:pointer;display:inline-flex;align-items:center;gap:4px}
+.hex:hover{color:var(--fg)}
+#msg{padding:60px 20px;text-align:center;color:var(--dim)}
+</style>
+</head>
+<body>
+<header>
+	<span class="brand">DECK</span>
+	<a class="back" href="../">&larr; NICK METCALF</a>
+	<span id="count"></span>
+</header>
+<div id="bars">
+	<div class="bar">
+		<span class="grp"><span class="lbl">Film</span><select id="film"><option value="">all</option></select></span>
+		<span class="grp"><span class="lbl">Cat</span><span id="cats"></span></span>
+		<span class="grp"><span class="lbl">AR</span><span id="ars"></span></span>
+		<span class="grp"><span class="lbl">Sort</span><select id="sort">
+			<option value="film">film</option><option value="hue">hue</option>
+			<option value="lum">brightness</option><option value="shuffle">shuffle</option>
+		</select></span>
+	</div>
+	<div class="bar">
+		<span class="grp"><span class="lbl">Color</span><span id="hues"></span></span>
+		<span class="grp"><span class="lbl">Pick</span><input type="color" id="pick" value="#3a6ea5"><input type="range" id="tol" min="20" max="120" value="60"><span class="chip" id="pickon">match</span></span>
+		<span class="grp"><span class="lbl">Light</span><span id="lums"></span></span>
+	</div>
+	<div class="bar" id="aibar" style="display:none">
+		<span class="grp"><span class="lbl">Set</span><span id="ies"></span></span>
+		<span class="grp"><span class="lbl">Time</span><span id="tods"></span></span>
+		<span class="grp"><span class="lbl">Shot</span><span id="shots"></span></span>
+		<span class="grp"><span class="lbl">People</span><span id="pps"></span></span>
+		<button class="reset" id="reset">reset</button>
+	</div>
+</div>
+<div class="grid" id="grid"></div>
+<div id="more"></div>
+<div id="msg" style="display:none"></div>
+<div id="lb"><div id="lbx"><img id="lbimg" alt=""><div id="lbi"></div></div></div>
+<script>
+(async function(){
+const HUE_COLORS={red:'#c33',orange:'#d73',yellow:'#cb2',green:'#4a4',teal:'#2a9',blue:'#36c',purple:'#84c',magenta:'#c4a',neutral:'#888',white:'#eee',black:'#222'};
+const $=id=>document.getElementById(id);
+let DATA,TAGS={};
+try{ DATA=await (await fetch('../data/deck.json')).json(); }
+catch(e){ $('msg').style.display='block'; $('msg').textContent='deck.json not found — frames not published yet.'; return; }
+try{ TAGS=await (await fetch('../data/deck_tags.json')).json(); }catch(e){}
+
+/* flatten */
+const FRAMES=[];
+DATA.films.forEach((F,fi)=>{
+	(F.frames||[]).forEach(fr=>{
+		// fr = [file, [p1..p5], hue, h, s, lum]
+		const key=F.slug+'/'+fr[0];
+		const tg=TAGS[key]||'';
+		FRAMES.push({slug:F.slug,fi,label:F.label,cats:F.cats||[],ar:F.ar,page:F.page,
+			f:fr[0],pal:fr[1],hue:fr[2],h:fr[3],s:fr[4],lum:fr[5],
+			ie:tg[0]||'',tod:tg[1]||'',shot:tg[2]||'',pp:tg[3]||''});
+	});
+});
+const hasTags=Object.keys(TAGS).length>0;
+if(hasTags)$('aibar').style.display='flex';
+
+/* controls */
+const state={film:'',cats:new Set(),ars:new Set(),hues:new Set(),lums:new Set(),
+	ies:new Set(),tods:new Set(),shots:new Set(),pps:new Set(),pick:null,sort:'film'};
+function chip(txt,val,set,parent,sw){
+	const c=document.createElement('span');c.className='chip';
+	if(sw){const s=document.createElement('span');s.className='sw';s.style.background=sw;c.appendChild(s);}
+	c.appendChild(document.createTextNode(txt));
+	c.onclick=()=>{set.has(val)?set.delete(val):set.add(val);c.classList.toggle('on');apply();};
+	parent.appendChild(c);return c;
+}
+DATA.films.forEach((F,i)=>{const o=document.createElement('option');o.value=F.slug;o.textContent=F.label;$('film').appendChild(o);});
+[...new Set(DATA.films.flatMap(F=>F.cats||[]))].sort().forEach(c=>chip(c,c,state.cats,$('cats')));
+[...new Set(DATA.films.map(F=>F.ar))].sort().forEach(a=>chip(a,a,state.ars,$('ars')));
+Object.keys(HUE_COLORS).forEach(h=>{ if(FRAMES.some(x=>x.hue===h)) chip(h,h,state.hues,$('hues'),HUE_COLORS[h]); });
+[['dark','d'],['mid','m'],['bright','b']].forEach(([t,v])=>chip(t,v,state.lums,$('lums')));
+if(hasTags){
+	[['int','i'],['ext','e']].forEach(([t,v])=>chip(t,v,state.ies,$('ies')));
+	[['day','d'],['night','n']].forEach(([t,v])=>chip(t,v,state.tods,$('tods')));
+	[['wide','w'],['med','m'],['close','c']].forEach(([t,v])=>chip(t,v,state.shots,$('shots')));
+	[['0','0'],['1','1'],['2','2'],['3+','3']].forEach(([t,v])=>chip(t,v,state.pps,$('pps')));
+}
+$('film').onchange=e=>{state.film=e.target.value;apply();};
+$('sort').onchange=e=>{state.sort=e.target.value;apply();};
+$('pickon').onclick=()=>{state.pick=state.pick?null:hex2rgb($('pick').value);$('pickon').classList.toggle('on',!!state.pick);apply();};
+$('pick').oninput=()=>{if(state.pick){state.pick=hex2rgb($('pick').value);apply();}};
+$('tol').oninput=()=>{if(state.pick)apply();};
+$('reset').onclick=()=>{location.reload();};
+function hex2rgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
+function near(pal,rgb,tol){
+	for(const p of pal){
+		const r=parseInt(p.slice(0,2),16)-rgb[0],g=parseInt(p.slice(2,4),16)-rgb[1],b=parseInt(p.slice(4,6),16)-rgb[2];
+		if(Math.sqrt(r*r*.6+g*g+b*b*.4)<tol)return true;
+	}
+	return false;
+}
+function lumBand(l){return l<25?'d':(l>60?'b':'m');}
+
+/* filtering */
+let shown=[],cursor=0;
+const CHUNK=180;
+function apply(){
+	const tol=+$('tol').value;
+	shown=FRAMES.filter(x=>
+		(!state.film||x.slug===state.film)&&
+		(!state.cats.size||x.cats.some(c=>state.cats.has(c)))&&
+		(!state.ars.size||state.ars.has(x.ar))&&
+		(!state.hues.size||state.hues.has(x.hue))&&
+		(!state.lums.size||state.lums.has(lumBand(x.lum)))&&
+		(!state.ies.size||state.ies.has(x.ie))&&
+		(!state.tods.size||state.tods.has(x.tod))&&
+		(!state.shots.size||state.shots.has(x.shot))&&
+		(!state.pps.size||state.pps.has(x.pp))&&
+		(!state.pick||near(x.pal,state.pick,tol))
+	);
+	if(state.sort==='hue')shown.sort((a,b)=>(a.s<12)-(b.s<12)||a.h-b.h||a.lum-b.lum);
+	else if(state.sort==='lum')shown.sort((a,b)=>a.lum-b.lum);
+	else if(state.sort==='shuffle'){for(let i=shown.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[shown[i],shown[j]]=[shown[j],shown[i]];}}
+	$('count').textContent=shown.length+' / '+FRAMES.length+' frames · '+DATA.films.length+' films';
+	$('grid').innerHTML='';cursor=0;renderMore();
+}
+function renderMore(){
+	const frag=document.createDocumentFragment();
+	const end=Math.min(cursor+CHUNK,shown.length);
+	for(;cursor<end;cursor++){
+		const x=shown[cursor];
+		const c=document.createElement('div');c.className='card';c.dataset.i=cursor;
+		c.innerHTML='<img loading="lazy" src="../assets/deck/'+x.slug+'/'+x.f+'.jpg" alt="">'+
+			'<div class="pal">'+x.pal.map(p=>'<span style="background:#'+p+'"></span>').join('')+'</div>'+
+			'<div class="meta"><b>'+x.label+'</b><span>'+x.ar+'</span></div>';
+		c.onclick=()=>lightbox(x);
+		frag.appendChild(c);
+	}
+	$('grid').appendChild(frag);
+	$('more').textContent=cursor<shown.length?'· · ·':'';
+}
+new IntersectionObserver(es=>{if(es[0].isIntersecting&&cursor<shown.length)renderMore();},{rootMargin:'900px'}).observe($('more'));
+
+/* lightbox */
+function lightbox(x){
+	$('lbimg').src='../assets/deck/'+x.slug+'/'+x.f+'.jpg';
+	const tags=[x.ie==='i'?'int':x.ie==='e'?'ext':'',x.tod==='d'?'day':x.tod==='n'?'night':'',
+		x.shot==='w'?'wide':x.shot==='m'?'med':x.shot==='c'?'close':'',x.pp!==''?(x.pp==='3'?'3+ ppl':x.pp+' ppl'):''].filter(Boolean).join(' · ');
+	$('lbi').innerHTML='<b>'+x.label+'</b><span>'+x.ar+' · lum '+x.lum+(tags?' · '+tags:'')+'</span>'+
+		x.pal.map(p=>'<span class="hex" data-h="'+p+'"><span class="sw" style="background:#'+p+'"></span>#'+p+'</span>').join('')+
+		(x.page?'<a href="../'+x.slug+'/" target="_blank">[ open film ]</a>':'');
+	$('lb').classList.add('open');
+	document.querySelectorAll('.hex').forEach(el=>el.onclick=ev=>{navigator.clipboard.writeText('#'+el.dataset.h);el.style.color='#fff';});
+}
+$('lb').onclick=e=>{if(e.target.id==='lb')$('lb').classList.remove('open');};
+document.addEventListener('keydown',e=>{if(e.key==='Escape')$('lb').classList.remove('open');});
+
+apply();
+})();
+</script>
+</body>
+</html>
