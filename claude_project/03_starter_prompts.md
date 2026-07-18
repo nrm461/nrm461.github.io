@@ -29,3 +29,12 @@
 
 ## Monthly maintenance
 > Monthly pass: new Slate jobs → propose additions; credits pass on anything queued; re-sort archive by delivered dates; check for broken thumbs/videos on the live site; report in five bullets or fewer.
+
+## Deck (frame library) — read claude_project/04_deck.md first
+The deck (`/deck/`) is a hand-authored single file, NOT generated — edit `deck/index.html` directly, and deploy via the browser-PUT method in 04_deck.md (a cloud session can't git push).
+
+**Diagnose the "still not right" integration (current open task):**
+> I'm continuing work on the Deck at https://nrm461.github.io/deck/ — I want it to feel like a native part of https://nrm461.github.io and it's not there yet. DON'T restyle anything yet. First: screenshot both live side by side (desktop + mobile, plus a project on each), read css/main.css and deck/index.html, and give me a concrete list of where the deck still diverges — especially structure/layout/spacing/interaction, not just fonts/colors — with your theory of why it still feels like a separate tool. Then ask me focused questions (show options) so we agree on what "right" means before changing anything. Deck deploy details are in claude_project/04_deck.md.
+
+**Deck content/data change:**
+> In deck/index.html [describe change]. Edit the file directly, syntax-check, deploy via the browser-PUT method in claude_project/04_deck.md (verify the git-blob-SHA in the browser before PUT), then confirm on the live site with a cache-busted URL.
