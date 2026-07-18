@@ -1,7 +1,10 @@
 # Starter Prompts — copy/paste into the new project
 
-## Kickoff / context check
-> Read data/projects.json and data/site.json in my website folder, confirm you understand the build pipeline (build_site.py → GitHub Pages via the auto-build Action), and give me a one-paragraph status of the site. Don't change anything yet.
+## Kickoff / context check (start every new chat with this)
+> You're picking up work on my colorist portfolio site (nrm461.github.io) and its /deck/ frame library. Orient first: read `claude_project/00_START_HERE.md`, then the TOP of `claude_project/CHANGELOG.md`, and glance at project memory. Give me a 4–5 line status — what shipped last session + current Open threads. Don't change anything yet; I'll give you the task next.
+
+## New-task handoff template (paste at the top of any task)
+> Orient from `claude_project/00_START_HERE.md` + the top of `CHANGELOG.md` first (don't re-derive what's in the docs). Then do this: **<the task>**. Deploy via the browser Contents API. When done, log it as a new CHANGELOG entry and refresh Open threads.
 
 ## Add a new job (the most common task)
 > New job to add: [CLIENT] "[TITLE]", directed by [@handle]. Master is in _MASTERS/[folder]. Category: [Commercial/Music Video/Beauty/Long Form]. Use the _thumb file in the folder (or the Slate poster) for the thumbnail. Stage an H.264 named by slug in a dated _vimeo_uploads folder for me to upload; wire the Vimeo link once I say it's uploaded. Credits are in this IG post: [link].
@@ -29,12 +32,3 @@
 
 ## Monthly maintenance
 > Monthly pass: new Slate jobs → propose additions; credits pass on anything queued; re-sort archive by delivered dates; check for broken thumbs/videos on the live site; report in five bullets or fewer.
-
-## Deck (frame library) — read claude_project/04_deck.md first
-The deck (`/deck/`) is a hand-authored single file, NOT generated — edit `deck/index.html` directly, and deploy via the browser-PUT method in 04_deck.md (a cloud session can't git push).
-
-**Diagnose the "still not right" integration (current open task):**
-> I'm continuing work on the Deck at https://nrm461.github.io/deck/ — I want it to feel like a native part of https://nrm461.github.io and it's not there yet. DON'T restyle anything yet. First: screenshot both live side by side (desktop + mobile, plus a project on each), read css/main.css and deck/index.html, and give me a concrete list of where the deck still diverges — especially structure/layout/spacing/interaction, not just fonts/colors — with your theory of why it still feels like a separate tool. Then ask me focused questions (show options) so we agree on what "right" means before changing anything. Deck deploy details are in claude_project/04_deck.md.
-
-**Deck content/data change:**
-> In deck/index.html [describe change]. Edit the file directly, syntax-check, deploy via the browser-PUT method in claude_project/04_deck.md (verify the git-blob-SHA in the browser before PUT), then confirm on the live site with a cache-busted URL.
