@@ -24,7 +24,9 @@ assets/thumbs/            <slug>-100/600/1600.jpg
 assets/carousel/<slug>/   00.jpg (hero) + 01..NN swipe/gallery stills
 admin/index.html          the GUI editor
 .github/workflows/build.yml  auto-build on data/asset pushes (serialized, [auto-build] guard)
-hidden/  archive/  contact/  <slug>/   generated pages
+index.html                the WORK grid (homepage) — all visible, arch_order, no filters
+selects/  hidden/  contact/  <slug>/    generated pages
+archive/index.html        redirect stub → / (retired page; keeps old bookmarks alive)
 _vimeo_uploads/           dated batches staged for manual Vimeo upload
 css/deck.css  js/deck.js  deck-only styles + engine (inlined into deck/index.html by build_deck)
 _build/deck_main.html  _build/deck_extras.html   deck <main> body + overlay partials
@@ -42,8 +44,10 @@ token/git-token           GitHub token (gitignored)
 
 ## Conventions
 - New Vimeo uploads are named by site slug, staged in `_vimeo_uploads/YYYY-MM-DD/`; after Nick uploads, harvest slug→ID from the library API and retitle to "Client | Title".
-- Landing = "Selected Works": `selected: true` + `sel_order` (Benson Boone first by standing preference; Nick reorders in admin).
-- Archive = delivered-date order (monday), undated legacy last.
+- Nav (2026-07-18 reorder): `WORK`→`/` · `CONTACT`→`/contact/` · `ARCHIVE`→`/deck/`. Labels are decoupled from URLs — the "ARCHIVE" nav item is the deck at `/deck/`.
+- Homepage `/` = the WORK grid (old archive content): all visible, `arch_order`, NO category filters. Body class `page-archive`; nav-data ctx `archive`.
+- Selects = the old landing grid ("Selected Works": `selected:true` + `sel_order`, Benson Boone first) now at `/selects/`, UNLINKED from nav. Admin "Selects" tab reorders it.
+- `/archive/` is retired → redirect stub to `/`. Admin "Work" tab (internal key `archive`) reorders the homepage `arch_order`.
 - Campaign rollups live: ollie, homesense, rivian (Milk Run hero), oscar-mayer.
 - Thumbnail replacements: admin drag-drop or EDIT modal; also syncs carousel 00.jpg.
 - Credits format: "Role: Name @handle" lines; blank line separates hero block from the rest; hero roles = Director, DP, Edit, Color, Production.
