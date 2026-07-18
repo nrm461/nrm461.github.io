@@ -32,7 +32,7 @@ deck_js = 'window.DECK_LANDING=' + _json.dumps(_landing) + ';\n' + deck_js
 inline = (f'<meta name="robots" content="noindex">\n'
           f'<link rel="stylesheet" href="../css/deck.css">\n')
 
-doc = B.page('page-deck dark-mode', f'{B.SITE["site_name"]} — Deck', content, inline_vars=inline, depth=1)
+doc = B.page('page-deck dark-mode', f'{B.SITE["site_name"]} — Archive', content, inline_vars=inline, depth=1)
 
 # swap the site's default scripts (nav-data + main.js) for the deck's own inline JS
 doc = re.sub(
