@@ -333,19 +333,32 @@ function openOv(i,list){
 		if(cr.dp)hero+='<p>DP: '+cr.dp+'</p>';
 		if(cr.e)hero+='<p>Edit: '+cr.e+'</p>';
 		hero+='<p>Color: <a href="https://instagram.com/nick__metcalf" target="_blank" rel="noopener">@nick__metcalf</a></p>';
-		if(x.page&&x.pslug)hero+='<p class="spacer">&nbsp;</p><p><a href="../'+x.pslug+'/" target="_blank" rel="noopener">[ open film page ]</a></p>';
 		$('ovcredits').innerHTML=hero;
 		const TOD={d:'Day',n:'Night',du:'Dusk',da:'Dawn',sr:'Sunrise',ss:'Sunset'};
-		const rows=[
-			['Color',nm(x.hue)+(x.cls.length?' · '+x.cls.map(nm).join(', '):'')],['Brightness',NM[lumBand(x.lum)+'_l']+' (lum '+x.lum+')'],['Aspect',x.arb],
-			['Frame Size',x.fs?nm(x.fs):'—'],['Shot Type',arrName(x,'st')||'—'],['Composition',arrName(x,'cmp')||'—'],
-			['Lighting',arrName(x,'lt')||'—'],['Lighting Type',arrName(x,'lty')||'—'],['Time of Day',TOD[x.tod]||'—'],
-			['Int / Ext',x.ie==='i'?'Interior':x.ie==='e'?'Exterior':'—'],['People',x.pp!==''?nm(String(x.pp)):'—'],['Location',x.loc==='loc'?'Location':x.loc==='stu'?'Studio':'—'],
-			['Flags',arrName(x,'fl')||'—'],['Format',fmtOf(x)?FMT_LBL[fmtOf(x)]:'—'],['Frame',x.f],
-		];
-		const kwline=x.kw.length?'<p class="ovkw">'+x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' ')+'</p>':'';
-		$('ovmeta').innerHTML='<p class="spacer">&nbsp;</p>'+rows.map(r=>'<p>'+r[0].toLowerCase()+' - '+r[1]+'</p>').join('')+kwline;
-		$('ovmeta').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
+					const low=s=>String(s).toLowerCase();
+			const slash=a=>a.filter(Boolean).map(low).join(' / ');
+			// filters block: "Label: value / value" — label capitalised, values lowercase & light grey; empties skipped
+			const rows=[
+				['Color',slash([nm(x.hue),...x.cls.map(nm)])],
+				['Brightness',low(NM[lumBand(x.lum)+'_l'])],
+				['Aspect',low(x.arb)],
+				['Frame size',x.fs?low(nm(x.fs)):''],
+				['Shot type',slash((x.st||[]).map(nm))],
+				['Composition',slash((x.cmp||[]).map(nm))],
+				['Lighting',slash((x.lt||[]).map(nm))],
+				['Lighting type',slash((x.lty||[]).map(nm))],
+				['Time of day',x.tod&&TOD[x.tod]?low(TOD[x.tod]):''],
+				['Int / ext',x.ie==='i'?'interior':x.ie==='e'?'exterior':''],
+				['People',x.pp!==''?low(nm(String(x.pp))):''],
+				['Location',x.loc==='loc'?'location':x.loc==='stu'?'studio':''],
+				['Flags',slash((x.fl||[]).map(nm))],
+				['Format',fmtOf(x)?low(FMT_LBL[fmtOf(x)]):''],
+			];
+			let meta='<p class="spacer">&nbsp;</p>'+rows.filter(r=>r[1]).map(r=>'<p><span class="ml">'+r[0]+':</span> <span class="mv">'+r[1]+'</span></p>').join('');
+			if(x.page&&x.pslug)meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ open film page ]</a></p>';
+			$('ovmeta').innerHTML=meta;
+			$('ovkw').innerHTML=x.kw.length?'<p class="ovkw">'+x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' ')+'</p>':'';
+			$('ovkw').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
 	// admin per-still format override
 	const adm=$('ovadm');
 	if(ADMIN){
@@ -365,6 +378,10 @@ $('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOv();});
 $('prev').onclick=()=>openOv((ovIdx-1+ovList.length)%ovList.length,ovList);
 $('next').onclick=()=>openOv((ovIdx+1)%ovList.length,ovList);
 document.addEventListener('keydown',e=>{ if(!$('ov').classList.contains('open'))return; if(e.key==='Escape')closeOv(); if(e.key==='ArrowLeft')$('prev').click(); if(e.key==='ArrowRight')$('next').click(); });
+/* swipe left/right in the detail overlay -> next/prev still (horizontal beats vertical scroll) */
+let _tsx=0,_tsy=0,_tst=0;
+$('ov').addEventListener('touchstart',e=>{const t0=e.changedTouches[0];_tsx=t0.clientX;_tsy=t0.clientY;_tst=e.timeStamp;},{passive:true});
+$('ov').addEventListener('touchend',e=>{ if(!$('ov').classList.contains('open'))return; const t0=e.changedTouches[0],dx=t0.clientX-_tsx,dy=t0.clientY-_tsy; if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.4&&(e.timeStamp-_tst)<600){ if(dx<0)$('next').click(); else $('prev').click(); } },{passive:true});
 
 /* ---- FORMAT ADMIN ---- */
 let fmtDirty=false;
