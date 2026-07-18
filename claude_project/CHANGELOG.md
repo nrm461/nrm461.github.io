@@ -4,7 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
-## 2026-07-18 — deck perf, ghost cleanup, deck source committed, deck design pass
+## 2026-07-18 (b) — self-loading kickoff via project memory (no Claude Project needed)
+
+- **New workflow: no Claude Project, no Instructions field.** Project memory auto-loads into every new chat on its own, so it IS the kickoff. Memory `MEMORY.md` now opens with an imperative kickoff block that routes any fresh chat to read `00_START_HERE.md` + the top of `CHANGELOG.md` from the connected website folder, then do the task or report status.
+- **To start work:** open a blank chat with the website folder connected → type the task (or "status"). Nothing to paste.
+- Created `00_START_HERE.md` (entry point) + this `CHANGELOG.md`; committed `04_deck.md` to the repo (was Mac-only). All on origin/main.
+- Session protocol (orient → deploy via browser Contents API → **log to CHANGELOG before signing off**) lives in memory `MEMORY.md` top and in `01_project_instructions.md`.
+- Updated `03_starter_prompts.md`: new kickoff prompt + reusable handoff template.
+
+### Open threads
+- Same site/deck open threads as the entry below (deck hero re-extract, design interpretations to confirm on phone, recurrence-prune, data hygiene) — unchanged this session.
+
+---
+
+## 2026-07-18 (a) — deck perf, ghost cleanup, deck source committed, deck design pass
 
 ### Shipped (live)
 - **Deck performance** — `js/deck.js`: the 4 data-JSON fetches now fire in parallel (were serial); `buildSidebar()` moved off the critical path via a coalesced `requestIdleCallback` so the grid paints before the heavy facet-count pass; `deck_format.json` cache-bust is now admin-only. Rebuilt via `build_deck.py`, deployed `deck/index.html` via the Contents API. No console errors.
