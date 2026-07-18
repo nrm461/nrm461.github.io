@@ -83,7 +83,8 @@ const state={sets:{},pick:null,q:'',sort:'shuffle'};
 SECTIONS.forEach(s=>{if(s.type!=='picker')state.sets[s.key]=new Set();});
 const filmLabel={}; DATA.films.forEach(F=>filmLabel[F.slug]=F.label);
 let filmCr={}; try{ filmCr=await _pCR; }catch(e){}
-let landingSet=new Set(), landingActive=false, landingDismissed=true; // landing-scope removed
+const _DL=(typeof window!=='undefined'&&window.DECK_LANDING)||[]; // films on the main landing grid
+let landingSet=new Set(_DL), landingActive=false, landingDismissed=(_DL.length===0); // default view scoped to landing; any search/filter reveals the full library
 const openSecs=new Set(['color']);
 const listScroll={};
 
@@ -269,9 +270,11 @@ function apply(){
 }
 $('sort').value=state.sort; $('sort').onchange=e=>{state.sort=e.target.value;apply();};
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
+/* blinking terminal cursor on the search field — shown only when empty & unfocused */
+(function(){var sw=$('searchwrap'),si=$('search');if(!sw||!si)return;function tog(){sw.classList.toggle('typing',document.activeElement===si||si.value.length>0);}si.addEventListener('focus',tog);si.addEventListener('blur',tog);si.addEventListener('input',tog);tog();})();
 $('clearall').onclick=()=>{SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;state.q='';$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();};
 let showPal=false;
-function isNarrow(){return matchMedia('(max-width:760px)').matches;}
+function isNarrow(){return matchMedia('(max-width:760px)').matches}
 function railReset(){ if(!isNarrow()) requestAnimationFrame(()=>{ if(typeof resetGrid==='function') resetGrid(); }); }
 function openSide(){ if(isNarrow()){$('side').classList.add('open');$('sideback').classList.add('on');} else {$('deckrow').classList.remove('railoff'); railReset();} $('fbtn').classList.add('on'); }
 function closeSide(){ if(isNarrow()){$('side').classList.remove('open');$('sideback').classList.remove('on');} else {$('deckrow').classList.add('railoff'); railReset();} $('fbtn').classList.remove('on'); }
