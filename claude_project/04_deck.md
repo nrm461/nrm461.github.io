@@ -3,7 +3,7 @@
 The `/deck/` frame library. Current as of July 18, 2026.
 
 ## What it is
-`https://nrm461.github.io/deck/` — a ShotDeck-style searchable library of stills from Nick's graded work (~197 films, ~6,236 tagged frames). Unlinked from the main nav, `noindex`. **Identity: an advanced search area**, not a curated reel — the point is that a client can find "aerial food shots on a beach that Nick colored." So it stays a *tool* (dense grid, deep filters, per-still metadata) but must look/feel like a native part of the portfolio.
+`https://nrm461.github.io/deck/` — a ShotDeck-style searchable library of stills from Nick's graded work (~197 films, ~6,236 tagged frames). As of the 2026-07-18 reorder the deck IS the **ARCHIVE** nav item (`/deck/` unchanged); still `noindex` for now (flagged — revisit if it should be indexable now that it's linked). **Identity: an advanced search area**, not a curated reel — the point is that a client can find "aerial food shots on a beach that Nick colored." So it stays a *tool* (dense grid, deep filters, per-still metadata) but must look/feel like a native part of the portfolio.
 
 Admin mode: append `?admin=1` (needs `localStorage.ghtoken` on an nrm461.github.io tab — same token as `/admin/`). Adds the FORMAT bulk-editor panel + per-still format override.
 
@@ -17,7 +17,7 @@ The recurring "it doesn't match the site" churn had one root cause: the deck's s
 ### Files
 | File | Role |
 |---|---|
-| `_build/build_deck.py` | Imports build_site; sets deck nav (WORK/ARCHIVE/DECK/CONTACT); wraps the body partials with page/header/footer; **inlines** deck.css + deck.js into one self-contained `deck/index.html`. |
+| `_build/build_deck.py` | Imports build_site; deck nav is inherited from site.json (WORK/CONTACT/ARCHIVE — the deck itself is the ARCHIVE item, `link-active`); wraps the body partials with page/header/footer; **inlines** deck.css + deck.js into one self-contained `deck/index.html`. |
 | `css/deck.css` | Deck-only styles (derived tokens `--panel/--field/--dim/--line`, controls, filter rail, deck grid, detail overrides). References main.css vars. |
 | `js/deck.js` | The grid/filter/modal engine + the deck's own light/dark toggle (`deckmode`, defaults dark) + device-class + sticky-pin snippets. Fetches `../data/deck*.json`. |
 | `_build/deck_main.html` | The deck's `<main>` inner: controls row + filter rail + grid column. |
