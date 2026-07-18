@@ -6,9 +6,11 @@
 <meta name="robots" content="noindex">
 <title>Nick Metcalf — Deck</title>
 <style>
-:root{
-	--font:'OCRF',Courier,monospace;
-	--color-bg:#fff;--color-text:#000;
+:root{--font:'OCRF',Courier,monospace;--color-bg:#fff;--color-text:#000}
+.dark-mode{--color-bg:#000;--color-text:#fff}
+/* derived tokens declared on BOTH scopes so they re-resolve per mode
+   (a single :root declaration would bake in the light values and inherit them) */
+:root,.dark-mode{
 	--bg:var(--color-bg);--fg:var(--color-text);
 	--panel:color-mix(in srgb,var(--color-text) 4%,var(--color-bg));
 	--field:color-mix(in srgb,var(--color-text) 7%,var(--color-bg));
@@ -17,7 +19,6 @@
 	--line:color-mix(in srgb,var(--color-text) 16%,var(--color-bg));
 	--accent:var(--color-text);
 }
-.dark-mode{--color-bg:#000;--color-text:#fff}
 @font-face{font-family:'OCRF';src:url('../fonts/ocrf.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap}
 *{box-sizing:border-box}
 html{scrollbar-color:var(--dim2) var(--color-bg)}
