@@ -4,6 +4,15 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0006 — 2026-07-18
+
+Shipped:
+- Workflow change: the handoff / copy-paste kickoff prompt is now ON DEMAND — produced only when Nick says "handoff", not automatically every turn. Updated HANDOFF_CHECKLIST item 6 (+ intro) and project memory.
+
+Open threads: unchanged from 2026.0005 (deck noindex decision, cosmetic URL≠label, project-from-/selects/ closes to Work, deck data hygiene, recurrence-prune, nickmetcalf.com DNS).
+
+---
+
 ## website 2026.0005 — 2026-07-18
 
 Shipped — site nav reorder (root = Work):
