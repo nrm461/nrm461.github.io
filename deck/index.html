@@ -248,10 +248,15 @@ const HUE_SW={red:'#c33',orange:'#d73',yellow:'#cb2',green:'#4a4',teal:'#2a9',bl
 const FMT_OPTS=[['','—'],['f35','Film 35mm'],['f16','Film 16mm'],['s8','Film Super 8mm'],['f65','Film 65/70mm'],['imax','IMAX'],['tape','Tape'],['dig','Digital'],['dlf','Digital Large Format'],['anim','Animation']];
 const FMT_LBL=Object.fromEntries(FMT_OPTS);
 let DATA,TAGS={},FMT={films:{},frames:{}};
-try{ DATA=await (await fetch('../data/deck.json')).json(); }
+/* perf: fire all data fetches in parallel (was 4 serial round-trips). format cache-bust only in admin. */
+const _fmtUrl='../data/deck_format.json'+(ADMIN?'?_='+Date.now():'');
+const _pDATA=fetch('../data/deck.json').then(r=>r.json());
+const _pTAGS=fetch('../data/deck_tags.json').then(r=>r.json()).catch(()=>({}));
+const _pFMT=fetch(_fmtUrl).then(r=>r.json()).catch(()=>({films:{},frames:{}}));
+const _pCR=fetch('../data/deck_credits.json').then(r=>r.json()).catch(()=>({}));
+try{ DATA=await _pDATA; }
 catch(e){ $('empty').style.display='block'; $('empty').textContent='deck.json not found.'; return; }
-try{ TAGS=await (await fetch('../data/deck_tags.json')).json(); }catch(e){}
-try{ FMT=await (await fetch('../data/deck_format.json?_='+Date.now())).json(); }catch(e){}
+TAGS=await _pTAGS; FMT=await _pFMT;
 FMT.films=FMT.films||{}; FMT.frames=FMT.frames||{};
 
 /* flatten */
@@ -308,7 +313,7 @@ const SECTIONS=[
 const state={sets:{},pick:null,q:'',sort:'shuffle'};
 SECTIONS.forEach(s=>{if(s.type!=='picker')state.sets[s.key]=new Set();});
 const filmLabel={}; DATA.films.forEach(F=>filmLabel[F.slug]=F.label);
-let filmCr={}; try{ filmCr=await (await fetch('../data/deck_credits.json')).json(); }catch(e){}
+let filmCr={}; try{ filmCr=await _pCR; }catch(e){}
 let landingSet=new Set(), landingActive=false, landingDismissed=true; // landing-scope removed
 const openSecs=new Set(['color']);
 const listScroll={};
@@ -475,6 +480,7 @@ function renderProjectHeader(){
 	$('projback').onclick=exitProject;
 	ph.style.display='block';
 }
+let sidebarQueued=false;
 function apply(){
 	const anyFilter = !!state.q || !!state.pick || SECTIONS.some(s=>state.sets[s.key]&&state.sets[s.key].size);
 	shown=FRAMES.filter(x=>passes(x,null));
@@ -486,7 +492,9 @@ function apply(){
 	const nf=new Set(shown.map(x=>x.slug)).size;
 		$('showing').innerHTML=(anyFilter||curProject)?('<b>'+shown.length.toLocaleString()+'</b> result'+(shown.length===1?'':'s')):'';
 		$('empty').style.display=shown.length?'none':'block';
-		window.scrollTo(0,0); resetGrid(); buildSidebar(); buildChips(); renderProjectHeader();
+		window.scrollTo(0,0); resetGrid(); buildChips(); renderProjectHeader();
+		/* perf: paint the grid first; build the heavy facet-count sidebar off the critical path (coalesced) */
+		if(!sidebarQueued){ sidebarQueued=true; (window.requestIdleCallback||(cb=>setTimeout(cb,0)))(()=>{ sidebarQueued=false; buildSidebar(); }, {timeout:200}); }
 	if(ADMIN)buildFmtPanel();
 }
 $('sort').value=state.sort; $('sort').onchange=e=>{state.sort=e.target.value;apply();};
