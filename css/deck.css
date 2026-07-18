@@ -113,6 +113,8 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
    ========================================================================= */
 /* mirror .page-project main: single-bar + project-container as grid rows w/ 45px gap + top pad */
 #ov{position:fixed;inset:0;background:var(--color-bg);z-index:30;display:none;overflow-y:auto}
+/* detail overlay always dark, even when the deck is in white/light mode (per Nick 2026-07-18) */
+#ov{--color-bg:#000;--color-text:#fff;--bg:#000;--fg:#fff;--accent:#fff;--panel:color-mix(in srgb,#fff 4%,#000);--field:color-mix(in srgb,#fff 7%,#000);--dim:color-mix(in srgb,#fff 50%,#000);--dim2:color-mix(in srgb,#fff 32%,#000);--line:color-mix(in srgb,#fff 16%,#000);background:#000;color:#fff}
 #ov.open{display:grid;grid-auto-rows:min-content;row-gap:var(--gap-rows);padding:calc(var(--margin-top) - var(--gap-small)) var(--margin-sides) calc(var(--gap-rows)*2)}
 #ov #project-container{max-width:1180px;width:100%;margin:0 auto;padding:0}
 #ov #ovimg{width:100%;display:block;max-height:calc(100vh - 150px);object-fit:contain;background:none}
@@ -125,7 +127,13 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #ovcredits a:hover{text-decoration:underline}
 /* shot data = part of the credits (rendered as a .credits-rest); force visible on mobile too */
 #ov .credits-rest{display:block!important}
-#ovmeta .ovkw{color:var(--dim);margin-top:12px}
+#ovmeta p{margin:0}
+#ovmeta .ml{color:var(--fg)}
+#ovmeta .mv{color:var(--dim)}
+#ovmeta .ovfilm{color:var(--fg);text-decoration:none}
+#ovmeta .ovfilm:hover{text-decoration:underline}
+#ovkw{margin-top:2px}
+#ovkw .ovkw{color:var(--dim);margin:0}
 .kwtag{cursor:pointer;color:var(--dim)}
 .kwtag:hover{color:var(--fg);text-decoration:underline}
 #ovadm{padding:12px 0;display:none}
@@ -151,3 +159,6 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #fmtstatus{color:var(--dim);font-size:10px;text-align:center;padding:6px}
 
 @media(max-width:760px){#fmtpanel{width:100%}}
+
+/* mobile: detail gallery = soft-crop squares (per Nick 2026-07-18) */
+@media(max-width:760px){#ov .project-gallery img{aspect-ratio:1;object-fit:cover;width:100%;height:auto}}
