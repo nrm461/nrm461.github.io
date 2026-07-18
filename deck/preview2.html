@@ -33,8 +33,9 @@ button{font-family:inherit}
 .page-deck main{width:100%;max-width:1240px;justify-self:center}
 
 /* --- search + controls row (pinned under header) --- */
-#ctrl{display:flex;align-items:center;gap:14px;padding:6px 0 12px;position:sticky;z-index:8;background:var(--color-bg);flex-wrap:wrap}
-#search{flex:1 1 260px;min-width:180px;background:var(--field);border:1px solid var(--line);color:var(--fg);font:13px var(--font);padding:9px 11px;border-radius:3px}
+#ctrl{display:flex;align-items:center;gap:18px;padding:4px 0 14px;position:sticky;z-index:8;background:var(--color-bg);flex-wrap:wrap}
+#search{flex:1 1 240px;min-width:160px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:13px var(--font);padding:6px 2px 7px;border-radius:0}
+#search:focus{border-bottom-color:var(--fg);outline:none}
 #search::placeholder{color:var(--dim2)}
 #fbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;position:relative;font-family:inherit;white-space:nowrap}
 #fbtn::before{content:'[ ';visibility:hidden}
@@ -71,15 +72,14 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #clearall{color:var(--fg);cursor:pointer;font-size:11px;background:none;border:0;padding:0;position:relative}
 #clearall::before{content:'[ '}#clearall::after{content:' ]'}
 #clearall:hover{text-decoration:underline}
-#paltoggle{display:flex;gap:7px;align-items:center;padding:8px 0 12px;color:var(--dim);font-size:11px;cursor:pointer;border-bottom:1px solid var(--line)}
+#paltoggle{display:flex;gap:7px;align-items:center;padding:6px 0 14px;color:var(--dim);font-size:11px;cursor:pointer}
 #paltoggle input{accent-color:var(--accent);width:12px;height:12px;margin:0}
 
-/* filter sections styled like project credit blocks */
-.sec{border-top:1px solid var(--line)}
-.sec:first-of-type{border-top:0}
-.sec-h{display:flex;justify-content:space-between;align-items:center;padding:9px 0 5px;cursor:pointer;user-select:none;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--fg)}
+/* filter sections styled like project credit blocks — no rules, just text */
+.sec{border:0}
+.sec-h{display:flex;justify-content:space-between;align-items:center;padding:10px 0 4px;cursor:pointer;user-select:none;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--fg)}
 .sec-h .car{color:var(--dim2);font-size:8px}
-.sec-b{display:none;padding:0 0 9px}
+.sec-b{display:none;padding:0 0 8px}
 .sec.open .sec-b{display:block}
 .opt{display:flex;gap:8px;align-items:baseline;padding:2px 0;cursor:pointer;color:var(--dim);font-size:11.5px}
 .opt:hover{color:var(--fg)}
@@ -133,9 +133,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #ovbar a{cursor:pointer;color:var(--fg);text-decoration:none;white-space:nowrap}
 #ovbar a:hover{text-decoration:underline}
 #ovx{max-width:1180px;margin:0 auto;padding:2px 15px 90px}
-#ovtitle{font-size:15px;text-transform:uppercase;letter-spacing:.03em;margin:2px 0 16px;cursor:pointer}
-#ovtitle:hover{color:var(--accent)}
-#ovtitle span{color:var(--dim);text-transform:none;letter-spacing:0}
+#ovtitle{font-size:15px;text-transform:uppercase;letter-spacing:.03em;margin:2px 0 16px;cursor:default}
 #ovimg{width:100%;max-height:calc(100vh - 190px);object-fit:contain;background:none;display:block}
 #ovpal{display:none;height:34px;margin-top:8px;gap:3px}
 #ovpal[style*="display: flex"],#ovpal.show{display:flex}
@@ -160,9 +158,9 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 .ovkw{columns:1;color:var(--dim);margin-bottom:12px}
 .kwtag{display:inline-block;margin:0 12px 0 0;cursor:pointer;font-size:11.5px;color:var(--dim)}
 .kwtag:hover{color:var(--fg);text-decoration:underline}
-.mrow{break-inside:avoid;-webkit-column-break-inside:avoid;font-size:11.5px;line-height:1.55;margin:0 0 7px}
-#ovmeta span{font-size:11.5px;color:var(--dim)}
-#ovmeta b{color:var(--fg);letter-spacing:.03em;font-size:10.5px;text-transform:uppercase;margin-right:7px;font-weight:400}
+.mrow{break-inside:avoid;-webkit-column-break-inside:avoid;font-size:12px;line-height:1.85;margin:0}
+#ovmeta span{font-size:12px;color:var(--dim)}
+#ovmeta b{color:var(--fg);text-transform:none;letter-spacing:0;font-size:12px;font-weight:400;display:inline-block;min-width:106px;margin-right:4px}
 #ovtabs{padding:20px 0 12px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
 .ovtab{cursor:pointer;color:var(--dim)}
 .ovtab:hover{color:var(--fg)}
@@ -248,7 +246,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 </div>
 
 <div id="ov">
-	<div id="ovbar"><a id="prev">[ &lsaquo; ]</a><a id="ovclose">[ CLOSE ]</a><a id="next">[ &rsaquo; ]</a></div>
+	<div id="ovbar"><a id="ovprev">[ &lsaquo; ]</a><a id="ovclose">[ CLOSE ]</a><a id="ovnext">[ &rsaquo; ]</a></div>
 	<div id="ovx">
 		<div id="ovtitle"></div>
 		<img id="ovimg" alt="">
@@ -578,8 +576,7 @@ function justify(el,list,targetH){
 window.addEventListener('resize',()=>{ if($('ov').classList.contains('open')) justify($('ovgrid'),ovGridList,120); });
 function openOv(i,list){
 	ovList=list||shown; ovIdx=i; const x=ovList[i]; if(!x) return;
-	$('ovtitle').innerHTML=x.label.replace(' | ',' &mdash; &ldquo;')+(x.label.includes(' | ')?'&rdquo;':'');
-		$('ovtitle').onclick=()=>{ closeOv(); goProject(x.slug,x.label); };
+	$('ovtitle').textContent=x.label;
 		$('ovimg').src=src(x);
 		$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="background:#'+p+'" data-h="#'+p+'"></span>').join('');
 		$('ovpal').querySelectorAll('span').forEach(el=>el.onclick=()=>navigator.clipboard.writeText(el.dataset.h));
@@ -620,9 +617,9 @@ function openOv(i,list){
 function closeOv(){$('ov').classList.remove('open');document.body.style.overflow='';}
 $('ovclose').onclick=closeOv;
 $('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOv();});
-$('prev').onclick=()=>openOv((ovIdx-1+ovList.length)%ovList.length,ovList);
-$('next').onclick=()=>openOv((ovIdx+1)%ovList.length,ovList);
-document.addEventListener('keydown',e=>{ if(!$('ov').classList.contains('open'))return; if(e.key==='Escape')closeOv(); if(e.key==='ArrowLeft')$('prev').click(); if(e.key==='ArrowRight')$('next').click(); });
+$('ovprev').onclick=()=>openOv((ovIdx-1+ovList.length)%ovList.length,ovList);
+$('ovnext').onclick=()=>openOv((ovIdx+1)%ovList.length,ovList);
+document.addEventListener('keydown',e=>{ if(!$('ov').classList.contains('open'))return; if(e.key==='Escape')closeOv(); if(e.key==='ArrowLeft')$('ovprev').click(); if(e.key==='ArrowRight')$('ovnext').click(); });
 
 /* ---- FORMAT ADMIN ---- */
 let fmtDirty=false;
