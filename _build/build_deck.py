@@ -12,15 +12,7 @@ import os, re, build_site as B
 ROOT = B.ROOT
 VER = B.VER
 
-# The deck's nav = the site nav + a DECK entry (WORK / ARCHIVE / DECK / CONTACT).
-# Reuses build_site.header() verbatim so the markup matches all other pages.
-B.SITE['nav'] = [
-    {'label': 'WORK',    'href': '/',         'slot': 'first'},
-    {'label': 'ARCHIVE', 'href': '/archive/', 'slot': 'middle'},
-    {'label': 'DECK',    'href': '/deck/',    'slot': 'middle'},
-    {'label': 'CONTACT', 'href': '/contact/', 'slot': 'last'},
-]
-
+# Nav (incl. DECK) now lives in data/site.json — inherited verbatim, no override.
 main_inner = open(os.path.join(ROOT, '_build', 'deck_main.html'), encoding='utf-8').read().rstrip()
 extras     = open(os.path.join(ROOT, '_build', 'deck_extras.html'), encoding='utf-8').read().rstrip()
 
