@@ -17,7 +17,7 @@ The recurring "it doesn't match the site" churn had one root cause: the deck's s
 ### Files
 | File | Role |
 |---|---|
-| `_build/build_deck.py` | Imports build_site; deck nav is inherited from site.json (WORK/CONTACT/ARCHIVE — the deck itself is the ARCHIVE item, `link-active`); wraps the body partials with page/header/footer; **inlines** deck.css + deck.js into one self-contained `deck/index.html`. |
+| `_build/build_deck.py` | Imports build_site; deck nav is inherited from site.json (WORK/CONTACT/ARCHIVE — the deck itself is the ARCHIVE item, `link-active`); wraps the body partials with page/header/footer. **`deck.js` is inlined** (carries per-build `window.DECK_LANDING`); **`deck.css` is LINKED with a content-hash cache-buster** `../css/deck.css?v=<md5>`. ⚠️ Because of that hash, a **deck.css change is NOT a push-css-alone one-shot** — you must rebuild + commit `deck/index.html` too, or browsers serve the stale cached CSS (the 2026.0012 "looks the same" bug; fixed 2026.0013). |
 | `css/deck.css` | Deck-only styles (derived tokens `--panel/--field/--dim/--line`, controls, filter rail, deck grid, detail overrides). References main.css vars. |
 | `js/deck.js` | The grid/filter/modal engine + light/dark toggle that **FOLLOWS THE SITE** (shares the site's `mode` key — no forced default; was `deckmode`/defaults-dark, changed 2026-07-18) + device-class + sticky-pin snippets. Fetches `../data/deck*.json`. |
 | `_build/deck_main.html` | The deck's `<main>` inner: controls row + filter rail + grid column. |

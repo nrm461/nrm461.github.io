@@ -19,9 +19,14 @@ extras     = open(os.path.join(ROOT, '_build', 'deck_extras.html'), encoding='ut
 content = (f'<div id="content-wrapper">\n{B.header("/deck/", 1)}\n<main>\n{main_inner}\n</main>\n{B.footer()}\n</div>\n'
            + extras)
 
-# deck.css is now LINKED (like main.css), NOT inlined — so a pure CSS tweak is a
-# one-shot deploy: push css/deck.css and it's live, no deck/index.html rebuild needed.
+# deck.css is LINKED (not inlined), but the link carries a CONTENT-HASH cache-buster
+# (?v=<md5>) so browsers actually re-fetch it when it changes. => a deck.css tweak now
+# REQUIRES rebuilding + committing deck/index.html (the link's hash changes); it is NOT a
+# push-css-alone one-shot (that silently served stale CSS from cache — the 2026.0012 bug).
 # deck.js stays inlined because it carries per-build data (window.DECK_LANDING below).
+import hashlib
+_deck_css_bytes = open(os.path.join(ROOT, 'css', 'deck.css'), 'rb').read()
+DECK_CSS_VER = hashlib.md5(_deck_css_bytes).hexdigest()[:10]
 deck_js  = open(os.path.join(ROOT, 'js',  'deck.js'),  encoding='utf-8').read().rstrip()
 
 # the deck's default (unfiltered) view is scoped to films currently on the main landing grid
@@ -30,7 +35,7 @@ _landing = [p['slug'] for p in B.visible_projects() if p.get('selected')]
 deck_js = 'window.DECK_LANDING=' + _json.dumps(_landing) + ';\n' + deck_js
 
 inline = (f'<meta name="robots" content="noindex">\n'
-          f'<link rel="stylesheet" href="../css/deck.css">\n')
+          f'<link rel="stylesheet" href="../css/deck.css?v={DECK_CSS_VER}">\n')
 
 doc = B.page('page-deck', f'{B.SITE["site_name"]} — Archive', content, inline_vars=inline, depth=1)
 

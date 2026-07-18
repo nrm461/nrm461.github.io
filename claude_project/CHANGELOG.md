@@ -4,6 +4,18 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0013 — 2026-07-18
+
+Shipped — **cache-buster on the deck stylesheet link** (the real reason today's deck CSS changes "looked the same" for Nick).
+
+- `deck/index.html` linked `../css/deck.css` with NO version query, while `main.css` had `?v=<VER>`. So browsers cached deck.css indefinitely and never re-fetched it — every deck.css-only push (2026.0010–0012) silently served stale CSS to anyone with a warm cache. The "one-shot: push css/deck.css alone" model in the docs was WRONG.
+- Fix: `build_deck.py` now stamps a **content-hash** buster onto the link — `../css/deck.css?v=<md5(deck.css)[:10]>`. The hash changes iff deck.css changes, so the browser re-fetches exactly when needed. **Consequence: a deck.css edit now REQUIRES rebuilding + committing `deck/index.html`** (not a push-css-alone one-shot). Docs updated (`04_deck.md`); build_deck comment corrected.
+- This deploy carries the current deck.css (hash `f630d43adc`) which already includes all of today's work: desktop grid at Work-top, mobile FILTERS as 4th nav item, filter accordion, detail nav consistent at all widths, and the pinned-with-thumbnails-behind mobile search (2026.0012). A normal reload now picks them all up.
+
+Open threads: unchanged. Minor: desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0012 — 2026-07-18
 
 Shipped — deck mobile search: keep it PINNED, thumbnails scroll behind (deck-only, `css/deck.css` only). Supersedes 2026.0011's non-sticky approach — Nick wanted the search bar pinned in place with the grid hiding behind it, not scrolling away.
