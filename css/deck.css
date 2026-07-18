@@ -1,0 +1,153 @@
+/* ============================================================================
+   DECK — advanced search area that REUSES the main site's components. The detail
+   view is built from the real project-page pieces (#single-bar, .credits-hero,
+   .project-credits, .project-gallery) so spacing/type/arrows are inherited, not
+   re-created. Only deck-unique parts (controls, filter rail, justified grid) get
+   bespoke CSS below, in the site's variables.
+   ============================================================================ */
+:root,.dark-mode{
+	--bg:var(--color-bg);--fg:var(--color-text);
+	--panel:color-mix(in srgb,var(--color-text) 4%,var(--color-bg));
+	--field:color-mix(in srgb,var(--color-text) 7%,var(--color-bg));
+	--dim:color-mix(in srgb,var(--color-text) 50%,var(--color-bg));
+	--dim2:color-mix(in srgb,var(--color-text) 32%,var(--color-bg));
+	--line:color-mix(in srgb,var(--color-text) 16%,var(--color-bg));
+	--accent:var(--color-text);
+}
+html{scrollbar-color:var(--dim2) var(--color-bg)}
+button{font-family:inherit}
+
+/* nav: 4 items, one centred row */
+.page-deck header a.active{cursor:default;text-decoration:none}
+.page-deck header{column-gap:clamp(1.5rem,7vw,5rem)}
+@media(min-width:1025px){.page-deck header{column-gap:clamp(2.5rem,10vw,9rem)}}
+@media(max-width:500px){.page-deck header{column-gap:0}}
+.page-deck main{width:100%;max-width:1240px;justify-self:center}
+
+/* --- search + controls row (pinned under header) --- */
+#ctrl{display:flex;align-items:center;gap:18px;padding:4px 0 14px;position:sticky;z-index:8;background:var(--color-bg);flex-wrap:wrap}
+#search{flex:1 1 240px;min-width:160px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:13px var(--font);padding:6px 2px 7px;border-radius:0}
+#search:focus{border-bottom-color:var(--fg);outline:none}
+#search::placeholder{color:var(--dim2)}
+#fbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;position:relative;font-family:inherit;white-space:nowrap}
+#fbtn::before{content:'[ ';visibility:hidden}
+#fbtn::after{content:' ]';visibility:hidden}
+#fbtn.on::before,#fbtn.on::after{visibility:visible}
+#fbtn:hover{text-decoration:underline}
+#showing{color:var(--dim);font-size:11px;white-space:nowrap}
+#showing b{color:var(--fg);font-weight:600}
+#sortwrap{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:11px;white-space:nowrap}
+@media(max-width:760px){#sortwrap{display:none}}
+select{background:var(--field);border:1px solid var(--line);color:var(--fg);font:12px var(--font);padding:5px 8px;border-radius:3px}
+
+/* --- deck row: filter rail + grid column --- */
+#deckrow{display:flex;align-items:flex-start;gap:26px}
+#gridcol{flex:1 1 auto;min-width:0}
+
+/* filter rail — base = mobile full-screen takeover */
+#sideback{position:fixed;inset:0;background:#0008;z-index:39;display:none}
+#sideback.on{display:block}
+#side{position:fixed;left:0;top:0;bottom:0;width:340px;max-width:90vw;z-index:40;background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;transform:translateX(-100%);transition:transform .2s;padding:0 16px 40px}
+#side.open{transform:none}
+#side::-webkit-scrollbar{width:8px}
+@media(min-width:761px){
+	#side{position:sticky;top:100px;flex:0 0 210px;width:210px;max-width:none;bottom:auto;height:auto;max-height:calc(100vh - 116px);overflow-y:auto;background:none;border:0;transform:none;transition:none;padding:0;z-index:1}
+	#side #sideclose{display:none}
+	#sideback{display:none!important}
+	#deckrow.railoff #side{display:none}
+}
+#sidehead{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0 6px}
+#sidehead span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+#sidehead .sh-r{display:flex;gap:14px;align-items:baseline}
+#sideclose{cursor:pointer;background:none;border:0;color:var(--fg);font-size:17px;line-height:1;padding:0 2px}
+#clearall{color:var(--fg);cursor:pointer;font-size:11px;background:none;border:0;padding:0;position:relative}
+#clearall::before{content:'[ '}#clearall::after{content:' ]'}
+#clearall:hover{text-decoration:underline}
+#paltoggle{display:flex;gap:7px;align-items:center;padding:6px 0 14px;color:var(--dim);font-size:11px;cursor:pointer}
+#paltoggle input{accent-color:var(--accent);width:12px;height:12px;margin:0}
+
+/* filter sections — plain text, no rules */
+.sec{border:0}
+.sec-h{display:flex;justify-content:space-between;align-items:center;padding:10px 0 4px;cursor:pointer;user-select:none;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--fg)}
+.sec-h .car{color:var(--dim2);font-size:8px}
+.sec-b{display:none;padding:0 0 8px}
+.sec.open .sec-b{display:block}
+.opt{display:flex;gap:8px;align-items:baseline;padding:2px 0;cursor:pointer;color:var(--dim);font-size:11.5px}
+.opt:hover{color:var(--fg)}
+.opt.on{color:var(--fg)}
+.opt .ol{position:relative}
+.opt.on .ol::before{content:'[ '}
+.opt.on .ol::after{content:' ]'}
+.opt .n{margin-left:auto;color:var(--dim2);font-size:10px;padding-left:8px}
+.opt.zero{opacity:.32}
+#filmsearch,.subsearch{width:100%;margin:3px 0 6px;background:var(--field);border:1px solid var(--line);color:var(--fg);font:11px var(--font);padding:4px 6px;border-radius:3px}
+.scrolllist{max-height:250px;overflow-y:auto}
+#pickrow{display:flex;align-items:center;gap:8px;padding:4px 0}
+#pick{width:30px;height:24px;padding:0;border:1px solid var(--line);background:var(--field);border-radius:3px;cursor:pointer}
+#tol{width:78px;accent-color:var(--dim)}
+#pickon{cursor:pointer;border:1px solid var(--line);border-radius:3px;padding:3px 8px;font-size:10px;background:transparent;color:var(--fg)}
+#pickon.on{background:var(--accent);border-color:var(--accent);color:var(--color-bg)}
+
+/* active-filter bracket row above the grid */
+#chips{display:flex;flex-wrap:wrap;gap:5px 16px;padding:2px 0 12px}
+.chip{color:var(--fg);font-size:11.5px;white-space:nowrap}
+.chip::before{content:'[ '}.chip::after{content:' ]'}
+.chip b{font-weight:400;color:var(--fg)}
+.chip .x{cursor:pointer;color:var(--dim);margin-left:7px}
+.chip .x:hover{color:var(--fg)}
+
+/* justified grid — NO labels */
+#grid{padding-top:2px}
+.row{display:flex;gap:5px;margin-bottom:5px}
+.cell{position:relative;cursor:pointer;overflow:hidden;background:var(--line);flex:0 0 auto}
+.cell img{width:100%;height:100%;display:block;object-fit:cover}
+.cell.admtag::before{content:attr(data-fmt);position:absolute;top:0;left:0;background:var(--accent);color:var(--color-bg);font-size:9px;padding:1px 4px;font-weight:700}
+#more{padding:24px;text-align:center;color:var(--dim)}
+#empty{padding:60px 20px;color:var(--dim);text-align:center;display:none}
+#projhead{display:none}
+
+/* =========================================================================
+   DETAIL VIEW — reuses the site's project-page components verbatim.
+   #single-bar / .credits-hero / .project-credits / .project-gallery all come
+   from main.css. Only the modal shell + a few show-on-mobile overrides here.
+   ========================================================================= */
+/* mirror .page-project main: single-bar + project-container as grid rows w/ 45px gap + top pad */
+#ov{position:fixed;inset:0;background:var(--color-bg);z-index:30;display:none;overflow-y:auto}
+#ov.open{display:grid;grid-auto-rows:min-content;row-gap:var(--gap-rows);padding:calc(var(--margin-top) - var(--gap-small)) var(--margin-sides) calc(var(--gap-rows)*2)}
+#ov #project-container{max-width:1180px;width:100%;margin:0 auto;padding:0}
+#ov #ovimg{width:100%;display:block;max-height:calc(100vh - 150px);object-fit:contain;background:none}
+#ovpal{display:none;height:34px;gap:3px}
+#ovpal.show{display:flex}
+#ovpal span{cursor:pointer;position:relative;flex:1 1 0;border:2px solid var(--color-text);border-radius:2px}
+#ovpal span:hover::after{content:attr(data-h);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;background:#0007;white-space:nowrap}
+#ovcredits p{margin:0}
+#ovcredits a{text-decoration:none}
+#ovcredits a:hover{text-decoration:underline}
+/* shot data = part of the credits (rendered as a .credits-rest); force visible on mobile too */
+#ov .credits-rest{display:block!important}
+#ovmeta .ovkw{color:var(--dim);margin-top:12px}
+.kwtag{cursor:pointer;color:var(--dim)}
+.kwtag:hover{color:var(--fg);text-decoration:underline}
+#ovadm{padding:12px 0;display:none}
+#ovadm.on{display:block}
+#ovadm b{color:var(--accent);font-size:10px;letter-spacing:.08em}
+#ovadm select{margin-left:8px}
+/* film thumbnails below — the site gallery, forced visible on mobile too */
+#ov .project-gallery{display:grid!important;grid-template-columns:repeat(3,1fr);gap:5px}
+#ov .project-gallery img{cursor:pointer;opacity:.92}
+#ov .project-gallery img:hover{opacity:1}
+
+/* format admin panel (admin only) */
+#fmtpanel{position:fixed;right:0;top:0;bottom:0;width:340px;background:var(--panel);border-left:1px solid var(--accent);z-index:25;overflow-y:auto;padding:14px;display:none}
+#fmtpanel.on{display:block}
+#fmtpanel h3{margin:0 0 4px;font-size:12px;letter-spacing:.1em;color:var(--accent)}
+#fmtpanel .note{color:var(--dim);font-size:10px;margin-bottom:10px}
+.fmtrow{display:flex;align-items:center;gap:6px;padding:3px 0;border-bottom:1px solid var(--line)}
+.fmtrow .fn{flex:1;font-size:10px;color:color-mix(in srgb,var(--color-text) 78%,var(--color-bg));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fmtrow select{font-size:10px;padding:2px 4px;max-width:130px}
+.fmtrow .cnt{color:var(--dim2);font-size:9px;width:26px;text-align:right}
+#fmtsave{position:sticky;bottom:0;width:100%;margin-top:10px;background:var(--accent);color:var(--color-bg);border:0;border-radius:3px;padding:9px;font-weight:700;cursor:pointer}
+#fmtsave:disabled{opacity:.4}
+#fmtstatus{color:var(--dim);font-size:10px;text-align:center;padding:6px}
+
+@media(max-width:760px){#fmtpanel{width:100%}}
