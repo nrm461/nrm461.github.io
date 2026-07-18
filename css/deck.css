@@ -17,11 +17,9 @@
 html{scrollbar-color:var(--dim2) var(--color-bg)}
 button{font-family:inherit}
 
-/* nav: 4 items, one centred row */
+/* nav layout is inherited verbatim from main.css (single source of truth) — no
+   header column-gap / wrap overrides here, or deck drifts from landing again. */
 .page-deck header a.active{cursor:default;text-decoration:none}
-.page-deck header{column-gap:clamp(1.5rem,7vw,5rem)}
-@media(min-width:1025px){.page-deck header{column-gap:clamp(2.5rem,10vw,9rem)}}
-@media(max-width:500px){.page-deck header{column-gap:0}}
 .page-deck main{width:100%;max-width:1240px;justify-self:center}
 
 /* --- search + controls row (pinned under header) --- */
