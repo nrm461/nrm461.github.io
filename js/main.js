@@ -95,7 +95,7 @@
 	var prev = document.getElementById('prev'), next = document.getElementById('next'), close = document.getElementById('close');
 	if(prev) prev.href = '../' + list[(i - 1 + list.length) % list.length] + '/';
 	if(next) next.href = '../' + list[(i + 1) % list.length] + '/';
-	if(close) close.href = ctx === 'archive' ? '../archive/' : (ctx === 'hidden' ? '../hidden/' : '../');
+	if(close) close.href = ctx === 'hidden' ? '../hidden/' : '../';  /* WORK grid now lives at root "/" */
 })();
 
 /* Remember grid scroll position: restore when returning via [CLOSE] / back */
