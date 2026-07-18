@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0001 — 2026-07-18
+
+Shipped:
+- Reported nav "drift" diagnosed: the LIVE site was already consistent (WORK / ARCHIVE / CONTACT / DECK on landing and /deck); the local Mac working copy was stale. Re-synced local to origin.
+- Local auto-sync: `_local/` LaunchAgent (sync.sh, PATH-hardened, fast-forward-only) pulls origin every 30 min + at login. Needs Full Disk Access on /bin/zsh (Desktop is TCC-protected). Confirmed running (exit 0).
+- Version tracking: new `claude_project/VERSION` counter (`website YYYY.NNNN`), cut 2026.0001. Bump on every push; kickoff + handoff lead with it to seed the next chat's title.
+- Pushed stranded local edits to origin: `.gitignore` (_backups/) and `02_site_reference.md` (deck files).
+
+Open threads:
+- Deck data hygiene: typo canonical slugs (harley `-linage`, `virgial`, `jewlery`, `hennesy`); 6 posted projects blank credits; 105/197 deck films missing deck_credits; `wdytln-h-264-files` junk label; montell-fish vimeo URL normalize.
+- build_site recurrence-prune for orphaned slug dirs (needs Nick's ok on auto-delete).
+- nickmetcalf.com DNS cutover (waiting on Nick).
+- Confirm on phone: deck swipe, blinking cursor, mobile square gallery, filters-above-search, forced-dark overlay.
+
 ## 2026-07-18 (b) — self-loading kickoff via project memory (no Claude Project needed)
 
 - **New workflow: no Claude Project, no Instructions field.** Project memory auto-loads into every new chat on its own, so it IS the kickoff. Memory `MEMORY.md` now opens with an imperative kickoff block that routes any fresh chat to read `00_START_HERE.md` + the top of `CHANGELOG.md` from the connected website folder, then do the task or report status.
