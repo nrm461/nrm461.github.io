@@ -4,6 +4,21 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0002 — 2026-07-18
+
+Shipped:
+- CORE FIX for the recurring landing-vs-deck nav drift — and this time it WAS live (prior 2026.0001 "stale local copy" diagnosis was wrong). Root cause: the deck page carried its OWN copy of the nav column-gap/wrap rules in css/deck.css (inlined into deck/index.html), so it never tracked css/main.css. Landing used a 3-item-tuned desktop gap clamp(6rem,31vw,48rem) with flex-wrap:wrap → the 4th item (DECK) wrapped to a 2nd line at wide widths; deck used a tighter gap → all 4 on one centered row. Two sources = perpetual divergence.
+- Made css/main.css the SINGLE SOURCE OF TRUTH: desktop gap clamp(2.5rem,10vw,9rem), tablet/default clamp(1.5rem,7vw,5rem), + flex-wrap:nowrap at min-width:769px so DECK can NEVER drop to a 2nd line. Deleted the duplicate header column-gap/wrap overrides from css/deck.css; rebuilt deck/index.html to drop the inlined override; cache-bust'd main.css (?v=2026000200) on landing + deck so visitors pull the new CSS.
+- Verified headless (Chromium) at 2560/1440/1100/900/700/420px: landing and deck nav row-count matches at every width — 1 centered row on all desktop widths, identical wrap on phone.
+
+Open threads:
+- Deck data hygiene: typo canonical slugs (harley -linage, virgial, jewlery, hennesy); 6 posted projects blank credits; 105/197 deck films missing deck_credits; wdytln-h-264-files junk label; montell-fish vimeo URL normalize.
+- build_site recurrence-prune for orphaned slug dirs (needs Nick's ok on auto-delete).
+- nickmetcalf.com DNS cutover (waiting on Nick).
+- Confirm on phone: deck swipe, blinking cursor, mobile square gallery, filters-above-search, forced-dark overlay.
+
+---
+
 ## website 2026.0001 — 2026-07-18
 
 Shipped:
