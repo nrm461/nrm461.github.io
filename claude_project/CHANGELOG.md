@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0004 — 2026-07-18
+
+Shipped:
+- Standing preference recorded: every handoff must END with a fenced code block Nick can one-click-copy — a ready-to-paste kickoff prompt for the next conversation (lead line `website YYYY.NNNN — new session.`, role reminder, this session's context/open threads, restore-point refs). Added as item 6 in claude_project/HANDOFF_CHECKLIST.md so it can't be skipped.
+
+Open threads:
+- Big changes incoming — restore point is origin branch `backup/2026-07-18-pre-bigchanges` + tag `backup-2026.0003` at HEAD 587617f.
+- Deck data hygiene: typo canonical slugs (harley -linage, virgial, jewlery, hennesy); 6 posted projects blank credits; 105/197 deck films missing deck_credits; wdytln-h-264-files junk label; montell-fish vimeo URL normalize.
+- build_site recurrence-prune for orphaned slug dirs (needs Nick's ok on auto-delete).
+- nickmetcalf.com DNS cutover (waiting on Nick).
+- Confirm on phone: deck swipe, blinking cursor, mobile square gallery, filters-above-search, forced-dark overlay.
+
+---
+
 ## website 2026.0003 — 2026-07-18
 
 Shipped:
