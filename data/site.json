@@ -1,63 +1,68 @@
 {
-  "site_name": "Nick Metcalf",
-  "site_title": "Nick Metcalf — Colorist",
-  "base_url": "",
-  "nav": [
-    {
-      "label": "WORK",
-      "href": "/",
-      "slot": "first"
-    },
-    {
-      "label": "ARCHIVE",
-      "href": "/archive/",
-      "slot": "middle"
-    },
-    {
-      "label": "CONTACT",
-      "href": "/contact/",
-      "slot": "last"
-    }
-  ],
-  "contact": {
-    "intro": [
-      "NICK METCALF",
-      "COLORIST"
-    ],
-    "sections": [
-      {
-        "title": "[ EMAIL ]",
-        "lines": [
-          {
-            "text": "NICHOLASMETCALF@GMAIL.COM",
-            "href": "mailto:nicholasmetcalf@gmail.com"
-          }
-        ]
-      },
-      {
-        "title": "[ INSTAGRAM ]",
-        "lines": [
-          {
-            "text": "@NICK__METCALF",
-            "href": "https://instagram.com/nick__metcalf"
-          }
-        ]
-      }
-    ]
+ "site_name": "Nick Metcalf",
+ "site_title": "Nick Metcalf — Colorist",
+ "base_url": "",
+ "nav": [
+  {
+   "label": "WORK",
+   "href": "/",
+   "slot": "first"
   },
-  "hide_groups": [
-    "current",
-    "pass",
-    "broken",
-    "vimeo_batch"
+  {
+   "label": "ARCHIVE",
+   "href": "/archive/",
+   "slot": "middle"
+  },
+  {
+   "label": "CONTACT",
+   "href": "/contact/",
+   "slot": "middle"
+  },
+  {
+   "label": "DECK",
+   "href": "/deck/",
+   "slot": "last"
+  }
+ ],
+ "contact": {
+  "intro": [
+   "NICK METCALF",
+   "COLORIST"
   ],
-  "linkify_handles": true,
-  "mobile_gallery": false,
-  "categories": [
-    "Commercial",
-    "Music Video",
-    "Beauty",
-    "Long Form",
-    "Car"
+  "sections": [
+   {
+    "title": "[ EMAIL ]",
+    "lines": [
+     {
+      "text": "NICHOLASMETCALF@GMAIL.COM",
+      "href": "mailto:nicholasmetcalf@gmail.com"
+     }
+    ]
+   },
+   {
+    "title": "[ INSTAGRAM ]",
+    "lines": [
+     {
+      "text": "@NICK__METCALF",
+      "href": "https://instagram.com/nick__metcalf"
+     }
+    ]
+   }
   ]
+ },
+ "hide_groups": [
+  "current",
+  "pass",
+  "broken",
+  "vimeo_batch"
+ ],
+ "linkify_handles": true,
+ "mobile_gallery": false,
+ "categories": [
+  "Commercial",
+  "Music Video",
+  "Beauty",
+  "Long Form",
+  "Car"
+ ]
 }
