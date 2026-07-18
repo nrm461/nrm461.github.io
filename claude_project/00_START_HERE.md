@@ -20,3 +20,9 @@ Neither sandbox can `git push`: the cloud container has a placeholder token and 
 
 ## Project memory
 Desktop project-memory holds topic notes (deploy, deck, categories, credits, archive-order, etc.) + a `MEMORY.md` index. If a memory note and these repo docs disagree, **the repo docs win** — update the note.
+
+
+## Version + handoff & local auto-sync (2026-07-18)
+- **Version counter:** `claude_project/VERSION` holds `website YYYY.NNNN`. Read it at kickoff and LEAD the status with it. **Bump +1 on every push** (Contents API; new year → .0001). Not an Action trigger path.
+- **Handoff:** at sign-off, print a handoff whose FIRST line is exactly `website YYYY.NNNN` (last pushed), alone, then a blank line, then Shipped/Open — so pasting it into a new chat seeds that chat's title.
+- **Local auto-sync:** the Mac copy pulls origin via a LaunchAgent in `_local/` (30 min + login, ff-only). It needs Full Disk Access on /bin/zsh. For LIVE state read origin via the API, never the local copy.
