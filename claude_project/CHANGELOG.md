@@ -4,6 +4,28 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0005 — 2026-07-18
+
+Shipped — site nav reorder (root = Work):
+- Homepage `/` is now the **WORK** grid: all visible projects in `arch_order` (old archive content), category filters (ALL/Commercial/Music Video/Beauty/Long Form/Car) REMOVED. Body `page-archive`; nav-data ctx `archive`.
+- Old landing grid ("Selected Works") renamed **Selects**, moved to `/selects/`, UNLINKED from nav (still reachable, indexable).
+- `/archive/` page retired → redirect stub to `/` (old bookmarks resolve).
+- Deck relabeled **ARCHIVE** in nav; `/deck/` path unchanged; deck `<title>` → "Archive". Deck still `noindex`.
+- Nav is now `WORK`→`/` · `CONTACT`→`/contact/` · `ARCHIVE`→`/deck/` (labels decoupled from URLs).
+- `js/main.js`: project `[CLOSE]` returns to `/` (root Work) for archive/landing ctx (was `/archive/`).
+- Admin tabs relabeled **Selects** / **Work** (internal data-view keys `landing`/`archive` unchanged).
+- Edited: `data/site.json`, `_build/build_site.py` (build_index→Work root, new build_selects, build_archive→redirect), `_build/build_deck.py` (title), `js/main.js`, `admin/index.html`. Docs `02_site_reference.md` + `04_deck.md` updated.
+- Deploy: 5 source files pushed via Contents API, git-blob-sha verified byte-exact vs local; `deck/index.html` patched directly (Action doesn't run build_deck). Build Action `485ca11` succeeded; live-verified (root 103 cards/0 filters, /selects/ 20, /archive/ redirect, /deck/ title Archive, project close → /).
+- Backup before this work: tag `backup-2026.0003` + branch `backup/2026-07-18-pre-bigchanges` at `587617f` (roll back = reset main to either).
+
+Open threads:
+- Deck (ARCHIVE) is now a linked nav item but still `noindex` — decide whether to make it indexable.
+- Cosmetic URL≠label: ARCHIVE nav → `/deck/`; old `/archive/` shows a redirect.
+- Closing a project opened from `/selects/` returns to the Work grid, not Selects (no `selects` navctx) — refine if wanted.
+- Prior, still open: deck data hygiene (canonical slug typos, 6 blank credits, 105/197 films missing deck credits, junk film label, Vimeo URL normalization); `build_site` recurrence-prune for orphaned dirs (awaiting approval); nickmetcalf.com DNS cutover (pending).
+
+---
+
 ## website 2026.0004 — 2026-07-18
 
 Shipped:
