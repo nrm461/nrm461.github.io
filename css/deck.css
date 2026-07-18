@@ -198,10 +198,16 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
    nav is a 3-item vertical stack <=500px but a single row 501-760px. `left` aligns it to the
    same margin as WORK/CONTACT/ARCHIVE. Line pitch = height-text + gap-small (matches nav spacing). */
 @media(max-width:760px){
-	/* opaque bg so FILTERS reads cleanly when it floats over the grid on scroll */
+	/* opaque bg so FILTERS reads cleanly (sits over the header / the pinned search's own bg) */
 	#fbtn{position:fixed;left:var(--margin-sides);z-index:10;padding:0;background:var(--color-bg)}
-	/* search scrolls WITH the grid on mobile (not sticky) so it can't ride up under the nav/FILTERS on scroll; resting spacing under the nav is unchanged */
-	#ctrl{position:static;padding-top:0}
+	/* Search stays PINNED (sticky; JS sets top = header height) and the thumbnails scroll BEHIND it.
+	   The extra opaque top padding drops the search field one nav-line below the fixed FILTERS line,
+	   so when stuck the field never rides up under FILTERS and its bg runs flush from the header down
+	   (no gap for images to peek through). */
+	#ctrl{padding-top:calc(var(--height-text) + var(--gap-small))}
+	/* the padding above adds clearance only when STUCK; pull the row up by the same amount so the
+	   RESTING gap under the nav is unchanged (negative margin on the parent doesn't move the sticky pin) */
+	#deckrow{margin-top:calc((var(--height-text) + var(--gap-small)) * -1)}
 }
 @media(max-width:500px){          /* nav = WORK/CONTACT/ARCHIVE stacked -> FILTERS is the 4th line */
 	#fbtn{top:calc(var(--margin-top) + 3 * (var(--height-text) + var(--gap-small)))}

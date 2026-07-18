@@ -4,6 +4,18 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0012 — 2026-07-18
+
+Shipped — deck mobile search: keep it PINNED, thumbnails scroll behind (deck-only, `css/deck.css` only). Supersedes 2026.0011's non-sticky approach — Nick wanted the search bar pinned in place with the grid hiding behind it, not scrolling away.
+
+- Mobile `#ctrl` is back to sticky (JS pins `top` = header height). Added `padding-top: (height-text + gap-small)` — the padding is opaque (`#ctrl` bg), so when stuck the search field drops one nav-line BELOW the fixed FILTERS line and the search bg runs flush from the header down (no gap → no image bleed; thumbnails scroll behind the whole nav+FILTERS+search band).
+- `#deckrow{margin-top: -(height-text + gap-small)}` on mobile cancels that padding at REST so the resting gap under the nav is unchanged (negative margin on the parent doesn't move the child's sticky pin). Verified headless @390/600: rest input at 139/78 (same as before), scrolled input pins at 117/71, `#ctrl` box top === header bottom (no bleed), input below FILTERS.
+- `#fbtn{background:var(--color-bg)}` kept so FILTERS stays legible over the band.
+
+Open threads: unchanged. Minor: desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0011 — 2026-07-18
 
 Shipped — deck mobile top-chrome fix (deck-only, `css/deck.css` only — linked file, one-shot):
