@@ -161,6 +161,8 @@ function buildChips(){
 	if(state.q) add('Search',state.q,()=>{state.q='';$('search').value='';apply();});
 	if(state.pick) add('Color match','#'+state.pick.map(v=>v.toString(16).padStart(2,'0')).join(''),()=>{state.pick=null;$('pickon')&&$('pickon').classList.remove('on');apply();});
 	SECTIONS.forEach(s=>{ if(s.type==='picker')return; if(s.key==='film'&&curProject)return; state.sets[s.key].forEach(v=>add(s.label,optName(s,v),()=>{state.sets[s.key].delete(v);apply();})); });
+	/* Clear all sits next to the chips, only when at least one filter is active */
+	if(c.children.length){ const el=document.createElement('span'); el.className='chip-clear'; el.textContent='clear all'; el.onclick=clearAll; c.appendChild(el); }
 }
 
 /* justified grid */
@@ -272,7 +274,7 @@ function apply(){
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
 /* blinking terminal cursor on the search field — shown only when empty & unfocused */
 (function(){var sw=$('searchwrap'),si=$('search');if(!sw||!si)return;function tog(){sw.classList.toggle('typing',document.activeElement===si||si.value.length>0);}si.addEventListener('focus',tog);si.addEventListener('blur',tog);si.addEventListener('input',tog);tog();})();
-$('clearall').onclick=()=>{SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;state.q='';$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();};
+function clearAll(){SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;$('pickon')&&$('pickon').classList.remove('on');state.q='';$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();}
 let showPal=false;
 function isNarrow(){return matchMedia('(max-width:760px)').matches}
 function railReset(){ if(!isNarrow()) requestAnimationFrame(()=>{ if(typeof resetGrid==='function') resetGrid(); }); }
@@ -358,7 +360,7 @@ function openOv(i,list){
 				['Format',fmtOf(x)?low(FMT_LBL[fmtOf(x)]):''],
 			];
 			let meta='<p class="spacer">&nbsp;</p>'+rows.filter(r=>r[1]).map(r=>'<p><span class="ml">'+r[0]+':</span> <span class="mv">'+r[1]+'</span></p>').join('');
-			if(x.page&&x.pslug)meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ open film page ]</a></p>';
+			if(x.page&&x.pslug)meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch ]</a></p>';
 			$('ovmeta').innerHTML=meta;
 			$('ovkw').innerHTML=x.kw.length?'<p class="ovkw">'+x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' ')+'</p>':'';
 			$('ovkw').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});

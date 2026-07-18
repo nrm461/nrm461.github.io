@@ -57,13 +57,11 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 	#sideback{display:none!important}
 	#deckrow.railoff #side{display:none}
 }
-#sidehead{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0 6px}
-#sidehead span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+/* rail head now holds only the mobile close (×) — no "Filters" title, no Clear all (moved next to the chips). Hidden entirely on desktop. */
+#sidehead{display:flex;justify-content:flex-end;align-items:baseline;padding:8px 0 6px}
 #sidehead .sh-r{display:flex;gap:14px;align-items:baseline}
 #sideclose{cursor:pointer;background:none;border:0;color:var(--fg);font-size:17px;line-height:1;padding:0 2px}
-#clearall{color:var(--fg);cursor:pointer;font-size:11px;background:none;border:0;padding:0;position:relative}
-#clearall::before{content:'[ '}#clearall::after{content:' ]'}
-#clearall:hover{text-decoration:underline}
+@media(min-width:761px){#sidehead{display:none}}
 #paltoggle{display:none;gap:7px;align-items:center;padding:6px 0 14px;color:var(--dim);font-size:11px;cursor:pointer}  /* hidden per Nick 2026-07-18 — code kept, flip to flex to re-enable */
 #paltoggle input{accent-color:var(--accent);width:12px;height:12px;margin:0}
 
@@ -95,6 +93,9 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 .chip b{font-weight:400;color:var(--fg)}
 .chip .x{cursor:pointer;color:var(--dim);margin-left:7px}
 .chip .x:hover{color:var(--fg)}
+/* Clear all — lives next to the active-filter chips (only when at least one is set) */
+.chip-clear{cursor:pointer;color:var(--dim)}
+.chip-clear:hover{color:var(--fg);text-decoration:underline}
 
 /* justified grid — NO labels */
 #grid{padding-top:2px}
@@ -117,7 +118,8 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #ov{--color-bg:#000;--color-text:#fff;--bg:#000;--fg:#fff;--accent:#fff;--panel:color-mix(in srgb,#fff 4%,#000);--field:color-mix(in srgb,#fff 7%,#000);--dim:color-mix(in srgb,#fff 50%,#000);--dim2:color-mix(in srgb,#fff 32%,#000);--line:color-mix(in srgb,#fff 16%,#000);background:#000;color:#fff}
 #ov.open{display:grid;grid-auto-rows:min-content;row-gap:var(--gap-rows);padding:calc(var(--margin-top) - var(--gap-small)) var(--margin-sides) calc(var(--gap-rows)*2)}
 #ov #project-container{max-width:1180px;width:100%;margin:0 auto;padding:0}
-#ov #ovimg{width:100%;display:block;max-height:calc(100vh - 150px);object-fit:contain;background:none}
+/* big view locked to a consistent 16:9 frame; non-16:9 stills sit inside it, pillar/letter-boxed (object-fit:contain over black) */
+#ov #ovimg{width:100%;aspect-ratio:16/9;height:auto;max-height:calc(100vh - 150px);display:block;margin:0 auto;object-fit:contain;background:#000}
 #ovpal{display:none;height:34px;gap:3px}
 #ovpal.show{display:flex}
 #ovpal span{cursor:pointer;position:relative;flex:1 1 0;border:2px solid var(--color-text);border-radius:2px}
@@ -169,5 +171,8 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #termcur{position:absolute;left:1px;top:50%;transform:translateY(-50%);color:var(--fg);font-size:13px;line-height:1;pointer-events:none;animation:termblink 1.1s steps(1,end) infinite}
 @keyframes termblink{50%{opacity:0}}
 #searchwrap.typing #termcur{opacity:0;animation:none}
-/* mobile: filter toggle sits on its own line below the nav, aligned top-right */
-@media(max-width:760px){#fbtn{order:-1;flex:0 0 100%;text-align:right;padding-bottom:2px}}
+/* mobile: filter toggle pinned to the top-right corner, in line with the nav (out of the control-row flow so the search sits at the same top spacing as the Work page) */
+@media(max-width:760px){
+	#fbtn{position:fixed;top:var(--margin-top);right:var(--margin-sides);z-index:10;padding:0}
+	#ctrl{padding-top:0}
+}

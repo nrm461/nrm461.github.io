@@ -4,6 +4,27 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0009 — 2026-07-18
+
+Shipped — deck (ARCHIVE) design pass #2 (all deck-only):
+
+Main grid page:
+- **Mobile FILTERS now sits top-right, in line with the nav.** Moved `#fbtn` OUT of `#ctrl` in the DOM (it was `position:fixed` but trapped under the header because `#ctrl` is `position:sticky;z-index:8` = its own stacking context, so the header at z:9 painted over it). Now `#fbtn` is a direct child of `<main>`; mobile CSS pins it `position:fixed; top/right = margins; z:10`.
+- **Content top spacing matches the Work page** on mobile: with FILTERS out of the control-row flow (+ `#ctrl` padding-top zeroed on mobile), the search now starts at the same top offset as the Work grid.
+- **Removed the "Filters" title AND "Clear all" from the left rail.** Rail head now holds only the mobile close ×; hidden entirely on desktop. Clear all moved next to the active-filter chips — renders as a `.chip-clear` ("clear all") only when ≥1 filter is set (`clearAll()` refactored out of the old `#clearall` binding).
+
+Detail overlay:
+- **Big view locked to a consistent 16:9 height** (`#ovimg` → `aspect-ratio:16/9; object-fit:contain; background:#000`). Non-16:9 stills pillar/letter-box inside the frame (verified 1.26 → pillarbox, 2.40 → letterbox, both boxed to 1180×664).
+- **Metadata keyword tags moved above credits** (DOM reorder in `deck_extras.html`: `#ovkw` now precedes the `.project-credits` block → tags, then credits, then the shot-data/filters list).
+- **"open film page" link → "[ watch ]".**
+
+- Edited: `_build/deck_main.html`, `_build/deck_extras.html`, `css/deck.css`, `js/deck.js`, regenerated `deck/index.html`. Docs `04_deck.md` updated. Verified headless: desktop rail (no title/clearall) + chip clear-all + mobile FILTERS top-right in line with nav + search at Work top spacing + detail 16:9 pillar/letterbox + tags-above-credits + [ watch ].
+- Deploy: deck-only, pushed `[auto-build]` (skips the site rebuild); `deck/index.html` committed directly (Action doesn't run build_deck).
+
+Open threads: unchanged from 2026.0005 (deck noindex decision; cosmetic URL≠label; project-from-/selects/ closes to Work; deck data hygiene; recurrence-prune; nickmetcalf.com DNS).
+
+---
+
 ## website 2026.0008 — 2026-07-18
 
 Shipped — deck (ARCHIVE) design pass:
