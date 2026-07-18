@@ -4,6 +4,17 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0007 — 2026-07-18
+
+Shipped:
+- **Direct `git push` deploy path enabled from the cloud container.** Verified an authenticated push works (auth was the only old blocker; `github.com` HTTPS git is reachable for push, not just fetch). Recipe: clone → `device_stage_files` the token from the connected website folder (`token/git-token`) → push with an inline credential helper (`git -c credential.helper='!f(){ echo username=x-access-token; echo "password=$TOKEN"; }; f' push`), token read from the staged file into `$TOKEN`, never printed/committed.
+- This is now the PRIMARY deploy channel (faster: one commit for many files, no browser, no per-file sha, no forced 90s wait). Browser Contents API is the FALLBACK (used only if the token can't be staged). `api.github.com` stays proxy-blocked, so the browser remains the backup.
+- This changelog entry + VERSION 0007 + `00_START_HERE.md` deploy section were themselves pushed via the new `git push` path (dogfooded). Docs are non-trigger paths, so no Action fired.
+
+Open threads: unchanged from 2026.0005 (deck noindex decision, cosmetic URL≠label, project-from-/selects/ closes to Work, deck data hygiene, recurrence-prune, nickmetcalf.com DNS).
+
+---
+
 ## website 2026.0006 — 2026-07-18
 
 Shipped:
