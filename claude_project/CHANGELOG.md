@@ -7,6 +7,7 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 ## website 2026.0004 — 2026-07-18
 
 Shipped:
+- Workflow doc updated: Nick no longer uses a Claude Project — each new chat is a fresh, standalone conversation seeded by the copy-paste kickoff prompt + auto-loaded project memory. Noted at the top of claude_project/00_START_HERE.md.
 - Standing preference recorded: every handoff must END with a fenced code block Nick can one-click-copy — a ready-to-paste kickoff prompt for the next conversation (lead line `website YYYY.NNNN — new session.`, role reminder, this session's context/open threads, restore-point refs). Added as item 6 in claude_project/HANDOFF_CHECKLIST.md so it can't be skipped.
 
 Open threads:
