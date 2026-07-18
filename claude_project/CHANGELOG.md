@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0003 — 2026-07-18
+
+Shipped:
+- Structural fix so deck CSS tweaks are ONE-SHOT: deck/index.html now LINKS css/deck.css (<link rel=stylesheet href=../css/deck.css>) instead of inlining it in a <style> block. Editing deck.css + pushing that one file now updates the live deck with no deck/index.html rebuild. build_deck.py updated to emit the link; deck.js stays inlined (carries per-build window.DECK_LANDING data). Deck page shrank 43KB→32KB.
+- This removes the mechanism behind the recurring nav/deck drift (see 2026.0002): there's no longer a second, inlined copy of deck styling to fall out of sync. Verified headless parity (landing vs deck) still 1:1 at 2560/1440/1100/900/700/420px after the relink.
+
+Open threads:
+- Deck data hygiene: typo canonical slugs (harley -linage, virgial, jewlery, hennesy); 6 posted projects blank credits; 105/197 deck films missing deck_credits; wdytln-h-264-files junk label; montell-fish vimeo URL normalize.
+- build_site recurrence-prune for orphaned slug dirs (needs Nick's ok on auto-delete).
+- nickmetcalf.com DNS cutover (waiting on Nick).
+- Confirm on phone: deck swipe, blinking cursor, mobile square gallery, filters-above-search, forced-dark overlay.
+
+---
+
 ## website 2026.0002 — 2026-07-18
 
 Shipped:
