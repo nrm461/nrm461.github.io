@@ -63,7 +63,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #clearall{color:var(--fg);cursor:pointer;font-size:11px;background:none;border:0;padding:0;position:relative}
 #clearall::before{content:'[ '}#clearall::after{content:' ]'}
 #clearall:hover{text-decoration:underline}
-#paltoggle{display:flex;gap:7px;align-items:center;padding:6px 0 14px;color:var(--dim);font-size:11px;cursor:pointer}
+#paltoggle{display:none;gap:7px;align-items:center;padding:6px 0 14px;color:var(--dim);font-size:11px;cursor:pointer}  /* hidden per Nick 2026-07-18 — code kept, flip to flex to re-enable */
 #paltoggle input{accent-color:var(--accent);width:12px;height:12px;margin:0}
 
 /* filter sections — plain text, no rules */
