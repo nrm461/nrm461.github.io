@@ -1,15 +1,15 @@
 (async function(){
 const $=id=>document.getElementById(id);
 (function(){var t=('ontouchstart'in window)||navigator.maxTouchPoints>0;document.body.classList.add(t?'mobile':'desktop');})();
-/* Light/dark toggle (same control as the main site). Deck keeps its own
-   preference and DEFAULTS TO DARK, so the portfolio's light default never
-   forces the deck light. */
-(function(){ const b=document.body; let m; try{m=localStorage.getItem('deckmode');}catch(e){}
-	if(m==='light') b.classList.remove('dark-mode'); else b.classList.add('dark-mode');
+/* Theme FOLLOWS THE SITE — shares the main site's 'mode' key, no deck-specific
+   default (was: deck forced dark). The detail overlay (#ov) is forced black in
+   CSS regardless, per Nick 2026-07-19. */
+(function(){ const b=document.body;
+	try{ if(localStorage.getItem('mode')==='dark') b.classList.add('dark-mode'); }catch(e){}
 	const t=$('toggle-mode'); if(t) t.addEventListener('click',e=>{
 		if(e.target.classList.contains('black')) b.classList.add('dark-mode');
 		if(e.target.classList.contains('white')) b.classList.remove('dark-mode');
-		try{localStorage.setItem('deckmode', b.classList.contains('dark-mode')?'dark':'light');}catch(e){}
+		try{localStorage.setItem('mode', b.classList.contains('dark-mode')?'dark':'light');}catch(e){}
 	});
 })();
 (function(){var c=$('ctrl'),h=document.querySelector('header'),sd=$('side');function p(){var hh=h?Math.round(h.getBoundingClientRect().height):0;if(c)c.style.top=hh+'px';var ch=c?Math.round(c.getBoundingClientRect().height):0;if(sd&&matchMedia('(min-width:761px)').matches)sd.style.top=(hh+ch+6)+'px';}p();addEventListener('resize',p);addEventListener('load',p);})();
@@ -68,7 +68,7 @@ const SECTIONS=[
  {key:'color',label:'Color',combo:1,noscroll:1,hues:['red','orange','yellow','green','teal','blue','magenta','pink'],classes:['warm','cool','mixed','sat','desat','bw'],get:x=>[x.hue,...x.cls],order:['cool','warm','mixed','sat','desat','bw','red','orange','yellow','green','teal','blue','magenta','pink'],lblmap:COLOR_LBL},
  {key:'lum',label:'Brightness',get:x=>[lumBand(x.lum)+'_l'],order:['d_l','m_l','b_l']},
  {key:'fmt',label:'Format',get:x=>{const f=fmtOf(x);return f?[f]:[]},order:FMT_OPTS.map(o=>o[0]).filter(Boolean),lblmap:FMT_LBL},
- {key:'arb',label:'Aspect Ratio',get:x=>[x.arb]},
+ {key:'arb',label:'Aspect Ratio',hide:1,get:x=>[x.arb]},
  {key:'fs',label:'Frame Size',ai:1,get:x=>x.fs?[x.fs]:[],order:['ew','w','mw','m','mcu','cu','ecu']},
  {key:'st',label:'Shot Type',ai:1,multi:1,get:x=>x.st,order:['aer','ovh','ha','la','dut','est','ots','cs','2s','3s','grp','ins']},
  {key:'cmp',label:'Composition',ai:1,multi:1,get:x=>x.cmp,order:['c','lh','rh','bal','sym','shs']},
@@ -76,7 +76,7 @@ const SECTIONS=[
  {key:'lty',label:'Lighting Type',ai:1,multi:1,get:x=>x.lty,order:['day','sun','ovc','moon','art','prac','fluo','fire','mix']},
  {key:'tod',label:'Time of Day',ai:1,get:x=>x.tod&&x.tod!=='x'?[x.tod]:[],order:['d','n','du','da','sr','ss']},
  {key:'ie',label:'Interior / Exterior',ai:1,get:x=>x.ie&&x.ie!=='x'?[x.ie]:[],order:['i','e']},
- {key:'pp',label:'Number of People',ai:1,get:x=>x.pp!==''?[String(x.pp)]:[],order:['0','1','2','3','4','5','6']},
+ {key:'pp',label:'Number of People',ai:1,hide:1,get:x=>x.pp!==''?[String(x.pp)]:[],order:['0','1','2','3','4','5','6']},
  {key:'fl',label:'Commercial Flags',ai:1,multi:1,get:x=>x.fl,order:['prod','food','bev','veh','logo','hand','anim','scr','bty','sprt','dnc','drv']},
 ];
 const state={sets:{},pick:null,q:'',sort:'shuffle'};
@@ -120,7 +120,7 @@ function buildSidebar(){
 		if(s.key==='fmt'&&Object.keys(FMT.films).length===0&&Object.keys(FMT.frames).length===0&&!ADMIN) return;
 		const sec=document.createElement('div'); sec.className='sec'; if(openSecs.has(s.key))sec.classList.add('open');
 		const h=document.createElement('div'); h.className='sec-h';
-		h.innerHTML='<span>'+s.label+'</span><span class="car">&#9660;</span>';
+		h.innerHTML='<span>'+s.label+'</span>';
 		h.onclick=()=>{sec.classList.toggle('open'); sec.classList.contains('open')?openSecs.add(s.key):openSecs.delete(s.key);};
 		const b=document.createElement('div'); b.className='sec-b';
 		sec.appendChild(h); sec.appendChild(b); root.appendChild(sec);
@@ -268,7 +268,7 @@ function apply(){
 		if(!sidebarQueued){ sidebarQueued=true; (window.requestIdleCallback||(cb=>setTimeout(cb,0)))(()=>{ sidebarQueued=false; buildSidebar(); }, {timeout:200}); }
 	if(ADMIN)buildFmtPanel();
 }
-$('sort').value=state.sort; $('sort').onchange=e=>{state.sort=e.target.value;apply();};
+{const _s=$('sort'); if(_s){_s.value=state.sort; _s.onchange=e=>{state.sort=e.target.value;apply();};}}
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
 /* blinking terminal cursor on the search field — shown only when empty & unfocused */
 (function(){var sw=$('searchwrap'),si=$('search');if(!sw||!si)return;function tog(){sw.classList.toggle('typing',document.activeElement===si||si.value.length>0);}si.addEventListener('focus',tog);si.addEventListener('blur',tog);si.addEventListener('input',tog);tog();})();

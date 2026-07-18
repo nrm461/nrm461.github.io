@@ -4,6 +4,22 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0008 — 2026-07-18
+
+Shipped — deck (ARCHIVE) design pass:
+- **Sort/Random control removed** from the controls row (`deck_main.html`; `$('sort')` refs guarded in `deck.js`; `#sortwrap` CSS dropped). Grid still defaults to a shuffled order internally.
+- **Filter toggle is context-aware:** on desktop (≥761px) the `[ FILTERS ]` button is hidden and the filter rail is always shown (page is wide enough — no toggle needed). On mobile the FILTERS toggle now sits on its own line **below the nav, aligned top-right** (was centered above search).
+- **Search box width = rail width** on desktop (`#searchwrap` flex:0 0 210px) so its right edge lines up with the filter rail's right edge.
+- **Theme now FOLLOWS THE SITE.** Deck no longer force-dark: body class dropped `dark-mode` (`build_deck.py`), and `deck.js` uses the shared `mode` localStorage key (same as `main.js`) instead of its own `deckmode`/dark default. The detail overlay (`#ov`) is still forced black in CSS.
+- **Removed the ▼ caret glyphs** from filter section headers (`.car` span dropped in `deck.js`; `.sec-h .car` CSS removed).
+- **Hid Aspect Ratio and Number of People** from the filter rail (`hide:1` on the `arb` + `pp` SECTIONS) — data kept (still in detail view + similarity scoring), just not offered as filters.
+- Edited: `_build/deck_main.html`, `_build/build_deck.py`, `css/deck.css`, `js/deck.js`, regenerated `deck/index.html`. Docs `04_deck.md` updated. Verified headless at 1280px (desktop: no sort, no toggle, rail always shown, search ends at rail edge, light theme, no carets, no ratio/people) + 390px (mobile: FILTERS below nav top-right) + detail overlay forced black over a light page.
+- Deploy: deck-only change (doesn't affect `build_site.py` output), so pushed with `[auto-build]` to skip a needless site rebuild; `deck/index.html` committed directly since the Action doesn't run `build_deck.py`.
+
+Open threads: unchanged from 2026.0005 (deck noindex decision — still noindex; cosmetic URL≠label; project-from-/selects/ closes to Work; deck data hygiene; recurrence-prune; nickmetcalf.com DNS).
+
+---
+
 ## website 2026.0007 — 2026-07-18
 
 Shipped:
