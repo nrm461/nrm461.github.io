@@ -63,10 +63,9 @@ const nm=v=>NM[v]||v;
 const COLOR_LBL={red:'Red',orange:'Orange',yellow:'Yellow',green:'Green',teal:'Teal',blue:'Blue',purple:'Purple',magenta:'Magenta',pink:'Pink',neutral:'Neutral',white:'White',black:'Black',warm:'Warm',cool:'Cool',mixed:'Mixed',sat:'Saturated',desat:'Desaturated',sepia:'Sepia',bw:'Black & White'};
 
 const SECTIONS=[
- {key:'film',label:'Film',type:'film',get:x=>[x.slug]},
+ {key:'film',label:'Film',type:'film',hide:1,get:x=>[x.slug]},
  {key:'cats',label:'Genre',get:x=>x.cats},
- {key:'color',label:'Color',combo:1,noscroll:1,hues:Object.keys(HUE_SW),classes:['warm','cool','mixed','sat','desat','sepia','bw'],get:x=>[x.hue,...x.cls],order:['cool','warm','mixed','sat','desat','sepia','bw',...Object.keys(HUE_SW)],lblmap:COLOR_LBL},
- {key:'pick',label:'Color Picker',type:'picker'},
+ {key:'color',label:'Color',combo:1,noscroll:1,hues:['red','orange','yellow','green','teal','blue','magenta','pink'],classes:['warm','cool','mixed','sat','desat','bw'],get:x=>[x.hue,...x.cls],order:['cool','warm','mixed','sat','desat','bw','red','orange','yellow','green','teal','blue','magenta','pink'],lblmap:COLOR_LBL},
  {key:'lum',label:'Brightness',get:x=>[lumBand(x.lum)+'_l'],order:['d_l','m_l','b_l']},
  {key:'fmt',label:'Format',get:x=>{const f=fmtOf(x);return f?[f]:[]},order:FMT_OPTS.map(o=>o[0]).filter(Boolean),lblmap:FMT_LBL},
  {key:'arb',label:'Aspect Ratio',get:x=>[x.arb]},
@@ -115,6 +114,7 @@ function buildSidebar(){
 	const sideScroll=$('side').scrollTop;
 	const root=$('secs'); root.innerHTML='';
 	SECTIONS.forEach(s=>{
+		if(s.hide) return;                 // kept in SECTIONS (film set drives project routing) but not shown in the menu
 		if(s.ai&&!hasTags) return;
 		if(s.key==='fmt'&&Object.keys(FMT.films).length===0&&Object.keys(FMT.frames).length===0&&!ADMIN) return;
 		const sec=document.createElement('div'); sec.className='sec'; if(openSecs.has(s.key))sec.classList.add('open');
