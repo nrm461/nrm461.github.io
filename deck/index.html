@@ -171,6 +171,14 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 
 /* mobile: detail gallery = soft-crop squares (per Nick 2026-07-18) */
 @media(max-width:760px){#ov .project-gallery img{aspect-ratio:1;object-fit:cover;width:100%;height:auto}}
+
+/* --- landing controls: blinking terminal cursor on search + FILTERS above search on mobile (Nick 2026-07-18) --- */
+#searchwrap{position:relative;flex:1 1 240px;min-width:160px;display:flex;align-items:center}
+#searchwrap #search{flex:1 1 auto;min-width:0;padding-left:15px}
+#termcur{position:absolute;left:1px;top:50%;transform:translateY(-50%);color:var(--fg);font-size:13px;line-height:1;pointer-events:none;animation:termblink 1.1s steps(1,end) infinite}
+@keyframes termblink{50%{opacity:0}}
+#searchwrap.typing #termcur{opacity:0;animation:none}
+@media(max-width:760px){#fbtn{order:-1;flex:0 0 100%;text-align:center;padding-bottom:2px}}
 </style>
 </head>
 <body class="page-deck dark-mode">
@@ -183,7 +191,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 </header>
 <main>
 <div id="ctrl">
-		<input id="search" type="search" placeholder="Search 6,236 stills &mdash; try &ldquo;aerial&rdquo;, &ldquo;neon&rdquo;, &ldquo;beach&rdquo;&hellip;" autocomplete="off">
+		<span id="searchwrap"><span id="termcur">&#9611;</span><input id="search" type="search" placeholder="Search 6,236 stills &mdash; try &ldquo;aerial&rdquo;, &ldquo;neon&rdquo;, &ldquo;beach&rdquo;&hellip;" autocomplete="off"></span>
 		<span id="fbtn">Filters</span>
 		<span id="showing"></span>
 		<span id="sortwrap">Sort <select id="sort">
@@ -239,6 +247,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 	</div>
 </div>
 <script>
+window.DECK_LANDING=["lisa-x-tyla-when-im-with-you", "therabody-glo-your-own-way-with-kendalljenner", "de-beers-director-s-cut", "pura-scents-of-place", "maria-isabel-suiza", "instax-forever", "becky-g-epa", "h-r-block-a-successful-life", "nissan-built-for-happy-chaos-dc", "nike-x-skims-nikeskims-spring-26", "okara-the-auction", "benson-boone-the-time-of-my-life", "miu-miu-more", "crypto-com-fortune-favors-the-brave", "troye-sivan-got-me-started", "salomon-x-lart-de-lautomobile-dont-trust-garage", "alfa-beer-the-subtle-things", "function-health-mothers-day", "terminal-27-vermeil-hues", "rivian"];
 (async function(){
 const $=id=>document.getElementById(id);
 (function(){var t=('ontouchstart'in window)||navigator.maxTouchPoints>0;document.body.classList.add(t?'mobile':'desktop');})();
@@ -324,7 +333,8 @@ const state={sets:{},pick:null,q:'',sort:'shuffle'};
 SECTIONS.forEach(s=>{if(s.type!=='picker')state.sets[s.key]=new Set();});
 const filmLabel={}; DATA.films.forEach(F=>filmLabel[F.slug]=F.label);
 let filmCr={}; try{ filmCr=await _pCR; }catch(e){}
-let landingSet=new Set(), landingActive=false, landingDismissed=true; // landing-scope removed
+const _DL=(typeof window!=='undefined'&&window.DECK_LANDING)||[]; // films on the main landing grid
+let landingSet=new Set(_DL), landingActive=false, landingDismissed=(_DL.length===0); // default view scoped to landing; any search/filter reveals the full library
 const openSecs=new Set(['color']);
 const listScroll={};
 
@@ -510,9 +520,11 @@ function apply(){
 }
 $('sort').value=state.sort; $('sort').onchange=e=>{state.sort=e.target.value;apply();};
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
+/* blinking terminal cursor on the search field — shown only when empty & unfocused */
+(function(){var sw=$('searchwrap'),si=$('search');if(!sw||!si)return;function tog(){sw.classList.toggle('typing',document.activeElement===si||si.value.length>0);}si.addEventListener('focus',tog);si.addEventListener('blur',tog);si.addEventListener('input',tog);tog();})();
 $('clearall').onclick=()=>{SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;state.q='';$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();};
 let showPal=false;
-function isNarrow(){return matchMedia('(max-width:760px)').matches;}
+function isNarrow(){return matchMedia('(max-width:760px)').matches}
 function railReset(){ if(!isNarrow()) requestAnimationFrame(()=>{ if(typeof resetGrid==='function') resetGrid(); }); }
 function openSide(){ if(isNarrow()){$('side').classList.add('open');$('sideback').classList.add('on');} else {$('deckrow').classList.remove('railoff'); railReset();} $('fbtn').classList.add('on'); }
 function closeSide(){ if(isNarrow()){$('side').classList.remove('open');$('sideback').classList.remove('on');} else {$('deckrow').classList.add('railoff'); railReset();} $('fbtn').classList.remove('on'); }
