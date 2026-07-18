@@ -9,17 +9,12 @@
    "slot": "first"
   },
   {
-   "label": "ARCHIVE",
-   "href": "/archive/",
-   "slot": "middle"
-  },
-  {
    "label": "CONTACT",
    "href": "/contact/",
    "slot": "middle"
   },
   {
-   "label": "DECK",
+   "label": "ARCHIVE",
    "href": "/deck/",
    "slot": "last"
   }
