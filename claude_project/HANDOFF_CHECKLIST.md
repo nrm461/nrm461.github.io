@@ -12,5 +12,6 @@ VERSION, and other claude_project/ files are REPO files on origin, edited via th
 3. **Affected repo docs updated** on origin (00_START_HERE / WORKFLOW / 02_site_reference / deck docs) if what shipped changed how they read.
 4. **VERIFY from origin** — re-fetch claude_project/VERSION and the CHANGELOG top entry FROM ORIGIN via the API. Confirm the CHANGELOG top version === VERSION and is dated today. If they don't match, you skipped 1 or 2 — go fix it before continuing.
 5. **Handoff printed** — first line is exactly the verified `website YYYY.NNNN`, alone; then a blank line; then a short Shipped/Open summary (so pasting it seeds the next chat's title).
+6. **New-chat prompt block** (Nick ALWAYS wants this) — end the handoff turn with a fenced code block he can one-click copy: a ready-to-paste kickoff for the next conversation. Lead line `website YYYY.NNNN — new session.`, a one-line role reminder, this session's key context + open threads, and any restore-point refs. Never omit it.
 
 Report each item's status explicitly in the handoff turn — never a silent "done."
