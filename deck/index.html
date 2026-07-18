@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
 <title>Nick Metcalf — Deck</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+<link rel="stylesheet" href="../css/main.css?v=1784381240">
+<meta name="robots" content="noindex">
 <style>
-:root{--font:'OCRF',Courier,monospace;--color-bg:#fff;--color-text:#000}
-.dark-mode{--color-bg:#000;--color-text:#fff}
-/* derived tokens declared on BOTH scopes so they re-resolve per mode
-   (a single :root declaration would bake in the light values and inherit them) */
+/* ============================================================================
+   DECK — advanced search area that REUSES the main site's components. The detail
+   view is built from the real project-page pieces (#single-bar, .credits-hero,
+   .project-credits, .project-gallery) so spacing/type/arrows are inherited, not
+   re-created. Only deck-unique parts (controls, filter rail, justified grid) get
+   bespoke CSS below, in the site's variables.
+   ============================================================================ */
 :root,.dark-mode{
 	--bg:var(--color-bg);--fg:var(--color-text);
 	--panel:color-mix(in srgb,var(--color-text) 4%,var(--color-bg));
@@ -19,69 +23,73 @@
 	--line:color-mix(in srgb,var(--color-text) 16%,var(--color-bg));
 	--accent:var(--color-text);
 }
-@font-face{font-family:'OCRF';src:url('../fonts/ocrf.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap}
-*{box-sizing:border-box}
 html{scrollbar-color:var(--dim2) var(--color-bg)}
-body{margin:0;background:var(--bg);color:var(--fg);font:300 13px/1.5 var(--font);font-feature-settings:'liga' off;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-::selection{color:var(--color-bg);background:var(--color-text)}
-a{color:inherit}
 button{font-family:inherit}
 
-#top{position:sticky;top:0;z-index:10;background:var(--color-bg)}
-#nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:clamp(2rem,9vw,7rem);padding:15px 16px 9px;font-size:13px;text-transform:uppercase}
-#nav a{color:var(--fg);text-decoration:none}
-#nav a:hover{text-decoration:underline}
-#nav a.active,#nav a.active:hover{cursor:default;text-decoration:none}
-@media(min-width:1025px){#nav{gap:clamp(6rem,31vw,48rem)}}
-@media(max-width:500px){#nav{gap:2rem}}
-.brand.adm{color:var(--accent) !important}
-#ctrl{display:flex;align-items:center;gap:16px;padding:3px 16px 10px}
-#toggle-mode{display:flex;gap:6px;margin-left:auto}
-#toggle-mode>span{width:12px;height:12px;border:1px solid var(--color-text);border-radius:100px;cursor:pointer}
-.black{background-color:var(--color-text)}
-.dark-mode .white{background-color:var(--color-text)}
-.dark-mode .black{background-color:var(--color-bg)}
-#fbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;position:relative;font-family:inherit}
+/* nav: 4 items, one centred row */
+.page-deck header a.active{cursor:default;text-decoration:none}
+.page-deck header{column-gap:clamp(1.5rem,7vw,5rem)}
+@media(min-width:1025px){.page-deck header{column-gap:clamp(2.5rem,10vw,9rem)}}
+@media(max-width:500px){.page-deck header{column-gap:0}}
+.page-deck main{width:100%;max-width:1240px;justify-self:center}
+
+/* --- search + controls row (pinned under header) --- */
+#ctrl{display:flex;align-items:center;gap:18px;padding:4px 0 14px;position:sticky;z-index:8;background:var(--color-bg);flex-wrap:wrap}
+#search{flex:1 1 240px;min-width:160px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:13px var(--font);padding:6px 2px 7px;border-radius:0}
+#search:focus{border-bottom-color:var(--fg);outline:none}
+#search::placeholder{color:var(--dim2)}
+#fbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;position:relative;font-family:inherit;white-space:nowrap}
 #fbtn::before{content:'[ ';visibility:hidden}
 #fbtn::after{content:' ]';visibility:hidden}
 #fbtn.on::before,#fbtn.on::after{visibility:visible}
 #fbtn:hover{text-decoration:underline}
-#showing{color:var(--dim);font-size:11px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#showing{color:var(--dim);font-size:11px;white-space:nowrap}
 #showing b{color:var(--fg);font-weight:600}
-#sortwrap{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:11px}
+#sortwrap{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:11px;white-space:nowrap}
 @media(max-width:760px){#sortwrap{display:none}}
 select{background:var(--field);border:1px solid var(--line);color:var(--fg);font:12px var(--font);padding:5px 8px;border-radius:3px}
 
-#wrap{display:block}
+/* --- deck row: filter rail + grid column --- */
+#deckrow{display:flex;align-items:flex-start;gap:26px}
+#gridcol{flex:1 1 auto;min-width:0}
+
+/* filter rail — base = mobile full-screen takeover */
 #sideback{position:fixed;inset:0;background:#0008;z-index:39;display:none}
 #sideback.on{display:block}
-#side{position:fixed;left:0;top:0;bottom:0;width:300px;max-width:86vw;z-index:40;background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;transform:translateX(-100%);transition:transform .2s;padding-bottom:40px}
+#side{position:fixed;left:0;top:0;bottom:0;width:340px;max-width:90vw;z-index:40;background:var(--panel);border-right:1px solid var(--line);overflow-y:auto;transform:translateX(-100%);transition:transform .2s;padding:0 16px 40px}
 #side.open{transform:none}
 #side::-webkit-scrollbar{width:8px}
-#main{min-width:0;padding:0 14px 60px;max-width:1180px;margin:0 auto}
-
-#sidehead{display:flex;justify-content:space-between;align-items:center;padding:14px 12px 8px}
-#sidehead span{font-size:13px;font-weight:700}
-#sidehead .sh-r{display:flex;gap:14px;align-items:center}
+@media(min-width:761px){
+	#side{position:sticky;top:100px;flex:0 0 210px;width:210px;max-width:none;bottom:auto;height:auto;max-height:calc(100vh - 116px);overflow-y:auto;background:none;border:0;transform:none;transition:none;padding:0;z-index:1}
+	#side #sideclose{display:none}
+	#sideback{display:none!important}
+	#deckrow.railoff #side{display:none}
+}
+#sidehead{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0 6px}
+#sidehead span{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+#sidehead .sh-r{display:flex;gap:14px;align-items:baseline}
 #sideclose{cursor:pointer;background:none;border:0;color:var(--fg);font-size:17px;line-height:1;padding:0 2px}
-#clearall{color:var(--accent);cursor:pointer;font-size:11px;background:none;border:0;padding:0}
+#clearall{color:var(--fg);cursor:pointer;font-size:11px;background:none;border:0;padding:0;position:relative}
+#clearall::before{content:'[ '}#clearall::after{content:' ]'}
 #clearall:hover{text-decoration:underline}
-#search{width:calc(100% - 24px);margin:0 12px 4px;background:var(--field);border:1px solid var(--line);color:var(--fg);font:12px var(--font);padding:6px 8px;border-radius:3px}
-#searchhint{color:var(--dim2);font-size:9px;padding:0 12px 6px}
-.sec{border-top:1px solid var(--line)}
-.sec-h{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;cursor:pointer;user-select:none;font-size:11px;color:var(--fg)}
-.sec-h:hover{background:var(--field)}
-.sec.open .sec-h{color:var(--accent)}
-.sec-h .car{color:var(--dim2);font-size:9px}
-.sec-b{display:none;padding:2px 12px 10px}
+#paltoggle{display:flex;gap:7px;align-items:center;padding:6px 0 14px;color:var(--dim);font-size:11px;cursor:pointer}
+#paltoggle input{accent-color:var(--accent);width:12px;height:12px;margin:0}
+
+/* filter sections — plain text, no rules */
+.sec{border:0}
+.sec-h{display:flex;justify-content:space-between;align-items:center;padding:10px 0 4px;cursor:pointer;user-select:none;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--fg)}
+.sec-h .car{color:var(--dim2);font-size:8px}
+.sec-b{display:none;padding:0 0 8px}
 .sec.open .sec-b{display:block}
-.opt{display:flex;align-items:center;gap:7px;padding:3px 0;cursor:pointer;color:color-mix(in srgb,var(--color-text) 78%,var(--color-bg));font-size:11px}
+.opt{display:flex;gap:8px;align-items:baseline;padding:2px 0;cursor:pointer;color:var(--dim);font-size:11.5px}
 .opt:hover{color:var(--fg)}
-.opt input{accent-color:var(--accent);margin:0;width:12px;height:12px;flex:0 0 12px}
-.opt .sw{width:10px;height:10px;border-radius:50%;border:1px solid var(--line);flex:0 0 10px}
-.opt .n{color:var(--dim2);font-size:10px;margin-left:auto;padding-left:6px}
+.opt.on{color:var(--fg)}
+.opt .ol{position:relative}
+.opt.on .ol::before{content:'[ '}
+.opt.on .ol::after{content:' ]'}
+.opt .n{margin-left:auto;color:var(--dim2);font-size:10px;padding-left:8px}
 .opt.zero{opacity:.32}
-#filmsearch,.subsearch{width:100%;margin:2px 0 6px;background:var(--field);border:1px solid var(--line);color:var(--fg);font:11px var(--font);padding:4px 6px;border-radius:3px}
+#filmsearch,.subsearch{width:100%;margin:3px 0 6px;background:var(--field);border:1px solid var(--line);color:var(--fg);font:11px var(--font);padding:4px 6px;border-radius:3px}
 .scrolllist{max-height:250px;overflow-y:auto}
 #pickrow{display:flex;align-items:center;gap:8px;padding:4px 0}
 #pick{width:30px;height:24px;padding:0;border:1px solid var(--line);background:var(--field);border-radius:3px;cursor:pointer}
@@ -89,70 +97,57 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #pickon{cursor:pointer;border:1px solid var(--line);border-radius:3px;padding:3px 8px;font-size:10px;background:transparent;color:var(--fg)}
 #pickon.on{background:var(--accent);border-color:var(--accent);color:var(--color-bg)}
 
-#chips{display:flex;flex-wrap:wrap;gap:6px;padding:10px 2px 2px}
-.chip{display:inline-flex;align-items:center;gap:7px;background:var(--field);border:1px solid var(--line);border-radius:3px;padding:4px 8px;font-size:10.5px;color:var(--fg)}
-.chip b{font-weight:600;color:var(--fg)}
-.chip .x{cursor:pointer;color:var(--dim);font-weight:700}
+/* active-filter bracket row above the grid */
+#chips{display:flex;flex-wrap:wrap;gap:5px 16px;padding:2px 0 12px}
+.chip{color:var(--fg);font-size:11.5px;white-space:nowrap}
+.chip::before{content:'[ '}.chip::after{content:' ]'}
+.chip b{font-weight:400;color:var(--fg)}
+.chip .x{cursor:pointer;color:var(--dim);margin-left:7px}
 .chip .x:hover{color:var(--fg)}
 
-#grid{padding-top:10px}
+/* justified grid — NO labels */
+#grid{padding-top:2px}
 .row{display:flex;gap:5px;margin-bottom:5px}
 .cell{position:relative;cursor:pointer;overflow:hidden;background:var(--line);flex:0 0 auto}
 .cell img{width:100%;height:100%;display:block;object-fit:cover}
-.cell:hover::after{content:attr(data-label);position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,#000c);color:#fff;font-size:10px;padding:14px 7px 5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cell.admtag::before{content:attr(data-fmt);position:absolute;top:0;left:0;background:var(--accent);color:var(--color-bg);font-size:9px;padding:1px 4px;font-weight:700}
 #more{padding:24px;text-align:center;color:var(--dim)}
 #empty{padding:60px 20px;color:var(--dim);text-align:center;display:none}
-#projhead{display:none;padding:14px 2px 2px;border-bottom:1px solid var(--line);margin-bottom:4px}
-#projback{color:var(--accent);cursor:pointer;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
-#projback:hover{text-decoration:underline}
-#projtitle{font-size:20px;font-weight:700;letter-spacing:0;margin-top:9px}
-#projtitle span{color:var(--dim);font-weight:400;font-size:12px;letter-spacing:0;text-transform:none}
-#projcount{color:var(--dim);font-size:11px;margin:6px 0 2px}
-#projcredits{margin:6px 0 8px;font-size:11.5px;line-height:1.75}
-#projcredits div{color:var(--dim)}
-#projcredits b{color:var(--fg);text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;margin-right:7px;font-weight:600}
+#projhead{display:none}
 
+/* =========================================================================
+   DETAIL VIEW — reuses the site's project-page components verbatim.
+   #single-bar / .credits-hero / .project-credits / .project-gallery all come
+   from main.css. Only the modal shell + a few show-on-mobile overrides here.
+   ========================================================================= */
+/* mirror .page-project main: single-bar + project-container as grid rows w/ 45px gap + top pad */
 #ov{position:fixed;inset:0;background:var(--color-bg);z-index:30;display:none;overflow-y:auto}
-#ov.open{display:block}
-#ovx{max-width:800px;margin:0 auto;padding:16px 34px 56px}
-#ovhead{display:flex;align-items:center;gap:10px;padding:4px 0 12px}
-#ovtitle{font-size:16px;letter-spacing:0;font-weight:700;cursor:pointer;flex:1}
-#ovtitle:hover{color:var(--accent)}
-#ovtitle span{color:var(--dim);font-weight:400;font-size:11px;letter-spacing:0;text-transform:none}
-#ovclose{margin-left:auto;cursor:pointer;background:none;border:0;color:var(--fg);font-size:20px;line-height:1;padding:4px}
-#ovclose:hover{color:var(--accent)}
-#ovimg{width:100%;aspect-ratio:16/9;background:var(--color-bg);display:block;max-height:72vh;object-fit:contain}
-#ovpal{display:flex;height:40px;margin-top:8px;gap:3px}
+#ov.open{display:grid;grid-auto-rows:min-content;row-gap:var(--gap-rows);padding:calc(var(--margin-top) - var(--gap-small)) var(--margin-sides) calc(var(--gap-rows)*2)}
+#ov #project-container{max-width:1180px;width:100%;margin:0 auto;padding:0}
+#ov #ovimg{width:100%;display:block;max-height:calc(100vh - 150px);object-fit:contain;background:none}
+#ovpal{display:none;height:34px;gap:3px}
+#ovpal.show{display:flex}
 #ovpal span{cursor:pointer;position:relative;flex:1 1 0;border:2px solid var(--color-text);border-radius:2px}
-#ovpal span:hover::after{content:attr(data-h);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;background:#0007;text-shadow:0 0 4px #000;white-space:nowrap}
-#ovtags{padding:12px 0;border-bottom:1px solid var(--line);color:color-mix(in srgb,var(--color-text) 78%,var(--color-bg));font-size:11px;line-height:1.7}
-#ovtags b{color:var(--dim);letter-spacing:.1em;font-size:10px;margin-right:8px}
-.kwtag{display:inline-block;padding:0;margin:0 12px 0 0;cursor:pointer;font-size:11.5px;color:var(--dim)}
+#ovpal span:hover::after{content:attr(data-h);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9px;color:#fff;background:#0007;white-space:nowrap}
+#ovcredits p{margin:0}
+#ovcredits a{text-decoration:none}
+#ovcredits a:hover{text-decoration:underline}
+/* shot data = part of the credits (rendered as a .credits-rest); force visible on mobile too */
+#ov .credits-rest{display:block!important}
+#ovmeta .ovkw{color:var(--dim);margin-top:12px}
+.kwtag{cursor:pointer;color:var(--dim)}
 .kwtag:hover{color:var(--fg);text-decoration:underline}
-#ovmeta{columns:3;column-gap:30px;padding:14px 0;border-bottom:1px solid var(--line)}
-.mrow{break-inside:avoid;-webkit-column-break-inside:avoid;font-size:11.5px;line-height:1.5;margin:0 0 7px}
-#ovmeta span{font-size:11.5px;color:var(--dim)}
-#ovmeta b{color:var(--fg);letter-spacing:.04em;font-size:10.5px;text-transform:uppercase;font-weight:600;margin-right:7px}
-#ovmeta a{color:var(--accent);text-decoration:none}
-#ovmeta a:hover{text-decoration:underline}
-#ovadm{padding:12px 0;border-bottom:1px solid var(--line);display:none}
+#ovadm{padding:12px 0;display:none}
 #ovadm.on{display:block}
 #ovadm b{color:var(--accent);font-size:10px;letter-spacing:.08em}
 #ovadm select{margin-left:8px}
-#ovtabs{padding:18px 0 10px;font-size:11px;letter-spacing:.12em;font-weight:700;text-transform:uppercase}
-.ovtab{cursor:pointer;color:var(--dim)}
-.ovtab:hover{color:var(--fg)}
-.ovtab.sel{color:var(--accent)}
-#ovtabs .sep{color:var(--line);margin:0 9px;cursor:default}
-.ovrow{display:flex;gap:5px;margin-bottom:5px}
-.ovrow img{display:block;cursor:pointer;opacity:.9;object-fit:cover;background:var(--line)}
-.ovrow img:hover{opacity:1}
-.ovnav{background:none;border:0;color:var(--dim);font-size:22px;line-height:1;cursor:pointer;padding:0 4px;font-family:inherit}
-.ovnav:hover{color:var(--fg)}
+/* film thumbnails below — the site gallery, forced visible on mobile too */
+#ov .project-gallery{display:grid!important;grid-template-columns:repeat(3,1fr);gap:5px}
+#ov .project-gallery img{cursor:pointer;opacity:.92}
+#ov .project-gallery img:hover{opacity:1}
 
-/* format admin panel */
-#fmtpanel{position:fixed;right:0;top:52px;bottom:0;width:340px;background:var(--panel);border-left:1px solid var(--accent);z-index:25;overflow-y:auto;padding:14px;display:none}
+/* format admin panel (admin only) */
+#fmtpanel{position:fixed;right:0;top:0;bottom:0;width:340px;background:var(--panel);border-left:1px solid var(--accent);z-index:25;overflow-y:auto;padding:14px;display:none}
 #fmtpanel.on{display:block}
 #fmtpanel h3{margin:0 0 4px;font-size:12px;letter-spacing:.1em;color:var(--accent)}
 #fmtpanel .note{color:var(--dim);font-size:10px;margin-bottom:10px}
@@ -164,45 +159,53 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #fmtsave:disabled{opacity:.4}
 #fmtstatus{color:var(--dim);font-size:10px;text-align:center;padding:6px}
 
-@media(max-width:760px){
-	#ovx{padding:12px 12px 50px}#ovmeta{columns:1}
-	#fmtpanel{width:100%}
-}
+@media(max-width:760px){#fmtpanel{width:100%}}
 </style>
 </head>
-<body class="dark-mode">
-<div id="top">
-	<nav id="nav"><a href="../">Work</a><a href="../archive/">Archive</a><a class="active" id="brand">Deck</a><a href="../contact/">Contact</a></nav>
-	<div id="ctrl">
+<body class="page-deck dark-mode">
+<div id="content-wrapper">
+<header>
+	<a class="first" href="../">WORK</a>
+	<a class="middle" href="../archive/">ARCHIVE</a>
+	<a class="middle link-active" href="../deck/">DECK</a>
+	<a class="last" href="../contact/">CONTACT</a>
+</header>
+<main>
+<div id="ctrl">
+		<input id="search" type="search" placeholder="Search 6,236 stills &mdash; try &ldquo;aerial&rdquo;, &ldquo;neon&rdquo;, &ldquo;beach&rdquo;&hellip;" autocomplete="off">
 		<span id="fbtn">Filters</span>
 		<span id="showing"></span>
 		<span id="sortwrap">Sort <select id="sort">
 			<option value="shuffle">Random</option><option value="film">Film</option>
 			<option value="hue">Hue</option><option value="lum">Brightness</option>
 		</select></span>
-		<div id="toggle-mode"><span class="white"></span><span class="black"></span></div>
 	</div>
+	<div id="deckrow">
+		<div id="side">
+			<div id="sidehead"><span>Filters</span><span class="sh-r"><button id="clearall">Clear all</button><button id="sideclose">&#10005;</button></span></div>
+			<label id="paltoggle"><input type="checkbox"><span>Show colour palette on detail</span></label>
+			<div id="secs"></div>
+		</div>
+		<div id="gridcol">
+			<div id="projhead"></div>
+			<div id="chips"></div>
+			<div id="grid"></div>
+			<div id="more"></div>
+			<div id="empty">No frames match. <u style="cursor:pointer" onclick="location.reload()">Reset</u></div>
+		</div>
+	</div>
+</main>
+<footer>
+	<div id="toggle-mode"><span class="white"></span><span class="black"></span></div>
+	<span class="first"></span>
+	<span class="middle"></span>
+	<span class="last"></span>
+</footer>
 </div>
 <div id="sideback"></div>
-<div id="side">
-	<div id="sidehead"><span>Filters</span><span class="sh-r"><button id="clearall">Clear all</button><button id="sideclose">&#10005;</button></span></div>
-	<input id="search" type="search" placeholder="Search films &amp; keywords" autocomplete="off">
-	<div id="searchhint">searches titles + frame keywords (e.g. "neon", "pool", "selfie")</div>
-	<label class="opt" id="paltoggle" style="padding:7px 12px"><input type="checkbox"><span>Show colour palette on detail</span></label>
-	<div id="secs"></div>
-</div>
-<div id="wrap">
-	<div id="main">
-		<div id="projhead"></div>
-		<div id="chips"></div>
-		<div id="grid"></div>
-		<div id="more"></div>
-		<div id="empty">No frames match. <u style="cursor:pointer" onclick="location.reload()">Reset</u></div>
-	</div>
-</div>
 
 <div id="fmtpanel">
-	<h3>FORMAT — bulk editor</h3>
+	<h3>FORMAT &mdash; bulk editor</h3>
 	<div class="note">Set each film's capture format. Overrides on individual stills via the detail view. Saves to data/deck_format.json.</div>
 	<div id="fmtrows"></div>
 	<button id="fmtsave" disabled>Save to GitHub</button>
@@ -210,21 +213,24 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 </div>
 
 <div id="ov">
-	<div id="ovx">
-		<div id="ovhead"><button class="ovnav" id="prev">&#10094;</button><span id="ovtitle"></span><button class="ovnav" id="next">&#10095;</button><button id="ovclose">&#10005;</button></div>
+	<div id="single-bar">
+		<a id="prev">&lt;</a>
+		<a id="close">[ CLOSE ]</a>
+		<a id="next">&gt;</a>
+	</div>
+	<div id="project-container">
+		<div class="module-project_info"><div id="ovtitle"></div></div>
 		<img id="ovimg" alt="">
 		<div id="ovpal"></div>
+		<div class="project-credits credits-v2"><div class="credits-hero" id="ovcredits"></div><div class="credits-rest" id="ovmeta"></div></div>
 		<div id="ovadm"></div>
-		<div id="ovtags"></div>
-		<div id="ovmeta"></div>
-		<div id="ovtabs"><span id="tabsim" class="ovtab">Similar Shots</span><span class="sep">/</span><span id="tabmore" class="ovtab">More Shots From This Spot</span></div>
-		<div id="ovgrid"></div>
+		<div class="project-gallery" id="ovgrid"></div>
 	</div>
 </div>
-
 <script>
 (async function(){
 const $=id=>document.getElementById(id);
+(function(){var t=('ontouchstart'in window)||navigator.maxTouchPoints>0;document.body.classList.add(t?'mobile':'desktop');})();
 /* Light/dark toggle (same control as the main site). Deck keeps its own
    preference and DEFAULTS TO DARK, so the portfolio's light default never
    forces the deck light. */
@@ -236,6 +242,7 @@ const $=id=>document.getElementById(id);
 		try{localStorage.setItem('deckmode', b.classList.contains('dark-mode')?'dark':'light');}catch(e){}
 	});
 })();
+(function(){var c=$('ctrl'),h=document.querySelector('header'),sd=$('side');function p(){var hh=h?Math.round(h.getBoundingClientRect().height):0;if(c)c.style.top=hh+'px';var ch=c?Math.round(c.getBoundingClientRect().height):0;if(sd&&matchMedia('(min-width:761px)').matches)sd.style.top=(hh+ch+6)+'px';}p();addEventListener('resize',p);addEventListener('load',p);})();
 const ADMIN=new URLSearchParams(location.search).get('admin')==='1';
 const HUE_SW={red:'#c33',orange:'#d73',yellow:'#cb2',green:'#4a4',teal:'#2a9',blue:'#36c',purple:'#84c',magenta:'#c4a',pink:'#e79',neutral:'#888',white:'#eee',black:'#222'};
 const FMT_OPTS=[['','—'],['f35','Film 35mm'],['f16','Film 16mm'],['s8','Film Super 8mm'],['f65','Film 65/70mm'],['imax','IMAX'],['tape','Tape'],['dig','Digital'],['dlf','Digital Large Format'],['anim','Animation']];
@@ -302,9 +309,7 @@ const state={sets:{},pick:null,q:'',sort:'shuffle'};
 SECTIONS.forEach(s=>{if(s.type!=='picker')state.sets[s.key]=new Set();});
 const filmLabel={}; DATA.films.forEach(F=>filmLabel[F.slug]=F.label);
 let filmCr={}; try{ filmCr=await (await fetch('../data/deck_credits.json')).json(); }catch(e){}
-/* landing scope: only stills from projects on the main-site WORK page (read live so it stays in sync) */
-let landingSet=new Set(), landingActive=false, landingDismissed=false;
-try{ const _lh=await (await fetch('../')).text(); const _re=/href="([a-z0-9][a-z0-9-]*)\/"/g; let _m; while((_m=_re.exec(_lh))){ const s=_m[1]; if(s!=='archive'&&s!=='contact'&&s!=='deck'&&filmLabel[s]!==undefined) landingSet.add(s); } }catch(e){}
+let landingSet=new Set(), landingActive=false, landingDismissed=true; // landing-scope removed
 const openSecs=new Set(['color']);
 const listScroll={};
 
@@ -365,10 +370,9 @@ function buildSidebar(){
 		}
 		keys.forEach(v=>{
 			const on=state.sets[s.key].has(v);
-			const o=document.createElement('label'); o.className='opt'+(counts[v]?'':' zero'); o.dataset.t=optName(s,v).toLowerCase();
-			o.innerHTML='<input type="checkbox"'+(on?' checked':'')+'>'+(s.sw?'<span class="sw" style="background:'+s.sw(v)+'"></span>':'')+
-				'<span>'+optName(s,v)+'</span><span class="n">'+(counts[v]?'('+counts[v].toLocaleString()+')':'')+'</span>';
-			o.querySelector('input').onchange=e=>{ e.target.checked?state.sets[s.key].add(v):state.sets[s.key].delete(v); apply(); };
+			const o=document.createElement('div'); o.className='opt'+(on?' on':'')+(counts[v]?'':' zero'); o.dataset.t=optName(s,v).toLowerCase();
+			o.innerHTML='<span class="ol">'+optName(s,v)+'</span><span class="n">'+(counts[v]?counts[v].toLocaleString():'')+'</span>';
+			o.onclick=()=>{ state.sets[s.key].has(v)?state.sets[s.key].delete(v):state.sets[s.key].add(v); apply(); };
 			list.appendChild(o);
 		});
 		if(list!==b) list.scrollTop=listScroll[s.key]||0;
@@ -480,20 +484,21 @@ function apply(){
 	else if(state.sort==='lum')shown.sort((a,b)=>a.lum-b.lum);
 	else if(state.sort==='shuffle')shown.sort((a,b)=>a.rnd-b.rnd);
 	const nf=new Set(shown.map(x=>x.slug)).size;
-	if(landingActive) $('showing').innerHTML='<b>'+shown.length.toLocaleString()+'</b> featured stills &nbsp;·&nbsp; <span id="seeall" style="cursor:pointer;text-decoration:underline">explore all '+FRAMES.length.toLocaleString()+'</span>';
-	else $('showing').innerHTML='Showing <b>'+shown.length.toLocaleString()+'</b> of '+FRAMES.length.toLocaleString()+' shots from <b>'+nf+'</b> films';
-	$('empty').style.display=shown.length?'none':'block';
-	window.scrollTo(0,0); resetGrid(); buildSidebar(); buildChips(); renderProjectHeader();
-	const sa=$('seeall'); if(sa) sa.onclick=()=>{ landingDismissed=true; apply(); };
+		$('showing').innerHTML=(anyFilter||curProject)?('<b>'+shown.length.toLocaleString()+'</b> result'+(shown.length===1?'':'s')):'';
+		$('empty').style.display=shown.length?'none':'block';
+		window.scrollTo(0,0); resetGrid(); buildSidebar(); buildChips(); renderProjectHeader();
 	if(ADMIN)buildFmtPanel();
 }
 $('sort').value=state.sort; $('sort').onchange=e=>{state.sort=e.target.value;apply();};
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
 $('clearall').onclick=()=>{SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;state.q='';$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();};
 let showPal=false;
-function openSide(){$('side').classList.add('open');$('sideback').classList.add('on');$('fbtn').classList.add('on');}
-function closeSide(){$('side').classList.remove('open');$('sideback').classList.remove('on');$('fbtn').classList.remove('on');}
-$('fbtn').onclick=()=>$('side').classList.contains('open')?closeSide():openSide();
+function isNarrow(){return matchMedia('(max-width:760px)').matches;}
+function railReset(){ if(!isNarrow()) requestAnimationFrame(()=>{ if(typeof resetGrid==='function') resetGrid(); }); }
+function openSide(){ if(isNarrow()){$('side').classList.add('open');$('sideback').classList.add('on');} else {$('deckrow').classList.remove('railoff'); railReset();} $('fbtn').classList.add('on'); }
+function closeSide(){ if(isNarrow()){$('side').classList.remove('open');$('sideback').classList.remove('on');} else {$('deckrow').classList.add('railoff'); railReset();} $('fbtn').classList.remove('on'); }
+$('fbtn').onclick=()=>{ if(isNarrow()){ $('side').classList.contains('open')?closeSide():openSide(); } else { $('deckrow').classList.contains('railoff')?openSide():closeSide(); } };
+if(!isNarrow()) $('fbtn').classList.add('on');
 $('sideclose').onclick=closeSide; $('sideback').onclick=closeSide;
 $('paltoggle').querySelector('input').onchange=e=>{ showPal=e.target.checked; $('ovpal').style.display=showPal?'':'none'; };
 
@@ -536,32 +541,33 @@ function justify(el,list,targetH){
 		el.appendChild(row); i=j;
 	}
 }
-window.addEventListener('resize',()=>{ if($('ov').classList.contains('open')) justify($('ovgrid'),ovGridList,120); });
+/* detail gallery uses CSS grid; no JS relayout */
 function openOv(i,list){
 	ovList=list||shown; ovIdx=i; const x=ovList[i]; if(!x) return;
-	$('ovtitle').innerHTML=x.label.replace(' | ',' &mdash; &ldquo;')+(x.label.includes(' | ')?'&rdquo;':'');
-	$('ovtitle').onclick=()=>{ closeOv(); goProject(x.slug,x.label); };
-	$('ovimg').src=src(x);
-	$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="background:#'+p+'" data-h="#'+p+'"></span>').join('');
-	$('ovpal').querySelectorAll('span').forEach(el=>el.onclick=()=>navigator.clipboard.writeText(el.dataset.h));
-	$('ovpal').style.display=showPal?'':'none';
-	const cr=filmCr[x.slug]||{};
-	// tags line: keywords as clickable
-	const kwhtml=x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join('');
-	$('ovtags').innerHTML=kwhtml;
-	$('ovtags').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
-	const TOD={d:'Day',n:'Night',du:'Dusk',da:'Dawn',sr:'Sunrise',ss:'Sunset'};
-	const credRows=[]; if(cr.d)credRows.push(['Director',cr.d]); if(cr.dp)credRows.push(['Cinematographer',cr.dp]); if(cr.e)credRows.push(['Editor',cr.e]);
-	const rows=[
-		['Film',x.label],['Genre',x.cats.join(', ')||'—'],...credRows,['Frame',x.f],
-		['Color',nm(x.hue)+(x.cls.length?' · '+x.cls.map(nm).join(', '):'')],['Brightness',NM[lumBand(x.lum)+'_l']+' (lum '+x.lum+')'],['Aspect',x.arb],
-		['Frame Size',x.fs?nm(x.fs):'—'],['Shot Type',arrName(x,'st')||'—'],['Composition',arrName(x,'cmp')||'—'],
-		['Lighting',arrName(x,'lt')||'—'],['Lighting Type',arrName(x,'lty')||'—'],['Time of Day',TOD[x.tod]||'—'],
-		['Int / Ext',x.ie==='i'?'Interior':x.ie==='e'?'Exterior':'—'],['People',x.pp!==''?nm(String(x.pp)):'—'],['Location',x.loc==='loc'?'Location':x.loc==='stu'?'Studio':'—'],
-		['Flags',arrName(x,'fl')||'—'],['Format',fmtOf(x)?FMT_LBL[fmtOf(x)]:'—'],
-		['Watch',x.page&&x.pslug?'<a href="../'+x.pslug+'/" target="_blank">[ open film page ]</a>':'—'],
-	];
-	$('ovmeta').innerHTML=rows.map(r=>'<div class="mrow"><b>'+r[0]+'</b><span>'+r[1]+'</span></div>').join('');
+	$('ovtitle').textContent=x.label;
+		$('ovimg').src=src(x);
+		$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="background:#'+p+'" data-h="#'+p+'"></span>').join('');
+		$('ovpal').querySelectorAll('span').forEach(el=>el.onclick=()=>navigator.clipboard.writeText(el.dataset.h));
+		$('ovpal').style.display=showPal?'':'none';
+		const cr=filmCr[x.slug]||{};
+		let hero='';
+		if(cr.d)hero+='<p>Dir. '+cr.d+'</p>';
+		if(cr.dp)hero+='<p>DP: '+cr.dp+'</p>';
+		if(cr.e)hero+='<p>Edit: '+cr.e+'</p>';
+		hero+='<p>Color: <a href="https://instagram.com/nick__metcalf" target="_blank" rel="noopener">@nick__metcalf</a></p>';
+		if(x.page&&x.pslug)hero+='<p class="spacer">&nbsp;</p><p><a href="../'+x.pslug+'/" target="_blank" rel="noopener">[ open film page ]</a></p>';
+		$('ovcredits').innerHTML=hero;
+		const TOD={d:'Day',n:'Night',du:'Dusk',da:'Dawn',sr:'Sunrise',ss:'Sunset'};
+		const rows=[
+			['Color',nm(x.hue)+(x.cls.length?' · '+x.cls.map(nm).join(', '):'')],['Brightness',NM[lumBand(x.lum)+'_l']+' (lum '+x.lum+')'],['Aspect',x.arb],
+			['Frame Size',x.fs?nm(x.fs):'—'],['Shot Type',arrName(x,'st')||'—'],['Composition',arrName(x,'cmp')||'—'],
+			['Lighting',arrName(x,'lt')||'—'],['Lighting Type',arrName(x,'lty')||'—'],['Time of Day',TOD[x.tod]||'—'],
+			['Int / Ext',x.ie==='i'?'Interior':x.ie==='e'?'Exterior':'—'],['People',x.pp!==''?nm(String(x.pp)):'—'],['Location',x.loc==='loc'?'Location':x.loc==='stu'?'Studio':'—'],
+			['Flags',arrName(x,'fl')||'—'],['Format',fmtOf(x)?FMT_LBL[fmtOf(x)]:'—'],['Frame',x.f],
+		];
+		const kwline=x.kw.length?'<p class="ovkw">'+x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' ')+'</p>':'';
+		$('ovmeta').innerHTML='<p class="spacer">&nbsp;</p>'+rows.map(r=>'<p>'+r[0].toLowerCase()+' - '+r[1]+'</p>').join('')+kwline;
+		$('ovmeta').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
 	// admin per-still format override
 	const adm=$('ovadm');
 	if(ADMIN){
@@ -570,17 +576,13 @@ function openOv(i,list){
 		adm.innerHTML='<b>OVERRIDE FORMAT (this still):</b><select id="ovfmt">'+FMT_OPTS.map(o=>'<option value="'+o[0]+'"'+(o[0]===cur?' selected':'')+'>'+o[1]+'</option>').join('')+'</select> <span style="color:var(--dim);font-size:10px">film default: '+(FMT.films[x.slug]?FMT_LBL[FMT.films[x.slug]]:'none')+'</span>';
 		$('ovfmt').onchange=e=>{ if(e.target.value)FMT.frames[x.key]=e.target.value; else delete FMT.frames[x.key]; fmtDirty=true; $('fmtsave').disabled=false; };
 	} else adm.classList.remove('on');
-	const more=FRAMES.filter(f=>f.slug===x.slug&&f!==x).slice(0,60);
+	const more=FRAMES.filter(f=>f.slug===x.slug&&f!==x).slice(0,120);
 	const sim=FRAMES.filter(f=>f.slug!==x.slug).map(f=>[f,simScore(x,f)]).filter(a=>a[1]>0).sort((a,b)=>b[1]-a[1]).slice(0,60).map(a=>a[0]);
+	$('ovgrid').innerHTML=''; more.forEach((f,mi)=>{const im=document.createElement('img');im.src=src(f);im.loading='lazy';im.decoding='async';im.onclick=()=>openOv(mi,more);$('ovgrid').appendChild(im);});
 	$('ov').classList.add('open'); $('ov').scrollTop=0; document.body.style.overflow='hidden';
-	$('tabsim').style.display='none';
-	$('ovtabs').querySelector('.sep').style.display='none';
-	$('tabmore').style.display=more.length?'':'none';
-	$('tabmore').classList.add('sel');
-	ovGridList=more; ovGridTab='more'; justify($('ovgrid'),more,120);
 }
 function closeOv(){$('ov').classList.remove('open');document.body.style.overflow='';}
-$('ovclose').onclick=closeOv;
+$('close').onclick=closeOv;
 $('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOv();});
 $('prev').onclick=()=>openOv((ovIdx-1+ovList.length)%ovList.length,ovList);
 $('next').onclick=()=>openOv((ovIdx+1)%ovList.length,ovList);
