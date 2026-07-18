@@ -200,28 +200,34 @@ def card_html(p, rel=''):
 \t\t</div>'''
 
 def build_index():
-    sel = [p for p in visible_projects() if p.get('selected')]
-    # explicit reel order when sel_order present; fall back to number desc
-    cards = [card_html(p) for p in sorted(sel, key=lambda x: (x.get('sel_order', 9999), -int(x['number'][1:])))]
-    content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n\t<div class="module-videos">\n'
-               + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
-    write('index.html', page('page-works page-index', f'{SITE["site_name"]} — Work', content))
-
-def build_archive():
-    # chronological, newest first: Slate library rank when known,
-    # unranked items interleave after ranked ones by number (newest of the rest first)
+    # Root homepage is now the WORK grid: all visible projects in archive order
+    # (newest first), NO category filters. header active = WORK (href "/").
     vis = sorted(visible_projects(),
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
-    cards = [card_html(p, rel='../') for p in vis]
-    cats = SITE.get('categories', [])
-    filters = ['\t\t<span class="archive-filter trigger active" data-filter="all">ALL</span>']
-    for c in cats:
-        filters.append(f'\t\t<span class="archive-filter trigger" data-filter="{esc(c)}">{esc(c)}</span>')
-    content = (f'<div id="content-wrapper">\n{header("/archive/", 1)}\n<main>\n'
-               f'\t<div id="archive-filters">\n' + '\n'.join(filters) + '\n\t</div>\n'
-               f'\t<div class="module-videos">\n' + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
-    write(os.path.join('archive', 'index.html'),
-          page('page-works page-index page-archive', f'{SITE["site_name"]} — Archive', content, depth=1))
+    cards = [card_html(p) for p in vis]
+    content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n\t<div class="module-videos">\n'
+               + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
+    write('index.html', page('page-works page-index page-archive', f'{SITE["site_name"]} — Work', content))
+
+def build_selects():
+    # The old landing grid (curated selects, sel_order). Unlinked from nav; lives at /selects/.
+    sel = [p for p in visible_projects() if p.get('selected')]
+    cards = [card_html(p, rel='../') for p in sorted(sel, key=lambda x: (x.get('sel_order', 9999), -int(x['number'][1:])))]
+    content = (f'<div id="content-wrapper">\n{header("/selects/", 1)}\n<main>\n\t<div class="module-videos">\n'
+               + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
+    write(os.path.join('selects', 'index.html'),
+          page('page-works page-index page-selects', f'{SITE["site_name"]} — Selects', content, depth=1))
+
+def build_archive():
+    # /archive/ is retired as a page — the WORK grid now lives at root "/".
+    # Keep the path alive as a redirect so old bookmarks/links resolve to the homepage.
+    doc = ('<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8">\n'
+           '<meta name="robots" content="noindex">\n'
+           '<link rel="canonical" href="/">\n'
+           '<meta http-equiv="refresh" content="0; url=/">\n'
+           f'<title>{esc(SITE["site_name"])} — Work</title>\n'
+           '</head><body><a href="/">Work</a></body></html>\n')
+    write(os.path.join('archive', 'index.html'), doc)
 
 def build_hidden():
     """Archive-style page of hidden jobs. Deliberately unlinked from all navigation."""
@@ -358,6 +364,7 @@ def build_navdata():
 
 if __name__ == '__main__':
     build_index()
+    build_selects()
     build_archive()
     build_hidden()
     build_batch()
