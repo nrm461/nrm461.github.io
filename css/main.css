@@ -257,20 +257,24 @@ footer > span{
 	.last{ justify-self: flex-end; }
 }
 
-/* Header nav: WORK / ARCHIVE / CONTACT centered as one group, at any width
-   (resize-robust). Footer intentionally keeps the original grid geometry. */
+/* Header nav — SINGLE SOURCE OF TRUTH for landing, deck & every page. Do NOT re-declare
+   header column-gap / flex-wrap in deck.css (that duplication kept the two drifting). 4 items
+   (WORK/ARCHIVE/CONTACT/DECK) sit centered on ONE row; nowrap above phone stops DECK wrapping. */
 header{
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	column-gap: clamp(2rem, 9vw, 7rem);   /* tablet / default spacing */
+	column-gap: clamp(1.5rem, 7vw, 5rem);   /* tablet / default — holds all 4 on one row */
 	row-gap: var(--gap-small);
 }
 header > a{ left: auto !important; }        /* cancel old .middle nudge; flex handles spacing */
 header::after{ content: none !important; }  /* drop the tablet-width right divider */
+@media (min-width: 769px){
+	header{ flex-wrap: nowrap; }             /* tablet+desktop: all 4 nav items stay on a single line */
+}
 @media (min-width: 1025px){
-	header{ column-gap: clamp(6rem, 31vw, 48rem); }  /* desktop: restore the wide, airy WORK/ARCHIVE/CONTACT spacing (centered) */
+	header{ column-gap: clamp(2.5rem, 10vw, 9rem); }  /* desktop: airy but 4-item-safe (single source of truth) */
 }
 @media (max-width: 500px){
 	header{ column-gap: 2rem; }                       /* phones: one snug centered row */
