@@ -24,6 +24,11 @@ content = (f'<div id="content-wrapper">\n{B.header("/deck/", 1)}\n<main>\n{main_
 deck_css = open(os.path.join(ROOT, 'css', 'deck.css'), encoding='utf-8').read().rstrip()
 deck_js  = open(os.path.join(ROOT, 'js',  'deck.js'),  encoding='utf-8').read().rstrip()
 
+# the deck's default (unfiltered) view is scoped to films currently on the main landing grid
+import json as _json
+_landing = [p['slug'] for p in B.visible_projects() if p.get('selected')]
+deck_js = 'window.DECK_LANDING=' + _json.dumps(_landing) + ';\n' + deck_js
+
 inline = (f'<meta name="robots" content="noindex">\n'
           f'<style>\n{deck_css}\n</style>\n')
 
