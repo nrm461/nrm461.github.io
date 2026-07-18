@@ -19,9 +19,9 @@ extras     = open(os.path.join(ROOT, '_build', 'deck_extras.html'), encoding='ut
 content = (f'<div id="content-wrapper">\n{B.header("/deck/", 1)}\n<main>\n{main_inner}\n</main>\n{B.footer()}\n</div>\n'
            + extras)
 
-# deck-specific CSS/JS are INLINED so the page stays one self-contained file
-# (existing deploy model). main.css stays LINKED (inherited), so the shell tracks the site.
-deck_css = open(os.path.join(ROOT, 'css', 'deck.css'), encoding='utf-8').read().rstrip()
+# deck.css is now LINKED (like main.css), NOT inlined — so a pure CSS tweak is a
+# one-shot deploy: push css/deck.css and it's live, no deck/index.html rebuild needed.
+# deck.js stays inlined because it carries per-build data (window.DECK_LANDING below).
 deck_js  = open(os.path.join(ROOT, 'js',  'deck.js'),  encoding='utf-8').read().rstrip()
 
 # the deck's default (unfiltered) view is scoped to films currently on the main landing grid
@@ -30,7 +30,7 @@ _landing = [p['slug'] for p in B.visible_projects() if p.get('selected')]
 deck_js = 'window.DECK_LANDING=' + _json.dumps(_landing) + ';\n' + deck_js
 
 inline = (f'<meta name="robots" content="noindex">\n'
-          f'<style>\n{deck_css}\n</style>\n')
+          f'<link rel="stylesheet" href="../css/deck.css">\n')
 
 doc = B.page('page-deck dark-mode', f'{B.SITE["site_name"]} — Deck', content, inline_vars=inline, depth=1)
 
