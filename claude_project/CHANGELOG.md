@@ -16,6 +16,8 @@ Open threads:
 - nickmetcalf.com DNS cutover (waiting on Nick).
 - Confirm on phone: deck swipe, blinking cursor, mobile square gallery, filters-above-search, forced-dark overlay.
 
+- SAFETY BACKUP taken before big changes: origin branch `backup/2026-07-18-pre-bigchanges` + tag `backup-2026.0003`, both pinned to HEAD 587617f (complete, incl. all assets). Roll back by resetting main to either ref. Portable source-only zip also saved to Nick's Mac.
+- ⚠️ Nick is about to make BIG CHANGES next session — the backup above is the restore point.
 ---
 
 ## website 2026.0002 — 2026-07-18
