@@ -120,10 +120,10 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
    #single-bar / .credits-hero / .project-credits / .project-gallery all come
    from main.css. Only the modal shell + a few show-on-mobile overrides here.
    ========================================================================= */
+/* mirror .page-project main: single-bar + project-container as grid rows w/ 45px gap + top pad */
 #ov{position:fixed;inset:0;background:var(--color-bg);z-index:30;display:none;overflow-y:auto}
-#ov.open{display:block}
-#ov #project-container{max-width:1180px;margin:0 auto;padding:0 15px 90px;grid-row-gap:var(--gap-rows)}
-#ov #ovtitle{text-transform:none}
+#ov.open{display:grid;grid-auto-rows:min-content;row-gap:var(--gap-rows);padding:calc(var(--margin-top) - var(--gap-small)) var(--margin-sides) calc(var(--gap-rows)*2)}
+#ov #project-container{max-width:1180px;width:100%;margin:0 auto;padding:0}
 #ov #ovimg{width:100%;display:block;max-height:calc(100vh - 150px);object-fit:contain;background:none}
 #ovpal{display:none;height:34px;gap:3px}
 #ovpal.show{display:flex}
@@ -132,13 +132,8 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #ovcredits p{margin:0}
 #ovcredits a{text-decoration:none}
 #ovcredits a:hover{text-decoration:underline}
-/* shot data: reads like the site's detailed credit list */
-#ovshottgl{cursor:pointer;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.07em;user-select:none}
-#ovshottgl:hover{color:var(--fg)}
-#ovmeta{display:none;padding-top:12px}
-#ovshot.open #ovmeta{display:block}
-#ovmeta p{margin:0;break-inside:avoid;-webkit-column-break-inside:avoid}
-@media(min-width:601px){#ovmeta{column-count:2;column-gap:var(--gap-cols)}}
+/* shot data = part of the credits (rendered as a .credits-rest); force visible on mobile too */
+#ov .credits-rest{display:block!important}
 #ovmeta .ovkw{color:var(--dim);margin-top:12px}
 .kwtag{cursor:pointer;color:var(--dim)}
 .kwtag:hover{color:var(--fg);text-decoration:underline}
@@ -228,9 +223,8 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 		<div class="module-project_info"><div id="ovtitle"></div></div>
 		<img id="ovimg" alt="">
 		<div id="ovpal"></div>
-		<div class="project-credits credits-v2"><div class="credits-hero" id="ovcredits"></div></div>
+		<div class="project-credits credits-v2"><div class="credits-hero" id="ovcredits"></div><div class="credits-rest" id="ovmeta"></div></div>
 		<div id="ovadm"></div>
-		<div id="ovshot"><div id="ovshottgl" onclick="var s=this.parentNode;s.classList.toggle('open');this.textContent=(s.classList.contains('open')?'▾':'▸')+' shot data';">&#9656; shot data</div><div id="ovmeta"></div></div>
 		<div class="project-gallery" id="ovgrid"></div>
 	</div>
 </div>
@@ -574,7 +568,7 @@ function openOv(i,list){
 			['Flags',arrName(x,'fl')||'—'],['Format',fmtOf(x)?FMT_LBL[fmtOf(x)]:'—'],['Frame',x.f],
 		];
 		const kwline=x.kw.length?'<p class="ovkw">'+x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' ')+'</p>':'';
-		$('ovmeta').innerHTML=rows.map(r=>'<p>'+r[0].toLowerCase()+' - '+r[1]+'</p>').join('')+kwline;
+		$('ovmeta').innerHTML='<p class="spacer">&nbsp;</p>'+rows.map(r=>'<p>'+r[0].toLowerCase()+' - '+r[1]+'</p>').join('')+kwline;
 		$('ovmeta').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
 	// admin per-still format override
 	const adm=$('ovadm');
