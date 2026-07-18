@@ -4,6 +4,18 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0011 — 2026-07-18
+
+Shipped — deck mobile top-chrome fix (deck-only, `css/deck.css` only — linked file, one-shot):
+
+- **Mobile search no longer rides up under the nav on scroll.** In 2026.0010 the search was `position:sticky` pinned at header height (~94px), but the fixed FILTERS 4th-nav line sits at ~84–102px, so scrolling let the search touch/overlap FILTERS (Nick: "search bar can get too close to top nav"). Fix: on mobile `#ctrl{position:static}` — the search scrolls WITH the grid instead of pinning, so it can't collide with the nav. Resting spacing under the nav is unchanged (search still at the same Y at scroll-top). Desktop search stays sticky in the left column (unaffected — the `position:static` override is inside the ≤760px block).
+- **`#fbtn{background:var(--color-bg)}` on mobile** so the fixed FILTERS label reads cleanly when it floats over the grid on scroll (was transparent → images showed through). Verified headless light + dark, at 390 and 600px: search scrolls away, nav+FILTERS stay, no image bleed, no overlap.
+- Tried first (reverted): pinning the search below FILTERS with a JS offset, then a padding/negative-margin trick — both just relocated the image-bleed gap. Non-sticky is the clean fix.
+
+Open threads: unchanged. Minor: on mobile the FILTERS label makes a small opaque tab over the first grid row when scrolled (it's a fixed nav affordance — acceptable); desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0010 — 2026-07-18
 
 Shipped — deck (ARCHIVE) design pass #3 (all deck-only):

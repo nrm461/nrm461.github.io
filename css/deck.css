@@ -198,8 +198,10 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
    nav is a 3-item vertical stack <=500px but a single row 501-760px. `left` aligns it to the
    same margin as WORK/CONTACT/ARCHIVE. Line pitch = height-text + gap-small (matches nav spacing). */
 @media(max-width:760px){
-	#fbtn{position:fixed;left:var(--margin-sides);z-index:10;padding:0}
-	#ctrl{padding-top:0}
+	/* opaque bg so FILTERS reads cleanly when it floats over the grid on scroll */
+	#fbtn{position:fixed;left:var(--margin-sides);z-index:10;padding:0;background:var(--color-bg)}
+	/* search scrolls WITH the grid on mobile (not sticky) so it can't ride up under the nav/FILTERS on scroll; resting spacing under the nav is unchanged */
+	#ctrl{position:static;padding-top:0}
 }
 @media(max-width:500px){          /* nav = WORK/CONTACT/ARCHIVE stacked -> FILTERS is the 4th line */
 	#fbtn{top:calc(var(--margin-top) + 3 * (var(--height-text) + var(--gap-small)))}
