@@ -224,13 +224,15 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 <script>
 (async function(){
 const $=id=>document.getElementById(id);
-/* Light/dark toggle — shares the main site's 'mode' key; Deck defaults to dark */
-(function(){ const b=document.body; let m; try{m=localStorage.getItem('mode');}catch(e){}
+/* Light/dark toggle (same control as the main site). Deck keeps its own
+   preference and DEFAULTS TO DARK, so the portfolio's light default never
+   forces the deck light. */
+(function(){ const b=document.body; let m; try{m=localStorage.getItem('deckmode');}catch(e){}
 	if(m==='light') b.classList.remove('dark-mode'); else b.classList.add('dark-mode');
 	const t=$('toggle-mode'); if(t) t.addEventListener('click',e=>{
 		if(e.target.classList.contains('black')) b.classList.add('dark-mode');
 		if(e.target.classList.contains('white')) b.classList.remove('dark-mode');
-		try{localStorage.setItem('mode', b.classList.contains('dark-mode')?'dark':'light');}catch(e){}
+		try{localStorage.setItem('deckmode', b.classList.contains('dark-mode')?'dark':'light');}catch(e){}
 	});
 })();
 const ADMIN=new URLSearchParams(location.search).get('admin')==='1';
