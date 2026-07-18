@@ -74,8 +74,10 @@ select{background:#1a1a1e;border:1px solid var(--line);color:var(--fg);font:11px
 #projback:hover{text-decoration:underline}
 #projtitle{font-size:19px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;margin-top:9px}
 #projtitle span{color:var(--dim);font-weight:400;font-size:12px;letter-spacing:0;text-transform:none}
-#projmeta{color:var(--dim);font-size:11px;margin:5px 0 8px;line-height:1.6}
-#projmeta b{color:#c6c6cb;font-weight:600}
+#projcount{color:var(--dim);font-size:11px;margin:6px 0 2px}
+#projcredits{margin:6px 0 8px;font-size:11.5px;line-height:1.75}
+#projcredits div{color:#a6a6ad}
+#projcredits b{color:#e6e6e9;text-transform:uppercase;letter-spacing:.04em;font-size:10.5px;margin-right:7px;font-weight:600}
 
 #ov{position:fixed;inset:0;background:#000000f2;z-index:30;display:none;overflow-y:auto}
 #ov.open{display:block}
@@ -343,6 +345,11 @@ let layout=[], totalH=0;
 const rendered=new Map();          // rowIndex -> row element (only visible rows live in DOM)
 function computeLayout(){
 	const W=$('grid').clientWidth; layout=[]; totalH=0; if(W<50) return;
+	if(window.innerWidth<=760){          // mobile: 3-up square grid (ShotDeck style)
+		const cols=3, cw=(W-GAP*(cols-1))/cols; let top=10;
+		for(let i=0;i<shown.length;i+=cols){ layout.push({top,h:cw,s:i,e:Math.min(i+cols,shown.length),sq:cw}); top+=cw+GAP; }
+		totalH=top; return;
+	}
 	let i=0, top=10;
 	while(i<shown.length){
 		let j=i,sum=0;
@@ -361,7 +368,7 @@ function buildRow(ri){
 	for(let idx=r.s; idx<r.e; idx++){
 		const x=shown[idx];
 		const cell=document.createElement('div'); cell.className='cell'+(ADMIN?' admtag':'');
-		cell.style.width=(x.ratio*r.h)+'px'; cell.style.height=r.h+'px';
+		if(r.sq){ cell.style.width=r.sq+'px'; cell.style.height=r.sq+'px'; } else { cell.style.width=(x.ratio*r.h)+'px'; cell.style.height=r.h+'px'; }
 		cell.dataset.label=x.label; cell.dataset.i=idx;
 		if(ADMIN){const f=fmtOf(x); if(f)cell.dataset.fmt=FMT_LBL[f];}
 		const img=document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=src(x); cell.appendChild(img);
@@ -413,9 +420,9 @@ function renderProjectHeader(){
 	const label=filmLabel[curProject]||curProject;
 	const nice=label.replace(' | ',' &mdash; &ldquo;')+(label.includes(' | ')?'&rdquo;':'')+' <span>('+((F.cats&&F.cats[0])||'')+')</span>';
 	const cr=filmCr[curProject]||{};
-	const bits=[]; if(cr.d)bits.push('<b>Dir.</b> '+cr.d); if(cr.dp)bits.push('<b>DP</b> '+cr.dp); if(cr.e)bits.push('<b>Edit</b> '+cr.e);
+	const crows=[]; if(cr.d)crows.push(['Director',cr.d]); if(cr.dp)crows.push(['Cinematographer',cr.dp]); if(cr.e)crows.push(['Editor',cr.e]);
 	const n=shown.length;
-	ph.innerHTML='<a id="projback">&lsaquo; All shots</a><div id="projtitle">'+nice+'</div><div id="projmeta">'+n+' shot'+(n===1?'':'s')+(bits.length?' &nbsp;·&nbsp; '+bits.join(' &nbsp;·&nbsp; '):'')+'</div>';
+	ph.innerHTML='<a id="projback">&lsaquo; All shots</a><div id="projtitle">'+nice+'</div><div id="projcount">'+n+' shot'+(n===1?'':'s')+'</div>'+(crows.length?'<div id="projcredits">'+crows.map(r=>'<div><b>'+r[0]+'</b><span>'+r[1]+'</span></div>').join('')+'</div>':'');
 	$('projback').onclick=exitProject;
 	ph.style.display='block';
 }
