@@ -1,5 +1,7 @@
 # 00 — START HERE
 
+> **Workflow (2026-07-18):** Nick no longer uses a Claude Project. Each new chat is a **fresh, standalone conversation** — seeded by a copy-paste kickoff prompt Nick pastes (handed to him at the end of every handoff) plus the auto-loaded project memory. There is no Project instruction set to rely on: on every new chat, read `claude_project/VERSION`, this file, and the top `CHANGELOG.md` entry from origin first, then proceed.
+
 Entry point for any new chat working on Nick Metcalf's colorist portfolio site (https://nrm461.github.io) and its `/deck/` frame library. Read this first, then the numbered docs in order. Don't re-derive project facts — they live in these docs and in project memory.
 
 ## Read order
