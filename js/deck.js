@@ -121,7 +121,12 @@ function buildSidebar(){
 		const sec=document.createElement('div'); sec.className='sec'; if(openSecs.has(s.key))sec.classList.add('open');
 		const h=document.createElement('div'); h.className='sec-h';
 		h.innerHTML='<span>'+s.label+'</span>';
-		h.onclick=()=>{sec.classList.toggle('open'); sec.classList.contains('open')?openSecs.add(s.key):openSecs.delete(s.key);};
+		h.onclick=()=>{
+			const willOpen=!sec.classList.contains('open');
+			/* accordion: only one category open at a time — collapse the others so the rail stays a manageable length */
+			root.querySelectorAll('.sec.open').forEach(o=>o.classList.remove('open')); openSecs.clear();
+			if(willOpen){sec.classList.add('open'); openSecs.add(s.key);}
+		};
 		const b=document.createElement('div'); b.className='sec-b';
 		sec.appendChild(h); sec.appendChild(b); root.appendChild(sec);
 		if(s.type==='picker'){
@@ -173,11 +178,11 @@ const rendered=new Map();          // rowIndex -> row element (only visible rows
 function computeLayout(){
 	const W=$('grid').clientWidth; layout=[]; totalH=0; if(W<50) return;
 	if(window.innerWidth<=760){          // mobile: 3-up square grid (ShotDeck style)
-		const cols=3, cw=(W-GAP*(cols-1))/cols; let top=10;
+		const cols=3, cw=(W-GAP*(cols-1))/cols; let top=0;
 		for(let i=0;i<shown.length;i+=cols){ layout.push({top,h:cw,s:i,e:Math.min(i+cols,shown.length),sq:cw}); top+=cw+GAP; }
 		totalH=top; return;
 	}
-	let i=0, top=10;
+	let i=0, top=0;
 	while(i<shown.length){
 		let j=i,sum=0;
 		while(j<shown.length){ sum+=shown[j].ratio*TARGET_H+GAP; j++; if(sum-GAP>=W) break; }

@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0010 — 2026-07-18
+
+Shipped — deck (ARCHIVE) design pass #3 (all deck-only):
+
+- **Grid now starts at the same Y as the Work-page thumbnails (desktop).** Restructured `_build/deck_main.html`: `#ctrl` (search) now lives INSIDE a new `#leftcol` ABOVE the rail `#side`, so the grid column rises to the top of `#deckrow`. `#leftcol` = `flex:0 0 210px` on desktop (`#deckrow` `align-items:stretch` so the stretched column keeps the sticky search + rail pinned the whole scroll) and `display:contents` on mobile (search stays a full-width sticky bar, `#side` still the off-canvas drawer). `#chips:empty{padding:0}` + grid layout `top:0` remove the last reserved space. Verified headless: deck cell top === Work thumb top (78px @1440, both at mainTop).
+- **Mobile FILTERS → left, as a 4th nav item** (Nick's call). `#fbtn` `position:fixed; left`; `top` per breakpoint (4th line below WORK/CONTACT/ARCHIVE at ≤500px; one line under the single-row nav 501–760px). Bracket pseudo `content:none` on mobile so the label aligns to the nav margin. (Mobile nav is a hard `flex-direction:column` stack at ≤500px in main.css — that's why top-left couldn't be a bare corner pin.)
+- **Filter rail is now an accordion** — opening one section auto-collapses the others (`deck.js buildSidebar`), keeping the rail short.
+- **Detail overlay keeps the compact `[ < ] [ CLOSE ] [ > ]` top bar at ALL widths.** `deck.css` overrides main.css's `>=1367px` `#single-bar` rule (which flipped it to a fixed full-viewport grid with screen-edge sans-serif arrows) back to the sticky bracketed top row, scoped to `#ov`.
+- Edited: `_build/deck_main.html`, `css/deck.css`, `js/deck.js`, regenerated `deck/index.html`. Doc `04_deck.md` updated. Deploy: deck-only, pushed `[auto-build]` (skips the site rebuild); `deck/index.html` committed directly (Action doesn't run build_deck).
+
+Open threads: unchanged (deck noindex decision; cosmetic URL≠label; project-from-/selects/ closes to Work; deck data hygiene; recurrence-prune; nickmetcalf.com DNS). Minor: mobile grid still sits below the search (search is full-width above it — inherent; only desktop aligns to Work); desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0009 — 2026-07-18
 
 Shipped — deck (ARCHIVE) design pass #2 (all deck-only):
