@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <title>Nick Metcalf — Archive</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
-<link rel="stylesheet" href="../css/main.css?v=1784419534">
+<link rel="stylesheet" href="../css/main.css?v=1784422135">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../css/deck.css?v=9981c5b6c0">
+<link rel="stylesheet" href="../css/deck.css?v=f9fa3c6864">
 </head>
 <body class="page-deck">
 <div id="content-wrapper">
@@ -21,6 +21,7 @@
 		<div id="leftcol">
 			<div id="ctrl">
 				<span id="searchwrap"><span id="termcur">&#9611;</span><input id="search" type="search" placeholder="Search 6,236 stills &mdash; try &ldquo;aerial&rdquo;, &ldquo;neon&rdquo;, &ldquo;beach&rdquo;&hellip;" autocomplete="off"></span>
+				<button id="boardbtn" type="button">Board</button>
 			</div>
 			<div id="side">
 				<div id="sidehead"><span class="sh-r"><button id="sideclose">&#10005;</button></span></div>
@@ -54,6 +55,23 @@
 	<div id="fmtstatus"></div>
 </div>
 <div id="vov"><a id="vovclose">[ CLOSE ]</a><div id="vovbox"></div></div>
+<div id="board">
+	<div id="board-inner">
+		<div id="board-bar">
+			<div id="board-title">BOARD <span id="board-n"></span></div>
+			<div id="board-acts">
+				<a id="board-share">[ copy link ]</a>
+				<a id="board-pdf">[ download pdf ]</a>
+				<a id="board-zip">[ download images ]</a>
+				<a id="board-clear">[ clear ]</a>
+				<a id="board-close">[ close ]</a>
+			</div>
+		</div>
+		<div id="board-status"></div>
+		<div id="board-empty">Your board is empty. Hover any still and click <b>+</b> to add it &mdash; then download a PDF, grab the images, or copy a link to share this board.</div>
+		<div id="board-grid"></div>
+	</div>
+</div>
 <div id="ov">
 	<div id="single-bar">
 		<a id="prev">&lt;</a>
@@ -61,7 +79,7 @@
 		<a id="next">&gt;</a>
 	</div>
 	<div id="project-container">
-		<div class="module-project_info"><div id="ovtitle"></div></div>
+		<div class="module-project_info"><div id="ovtitle"></div><a id="ovadd" href="#">+ board</a></div>
 		<img id="ovimg" alt="">
 		<div id="ovpal"></div>
 		<div class="credits-rest" id="ovkw"></div>
@@ -125,6 +143,32 @@ const hasTags=Object.keys(TAGS).length>0;
 const lumBand=l=>l<25?'d':(l>60?'b':'m');
 const src=x=>'../assets/deck2/'+x.slug+'/'+x.f+'.jpg';
 const fmtOf=x=>FMT.frames[x.key]||FMT.films[x.slug]||'';
+
+/* ===== BOARD — visitor's personal still collection (client-side only; no login/backend) ===== */
+const byKey={}; FRAMES.forEach(x=>byKey[x.key]=x);
+const BKEY='deck_board';
+const boardSet=new Set();
+try{ const s=JSON.parse(localStorage.getItem(BKEY)||'[]'); if(Array.isArray(s)) s.forEach(k=>{ if(byKey[k]) boardSet.add(k); }); }catch(e){}
+function saveBoard(){ try{ localStorage.setItem(BKEY, JSON.stringify([...boardSet])); }catch(e){} }
+function inBoard(x){ return boardSet.has(x.key); }
+function boardFrames(){ return [...boardSet].map(k=>byKey[k]).filter(Boolean); }
+function updateBoardUI(){
+	const n=boardSet.size, bb=$('boardbtn');
+	if(bb){ bb.textContent='Board'+(n?' ('+n+')':''); bb.classList.toggle('has',n>0); }
+	$('grid').querySelectorAll('.cell').forEach(c=>c.classList.toggle('picked',boardSet.has(c.dataset.key)));
+}
+function toggleBoard(x){ if(boardSet.has(x.key))boardSet.delete(x.key); else boardSet.add(x.key); saveBoard(); updateBoardUI(); }
+/* share link: board keys packed into the URL fragment (no server; anyone who opens it gets the set) */
+function boardLink(){ return location.origin+location.pathname+'#board='+encodeURIComponent([...boardSet].join(',')); }
+function ingestBoardParam(){
+	const m=location.hash.match(/[#&]board=([^&]*)/)||location.search.match(/[?&]board=([^&]*)/);
+	if(!m) return false;
+	let added=0;
+	decodeURIComponent(m[1]).split(',').forEach(k=>{ if(byKey[k]&&!boardSet.has(k)){ boardSet.add(k); added++; } });
+	saveBoard();
+	if(location.hash.indexOf('board=')>=0) history.replaceState(null,'',location.pathname+location.search);
+	return added>0;
+}
 
 /* value label maps */
 const NM={d_l:'Dark',m_l:'Mid',b_l:'Bright',
@@ -285,9 +329,13 @@ function buildRow(ri){
 		const x=shown[idx];
 		const cell=document.createElement('div'); cell.className='cell'+(ADMIN?' admtag':'');
 		if(r.sq){ cell.style.width=r.sq+'px'; cell.style.height=r.sq+'px'; } else { cell.style.width=(x.ratio*r.h)+'px'; cell.style.height=r.h+'px'; }
-		cell.dataset.label=x.label; cell.dataset.i=idx;
+		cell.dataset.label=x.label; cell.dataset.i=idx; cell.dataset.key=x.key;
+		if(inBoard(x)) cell.classList.add('picked');
 		if(ADMIN){const f=fmtOf(x); if(f)cell.dataset.fmt=FMT_LBL[f];}
 		const img=document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=src(x); cell.appendChild(img);
+		const ab=document.createElement('button'); ab.className='addbtn'; ab.type='button'; ab.title='Add to board';
+		ab.onclick=e=>{ e.stopPropagation(); toggleBoard(x); };
+		cell.appendChild(ab);
 		cell.onclick=()=>openOv(idx);
 		row.appendChild(cell);
 	}
@@ -421,6 +469,7 @@ function justify(el,list,targetH){
 function openOv(i,list){
 	ovList=list||shown; ovIdx=i; const x=ovList[i]; if(!x) return;
 	$('ovtitle').textContent=x.label;
+		{const ba=$('ovadd'); if(ba){ const lbl=()=>ba.textContent=inBoard(x)?'✓ on board':'+ board'; lbl(); ba.classList.toggle('on',inBoard(x)); ba.onclick=e=>{e.preventDefault(); toggleBoard(x); lbl(); ba.classList.toggle('on',inBoard(x));}; }}
 		$('ovimg').src=src(x);
 		$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="background:#'+p+'" data-h="#'+p+'"></span>').join('');
 		$('ovpal').querySelectorAll('span').forEach(el=>el.onclick=()=>navigator.clipboard.writeText(el.dataset.h));
@@ -528,6 +577,81 @@ $('fmtsave').onclick=async()=>{
 	}catch(e){$('fmtstatus').textContent='Error: '+e.message;$('fmtsave').disabled=false;}
 };
 if(ADMIN){ $('brand').classList.add('adm'); $('brand').textContent='DECK · ADMIN'; $('fmtpanel').classList.add('on'); $('main').style.marginRight='340px'; }
+
+/* ===== BOARD panel + downloads + share ===== */
+function boardStatus(t){ const s=$('board-status'); if(s)s.textContent=t||''; }
+function renderBoard(){
+	const list=boardFrames(), g=$('board-grid'); if(!g)return; g.innerHTML='';
+	$('board-n').textContent='('+list.length+')';
+	$('board-empty').style.display=list.length?'none':'block';
+	list.forEach(x=>{
+		const t=document.createElement('div'); t.className='btile';
+		const im=document.createElement('img'); im.src=src(x); im.loading='lazy'; im.decoding='async'; t.appendChild(im);
+		const rm=document.createElement('button'); rm.className='brm'; rm.type='button'; rm.title='Remove'; rm.textContent='×';
+		rm.onclick=()=>{ boardSet.delete(x.key); saveBoard(); updateBoardUI(); renderBoard(); };
+		t.appendChild(rm);
+		const cap=document.createElement('div'); cap.className='bcap'; cap.textContent=x.label; t.appendChild(cap);
+		g.appendChild(t);
+	});
+}
+function openBoard(){ boardStatus(''); renderBoard(); $('board').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeBoard(){ $('board').classList.remove('open'); if(!$('ov').classList.contains('open')&&!($('vov')&&$('vov').classList.contains('open')))document.body.style.overflow=''; }
+if($('boardbtn'))$('boardbtn').onclick=openBoard;
+if($('board-close'))$('board-close').onclick=closeBoard;
+if($('board'))$('board').addEventListener('click',e=>{if(e.target.id==='board')closeBoard();});
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&$('board')&&$('board').classList.contains('open')&&!$('ov').classList.contains('open')&&!($('vov')&&$('vov').classList.contains('open'))) closeBoard(); });
+if($('board-clear'))$('board-clear').onclick=()=>{ if(!boardSet.size)return; boardSet.clear(); saveBoard(); updateBoardUI(); renderBoard(); boardStatus('Board cleared.'); };
+if($('board-share'))$('board-share').onclick=async()=>{
+	if(!boardSet.size){boardStatus('Board is empty — add some stills first.');return;}
+	const url=boardLink();
+	try{ await navigator.clipboard.writeText(url); boardStatus('Link copied — anyone who opens it gets these '+boardSet.size+' stills added to their board.'); }
+	catch(e){ boardStatus('Copy failed. Link: '+url); }
+};
+/* lazy-load heavy libs only on first download */
+function loadScript(u){ return new Promise((res,rej)=>{ const s=document.createElement('script'); s.src=u; s.onload=res; s.onerror=()=>rej(new Error('failed to load '+u)); document.head.appendChild(s); }); }
+async function ensureJSZip(){ if(window.JSZip)return window.JSZip; await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js'); return window.JSZip; }
+async function ensureJsPDF(){ if(window.jspdf&&window.jspdf.jsPDF)return window.jspdf.jsPDF; await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'); return window.jspdf.jsPDF; }
+function dl(blob,name){ const u=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),4000); }
+if($('board-zip'))$('board-zip').onclick=async()=>{
+	const list=boardFrames(); if(!list.length){boardStatus('Board is empty.');return;}
+	boardStatus('Preparing '+list.length+' images…');
+	try{
+		const JSZip=await ensureJSZip(); const zip=new JSZip(); let i=0;
+		for(const x of list){ const b=await (await fetch(src(x))).blob(); zip.file(x.slug+'-'+x.f+'.jpg',b); boardStatus('Zipping '+(++i)+'/'+list.length+'…'); }
+		const blob=await zip.generateAsync({type:'blob'}); dl(blob,'nickmetcalf-board.zip'); boardStatus('Downloaded '+list.length+' images.');
+	}catch(e){ boardStatus('Image download failed: '+e.message); }
+};
+if($('board-pdf'))$('board-pdf').onclick=async()=>{
+	const list=boardFrames(); if(!list.length){boardStatus('Board is empty.');return;}
+	boardStatus('Building PDF…');
+	try{
+		const jsPDF=await ensureJsPDF();
+		const doc=new jsPDF({orientation:'landscape',unit:'mm',format:'a4'});
+		const PW=297,PH=210,M=14;
+		doc.setFont('courier','normal');
+		doc.setFontSize(20); doc.text('NICK METCALF',M,M+7);
+		doc.setFontSize(9); doc.setTextColor(120); doc.text('COLOUR · BOARD',M,M+13);
+		doc.setTextColor(0); doc.setFontSize(9);
+		doc.text(list.length+' still'+(list.length===1?'':'s'),M,M+20);
+		doc.setTextColor(120); doc.text('nickmetcalf.com',M,PH-M); doc.setTextColor(0);
+		boardStatus('Loading images for PDF…');
+		const imgs=await Promise.all(list.map(x=>new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>res(null);im.src=src(x);})));
+		const cols=3, gap=6, capH=7, cw=(PW-M*2-gap*(cols-1))/cols, ch=cw*9/16, rowH=ch+capH+gap;
+		const rowsPerPage=Math.max(1,Math.floor((PH-M*2)/rowH)), perPage=cols*rowsPerPage;
+		for(let i=0;i<list.length;i++){
+			const p=i%perPage; if(p===0) doc.addPage();
+			const col=p%cols, r=Math.floor(p/cols), x0=M+col*(cw+gap), y0=M+r*rowH, im=imgs[i], fr=list[i];
+			if(im){ const ar=fr.ratio||(im.width/im.height)||16/9; let dw=cw,dh=cw/ar; if(dh>ch){dh=ch;dw=ch*ar;} try{doc.addImage(im,'JPEG',x0+(cw-dw)/2,y0+(ch-dh)/2,dw,dh);}catch(e){} }
+			doc.setFontSize(6.2); doc.setTextColor(30);
+			doc.text(doc.splitTextToSize(fr.label.replace(/\s*\|\s*/g,'  |  '),cw),x0,y0+ch+3.5);
+		}
+		doc.save('nickmetcalf-board.pdf'); boardStatus('PDF downloaded ('+list.length+' stills).');
+	}catch(e){ boardStatus('PDF failed: '+e.message); }
+};
+/* init: reflect saved board, absorb any shared ?board= link, auto-open if it carried new picks */
+const _sharedNew=ingestBoardParam();
+updateBoardUI();
+if(_sharedNew) openBoard();
 
 route();
 })();

@@ -4,6 +4,24 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0020 — 2026-07-19
+
+Shipped — **BOARD**: a visitor-side still collector on the deck (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_main.html` + `_build/deck_extras.html` + rebuilt `deck/index.html`). Fully client-side — no login, no backend.
+
+- **Collect**: a `+` toggle on every grid cell (hover on desktop, always-visible on touch) and a `+ board` link by the detail-overlay title. Picked cells get a `[✓]` + outline. Selection persists in `localStorage['deck_board']` (array of `slug/frame` keys), survives reload/nav like the theme key does.
+- **Tray**: a `[ board (N) ]` button in `#ctrl` (right of search) opens a full-overlay panel (`#board`, follows site theme) — thumbnails with `×` remove + `CLIENT | TITLE` caption, and the action row `[ copy link ] [ download pdf ] [ download images ] [ clear ] [ close ]`.
+- **Download images**: JSZip (lazy-loaded from cdnjs on first use) → `nickmetcalf-board.zip` of the deck2 jpgs (currently ~480px reference frames; hi-res swap is a later job per Nick).
+- **Download PDF**: jsPDF (lazy) → `nickmetcalf-board.pdf` — courier/mono cover (NICK METCALF · COLOUR · BOARD · N stills · nickmetcalf.com) then a 3-up landscape-A4 contact sheet, aspect-fit images + `CLIENT | TITLE` captions, paginated.
+- **Share**: `[ copy link ]` copies `…/deck/#board=<keys>` (selection packed in the URL fragment — no server). Opening a share link **merges** those stills into the recipient's board (union, never clobbers their own), auto-opens the panel, and strips the fragment. This is the "collaborate" path without login — async link-passing, not realtime.
+
+Verified headless @1440 (chromium): add/persist/remove, counter, PDF (111KB/valid) + zip (107KB) downloads fire with correct filenames, share-link fresh-load ingest auto-opens + merges + cleans hash, no console errors. cdnjs is blocked in the cloud container so the lib-load path was verified by injecting local JSZip/jsPDF builds; it resolves normally in a real browser.
+
+Note: `deck2` stills are only ~480px — image/PDF output is screen/reference quality, not print. Board is device-local (localStorage); the share link is the cross-device/collaborate mechanism.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation. New: consider a hi-res still source for Board downloads; consider a persistent/named Board via C41 Vercel/Neon if realtime/named decks ever wanted.
+
+---
+
 ## website 2026.0019 — 2026-07-19
 
 Shipped — deck search text baseline aligned to the tag line, tuned on the LIVE font (deck-only: `css/deck.css` + rebuilt `deck/index.html`).
