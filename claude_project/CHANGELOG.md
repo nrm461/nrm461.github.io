@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0026 — 2026-07-19
+
+Shipped — **mobile DECK tray bar cleaned up** (deck-only: `css/deck.css` + rebuilt `deck/index.html`). Per Nick: on mobile the action row (`[ copy link ] [ download pdf ] [ download images ] [ clear ] [ close ]`) wrapped into a messy two-line block.
+
+- Mobile (`max-width:760px`) only: `#board-acts` → `flex-direction:column; align-items:flex-start` so copy link / download pdf / download images / clear STACK vertically down the left.
+- `#board-close` pulled out to the top-right via `position:absolute; top:0; right:0` — level with the `DECK (N)` title (`#board-bar` is `position:sticky`, so it's the containing block).
+- Desktop unchanged (single-row bar, close inline at the right).
+
+Verified headless @390 (chromium, http, board opened with 3 stills): title top-left (top15/left15), close top-right (top15/right375), acts column with the four actions stacked left at x15 (y49/79/109/139).
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation.
+
+---
+
 ## website 2026.0025 — 2026-07-19
 
 Shipped — **deck FILTERS panel text bumped to the site body size** (deck-only: `css/deck.css` + rebuilt `deck/index.html`). Per Nick: the filter pop-out text read small vs the rest of the site.
