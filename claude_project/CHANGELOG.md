@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0030 — 2026-07-19
+
+Shipped — **deck board action nav now matches the landing page nav: no brackets, UPPERCASE** (deck-only: `_build/deck_extras.html` + `css/deck.css` + rebuilt `deck/index.html`).
+
+- `_build/deck_extras.html`: stripped the `[ … ]` brackets from the five `#board-acts` links — source text now `copy link` / `download pdf` / `download images` / `clear` / `close` (ids unchanged: board-share/board-pdf/board-zip/board-clear/board-close).
+- `css/deck.css`: added `text-transform:uppercase` to `#board-acts a{}` so they render COPY LINK / DOWNLOAD PDF / DOWNLOAD IMAGES / CLEAR / CLOSE — plain uppercase mono, 13px, no tracking, matching the landing nav.
+- Rebuilt `deck/index.html` (deck.css is content-hash cache-busted, so the rebuild is required). Deck-only → committed with `[auto-build]` to skip the site rebuild.
+
+Verified headless @390px: the four actions render uppercase/no-brackets stacked top-left (x=15), close renders uppercase/no-brackets absolute top-right (x=336, y=15); all 13px.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation.
+
+---
+
 ## website 2026.0029 — 2026-07-19
 
 Shipped — **fix iOS mobile text auto-inflation so nav/UI text is one size across pages** + board-tile captions uppercased to match landing (`css/main.css` + `css/deck.css` + rebuilt `deck/index.html` + regenerated site HTML for the cache-bust token).
