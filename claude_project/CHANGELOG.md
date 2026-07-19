@@ -4,6 +4,19 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0031 — 2026-07-19
+
+Shipped — **fixed /deck/ search returning junk: substring match → whole-word (plural-tolerant) match** (`js/deck.js` + rebuilt `deck/index.html`).
+
+- **Bug (Nick):** searching `car` gave "weird results" and buried the actual car frames. Cause: `matchesQ` used raw substring `k.includes(q)`, so `car` matched `title card` (129), `end card` (93), `carpet`, `cardboard`, `cardigan`, `cart`, `scarf`, `cartography`, `escarpment` … — 924 matches, only ~315 real cars, drowned under 630 noise frames in the shuffle.
+- **Fix:** `matchesQ` now tests a cached, escaped regex `(?:^|[^a-z0-9])q s?(?:$|[^a-z0-9])` (case-insensitive) against the label and each keyword — whole-word, with simple plural tolerance; a multi-word query ("sports car") matches as a phrase. Single change point, so it applies to both the live query and committed search chips.
+- Verified headless over HTTP against the real UI: `car` → 315 frames (all car/SUV/parked-cars, zero carpet/card), `carpet` → 60, `card` → 200 (correctly distinct from car), `vehicle` → 54, phrase `sports car` → 9. No JS errors.
+- Note: text search covers label + keywords only; the 858 `veh`-flagged frames (623 without a literal "car" keyword) still surface fully via the Commercial Flags → Vehicles filter, not the free-text box. Could wire a `car`→`veh` synonym if Nick wants the word alone to pull the whole flag.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Possible enhancement: `car`→Vehicles-flag search synonym. Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation.
+
+---
+
 ## website 2026.0030 — 2026-07-19
 
 Shipped — **deck board action nav now matches the landing page nav: no brackets, UPPERCASE** (deck-only: `_build/deck_extras.html` + `css/deck.css` + rebuilt `deck/index.html`).

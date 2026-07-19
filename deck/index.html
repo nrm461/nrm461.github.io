@@ -213,7 +213,10 @@ const listScroll={};
 
 function hex2rgb(h){h=h.replace('#','');return [parseInt(h.slice(0,2),16),parseInt(h.slice(2,4),16),parseInt(h.slice(4,6),16)];}
 function near(pal,rgb,tol){for(const p of pal){const r=parseInt(p.slice(0,2),16)-rgb[0],g=parseInt(p.slice(2,4),16)-rgb[1],b=parseInt(p.slice(4,6),16)-rgb[2];if(Math.sqrt(r*r*.6+g*g+b*b*.4)<tol)return true;}return false;}
-function matchesQ(x,q){ if(x.label.toLowerCase().includes(q))return true; for(const k of x.kw)if(k.includes(q))return true; return false; }
+/* whole-word, plural-tolerant match — a bare substring test made "car" hit "title card"/"carpet"/"cardboard" etc. and bury the real car frames. Matches q as a full token (optionally +s/-s plural) in the label or any keyword; multi-word q ("sports car") matches as a phrase. */
+const _qreCache={};
+function qre(q){ let r=_qreCache[q]; if(r)return r; const e=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'); r=new RegExp('(?:^|[^a-z0-9])'+e+'s?(?:$|[^a-z0-9])','i'); _qreCache[q]=r; return r; }
+function matchesQ(x,q){ const r=qre(q); if(r.test(x.label))return true; for(const k of x.kw)if(r.test(k))return true; return false; }
 function passes(x,skipKey){
 	if(state.q && !matchesQ(x,state.q)) return false;
 	for(const q of state.qs) if(!matchesQ(x,q)) return false;
