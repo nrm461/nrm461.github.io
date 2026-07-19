@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0027 — 2026-07-19
+
+Shipped — **(a) overlay `+` back over the image (bottom-right), (b) site-wide type unified to 13px** (`css/main.css` + `css/deck.css` + `_build/deck_extras.html` + rebuilt `deck/index.html` + regenerated site HTML for the main.css cache-bust token).
+
+- **`+` glyph:** reverted the in-flow row (2026.0024) — it read cleaner but ate too much vertical space. `#ovadd` is again `position:absolute` inside `#ovimgwrap`, now at `bottom:10px;right:10px` (was top-right). Semi-opaque dark disc (`rgba(0,0,0,.55)`) keeps the white `+` legible; bottom corner dodges the busy top. `#ovaddrow` removed.
+- **Font-size audit + unify (Nick: "the whole site should be the same size"):** the entire main site already inherited 13px (`--fs`); every divergence was in the deck + one campaign label. Bumped to `var(--fs)` (13px): filter option counts `.opt .n` (was 11), active-filter `.chip` + `.chip-count` (11.5), board action links `#board-acts a` (12), `#board-status` (11), `#board-empty` (12), board-tile captions `.btile .bcap` (9.5), and main.css `.video-label` default (12).
+- **Left as intentional (NOT body text):** icon glyphs — `#sideclose`/`.brm` × (17/14), `.addbtn`/`#ovadd` + (15/19); the hidden admin FORMAT editor + `select` (admin-only); the palette hex hover-tooltip; and unused `#showing`. These are icons/utility, not readable copy — flag to Nick if he wants them touched too.
+
+Verified headless: overlay `+` back in `#ovimgwrap`, `position:absolute`, bottom/right gap 10px, 30×30, dark disc. `.opt .n` computes 13px. Site pages regenerated with new main.css `?v=` token (1784467998) so the type change serves without a hard refresh.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation. Possible: bump the remaining icon/admin sizes if Nick wants literal uniformity.
+
+---
+
 ## website 2026.0026 — 2026-07-19
 
 Shipped — **mobile DECK tray bar cleaned up** (deck-only: `css/deck.css` + rebuilt `deck/index.html`). Per Nick: on mobile the action row (`[ copy link ] [ download pdf ] [ download images ] [ clear ] [ close ]`) wrapped into a messy two-line block.

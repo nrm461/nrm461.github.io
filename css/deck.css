@@ -88,7 +88,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 .opt .ol{position:relative}
 .opt.on .ol::before{content:'[ '}
 .opt.on .ol::after{content:' ]'}
-.opt .n{margin-left:auto;color:var(--dim2);font-size:11px;padding-left:8px}
+.opt .n{margin-left:auto;color:var(--dim2);font-size:var(--fs);padding-left:8px}
 .opt.zero{opacity:.32}
 #filmsearch,.subsearch{width:100%;margin:3px 0 6px;background:var(--field);border:1px solid var(--line);color:var(--fg);font:var(--fs) var(--font);padding:4px 6px;border-radius:3px}
 .scrolllist{max-height:250px;overflow-y:auto}
@@ -101,9 +101,9 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 /* active-filter bracket row above the grid — ALWAYS reserves one line of height so
    toggling a filter (chips appear/disappear) never shifts the thumbnail grid down/up. */
 #chips{display:flex;flex-wrap:wrap;align-items:center;gap:5px 16px;padding:0 0 12px;min-height:30px;box-sizing:border-box}
-.chip-count{color:var(--dim);font-size:11.5px;white-space:nowrap;margin-right:2px}
+.chip-count{color:var(--dim);font-size:var(--fs);white-space:nowrap;margin-right:2px}
 .chip-count b{color:var(--fg);font-weight:600}
-.chip{color:var(--fg);font-size:11.5px;white-space:nowrap}
+.chip{color:var(--fg);font-size:var(--fs);white-space:nowrap}
 .chip::before{content:'[ '}.chip::after{content:' ]'}
 .chip b{font-weight:400;color:var(--fg)}
 .chip .x{cursor:pointer;color:var(--dim);margin-left:7px}
@@ -230,14 +230,13 @@ body.mobile .cell .addbtn{display:flex;background:rgba(0,0,0,.45)}
 body.mobile .cell.picked .addbtn{background:var(--fg)}
 /* overlay detail: glyph pinned top-right over the image */
 #ovimgwrap{position:relative;width:100%}
-/* add-to-deck glyph: was overlaid top-right ON the image (unreadable over bright stills,
-   and it landed in the letterbox bar on non-16:9). Now a right-aligned control in the flow,
-   just above the tags line, on the solid dark overlay bg — always legible (Nick 2026-07-19). */
-#ovaddrow{display:flex;justify-content:flex-end;margin:8px 0 2px}
-#ovadd{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--fg);font:19px/1 var(--font);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
+/* add-to-deck glyph: overlaid on the image at the BOTTOM-right (Nick 2026-07-19 — the
+   in-flow row above the tags read cleaner but ate too much vertical space). Semi-opaque
+   dark disc keeps the white + legible over bright stills; bottom corner avoids the busy top. */
+#ovadd{position:absolute;bottom:10px;right:10px;width:30px;height:30px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font:19px/1 var(--font);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;z-index:3}
 #ovadd::before{content:'+'}
-#ovadd:hover{border-color:var(--fg)}
-#ovadd.on{background:var(--fg);border-color:var(--fg);color:var(--color-bg)}
+#ovadd:hover{background:rgba(0,0,0,.78)}
+#ovadd.on{background:#fff;color:#000}
 #ovadd.on::before{content:'\2713'}
 /* board overlay */
 #board{position:fixed;inset:0;background:var(--color-bg);z-index:45;display:none;overflow-y:auto}
@@ -247,17 +246,17 @@ body.mobile .cell.picked .addbtn{background:var(--fg)}
 #board-title{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
 #board-title #board-n{color:var(--dim)}
 #board-acts{display:flex;flex-wrap:wrap;gap:16px;margin-left:auto}
-#board-acts a{cursor:pointer;color:var(--fg);font-size:12px;text-decoration:none;white-space:nowrap}
+#board-acts a{cursor:pointer;color:var(--fg);font-size:var(--fs);text-decoration:none;white-space:nowrap}
 #board-acts a:hover{text-decoration:underline}
-#board-status{color:var(--dim);font-size:11px;min-height:15px;padding:2px 0 10px}
-#board-empty{display:none;color:var(--dim);font-size:12px;line-height:1.6;padding:24px 0;max-width:520px}
+#board-status{color:var(--dim);font-size:var(--fs);min-height:15px;padding:2px 0 10px}
+#board-empty{display:none;color:var(--dim);font-size:var(--fs);line-height:1.6;padding:24px 0;max-width:520px}
 #board-empty b{color:var(--fg)}
 #board-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}
 .btile{position:relative;background:var(--line)}
 .btile img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 .btile .brm{position:absolute;top:4px;right:4px;width:20px;height:20px;border:0;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:14px;line-height:1;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
 .btile .brm:hover{background:#000}
-.btile .bcap{font-size:9.5px;color:var(--dim);padding:3px 1px 0;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btile .bcap{font-size:var(--fs);color:var(--dim);padding:3px 1px 0;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* mobile: the action row wrapped messily. Pull [ close ] out to the top-right (level with
    the DECK title) and STACK the remaining actions vertically down the left (Nick 2026-07-19).
    #board-bar is position:sticky = a containing block, so #board-close absolutes to its corner. */

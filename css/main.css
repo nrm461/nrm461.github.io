@@ -552,7 +552,7 @@ img.thumb + .video-label{
 	margin-top: var(--gap-cols, 20px);
 }
 .video-label{
-	font-size: var(--font-size, 12px);
+	font-size: var(--font-size, var(--fs));
 	text-transform: uppercase;
 	margin-bottom: 6px;
 }
