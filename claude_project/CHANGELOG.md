@@ -4,6 +4,18 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0014 — 2026-07-19
+
+Shipped — mobile FILTERS is now a REAL nav item (deck-only: `js/deck.js` + `css/deck.css` + rebuilt `deck/index.html`).
+
+- The 2026.0011–0013 mobile FILTERS used `position:fixed` with a per-breakpoint `top: calc(margin-top + 3*(height-text+gap-small))`. That calc assumed a nav line-pitch that didn't match real devices — on Nick's phone FILTERS landed on the CONTACT/ARCHIVE lines and "moved independently." Root cause: hardcoding a position instead of tracking the actual nav.
+- Fix: `deck.js` moves `#fbtn` INTO the `<header>` on load (before the sticky positioner), so FILTERS stacks as a genuine 4th nav item using the nav's own flex layout/spacing — perfectly aligned under WORK/CONTACT/ARCHIVE, rides with the sticky nav, robust across fonts/devices. Desktop keeps `#fbtn{display:none}` (rail always shown).
+- Removed all the fragile mobile hacks: `#fbtn` fixed/`top` calcs, `#ctrl` padding-top, `#deckrow` negative margin. The search now simply pins below the FULL header (which includes FILTERS) via the existing JS sticky-top — thumbnails scroll behind the whole opaque nav+search band, no overlap, no image bleed. Verified headless @390 (4-item stack, drawer opens, pinned search + thumbs behind on scroll) and @1440 (FILTERS hidden, desktop unchanged).
+
+Open threads: unchanged. Minor: at 501–760px (tablet) FILTERS sits centered at the right end of the nav row (space-between) — fine; desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0013 — 2026-07-18
 
 Shipped — **cache-buster on the deck stylesheet link** (the real reason today's deck CSS changes "looked the same" for Nick).

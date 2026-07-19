@@ -193,29 +193,12 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #termcur{position:absolute;left:1px;top:50%;transform:translateY(-50%);color:var(--fg);font-size:13px;line-height:1;pointer-events:none;animation:termblink 1.1s steps(1,end) infinite}
 @keyframes termblink{50%{opacity:0}}
 #searchwrap.typing #termcur{opacity:0;animation:none}
-/* mobile: FILTERS reads as a left-aligned continuation of the top nav (Nick 2026-07-18).
-   Kept fixed so it stays put like the sticky nav; `top` is set per breakpoint because the
-   nav is a 3-item vertical stack <=500px but a single row 501-760px. `left` aligns it to the
-   same margin as WORK/CONTACT/ARCHIVE. Line pitch = height-text + gap-small (matches nav spacing). */
+/* mobile: FILTERS is a real 4th nav item. deck.js moves #fbtn INTO the <header> so it stacks
+   under WORK/CONTACT/ARCHIVE using the nav's own flex/spacing (no fragile fixed-position math —
+   that landed on the wrong line on some devices) and rides with the sticky nav. The search then
+   just pins below the FULL header (incl FILTERS) via the JS sticky-top — no padding/overlap hacks,
+   and the thumbnails scroll behind the whole opaque nav+search band. Desktop hides #fbtn (rail
+   always shown), so the header height there is the plain 3-item nav. */
 @media(max-width:760px){
-	/* opaque bg so FILTERS reads cleanly (sits over the header / the pinned search's own bg) */
-	#fbtn{position:fixed;left:var(--margin-sides);z-index:10;padding:0;background:var(--color-bg)}
-	/* Search stays PINNED (sticky; JS sets top = header height) and the thumbnails scroll BEHIND it.
-	   The extra opaque top padding drops the search field one nav-line below the fixed FILTERS line,
-	   so when stuck the field never rides up under FILTERS and its bg runs flush from the header down
-	   (no gap for images to peek through). */
-	#ctrl{padding-top:calc(var(--height-text) + var(--gap-small))}
-	/* the padding above adds clearance only when STUCK; pull the row up by the same amount so the
-	   RESTING gap under the nav is unchanged (negative margin on the parent doesn't move the sticky pin) */
-	#deckrow{margin-top:calc((var(--height-text) + var(--gap-small)) * -1)}
-}
-@media(max-width:500px){          /* nav = WORK/CONTACT/ARCHIVE stacked -> FILTERS is the 4th line */
-	#fbtn{top:calc(var(--margin-top) + 3 * (var(--height-text) + var(--gap-small)))}
-}
-@media(min-width:501px) and (max-width:760px){  /* nav = single row -> FILTERS on the line below, left-aligned */
-	#fbtn{top:calc(var(--margin-top) + (var(--height-text) + var(--gap-small)))}
-}
-/* mobile: drop the hidden [ ] bracket reservation so the FILTERS label aligns to the same margin as the nav items (brackets are a desktop-only active affordance) */
-@media(max-width:760px){
-	#fbtn::before,#fbtn::after{content:none}
+	#fbtn::before,#fbtn::after{content:none}   /* no bracket reservation -> label aligns with the nav items */
 }

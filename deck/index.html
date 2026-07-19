@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <link rel="stylesheet" href="../css/main.css?v=1784415289">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../css/deck.css?v=f630d43adc">
+<link rel="stylesheet" href="../css/deck.css?v=f1de8d4ca0">
 </head>
 <body class="page-deck">
 <div id="content-wrapper">
@@ -86,6 +86,10 @@ const $=id=>document.getElementById(id);
 		try{localStorage.setItem('mode', b.classList.contains('dark-mode')?'dark':'light');}catch(e){}
 	});
 })();
+/* FILTERS lives in <main> in the HTML but belongs in the nav on mobile — move it into the
+   <header> so it stacks as a real 4th nav item (robust vs font metrics) and rides with the
+   sticky nav. Must run BEFORE the sticky positioner so header height includes it. Desktop hides it via CSS. */
+(function(){var fb=$('fbtn'),h=document.querySelector('header');if(fb&&h)h.appendChild(fb);})();
 (function(){var c=$('ctrl'),h=document.querySelector('header'),sd=$('side');function p(){var hh=h?Math.round(h.getBoundingClientRect().height):0;if(c)c.style.top=hh+'px';var ch=c?Math.round(c.getBoundingClientRect().height):0;if(sd&&matchMedia('(min-width:761px)').matches)sd.style.top=(hh+ch+6)+'px';}p();addEventListener('resize',p);addEventListener('load',p);})();
 const ADMIN=new URLSearchParams(location.search).get('admin')==='1';
 const HUE_SW={red:'#c33',orange:'#d73',yellow:'#cb2',green:'#4a4',teal:'#2a9',blue:'#36c',purple:'#84c',magenta:'#c4a',pink:'#e79',neutral:'#888',white:'#eee',black:'#222'};
