@@ -4,6 +4,21 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0028 — 2026-07-19
+
+Shipped — **mobile DECK collection grid now mirrors the landing page** (deck-only: `css/deck.css` + rebuilt `deck/index.html`). Per Nick: the board still looked messy; make it look like the landing on mobile, keep the close.
+
+- Added a `@media(max-width:500px)` block: `#board-grid` → `grid-template-columns:1fr` (one full-width column) with `gap:var(--gap-rows)` (the landing's airy 45px row gap, was a tight 10px 2-up).
+- `.btile .bcap` on phones → full color (`var(--fg)`, was `--dim`), `white-space:normal` so the `CLIENT | TITLE` caption wraps and shows in full below the still (like the landing card caption), instead of the truncated 2-up tile label.
+- Matches the landing breakpoints exactly: 1-col ≤500px, 2-col 501–760px (unchanged), auto-fill above.
+- Kept the header from v2026.0026 — `[ close ]` top-right, actions stacked down the left.
+
+Verified headless @390 (chromium, http, 4 stills): board grid = single 360px column, all tiles left-aligned full-width, row gap 45px, caption full-color + wrapping, close at top-right (top15/right375).
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation. Possible: bump the remaining icon/admin sizes if Nick wants literal type uniformity.
+
+---
+
 ## website 2026.0027 — 2026-07-19
 
 Shipped — **(a) overlay `+` back over the image (bottom-right), (b) site-wide type unified to 13px** (`css/main.css` + `css/deck.css` + `_build/deck_extras.html` + rebuilt `deck/index.html` + regenerated site HTML for the main.css cache-bust token).

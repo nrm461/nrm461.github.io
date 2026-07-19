@@ -265,3 +265,10 @@ body.mobile .cell.picked .addbtn{background:var(--fg)}
 	#board-acts{margin-left:0;width:100%;flex-direction:column;align-items:flex-start;gap:12px;margin-top:8px}
 	#board-close{position:absolute;top:0;right:0}
 }
+/* phones: mirror the landing grid — ONE full-width column, the landing's airy row gap,
+   and a clean full-color caption below each still that can wrap (not the tight 2-up tiles).
+   Same 1-col / 501-760 2-col breakpoints as .page-index .module-videos (Nick 2026-07-19). */
+@media(max-width:500px){
+	#board-grid{grid-template-columns:1fr;gap:var(--gap-rows)}
+	.btile .bcap{color:var(--fg);white-space:normal;overflow:visible;text-overflow:clip;padding-top:var(--gap-small)}
+}
