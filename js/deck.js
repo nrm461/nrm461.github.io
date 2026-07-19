@@ -167,6 +167,9 @@ function buildSidebar(){
 }
 function buildChips(){
 	const c=$('chips'); c.innerHTML='';
+	const anyF = !!state.q || state.qs.length>0 || !!state.pick || SECTIONS.some(s=>state.sets[s.key]&&state.sets[s.key].size);
+	/* results count now rides on the tag line (first item), not under the search box */
+	if(anyF||curProject){ const cnt=document.createElement('span'); cnt.className='chip-count'; cnt.innerHTML='<b>'+shown.length.toLocaleString()+'</b> result'+(shown.length===1?'':'s'); c.appendChild(cnt); }
 	const add=(label,val,off)=>{const el=document.createElement('span');el.className='chip';el.innerHTML=label+': <b>'+val+'</b><span class="x">&#10005;</span>';el.querySelector('.x').onclick=off;c.appendChild(el);};
 	state.qs.forEach((q,i)=>add('Search',q,()=>{state.qs.splice(i,1);apply();}));
 	if(state.q) add('Search',state.q,()=>{state.q='';$('search').value='';apply();});
@@ -273,8 +276,6 @@ function apply(){
 	if(state.sort==='hue')shown.sort((a,b)=>(a.s<12)-(b.s<12)||a.h-b.h||a.lum-b.lum);
 	else if(state.sort==='lum')shown.sort((a,b)=>a.lum-b.lum);
 	else if(state.sort==='shuffle')shown.sort((a,b)=>a.rnd-b.rnd);
-	const nf=new Set(shown.map(x=>x.slug)).size;
-		$('showing').innerHTML=(anyFilter||curProject)?('<b>'+shown.length.toLocaleString()+'</b> result'+(shown.length===1?'':'s')):'';
 		$('empty').style.display=shown.length?'none':'block';
 		window.scrollTo(0,0); resetGrid(); buildChips(); renderProjectHeader();
 		/* perf: paint the grid first; build the heavy facet-count sidebar off the critical path (coalesced) */

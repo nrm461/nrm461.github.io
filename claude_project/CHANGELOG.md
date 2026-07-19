@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0017 — 2026-07-19
+
+Shipped — deck ARCHIVE top-band alignment cleanup (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_main.html` + rebuilt `deck/index.html`).
+
+Nick: the top area "jumps around a lot" — search bar looked low, the results count sat on its own line under the search, and turning a filter on dropped the thumbnails down. Fixed all three:
+
+- **Results count moved to the tag line.** The `#showing` span (under the search box) was removed from `deck_main.html`; `buildChips` now renders the count as the first item on the chips row (`.chip-count`, e.g. `301 results  [ Color: Mixed × ]  clear all`). `apply()` no longer writes `#showing`.
+- **Search + tag line on the same line.** `#ctrl` and `#chips` both use `padding:0 0 12px` and start at the same `#deckrow` top; each is a 29–30px `align-items:center` band, so the search underline and the chips/count baseline-align across the two columns (was: search ~14px low, count on a wrapped 2nd line).
+- **Grid no longer jumps when filters toggle.** `#chips` now reserves a FIXED `min-height:30px` (border-box) always, replacing `#chips:empty{padding:0}`. The thumbnail grid top is now constant (~108px) whether 0 or N filters are active — before, adding the first filter grew the empty-height chips row and pushed every thumbnail down. Verified headless @1440 (grid top 107 unfiltered vs 108 filtered — 1px) and @390 (count on tag line, no errors).
+
+Open threads: unchanged. Minor: at 501–760px (tablet) FILTERS sits centered at the right end of the nav row; desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0016 — 2026-07-19
 
 Shipped — two cosmetic follow-ups to 2026.0015 (deck-only: `js/deck.js` + `css/deck.css` + rebuilt `deck/index.html`).

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <link rel="stylesheet" href="../css/main.css?v=1784419534">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../css/deck.css?v=5dcccb2f3f">
+<link rel="stylesheet" href="../css/deck.css?v=29a9892b0e">
 </head>
 <body class="page-deck">
 <div id="content-wrapper">
@@ -21,7 +21,6 @@
 		<div id="leftcol">
 			<div id="ctrl">
 				<span id="searchwrap"><span id="termcur">&#9611;</span><input id="search" type="search" placeholder="Search 6,236 stills &mdash; try &ldquo;aerial&rdquo;, &ldquo;neon&rdquo;, &ldquo;beach&rdquo;&hellip;" autocomplete="off"></span>
-				<span id="showing"></span>
 			</div>
 			<div id="side">
 				<div id="sidehead"><span class="sh-r"><button id="sideclose">&#10005;</button></span></div>
@@ -243,6 +242,9 @@ function buildSidebar(){
 }
 function buildChips(){
 	const c=$('chips'); c.innerHTML='';
+	const anyF = !!state.q || state.qs.length>0 || !!state.pick || SECTIONS.some(s=>state.sets[s.key]&&state.sets[s.key].size);
+	/* results count now rides on the tag line (first item), not under the search box */
+	if(anyF||curProject){ const cnt=document.createElement('span'); cnt.className='chip-count'; cnt.innerHTML='<b>'+shown.length.toLocaleString()+'</b> result'+(shown.length===1?'':'s'); c.appendChild(cnt); }
 	const add=(label,val,off)=>{const el=document.createElement('span');el.className='chip';el.innerHTML=label+': <b>'+val+'</b><span class="x">&#10005;</span>';el.querySelector('.x').onclick=off;c.appendChild(el);};
 	state.qs.forEach((q,i)=>add('Search',q,()=>{state.qs.splice(i,1);apply();}));
 	if(state.q) add('Search',state.q,()=>{state.q='';$('search').value='';apply();});
@@ -349,8 +351,6 @@ function apply(){
 	if(state.sort==='hue')shown.sort((a,b)=>(a.s<12)-(b.s<12)||a.h-b.h||a.lum-b.lum);
 	else if(state.sort==='lum')shown.sort((a,b)=>a.lum-b.lum);
 	else if(state.sort==='shuffle')shown.sort((a,b)=>a.rnd-b.rnd);
-	const nf=new Set(shown.map(x=>x.slug)).size;
-		$('showing').innerHTML=(anyFilter||curProject)?('<b>'+shown.length.toLocaleString()+'</b> result'+(shown.length===1?'':'s')):'';
 		$('empty').style.display=shown.length?'none':'block';
 		window.scrollTo(0,0); resetGrid(); buildChips(); renderProjectHeader();
 		/* perf: paint the grid first; build the heavy facet-count sidebar off the critical path (coalesced) */
