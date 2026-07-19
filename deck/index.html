@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <link rel="stylesheet" href="../css/main.css?v=1784425881">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../css/deck.css?v=d2864bbda4">
+<link rel="stylesheet" href="../css/deck.css?v=38156d6205">
 </head>
 <body class="page-deck">
 <div id="content-wrapper">
@@ -21,10 +21,10 @@
 		<div id="leftcol">
 			<div id="ctrl">
 				<span id="searchwrap"><span id="termcur">&#9611;</span><input id="search" type="search" placeholder="Search 6,236 stills &mdash; try &ldquo;aerial&rdquo;, &ldquo;neon&rdquo;, &ldquo;beach&rdquo;&hellip;" autocomplete="off"></span>
-				<button id="boardbtn" type="button">Deck</button>
 			</div>
 			<div id="side">
 				<div id="sidehead"><span class="sh-r"><button id="sideclose">&#10005;</button></span></div>
+				<button id="boardbtn" type="button">Deck</button>
 				<label id="paltoggle"><input type="checkbox"><span>Show colour palette on detail</span></label>
 				<div id="secs"></div>
 			</div>
@@ -594,7 +594,7 @@ function renderBoard(){
 		g.appendChild(t);
 	});
 }
-function openBoard(){ boardStatus(''); renderBoard(); $('board').classList.add('open'); document.body.style.overflow='hidden'; }
+function openBoard(){ if(isNarrow()&&$('side').classList.contains('open')) closeSide(); boardStatus(''); renderBoard(); $('board').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeBoard(){ $('board').classList.remove('open'); if(!$('ov').classList.contains('open')&&!($('vov')&&$('vov').classList.contains('open')))document.body.style.overflow=''; }
 if($('boardbtn'))$('boardbtn').onclick=openBoard;
 if($('board-close'))$('board-close').onclick=closeBoard;

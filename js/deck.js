@@ -501,7 +501,7 @@ function renderBoard(){
 		g.appendChild(t);
 	});
 }
-function openBoard(){ boardStatus(''); renderBoard(); $('board').classList.add('open'); document.body.style.overflow='hidden'; }
+function openBoard(){ if(isNarrow()&&$('side').classList.contains('open')) closeSide(); boardStatus(''); renderBoard(); $('board').classList.add('open'); document.body.style.overflow='hidden'; }
 function closeBoard(){ $('board').classList.remove('open'); if(!$('ov').classList.contains('open')&&!($('vov')&&$('vov').classList.contains('open')))document.body.style.overflow=''; }
 if($('boardbtn'))$('boardbtn').onclick=openBoard;
 if($('board-close'))$('board-close').onclick=closeBoard;

@@ -210,10 +210,15 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 	#fbtn::before,#fbtn::after{content:none}   /* no bracket reservation -> label aligns with the nav items */
 }
 /* ===== BOARD — visitor's personal still collection ===== */
-#boardbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;font-family:inherit;white-space:nowrap}
+/* The Deck button lives INSIDE #side (the filter rail / mobile FILTERS drawer), so on
+   mobile it sits in the drawer (per Nick 2026-07-19) and on desktop it reads as the top
+   item of the left-column rail, directly under the search — same left edge as before. */
+#boardbtn{display:block;width:-webkit-fit-content;width:fit-content;text-align:left;cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;font-family:inherit;white-space:nowrap}
 #boardbtn::before{content:'[ '}
 #boardbtn::after{content:' ]'}
 #boardbtn:hover{text-decoration:underline}
+@media(min-width:761px){ #boardbtn{margin:0 0 14px} }               /* desktop: gap to the filter sections below */
+@media(max-width:760px){ #boardbtn{width:100%;padding:10px 0;margin:2px 0 6px;border-bottom:1px solid var(--line)} }  /* mobile: a header row of the drawer */
 /* + toggle on each grid thumbnail — bottom-right, appears on hover (always on touch) */
 .cell .addbtn{position:absolute;bottom:5px;right:5px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font:15px/1 var(--font);cursor:pointer;display:none;align-items:center;justify-content:center;padding:0;z-index:2}
 .cell .addbtn::before{content:'+'}

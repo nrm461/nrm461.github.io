@@ -4,6 +4,21 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0023 — 2026-07-19
+
+Shipped — **mobile: the Deck (still-collector) button moved out of the search row and into the FILTERS drawer** (deck-only: `_build/deck_main.html` + `css/deck.css` + `js/deck.js` + rebuilt `deck/index.html`). Per Nick: on mobile the `[ Deck (N) ]` button sat after the search bar; he wanted it inside the FILTERS tab.
+
+- **Markup:** `#boardbtn` moved from `#ctrl` (the sticky search row) into `#side` (the filter rail / mobile FILTERS drawer), as the first item after `#sidehead`.
+- **Why this keeps desktop identical:** on desktop `#leftcol` stacks `#ctrl` (search) then `#side` (rail) in a 210px column, so the button still renders directly under the search, same left edge (verified L=15 == search L=15 @1039). On mobile `#ctrl` is the full-width sticky search bar and `#side` is the off-canvas drawer, so the button now lives in the drawer.
+- **CSS:** `#boardbtn` → `display:block`; desktop `margin:0 0 14px` (gap to the filter sections); mobile `width:100%;padding:10px 0;border-bottom` so it reads as a header row of the drawer.
+- **JS:** `openBoard()` now closes the drawer first on mobile (`if(isNarrow()&&#side.open) closeSide()`), so tapping Deck inside FILTERS dismisses the drawer and opens the board.
+
+Verified headless (chromium): desktop @1039 — Deck at top of rail, left-aligned under search. Mobile @390 — drawer closed → Deck off-canvas (out of the search row); tap FILTERS → Deck onscreen inside the drawer (L=16); tap Deck → board opens AND drawer closes. fbtn handler wired.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation; overlay `+` in letterbox bar on non-16:9 stills.
+
+---
+
 ## website 2026.0022 — 2026-07-19
 
 Shipped — **detail-page top-nav pinned to the content column, one consistent layout at every width** (`css/main.css` + `css/deck.css` + rebuilt `deck/index.html`). From Nick: on wide desktop the `< CLOSE >` bar "jumps around" and the prev/next arrows "go as wide as the page wants."
