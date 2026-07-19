@@ -61,7 +61,7 @@ function inBoard(x){ return boardSet.has(x.key); }
 function boardFrames(){ return [...boardSet].map(k=>byKey[k]).filter(Boolean); }
 function updateBoardUI(){
 	const n=boardSet.size, bb=$('boardbtn');
-	if(bb){ bb.textContent='Board'+(n?' ('+n+')':''); bb.classList.toggle('has',n>0); }
+	if(bb){ bb.textContent='Deck'+(n?' ('+n+')':''); bb.classList.toggle('has',n>0); }
 	$('grid').querySelectorAll('.cell').forEach(c=>c.classList.toggle('picked',boardSet.has(c.dataset.key)));
 }
 function toggleBoard(x){ if(boardSet.has(x.key))boardSet.delete(x.key); else boardSet.add(x.key); saveBoard(); updateBoardUI(); }
@@ -240,7 +240,7 @@ function buildRow(ri){
 		if(inBoard(x)) cell.classList.add('picked');
 		if(ADMIN){const f=fmtOf(x); if(f)cell.dataset.fmt=FMT_LBL[f];}
 		const img=document.createElement('img'); img.loading='lazy'; img.decoding='async'; img.src=src(x); cell.appendChild(img);
-		const ab=document.createElement('button'); ab.className='addbtn'; ab.type='button'; ab.title='Add to board';
+		const ab=document.createElement('button'); ab.className='addbtn'; ab.type='button'; ab.title='Add to deck';
 		ab.onclick=e=>{ e.stopPropagation(); toggleBoard(x); };
 		cell.appendChild(ab);
 		cell.onclick=()=>openOv(idx);
@@ -376,7 +376,7 @@ function justify(el,list,targetH){
 function openOv(i,list){
 	ovList=list||shown; ovIdx=i; const x=ovList[i]; if(!x) return;
 	$('ovtitle').textContent=x.label;
-		{const ba=$('ovadd'); if(ba){ const lbl=()=>ba.textContent=inBoard(x)?'✓ on board':'+ board'; lbl(); ba.classList.toggle('on',inBoard(x)); ba.onclick=e=>{e.preventDefault(); toggleBoard(x); lbl(); ba.classList.toggle('on',inBoard(x));}; }}
+		{const ba=$('ovadd'); if(ba){ ba.classList.toggle('on',inBoard(x)); ba.title=inBoard(x)?'Remove from deck':'Add to deck'; ba.onclick=e=>{e.preventDefault(); toggleBoard(x); ba.classList.toggle('on',inBoard(x)); ba.title=inBoard(x)?'Remove from deck':'Add to deck';}; }}
 		$('ovimg').src=src(x);
 		$('ovpal').innerHTML=x.pal.map((p,k)=>'<span style="background:#'+p+'" data-h="#'+p+'"></span>').join('');
 		$('ovpal').querySelectorAll('span').forEach(el=>el.onclick=()=>navigator.clipboard.writeText(el.dataset.h));
@@ -507,12 +507,16 @@ if($('boardbtn'))$('boardbtn').onclick=openBoard;
 if($('board-close'))$('board-close').onclick=closeBoard;
 if($('board'))$('board').addEventListener('click',e=>{if(e.target.id==='board')closeBoard();});
 document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&$('board')&&$('board').classList.contains('open')&&!$('ov').classList.contains('open')&&!($('vov')&&$('vov').classList.contains('open'))) closeBoard(); });
-if($('board-clear'))$('board-clear').onclick=()=>{ if(!boardSet.size)return; boardSet.clear(); saveBoard(); updateBoardUI(); renderBoard(); boardStatus('Board cleared.'); };
+if($('board-clear'))$('board-clear').onclick=()=>{ if(!boardSet.size)return; boardSet.clear(); saveBoard(); updateBoardUI(); renderBoard(); boardStatus('Deck cleared.'); };
+function copyText(t){
+	if(navigator.clipboard&&navigator.clipboard.writeText) return navigator.clipboard.writeText(t);
+	return new Promise((res,rej)=>{ try{ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.focus(); ta.select(); const ok=document.execCommand('copy'); ta.remove(); ok?res():rej(new Error('execCommand')); }catch(e){ rej(e); } });
+}
 if($('board-share'))$('board-share').onclick=async()=>{
-	if(!boardSet.size){boardStatus('Board is empty — add some stills first.');return;}
+	if(!boardSet.size){boardStatus('Deck is empty — add some stills first.');return;}
 	const url=boardLink();
-	try{ await navigator.clipboard.writeText(url); boardStatus('Link copied — anyone who opens it gets these '+boardSet.size+' stills added to their board.'); }
-	catch(e){ boardStatus('Copy failed. Link: '+url); }
+	try{ await copyText(url); boardStatus('Link copied — anyone who opens it gets these '+boardSet.size+' stills added to their deck.'); }
+	catch(e){ boardStatus('Copy this link: '+url); }
 };
 /* lazy-load heavy libs only on first download */
 function loadScript(u){ return new Promise((res,rej)=>{ const s=document.createElement('script'); s.src=u; s.onload=res; s.onerror=()=>rej(new Error('failed to load '+u)); document.head.appendChild(s); }); }
@@ -520,16 +524,19 @@ async function ensureJSZip(){ if(window.JSZip)return window.JSZip; await loadScr
 async function ensureJsPDF(){ if(window.jspdf&&window.jspdf.jsPDF)return window.jspdf.jsPDF; await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'); return window.jspdf.jsPDF; }
 function dl(blob,name){ const u=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=u; a.download=name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),4000); }
 if($('board-zip'))$('board-zip').onclick=async()=>{
-	const list=boardFrames(); if(!list.length){boardStatus('Board is empty.');return;}
+	const list=boardFrames(); if(!list.length){boardStatus('Deck is empty.');return;}
 	boardStatus('Preparing '+list.length+' images…');
 	try{
 		const JSZip=await ensureJSZip(); const zip=new JSZip(); let i=0;
 		for(const x of list){ const b=await (await fetch(src(x))).blob(); zip.file(x.slug+'-'+x.f+'.jpg',b); boardStatus('Zipping '+(++i)+'/'+list.length+'…'); }
-		const blob=await zip.generateAsync({type:'blob'}); dl(blob,'nickmetcalf-board.zip'); boardStatus('Downloaded '+list.length+' images.');
+		const blob=await zip.generateAsync({type:'blob'}); dl(blob,'nickmetcalf-deck.zip'); boardStatus('Downloaded '+list.length+' images.');
 	}catch(e){ boardStatus('Image download failed: '+e.message); }
 };
+/* draw each still to a canvas → JPEG data URL. same-origin, so no taint; passing a data URL to
+   addImage is far more reliable across jsPDF builds than passing a raw <img> (which silently failed live). */
+function imgData(x){ return new Promise(res=>{ const im=new Image(); im.onload=()=>{ try{ const w=im.naturalWidth||480,h=im.naturalHeight||270; const c=document.createElement('canvas'); c.width=w; c.height=h; c.getContext('2d').drawImage(im,0,0); res({url:c.toDataURL('image/jpeg',0.85),w,h}); }catch(e){ res(null); } }; im.onerror=()=>res(null); im.src=src(x); }); }
 if($('board-pdf'))$('board-pdf').onclick=async()=>{
-	const list=boardFrames(); if(!list.length){boardStatus('Board is empty.');return;}
+	const list=boardFrames(); if(!list.length){boardStatus('Deck is empty.');return;}
 	boardStatus('Building PDF…');
 	try{
 		const jsPDF=await ensureJsPDF();
@@ -537,28 +544,31 @@ if($('board-pdf'))$('board-pdf').onclick=async()=>{
 		const PW=297,PH=210,M=14;
 		doc.setFont('courier','normal');
 		doc.setFontSize(20); doc.text('NICK METCALF',M,M+7);
-		doc.setFontSize(9); doc.setTextColor(120); doc.text('COLOUR · BOARD',M,M+13);
+		doc.setFontSize(9); doc.setTextColor(120); doc.text('COLOUR · DECK',M,M+13);
 		doc.setTextColor(0); doc.setFontSize(9);
 		doc.text(list.length+' still'+(list.length===1?'':'s'),M,M+20);
 		doc.setTextColor(120); doc.text('nickmetcalf.com',M,PH-M); doc.setTextColor(0);
 		boardStatus('Loading images for PDF…');
-		const imgs=await Promise.all(list.map(x=>new Promise(res=>{const im=new Image();im.onload=()=>res(im);im.onerror=()=>res(null);im.src=src(x);})));
+		const imgs=await Promise.all(list.map(imgData));
 		const cols=3, gap=6, capH=7, cw=(PW-M*2-gap*(cols-1))/cols, ch=cw*9/16, rowH=ch+capH+gap;
 		const rowsPerPage=Math.max(1,Math.floor((PH-M*2)/rowH)), perPage=cols*rowsPerPage;
 		for(let i=0;i<list.length;i++){
 			const p=i%perPage; if(p===0) doc.addPage();
 			const col=p%cols, r=Math.floor(p/cols), x0=M+col*(cw+gap), y0=M+r*rowH, im=imgs[i], fr=list[i];
-			if(im){ const ar=fr.ratio||(im.width/im.height)||16/9; let dw=cw,dh=cw/ar; if(dh>ch){dh=ch;dw=ch*ar;} try{doc.addImage(im,'JPEG',x0+(cw-dw)/2,y0+(ch-dh)/2,dw,dh);}catch(e){} }
+			if(im){ const ar=(im.w/im.h)||fr.ratio||16/9; let dw=cw,dh=cw/ar; if(dh>ch){dh=ch;dw=ch*ar;} try{doc.addImage(im.url,'JPEG',x0+(cw-dw)/2,y0+(ch-dh)/2,dw,dh);}catch(e){} }
 			doc.setFontSize(6.2); doc.setTextColor(30);
 			doc.text(doc.splitTextToSize(fr.label.replace(/\s*\|\s*/g,'  |  '),cw),x0,y0+ch+3.5);
 		}
-		doc.save('nickmetcalf-board.pdf'); boardStatus('PDF downloaded ('+list.length+' stills).');
+		doc.save('nickmetcalf-deck.pdf'); boardStatus('PDF downloaded ('+list.length+' stills).');
 	}catch(e){ boardStatus('PDF failed: '+e.message); }
 };
-/* init: reflect saved board, absorb any shared ?board= link, auto-open if it carried new picks */
-const _sharedNew=ingestBoardParam();
+/* a shared link opened in an ALREADY-loaded tab only changes the hash (no reload) — catch it here too */
+window.addEventListener('hashchange',()=>{ if(/[#&]board=/.test(location.hash)){ ingestBoardParam(); updateBoardUI(); openBoard(); } });
+/* init: reflect saved deck, absorb any shared #board= link, auto-open the panel when a link was opened */
+const _hadParam=/[#&]board=/.test(location.hash)||/[?&]board=/.test(location.search);
+ingestBoardParam();
 updateBoardUI();
-if(_sharedNew) openBoard();
+if(_hadParam) openBoard();
 
 route();
 })();

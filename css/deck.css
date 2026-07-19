@@ -218,12 +218,12 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 	#fbtn::before,#fbtn::after{content:none}   /* no bracket reservation -> label aligns with the nav items */
 }
 /* ===== BOARD — visitor's personal still collection ===== */
-#boardbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;font-family:inherit;white-space:nowrap;margin-left:auto}
+#boardbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;font-family:inherit;white-space:nowrap}
 #boardbtn::before{content:'[ '}
 #boardbtn::after{content:' ]'}
 #boardbtn:hover{text-decoration:underline}
-/* + toggle on each grid cell */
-.cell .addbtn{position:absolute;top:5px;right:5px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font:15px/1 var(--font);cursor:pointer;display:none;align-items:center;justify-content:center;padding:0;z-index:2}
+/* + toggle on each grid thumbnail — bottom-right, appears on hover (always on touch) */
+.cell .addbtn{position:absolute;bottom:5px;right:5px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font:15px/1 var(--font);cursor:pointer;display:none;align-items:center;justify-content:center;padding:0;z-index:2}
 .cell .addbtn::before{content:'+'}
 .cell:hover .addbtn{display:flex}
 .cell.picked{outline:2px solid var(--fg);outline-offset:-2px}
@@ -231,11 +231,13 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 .cell.picked .addbtn::before{content:'\2713'}
 body.mobile .cell .addbtn{display:flex;background:rgba(0,0,0,.45)}
 body.mobile .cell.picked .addbtn{background:var(--fg)}
-/* overlay detail: + board next to title */
-#ov .module-project_info{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
-#ovadd{cursor:pointer;color:var(--dim);text-decoration:none;font-size:12px;white-space:nowrap}
-#ovadd:hover{text-decoration:underline}
-#ovadd.on{color:var(--fg)}
+/* overlay detail: glyph pinned top-right over the image */
+#ovimgwrap{position:relative;width:100%}
+#ovadd{position:absolute;top:10px;right:10px;width:30px;height:30px;border:0;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;font:19px/1 var(--font);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;z-index:3}
+#ovadd::before{content:'+'}
+#ovadd:hover{background:rgba(0,0,0,.75)}
+#ovadd.on{background:#fff;color:#000}
+#ovadd.on::before{content:'\2713'}
 /* board overlay */
 #board{position:fixed;inset:0;background:var(--color-bg);z-index:45;display:none;overflow-y:auto}
 #board.open{display:block}

@@ -4,6 +4,22 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0021 — 2026-07-19
+
+Shipped — Deck-collector polish + two real bug fixes, from Nick's feedback (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_main.html` + `_build/deck_extras.html` + rebuilt `deck/index.html`).
+
+- **Renamed BOARD → DECK** everywhere user-facing (button, panel title, empty text, PDF cover `COLOUR · DECK`, filenames `nickmetcalf-deck.{pdf,zip}`, tooltips/status). Internal ids (`#board*`, `boardSet`, `localStorage['deck_board']`) kept to avoid churn/migration.
+- **Add-glyph repositioned**: thumbnail `+` moved to **bottom-right** (hover-reveal on desktop, always-on touch). Detail overlay: the `+ board` text link by the title is gone — replaced by a **circular glyph pinned top-right over the image** (`#ovimgwrap` relative wrapper + `#ovadd` absolute; `+` → `✓` filled when on).
+- **Deck button left-justified**: dropped `margin-left:auto` so `[ deck (N) ]` wraps under the search aligned to the filter-menu left edge (verified btnLeft==searchLeft==menuLeft==100 @1440), instead of floating at the column's right.
+- **FIX — share link didn't work**: opening a share link in an already-loaded tab only changes the hash (no reload), so init never ran. Added a `hashchange` listener that ingests `#board=`, merges, opens the panel, and strips the fragment. Also added a `document.execCommand('copy')` clipboard fallback (+ show-the-link-in-status fallback) for browsers where `navigator.clipboard` is blocked. Verified both same-tab (hashchange) and fresh-load ingest.
+- **FIX — PDF downloaded but images weren't embedded**: `addImage(<img>, …)` silently threw on the live jsPDF build (caught+swallowed → captions only). Now each still is drawn to a canvas → JPEG **data URL** (same-origin, no taint) and that string is passed to `addImage` — reliable across jsPDF versions. Verified the output PDF now contains N image XObjects (5/5, 141KB).
+
+Verified headless @1440 (chromium, local JSZip/jsPDF injected since cdnjs is blocked in the container): all glyph positions, label rename, left-justify geometry, PDF image-embed count, zip, and both share-link paths — no page errors.
+
+Open threads: unchanged. Minor unchanged (tablet FILTERS placement; desktop search placeholder truncation). Deck-collector follow-ups still open: hi-res still source for downloads; optional persistent/named decks via C41 Vercel/Neon. Note: on ultrawide/4:3 stills the overlay `+` sits in the detail frame's letterbox bar (frame is forced 16:9) — corner of the image card, by design.
+
+---
+
 ## website 2026.0020 — 2026-07-19
 
 Shipped — **BOARD**: a visitor-side still collector on the deck (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_main.html` + `_build/deck_extras.html` + rebuilt `deck/index.html`). Fully client-side — no login, no backend.
