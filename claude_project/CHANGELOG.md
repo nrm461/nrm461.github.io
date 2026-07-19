@@ -4,6 +4,16 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0018 — 2026-07-19
+
+Shipped — deck search-field vertical alignment (deck-only: `css/deck.css` + rebuilt `deck/index.html`).
+
+Follow-up to 2026.0017: search still "felt low." Measured it — the search text center sat at 91.5px vs the tag-line (`301 results …`) center at 87px (~4.5px low), and the underline hung all the way down at 106px. Fix: `#search` padding `6px 2px 7px` → `2px 2px 4px`, which raises the text center to 87.5 (matches the tag line) and pulls the underline up to ~99. Verified headless @1440: search text and the chips/count line now share a baseline.
+
+Open threads: unchanged.
+
+---
+
 ## website 2026.0017 — 2026-07-19
 
 Shipped — deck ARCHIVE top-band alignment cleanup (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_main.html` + rebuilt `deck/index.html`).
