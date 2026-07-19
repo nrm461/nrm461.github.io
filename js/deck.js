@@ -83,7 +83,7 @@ const SECTIONS=[
  {key:'pp',label:'Number of People',ai:1,hide:1,get:x=>x.pp!==''?[String(x.pp)]:[],order:['0','1','2','3','4','5','6']},
  {key:'fl',label:'Commercial Flags',ai:1,multi:1,get:x=>x.fl,order:['prod','food','bev','veh','logo','hand','anim','scr','bty','sprt','dnc','drv']},
 ];
-const state={sets:{},pick:null,q:'',sort:'shuffle'};
+const state={sets:{},pick:null,q:'',qs:[],sort:'shuffle'};
 SECTIONS.forEach(s=>{if(s.type!=='picker')state.sets[s.key]=new Set();});
 const filmLabel={}; DATA.films.forEach(F=>filmLabel[F.slug]=F.label);
 let filmCr={}; try{ filmCr=await _pCR; }catch(e){}
@@ -97,6 +97,7 @@ function near(pal,rgb,tol){for(const p of pal){const r=parseInt(p.slice(0,2),16)
 function matchesQ(x,q){ if(x.label.toLowerCase().includes(q))return true; for(const k of x.kw)if(k.includes(q))return true; return false; }
 function passes(x,skipKey){
 	if(state.q && !matchesQ(x,state.q)) return false;
+	for(const q of state.qs) if(!matchesQ(x,q)) return false;
 	if(state.pick && skipKey!=='pick' && !near(x.pal,state.pick,+($('tol')?.value||60))) return false;
 	for(const s of SECTIONS){
 		if(s.type==='picker'||s.key===skipKey) continue;
@@ -167,6 +168,7 @@ function buildSidebar(){
 function buildChips(){
 	const c=$('chips'); c.innerHTML='';
 	const add=(label,val,off)=>{const el=document.createElement('span');el.className='chip';el.innerHTML=label+': <b>'+val+'</b><span class="x">&#10005;</span>';el.querySelector('.x').onclick=off;c.appendChild(el);};
+	state.qs.forEach((q,i)=>add('Search',q,()=>{state.qs.splice(i,1);apply();}));
 	if(state.q) add('Search',state.q,()=>{state.q='';$('search').value='';apply();});
 	if(state.pick) add('Color match','#'+state.pick.map(v=>v.toString(16).padStart(2,'0')).join(''),()=>{state.pick=null;$('pickon')&&$('pickon').classList.remove('on');apply();});
 	SECTIONS.forEach(s=>{ if(s.type==='picker')return; if(s.key==='film'&&curProject)return; state.sets[s.key].forEach(v=>add(s.label,optName(s,v),()=>{state.sets[s.key].delete(v);apply();})); });
@@ -237,13 +239,13 @@ let rto; window.addEventListener('resize',()=>{ clearTimeout(rto); rto=setTimeou
 let curProject=null;
 function projSlug(){ const m=location.hash.match(/^#\/movie\/([^~\/?]+)/); return m?decodeURIComponent(m[1]):null; }
 function goProject(slug,label){ const nm=(label||slug).replace(/\s*\|\s*/g,' '); location.hash='#/movie/'+slug+'~'+encodeURIComponent(nm).replace(/%20/g,'+'); }
-function exitProject(){ curProject=null; SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear()); state.pick=null;$('pickon')&&$('pickon').classList.remove('on'); state.q='';$('search').value=''; if(location.hash) history.replaceState(null,'',location.pathname+location.search); apply(); }
+function exitProject(){ curProject=null; SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear()); state.pick=null;$('pickon')&&$('pickon').classList.remove('on'); state.q='';state.qs=[];$('search').value=''; if(location.hash) history.replaceState(null,'',location.pathname+location.search); apply(); }
 function route(){
 	const slug=projSlug();
 	if(slug!==null && filmLabel[slug]!==undefined){
 		curProject=slug;
 		SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());
-		state.pick=null;$('pickon')&&$('pickon').classList.remove('on'); state.q='';$('search').value='';
+		state.pick=null;$('pickon')&&$('pickon').classList.remove('on'); state.q='';state.qs=[];$('search').value='';
 		state.sets['film'].add(slug);
 	} else curProject=null;
 	apply();
@@ -264,7 +266,7 @@ function renderProjectHeader(){
 }
 let sidebarQueued=false;
 function apply(){
-	const anyFilter = !!state.q || !!state.pick || SECTIONS.some(s=>state.sets[s.key]&&state.sets[s.key].size);
+	const anyFilter = !!state.q || state.qs.length>0 || !!state.pick || SECTIONS.some(s=>state.sets[s.key]&&state.sets[s.key].size);
 	shown=FRAMES.filter(x=>passes(x,null));
 	landingActive = (!anyFilter && !curProject && landingSet.size>0 && !landingDismissed);
 	if(landingActive) shown=shown.filter(x=>landingSet.has(x.slug));
@@ -281,9 +283,15 @@ function apply(){
 }
 {const _s=$('sort'); if(_s){_s.value=state.sort; _s.onchange=e=>{state.sort=e.target.value;apply();};}}
 let qto; $('search').oninput=e=>{clearTimeout(qto);qto=setTimeout(()=>{state.q=e.target.value.trim().toLowerCase();apply();},250);};
+/* Enter commits the typed text as a standalone search chip (AND) and clears the box,
+   so Nick can stack multiple terms. Each committed term is removable via its chip. */
+$('search').addEventListener('keydown',e=>{ if(e.key!=='Enter')return; e.preventDefault(); clearTimeout(qto);
+	const v=e.target.value.trim().toLowerCase();
+	if(v&&!state.qs.includes(v)) state.qs.push(v);
+	state.q=''; e.target.value=''; apply(); });
 /* blinking terminal cursor on the search field — shown only when empty & unfocused */
 (function(){var sw=$('searchwrap'),si=$('search');if(!sw||!si)return;function tog(){sw.classList.toggle('typing',document.activeElement===si||si.value.length>0);}si.addEventListener('focus',tog);si.addEventListener('blur',tog);si.addEventListener('input',tog);tog();})();
-function clearAll(){SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;$('pickon')&&$('pickon').classList.remove('on');state.q='';$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();}
+function clearAll(){SECTIONS.forEach(s=>state.sets[s.key]&&state.sets[s.key].clear());state.pick=null;$('pickon')&&$('pickon').classList.remove('on');state.q='';state.qs=[];$('search').value='';curProject=null;landingDismissed=false;if(location.hash)history.replaceState(null,'',location.pathname+location.search);apply();}
 let showPal=false;
 function isNarrow(){return matchMedia('(max-width:760px)').matches}
 function railReset(){ if(!isNarrow()) requestAnimationFrame(()=>{ if(typeof resetGrid==='function') resetGrid(); }); }
@@ -369,10 +377,15 @@ function openOv(i,list){
 				['Format',fmtOf(x)?low(FMT_LBL[fmtOf(x)]):''],
 			];
 			let meta='<p class="spacer">&nbsp;</p>'+rows.filter(r=>r[1]).map(r=>'<p><span class="ml">'+r[0]+':</span> <span class="mv">'+r[1]+'</span></p>').join('');
-			if(x.page&&x.pslug)meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch ]</a></p>';
+			const _vid=(window.DECK_VIMEO||{})[x.pslug];
+			if(x.page&&x.pslug){
+				if(_vid) meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" id="ovwatch" href="#">[ watch ]</a></p>';
+				else meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch ]</a></p>';
+			}
 			$('ovmeta').innerHTML=meta;
-			$('ovkw').innerHTML=x.kw.length?'<p class="ovkw">'+x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' ')+'</p>':'';
-			$('ovkw').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{state.q=el.textContent;$('search').value=el.textContent;closeOv();apply();});
+			{const _w=$('ovwatch'); if(_w)_w.onclick=e=>{e.preventDefault();openVimeo(_vid);};}
+			$('ovkw').innerHTML='<p class="ovkw"><span class="ml">tags:</span> '+(x.kw.length?x.kw.map(k=>'<span class="kwtag">'+k+'</span>').join(' '):'<span class="mv">&mdash;</span>')+'</p>';
+			$('ovkw').querySelectorAll('.kwtag').forEach(el=>el.onclick=()=>{const t=el.textContent.trim().toLowerCase();if(t&&!state.qs.includes(t))state.qs.push(t);state.q='';$('search').value='';closeOv();apply();});
 	// admin per-still format override
 	const adm=$('ovadm');
 	if(ADMIN){
@@ -387,11 +400,22 @@ function openOv(i,list){
 	$('ov').classList.add('open'); $('ov').scrollTop=0; document.body.style.overflow='hidden';
 }
 function closeOv(){$('ov').classList.remove('open');document.body.style.overflow='';}
+/* [ watch ] -> play the film's Vimeo in an on-page lightbox (same minimal-chrome params as
+   the project pages) instead of routing to the hidden project page. */
+function openVimeo(vid){ if(!vid)return; const box=$('vovbox'); if(!box)return;
+	let params='badge=0&autopause=0&player_id=0&title=0&byline=0&portrait=0&vimeo_logo=0&pip=0&cc=0&transcript=0&airplay=0&chromecast=0&watch_full_video=0&dnt=1';
+	if(!document.body.classList.contains('mobile')) params+='&autoplay=1';
+	box.innerHTML='<iframe src="https://player.vimeo.com/video/'+vid+'?'+params+'" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" title="video"></iframe>';
+	$('vov').classList.add('open'); document.body.style.overflow='hidden';
+}
+function closeVimeo(){ const v=$('vov'); if(!v)return; v.classList.remove('open'); $('vovbox').innerHTML=''; if(!$('ov').classList.contains('open'))document.body.style.overflow=''; }
+if($('vovclose'))$('vovclose').onclick=closeVimeo;
+if($('vov'))$('vov').addEventListener('click',e=>{if(e.target.id==='vov')closeVimeo();});
 $('close').onclick=closeOv;
 $('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeOv();});
 $('prev').onclick=()=>openOv((ovIdx-1+ovList.length)%ovList.length,ovList);
 $('next').onclick=()=>openOv((ovIdx+1)%ovList.length,ovList);
-document.addEventListener('keydown',e=>{ if(!$('ov').classList.contains('open'))return; if(e.key==='Escape')closeOv(); if(e.key==='ArrowLeft')$('prev').click(); if(e.key==='ArrowRight')$('next').click(); });
+document.addEventListener('keydown',e=>{ if($('vov')&&$('vov').classList.contains('open')){ if(e.key==='Escape')closeVimeo(); return; } if(!$('ov').classList.contains('open'))return; if(e.key==='Escape')closeOv(); if(e.key==='ArrowLeft')$('prev').click(); if(e.key==='ArrowRight')$('next').click(); });
 /* swipe left/right in the detail overlay -> next/prev still (horizontal beats vertical scroll) */
 let _tsx=0,_tsy=0,_tst=0;
 $('ov').addEventListener('touchstart',e=>{const t0=e.changedTouches[0];_tsx=t0.clientX;_tsy=t0.clientY;_tst=e.timeStamp;},{passive:true});

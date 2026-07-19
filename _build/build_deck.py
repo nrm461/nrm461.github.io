@@ -34,6 +34,17 @@ import json as _json
 _landing = [p['slug'] for p in B.visible_projects() if p.get('selected')]
 deck_js = 'window.DECK_LANDING=' + _json.dumps(_landing) + ';\n' + deck_js
 
+# Vimeo ID map keyed by project slug (= deck film page_slug) so the deck detail's
+# [ watch ] plays the video in an on-page overlay instead of routing to the (hidden) project page.
+_projraw = _json.load(open(os.path.join(ROOT, 'data', 'projects.json'), encoding='utf-8'))
+_vmap = {}
+for _p in _projraw:
+    _v = (_p.get('vimeo') or '').strip()
+    _m = re.search(r'(\d{5,})', _v)
+    if _p.get('slug') and _m:
+        _vmap[_p['slug']] = _m.group(1)
+deck_js = 'window.DECK_VIMEO=' + _json.dumps(_vmap) + ';\n' + deck_js
+
 inline = (f'<meta name="robots" content="noindex">\n'
           f'<link rel="stylesheet" href="../css/deck.css?v={DECK_CSS_VER}">\n')
 

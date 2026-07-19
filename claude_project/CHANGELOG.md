@@ -4,6 +4,18 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0015 — 2026-07-19
+
+Shipped — three deck detail/archive refinements (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_extras.html` + `_build/build_deck.py` + rebuilt `deck/index.html`).
+
+- **Multi-term search.** The search box now supports stacking terms: typing still filters live, but pressing **Enter** commits the current text as its own removable `Search: …` chip (AND-combined) and clears the box so another term can be added. `state.qs[]` holds committed terms; `state.q` is the live one. Clicking a keyword `.kwtag` in the detail view now also pushes a committed chip instead of replacing the live query. `clearAll`/`exitProject`/`route` reset `qs`.
+- **Detail "tags:" line — fixed height.** The keyword list (`#ovkw`, which sits above the credits) now always renders, prefixed with a `tags:` label (em-dash when empty), and is locked to a **fixed 2-line height** (`height:2.9em` + `-webkit-line-clamp:2`, verified 37.69px constant across stills) so the credits block below never jumps when stepping between stills with different tag counts.
+- **`[ watch ]` → on-page Vimeo overlay.** Clicking watch no longer routes to the (hidden, `noindex`) project page — it opens a black full-screen lightbox (`#vov`) that embeds the film's Vimeo player with the same minimal-chrome params as the project pages (autoplay on desktop, muted-load on mobile). Vimeo IDs are injected at build as `window.DECK_VIMEO` (`build_deck.py` parses `data/projects.json`, keyed by `page_slug`). Esc / [ CLOSE ] / backdrop click closes it and stops playback, leaving the detail overlay open underneath. If a film has no Vimeo ID mapped, `[ watch ]` falls back to the old project-page link. Verified headless @1440 + @390: chips stack, tags line constant-height, watch opens the iframe (no nav) and Esc restores the detail.
+
+Open threads: unchanged. Minor: at 501–760px (tablet) FILTERS sits centered at the right end of the nav row (space-between) — fine; desktop search placeholder truncates at rail width.
+
+---
+
 ## website 2026.0014 — 2026-07-19
 
 Shipped — mobile FILTERS is now a REAL nav item (deck-only: `js/deck.js` + `css/deck.css` + rebuilt `deck/index.html`).
