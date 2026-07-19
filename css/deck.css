@@ -230,10 +230,14 @@ body.mobile .cell .addbtn{display:flex;background:rgba(0,0,0,.45)}
 body.mobile .cell.picked .addbtn{background:var(--fg)}
 /* overlay detail: glyph pinned top-right over the image */
 #ovimgwrap{position:relative;width:100%}
-#ovadd{position:absolute;top:10px;right:10px;width:30px;height:30px;border:0;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;font:19px/1 var(--font);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;z-index:3}
+/* add-to-deck glyph: was overlaid top-right ON the image (unreadable over bright stills,
+   and it landed in the letterbox bar on non-16:9). Now a right-aligned control in the flow,
+   just above the tags line, on the solid dark overlay bg — always legible (Nick 2026-07-19). */
+#ovaddrow{display:flex;justify-content:flex-end;margin:8px 0 2px}
+#ovadd{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;background:none;color:var(--fg);font:19px/1 var(--font);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0}
 #ovadd::before{content:'+'}
-#ovadd:hover{background:rgba(0,0,0,.75)}
-#ovadd.on{background:#fff;color:#000}
+#ovadd:hover{border-color:var(--fg)}
+#ovadd.on{background:var(--fg);border-color:var(--fg);color:var(--color-bg)}
 #ovadd.on::before{content:'\2713'}
 /* board overlay */
 #board{position:fixed;inset:0;background:var(--color-bg);z-index:45;display:none;overflow-y:auto}

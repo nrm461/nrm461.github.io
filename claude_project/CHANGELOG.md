@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0024 — 2026-07-19
+
+Shipped — **deck detail overlay: the add-to-deck `+` glyph moved off the image to a right-aligned control above the tags** (deck-only: `_build/deck_extras.html` + `css/deck.css` + rebuilt `deck/index.html`). Per Nick: the `+` overlaid top-right ON the still was hard to read (bright images) — he wanted it bottom-right, above the tags.
+
+- **Markup:** `#ovadd` moved out of `#ovimgwrap` into a new `#ovaddrow` placed after `#ovpal`, immediately before `#ovkw` (tags).
+- **CSS:** dropped the `position:absolute;top/right` image overlay. `#ovaddrow{display:flex;justify-content:flex-end}` right-aligns it; `#ovadd` is now a bordered circle on the solid dark overlay bg (`border:1px solid var(--line)`, transparent fill, white `+`) → always legible. On state fills white with a `✓` (unchanged behavior). JS untouched (`$('ovadd')` id kept).
+- **Bonus:** also resolves the old open thread where the overlay `+` sat in the letterbox bar on non-16:9 stills — it's no longer on the image at all.
+
+Verified headless @1039 (chromium, served over http so JS runs): overlay opened, `#ovadd` right-aligned (right edge == container right), sits below the image and above the tags line (add-row y756–786, image ends 703, tags start 835), 1px border visible on black; click toggles to filled white `✓`.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation. (Removed: overlay `+`-in-letterbox note — fixed here.)
+
+---
+
 ## website 2026.0023 — 2026-07-19
 
 Shipped — **mobile: the Deck (still-collector) button moved out of the search row and into the FILTERS drawer** (deck-only: `_build/deck_main.html` + `css/deck.css` + `js/deck.js` + rebuilt `deck/index.html`). Per Nick: on mobile the `[ Deck (N) ]` button sat after the search bar; he wanted it inside the FILTERS tab.
