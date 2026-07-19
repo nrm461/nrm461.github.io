@@ -4,6 +4,20 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0029 — 2026-07-19
+
+Shipped — **fix iOS mobile text auto-inflation so nav/UI text is one size across pages** + board-tile captions uppercased to match landing (`css/main.css` + `css/deck.css` + rebuilt `deck/index.html` + regenerated site HTML for the cache-bust token).
+
+- **Root cause (measured from Nick's iOS screenshots):** landing nav caps = 23px and `DECK (7)` = 23px, but the deck board's full-width stacked action links (`[ copy link ]` / `[ download pdf ]` …) rendered ~33px — ~1.4× larger. Headless chromium renders them uniform, so it's iOS Safari's text auto-inflation boosting the wide blocks. `body` had `-webkit-text-size-adjust:none`, which **iOS ignores** (treats as auto) — so it still inflated.
+- **Fix:** `-webkit-text-size-adjust:none` → `100%` (+ standard `text-size-adjust:100%`) on `body`. iOS honors the percentage and pins text to its authored size, so the board actions drop to 13px and match the nav/title. Global + safe (only disables iOS auto-inflation; preserves user zoom, unlike `none`).
+- **Also:** `.btile .bcap` (board-tile captions) `text-transform:uppercase` so the collected-still captions read like the landing card captions (`CLIENT | TITLE`), not mixed-case.
+
+Verified: main.css served with `text-size-adjust:100%`; caption computes `uppercase`. iOS inflation itself can't be reproduced in the headless container — Nick to confirm the board actions now match the nav on his phone.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation.
+
+---
+
 ## website 2026.0028 — 2026-07-19
 
 Shipped — **mobile DECK collection grid now mirrors the landing page** (deck-only: `css/deck.css` + rebuilt `deck/index.html`). Per Nick: the board still looked messy; make it look like the landing on mobile, keep the close.

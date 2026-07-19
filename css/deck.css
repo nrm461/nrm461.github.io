@@ -256,7 +256,7 @@ body.mobile .cell.picked .addbtn{background:var(--fg)}
 .btile img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 .btile .brm{position:absolute;top:4px;right:4px;width:20px;height:20px;border:0;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:14px;line-height:1;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center}
 .btile .brm:hover{background:#000}
-.btile .bcap{font-size:var(--fs);color:var(--dim);padding:3px 1px 0;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.btile .bcap{font-size:var(--fs);color:var(--dim);text-transform:uppercase;padding:3px 1px 0;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 /* mobile: the action row wrapped messily. Pull [ close ] out to the top-right (level with
    the DECK title) and STACK the remaining actions vertically down the left (Nick 2026-07-19).
    #board-bar is position:sticky = a containing block, so #board-close absolutes to its corner. */

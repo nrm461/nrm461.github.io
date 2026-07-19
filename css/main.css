@@ -127,7 +127,12 @@ body{
 	font-weight: 300;
 	font-feature-settings: 'liga' off;
 	line-height: calc(var(--lh)*100%);
-	-webkit-text-size-adjust: none;
+	/* iOS Safari IGNORES `none` here (treats it as auto) and still auto-inflates wide
+	   text blocks — e.g. the deck's full-width stacked board actions rendered ~1.4x the
+	   nav. A percentage IS honored, so 100% pins every page's text to its authored size
+	   and the nav matches across landing + deck on mobile (Nick 2026-07-19). */
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	color: var(--color-text);
