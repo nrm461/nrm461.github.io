@@ -459,19 +459,25 @@ video.no-autoplay{
 	grid-auto-rows: min-content;
 	row-gap: var(--gap-rows);
 }
-@media (min-width: 1367px){
-	#project-container{
-		margin-top: calc(var(--gap-rows) + var(--height-text));
-	}
-}
-
 /*Single Bar*/
+/* One consistent layout at EVERY width, pinned to the 1180 content column so the
+   prev/next arrows track the video edges (not the viewport edges) and nothing
+   jumps at a breakpoint. Previously flipped to a fixed, full-bleed 1fr/1180/1fr
+   grid at >=1367px, which flung < > to the page edges and moved CLOSE. */
 #single-bar{
 	display: grid;
 	color: white;
 	mix-blend-mode: difference;
 	pointer-events: none;
 	z-index: 9;
+	position: sticky;
+	position: -webkit-sticky;
+	top: calc(var(--margin-top) - var(--gap-small));
+	width: 100%;
+	max-width: 1180px;
+	margin-left: auto;
+	margin-right: auto;
+	grid-template-columns: max-content 1fr max-content;
 }
 #single-bar > *{
 	pointer-events: all;
@@ -482,47 +488,11 @@ video.no-autoplay{
 .mobile #single-bar > *:active{
 	text-decoration: none;
 }
-@media (min-width: 1367px){
-	#single-bar{
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		padding: calc(var(--margin-top) - var(--gap-small)) 0;
-		grid-template-columns: 1fr 1180px 1fr;
-	}
-	#prev,
-	#next{
-		align-self: center;
-		justify-self: center;
-		font-family: sans-serif;
-		font-size: 300%;
-		font-weight: 100;
-	}
-	#close{
-		padding-right: var(--margin-sides);
-		grid-area: 1 / 3;
-		align-self: flex-start;
-		justify-self: flex-end;
-	}
-	#next{
-		grid-area: 1 / 3;
-	}
-}
-@media (max-width: 1366px){
-	#single-bar{
-		position: sticky;
-		position: -webkit-sticky;
-		top: calc(var(--margin-top) - var(--gap-small));
-		grid-template-columns: max-content 1fr max-content;
-	}
-	#prev::before,
-	#next::before{ content: '[ '; }
-	#prev::after,
-	#next::after{ content: ' ]'; }
-	#close{ justify-self: center; }
-}
+#prev::before,
+#next::before{ content: '[ '; }
+#prev::after,
+#next::after{ content: ' ]'; }
+#close{ justify-self: center; }
 
 /*Thumbnail / video*/
 .page-project .thumb{

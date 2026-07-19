@@ -4,6 +4,22 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0022 — 2026-07-19
+
+Shipped — **detail-page top-nav pinned to the content column, one consistent layout at every width** (`css/main.css` + `css/deck.css` + rebuilt `deck/index.html`). From Nick: on wide desktop the `< CLOSE >` bar "jumps around" and the prev/next arrows "go as wide as the page wants."
+
+- **Root cause:** `#single-bar` flipped at `min-width:1367px` to `position:fixed` with `grid-template-columns:1fr 1180px 1fr` — the prev/next arrows lived in the full-bleed 1fr side gutters (so they hugged the viewport edges and grew with the window) and CLOSE moved to a different grid cell. Below 1367px it was the compact sticky `[ < ] [ CLOSE ] [ > ]`. The switch was the "jump."
+- **Fix:** dropped both breakpoint variants and the `>=1367px` `#project-container` margin-top. `#single-bar` is now ONE rule at all widths: sticky, `max-width:1180px; margin:0 auto`, `grid-template-columns:max-content 1fr max-content`. Result: bar tracks the 1180 video column — `#prev` sits exactly on the column's left edge, `#next` on the right edge, `#close` centered. No fixed-overlay, no gutter arrows, no jump.
+- **Deck/archive detail:** the `#ov` overlay had a `@media(min-width:1367px)` block that existed ONLY to counter main.css's old fixed flip. Now obsolete — removed; the overlay inherits the unified base bar, so its nav is pinned to 1180 identically.
+- Applies to BOTH page types Nick named: work detail (top-level slug pages) and archive/deck detail (`/deck/` overlay).
+- Note: detail pages were already hard-capped at 1180px (added 2026.0021); Nick's earlier "goes wider than my screenshot" was Chrome page-zoom, not a real overflow. No change to the 1180 content cap.
+
+Verified headless (chromium, geometry not font-metric so container Courier fallback is irrelevant): work detail @1300/1500/2000 and deck overlay @1300/2000 — bar width 1180 and centered at every width, `prev.left==container.left`, `next.right==container.right`, `close` centered, `position:sticky` throughout. No breakpoint jump.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation; overlay `+` in letterbox bar on non-16:9 stills.
+
+---
+
 ## website 2026.0021 — 2026-07-19
 
 Shipped — Deck-collector polish + two real bug fixes, from Nick's feedback (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_main.html` + `_build/deck_extras.html` + rebuilt `deck/index.html`).

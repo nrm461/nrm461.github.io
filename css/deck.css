@@ -135,17 +135,9 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
 #ov #project-container{max-width:1180px;width:100%;margin:0 auto;padding:0}
 /* big view locked to a consistent 16:9 frame; non-16:9 stills sit inside it, pillar/letter-boxed (object-fit:contain over black) */
 #ov #ovimg{width:100%;aspect-ratio:16/9;height:auto;max-height:calc(100vh - 150px);display:block;margin:0 auto;object-fit:contain;background:#000}
-/* keep the detail top-nav layout CONSISTENT at every width. main.css flips #single-bar
-   to a fixed full-viewport grid with side-gutter arrows at >=1367px; inside the deck
-   overlay that reads as a drastic jump, so force the compact "[ < ] [ CLOSE ] [ > ]"
-   sticky top row at all widths. */
-@media(min-width:1367px){
-	#ov #single-bar{position:sticky;position:-webkit-sticky;top:calc(var(--margin-top) - var(--gap-small));left:auto;right:auto;bottom:auto;padding:0;grid-template-columns:max-content 1fr max-content}
-	#ov #prev,#ov #next{align-self:auto;justify-self:auto;font-family:inherit;font-size:inherit;font-weight:inherit}
-	#ov #prev::before,#ov #next::before{content:'[ '}
-	#ov #prev::after,#ov #next::after{content:' ]'}
-	#ov #close{grid-area:auto;justify-self:center;align-self:auto;padding-right:0}
-}
+/* detail top-nav: main.css now uses ONE consistent #single-bar layout at every width,
+   pinned to the 1180 content column (no >=1367px fixed-bar flip). The overlay inherits
+   it directly, so no deck-specific override is needed anymore. */
 #ovpal{display:none;height:34px;gap:3px}
 #ovpal.show{display:flex}
 #ovpal span{cursor:pointer;position:relative;flex:1 1 0;border:2px solid var(--color-text);border-radius:2px}
