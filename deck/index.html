@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <link rel="stylesheet" href="../css/main.css?v=1784419534">
 <meta name="robots" content="noindex">
-<link rel="stylesheet" href="../css/deck.css?v=8755635861">
+<link rel="stylesheet" href="../css/deck.css?v=5dcccb2f3f">
 </head>
 <body class="page-deck">
 <div id="content-wrapper">
@@ -455,8 +455,8 @@ function openOv(i,list){
 			let meta='<p class="spacer">&nbsp;</p>'+rows.filter(r=>r[1]).map(r=>'<p><span class="ml">'+r[0]+':</span> <span class="mv">'+r[1]+'</span></p>').join('');
 			const _vid=(window.DECK_VIMEO||{})[x.pslug];
 			if(x.page&&x.pslug){
-				if(_vid) meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" id="ovwatch" href="#">[ watch ]</a></p>';
-				else meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch ]</a></p>';
+				if(_vid) meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" id="ovwatch" href="#">[ watch video ]</a></p>';
+				else meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch video ]</a></p>';
 			}
 			$('ovmeta').innerHTML=meta;
 			{const _w=$('ovwatch'); if(_w)_w.onclick=e=>{e.preventDefault();openVimeo(_vid);};}

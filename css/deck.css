@@ -160,7 +160,7 @@ select{background:var(--field);border:1px solid var(--line);color:var(--fg);font
    block below never jumps when stepping between stills with different tag counts */
 #ovkw{margin-top:2px;height:2.9em;overflow:hidden}
 #ovkw .ovkw{color:var(--dim);margin:0;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-#ovkw .ml{color:var(--fg)}
+#ovkw .ml{color:var(--dim)}
 #ovkw .mv{color:var(--dim)}
 .kwtag{cursor:pointer;color:var(--dim)}
 .kwtag:hover{color:var(--fg);text-decoration:underline}

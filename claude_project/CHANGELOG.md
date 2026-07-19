@@ -4,6 +4,17 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0016 — 2026-07-19
+
+Shipped — two cosmetic follow-ups to 2026.0015 (deck-only: `js/deck.js` + `css/deck.css` + rebuilt `deck/index.html`).
+
+- Detail `[ watch ]` link relabeled **`[ watch video ]`** (both the Vimeo-overlay and the no-ID fallback path).
+- The `tags:` label is now the **same grey as the tags themselves** (`#ovkw .ml` → `var(--dim)`, was `--fg`) so it reads as part of the list, not a heading.
+
+Open threads: unchanged.
+
+---
+
 ## website 2026.0015 — 2026-07-19
 
 Shipped — three deck detail/archive refinements (deck-only: `js/deck.js` + `css/deck.css` + `_build/deck_extras.html` + `_build/build_deck.py` + rebuilt `deck/index.html`).

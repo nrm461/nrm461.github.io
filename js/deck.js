@@ -379,8 +379,8 @@ function openOv(i,list){
 			let meta='<p class="spacer">&nbsp;</p>'+rows.filter(r=>r[1]).map(r=>'<p><span class="ml">'+r[0]+':</span> <span class="mv">'+r[1]+'</span></p>').join('');
 			const _vid=(window.DECK_VIMEO||{})[x.pslug];
 			if(x.page&&x.pslug){
-				if(_vid) meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" id="ovwatch" href="#">[ watch ]</a></p>';
-				else meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch ]</a></p>';
+				if(_vid) meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" id="ovwatch" href="#">[ watch video ]</a></p>';
+				else meta+='<p class="spacer">&nbsp;</p><p><a class="ovfilm" href="../'+x.pslug+'/" target="_blank" rel="noopener">[ watch video ]</a></p>';
 			}
 			$('ovmeta').innerHTML=meta;
 			{const _w=$('ovwatch'); if(_w)_w.onclick=e=>{e.preventDefault();openVimeo(_vid);};}
