@@ -4,6 +4,21 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0025 — 2026-07-19
+
+Shipped — **deck FILTERS panel text bumped to the site body size** (deck-only: `css/deck.css` + rebuilt `deck/index.html`). Per Nick: the filter pop-out text read small vs the rest of the site.
+
+- `.sec-h` (section headers) and `.opt` (option rows): `11.5px` → `var(--fs)` (13px, the site base).
+- `#filmsearch,.subsearch` (in-section search fields): `11px` → `var(--fs)`.
+- `.opt .n` (option counts): `10px` → `11px` — kept subordinate to the label but scaled up with it.
+- Applies to both the desktop rail and the mobile FILTERS drawer (same rules).
+
+Verified headless @1200 (chromium, http): computed `.sec-h` and `.opt` = 13px (== root font-size), counts 11px.
+
+Open threads: unchanged (deck still noindex; project-from-/selects/ → Work; cosmetic URL≠label; deck data hygiene; build_site recurrence-prune awaiting ok; nickmetcalf.com DNS). Deck-collector follow-ups still open (hi-res still source for downloads; optional persistent/named decks via C41). Minor: tablet 501–760px FILTERS placement; desktop search placeholder truncation.
+
+---
+
 ## website 2026.0024 — 2026-07-19
 
 Shipped — **deck detail overlay: the add-to-deck `+` glyph moved off the image to a right-aligned control above the tags** (deck-only: `_build/deck_extras.html` + `css/deck.css` + rebuilt `deck/index.html`). Per Nick: the `+` overlaid top-right ON the still was hard to read (bright images) — he wanted it bottom-right, above the tags.
