@@ -4,6 +4,16 @@ Reverse-chronological. **Top entry = current state.** At the end of each session
 
 ---
 
+## website 2026.0019 — 2026-07-19
+
+Shipped — deck search text baseline aligned to the tag line, tuned on the LIVE font (deck-only: `css/deck.css` + rebuilt `deck/index.html`).
+
+0.0018 still read low to Nick. Root cause: I'd measured in the cloud container, where the OCRF web font falls back to Courier — different metrics, so "aligned" locally wasn't aligned live. Re-measured against the real rendered OCRF via the browser: search text center was 88.9px vs the tag-line's 86.8px (~2.5px low). Tuned `#search` live (`padding:2px 2px 4px` → `padding:0 2px 3px; margin-top:-1px`) until the search text center hit 86.4 (−0.4px, effectively level) and verified in a zoomed live screenshot, then baked those values into `deck.css`. Lesson: tune font-metric alignment on the live font, not the container.
+
+Open threads: unchanged.
+
+---
+
 ## website 2026.0018 — 2026-07-19
 
 Shipped — deck search-field vertical alignment (deck-only: `css/deck.css` + rebuilt `deck/index.html`).

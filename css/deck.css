@@ -24,7 +24,9 @@ button{font-family:inherit}
 
 /* --- search + controls row (pinned under header) --- */
 #ctrl{display:flex;align-items:center;gap:18px;padding:0 0 12px;position:sticky;z-index:8;background:var(--color-bg);flex-wrap:wrap}
-#search{flex:1 1 240px;min-width:160px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:13px var(--font);padding:2px 2px 4px;border-radius:0}
+/* padding/margin tuned on the LIVE OCRF font (not the container fallback) so the
+   search TEXT baseline matches the tag-line text (was ~2.5px low). */
+#search{flex:1 1 240px;min-width:160px;background:none;border:0;border-bottom:1px solid var(--line);color:var(--fg);font:13px var(--font);padding:0 2px 3px;margin-top:-1px;border-radius:0}
 #search:focus{border-bottom-color:var(--fg);outline:none}
 #search::placeholder{color:var(--dim2)}
 #fbtn{cursor:pointer;color:var(--fg);font-size:13px;text-transform:uppercase;background:none;border:0;padding:0;position:relative;font-family:inherit;white-space:nowrap}
