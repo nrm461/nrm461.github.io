@@ -259,16 +259,15 @@ def child_label(parent, child):
         Lululemon | 24 Hours To The Fullest
         24 Hours To The Fullest - Jordan Clarkson
 
-    Strip the parent's title (and the separator after it) so only the part that
-    distinguishes this cut remains. Titles that don't start with the parent's are
-    already distinct and print as-is.
+    A child titled that way carries no information the heading doesn't already give —
+    the remainder is just a talent name — so it gets no label at all. Children with
+    their own distinct titles (Ollie's 'Pillows', Oscar Mayer's 'Raft') do name their
+    cut, and those print as-is.
     """
     t = (child.get('title') or '').strip()
     pt = (parent.get('title') or '').strip()
     if pt and t.lower().startswith(pt.lower()):
-        rest = t[len(pt):].lstrip(' -–—|:').strip()
-        if rest:
-            return rest
+        return ''
     return t
 
 def media_block(p, label=''):
