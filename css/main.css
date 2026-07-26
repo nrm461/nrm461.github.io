@@ -397,10 +397,11 @@ video.no-autoplay{
 	}
 }
 
-/* Work grid: 5 across in the 1440-1920 band (the global --col steps still drive
-   the nav, so this is scoped to the grid only). Outside the band it falls back
-   to the shared --col ladder: 7 above 1920px, then 4 / 3 / 2 / 1. */
-@media (min-width: 1441px) and (max-width: 1920px){
+/* Work grid: hold 5 across all the way down to 1025px, then drop straight to 3 —
+   the 4-across step is skipped so rows stay even. Above 1920px the shared --col
+   ladder still gives 7; below 1025px it gives 3 / 2 / 1. Scoped to the grid: --col
+   also drives the nav's column count. */
+@media (min-width: 1025px) and (max-width: 1920px){
 	.page-archive .module-videos{
 		grid-template-columns: repeat(5, 1fr);
 	}
