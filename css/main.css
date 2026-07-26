@@ -382,6 +382,15 @@ video.no-autoplay{
 	}
 }
 
+/* Work grid: 5 across in the 1440-1920 band (the global --col steps still drive
+   the nav, so this is scoped to the grid only). Outside the band it falls back
+   to the shared --col ladder: 7 above 1920px, then 4 / 3 / 2 / 1. */
+@media (min-width: 1441px) and (max-width: 1920px){
+	.page-archive .module-videos{
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
 /* Card: video
 ======================================== */
 .module-project{
