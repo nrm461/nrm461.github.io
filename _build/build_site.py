@@ -250,6 +250,27 @@ def build_batch():
           page('page-works page-index page-archive page-hidden', f'{SITE["site_name"]} — Vimeo Batch', content, depth=1))
 
 # ---------------- Project pages ----------------
+def child_label(parent, child):
+    """Label for one video inside a campaign page.
+
+    Children are usually titled '<parent title> - <cut>', so printing the child title
+    verbatim under the page heading reads as a doubled title:
+
+        Lululemon | 24 Hours To The Fullest
+        24 Hours To The Fullest - Jordan Clarkson
+
+    Strip the parent's title (and the separator after it) so only the part that
+    distinguishes this cut remains. Titles that don't start with the parent's are
+    already distinct and print as-is.
+    """
+    t = (child.get('title') or '').strip()
+    pt = (parent.get('title') or '').strip()
+    if pt and t.lower().startswith(pt.lower()):
+        rest = t[len(pt):].lstrip(' -–—|:').strip()
+        if rest:
+            return rest
+    return t
+
 def media_block(p, label=''):
     """One video slot: facade when a Vimeo id exists, else plain hero image."""
     slug = p['slug']
@@ -286,7 +307,7 @@ def build_projects():
         if p.get('children'):
             kids = [k for k in (project_by_slug(k) for k in p['children']) if k]
             show_labels = len(kids) > 1
-            media = '\n\t\t\t'.join(media_block(k, label=(k.get('title', '') if show_labels else '')) for k in kids)
+            media = '\n\t\t\t'.join(media_block(k, label=(child_label(p, k) if show_labels else '')) for k in kids)
         else:
             media = media_block(p)
 
