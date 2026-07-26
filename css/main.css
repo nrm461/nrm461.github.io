@@ -287,14 +287,14 @@ header::after{ content: none !important; }  /* drop the tablet-width right divid
 	header{ column-gap: 2rem; }                       /* phones: one snug centered row */
 }
 
-/* 769px and up: three equal columns, WORK flush left / CONTACT dead centre /
-   ARCHIVE flush right — symmetric about the page centre and flush with the
-   thumbnail grid's own edges. Overrides the shared 8-col .first/.middle/.last
-   geometry for the header only (the footer keeps it), which was placing the trio
-   in columns 3-9 of 8 and so hanging it off to the right. Percentages, not gaps,
-   so nothing slides or snaps while resizing. */
+/* 769px and up: three equal columns, WORK left / CONTACT dead centre / ARCHIVE
+   right, inset from both edges so the trio occupies the middle 65% of the width —
+   the same spread as prodco.xyz, but symmetric rather than hanging right. The inset
+   is a percentage, so the whole nav scales with the window instead of sliding and
+   snapping. Overrides the shared 8-col .first/.middle/.last geometry for the header
+   only; the footer keeps it. */
 @media (min-width: 769px){
-	header{ grid-template-columns: repeat(3, 1fr); }
+	header{ grid-template-columns: repeat(3, 1fr); padding-inline: 17.5%; }
 	header .first{ grid-column: 1; justify-self: start; }
 	header .middle{ grid-column: 2; justify-self: center; left: auto; }
 	header .last{ grid-column: 3; justify-self: end; }
