@@ -1,6 +1,6 @@
 # Project State — nrm461.github.io
 
-_Last updated 2026-07-21._
+_Last updated 2026-07-26._
 
 ## What this is
 
@@ -9,6 +9,25 @@ Nick Metcalf — colorist portfolio. A static site generated from `data/site.jso
 ## Current status
 
 Migrated into `~/dev` and pushed to GitHub as `nrm461/nrm461.github.io` during the ~/dev + GitHub migration — see `nrm461/claude-workspace` and ADR-0001. Standardised with `CLAUDE.md` + `docs/agents/` on 2026-07-21.
+
+## Layout — how the front end is wired (2026-07-26)
+
+Two things to know before editing `css/main.css`:
+
+- **`--col` is not just the thumbnail grid.** It also drives the header/footer column
+  count via `--colX2`, so changing it moves the nav. Grid-only changes are scoped to
+  `.page-archive .module-videos`; nav-only changes are scoped to `header`.
+- **The work grid ladder skips 4-across:** 7 above 1920px, 5 from 1025-1920, then
+  3 / 2 / 1 below. The header uses three equal columns inset 17.5% each side (the
+  middle 65%, matching prodco.xyz's spread) from 769px up; 768px and down is flex and
+  is deliberately left alone, including deck.css's FILTERS as a fourth nav item.
+
+**A GitHub Action ("Rebuild site") regenerates the pages on push** and refreshes the
+`?v=` cache-bust stamp that `_build/build_site.py` writes from the CSS/JS mtime. Do not
+run `build_site.py` by hand — the local rebuild collides with the Action's own
+`[auto-build] regenerate pages` commit. Push the CSS/JS or script edit alone and let CI
+do the rest. When a change looks missing on the live site, check the served `?v=` stamp
+before suspecting the deploy; it is usually browser cache.
 
 **This repo is public** — unlike the other six, which are private. It has to be: it is the
 GitHub Pages site. It also carries `.nojekyll`, so **every file in the tree is served
