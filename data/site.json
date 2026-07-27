@@ -52,7 +52,7 @@
   "vimeo_batch"
  ],
  "linkify_handles": true,
- "mobile_gallery": false,
+ "mobile_gallery": true,
  "categories": [
   "Commercial",
   "Music Video",
