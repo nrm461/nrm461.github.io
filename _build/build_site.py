@@ -264,18 +264,20 @@ def sort_categories():
     return [c for c in SITE.get('sort_categories', []) if c]
 
 def sort_members(name, vis):
-    """The (at most five) spots shown under one section.
+    """The (at most five) spots shown under one section, in the order Nick set.
 
-    Membership is its own field — p["sort"] lists the sections a spot appears in — and
-    NOT derived from the project's category tags. It has to be: plenty of spots carry
-    two tags (a Rivian film is Car and Commercial), so a single on/off flag would let a
-    pick made for Car quietly consume one of Commercial's five. Picking per section is
-    the only way "five each" is something Nick can actually control.
+    Both the picks and their ORDER live in site.json["sort_picks"] as one ordered list
+    of slugs per section. That is the whole point of the shape: this page orders itself
+    independently of the work page, and a spot can sit high in Car and low in
+    Commercial. Storing it per-project (a flag, or a list of sections) can express
+    membership but not position, which is what sent the first cut of this page out in
+    work-page order.
 
-    Order follows the work page; the cap is applied last, so an over-filled section
-    degrades to its first five rather than breaking the row.
+    A pick that is hidden or deleted simply drops out; the cap is applied last.
     """
-    return [p for p in vis if name in (p.get('sort') or [])][:SORT_MAX]
+    by_slug = {p['slug']: p for p in vis}
+    picks = (SITE.get('sort_picks') or {}).get(name, [])
+    return [by_slug[s] for s in picks if s in by_slug][:SORT_MAX]
 
 def build_sort():
     """/sort/ — a curated five spots per category, in collapsible sections.

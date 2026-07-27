@@ -65,9 +65,6 @@
   "arch_order": 19,
   "categories": [
    "Music Video"
-  ],
-  "sort": [
-   "Music Video"
   ]
  },
  {
@@ -365,9 +362,6 @@
   "sel_order": 12,
   "categories": [
    "Beauty"
-  ],
-  "sort": [
-   "Beauty"
   ]
  },
  {
@@ -406,9 +400,6 @@
   "arch_order": 9,
   "sel_order": 11,
   "categories": [
-   "Commercial"
-  ],
-  "sort": [
    "Commercial"
   ]
  },
@@ -563,9 +554,6 @@
   "arch_order": 10,
   "categories": [
    "Music Video"
-  ],
-  "sort": [
-   "Music Video"
   ]
  },
  {
@@ -719,9 +707,6 @@
   "gallery": true,
   "delivered": "2026-05-13",
   "categories": [
-   "Music Video"
-  ],
-  "sort": [
    "Music Video"
   ]
  },
@@ -1340,9 +1325,6 @@
   "gallery": true,
   "categories": [
    "Commercial"
-  ],
-  "sort": [
-   "Car"
   ]
  },
  {
@@ -1439,9 +1421,6 @@
   "gallery": true,
   "categories": [
    "Commercial",
-   "Beauty"
-  ],
-  "sort": [
    "Beauty"
   ]
  },
@@ -1567,9 +1546,6 @@
   "arch_order": 47,
   "categories": [
    "Commercial",
-   "Car"
-  ],
-  "sort": [
    "Car"
   ]
  },
@@ -1730,9 +1706,6 @@
   "delivered": "2025-03-25",
   "categories": [
    "Commercial"
-  ],
-  "sort": [
-   "Commercial"
   ]
  },
  {
@@ -1789,9 +1762,6 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Beauty"
-  ],
-  "sort": [
    "Beauty"
   ]
  },
@@ -1875,9 +1845,6 @@
   "arch_order": 62,
   "categories": [
    "Beauty"
-  ],
-  "sort": [
-   "Beauty"
   ]
  },
  {
@@ -1907,10 +1874,7 @@
    "Commercial"
   ],
   "sel_order": 19,
-  "gallery": true,
-  "sort": [
-   "Commercial"
-  ]
+  "gallery": true
  },
  {
   "slug": "ny-presbyterian-peter",
@@ -2103,9 +2067,6 @@
   "gallery": true,
   "categories": [
    "Music Video"
-  ],
-  "sort": [
-   "Music Video"
   ]
  },
  {
@@ -2241,9 +2202,6 @@
   "delivered": "2024-09-30",
   "categories": [
    "Music Video"
-  ],
-  "sort": [
-   "Music Video"
   ]
  },
  {
@@ -2273,9 +2231,6 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Commercial"
-  ],
-  "sort": [
    "Commercial"
   ]
  },
@@ -2717,9 +2672,6 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Commercial"
-  ],
-  "sort": [
    "Commercial"
   ]
  },
@@ -4799,10 +4751,7 @@
   "categories": [
    "Car"
   ],
-  "carousel": false,
-  "sort": [
-   "Car"
-  ]
+  "carousel": false
  },
  {
   "slug": "mobil-1-break-free",
@@ -4911,10 +4860,7 @@
    "Commercial",
    "Car"
   ],
-  "carousel": false,
-  "sort": [
-   "Car"
-  ]
+  "carousel": false
  },
  {
   "slug": "pnc-today-is-the-day",
@@ -5073,9 +5019,6 @@
   "arch_order": 59,
   "categories": [
    "Commercial"
-  ],
-  "sort": [
-   "Beauty"
   ]
  },
  {
@@ -5130,9 +5073,6 @@
   "carousel": true,
   "gallery": true,
   "categories": [
-   "Car"
-  ],
-  "sort": [
    "Car"
   ]
  },

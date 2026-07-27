@@ -98,40 +98,33 @@ Every save republishes the site itself in ~2 min.
 </div>
 <div id="grid"></div>
 
-<!-- SORT: everything behind the (unlinked) /sort/ page. Two halves — the sections it
-     shows (order = order on the page) and the SORT flag that puts a spot in one. -->
+<!-- SORT: everything behind the (unlinked) /sort/ page — which sections it shows, in
+     what order, and the five spots inside each, in THEIR order. All of it is site.json,
+     so one Save covers the tab. -->
 <div id="catpanel" style="display:none;padding:0 20px 40px">
   <div class="hint" style="padding-left:0">
     The <a href="/sort/" target="_blank">/sort/ page</a> shows these sections in this order — <b>five spots each, no more</b>.
-    Tick a section next to a spot to put it in that section's five — a spot can sit in more than one.
-    Over five in one section and only the first five (in work-page order) make the page; the rest read (cut).
-    RECENT sits above them all and looks after itself — it is the first five of the work page.
-    It stays unlinked from the site nav — only people with the link see it.
+    Each section keeps its own running order, independent of the work page: drag nothing, just use the arrows.
+    RECENT sits above them all and looks after itself — it is the first five of the work page, newest first.
+    The page stays unlinked from the site nav — only people with the link see it.
+  </div>
+
+  <div style="display:flex;gap:8px;align-items:center;margin:16px 0">
+    <button id="catsave">Save /sort/</button>
+    <span id="catstatus" style="font-size:11px;opacity:.75"></span>
   </div>
 
   <h2 style="font-size:12px;text-transform:uppercase;margin:18px 0 8px">Sections</h2>
   <div id="catlist" style="display:grid;gap:6px;max-width:620px"></div>
   <div style="display:flex;gap:8px;align-items:center;margin-top:10px;max-width:620px">
-    <input type="text" id="catnew" list="known-cats" placeholder="add a section…" style="flex:1">
-    <datalist id="known-cats"></datalist>
+    <input type="text" id="catnew" placeholder="add a section…" style="flex:1">
     <button id="catadd">Add</button>
-    <button id="catsave">Save sections</button>
-    <span id="catstatus" style="font-size:11px;opacity:.75"></span>
   </div>
 
-  <h2 style="font-size:12px;text-transform:uppercase;margin:28px 0 8px">Spots</h2>
-  <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap">
-    <input type="search" id="assignsearch" placeholder="filter projects…">
-    <select id="assignshow">
-      <option value="all">All work</option>
-      <option value="sorted">On /sort/ only</option>
-      <option value="loose">Untagged only</option>
-    </select>
-    <button id="assignsave">Save spots</button>
-    <span id="assignstatus" style="font-size:11px;opacity:.75"></span>
-  </div>
-  <div id="assignlist" style="display:grid;gap:2px"></div>
+  <h2 style="font-size:12px;text-transform:uppercase;margin:28px 0 8px">Spots in each section</h2>
+  <div id="picklist" style="display:grid;gap:22px"></div>
 </div>
+
 
 <div id="overlay"></div>
 <div id="modal">
@@ -218,7 +211,7 @@ async function load(){
   try{
     const s=await (await fetch(RAW+'data/site.json?t='+Date.now())).json();
     if(Array.isArray(s.categories)&&s.categories.length) CATORDER=s.categories.filter(Boolean);
-    SORTCATS=(s.sort_categories||[]).filter(Boolean);
+    SORTCATS=(s.sort_categories||[]).filter(Boolean); PICKS=s.sort_picks||{};
   }catch(e){ /* fall back to the seeded list — admin still works offline of site.json */ }
   populateCats();
   render(); say('ready');
@@ -261,7 +254,7 @@ function render(){
   const sorting = view==='cats';
   $('#catpanel').style.display = sorting?'':'none';
   grid.style.display = sorting?'none':'';
-  if(sorting){ renderCatList(); renderAssign(); saveBtn.disabled=true; return; }
+  if(sorting){ renderAll(); saveBtn.disabled=true; return; }
   grid.innerHTML='';
   listFor(view).forEach((p,i)=>{
     const el=document.createElement('div');
@@ -685,169 +678,132 @@ C.save.addEventListener('click', async()=>{
   }catch(e){ C.st.textContent='failed: '+e.message; }
   C.save.disabled=false;
 });
-/* ---- SORT tab: the /sort/ page's sections + its five-per-section spots ---------
-   Two independent saves, because they are two independent ideas:
+/* ---- SORT tab: the /sort/ page ------------------------------------------------
+   Everything this page needs is site.json, in two keys:
 
-   site.json["sort_categories"]  WHICH sections the page shows, in order. Its own list,
-                                 not the site-wide category vocabulary — Fashion can stay
-                                 a useful tag on a project without earning a section.
-   projects.json  p.sort         WHICH sections a spot appears in — a list, not a flag.
+   sort_categories  WHICH sections, in order. Its own list, not the site-wide category
+                    vocabulary — Fashion can stay a useful tag without earning a section.
+   sort_picks       {section: [slug, ...]} — the spots AND their order.
 
-   It has to be per-section: plenty of spots carry two tags (a Rivian film is Car and
-   Commercial), so one on/off flag would let a pick made for Car quietly eat one of
-   Commercial's five. The category tags below still say what a spot IS; p.sort says
-   where it's shown. Counters read N/5 so an over-filled section is obvious here rather
-   than discovered on the page, where the cap silently trims. ------------------- */
+   The order matters as much as the membership: /sort/ runs its own running order, so a
+   spot can lead Car and sit last in Commercial. That can't be stored on the project (a
+   flag, or a list of sections, gives you membership but no position) — which is exactly
+   how the first cut of this page ended up mirroring the work page. Category TAGS on a
+   project are now unrelated to this tab; edit those in a project's EDIT modal. ---- */
 const SORT_MAX=5;
-let SORTCATS=[];                        // site.json.sort_categories (loaded in load())
-let catDraft=null;                      // [{was, now}] — `was` is null for a new section
+let SORTCATS=[], PICKS={};              // as loaded from site.json
+let catDraft=null, pickDraft=null;      // working copies; one Save writes both
 const esc2=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 const csay=(m)=>{ $('#catstatus').textContent=m; };
-const asay=(m)=>{ $('#assignstatus').textContent=m; };
+const dirtySort=()=>csay('unsaved changes');
 
 const workList=()=>projects.filter(p=>p.group==='posted')
                            .sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
-function curCats(p){ return (assignDraft&&assignDraft[p.slug]&&assignDraft[p.slug].cats) || catsOf(p); }
-function curSort(p){ const d=assignDraft&&assignDraft[p.slug]; return (d&&d.sort) || p.sort || []; }
-/* what the page would show for a section, given unsaved edits */
-function sectionMembers(name){ return workList().filter(p=>curSort(p).includes(name)); }
+const bySlug=(s)=>projects.find(p=>p.slug===s);
+const capFor=(s)=>{ const p=bySlug(s); return p?capOf(p):s+' (missing)'; };
+
+function ensureDrafts(){
+  if(!catDraft) catDraft=SORTCATS.slice();
+  if(!pickDraft){ pickDraft={}; catDraft.forEach(c=>pickDraft[c]=(PICKS[c]||[]).slice()); }
+}
 
 function renderCatList(){
-  if(!catDraft) catDraft=SORTCATS.map(c=>({was:c,now:c}));
-  $('#known-cats').innerHTML=CATORDER.map(c=>`<option value="${esc2(c)}">`).join('');
+  ensureDrafts();
   const box=$('#catlist'); box.innerHTML='';
-  /* RECENT is computed by the build (first five of the work page) and pinned to the top
-     of /sort/, so it is shown here for orientation only — nothing to pick or reorder. */
+  /* RECENT is computed by the build and pinned to the top of /sort/ — shown here for
+     orientation only, nothing to pick or reorder. */
   const rec=document.createElement('div');
   rec.style.cssText='display:flex;gap:6px;align-items:center;opacity:.6';
   rec.innerHTML=`<span style="flex:1;padding:6px 10px;border:1px dashed var(--fg)">Recent <b>AUTO</b> — first five of the work page, always on top, opens by default</span>
     <span style="width:9ch;text-align:right;font-size:11px">${SORT_MAX}/${SORT_MAX}</span>`;
   box.appendChild(rec);
-  catDraft.forEach((c,i)=>{
-    const n=sectionMembers(c.now).length, over=n>SORT_MAX;
+  catDraft.forEach((name,i)=>{
+    const n=(pickDraft[name]||[]).length, over=n>SORT_MAX;
     const row=document.createElement('div');
     row.style.cssText='display:flex;gap:6px;align-items:center';
-    row.innerHTML=`<input type="text" value="${esc2(c.now)}" style="flex:1">
+    row.innerHTML=`<input type="text" value="${esc2(name)}" style="flex:1">
       <span style="width:9ch;text-align:right;font-size:11px;${over?'color:#c00;font-weight:bold':'opacity:.6'}">${n}/${SORT_MAX}${over?' !':''}</span>
       <button data-a="up" ${i===0?'disabled':''}>↑</button>
       <button data-a="down" ${i===catDraft.length-1?'disabled':''}>↓</button>
       <button data-a="del" style="border-color:#c00;color:#c00">×</button>`;
-    row.querySelector('input').addEventListener('input',e=>{ c.now=e.target.value; csay('unsaved changes'); });
-    row.querySelector('[data-a="up"]').addEventListener('click',()=>{ catDraft.splice(i-1,0,catDraft.splice(i,1)[0]); csay('unsaved changes'); renderCatList(); });
-    row.querySelector('[data-a="down"]').addEventListener('click',()=>{ catDraft.splice(i+1,0,catDraft.splice(i,1)[0]); csay('unsaved changes'); renderCatList(); });
+    row.querySelector('input').addEventListener('change',e=>{
+      const to=e.target.value.trim(); if(!to||catDraft.includes(to)) return renderAll();
+      pickDraft[to]=pickDraft[name]||[]; delete pickDraft[name];   // picks follow the rename
+      catDraft[i]=to; dirtySort(); renderAll();
+    });
+    row.querySelector('[data-a="up"]').addEventListener('click',()=>{ catDraft.splice(i-1,0,catDraft.splice(i,1)[0]); dirtySort(); renderAll(); });
+    row.querySelector('[data-a="down"]').addEventListener('click',()=>{ catDraft.splice(i+1,0,catDraft.splice(i,1)[0]); dirtySort(); renderAll(); });
     row.querySelector('[data-a="del"]').addEventListener('click',()=>{
-      /* removes the SECTION only — projects keep the tag, so it can be put back */
-      catDraft.splice(i,1); csay('unsaved changes'); renderCatList(); renderAssign();
+      if(!confirm(`Remove the "${name}" section from /sort/?`)) return;
+      catDraft.splice(i,1); delete pickDraft[name]; dirtySort(); renderAll();
     });
     box.appendChild(row);
   });
 }
 $('#catadd').addEventListener('click',()=>{
   const v=$('#catnew').value.trim(); if(!v) return;
-  if(!catDraft) catDraft=SORTCATS.map(c=>({was:c,now:c}));
-  catDraft.push({was:null,now:v}); $('#catnew').value=''; csay('unsaved changes'); renderCatList(); renderAssign();
+  ensureDrafts();
+  if(catDraft.includes(v)) return csay('that section already exists');
+  catDraft.push(v); pickDraft[v]=[]; $('#catnew').value=''; dirtySort(); renderAll();
 });
 $('#catnew').addEventListener('keydown',e=>{ if(e.key==='Enter') $('#catadd').click(); });
 
+/* --- the five spots inside each section, in their own order --- */
+function renderPicks(){
+  ensureDrafts();
+  const box=$('#picklist'); box.innerHTML='';
+  catDraft.forEach(name=>{
+    const list=pickDraft[name]||[];
+    const sec=document.createElement('div');
+    const full=list.length>=SORT_MAX;
+    sec.innerHTML=`<div style="text-transform:uppercase;font-weight:bold;margin-bottom:6px">${esc2(name)}
+        <span style="font-weight:normal;opacity:.6;font-size:11px">${list.length}/${SORT_MAX}</span></div>
+      <div class="picks" style="display:grid;gap:4px;max-width:620px"></div>
+      <div style="display:flex;gap:8px;margin-top:6px;max-width:620px">
+        <select class="addspot" style="flex:1"${full?' disabled':''}>
+          <option value="">${full?'section is full — remove one first':'add a spot…'}</option>
+          ${full?'':workList().filter(p=>!list.includes(p.slug)).map(p=>`<option value="${esc2(p.slug)}">${esc2(capOf(p))}</option>`).join('')}
+        </select>
+      </div>`;
+    const rows=sec.querySelector('.picks');
+    list.forEach((slug,i)=>{
+      const row=document.createElement('div');
+      const gone=!bySlug(slug)||bySlug(slug).group!=='posted';
+      row.style.cssText='display:flex;gap:6px;align-items:center;font-size:12px';
+      row.innerHTML=`<span style="width:3ch;opacity:.5">${i+1}</span>
+        <span style="flex:1;padding:4px 8px;border:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;${gone?'color:#c00':''}">${esc2(capFor(slug))}${gone?' — not on the work page, will not show':''}</span>
+        <button data-a="up" ${i===0?'disabled':''}>↑</button>
+        <button data-a="down" ${i===list.length-1?'disabled':''}>↓</button>
+        <button data-a="del" style="border-color:#c00;color:#c00">×</button>`;
+      row.querySelector('[data-a="up"]').addEventListener('click',()=>{ list.splice(i-1,0,list.splice(i,1)[0]); dirtySort(); renderAll(); });
+      row.querySelector('[data-a="down"]').addEventListener('click',()=>{ list.splice(i+1,0,list.splice(i,1)[0]); dirtySort(); renderAll(); });
+      row.querySelector('[data-a="del"]').addEventListener('click',()=>{ list.splice(i,1); dirtySort(); renderAll(); });
+      rows.appendChild(row);
+    });
+    sec.querySelector('.addspot').addEventListener('change',e=>{
+      if(!e.target.value) return;
+      list.push(e.target.value); pickDraft[name]=list; dirtySort(); renderAll();
+    });
+    box.appendChild(sec);
+  });
+}
+function renderAll(){ renderCatList(); renderPicks(); }
+
 $('#catsave').addEventListener('click',async()=>{
   if(!tok()) return csay('paste your GitHub token first');
-  const names=catDraft.map(c=>c.now.trim()).filter(Boolean);
+  const names=catDraft.map(c=>c.trim()).filter(Boolean);
   if(new Set(names).size!==names.length) return csay('duplicate section names');
-  /* a rename has to follow through to the projects, or every spot tagged with the old
-     string quietly drops out of the section it was renamed into */
-  const renames=catDraft.filter(c=>c.was&&c.now.trim()&&c.now.trim()!==c.was).map(c=>[c.was,c.now.trim()]);
   $('#catsave').disabled=true; csay('saving…');
   try{
-    const site=await ghGetJson('data/site.json');
-    site.data.sort_categories=names;
-    if(renames.length){
-      const map=new Map(renames);
-      site.data.categories=(site.data.categories||[]).map(c=>map.get(c)||c);
-      const pr=await ghGetJson('data/projects.json');
-      pr.data.forEach(p=>{
-        const cs=[...new Set(catsOf(p).map(c=>map.get(c)||c))];
-        p.categories=cs; p.category=cs[0]||'';
-      });
-      await ghPutJson('data/projects.json',pr.data,pr.sha,'admin: apply category renames');
-      projects=pr.data;
-      CATORDER=site.data.categories;
-    }
-    await ghPutJson('data/site.json',site.data,site.sha,'admin: /sort/ sections');
-    SORTCATS=names; catDraft=names.map(c=>({was:c,now:c}));
-    populateCats(); renderCatList(); renderAssign();
+    const {sha,data}=await ghGetJson('data/site.json');
+    data.sort_categories=names;
+    data.sort_picks={}; names.forEach(n=>{ data.sort_picks[n]=(pickDraft[n]||[]).slice(0,SORT_MAX); });
+    await ghPutJson('data/site.json',data,sha,'admin: /sort/ sections + picks');
+    SORTCATS=names; PICKS=data.sort_picks;
+    catDraft=null; pickDraft=null; renderAll();
     csay('saved — live in ~2 min');
   }catch(err){ csay('failed: '+err.message); }
   $('#catsave').disabled=false;
-});
-
-/* --- spots: the SORT flag + category tags, one row per work project --- */
-let assignDraft=null;                   // slug -> {sort, cats} for rows touched
-function assignList(){
-  let l=workList();
-  const q=$('#assignsearch').value.trim().toLowerCase();
-  if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
-  const show=$('#assignshow').value;
-  if(show==='sorted') l=l.filter(p=>curSort(p).length);
-  else if(show==='loose') l=l.filter(p=>!curCats(p).length);
-  return l;
-}
-function touch(p){
-  if(!assignDraft[p.slug]) assignDraft[p.slug]={sort:curSort(p).slice(),cats:curCats(p).slice()};
-  return assignDraft[p.slug];
-}
-function renderAssign(){
-  if(!assignDraft) assignDraft={};
-  const names=(catDraft?catDraft.map(c=>c.now.trim()).filter(Boolean):SORTCATS);
-  const box=$('#assignlist'); box.innerHTML='';
-  const l=assignList();
-  asay(l.length+' shown');
-  l.forEach(p=>{
-    const on=curCats(p), inSort=curSort(p);
-    const row=document.createElement('div');
-    row.style.cssText='display:flex;gap:14px;align-items:center;border-bottom:1px solid var(--line);padding:3px 0;font-size:12px';
-    /* one SORT box per section — ticking it puts this spot in that section's five.
-       The number after it is the spot's position, so anything past 5 reads as (cut). */
-    const sortBoxes=names.map(c=>{
-      const i=inSort.includes(c)?sectionMembers(c).indexOf(p)+1:0;
-      const cut=i>SORT_MAX;
-      return `<label style="display:inline-flex;align-items:center;gap:3px;white-space:nowrap;${cut?'color:#c00':''}"><input type="checkbox" class="sortbox" value="${esc2(c)}"${i?' checked':''}> ${esc2(c)}${i?' '+(cut?'(cut)':i):''}</label>`;
-    }).join('');
-    row.innerHTML=`<span style="font-weight:bold;opacity:${inSort.length?1:.25}">SORT</span>
-      <span style="display:flex;gap:10px;min-width:330px">${sortBoxes}</span>
-      <span style="flex:1;min-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc2(capOf(p))}</span>
-      <span style="opacity:.45;font-size:10px">tags</span>`+
-      CATORDER.map(c=>`<label style="display:inline-flex;align-items:center;gap:3px;white-space:nowrap;opacity:.7"><input type="checkbox" class="catbox" value="${esc2(c)}"${on.includes(c)?' checked':''}> ${esc2(c)}</label>`).join('');
-    row.querySelectorAll('.sortbox').forEach(cb=>cb.addEventListener('change',()=>{
-      touch(p).sort=[...row.querySelectorAll('.sortbox:checked')].map(x=>x.value);
-      asay('unsaved changes'); renderCatList(); renderAssign();
-    }));
-    row.querySelectorAll('.catbox').forEach(cb=>cb.addEventListener('change',()=>{
-      touch(p).cats=[...row.querySelectorAll('.catbox:checked')].map(x=>x.value);
-      asay('unsaved changes'); renderCatList(); renderAssign();
-    }));
-    box.appendChild(row);
-  });
-}
-$('#assignsearch').addEventListener('input',renderAssign);
-$('#assignshow').addEventListener('change',renderAssign);
-$('#assignsave').addEventListener('click',async()=>{
-  if(!tok()) return asay('paste your GitHub token first');
-  const changed=Object.keys(assignDraft||{});
-  if(!changed.length) return asay('nothing to save');
-  $('#assignsave').disabled=true; asay('saving…');
-  try{
-    const {sha,data}=await ghGetJson('data/projects.json');
-    data.forEach(p=>{
-      const d=assignDraft[p.slug]; if(!d) return;
-      const cs=[...new Set(d.cats)];
-      p.categories=cs; p.category=cs[0]||'';
-      const st=[...new Set(d.sort)]; if(st.length) p.sort=st; else delete p.sort;
-    });
-    await ghPutJson('data/projects.json',data,sha,`admin: /sort/ spots (${changed.length} project(s))`);
-    projects=data; assignDraft={}; renderCatList(); renderAssign();
-    asay('saved — live in ~2 min');
-  }catch(err){ asay('failed: '+err.message); }
-  $('#assignsave').disabled=false;
 });
 
 /* ---- global "mobile gallery" toggle (site.json) ---- */
