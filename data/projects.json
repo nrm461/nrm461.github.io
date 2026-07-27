@@ -1017,7 +1017,7 @@
   "stills": [],
   "number": "W030",
   "selected": false,
-  "arch_order": 39,
+  "arch_order": 40,
   "carousel": true,
   "gallery": true,
   "categories": [
@@ -1786,7 +1786,7 @@
   "number": "W060",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "arch_order": 33,
+  "arch_order": 34,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -1977,7 +1977,7 @@
   "number": "W070",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-vniue-M/",
-  "arch_order": 35,
+  "arch_order": 36,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2116,7 +2116,7 @@
   "number": "W076",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8NJ4r3PSG7/",
-  "arch_order": 36,
+  "arch_order": 37,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -2172,7 +2172,7 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8fg96vvkxn/",
   "delivered": "2024-09-30",
-  "arch_order": 43,
+  "arch_order": 44,
   "categories": [],
   "carousel": false
  },
@@ -2197,7 +2197,7 @@
   "number": "W080",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
-  "arch_order": 42,
+  "arch_order": 43,
   "carousel": false,
   "delivered": "2024-09-30",
   "categories": [
@@ -2226,7 +2226,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
   "sel_order": 15,
-  "arch_order": 32,
+  "arch_order": 33,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2696,7 +2696,7 @@
   "number": "W114",
   "selected": true,
   "sel_order": 17,
-  "arch_order": 41,
+  "arch_order": 42,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2724,7 +2724,7 @@
   "video_src": "",
   "number": "W115",
   "selected": false,
-  "arch_order": 38,
+  "arch_order": 39,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -4747,7 +4747,7 @@
   "number": "W195",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 44,
+  "arch_order": 45,
   "categories": [
    "Car"
   ],
@@ -4802,7 +4802,7 @@
   "number": "W197",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 34,
+  "arch_order": 35,
   "delivered": "2026-02-09",
   "carousel": true,
   "gallery": true,
@@ -5097,7 +5097,7 @@
   "number": "W209",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 37,
+  "arch_order": 38,
   "delivered": "2024-09-30",
   "carousel": false,
   "categories": []
@@ -5335,7 +5335,7 @@
   "number": "W219",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 40,
+  "arch_order": 41,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -5671,7 +5671,7 @@
   "vimeo": "https://vimeo.com/1210616365",
   "credits": "Kyle McNeil | Sky's Song\n\nDirected by @elielford\nProduced by Brendan Garrett\nDP: @embo920\nColor: @nick__metcalf\nLab: Metropolis Post",
   "number": "W903",
-  "arch_order": 45,
+  "arch_order": 46,
   "carousel": false
  },
  {
@@ -6184,7 +6184,7 @@
   "vimeo": "https://vimeo.com/1210616354",
   "credits": "Filmsupply | Don't Forget To Breathe\n\nDirector: @frickneeman\nDOP: @gabrielconnelly\nEdit: @frickneeman\nColorist: @nick__metcalf",
   "number": "W933",
-  "arch_order": 46
+  "arch_order": 32
  },
  {
   "slug": "tokischa-perreo-llorando-trailer",
