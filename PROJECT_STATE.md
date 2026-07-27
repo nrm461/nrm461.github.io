@@ -22,6 +22,24 @@ Two things to know before editing `css/main.css`:
   middle 65%, matching prodco.xyz's spread) from 769px up; 768px and down is flex and
   is deliberately left alone, including deck.css's FILTERS as a fourth nav item.
 
+## Typeface — IBM Plex Mono (2026-07-26)
+
+The site runs on **IBM Plex Mono at `--fs: 11.5px`**, self-hosted from `fonts/`
+(OFL 1.1, `fonts/OFL.txt`). Nick picked it against the real work grid; issue #2.
+
+Before this the stack was `'OCRF', Courier, monospace` — but OCRF is ProdCo's licensed
+face and `fonts/ocrf.woff2` was never obtained, so every visitor since launch saw the
+**Courier fallback**. The dead `@font-face` is gone; if the licence is ever bought it is
+a two-line restore. Shipped weights: 300 (body) and 400/600/700 for `deck.css`'s `<b>`,
+latin + latin-ext only, `font-display: swap`.
+
+`--fs` is not just text size — `--height-text` and the rule heights derive from it, so
+changing it moves the caption blocks and rules too. `--lh` stays the authored `18/13`.
+
+**Known loose end:** `deck.css` still hard-codes `#board-title` at 13px and the admin tag
+at 9px, so on the archive page they sit slightly large against the new 11.5px baseline.
+Left alone pending Nick's call.
+
 **A GitHub Action ("Rebuild site") regenerates the pages on push** and refreshes the
 `?v=` cache-bust stamp that `_build/build_site.py` writes from the CSS/JS mtime. Do not
 run `build_site.py` by hand — the local rebuild collides with the Action's own
