@@ -104,8 +104,8 @@ Every save republishes the site itself in ~2 min.
 <div id="catpanel" style="display:none;padding:0 20px 40px">
   <div class="hint" style="padding-left:0">
     The <a href="/sort/" target="_blank">/sort/ page</a> shows these sections in this order — <b>five spots each, no more</b>.
-    Each section keeps its own running order, independent of the work page: drag nothing, just use the arrows.
-    RECENT sits above them all and looks after itself — it is the first five of the work page, newest first.
+    Each section keeps its own running order, independent of the work page — drag the thumbnails to set it.
+    RECENT is picked by hand like the rest; whichever section sits at the TOP is the one the page opens on.
     The page stays unlinked from the site nav — only people with the link see it.
   </div>
 
@@ -710,13 +710,6 @@ function ensureDrafts(){
 function renderCatList(){
   ensureDrafts();
   const box=$('#catlist'); box.innerHTML='';
-  /* RECENT is computed by the build and pinned to the top of /sort/ — shown here for
-     orientation only, nothing to pick or reorder. */
-  const rec=document.createElement('div');
-  rec.style.cssText='display:flex;gap:6px;align-items:center;opacity:.6';
-  rec.innerHTML=`<span style="flex:1;padding:6px 10px;border:1px dashed var(--fg)">Recent <b>AUTO</b> — first five of the work page, always on top, opens by default</span>
-    <span style="width:9ch;text-align:right;font-size:11px">${SORT_MAX}/${SORT_MAX}</span>`;
-  box.appendChild(rec);
   catDraft.forEach((name,i)=>{
     const n=(pickDraft[name]||[]).length, over=n>SORT_MAX;
     const row=document.createElement('div');
@@ -748,41 +741,59 @@ $('#catadd').addEventListener('click',()=>{
 });
 $('#catnew').addEventListener('keydown',e=>{ if(e.key==='Enter') $('#catadd').click(); });
 
-/* --- the five spots inside each section, in their own order --- */
+/* --- the five spots inside each section: thumbnail tiles, dragged into order ---
+   Same drag idiom as the Selects/Work grids above (dragstart marks the tile, dragover
+   re-inserts it), kept local to one section so a drag can't silently move a spot into
+   a different five. Adding is still the picker — a drag source would mean rendering
+   the whole 87-card work grid inside every section. */
+let pickDrag=null;
 function renderPicks(){
   ensureDrafts();
   const box=$('#picklist'); box.innerHTML='';
   catDraft.forEach(name=>{
-    const list=pickDraft[name]||[];
-    const sec=document.createElement('div');
+    const list=pickDraft[name]||(pickDraft[name]=[]);
     const full=list.length>=SORT_MAX;
-    sec.innerHTML=`<div style="text-transform:uppercase;font-weight:bold;margin-bottom:6px">${esc2(name)}
-        <span style="font-weight:normal;opacity:.6;font-size:11px">${list.length}/${SORT_MAX}</span></div>
-      <div class="picks" style="display:grid;gap:4px;max-width:620px"></div>
-      <div style="display:flex;gap:8px;margin-top:6px;max-width:620px">
+    const sec=document.createElement('div');
+    sec.innerHTML=`<div style="text-transform:uppercase;font-weight:bold;margin-bottom:8px">${esc2(name)}
+        <span style="font-weight:normal;opacity:.6;font-size:11px">${list.length}/${SORT_MAX}</span>
+        <span style="font-weight:normal;opacity:.45;font-size:11px;margin-left:8px">drag to reorder</span></div>
+      <div class="picktiles" style="display:grid;grid-template-columns:repeat(${SORT_MAX},minmax(0,1fr));gap:10px;max-width:900px"></div>
+      <div style="display:flex;gap:8px;margin-top:8px;max-width:900px">
         <select class="addspot" style="flex:1"${full?' disabled':''}>
           <option value="">${full?'section is full — remove one first':'add a spot…'}</option>
           ${full?'':workList().filter(p=>!list.includes(p.slug)).map(p=>`<option value="${esc2(p.slug)}">${esc2(capOf(p))}</option>`).join('')}
         </select>
       </div>`;
-    const rows=sec.querySelector('.picks');
+    const tiles=sec.querySelector('.picktiles');
     list.forEach((slug,i)=>{
-      const row=document.createElement('div');
-      const gone=!bySlug(slug)||bySlug(slug).group!=='posted';
-      row.style.cssText='display:flex;gap:6px;align-items:center;font-size:12px';
-      row.innerHTML=`<span style="width:3ch;opacity:.5">${i+1}</span>
-        <span style="flex:1;padding:4px 8px;border:1px solid var(--line);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;${gone?'color:#c00':''}">${esc2(capFor(slug))}${gone?' — not on the work page, will not show':''}</span>
-        <button data-a="up" ${i===0?'disabled':''}>↑</button>
-        <button data-a="down" ${i===list.length-1?'disabled':''}>↓</button>
-        <button data-a="del" style="border-color:#c00;color:#c00">×</button>`;
-      row.querySelector('[data-a="up"]').addEventListener('click',()=>{ list.splice(i-1,0,list.splice(i,1)[0]); dirtySort(); renderAll(); });
-      row.querySelector('[data-a="down"]').addEventListener('click',()=>{ list.splice(i+1,0,list.splice(i,1)[0]); dirtySort(); renderAll(); });
-      row.querySelector('[data-a="del"]').addEventListener('click',()=>{ list.splice(i,1); dirtySort(); renderAll(); });
-      rows.appendChild(row);
+      const proj=bySlug(slug), gone=!proj||proj.group!=='posted';
+      const t=document.createElement('div');
+      t.className='ptile'; t.draggable=true; t.dataset.slug=slug;
+      t.style.cssText='position:relative;cursor:grab;border:1px solid '+(gone?'#c00':'transparent');
+      t.innerHTML=`<img src="${RAW}assets/thumbs/${esc2(slug)}-600.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#eee;pointer-events:none" onerror="this.style.opacity=.15">
+        <button class="prm" title="remove" style="position:absolute;top:4px;right:4px;width:20px;height:20px;line-height:1;padding:0;background:#fff;border:1px solid #000">×</button>
+        <div style="padding:3px 0;font-size:11px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">
+          <span style="opacity:.5">${i+1}</span> ${esc2(capFor(slug))}</div>
+        ${gone?'<div style="color:#c00;font-size:10px">not on the work page — will not show</div>':''}`;
+      t.querySelector('.prm').addEventListener('click',e=>{ e.stopPropagation(); list.splice(i,1); dirtySort(); renderAll(); });
+      t.addEventListener('dragstart',()=>{ pickDrag={name,slug,el:t}; t.style.opacity=.35; });
+      t.addEventListener('dragend',()=>{ t.style.opacity=1; pickDrag=null; });
+      t.addEventListener('dragover',e=>{
+        if(!pickDrag||pickDrag.name!==name||pickDrag.slug===slug) return;   // same section only
+        e.preventDefault();
+        const from=list.indexOf(pickDrag.slug), to=list.indexOf(slug);
+        if(from<0||to<0) return;
+        list.splice(to,0,list.splice(from,1)[0]);
+        dirtySort(); renderPicks();
+        /* keep the pointer on the tile it is dragging so the next dragover still fires */
+        const moved=$('#picklist').querySelector(`.ptile[data-slug="${CSS.escape(pickDrag.slug)}"]`);
+        if(moved){ pickDrag.el=moved; moved.style.opacity=.35; }
+      });
+      tiles.appendChild(t);
     });
     sec.querySelector('.addspot').addEventListener('change',e=>{
       if(!e.target.value) return;
-      list.push(e.target.value); pickDraft[name]=list; dirtySort(); renderAll();
+      list.push(e.target.value); dirtySort(); renderAll();
     });
     box.appendChild(sec);
   });

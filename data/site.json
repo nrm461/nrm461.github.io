@@ -62,12 +62,20 @@
   "Fashion"
  ],
  "sort_categories": [
+  "Recent",
   "Commercial",
   "Music Video",
   "Beauty",
   "Car"
  ],
  "sort_picks": {
+  "Recent": [
+   "benson-boone-the-time-of-my-life",
+   "okara-the-auction",
+   "pura-scents-of-place",
+   "nissan-built-for-happy-chaos-dc",
+   "instax-forever"
+  ],
   "Commercial": [
    "function-health-mothers-day",
    "alfa-beer-the-subtle-things",
