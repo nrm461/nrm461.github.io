@@ -65,6 +65,9 @@
   "arch_order": 19,
   "categories": [
    "Music Video"
+  ],
+  "sort": [
+   "Music Video"
   ]
  },
  {
@@ -139,6 +142,9 @@
   "delivered": "2025-04-22",
   "arch_order": 43,
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -323,9 +329,6 @@
   "delivered": "2025-08-19",
   "categories": [
    "Music Video"
-  ],
-  "sort": [
-   "Music Video"
   ]
  },
  {
@@ -406,6 +409,9 @@
   "arch_order": 9,
   "sel_order": 11,
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -521,9 +527,6 @@
   "delivered": "2026-01-16",
   "categories": [
    "Commercial"
-  ],
-  "sort": [
-   "Commercial"
   ]
  },
  {
@@ -604,9 +607,6 @@
   "arch_order": 14,
   "categories": [
    "Music Video"
-  ],
-  "sort": [
-   "Music Video"
   ]
  },
  {
@@ -645,9 +645,6 @@
   "gallery": true,
   "delivered": "2026-01-23",
   "categories": [
-   "Commercial"
-  ],
-  "sort": [
    "Commercial"
   ]
  },
@@ -766,9 +763,6 @@
   "delivered": "2026-03-11",
   "arch_order": 7,
   "categories": [
-   "Commercial"
-  ],
-  "sort": [
    "Commercial"
   ]
  },
@@ -1351,7 +1345,7 @@
    "Commercial"
   ],
   "sort": [
-   "Commercial"
+   "Car"
   ]
  },
  {
@@ -1482,9 +1476,6 @@
   "arch_order": 1,
   "categories": [
    "Commercial"
-  ],
-  "sort": [
-   "Commercial"
   ]
  },
  {
@@ -1524,9 +1515,6 @@
   "delivered": "2026-06-25",
   "arch_order": 0,
   "categories": [
-   "Music Video"
-  ],
-  "sort": [
    "Music Video"
   ]
  },
@@ -1638,9 +1626,6 @@
   "arch_order": 71,
   "categories": [
    "Beauty"
-  ],
-  "sort": [
-   "Beauty"
   ]
  },
  {
@@ -1748,6 +1733,9 @@
   "delivered": "2025-03-25",
   "categories": [
    "Commercial"
+  ],
+  "sort": [
+   "Commercial"
   ]
  },
  {
@@ -1805,6 +1793,9 @@
   "gallery": true,
   "categories": [
    "Beauty"
+  ],
+  "sort": [
+   "Beauty"
   ]
  },
  {
@@ -1858,6 +1849,9 @@
   "arch_order": 58,
   "categories": [
    "Commercial",
+   "Car"
+  ],
+  "sort": [
    "Car"
   ]
  },
@@ -1919,7 +1913,10 @@
    "Commercial"
   ],
   "sel_order": 19,
-  "gallery": true
+  "gallery": true,
+  "sort": [
+   "Commercial"
+  ]
  },
  {
   "slug": "ny-presbyterian-peter",
@@ -1998,9 +1995,6 @@
   "delivered": "2025-01-15",
   "carousel": false,
   "categories": [
-   "Beauty"
-  ],
-  "sort": [
    "Beauty"
   ]
  },
@@ -2114,6 +2108,9 @@
   "carousel": true,
   "gallery": true,
   "categories": [
+   "Music Video"
+  ],
+  "sort": [
    "Music Video"
   ]
  },
@@ -2250,6 +2247,9 @@
   "delivered": "2024-09-30",
   "categories": [
    "Music Video"
+  ],
+  "sort": [
+   "Music Video"
   ]
  },
  {
@@ -2279,6 +2279,9 @@
   "carousel": true,
   "gallery": true,
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -4911,10 +4914,7 @@
    "Commercial",
    "Car"
   ],
-  "carousel": false,
-  "sort": [
-   "Car"
-  ]
+  "carousel": false
  },
  {
   "slug": "pnc-today-is-the-day",
@@ -5073,6 +5073,9 @@
   "arch_order": 59,
   "categories": [
    "Commercial"
+  ],
+  "sort": [
+   "Beauty"
   ]
  },
  {
@@ -5476,9 +5479,6 @@
   "gallery": true,
   "categories": [
    "Commercial",
-   "Car"
-  ],
-  "sort": [
    "Car"
   ]
  },
