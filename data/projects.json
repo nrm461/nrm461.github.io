@@ -62,7 +62,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
-  "arch_order": 18,
+  "arch_order": 19,
   "categories": [
    "Music Video"
   ]
@@ -317,7 +317,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 15,
+  "arch_order": 16,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19",
@@ -433,7 +433,7 @@
   ],
   "number": "W012",
   "selected": false,
-  "arch_order": 17,
+  "arch_order": 18,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-30",
@@ -589,7 +589,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 13,
+  "arch_order": 14,
   "categories": [
    "Music Video"
   ]
@@ -1105,7 +1105,7 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 21,
+  "arch_order": 22,
   "categories": [
    "Long Form"
   ]
@@ -1360,7 +1360,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 14,
+  "arch_order": 15,
   "categories": [
    "Commercial"
   ]
@@ -2283,7 +2283,7 @@
   "number": "W085",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DR2SqTSkZE4/",
-  "arch_order": 12,
+  "arch_order": 13,
   "categories": [
    "Long Form"
   ],
@@ -2667,7 +2667,7 @@
   "number": "W113",
   "selected": true,
   "sel_order": 10,
-  "arch_order": 22,
+  "arch_order": 23,
   "delivered": "2025-04-22",
   "carousel": true,
   "gallery": true,
@@ -3232,7 +3232,7 @@
   "group": "posted",
   "selected": false,
   "number": "W138",
-  "arch_order": 19,
+  "arch_order": 20,
   "vimeo": "",
   "credits": "@bigfoe1998 for @vanityfair & @lululemon\n24 Hours To The Fullest\n\nDirector: @__henrydacosta__\nProduction Company: @fieldunit\nExecutive Producers: @alec__ernest @oscarblyons\nProducer: @jessthiel\nDP: @gabrielconnelly\nPhotographer: @jesse_lizotte\nStylist: @zoeyradfordscott\nPD: @the1andorly\nEditor: @tobyheard\nColor: @nick__metcalf\nComposer: @romekboyer_sound\nSound: @g.s.sound",
   "carousel": false,
@@ -5411,7 +5411,7 @@
   "children": [
    "rivian-milk-run"
   ],
-  "arch_order": 20,
+  "arch_order": 21,
   "selected": true,
   "sel_order": 9,
   "delivered": "2025-05-01",
@@ -6184,7 +6184,7 @@
   "vimeo": "https://vimeo.com/1210616354",
   "credits": "Filmsupply | Don't Forget To Breathe\n\nDirector: @frickneeman\nDOP: @gabrielconnelly\nEdit: @frickneeman\nColorist: @nick__metcalf",
   "number": "W933",
-  "arch_order": 23
+  "arch_order": 12
  },
  {
   "slug": "tokischa-perreo-llorando-trailer",
@@ -6593,6 +6593,6 @@
   "vimeo": "https://vimeo.com/1210616403",
   "credits": "Thorne | Now You Know\n\nDir: @jackbegert\nDP: @gabrielconnelly\nProd: Biscuit\nColor: @nick__metcalf\nShot on 35mm",
   "number": "W957",
-  "arch_order": 16
+  "arch_order": 17
  }
 ]
