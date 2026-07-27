@@ -66,5 +66,35 @@
   "Music Video",
   "Beauty",
   "Car"
- ]
+ ],
+ "sort_picks": {
+  "Commercial": [
+   "function-health-mothers-day",
+   "alfa-beer-the-subtle-things",
+   "crypto-com-fortune-favors-the-brave",
+   "de-beers-director-s-cut",
+   "burger-king-cows-menu"
+  ],
+  "Music Video": [
+   "becky-g-epa",
+   "maria-isabel-suiza",
+   "lisa-x-tyla-when-im-with-you",
+   "dua-lipa-dance-the-night",
+   "troye-sivan-got-me-started"
+  ],
+  "Beauty": [
+   "nike-x-skims-nikeskims-spring-26",
+   "therabody-glo-your-own-way-with-kendalljenner",
+   "louis-vuitton-virgial-abloh-tribute",
+   "estee-lauder-beautiful-magnolia",
+   "miu-miu-more"
+  ],
+  "Car": [
+   "nissan-built-for-happy-chaos-dc",
+   "cadillac-lift-off",
+   "gmc-nowhere",
+   "subaru-paddle-out",
+   "2021-05-24-grade-deigo-dc-nick-1"
+  ]
+ }
 }
