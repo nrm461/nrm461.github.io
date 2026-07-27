@@ -465,6 +465,18 @@ video.no-autoplay{
 	}
 }
 
+/* Landing accordion: FIVE across at every width down to the 2-across step, so a
+   section is always one full row of five and the thumbnails simply scale with the
+   window. Both the 3-across step (1024px and below) and the 7-across one (above
+   1920px, where five spots left two empty columns) are skipped — the sections hold
+   exactly five, so any other column count either breaks the row or pads it.
+   Below 769px the shared ladder takes over again: 2 across, then 1 at 500px. */
+@media (min-width: 769px){
+	.page-sort .module-videos{
+		grid-template-columns: repeat(5, 1fr);
+	}
+}
+
 /* Card: video
 ======================================== */
 .module-project{
