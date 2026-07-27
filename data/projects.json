@@ -1570,7 +1570,7 @@
   "number": "W048",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FdpXlr2ev/",
-  "arch_order": 77,
+  "arch_order": 70,
   "categories": [
    "Commercial"
   ]
@@ -1596,7 +1596,7 @@
   "number": "W049",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
-  "arch_order": 84,
+  "arch_order": 77,
   "categories": [
    "Beauty"
   ]
@@ -1622,7 +1622,7 @@
   "number": "W050",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/",
-  "arch_order": 83,
+  "arch_order": 76,
   "categories": [
    "Commercial"
   ]
@@ -1648,7 +1648,7 @@
   "number": "W053",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FnezIruzj/",
-  "arch_order": 76,
+  "arch_order": 69,
   "categories": [
    "Long Form"
   ]
@@ -1674,7 +1674,7 @@
   "number": "W055",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2GdLffLvHe/",
-  "arch_order": 78,
+  "arch_order": 71,
   "categories": [
    "Commercial"
   ],
@@ -1701,7 +1701,7 @@
   "number": "W056",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
-  "arch_order": 63,
+  "arch_order": 61,
   "carousel": false,
   "delivered": "2025-03-25",
   "categories": [
@@ -1758,7 +1758,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
   "sel_order": 18,
-  "arch_order": 80,
+  "arch_order": 73,
   "carousel": true,
   "gallery": true,
   "categories": [
@@ -1813,7 +1813,7 @@
   "number": "W061",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOri5sRaF/",
-  "arch_order": 61,
+  "arch_order": 59,
   "categories": [
    "Commercial",
    "Car"
@@ -1842,7 +1842,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
   "carousel": false,
   "delivered": "2026-06-16",
-  "arch_order": 67,
+  "arch_order": 63,
   "categories": [
    "Beauty"
   ]
@@ -1868,7 +1868,7 @@
   "number": "W063",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
-  "arch_order": 81,
+  "arch_order": 74,
   "carousel": true,
   "categories": [
    "Commercial"
@@ -2310,7 +2310,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Cello - PNC.MOV",
   "number": "W086",
   "selected": false,
-  "arch_order": 75,
+  "arch_order": 68,
   "categories": [
    "Commercial"
   ]
@@ -2335,7 +2335,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/denim - polo.mp4",
   "number": "W087",
   "selected": false,
-  "arch_order": 97,
+  "arch_order": 90,
   "categories": [
    "Commercial"
   ]
@@ -2360,7 +2360,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Above the noise - beats.MOV",
   "number": "W089",
   "selected": false,
-  "arch_order": 74,
+  "arch_order": 67,
   "categories": [
    "Commercial"
   ]
@@ -2437,7 +2437,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/future is fearless.mp4",
   "number": "W096",
   "selected": false,
-  "arch_order": 96,
+  "arch_order": 89,
   "categories": [
    "Long Form"
   ],
@@ -2463,7 +2463,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Let’s Conquer - Primary children’s.MOV",
   "number": "W097",
   "selected": false,
-  "arch_order": 95,
+  "arch_order": 88,
   "categories": [
    "Commercial"
   ]
@@ -2489,7 +2489,7 @@
   "number": "W099",
   "selected": false,
   "delivered": "2024-09-30",
-  "arch_order": 73,
+  "arch_order": 66,
   "categories": [
    "Commercial",
    "Car"
@@ -2540,7 +2540,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/This is classic - rebook.mov",
   "number": "W107",
   "selected": false,
-  "arch_order": 92,
+  "arch_order": 85,
   "categories": [
    "Commercial"
   ],
@@ -2566,7 +2566,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Timeless america - polo.MOV",
   "number": "W108",
   "selected": false,
-  "arch_order": 91,
+  "arch_order": 84,
   "categories": [],
   "carousel": false
  },
@@ -2590,7 +2590,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Watch series 7 - apple.MOV",
   "number": "W109",
   "selected": false,
-  "arch_order": 90,
+  "arch_order": 82,
   "categories": [
    "Commercial"
   ]
@@ -2616,7 +2616,7 @@
   "number": "W110",
   "selected": false,
   "delivered": "2026-07-08",
-  "arch_order": 89,
+  "arch_order": 81,
   "categories": [
    "Car"
   ],
@@ -2642,7 +2642,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Yoonmi - monse.mp4",
   "number": "W111",
   "selected": false,
-  "arch_order": 87,
+  "arch_order": 79,
   "categories": [],
   "carousel": false
  },
@@ -4691,7 +4691,7 @@
   "number": "W193",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 93,
+  "arch_order": 86,
   "categories": [
    "Commercial",
    "Car"
@@ -4719,7 +4719,7 @@
   "number": "W194",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 70,
+  "arch_order": 64,
   "categories": [
    "Commercial",
    "Car"
@@ -4855,7 +4855,7 @@
   "number": "W199",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 59,
+  "arch_order": 57,
   "categories": [
    "Commercial",
    "Car"
@@ -4883,7 +4883,7 @@
   "number": "W200",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 79,
+  "arch_order": 72,
   "categories": [
    "Commercial"
   ]
@@ -4909,7 +4909,7 @@
   "number": "W201",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 98,
+  "arch_order": 91,
   "categories": [],
   "carousel": false
  },
@@ -4988,7 +4988,7 @@
   "number": "W205",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 71,
+  "arch_order": 65,
   "delivered": "2024-09-30",
   "categories": [
    "Car"
@@ -5016,7 +5016,7 @@
   "number": "W206",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 62,
+  "arch_order": 60,
   "categories": [
    "Commercial"
   ]
@@ -5097,7 +5097,7 @@
   "number": "W209",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 60,
+  "arch_order": 58,
   "delivered": "2024-09-30",
   "carousel": false,
   "categories": []
@@ -5151,7 +5151,7 @@
   "number": "W212",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 82,
+  "arch_order": 75,
   "categories": [
    "Beauty"
   ],
@@ -5256,7 +5256,7 @@
   "number": "W216",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 85,
+  "arch_order": 78,
   "categories": [
    "Commercial"
   ]
@@ -5282,7 +5282,7 @@
   "number": "W217",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 88,
+  "arch_order": 80,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -5308,7 +5308,7 @@
   "number": "W218",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 86,
+  "arch_order": 83,
   "categories": [
    "Beauty"
   ],
@@ -5465,7 +5465,7 @@
   "vimeo": "https://vimeo.com/1210616392",
   "credits": "@maybelline\nBe You\n\nDirector: Madeline Clayton\nProd Co: Mustache\nDP: @carella\nEdit: Dylan J Edwards\nColor: @nick__metcalf",
   "number": "W224",
-  "arch_order": 99
+  "arch_order": 92
  },
  {
   "slug": "agcf-unita",
@@ -5518,7 +5518,7 @@
   "vimeo": "https://vimeo.com/1210616309",
   "credits": "Adidas | James Harden\n\nDirector: @baron_films\nDP: Minka Farthing Kohl\nExecutive Producer: Arrow Kruse\nProducer: Ross Levine, Alldayeveryday\nEditor: Rob Paglia, The Company\nColor: @nick__metcalf\nMusic: Stelios Phili",
   "number": "W227",
-  "arch_order": 94
+  "arch_order": 87
  },
  {
   "slug": "moncler-passion-for-sport-snowboard",
@@ -5775,7 +5775,7 @@
   "vimeo": "https://vimeo.com/1210616364",
   "credits": "Hummer\n'EV'\n\nDir: @josh_hayward_\nDP: @tommydag\nColor: @nick__metcalf\nExecutive Producer: Scott Dodoro\nAdditional Cinematographer: Eric Ulbrich\nProducer: Andrew Denyer\nStarring: Victor Ross\nDrone: Override Films\nCamera Car: Filmotechnic\nAdditional Score, Sound Design: Mount\nProduced By: Local Boy\nAgency: Leo Burnett\nExecutive Creative Director: Steve Glinski\nAssociate Creative Director: Kris Layher\nSenior Copywriter: Joe Rinaldi\nSenior Producer: Joan DiSalvo\nVP Account Director: Stacey Kogler",
   "number": "W909",
-  "arch_order": 64,
+  "arch_order": 62,
   "carousel": false
  },
  {
