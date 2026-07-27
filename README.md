@@ -41,7 +41,8 @@ in `claude_project/04_deck.md`.
 
 - `token/git-token` holds the GitHub access token. It is git-ignored — never
   commit or share it.
-- Font: the original site uses a licensed font ("OCRF"). This site falls back to
-  Courier. To use the real font, license it and save it as `fonts/ocrf.woff2`.
+- Font: IBM Plex Mono, self-hosted from `fonts/` under the OFL (see `fonts/OFL.txt`).
+  It replaced the original site's licensed "OCRF" face, which was never obtained —
+  every page now loads it via `--font` in `css/main.css`.
 - Numbering (W001…) is assigned automatically to visible projects in
   chronological order at build time.
