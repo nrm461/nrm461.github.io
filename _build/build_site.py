@@ -255,7 +255,6 @@ def cat_slug(name):
     return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
 
 SORT_MAX = 5             # hard cap: a section shows five spots, no more
-RECENT_NAME = 'Recent'   # the auto section pinned to the top (see build_sort)
 
 def sort_categories():
     """The sections /sort/ shows, in order. Its own list, NOT site.json['categories'] —
@@ -287,8 +286,7 @@ def build_sort():
     component and 5-across grid as the work page, so nothing here re-creates type
     or spacing — and with the cap at five, every open section is exactly one row.
 
-    RECENT leads and is the only section that starts open. It is computed (the first
-    five of the work page), not picked, so it stays right on its own.
+    The first section with spots (RECENT, as ordered today) starts open.
 
     EXPERIMENTAL: deliberately unlinked and noindex — no nav entry until Nick says
     the shape works.
@@ -296,14 +294,15 @@ def build_sort():
     vis = sorted(visible_projects(),
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
 
-    # RECENT rides at the top and needs no upkeep: it is the first five of the work
-    # page, so it re-picks itself every time Nick reorders or adds a job. It is the
-    # one section that starts OPEN — the page should say something before it's touched.
-    groups = [(RECENT_NAME, cat_slug(RECENT_NAME), vis[:SORT_MAX], True)]
+    # Every section is hand-picked, RECENT included — it leads the list rather than
+    # being computed, so Nick chooses what the page opens on. The FIRST section that
+    # has spots is the one that starts open: the page should say something before it
+    # is touched, and that stays true if the sections are ever reordered.
+    groups = []
     for name in sort_categories():
         members = sort_members(name, vis)
         if members:
-            groups.append((name, cat_slug(name), members, False))
+            groups.append((name, cat_slug(name), members, not groups))
 
     blocks = []
     for name, slug, members, open_ in groups:
