@@ -254,7 +254,8 @@ def cat_slug(name):
     """URL token for a category: 'Music Video' -> 'music-video' (the ?query deep link)."""
     return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
 
-SORT_MAX = 5      # hard cap: a category shows five spots, no more
+SORT_MAX = 5             # hard cap: a section shows five spots, no more
+RECENT_NAME = 'Recent'   # the auto section pinned to the top (see build_sort)
 
 def sort_categories():
     """The sections /sort/ shows, in order. Its own list, NOT site.json['categories'] —
@@ -284,26 +285,34 @@ def build_sort():
     component and 5-across grid as the work page, so nothing here re-creates type
     or spacing — and with the cap at five, every open section is exactly one row.
 
+    RECENT leads and is the only section that starts open. It is computed (the first
+    five of the work page), not picked, so it stays right on its own.
+
     EXPERIMENTAL: deliberately unlinked and noindex — no nav entry until Nick says
     the shape works.
     """
     vis = sorted(visible_projects(),
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
 
-    groups = []
+    # RECENT rides at the top and needs no upkeep: it is the first five of the work
+    # page, so it re-picks itself every time Nick reorders or adds a job. It is the
+    # one section that starts OPEN — the page should say something before it's touched.
+    groups = [(RECENT_NAME, cat_slug(RECENT_NAME), vis[:SORT_MAX], True)]
     for name in sort_categories():
         members = sort_members(name, vis)
         if members:
-            groups.append((name, cat_slug(name), members))
+            groups.append((name, cat_slug(name), members, False))
 
     blocks = []
-    for name, slug, members in groups:
+    for name, slug, members, open_ in groups:
         cards = '\n'.join(card_html(p, rel='../') for p in members)
+        active = ' active' if open_ else ''
+        hidden = '' if open_ else ' style="display:none"'
         blocks.append(
             f'\t\t\t<div class="module-cat" data-slug="{slug}">\n'
-            f'\t\t\t\t<h2 class="module-cat--title trigger">'
+            f'\t\t\t\t<h2 class="module-cat--title trigger{active}">'
             f'<span>{esc(name)}</span></h2>\n'
-            f'\t\t\t\t<div class="module-cat--content" style="display:none">\n'
+            f'\t\t\t\t<div class="module-cat--content"{hidden}>\n'
             f'\t\t\t\t\t<div class="module-cat--block">\n'
             f'\t\t\t\t\t\t<div class="module-cat--block-content module-videos">\n{cards}\n\t\t\t\t\t\t</div>\n'
             f'\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>')
@@ -347,7 +356,10 @@ CATS_JS = r'''(function(){
 		syncAll();
 		history.replaceState(null, '', location.pathname);
 	});
-	/* ?beauty (or #beauty) opens that section on load and scrolls it into view */
+	syncAll();
+	/* ?beauty (or #beauty) opens that section on load and scrolls it into view.
+	   RECENT is already open — a deep link opens its section as well rather than
+	   replacing it, so the page always leads with something. */
 	var want = decodeURIComponent((location.search.slice(1) || location.hash.slice(1)).split('=')[0] || '');
 	if(want){
 		cats.forEach(function(c){
