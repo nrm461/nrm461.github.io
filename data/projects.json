@@ -323,6 +323,9 @@
   "delivered": "2025-08-19",
   "categories": [
    "Music Video"
+  ],
+  "sort": [
+   "Music Video"
   ]
  },
  {
@@ -361,6 +364,9 @@
   "delivered": "2025-09-15",
   "sel_order": 12,
   "categories": [
+   "Beauty"
+  ],
+  "sort": [
    "Beauty"
   ]
  },
@@ -515,6 +521,9 @@
   "delivered": "2026-01-16",
   "categories": [
    "Commercial"
+  ],
+  "sort": [
+   "Commercial"
   ]
  },
  {
@@ -554,6 +563,9 @@
   "arch_order": 10,
   "categories": [
    "Music Video"
+  ],
+  "sort": [
+   "Music Video"
   ]
  },
  {
@@ -591,6 +603,9 @@
   "delivered": "2026-02-12",
   "arch_order": 14,
   "categories": [
+   "Music Video"
+  ],
+  "sort": [
    "Music Video"
   ]
  },
@@ -630,6 +645,9 @@
   "gallery": true,
   "delivered": "2026-01-23",
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -708,6 +726,9 @@
   "delivered": "2026-05-13",
   "categories": [
    "Music Video"
+  ],
+  "sort": [
+   "Music Video"
   ]
  },
  {
@@ -745,6 +766,9 @@
   "delivered": "2026-03-11",
   "arch_order": 7,
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -1325,6 +1349,9 @@
   "gallery": true,
   "categories": [
    "Commercial"
+  ],
+  "sort": [
+   "Commercial"
   ]
  },
  {
@@ -1422,6 +1449,9 @@
   "categories": [
    "Commercial",
    "Beauty"
+  ],
+  "sort": [
+   "Beauty"
   ]
  },
  {
@@ -1451,6 +1481,9 @@
   "delivered": "2026-06-08",
   "arch_order": 1,
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -1491,6 +1524,9 @@
   "delivered": "2026-06-25",
   "arch_order": 0,
   "categories": [
+   "Music Video"
+  ],
+  "sort": [
    "Music Video"
   ]
  },
@@ -1547,6 +1583,9 @@
   "categories": [
    "Commercial",
    "Car"
+  ],
+  "sort": [
+   "Car"
   ]
  },
  {
@@ -1598,6 +1637,9 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
   "arch_order": 71,
   "categories": [
+   "Beauty"
+  ],
+  "sort": [
    "Beauty"
   ]
  },
@@ -1845,6 +1887,9 @@
   "arch_order": 62,
   "categories": [
    "Beauty"
+  ],
+  "sort": [
+   "Beauty"
   ]
  },
  {
@@ -1953,6 +1998,9 @@
   "delivered": "2025-01-15",
   "carousel": false,
   "categories": [
+   "Beauty"
+  ],
+  "sort": [
    "Beauty"
   ]
  },
@@ -4751,7 +4799,10 @@
   "categories": [
    "Car"
   ],
-  "carousel": false
+  "carousel": false,
+  "sort": [
+   "Car"
+  ]
  },
  {
   "slug": "mobil-1-break-free",
@@ -4860,7 +4911,10 @@
    "Commercial",
    "Car"
   ],
-  "carousel": false
+  "carousel": false,
+  "sort": [
+   "Car"
+  ]
  },
  {
   "slug": "pnc-today-is-the-day",
@@ -5073,6 +5127,9 @@
   "carousel": true,
   "gallery": true,
   "categories": [
+   "Car"
+  ],
+  "sort": [
    "Car"
   ]
  },
@@ -5419,6 +5476,9 @@
   "gallery": true,
   "categories": [
    "Commercial",
+   "Car"
+  ],
+  "sort": [
    "Car"
   ]
  },

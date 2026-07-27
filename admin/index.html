@@ -98,30 +98,35 @@ Every save republishes the site itself in ~2 min.
 </div>
 <div id="grid"></div>
 
-<!-- SORT: the categories behind the (unlinked) /sort/ page. Two halves — the category
-     list itself (order = section order on the page) and the project→category matrix. -->
+<!-- SORT: everything behind the (unlinked) /sort/ page. Two halves — the sections it
+     shows (order = order on the page) and the SORT flag that puts a spot in one. -->
 <div id="catpanel" style="display:none;padding:0 20px 40px">
   <div class="hint" style="padding-left:0">
-    The <a href="/sort/" target="_blank">/sort/ page</a> lists these categories in this order, each opening to its projects.
-    It is unlinked from the site nav — only people with the link see it.
-    Renaming a category here also renames it on every project; deleting one removes it from every project.
-    A project can sit in more than one category. Anything with none lands in UNCATEGORISED at the bottom of the page.
+    The <a href="/sort/" target="_blank">/sort/ page</a> shows these sections in this order — <b>five spots each, no more</b>.
+    Tick a section next to a spot to put it in that section's five — a spot can sit in more than one.
+    Over five in one section and only the first five (in work-page order) make the page; the rest read (cut).
+    It stays unlinked from the site nav — only people with the link see it.
   </div>
 
-  <h2 style="font-size:12px;text-transform:uppercase;margin:18px 0 8px">Categories</h2>
-  <div id="catlist" style="display:grid;gap:6px;max-width:560px"></div>
-  <div style="display:flex;gap:8px;align-items:center;margin-top:10px;max-width:560px">
-    <input type="text" id="catnew" placeholder="new category…" style="flex:1">
+  <h2 style="font-size:12px;text-transform:uppercase;margin:18px 0 8px">Sections</h2>
+  <div id="catlist" style="display:grid;gap:6px;max-width:620px"></div>
+  <div style="display:flex;gap:8px;align-items:center;margin-top:10px;max-width:620px">
+    <input type="text" id="catnew" list="known-cats" placeholder="add a section…" style="flex:1">
+    <datalist id="known-cats"></datalist>
     <button id="catadd">Add</button>
-    <button id="catsave">Save categories</button>
+    <button id="catsave">Save sections</button>
     <span id="catstatus" style="font-size:11px;opacity:.75"></span>
   </div>
 
-  <h2 style="font-size:12px;text-transform:uppercase;margin:28px 0 8px">Projects</h2>
+  <h2 style="font-size:12px;text-transform:uppercase;margin:28px 0 8px">Spots</h2>
   <div style="display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap">
     <input type="search" id="assignsearch" placeholder="filter projects…">
-    <label style="font-size:12px;display:inline-flex;align-items:center;gap:4px"><input type="checkbox" id="assignloose"> only uncategorised</label>
-    <button id="assignsave">Save assignments</button>
+    <select id="assignshow">
+      <option value="all">All work</option>
+      <option value="sorted">On /sort/ only</option>
+      <option value="loose">Untagged only</option>
+    </select>
+    <button id="assignsave">Save spots</button>
     <span id="assignstatus" style="font-size:11px;opacity:.75"></span>
   </div>
   <div id="assignlist" style="display:grid;gap:2px"></div>
@@ -212,6 +217,7 @@ async function load(){
   try{
     const s=await (await fetch(RAW+'data/site.json?t='+Date.now())).json();
     if(Array.isArray(s.categories)&&s.categories.length) CATORDER=s.categories.filter(Boolean);
+    SORTCATS=(s.sort_categories||[]).filter(Boolean);
   }catch(e){ /* fall back to the seeded list — admin still works offline of site.json */ }
   populateCats();
   render(); say('ready');
@@ -678,28 +684,43 @@ C.save.addEventListener('click', async()=>{
   }catch(e){ C.st.textContent='failed: '+e.message; }
   C.save.disabled=false;
 });
-/* ---- SORT tab: category list + project→category matrix ---------------------
-   The list drives BOTH the order of sections on /sort/ and the checkboxes offered
-   everywhere else in admin, so it is edited against a working copy (catDraft) and
-   written to site.json in one go. A rename is applied to projects.json in the same
-   save, otherwise every project holding the old string would silently drop out of
-   its section. ------------------------------------------------------------- */
-let catDraft=null;                      // [{was, now}] — `was` is null for a brand-new category
+/* ---- SORT tab: the /sort/ page's sections + its five-per-section spots ---------
+   Two independent saves, because they are two independent ideas:
+
+   site.json["sort_categories"]  WHICH sections the page shows, in order. Its own list,
+                                 not the site-wide category vocabulary — Fashion can stay
+                                 a useful tag on a project without earning a section.
+   projects.json  p.sort         WHICH sections a spot appears in — a list, not a flag.
+
+   It has to be per-section: plenty of spots carry two tags (a Rivian film is Car and
+   Commercial), so one on/off flag would let a pick made for Car quietly eat one of
+   Commercial's five. The category tags below still say what a spot IS; p.sort says
+   where it's shown. Counters read N/5 so an over-filled section is obvious here rather
+   than discovered on the page, where the cap silently trims. ------------------- */
+const SORT_MAX=5;
+let SORTCATS=[];                        // site.json.sort_categories (loaded in load())
+let catDraft=null;                      // [{was, now}] — `was` is null for a new section
 const esc2=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
 const csay=(m)=>{ $('#catstatus').textContent=m; };
 const asay=(m)=>{ $('#assignstatus').textContent=m; };
 
-function catCount(name){ return projects.filter(p=>p.group==='posted'&&catsOf(p).includes(name)).length; }
+const workList=()=>projects.filter(p=>p.group==='posted')
+                           .sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
+function curCats(p){ return (assignDraft&&assignDraft[p.slug]&&assignDraft[p.slug].cats) || catsOf(p); }
+function curSort(p){ const d=assignDraft&&assignDraft[p.slug]; return (d&&d.sort) || p.sort || []; }
+/* what the page would show for a section, given unsaved edits */
+function sectionMembers(name){ return workList().filter(p=>curSort(p).includes(name)); }
 
 function renderCatList(){
-  if(!catDraft) catDraft=CATORDER.map(c=>({was:c,now:c}));
+  if(!catDraft) catDraft=SORTCATS.map(c=>({was:c,now:c}));
+  $('#known-cats').innerHTML=CATORDER.map(c=>`<option value="${esc2(c)}">`).join('');
   const box=$('#catlist'); box.innerHTML='';
   catDraft.forEach((c,i)=>{
+    const n=sectionMembers(c.now).length, over=n>SORT_MAX;
     const row=document.createElement('div');
     row.style.cssText='display:flex;gap:6px;align-items:center';
-    row.innerHTML=`<span style="opacity:.6;width:4ch">C${String(i+1).padStart(3,'0')}</span>
-      <input type="text" value="${esc2(c.now)}" style="flex:1">
-      <span style="opacity:.6;width:6ch;text-align:right;font-size:11px">${c.was?catCount(c.was):0}</span>
+    row.innerHTML=`<input type="text" value="${esc2(c.now)}" style="flex:1">
+      <span style="width:9ch;text-align:right;font-size:11px;${over?'color:#c00;font-weight:bold':'opacity:.6'}">${n}/${SORT_MAX}${over?' !':''}</span>
       <button data-a="up" ${i===0?'disabled':''}>↑</button>
       <button data-a="down" ${i===catDraft.length-1?'disabled':''}>↓</button>
       <button data-a="del" style="border-color:#c00;color:#c00">×</button>`;
@@ -707,16 +728,15 @@ function renderCatList(){
     row.querySelector('[data-a="up"]').addEventListener('click',()=>{ catDraft.splice(i-1,0,catDraft.splice(i,1)[0]); csay('unsaved changes'); renderCatList(); });
     row.querySelector('[data-a="down"]').addEventListener('click',()=>{ catDraft.splice(i+1,0,catDraft.splice(i,1)[0]); csay('unsaved changes'); renderCatList(); });
     row.querySelector('[data-a="del"]').addEventListener('click',()=>{
-      const n=c.was?catCount(c.was):0;
-      if(n&&!confirm(`Delete "${c.now}"? It will be removed from ${n} project${n===1?'':'s'}.`)) return;
-      catDraft.splice(i,1); csay('unsaved changes'); renderCatList();
+      /* removes the SECTION only — projects keep the tag, so it can be put back */
+      catDraft.splice(i,1); csay('unsaved changes'); renderCatList(); renderAssign();
     });
     box.appendChild(row);
   });
 }
 $('#catadd').addEventListener('click',()=>{
   const v=$('#catnew').value.trim(); if(!v) return;
-  if(!catDraft) catDraft=CATORDER.map(c=>({was:c,now:c}));
+  if(!catDraft) catDraft=SORTCATS.map(c=>({was:c,now:c}));
   catDraft.push({was:null,now:v}); $('#catnew').value=''; csay('unsaved changes'); renderCatList(); renderAssign();
 });
 $('#catnew').addEventListener('keydown',e=>{ if(e.key==='Enter') $('#catadd').click(); });
@@ -724,63 +744,84 @@ $('#catnew').addEventListener('keydown',e=>{ if(e.key==='Enter') $('#catadd').cl
 $('#catsave').addEventListener('click',async()=>{
   if(!tok()) return csay('paste your GitHub token first');
   const names=catDraft.map(c=>c.now.trim()).filter(Boolean);
-  if(new Set(names).size!==names.length) return csay('duplicate category names');
+  if(new Set(names).size!==names.length) return csay('duplicate section names');
+  /* a rename has to follow through to the projects, or every spot tagged with the old
+     string quietly drops out of the section it was renamed into */
   const renames=catDraft.filter(c=>c.was&&c.now.trim()&&c.now.trim()!==c.was).map(c=>[c.was,c.now.trim()]);
-  const removed=CATORDER.filter(old=>!catDraft.some(c=>c.was===old));
   $('#catsave').disabled=true; csay('saving…');
   try{
     const site=await ghGetJson('data/site.json');
-    site.data.categories=names;
-    await ghPutJson('data/site.json',site.data,site.sha,'admin: category list');
-    if(renames.length||removed.length){
-      const pr=await ghGetJson('data/projects.json');
+    site.data.sort_categories=names;
+    if(renames.length){
       const map=new Map(renames);
+      site.data.categories=(site.data.categories||[]).map(c=>map.get(c)||c);
+      const pr=await ghGetJson('data/projects.json');
       pr.data.forEach(p=>{
-        let cs=catsOf(p).map(c=>map.get(c)||c).filter(c=>!removed.includes(c));
-        cs=[...new Set(cs)];
+        const cs=[...new Set(catsOf(p).map(c=>map.get(c)||c))];
         p.categories=cs; p.category=cs[0]||'';
       });
-      await ghPutJson('data/projects.json',pr.data,pr.sha,'admin: apply category renames/removals');
+      await ghPutJson('data/projects.json',pr.data,pr.sha,'admin: apply category renames');
       projects=pr.data;
+      CATORDER=site.data.categories;
     }
-    CATORDER=names; catDraft=names.map(c=>({was:c,now:c}));
+    await ghPutJson('data/site.json',site.data,site.sha,'admin: /sort/ sections');
+    SORTCATS=names; catDraft=names.map(c=>({was:c,now:c}));
     populateCats(); renderCatList(); renderAssign();
     csay('saved — live in ~2 min');
   }catch(err){ csay('failed: '+err.message); }
   $('#catsave').disabled=false;
 });
 
-/* --- project → category matrix --- */
-let assignDraft=null;                   // slug -> [categories], only for rows touched
+/* --- spots: the SORT flag + category tags, one row per work project --- */
+let assignDraft=null;                   // slug -> {sort, cats} for rows touched
 function assignList(){
-  let l=projects.filter(p=>p.group==='posted');
+  let l=workList();
   const q=$('#assignsearch').value.trim().toLowerCase();
   if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
-  if($('#assignloose').checked) l=l.filter(p=>!curCats(p).some(c=>CATORDER.includes(c)));
-  return l.sort((a,b)=>(a.arch_order??10000)-(b.arch_order??10000));
+  const show=$('#assignshow').value;
+  if(show==='sorted') l=l.filter(p=>curSort(p).length);
+  else if(show==='loose') l=l.filter(p=>!curCats(p).length);
+  return l;
 }
-function curCats(p){ return (assignDraft&&assignDraft[p.slug]) || catsOf(p); }
+function touch(p){
+  if(!assignDraft[p.slug]) assignDraft[p.slug]={sort:curSort(p).slice(),cats:curCats(p).slice()};
+  return assignDraft[p.slug];
+}
 function renderAssign(){
   if(!assignDraft) assignDraft={};
-  const names=(catDraft?catDraft.map(c=>c.now.trim()).filter(Boolean):CATORDER);
+  const names=(catDraft?catDraft.map(c=>c.now.trim()).filter(Boolean):SORTCATS);
   const box=$('#assignlist'); box.innerHTML='';
   const l=assignList();
   asay(l.length+' shown');
   l.forEach(p=>{
-    const on=curCats(p);
+    const on=curCats(p), inSort=curSort(p);
     const row=document.createElement('div');
     row.style.cssText='display:flex;gap:14px;align-items:center;border-bottom:1px solid var(--line);padding:3px 0;font-size:12px';
-    row.innerHTML=`<span style="flex:1;min-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc2(capOf(p))}</span>`+
-      names.map(c=>`<label style="display:inline-flex;align-items:center;gap:3px;white-space:nowrap"><input type="checkbox" value="${esc2(c)}"${on.includes(c)?' checked':''}> ${esc2(c)}</label>`).join('');
-    row.querySelectorAll('input').forEach(cb=>cb.addEventListener('change',()=>{
-      assignDraft[p.slug]=[...row.querySelectorAll('input:checked')].map(x=>x.value);
-      asay('unsaved changes');
+    /* one SORT box per section — ticking it puts this spot in that section's five.
+       The number after it is the spot's position, so anything past 5 reads as (cut). */
+    const sortBoxes=names.map(c=>{
+      const i=inSort.includes(c)?sectionMembers(c).indexOf(p)+1:0;
+      const cut=i>SORT_MAX;
+      return `<label style="display:inline-flex;align-items:center;gap:3px;white-space:nowrap;${cut?'color:#c00':''}"><input type="checkbox" class="sortbox" value="${esc2(c)}"${i?' checked':''}> ${esc2(c)}${i?' '+(cut?'(cut)':i):''}</label>`;
+    }).join('');
+    row.innerHTML=`<span style="font-weight:bold;opacity:${inSort.length?1:.25}">SORT</span>
+      <span style="display:flex;gap:10px;min-width:330px">${sortBoxes}</span>
+      <span style="flex:1;min-width:160px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc2(capOf(p))}</span>
+      <span style="opacity:.45;font-size:10px">tags</span>`+
+      CATORDER.map(c=>`<label style="display:inline-flex;align-items:center;gap:3px;white-space:nowrap;opacity:.7"><input type="checkbox" class="catbox" value="${esc2(c)}"${on.includes(c)?' checked':''}> ${esc2(c)}</label>`).join('');
+    row.querySelectorAll('.sortbox').forEach(cb=>cb.addEventListener('change',()=>{
+      touch(p).sort=[...row.querySelectorAll('.sortbox:checked')].map(x=>x.value);
+      asay('unsaved changes'); renderCatList(); renderAssign();
+    }));
+    row.querySelectorAll('.catbox').forEach(cb=>cb.addEventListener('change',()=>{
+      touch(p).cats=[...row.querySelectorAll('.catbox:checked')].map(x=>x.value);
+      asay('unsaved changes'); renderCatList(); renderAssign();
     }));
     box.appendChild(row);
   });
 }
 $('#assignsearch').addEventListener('input',renderAssign);
-$('#assignloose').addEventListener('change',renderAssign);
+$('#assignshow').addEventListener('change',renderAssign);
 $('#assignsave').addEventListener('click',async()=>{
   if(!tok()) return asay('paste your GitHub token first');
   const changed=Object.keys(assignDraft||{});
@@ -789,11 +830,12 @@ $('#assignsave').addEventListener('click',async()=>{
   try{
     const {sha,data}=await ghGetJson('data/projects.json');
     data.forEach(p=>{
-      if(!(p.slug in assignDraft)) return;
-      const cs=[...new Set(assignDraft[p.slug])];
+      const d=assignDraft[p.slug]; if(!d) return;
+      const cs=[...new Set(d.cats)];
       p.categories=cs; p.category=cs[0]||'';
+      const st=[...new Set(d.sort)]; if(st.length) p.sort=st; else delete p.sort;
     });
-    await ghPutJson('data/projects.json',data,sha,`admin: categories for ${changed.length} project(s)`);
+    await ghPutJson('data/projects.json',data,sha,`admin: /sort/ spots (${changed.length} project(s))`);
     projects=data; assignDraft={}; renderCatList(); renderAssign();
     asay('saved — live in ~2 min');
   }catch(err){ asay('failed: '+err.message); }

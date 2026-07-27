@@ -254,42 +254,55 @@ def cat_slug(name):
     """URL token for a category: 'Music Video' -> 'music-video' (the ?query deep link)."""
     return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
 
-def build_sort():
-    """/sort/ — the work-page projects grouped into collapsible category sections.
+SORT_MAX = 5      # hard cap: a category shows five spots, no more
 
-    A straight port of the reference site's DIRECTORS accordion (module-section /
+def sort_categories():
+    """The sections /sort/ shows, in order. Its own list, NOT site.json['categories'] —
+    a category can be a useful tag on a project (Fashion, Long Form) without earning a
+    section on this page."""
+    return [c for c in SITE.get('sort_categories', []) if c]
+
+def sort_members(name, vis):
+    """The (at most five) spots shown under one section.
+
+    Membership is its own field — p["sort"] lists the sections a spot appears in — and
+    NOT derived from the project's category tags. It has to be: plenty of spots carry
+    two tags (a Rivian film is Car and Commercial), so a single on/off flag would let a
+    pick made for Car quietly consume one of Commercial's five. Picking per section is
+    the only way "five each" is something Nick can actually control.
+
+    Order follows the work page; the cap is applied last, so an over-filled section
+    degrades to its first five rather than breaking the row.
+    """
+    return [p for p in vis if name in (p.get('sort') or [])][:SORT_MAX]
+
+def build_sort():
+    """/sort/ — a curated five spots per category, in collapsible sections.
+
+    A port of the reference site's DIRECTORS accordion (module-section /
     module-director), grouping by category instead of by director. Same card
     component and 5-across grid as the work page, so nothing here re-creates type
-    or spacing.
+    or spacing — and with the cap at five, every open section is exactly one row.
 
     EXPERIMENTAL: deliberately unlinked and noindex — no nav entry until Nick says
-    the shape works. Category ORDER (and which ones exist) comes from
-    site.json["categories"]; assignment comes from each project's "categories".
-    Anything on the work page with no category still shows, in an UNCATEGORISED
-    section at the end, so a project can never silently vanish from the page while
-    the buckets are being sorted out.
+    the shape works.
     """
     vis = sorted(visible_projects(),
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
-    order = [c for c in SITE.get('categories', []) if c]
 
     groups = []
-    for name in order:
-        members = [p for p in vis if name in cats(p)]
+    for name in sort_categories():
+        members = sort_members(name, vis)
         if members:
             groups.append((name, cat_slug(name), members))
-    loose = [p for p in vis if not [c for c in cats(p) if c in order]]
-    if loose:
-        groups.append(('Uncategorised', 'uncategorised', loose))
 
     blocks = []
-    for i, (name, slug, members) in enumerate(groups, 1):
+    for name, slug, members in groups:
         cards = '\n'.join(card_html(p, rel='../') for p in members)
         blocks.append(
             f'\t\t\t<div class="module-cat" data-slug="{slug}">\n'
             f'\t\t\t\t<h2 class="module-cat--title trigger">'
-            f'<span>C{i:03d}</span><span>{esc(name)}</span>'
-            f'<span class="module-cat--count">{len(members)}</span></h2>\n'
+            f'<span>{esc(name)}</span></h2>\n'
             f'\t\t\t\t<div class="module-cat--content" style="display:none">\n'
             f'\t\t\t\t\t<div class="module-cat--block">\n'
             f'\t\t\t\t\t\t<div class="module-cat--block-content module-videos">\n{cards}\n\t\t\t\t\t\t</div>\n'
