@@ -60,5 +60,11 @@
   "Long Form",
   "Car",
   "Fashion"
+ ],
+ "sort_categories": [
+  "Commercial",
+  "Music Video",
+  "Beauty",
+  "Car"
  ]
 }
