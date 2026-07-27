@@ -105,6 +105,7 @@ Every save republishes the site itself in ~2 min.
     The <a href="/sort/" target="_blank">/sort/ page</a> shows these sections in this order — <b>five spots each, no more</b>.
     Tick a section next to a spot to put it in that section's five — a spot can sit in more than one.
     Over five in one section and only the first five (in work-page order) make the page; the rest read (cut).
+    RECENT sits above them all and looks after itself — it is the first five of the work page.
     It stays unlinked from the site nav — only people with the link see it.
   </div>
 
@@ -715,6 +716,13 @@ function renderCatList(){
   if(!catDraft) catDraft=SORTCATS.map(c=>({was:c,now:c}));
   $('#known-cats').innerHTML=CATORDER.map(c=>`<option value="${esc2(c)}">`).join('');
   const box=$('#catlist'); box.innerHTML='';
+  /* RECENT is computed by the build (first five of the work page) and pinned to the top
+     of /sort/, so it is shown here for orientation only — nothing to pick or reorder. */
+  const rec=document.createElement('div');
+  rec.style.cssText='display:flex;gap:6px;align-items:center;opacity:.6';
+  rec.innerHTML=`<span style="flex:1;padding:6px 10px;border:1px dashed var(--fg)">Recent <b>AUTO</b> — first five of the work page, always on top, opens by default</span>
+    <span style="width:9ch;text-align:right;font-size:11px">${SORT_MAX}/${SORT_MAX}</span>`;
+  box.appendChild(rec);
   catDraft.forEach((c,i)=>{
     const n=sectionMembers(c.now).length, over=n>SORT_MAX;
     const row=document.createElement('div');
