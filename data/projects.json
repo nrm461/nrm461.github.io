@@ -20,7 +20,7 @@
   "stills": [],
   "number": "W001",
   "selected": false,
-  "arch_order": 23,
+  "arch_order": 32,
   "delivered": "2024-12-31",
   "carousel": true,
   "gallery": true,
@@ -282,7 +282,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-08",
-  "arch_order": 25,
+  "arch_order": 24,
   "categories": [
    "Music Video"
   ]
@@ -1168,7 +1168,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 32,
+  "arch_order": 31,
   "categories": [
    "Long Form"
   ]
@@ -2144,7 +2144,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
   "sel_order": 13,
   "carousel": true,
-  "arch_order": 30,
+  "arch_order": 29,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -2255,7 +2255,7 @@
   "number": "W083",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "arch_order": 24,
+  "arch_order": 23,
   "carousel": false,
   "delivered": "2024-11-30",
   "categories": [
@@ -4001,7 +4001,7 @@
   "number": "W166",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 27,
+  "arch_order": 26,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -5042,7 +5042,7 @@
   "number": "W207",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 28,
+  "arch_order": 27,
   "categories": [
    "Commercial"
   ]
@@ -5068,7 +5068,7 @@
   "number": "W208",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 26,
+  "arch_order": 25,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -5482,7 +5482,7 @@
   "vimeo": "https://vimeo.com/1210344062",
   "credits": "@agcfbrand\nUnità\n\nDirector: @xaviernunezv\nDP: @mchlkttnbl\nProd Co: @action_lines\nGaffer: @ryanwinnicki\n1st AC: @douglas_l_birch\nCamera: @panavisionofficial\nColor: @nick__metcalf\nFeaturing: @victoriajaiani, @jeraldm",
   "number": "W225",
-  "arch_order": 31,
+  "arch_order": 30,
   "carousel": true,
   "gallery": true
  },
@@ -5603,7 +5603,7 @@
   "vimeo": "https://vimeo.com/1210616306",
   "credits": "Tokischa | Perreo Llorando\n\nDirector: Bertram\nProduction: Jenzar Films\nExecutive Producer: Jennifer Zarzuela\nDP: Gaul Porat\nProduction Designer: Gabriel Duque\nStylist: Paula Machado\nColor: @nick__metcalf",
   "number": "W232",
-  "arch_order": 29,
+  "arch_order": 28,
   "carousel": false
  },
  {
