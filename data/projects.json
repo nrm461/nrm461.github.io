@@ -20,7 +20,7 @@
   "stills": [],
   "number": "W001",
   "selected": false,
-  "arch_order": 21,
+  "arch_order": 23,
   "delivered": "2024-12-31",
   "carousel": true,
   "gallery": true,
@@ -1105,7 +1105,7 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 22,
+  "arch_order": 21,
   "categories": [
    "Long Form"
   ]
@@ -2667,7 +2667,7 @@
   "number": "W113",
   "selected": true,
   "sel_order": 10,
-  "arch_order": 23,
+  "arch_order": 22,
   "delivered": "2025-04-22",
   "carousel": true,
   "gallery": true,
