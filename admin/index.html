@@ -104,7 +104,8 @@ Every save republishes the site itself in ~2 min.
 <div id="catpanel" style="display:none;padding:0 20px 40px">
   <div class="hint" style="padding-left:0">
     The <a href="/sort/" target="_blank">/sort/ page</a> shows these sections in this order — <b>five spots each, no more</b>.
-    Each section keeps its own running order, independent of the work page — drag the thumbnails to set it.
+    Each section keeps its own running order, independent of the work page — drag the thumbnails to set it,
+    and click an empty slot to add a job from the work page.
     RECENT is picked by hand like the rest; whichever section sits at the TOP is the one the page opens on.
     The page stays unlinked from the site nav — only people with the link see it.
   </div>
@@ -127,6 +128,17 @@ Every save republishes the site itself in ~2 min.
 
 
 <div id="overlay"></div>
+
+<!-- SPOT PICKER: adding to /sort/ is done by looking at the work, same as judging it. -->
+<div id="spotpicker" style="display:none;position:fixed;z-index:10;top:4vh;left:50%;transform:translateX(-50%);width:min(1100px,94vw);max-height:92vh;overflow:auto;background:var(--bg);border:1px solid var(--fg);padding:20px">
+  <h2 style="font-size:13px;margin:0 0 12px;text-transform:uppercase">Add to <span id="sp-section"></span></h2>
+  <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px">
+    <input type="search" id="sp-search" placeholder="filter work…" style="flex:1">
+    <span id="sp-count" style="font-size:11px;opacity:.6"></span>
+    <button id="sp-cancel">Cancel</button>
+  </div>
+  <div id="sp-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px"></div>
+</div>
 <div id="modal">
   <h2 id="m-title">Edit</h2>
   <div id="m-fileinfo" style="margin:-6px 0 12px;font-size:11px;line-height:1.5;opacity:.8;user-select:all;-webkit-user-select:all;word-break:break-all"></div>
@@ -758,12 +770,7 @@ function renderPicks(){
         <span style="font-weight:normal;opacity:.6;font-size:11px">${list.length}/${SORT_MAX}</span>
         <span style="font-weight:normal;opacity:.45;font-size:11px;margin-left:8px">drag to reorder</span></div>
       <div class="picktiles" style="display:grid;grid-template-columns:repeat(${SORT_MAX},minmax(0,1fr));gap:10px;max-width:900px"></div>
-      <div style="display:flex;gap:8px;margin-top:8px;max-width:900px">
-        <select class="addspot" style="flex:1"${full?' disabled':''}>
-          <option value="">${full?'section is full — remove one first':'add a spot…'}</option>
-          ${full?'':workList().filter(p=>!list.includes(p.slug)).map(p=>`<option value="${esc2(p.slug)}">${esc2(capOf(p))}</option>`).join('')}
-        </select>
-      </div>`;
+      ${full?'':`<div style="margin-top:8px;font-size:11px;opacity:.6">${SORT_MAX-list.length} slot${SORT_MAX-list.length===1?'':'s'} free</div>`}`;
     const tiles=sec.querySelector('.picktiles');
     list.forEach((slug,i)=>{
       const proj=bySlug(slug), gone=!proj||proj.group!=='posted';
@@ -791,14 +798,67 @@ function renderPicks(){
       });
       tiles.appendChild(t);
     });
-    sec.querySelector('.addspot').addEventListener('change',e=>{
-      if(!e.target.value) return;
-      list.push(e.target.value); dirtySort(); renderAll();
-    });
+    /* empty slots are real tiles — the row always reads as five, and a gap is the
+       thing you click to fill it */
+    for(let i=list.length;i<SORT_MAX;i++){
+      const add=document.createElement('button');
+      add.type='button';
+      add.style.cssText='aspect-ratio:16/9;border:1px dashed var(--fg);background:none;cursor:pointer;opacity:.55;font:inherit;text-transform:uppercase;font-size:11px';
+      add.textContent='+ add';
+      add.addEventListener('click',()=>openSpotPicker(name));
+      tiles.appendChild(add);
+    }
     box.appendChild(sec);
   });
 }
-function renderAll(){ renderCatList(); renderPicks(); }
+/* --- add a job to a section, by looking at it --- */
+let spTarget=null;
+function openSpotPicker(name){
+  spTarget=name;
+  $('#sp-section').textContent=name;
+  $('#sp-search').value='';
+  $('#overlay').style.display='block';
+  $('#spotpicker').style.display='block';
+  renderSpotPicker();
+  $('#sp-search').focus();
+}
+function closeSpotPicker(){
+  spTarget=null;
+  $('#overlay').style.display='none';
+  $('#spotpicker').style.display='none';
+}
+function renderSpotPicker(){
+  const list=pickDraft[spTarget]||[];
+  const q=$('#sp-search').value.trim().toLowerCase();
+  let l=workList().filter(p=>!list.includes(p.slug));
+  if(q) l=l.filter(p=>(p.slug+' '+(p.client||'')+' '+(p.title||'')).toLowerCase().includes(q));
+  $('#sp-count').textContent=l.length+' job'+(l.length===1?'':'s')+' — '+(SORT_MAX-list.length)+' slot'+(SORT_MAX-list.length===1?'':'s')+' free';
+  const g=$('#sp-grid'); g.innerHTML='';
+  l.forEach(p=>{
+    /* where else this job already sits, so the same spot isn't quietly used twice */
+    const elsewhere=catDraft.filter(c=>c!==spTarget&&(pickDraft[c]||[]).includes(p.slug));
+    const t=document.createElement('div');
+    t.style.cssText='cursor:pointer';
+    t.innerHTML=`<img src="${RAW}assets/thumbs/${esc2(p.slug)}-600.jpg" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#eee" onerror="this.style.opacity=.15">
+      <div style="padding:3px 0;font-size:11px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc2(capOf(p))}</div>
+      ${elsewhere.length?`<div style="font-size:10px;opacity:.55">already in ${esc2(elsewhere.join(', '))}</div>`:''}`;
+    t.addEventListener('click',()=>{
+      const cur=pickDraft[spTarget]||(pickDraft[spTarget]=[]);
+      if(cur.length>=SORT_MAX) return;
+      cur.push(p.slug);
+      dirtySort();
+      renderAll();
+      if(cur.length>=SORT_MAX) closeSpotPicker(); else renderSpotPicker();
+    });
+    g.appendChild(t);
+  });
+}
+$('#sp-search').addEventListener('input',renderSpotPicker);
+$('#sp-cancel').addEventListener('click',closeSpotPicker);
+$('#overlay').addEventListener('click',()=>{ if(spTarget) closeSpotPicker(); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&spTarget) closeSpotPicker(); });
+
+function renderAll(){ renderCatList(); renderPicks(); if(spTarget) renderSpotPicker(); }
 
 $('#catsave').addEventListener('click',async()=>{
   if(!tok()) return csay('paste your GitHub token first');
