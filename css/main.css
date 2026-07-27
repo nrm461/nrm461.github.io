@@ -691,11 +691,10 @@ img.thumb + .video-label{
 .credits-v2 .credits-hero{
 	break-inside: avoid;
 }
-@media (max-width: 500px){
-	.credits-v2 .credits-rest{
-		display: none;
-	}
-}
+/* Phones show the FULL credit list, same as desktop — the rest of the crew used to be
+   hidden here and Nick wants it back (2026-07-27). The hero block still leads; the
+   remainder stacks under it in one column, since .project-credits only goes two-up
+   at 601px and above. */
 
 /* Archive filters
 ==================================== */
