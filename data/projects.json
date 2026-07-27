@@ -20,7 +20,7 @@
   "stills": [],
   "number": "W001",
   "selected": false,
-  "arch_order": 20,
+  "arch_order": 21,
   "delivered": "2024-12-31",
   "carousel": true,
   "gallery": true,
@@ -1105,7 +1105,7 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 21,
+  "arch_order": 22,
   "categories": [
    "Long Form"
   ]
@@ -2255,7 +2255,7 @@
   "number": "W083",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "arch_order": 23,
+  "arch_order": 24,
   "carousel": false,
   "delivered": "2024-11-30",
   "categories": [
@@ -2667,7 +2667,7 @@
   "number": "W113",
   "selected": true,
   "sel_order": 10,
-  "arch_order": 22,
+  "arch_order": 23,
   "delivered": "2025-04-22",
   "carousel": true,
   "gallery": true,
@@ -5411,7 +5411,7 @@
   "children": [
    "rivian-milk-run"
   ],
-  "arch_order": 24,
+  "arch_order": 20,
   "selected": true,
   "sel_order": 9,
   "delivered": "2025-05-01",
