@@ -6,9 +6,26 @@
 <title>Site Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+/* admin is standalone (it deliberately does NOT load main.css), so the site's
+   typeface is re-declared here rather than inherited. Latin only — this page has
+   no extended glyphs. Keep in step with --font in css/main.css. */
+@font-face{
+	font-family: 'IBM Plex Mono';
+	src: url('../fonts/ibm-plex-mono-400-latin.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face{
+	font-family: 'IBM Plex Mono';
+	src: url('../fonts/ibm-plex-mono-700-latin.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
 :root{ --bg:#fff; --fg:#000; --line:#ddd; }
 *{ box-sizing:border-box; }
-body{ margin:0; font:12px/1.5 "Courier New",monospace; background:var(--bg); color:var(--fg); }
+body{ margin:0; font:12px/1.5 'IBM Plex Mono',"Courier New",monospace; background:var(--bg); color:var(--fg); }
 header{ display:flex; gap:14px; align-items:center; padding:12px 20px; border-bottom:1px solid var(--line); position:sticky; top:0; background:var(--bg); z-index:5; flex-wrap:wrap; }
 h1{ font-size:13px; margin:0; text-transform:uppercase; }
 button, input, select, textarea{ font:inherit; padding:6px 10px; border:1px solid var(--fg); background:var(--bg); color:var(--fg); }

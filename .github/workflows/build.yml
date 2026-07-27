@@ -27,7 +27,13 @@ jobs:
       - name: Pull latest (multiple saves can land close together)
         run: git pull --rebase origin main
       - name: Build
-        run: python3 _build/build_site.py
+        run: |
+          python3 _build/build_site.py
+          # the deck is generated too — without this its main.css?v= stamp froze at
+          # whatever it was when someone last ran build_deck.py by hand, so a CSS
+          # change (e.g. the IBM Plex switch) never reached browsers holding the
+          # deck's cached copy of that URL.
+          python3 _build/build_deck.py
       - name: Commit built pages
         run: |
           git config user.name "auto-build"
