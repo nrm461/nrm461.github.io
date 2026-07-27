@@ -780,3 +780,104 @@ img.thumb + .video-label{
 	.archive-filter.active::before{ content: '['; position: absolute; right: 100%; margin-right: 0.3ch; visibility: visible; }
 	.archive-filter.active::after{ content: ']'; position: absolute; left: 100%; margin-left: 0.3ch; visibility: visible; }
 }
+
+/* Sort page — category accordion
+========================================
+   EXPERIMENTAL, unlinked page at /sort/. Ported from the reference site's
+   DIRECTORS accordion (module-section + module-director) with the same column
+   maths, so a section title lands on the 4th column above 1920px and the 2nd
+   below it, and the grids inside are the ordinary work-page .module-videos.
+   Everything is scoped to .page-sort — no other page can be touched by it. */
+.page-sort .module-section{
+	display: grid;
+	grid-template-columns: repeat(var(--colX2), 1fr);
+	grid-gap: calc(var(--gap-cols)*2) var(--gap-cols);
+}
+.page-sort .module-section--content{
+	grid-column: 1 / -1;
+	display: grid;
+	grid-auto-rows: min-content;
+}
+.page-sort .module-section--title{
+	grid-column: 4 / -1;
+}
+
+/* EXPAND ALL toggle + its caret */
+.page-sort #toggle-all{
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+	grid-auto-rows: min-content;
+	column-gap: 2ch;
+	align-items: center;
+	text-transform: uppercase;
+}
+.page-sort #toggle-all wrap{
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid var(--color-text);
+}
+.page-sort #toggle-all.active wrap{
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid var(--color-text);
+	transform: translateY(-3px);
+}
+
+/* One category */
+.page-sort .module-cat{
+	display: grid;
+	grid-template-columns: repeat(var(--colX2), 1fr);
+	column-gap: var(--gap-cols);
+}
+.page-sort .module-cat--title{
+	margin-bottom: var(--gap-small);
+	grid-column: 4 / -1;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+	grid-auto-rows: min-content;
+	column-gap: 2ch;
+	align-items: center;
+	text-transform: uppercase;
+}
+.page-sort .module-cat--count{
+	color: color-mix(in srgb, var(--color-text) 45%, var(--color-bg));
+}
+.page-sort .module-cat--content{
+	grid-column: 1 / -1;
+	display: grid;
+	grid-auto-rows: min-content;
+}
+.page-sort .module-cat--block{
+	display: grid;
+	grid-auto-rows: min-content;
+	grid-template-columns: repeat(var(--colX2), 1fr);
+	column-gap: var(--gap-cols);
+}
+.page-sort .module-cat--block-content{
+	margin-top: var(--gap-small);
+	margin-bottom: var(--gap-rows);
+	grid-column: 1 / -1;
+}
+.page-sort .module-cat:last-child .module-cat--block-content{
+	margin-bottom: var(--gap-small);
+}
+@media (max-width: 1920px){
+	.page-sort .module-section,
+	.page-sort .module-cat,
+	.page-sort .module-cat--block{
+		grid-template-columns: repeat(var(--col), 1fr);
+	}
+	.page-sort .module-section--title,
+	.page-sort .module-cat--title{
+		grid-column-start: 2;
+	}
+}
+@media (max-width: 1024px){
+	.page-sort .module-section--title,
+	.page-sort .module-cat--title{
+		grid-column-start: 1;
+	}
+}

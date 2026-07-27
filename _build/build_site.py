@@ -249,6 +249,104 @@ def build_batch():
     write(os.path.join('vimeo-batch', 'index.html'),
           page('page-works page-index page-archive page-hidden', f'{SITE["site_name"]} — Vimeo Batch', content, depth=1))
 
+# ---------------- Sort page (category accordion) ----------------
+def cat_slug(name):
+    """URL token for a category: 'Music Video' -> 'music-video' (the ?query deep link)."""
+    return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+
+def build_sort():
+    """/sort/ — the work-page projects grouped into collapsible category sections.
+
+    A straight port of the reference site's DIRECTORS accordion (module-section /
+    module-director), grouping by category instead of by director. Same card
+    component and 5-across grid as the work page, so nothing here re-creates type
+    or spacing.
+
+    EXPERIMENTAL: deliberately unlinked and noindex — no nav entry until Nick says
+    the shape works. Category ORDER (and which ones exist) comes from
+    site.json["categories"]; assignment comes from each project's "categories".
+    Anything on the work page with no category still shows, in an UNCATEGORISED
+    section at the end, so a project can never silently vanish from the page while
+    the buckets are being sorted out.
+    """
+    vis = sorted(visible_projects(),
+                 key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
+    order = [c for c in SITE.get('categories', []) if c]
+
+    groups = []
+    for name in order:
+        members = [p for p in vis if name in cats(p)]
+        if members:
+            groups.append((name, cat_slug(name), members))
+    loose = [p for p in vis if not [c for c in cats(p) if c in order]]
+    if loose:
+        groups.append(('Uncategorised', 'uncategorised', loose))
+
+    blocks = []
+    for i, (name, slug, members) in enumerate(groups, 1):
+        cards = '\n'.join(card_html(p, rel='../') for p in members)
+        blocks.append(
+            f'\t\t\t<div class="module-cat" data-slug="{slug}">\n'
+            f'\t\t\t\t<h2 class="module-cat--title trigger">'
+            f'<span>C{i:03d}</span><span>{esc(name)}</span>'
+            f'<span class="module-cat--count">{len(members)}</span></h2>\n'
+            f'\t\t\t\t<div class="module-cat--content" style="display:none">\n'
+            f'\t\t\t\t\t<div class="module-cat--block">\n'
+            f'\t\t\t\t\t\t<div class="module-cat--block-content module-videos">\n{cards}\n\t\t\t\t\t\t</div>\n'
+            f'\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t</div>')
+
+    main_html = ('\t<section class="module-section">\n'
+                 '\t\t<div id="toggle-all" class="module-section--title trigger"><span>EXPAND ALL</span><wrap></wrap></div>\n'
+                 '\t\t<div class="module-section--content">\n'
+                 + '\n'.join(blocks) +
+                 '\n\t\t</div>\n\t</section>')
+
+    content = (f'<meta name="robots" content="noindex">\n'
+               f'<div id="content-wrapper">\n{header("", 1)}\n<main>\n{main_html}\n</main>\n{footer()}\n</div>\n'
+               f'<script>\n{CATS_JS}\n</script>')
+    write(os.path.join('sort', 'index.html'),
+          page('page-works page-index page-archive page-sort',
+               f'{SITE["site_name"]} — Sort', content, depth=1))
+
+CATS_JS = r'''(function(){
+	var cats = [].slice.call(document.querySelectorAll('.module-cat'));
+	var all  = document.getElementById('toggle-all');
+	function isOpen(c){ return c.querySelector('.module-cat--content').style.display !== 'none'; }
+	function set(c, open){
+		c.querySelector('.module-cat--content').style.display = open ? '' : 'none';
+		c.querySelector('.module-cat--title').classList.toggle('active', open);
+	}
+	function syncAll(){
+		all.classList.toggle('active', cats.length > 0 && cats.every(isOpen));
+	}
+	cats.forEach(function(c){
+		c.querySelector('.module-cat--title').addEventListener('click', function(){
+			var open = !isOpen(c);
+			set(c, open);
+			syncAll();
+			/* deep link mirrors the reference site: /sort/?beauty */
+			history.replaceState(null, '', open ? '?' + c.dataset.slug : location.pathname);
+		});
+	});
+	all.addEventListener('click', function(){
+		var open = !cats.every(isOpen);
+		cats.forEach(function(c){ set(c, open); });
+		syncAll();
+		history.replaceState(null, '', location.pathname);
+	});
+	/* ?beauty (or #beauty) opens that section on load and scrolls it into view */
+	var want = decodeURIComponent((location.search.slice(1) || location.hash.slice(1)).split('=')[0] || '');
+	if(want){
+		cats.forEach(function(c){
+			if(c.dataset.slug === want){
+				set(c, true);
+				syncAll();
+				c.scrollIntoView({block: 'start'});
+			}
+		});
+	}
+})();'''
+
 # ---------------- Project pages ----------------
 def child_label(parent, child):
     """Label for one video inside a campaign page.
@@ -390,5 +488,6 @@ if __name__ == '__main__':
     build_batch()
     build_projects()
     build_contact()
+    build_sort()
     build_navdata()
     print(f'done — {len(visible_projects())} visible, {len(hidden_projects())} hidden')
