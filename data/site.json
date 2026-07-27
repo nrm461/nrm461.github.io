@@ -66,43 +66,51 @@
   "Commercial",
   "Music Video",
   "Beauty",
-  "Car"
+  "Car",
+  "Long Form"
  ],
  "sort_picks": {
   "Recent": [
    "benson-boone-the-time-of-my-life",
    "okara-the-auction",
-   "pura-scents-of-place",
    "instax-forever",
+   "pura-scents-of-place",
    "nissan-built-for-happy-chaos-dc"
   ],
   "Commercial": [
    "alfa-beer-the-subtle-things",
    "function-health-mothers-day",
-   "de-beers-director-s-cut",
-   "crypto-com-fortune-favors-the-brave",
-   "burger-king-cows-menu"
+   "salomon-x-lart-de-lautomobile-dont-trust-garage",
+   "terminal-27-vermeil-hues",
+   "crypto-com-fortune-favors-the-brave"
   ],
   "Music Video": [
-   "troye-sivan-got-me-started",
    "lisa-x-tyla-when-im-with-you",
+   "amber-mark-let-me-love-you",
    "becky-g-epa",
-   "maria-isabel-suiza",
+   "troye-sivan-got-me-started",
    "dua-lipa-dance-the-night"
   ],
   "Beauty": [
    "therabody-glo-your-own-way-with-kendalljenner",
    "nike-x-skims-nikeskims-spring-26",
-   "louis-vuitton-virgial-abloh-tribute",
+   "miu-miu-more",
    "estee-lauder-beautiful-magnolia",
-   "miu-miu-more"
+   "calvin-klein-calvins-or-nothing"
   ],
   "Car": [
+   "rivian",
    "nissan-built-for-happy-chaos-dc",
    "subaru-paddle-out",
    "2021-05-24-grade-deigo-dc-nick-1",
-   "cadillac-lift-off",
-   "gmc-nowhere"
+   "harley-davidson-the-linage"
+  ],
+  "Long Form": [
+   "sisters-sisters",
+   "seattle-kraken-release-the-kraken",
+   "muay-thai",
+   "trapped",
+   "stooper-stooper"
   ]
  }
 }
