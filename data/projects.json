@@ -143,9 +143,6 @@
   "arch_order": 43,
   "categories": [
    "Commercial"
-  ],
-  "sort": [
-   "Commercial"
   ]
  },
  {
@@ -1850,9 +1847,6 @@
   "categories": [
    "Commercial",
    "Car"
-  ],
-  "sort": [
-   "Car"
   ]
  },
  {
@@ -2723,6 +2717,9 @@
   "carousel": true,
   "gallery": true,
   "categories": [
+   "Commercial"
+  ],
+  "sort": [
    "Commercial"
   ]
  },
@@ -4914,7 +4911,10 @@
    "Commercial",
    "Car"
   ],
-  "carousel": false
+  "carousel": false,
+  "sort": [
+   "Car"
+  ]
  },
  {
   "slug": "pnc-today-is-the-day",
