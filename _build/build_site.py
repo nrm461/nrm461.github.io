@@ -200,14 +200,19 @@ def card_html(p, rel=''):
 \t\t</div>'''
 
 def build_index():
-    # Root homepage is now the WORK grid: all visible projects in archive order
-    # (newest first), NO category filters. header active = WORK (href "/").
+    """/archive/ — every visible project in one grid, newest first.
+
+    This was the site's root until 2026-07-27; the sort accordion took the landing
+    slot and this became ARCHIVE in the nav. It is still the FULL list, and still
+    what a project page's arrows walk (NAV_LISTS['archive']).
+    """
     vis = sorted(visible_projects(),
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
-    cards = [card_html(p) for p in vis]
-    content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n\t<div class="module-videos">\n'
+    cards = [card_html(p, rel='../') for p in vis]
+    content = (f'<div id="content-wrapper">\n{header("/archive/", 1)}\n<main>\n\t<div class="module-videos">\n'
                + '\n'.join(cards) + f'\n\t</div>\n</main>\n{footer()}\n</div>')
-    write('index.html', page('page-works page-index page-archive', f'{SITE["site_name"]} — Work', content))
+    write(os.path.join('archive', 'index.html'),
+          page('page-works page-index page-archive', f'{SITE["site_name"]} — Archive', content, depth=1))
 
 def build_selects():
     # The old landing grid (curated selects, sel_order). Unlinked from nav; lives at /selects/.
@@ -219,15 +224,17 @@ def build_selects():
           page('page-works page-index page-selects', f'{SITE["site_name"]} — Selects', content, depth=1))
 
 def build_archive():
-    # /archive/ is retired as a page — the WORK grid now lives at root "/".
-    # Keep the path alive as a redirect so old bookmarks/links resolve to the homepage.
+    """/sort/ is retired as a path — that page is the site's landing page now.
+
+    Kept alive as a redirect because the link was shared while it was a preview.
+    """
     doc = ('<!DOCTYPE html>\n<html lang="en"><head><meta charset="utf-8">\n'
            '<meta name="robots" content="noindex">\n'
            '<link rel="canonical" href="/">\n'
            '<meta http-equiv="refresh" content="0; url=/">\n'
-           f'<title>{esc(SITE["site_name"])} — Work</title>\n'
+           f'<title>{esc(SITE["site_name"])}</title>\n'
            '</head><body><a href="/">Work</a></body></html>\n')
-    write(os.path.join('archive', 'index.html'), doc)
+    write(os.path.join('sort', 'index.html'), doc)
 
 def build_hidden():
     """Archive-style page of hidden jobs. Deliberately unlinked from all navigation."""
@@ -288,8 +295,9 @@ def build_sort():
 
     The first section with spots (RECENT, as ordered today) starts open.
 
-    EXPERIMENTAL: deliberately unlinked and noindex — no nav entry until Nick says
-    the shape works.
+    This is the site's landing page as of 2026-07-27 (it lived at /sort/ while it was
+    being judged, and that path still redirects here). Being the front door, it is
+    indexable — the noindex it carried as a preview is gone.
     """
     vis = sorted(visible_projects(),
                  key=lambda x: (x.get('arch_order', 10000), -int(x['number'][1:])))
@@ -306,7 +314,7 @@ def build_sort():
 
     blocks = []
     for name, slug, members, open_ in groups:
-        cards = '\n'.join(card_html(p, rel='../') for p in members)
+        cards = '\n'.join(card_html(p) for p in members)
         active = ' active' if open_ else ''
         hidden = '' if open_ else ' style="display:none"'
         blocks.append(
@@ -324,12 +332,11 @@ def build_sort():
                  + '\n'.join(blocks) +
                  '\n\t\t</div>\n\t</section>')
 
-    content = (f'<meta name="robots" content="noindex">\n'
-               f'<div id="content-wrapper">\n{header("", 1)}\n<main>\n{main_html}\n</main>\n{footer()}\n</div>\n'
+    content = (f'<div id="content-wrapper">\n{header("/")}\n<main>\n{main_html}\n</main>\n{footer()}\n</div>\n'
                f'<script>\n{CATS_JS}\n</script>')
-    write(os.path.join('sort', 'index.html'),
+    write('index.html',
           page('page-works page-index page-archive page-sort',
-               f'{SITE["site_name"]} — Sort', content, depth=1))
+               f'{SITE["site_name"]} — Work', content))
 
 CATS_JS = r'''(function(){
 	var cats = [].slice.call(document.querySelectorAll('.module-cat'));
@@ -424,7 +431,8 @@ def build_projects():
         slug = p['slug']
         prev_p = ring[j-1] if j > 0 else ring[-1]
         next_p = ring[j+1] if j < len(ring)-1 else ring[0]
-        close_href = '../vimeo-batch/' if in_batch else ('../hidden/' if in_hidden else '../')
+        # default is the full grid; main.js swaps it for '../' if you arrived from the landing
+        close_href = '../vimeo-batch/' if in_batch else ('../hidden/' if in_hidden else '../archive/')
 
         # media: campaign parents stack every child video; singles get one slot
         if p.get('children'):

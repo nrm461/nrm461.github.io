@@ -80,7 +80,11 @@
 (function(){
 	var b = document.body.classList;
 	try{
-		if(b.contains('page-hidden')) sessionStorage.setItem('navctx', 'hidden');
+		/* page-sort is checked first: the landing page also carries page-archive (it
+		   borrows the 5-across grid), and we want CLOSE to return you to the landing
+		   rather than the full grid when that's where you came from. */
+		if(b.contains('page-sort')) sessionStorage.setItem('navctx', 'sort');
+		else if(b.contains('page-hidden')) sessionStorage.setItem('navctx', 'hidden');
 		else if(b.contains('page-archive')) sessionStorage.setItem('navctx', 'archive');
 		else if(b.contains('page-index')) sessionStorage.setItem('navctx', 'landing');
 	}catch(e){}
@@ -88,14 +92,19 @@
 	var ctx = 'archive';
 	try{ ctx = sessionStorage.getItem('navctx') || 'archive'; }catch(e){}
 	var slug = location.pathname.replace(/\/+$/, '').split('/').pop();
+	var from = ctx;                                   /* where the visitor came from */
 	var list = window.NAV_LISTS[ctx] || [];
+	/* 'sort' has no list of its own — the arrows walk the full grid either way */
 	if(list.indexOf(slug) === -1){ ctx = 'archive'; list = window.NAV_LISTS.archive || []; }
 	var i = list.indexOf(slug);
 	if(i === -1) return;
 	var prev = document.getElementById('prev'), next = document.getElementById('next'), close = document.getElementById('close');
 	if(prev) prev.href = '../' + list[(i - 1 + list.length) % list.length] + '/';
 	if(next) next.href = '../' + list[(i + 1) % list.length] + '/';
-	if(close) close.href = ctx === 'hidden' ? '../hidden/' : '../';  /* WORK grid now lives at root "/" */
+	/* CLOSE returns you where you came from: the landing accordion at "/", or the
+	   full grid at "/archive/" (which is where the built pages point by default). */
+	if(close && from === 'sort') close.href = '../';
+	else if(close && from === 'hidden') close.href = '../hidden/';
 })();
 
 /* Remember grid scroll position: restore when returning via [CLOSE] / back */
