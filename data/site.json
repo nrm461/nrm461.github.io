@@ -62,27 +62,27 @@
   "Fashion"
  ],
  "sort_categories": [
-  "Commercial",
   "Recent",
+  "Commercial",
   "Music Video",
   "Beauty",
   "Car",
   "Long Form"
  ],
  "sort_picks": {
-  "Commercial": [
-   "alfa-beer-the-subtle-things",
-   "de-beers-director-s-cut",
-   "terminal-27-vermeil-hues",
-   "function-health-mothers-day",
-   "crypto-com-fortune-favors-the-brave"
-  ],
   "Recent": [
    "benson-boone-the-time-of-my-life",
    "okara-the-auction",
    "instax-forever",
    "pura-scents-of-place",
    "nissan-built-for-happy-chaos-dc"
+  ],
+  "Commercial": [
+   "alfa-beer-the-subtle-things",
+   "de-beers-director-s-cut",
+   "terminal-27-vermeil-hues",
+   "function-health-mothers-day",
+   "crypto-com-fortune-favors-the-brave"
   ],
   "Music Video": [
    "lisa-x-tyla-when-im-with-you",
