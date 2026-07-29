@@ -110,4 +110,9 @@ separate question from the credential one, and it is Nick's call.
   does not mount on the MacBook Air — the next extraction pass has to run wherever
   `Suite` mounts. Also blocked on the extraction script, which is in neither this repo
   nor `~/dev`. Full context in the issue; don't re-derive it.
+- **#21 — exclude own traffic from Umami on the Mac Studio.** Analytics went live
+  2026-07-29 (page views + a `play` event per video; see README's Analytics section).
+  Self-exclusion in Umami is a per-browser `localStorage` flag, not an account setting,
+  so it is **machine-bound:** set on the MacBook Air's Chrome, still unset on the Studio,
+  which is therefore counting Nick's own visits. One console line, on the ticket.
 - _Add as work resumes. This file is the committed cross-machine continuity record — keep it current at handoff (`/handoff-github`)._
