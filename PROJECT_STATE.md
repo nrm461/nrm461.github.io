@@ -23,9 +23,17 @@ an apex-only cert and will not re-issue. Two fixes were tried and ruled out on 2
 removing and re-adding the Pages custom domain returns the *identical* cert (it matches an
 existing valid one rather than requesting a new one), and DreamHost rejects
 `www.nicholasmetcalf.com` as a Redirect website with `INVALID_DOMAIN` because it treats
-`www` as part of the parent domain. Remaining options are a GitHub support ticket or
-fronting with Cloudflare. **Do not set the Pages custom domain to `www.…`** to force
-issuance — the apex would 301 to a `www` with no cert and take the whole site down.
+`www` as part of the parent domain.
+
+A GitHub **support ticket is not available** — `nrm461` is a personal Standard plan
+("Technical support not included"), and the Pages HTTPS-certificate form dead-ends in a
+product picker with no Pages option and a required sub-category that has no honest answer.
+Asked publicly instead: **https://github.com/orgs/community/discussions/203414**
+(2026-07-29, unanswered). If that goes nowhere, the remaining fix is fronting the site with
+Cloudflare — covers apex and `www` on one cert, but moves nameservers off DreamHost.
+
+**Do not set the Pages custom domain to `www.…`** to force issuance — the apex would 301 to
+a `www` with no cert and take the whole site down.
 
 ## Current status
 
