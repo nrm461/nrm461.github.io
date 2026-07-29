@@ -1,10 +1,31 @@
 # Project State — nrm461.github.io
 
-_Last updated 2026-07-26._
+_Last updated 2026-07-29._
 
 ## What this is
 
-Nick Metcalf — colorist portfolio. A static site generated from `data/site.json` and `data/projects.json`, live at https://nrm461.github.io.
+Nick Metcalf — colorist portfolio. A static site generated from `data/site.json` and `data/projects.json`, live at **https://nicholasmetcalf.com**.
+
+## Domains (live 2026-07-27)
+
+`nicholasmetcalf.com` is the canonical address — bare domain, registered at DreamHost,
+DreamHost nameservers, four apex A records to GitHub Pages. `nickmetcalf.xyz` and
+`nickmetcalf.io` are DreamHost **Redirect** domains → the apex, each with its own free
+Let's Encrypt cert. `nrm461.github.io` redirects to the apex. GitHub Pages serves exactly
+one custom domain, which is why the extras redirect rather than serve.
+
+**Don't touch the MX records** — seven Google Workspace MX plus a `mail` CNAME to
+`ghs.googlehosted.com`. Mail is live on this domain.
+
+**Known limitation: `www.nicholasmetcalf.com` has no TLS certificate**, so `https://www`
+does not connect. DNS is correct (`www` CNAME → `nrm461.github.io`); GitHub simply issued
+an apex-only cert and will not re-issue. Two fixes were tried and ruled out on 2026-07-29:
+removing and re-adding the Pages custom domain returns the *identical* cert (it matches an
+existing valid one rather than requesting a new one), and DreamHost rejects
+`www.nicholasmetcalf.com` as a Redirect website with `INVALID_DOMAIN` because it treats
+`www` as part of the parent domain. Remaining options are a GitHub support ticket or
+fronting with Cloudflare. **Do not set the Pages custom domain to `www.…`** to force
+issuance — the apex would 301 to a `www` with no cert and take the whole site down.
 
 ## Current status
 
