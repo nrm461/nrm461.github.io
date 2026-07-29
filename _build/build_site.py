@@ -49,6 +49,14 @@ def asset_version():
 
 VER = asset_version()
 
+def analytics_tag():
+    """Umami page-view script. Emits nothing until data/site.json carries a site ID,
+    so a fresh clone (and the local preview) stays untracked."""
+    a = SITE.get('analytics') or {}
+    wid, src = a.get('umami_id'), a.get('umami_src')
+    if not (wid and src): return ''
+    return f'<script defer src="{esc(src)}" data-website-id="{esc(wid)}"></script>\n'
+
 def page(body_class, title, content, inline_vars='', depth=0):
     rel = '../' * depth
     return f'''<!DOCTYPE html>
@@ -58,7 +66,7 @@ def page(body_class, title, content, inline_vars='', depth=0):
 <title>{esc(title)}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
 <link rel="stylesheet" href="{rel}css/main.css?v={VER}">
-{inline_vars}</head>
+{analytics_tag()}{inline_vars}</head>
 <body class="{body_class}">
 {content}
 <script src="{rel}js/nav-data.js?v={VER}"></script>

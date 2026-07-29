@@ -2,6 +2,10 @@
  "site_name": "Nick Metcalf",
  "site_title": "Nick Metcalf — Colorist",
  "base_url": "",
+ "analytics": {
+  "umami_src": "https://cloud.umami.is/script.js",
+  "umami_id": ""
+ },
  "nav": [
   {
    "label": "WORK",
