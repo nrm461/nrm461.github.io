@@ -76,4 +76,9 @@ separate question from the credential one, and it is Nick's call.
 
 ## Next steps
 
+- **#16 — deck stills re-extract (parked 2026-07-29, mid-grilling).** Two decisions
+  settled, one open. **Machine-bound:** the masters live on `/Volumes/Suite/...`, which
+  does not mount on the MacBook Air — the next extraction pass has to run wherever
+  `Suite` mounts. Also blocked on the extraction script, which is in neither this repo
+  nor `~/dev`. Full context in the issue; don't re-derive it.
 - _Add as work resumes. This file is the committed cross-machine continuity record — keep it current at handoff (`/handoff-github`)._
