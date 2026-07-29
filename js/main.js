@@ -1,3 +1,8 @@
+/* Analytics: no-op unless the Umami script loaded (absent locally, or blocked) */
+function trackEvent(name, data){
+	try{ if(window.umami) window.umami.track(name, data); }catch(e){}
+}
+
 /* Device class (ProdCo uses .desktop / .mobile on body for hover behavior) */
 (function(){
 	var isTouch = ('ontouchstart' in window) || navigator.maxTouchPoints > 0;
@@ -131,6 +136,7 @@
 	Array.prototype.forEach.call(facades, function(f){
 		f.addEventListener('click', function(){
 			var id = f.getAttribute('data-vimeo');
+			trackEvent('play', {video: f.getAttribute('title') || id, path: location.pathname});
 			var params = 'badge=0&autopause=0&player_id=0&title=0&byline=0&portrait=0' +
 				'&vimeo_logo=0&pip=0&cc=0&transcript=0&airplay=0&chromecast=0' +
 				'&watch_full_video=0&dnt=1';
