@@ -11,7 +11,7 @@ name and it does the whole job:
   2. picks the deliverable   (ProRes > mp4 > GEN, and 16x9 > FulRes)
   3. parses the credits file (or drops the blank template in and stops)
   4. builds the three thumbs (sips — no ffmpeg needed)
-  5. builds the carousel stills
+  5. builds the gallery stills (ig_selects/ when the folder has one)
   6. uploads to Vimeo        (tus, token in ~/.vimeo-token)
   7. appends to data/projects.json
 
@@ -22,8 +22,10 @@ Flags:
     --dry-run      report what it would do, write nothing
     --no-vimeo     skip the upload (entry gets an empty vimeo field)
     --group G      group tag for the new entry (default: hidden)
+    --category C   override the category (one of site.json's categories)
     --thumb PATH   override the thumbnail source frame
-    --carousel N   how many carousel stills (default: 10, 0 to skip)
+    --all-stills   use every still, not just the ig_selects/ ones
+    --carousel N   cap the gallery stills (default: all of them, 0 to skip)
     --commit       git add/commit/push when everything succeeded
 """
 import os, sys, re, json, time, argparse, subprocess, unicodedata, difflib
@@ -92,12 +94,24 @@ def rank_video(path):
     return (fmt, src, path)
 
 
+def natural_key(path):
+    """01, 02, 03, 03.1, 04 … — numeric runs compared as numbers, not as text."""
+    stem = os.path.splitext(os.path.basename(path))[0]
+    nums = [float(n) for n in re.findall(r"[0-9]+(?:\.[0-9]+)?", stem)]
+    return (nums or [float("inf")], stem)
+
+
 def scan(folder):
     """Find the deliverable, the stills, and the credits file."""
-    out = {'videos': [], 'stills': [], 'other_imgs': [], 'credits': None}
+    out = {'videos': [], 'stills': [], 'ig': [], 'other_imgs': [], 'credits': None}
     for base, dirs, files in os.walk(folder):
         dirs[:] = [d for d in dirs if not d.startswith('.')]
-        in_stills = 'still' in os.path.relpath(base, folder).lower()
+        rel = os.path.relpath(base, folder).lower()
+        # The IG selects are the frames actually posted — a curated set, and a
+        # better gallery than every still in the folder. Kept in their own bucket
+        # so --all-stills can still fall back to the raw stills.
+        in_ig = 'ig_select' in rel
+        in_stills = 'still' in rel
         for f in files:
             if f.startswith('.'):
                 continue
@@ -105,10 +119,12 @@ def scan(folder):
             if 'credit' in fl and fl.endswith('.txt'):
                 out['credits'] = out['credits'] or fp
             elif fl.endswith(IMG):
-                out['stills' if in_stills else 'other_imgs'].append(fp)
+                out['ig' if in_ig else
+                    ('stills' if in_stills else 'other_imgs')].append(fp)
             elif fl.endswith(VID):
                 out['videos'].append(fp)
     out['videos'].sort(key=rank_video)
+    out['ig'].sort(key=natural_key)
     out['stills'].sort()
     out['other_imgs'].sort()
     return out
@@ -247,7 +263,7 @@ def category_for(folder_name, production):
     if any(h in low for h in MV_HINTS):
         return 'Music Video'
     if any(h in low for h in SHORT_HINTS):
-        return 'Short Film'
+        return 'Long Form'   # 'Short Film' is not one of site.json's categories
     return 'Commercial'
 
 
@@ -267,6 +283,10 @@ def main():
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-vimeo', action='store_true')
     ap.add_argument('--group', default='hidden')
+    ap.add_argument('--category', default=None,
+                    help="override the category (one of site.json's categories)")
+    ap.add_argument('--all-stills', action='store_true',
+                    help='build the gallery from every still, ignoring ig_selects/')
     ap.add_argument('--thumb', default=None)
     ap.add_argument('--credits-file', default=None,
                     help='use this credits file instead of one in the folder '
@@ -328,6 +348,12 @@ def main():
         title = re.sub(r'[_\s]+', ' ', re.sub(r'^\d+[_-]?', '', name)).strip().title()
         print(f'   NOTE     no title in credits — guessed "{title}" from the folder name')
     category = category_for(name, production)
+    if args.category:
+        valid = json.load(open(os.path.join(ROOT, 'data', 'site.json'))).get('categories', [])
+        match = [c for c in valid if c.lower() == args.category.lower()]
+        if not match:
+            die(f'--category "{args.category}" is not one of: {", ".join(valid)}')
+        category = match[0]
     third = third_line_for(category, production)
     slug = slugify(f'{client}-{title}')[:60] or slugify(name)
     taken = {p['slug'] for p in projects}
@@ -349,8 +375,13 @@ def main():
     print(f'   thumb    {os.path.relpath(thumb_src, folder)}  ({why})')
 
     thumbs = make_thumbs(slug, thumb_src, args.dry_run)
-    carousel = make_carousel(slug, found['stills'], args.carousel, args.dry_run)
-    print(f'   built    {len(thumbs)} thumbs, {len(carousel)} carousel stills')
+    pool = found['stills'] if args.all_stills else (found['ig'] or found['stills'])
+    src = 'ig_selects' if pool is found['ig'] else 'stills'
+    carousel = make_carousel(slug, pool, args.carousel, args.dry_run)
+    print(f'   built    {len(thumbs)} thumbs, {len(carousel)} gallery stills '
+          f'from {src}/')
+    if found['ig'] and args.all_stills:
+        print(f'   NOTE     ignoring {len(found["ig"])} ig_selects/ frames (--all-stills)')
 
     vimeo_url = ''
     if not args.no_vimeo and not args.dry_run:
@@ -365,7 +396,7 @@ def main():
         'vimeo': vimeo_url, 'credits': credits_text, 'group': args.group,
         'needs_review': needs_review, 'mtime': os.path.getmtime(folder),
         'folder': name, 'thumb_src': thumb_src, 'video_src': video,
-        'stills': found['stills'],
+        'stills': pool,
         'number': f'W{max(numbers, default=0) + 1:03d}',
         'selected': False,
         # The carousel REPLACES the card thumbnail with the stills, so it is opt-in

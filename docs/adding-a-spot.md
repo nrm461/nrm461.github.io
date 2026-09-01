@@ -52,8 +52,11 @@ finishes on its own and none of the above is needed. Deliberately not done yet.
 2. **Picks the deliverable** — prefers `ProRes/` over `mp4/` over `GEN/`, and `16x9` over
    `FulRes`. It prints what it chose and what came second.
 3. **Reads the credits** — see below.
-4. **Builds the images** — 600/100/1600 thumbs plus every still, using `sips`. An explicit
-   `stills/thumb.png` wins; otherwise it takes the middle still.
+4. **Builds the images** — 600/100/1600 thumbs plus the gallery stills, using `sips`. An
+   explicit `stills/thumb.png` wins for the thumbnail; otherwise it takes the middle still.
+   **The gallery comes from `ig_selects/` when the folder has one** — those are the frames
+   that were posted, already curated and in order — and falls back to `stills/` when it
+   doesn't. `--all-stills` forces the raw stills instead.
 5. **Uploads to Vimeo** — resumable, with a progress readout. Token in `~/.vimeo-token`.
 6. **Appends to `data/projects.json`** — never touching an existing entry.
 
@@ -90,12 +93,18 @@ Then `add_spot.py Hills --credits-file /tmp/credits.txt`.
 | `--credits-file PATH` | use a credits file from somewhere else |
 | `--no-vimeo` | skip the upload |
 | `--carousel N` | cap the stills built (default: all; `0` skips) |
+| `--all-stills` | build the gallery from `stills/`, ignoring `ig_selects/` |
+| `--category C` | override the guessed category; must be one of `site.json`'s |
 | `--carousel-card` | let the stills replace the thumbnail on the grid card |
 | `--thumb PATH` | pick the thumbnail frame yourself |
 | `--commit` | commit and push when everything worked — the push half fails on the Studio until `gh auth login` is run there; see above |
 
 ## Gotchas
 
+- **The category is a guess from the folder name, and it is often wrong.** A short film in
+  a folder that doesn't say so lands as *Commercial*, with the production company as its
+  third line. Check the dry run and pass `--category` — it is validated against
+  `site.json`, so a category no page filters on can't slip through.
 - **Reload `/admin/` after this runs.** The edit modal seeds from the copy of
   `projects.json` fetched at page load; a stale tab will try to write old values back. The
   save now refuses when it detects drift, but a reload avoids the interruption.
