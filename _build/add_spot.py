@@ -325,7 +325,7 @@ def main():
     while slug in taken:
         slug, n = f'{base}-{n}', n + 1
 
-    print(f'   credits  {os.path.relpath(found["credits"], folder)}')
+    print(f'   credits  {os.path.relpath(found["credits"], folder) if found["credits"] else "(none)"}')
     print(f'   client   {client or "(none)"}')
     print(f'   title    {title or "(none)"}')
     print(f'   director {pretty_director(director) or "(none)"}')
