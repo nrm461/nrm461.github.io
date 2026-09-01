@@ -6650,19 +6650,19 @@
  },
  {
   "slug": "father-son",
-  "client": "",
-  "title": "Father, Son",
+  "client": "Benson Boone",
+  "title": "Time of My Life",
   "featuring": "",
-  "director": "@ashkalito",
+  "director": "@matteastin & @bensonboone",
   "director_raw": "@ashkalito",
   "production": "@siblingrivalryco",
-  "category": "Long Form",
+  "category": "Music Video",
   "third_line": "Long Form",
-  "vimeo": "https://vimeo.com/1223111671",
-  "credits": "Father, Son - because the real journey happens along the way\n\nDirector: @ashkalito\nDP: @blakegmyers @wpagency\nColor: @Nick__metcalf @raremedium.tv\nProduction: @siblingrivalryco\n\nFather: Ken Barahona / Son: @phoenixmsoccer\nSharps and camera rigging by @kevlach\nSound design/mix by @futureperfectmusic\nPost Sound Producer @brinsta.gram\nVFX by @gotoddrun\n\nMassive thanks to @nickjgall at @standard.camera @colewebley @moonrock.camera @goldpackaged @david_brickel\n\nProcessing and scan @fotokem_la\nShot on 4p 35mm 5219 + 1 @kodak_shootfilm",
-  "group": "hidden",
+  "vimeo": "https://vimeo.com/1208681711",
+  "credits": "@bensonboone\nThe Time of My Life\n\nDirector: @matteastin @bensonboone\nDP: @embo920\nEdit: @matteastin @bensonboone\nColor: @nick__metcalf\nProduction: @lotumn_\n\nstarring - @bensonboone @alixearle\nep/producer - @autumnmaschi\nep - @lorisrussier\nproduction manager - @stephenestey\nproduction coordinator - @sharp_smooth\n1st ad - @lee.smith215\n2nd ad - @my_boifriend\nad pa - @dont_b_petty\ncamera operator - @billyonairee\n1st ac a cam - @lukejamison_\n1st ac b cam - @jeremiahchoww\n2nd ac a cam - @jadendepew\n2nd ac a cam - @giomorales.cam\n2nd ac b cam - @imcodyledouxfilm\nsteadicam - @steadi.g\ngaffer - @mroman____\nbbe - @eddiefresnel\nset lighting technicians - @bringer_of_juice, @samuelajmendoza, @trebetts\nkey grip - @danthemanroy\nbbg - @wilson.sun_\ngrips - @gearhead_351, @taylorastrachan\nproduction designer - @sallyblu_\nart director - @cuz.drew\nset decorator - @countrymusictelevisi0n\ngraphic designer - @doomsday_soiree\nshopper - @joanna.cabalquinto\nset dressers - @mortibean, @johne.park, @samgostnell, @merittaaron\nstunt coordinator - @rpmstuntsinc\nstunt riggers - brett jones, @natedmitchell\ngroomer (benson) - @melissa.dezarate\nstylist (benson and alix) - @mrmontyjackson\nstylist assistant (benson & alix) -\nmake-up artist (alix) - @dianebuzzetta\nhair stylist (alix) - @vincentpel\nmake-up artist - @makeupbykandirose\nmake-up assistant - @beautybykathh\nwardrobe stylist - @haasrach\nwardrobe assistant - @mollysiennastack\npa’s - malcolmkingfontana, ian welfley, robert gillard, @portame.nto, @nickreinoso17, @danielxescobar, @Sebastian0387\nreynolds management - @jefeburns, @ryanhasara, @__1ukas__\nwarner records @warnerrecords\nevp, creative - @normanwonderly\ncreative services - lydia sarno\n@wyghtmain as “The Dragon” 🐉",
+  "group": "posted",
   "needs_review": false,
-  "mtime": 1787678956.0,
+  "mtime": 1787678956,
   "folder": "ashkan_Father_Son",
   "thumb_src": "/Volumes/Suite/rare_medium/_Personal_Folders/nick_m/_MASTERS/ashkan_Father_Son/nick_stills/father,_son (2160p)_00011919.png",
   "video_src": "/Volumes/Suite/rare_medium/_Personal_Folders/nick_m/_MASTERS/ashkan_Father_Son/master/father,_son (2160p).mp4",
@@ -6696,13 +6696,14 @@
    "/Volumes/Suite/rare_medium/_Personal_Folders/nick_m/_MASTERS/ashkan_Father_Son/stills/father,_son (2160p).mp4_1.53.2.jpg"
   ],
   "number": "W959",
-  "selected": false,
-  "carousel": false,
+  "selected": true,
+  "carousel": true,
   "gallery": true,
   "arch_order": 0,
   "delivered": "2026-08-25",
   "categories": [
-   "Long Form"
-  ]
+   "Music Video"
+  ],
+  "sel_order": 999
  }
 ]
