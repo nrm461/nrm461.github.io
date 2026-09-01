@@ -136,7 +136,16 @@ credits are not fatal — the spot stages with `needs_review: true`.
 
 ## Admin traps (2026-09-01)
 
-**Do not write `data/projects.json` while `/admin/` is open.** The edit modal seeds from the
+**Do not write `data/projects.json` while `/admin/` is open — the guard is not enough.**
+It happened again the same day, worse: with a tab open, the new `father-son` row came back
+holding **Benson Boone's** client, title, director, category, vimeo, credits and
+`group: posted`, while Benson's own row was untouched. Restored in `a45c55e33`. The guard
+only runs in the edit-modal path — the carousel reorder and the order saves write with no
+staleness check at all — and it diffs five fields rather than the file's `sha`. How the two
+rows crossed is **not yet explained**; that is **#25**, and it wants reproducing, not a
+guessed patch. Symptom to watch for: a brand-new slug carrying another spot's metadata.
+
+ The edit modal seeds from the
 copy fetched at page load and writes it back verbatim, so a stale tab blanks anything added
 since — this is how the Hill's credits were lost. The save now aborts when
 `credits/director/client/title/vimeo` have drifted, but after any scripted write, reload admin.
@@ -149,6 +158,23 @@ busters. Check committed blob hashes before suspecting the drag code.
 `gallery_max` in `site.json` caps the spot-page gallery (**12**); extra stills stay in the repo
 as the picking pool. `carousel: true` makes stills **replace** the card thumbnail — now an
 explicit checkbox, because the save handler used to derive it from "are there any files".
+
+## What the second spot changed (2026-09-01)
+
+Adding `father-son` (W959) turned up three things in `add_spot.py`, all fixed in `f88ae69e6`:
+
+- **The gallery now comes from `ig_selects/`** when the folder has one — those are the
+  frames that were actually posted, curated and in order — falling back to `stills/`.
+  27 of the job folders carry one. `--all-stills` forces the old behaviour.
+- **`--category` exists and is validated** against `site.json`. The category is guessed from
+  the folder name and was wrong here (a short film staged as *Commercial*, with the
+  production company as its third line) with no way to fix it but hand-editing the JSON.
+- **`SHORT_HINTS` returned `Short Film`**, which is not one of `site.json`'s categories — no
+  page filters on it. It returns `Long Form` now.
+
+Still open, and still the cost of every push: **the Studio has no `gh` credentials**, so each
+change is commit-on-Studio → `git fetch ssh://studio/...` from the Air → push. One
+`gh auth login` there removes it. See `docs/adding-a-spot.md`.
 
 ## Next steps
 
