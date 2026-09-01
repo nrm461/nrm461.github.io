@@ -20,7 +20,7 @@
   "stills": [],
   "number": "W001",
   "selected": false,
-  "arch_order": 33,
+  "arch_order": 34,
   "delivered": "2024-12-31",
   "carousel": true,
   "gallery": true,
@@ -62,7 +62,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-07",
-  "arch_order": 19,
+  "arch_order": 20,
   "categories": [
    "Music Video"
   ]
@@ -137,7 +137,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-04-22",
-  "arch_order": 43,
+  "arch_order": 44,
   "categories": [
    "Commercial"
   ]
@@ -175,7 +175,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-01-27",
-  "arch_order": 47,
+  "arch_order": 48,
   "categories": [
    "Long Form"
   ]
@@ -282,7 +282,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-08",
-  "arch_order": 25,
+  "arch_order": 26,
   "categories": [
    "Music Video"
   ]
@@ -317,7 +317,7 @@
   ],
   "number": "W009",
   "selected": false,
-  "arch_order": 16,
+  "arch_order": 17,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-08-19",
@@ -355,7 +355,7 @@
   ],
   "number": "W010",
   "selected": true,
-  "arch_order": 11,
+  "arch_order": 12,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-09-15",
@@ -397,7 +397,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-10-28",
-  "arch_order": 9,
+  "arch_order": 10,
   "sel_order": 11,
   "categories": [
    "Commercial"
@@ -433,7 +433,7 @@
   ],
   "number": "W012",
   "selected": false,
-  "arch_order": 18,
+  "arch_order": 19,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-07-30",
@@ -472,7 +472,7 @@
   "number": "W013",
   "selected": false,
   "sel_order": 7,
-  "arch_order": 55,
+  "arch_order": 56,
   "carousel": true,
   "gallery": true,
   "delivered": "2025-05-01",
@@ -509,7 +509,7 @@
   "number": "W014",
   "selected": true,
   "sel_order": 3,
-  "arch_order": 2,
+  "arch_order": 3,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-16",
@@ -551,7 +551,7 @@
   "gallery": true,
   "sel_order": 8,
   "delivered": "2026-02-09",
-  "arch_order": 10,
+  "arch_order": 11,
   "categories": [
    "Music Video"
   ]
@@ -589,7 +589,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-02-12",
-  "arch_order": 14,
+  "arch_order": 15,
   "categories": [
    "Music Video"
   ]
@@ -625,7 +625,7 @@
   "number": "W017",
   "selected": true,
   "sel_order": 2,
-  "arch_order": 4,
+  "arch_order": 5,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-01-23",
@@ -666,7 +666,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 27,
+  "arch_order": 28,
   "categories": [
    "Long Form"
   ]
@@ -702,7 +702,7 @@
   "number": "W019",
   "selected": true,
   "sel_order": 6,
-  "arch_order": 6,
+  "arch_order": 7,
   "carousel": true,
   "gallery": true,
   "delivered": "2026-05-13",
@@ -743,7 +743,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-03-11",
-  "arch_order": 7,
+  "arch_order": 8,
   "categories": [
    "Commercial"
   ]
@@ -991,7 +991,7 @@
   "stills": [],
   "number": "W029",
   "selected": false,
-  "arch_order": 6,
+  "arch_order": 7,
   "categories": [
    "Commercial"
   ]
@@ -1017,7 +1017,7 @@
   "stills": [],
   "number": "W030",
   "selected": false,
-  "arch_order": 41,
+  "arch_order": 42,
   "carousel": true,
   "gallery": true,
   "categories": [
@@ -1105,7 +1105,7 @@
   "number": "W033",
   "selected": false,
   "delivered": "2025-02-28",
-  "arch_order": 22,
+  "arch_order": 23,
   "categories": [
    "Long Form"
   ]
@@ -1168,7 +1168,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2024-09-30",
-  "arch_order": 31,
+  "arch_order": 32,
   "categories": [
    "Long Form"
   ]
@@ -1203,7 +1203,7 @@
   ],
   "number": "W036",
   "selected": false,
-  "arch_order": 31,
+  "arch_order": 32,
   "categories": [
    "Commercial"
   ]
@@ -1229,7 +1229,7 @@
   "stills": [],
   "number": "W037",
   "selected": false,
-  "arch_order": 28,
+  "arch_order": 29,
   "categories": [
    "Commercial"
   ]
@@ -1256,7 +1256,7 @@
   "number": "W038",
   "selected": true,
   "delivered": "2026-02-13",
-  "arch_order": 8,
+  "arch_order": 9,
   "sel_order": 7,
   "carousel": true,
   "gallery": true,
@@ -1321,7 +1321,7 @@
   "sel_order": 4,
   "carousel": true,
   "delivered": "2026-05-06",
-  "arch_order": 3,
+  "arch_order": 4,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -1360,7 +1360,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2025-11-25",
-  "arch_order": 15,
+  "arch_order": 16,
   "categories": [
    "Commercial"
   ]
@@ -1417,7 +1417,7 @@
   "selected": true,
   "sel_order": 5,
   "carousel": true,
-  "arch_order": 5,
+  "arch_order": 6,
   "gallery": true,
   "categories": [
    "Commercial",
@@ -1449,7 +1449,7 @@
   "carousel": true,
   "gallery": true,
   "delivered": "2026-06-08",
-  "arch_order": 1,
+  "arch_order": 2,
   "categories": [
    "Commercial"
   ]
@@ -1489,7 +1489,7 @@
   "credits_v2": true,
   "gallery": true,
   "delivered": "2026-06-25",
-  "arch_order": 0,
+  "arch_order": 1,
   "categories": [
    "Music Video"
   ]
@@ -1516,7 +1516,7 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/CzTEqDSOCuc/",
   "delivered": "2024-09-30",
-  "arch_order": 73,
+  "arch_order": 74,
   "categories": [
    "Commercial"
   ]
@@ -1543,7 +1543,7 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C14krdOreP0/",
   "delivered": "2024-09-30",
-  "arch_order": 49,
+  "arch_order": 50,
   "categories": [
    "Commercial",
    "Car"
@@ -1570,7 +1570,7 @@
   "number": "W048",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FdpXlr2ev/",
-  "arch_order": 70,
+  "arch_order": 71,
   "categories": [
    "Commercial"
   ]
@@ -1596,7 +1596,7 @@
   "number": "W049",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FeqlCLivs/",
-  "arch_order": 73,
+  "arch_order": 74,
   "categories": [
    "Beauty"
   ]
@@ -1622,7 +1622,7 @@
   "number": "W050",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FjY-xL_Tt/",
-  "arch_order": 78,
+  "arch_order": 79,
   "categories": [
    "Commercial"
   ]
@@ -1648,7 +1648,7 @@
   "number": "W053",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2FnezIruzj/",
-  "arch_order": 69,
+  "arch_order": 70,
   "categories": [
    "Long Form"
   ]
@@ -1674,7 +1674,7 @@
   "number": "W055",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2GdLffLvHe/",
-  "arch_order": 72,
+  "arch_order": 73,
   "categories": [
    "Commercial"
   ],
@@ -1701,7 +1701,7 @@
   "number": "W056",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MFI5mMbR_/",
-  "arch_order": 61,
+  "arch_order": 62,
   "carousel": false,
   "delivered": "2025-03-25",
   "categories": [
@@ -1730,7 +1730,7 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MMotbMd-Y/",
   "delivered": "2024-09-30",
-  "arch_order": 72,
+  "arch_order": 73,
   "categories": [
    "Commercial"
   ],
@@ -1758,7 +1758,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOOD7M9Oj/",
   "sel_order": 18,
-  "arch_order": 75,
+  "arch_order": 76,
   "carousel": true,
   "gallery": true,
   "categories": [
@@ -1786,7 +1786,7 @@
   "number": "W060",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOVlEsVrS/",
-  "arch_order": 35,
+  "arch_order": 36,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -1813,7 +1813,7 @@
   "number": "W061",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MOri5sRaF/",
-  "arch_order": 59,
+  "arch_order": 60,
   "categories": [
    "Commercial",
    "Car"
@@ -1842,7 +1842,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRMz7Ou46/",
   "carousel": false,
   "delivered": "2026-06-16",
-  "arch_order": 63,
+  "arch_order": 64,
   "categories": [
    "Beauty"
   ]
@@ -1868,7 +1868,7 @@
   "number": "W063",
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2MRkLmuMgv/",
-  "arch_order": 76,
+  "arch_order": 77,
   "carousel": true,
   "categories": [
    "Commercial"
@@ -1897,7 +1897,7 @@
   "number": "W064",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O4Xu9uklg/",
-  "arch_order": 131,
+  "arch_order": 132,
   "categories": [
    "Commercial"
   ]
@@ -1923,7 +1923,7 @@
   "number": "W065",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O5IJqO4zw/",
-  "arch_order": 57,
+  "arch_order": 58,
   "categories": [
    "Commercial"
   ]
@@ -1949,7 +1949,7 @@
   "number": "W069",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O9rsFuxWC/",
-  "arch_order": 55,
+  "arch_order": 56,
   "delivered": "2025-01-15",
   "carousel": false,
   "categories": [
@@ -1977,7 +1977,7 @@
   "number": "W070",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-vniue-M/",
-  "arch_order": 37,
+  "arch_order": 38,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2004,7 +2004,7 @@
   "number": "W071",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2O-4hpO0uo/",
-  "arch_order": 51,
+  "arch_order": 52,
   "delivered": "2024-09-30",
   "carousel": false,
   "categories": [
@@ -2032,7 +2032,7 @@
   "number": "W073",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PAPgWO4g2/",
-  "arch_order": 52,
+  "arch_order": 53,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2061,7 +2061,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBQ5IOYb_/",
   "sel_order": 16,
-  "arch_order": 56,
+  "arch_order": 57,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2090,7 +2090,7 @@
   "number": "W075",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C2PBi_xuJoQ/",
-  "arch_order": 53,
+  "arch_order": 54,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -2116,7 +2116,7 @@
   "number": "W076",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8NJ4r3PSG7/",
-  "arch_order": 38,
+  "arch_order": 39,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -2144,7 +2144,7 @@
   "ig": "https://www.instagram.com/nick__metcalf/p/C8XmuOrvYwU/",
   "sel_order": 13,
   "carousel": true,
-  "arch_order": 30,
+  "arch_order": 31,
   "gallery": true,
   "categories": [
    "Commercial"
@@ -2172,7 +2172,7 @@
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8fg96vvkxn/",
   "delivered": "2024-09-30",
-  "arch_order": 46,
+  "arch_order": 47,
   "categories": [],
   "carousel": false
  },
@@ -2197,7 +2197,7 @@
   "number": "W080",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/C8oPIR6vtBt/",
-  "arch_order": 45,
+  "arch_order": 46,
   "carousel": false,
   "delivered": "2024-09-30",
   "categories": [
@@ -2226,7 +2226,7 @@
   "selected": true,
   "ig": "https://www.instagram.com/nick__metcalf/p/DB-blSrPHLh/",
   "sel_order": 15,
-  "arch_order": 34,
+  "arch_order": 35,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2255,7 +2255,7 @@
   "number": "W083",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DBRlIM6vLcx/",
-  "arch_order": 24,
+  "arch_order": 25,
   "carousel": false,
   "delivered": "2024-11-30",
   "categories": [
@@ -2283,7 +2283,7 @@
   "number": "W085",
   "selected": false,
   "ig": "https://www.instagram.com/nick__metcalf/p/DR2SqTSkZE4/",
-  "arch_order": 13,
+  "arch_order": 14,
   "categories": [
    "Long Form"
   ],
@@ -2310,7 +2310,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Cello - PNC.MOV",
   "number": "W086",
   "selected": false,
-  "arch_order": 68,
+  "arch_order": 69,
   "categories": [
    "Commercial"
   ]
@@ -2335,7 +2335,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/denim - polo.mp4",
   "number": "W087",
   "selected": false,
-  "arch_order": 88,
+  "arch_order": 89,
   "categories": [
    "Commercial"
   ]
@@ -2360,7 +2360,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Above the noise - beats.MOV",
   "number": "W089",
   "selected": false,
-  "arch_order": 67,
+  "arch_order": 68,
   "categories": [
    "Commercial"
   ]
@@ -2386,7 +2386,7 @@
   "number": "W090",
   "selected": false,
   "delivered": "2025-08-06",
-  "arch_order": 68,
+  "arch_order": 69,
   "categories": [
    "Commercial"
   ],
@@ -2413,7 +2413,7 @@
   "number": "W093",
   "selected": false,
   "delivered": "2026-06-16",
-  "arch_order": 66,
+  "arch_order": 67,
   "categories": [],
   "carousel": false
  },
@@ -2437,7 +2437,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/future is fearless.mp4",
   "number": "W096",
   "selected": false,
-  "arch_order": 89,
+  "arch_order": 90,
   "categories": [
    "Long Form"
   ],
@@ -2463,7 +2463,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Let’s Conquer - Primary children’s.MOV",
   "number": "W097",
   "selected": false,
-  "arch_order": 87,
+  "arch_order": 88,
   "categories": [
    "Commercial"
   ]
@@ -2489,7 +2489,7 @@
   "number": "W099",
   "selected": false,
   "delivered": "2024-09-30",
-  "arch_order": 66,
+  "arch_order": 67,
   "categories": [
    "Commercial",
    "Car"
@@ -2515,7 +2515,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Summer - PNC.mov",
   "number": "W104",
   "selected": false,
-  "arch_order": 99,
+  "arch_order": 100,
   "categories": [
    "Commercial"
   ]
@@ -2540,7 +2540,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/This is classic - rebook.mov",
   "number": "W107",
   "selected": false,
-  "arch_order": 84,
+  "arch_order": 85,
   "categories": [
    "Commercial"
   ],
@@ -2566,7 +2566,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Timeless america - polo.MOV",
   "number": "W108",
   "selected": false,
-  "arch_order": 83,
+  "arch_order": 84,
   "categories": [],
   "carousel": false
  },
@@ -2590,7 +2590,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Watch series 7 - apple.MOV",
   "number": "W109",
   "selected": false,
-  "arch_order": 82,
+  "arch_order": 83,
   "categories": [
    "Commercial"
   ]
@@ -2616,7 +2616,7 @@
   "number": "W110",
   "selected": false,
   "delivered": "2026-07-08",
-  "arch_order": 81,
+  "arch_order": 82,
   "categories": [
    "Car"
   ],
@@ -2642,7 +2642,7 @@
   "video_src": "/sessions/funny-compassionate-bohr/mnt/old/Yoonmi - monse.mp4",
   "number": "W111",
   "selected": false,
-  "arch_order": 78,
+  "arch_order": 79,
   "categories": [],
   "carousel": false
  },
@@ -2667,7 +2667,7 @@
   "number": "W113",
   "selected": true,
   "sel_order": 10,
-  "arch_order": 23,
+  "arch_order": 24,
   "delivered": "2025-04-22",
   "carousel": true,
   "gallery": true,
@@ -2696,7 +2696,7 @@
   "number": "W114",
   "selected": true,
   "sel_order": 17,
-  "arch_order": 44,
+  "arch_order": 45,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -2724,7 +2724,7 @@
   "video_src": "",
   "number": "W115",
   "selected": false,
-  "arch_order": 40,
+  "arch_order": 41,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2751,7 +2751,7 @@
   "number": "W116",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 0,
+  "arch_order": 1,
   "carousel": false,
   "delivered": "2026-06-26",
   "categories": [
@@ -2779,7 +2779,7 @@
   "number": "W117",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 1,
+  "arch_order": 2,
   "carousel": false,
   "delivered": "2026-06-26",
   "categories": [
@@ -2807,7 +2807,7 @@
   "number": "W118",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 3,
+  "arch_order": 4,
   "delivered": "2026-05-26",
   "categories": [
    "Commercial"
@@ -2834,7 +2834,7 @@
   "number": "W120",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 7,
+  "arch_order": 8,
   "delivered": "2026-03-23",
   "categories": [
    "Commercial"
@@ -2861,7 +2861,7 @@
   "number": "W121",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 8,
+  "arch_order": 9,
   "delivered": "2026-03-23",
   "categories": [
    "Commercial"
@@ -2888,7 +2888,7 @@
   "number": "W122",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 9,
+  "arch_order": 10,
   "carousel": false,
   "delivered": "2026-04-14",
   "categories": [
@@ -2916,7 +2916,7 @@
   "number": "W125",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 13,
+  "arch_order": 14,
   "delivered": "2026-04-21",
   "categories": [
    "Commercial"
@@ -2943,7 +2943,7 @@
   "number": "W126",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 52,
+  "arch_order": 53,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -2970,7 +2970,7 @@
   "number": "W127",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 15,
+  "arch_order": 16,
   "delivered": "2026-05-26",
   "categories": [
    "Commercial"
@@ -2997,7 +2997,7 @@
   "number": "W128",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 16,
+  "arch_order": 17,
   "delivered": "2026-05-26",
   "categories": [
    "Commercial"
@@ -3024,7 +3024,7 @@
   "number": "W129",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 17,
+  "arch_order": 18,
   "delivered": "2026-05-26",
   "categories": [
    "Commercial"
@@ -3051,7 +3051,7 @@
   "number": "W130",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 18,
+  "arch_order": 19,
   "delivered": "2026-05-26",
   "categories": [
    "Commercial"
@@ -3078,7 +3078,7 @@
   "number": "W131",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 20,
+  "arch_order": 21,
   "categories": [
    "Commercial"
   ]
@@ -3104,7 +3104,7 @@
   "number": "W132",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 22,
+  "arch_order": 23,
   "carousel": false,
   "delivered": "2026-01-10",
   "categories": [
@@ -3132,7 +3132,7 @@
   "number": "W134",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 27,
+  "arch_order": 28,
   "delivered": "2026-01-16",
   "categories": [
    "Commercial"
@@ -3159,7 +3159,7 @@
   "number": "W135",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 21,
+  "arch_order": 22,
   "delivered": "2026-06-16",
   "categories": [],
   "carousel": false
@@ -3185,7 +3185,7 @@
   "number": "W136",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 30,
+  "arch_order": 31,
   "carousel": false,
   "delivered": "2026-02-20",
   "categories": [
@@ -3213,7 +3213,7 @@
   "number": "W137",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 17,
+  "arch_order": 18,
   "delivered": "2025-10-15",
   "categories": [
    "Commercial"
@@ -3232,7 +3232,7 @@
   "group": "posted",
   "selected": false,
   "number": "W138",
-  "arch_order": 20,
+  "arch_order": 21,
   "vimeo": "",
   "credits": "@bigfoe1998 for @vanityfair & @lululemon\n24 Hours To The Fullest\n\nDirector: @__henrydacosta__\nProduction Company: @fieldunit\nExecutive Producers: @alec__ernest @oscarblyons\nProducer: @jessthiel\nDP: @gabrielconnelly\nPhotographer: @jesse_lizotte\nStylist: @zoeyradfordscott\nPD: @the1andorly\nEditor: @tobyheard\nColor: @nick__metcalf\nComposer: @romekboyer_sound\nSound: @g.s.sound",
   "carousel": false,
@@ -3261,7 +3261,7 @@
   "number": "W138",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 18,
+  "arch_order": 19,
   "delivered": "2025-10-15",
   "categories": [
    "Commercial"
@@ -3288,7 +3288,7 @@
   "number": "W139",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 34,
+  "arch_order": 35,
   "delivered": "2025-09-02",
   "categories": [
    "Commercial"
@@ -3315,7 +3315,7 @@
   "number": "W140",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 35,
+  "arch_order": 36,
   "delivered": "2025-09-02",
   "categories": [
    "Commercial"
@@ -3342,7 +3342,7 @@
   "number": "W141",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 36,
+  "arch_order": 37,
   "delivered": "2025-09-02",
   "categories": [
    "Commercial"
@@ -3369,7 +3369,7 @@
   "number": "W142",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 37,
+  "arch_order": 38,
   "delivered": "2025-09-02",
   "categories": [
    "Commercial"
@@ -3396,7 +3396,7 @@
   "number": "W143",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 38,
+  "arch_order": 39,
   "delivered": "2025-09-02",
   "categories": [
    "Commercial"
@@ -3423,7 +3423,7 @@
   "number": "W144",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 21,
+  "arch_order": 22,
   "delivered": "2025-10-13",
   "categories": [
    "Commercial",
@@ -3451,7 +3451,7 @@
   "number": "W145",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 36,
+  "arch_order": 37,
   "delivered": "2025-09-17",
   "categories": [
    "Commercial",
@@ -3479,7 +3479,7 @@
   "number": "W146",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 55,
+  "arch_order": 56,
   "delivered": "2025-06-23",
   "categories": [],
   "carousel": false
@@ -3505,7 +3505,7 @@
   "number": "W147",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 44,
+  "arch_order": 45,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -3532,7 +3532,7 @@
   "number": "W148",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 46,
+  "arch_order": 47,
   "carousel": false,
   "delivered": "2025-08-11",
   "categories": [
@@ -3560,7 +3560,7 @@
   "number": "W149",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 49,
+  "arch_order": 50,
   "delivered": "2025-05-01",
   "categories": [
    "Commercial",
@@ -3588,7 +3588,7 @@
   "number": "W150",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 51,
+  "arch_order": 52,
   "delivered": "2025-05-01",
   "categories": [
    "Commercial",
@@ -3616,7 +3616,7 @@
   "number": "W152",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 54,
+  "arch_order": 55,
   "delivered": "2025-05-01",
   "categories": [
    "Commercial",
@@ -3644,7 +3644,7 @@
   "number": "W153",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 52,
+  "arch_order": 53,
   "carousel": false,
   "delivered": "2025-08-04",
   "categories": [
@@ -3673,7 +3673,7 @@
   "number": "W154",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 58,
+  "arch_order": 59,
   "delivered": "2025-05-01",
   "categories": [
    "Commercial",
@@ -3701,7 +3701,7 @@
   "number": "W155",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 62,
+  "arch_order": 63,
   "delivered": "2025-05-01",
   "categories": [
    "Commercial",
@@ -3729,7 +3729,7 @@
   "number": "W156",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 58,
+  "arch_order": 59,
   "delivered": "2025-05-19",
   "categories": [
    "Commercial"
@@ -3756,7 +3756,7 @@
   "number": "W157",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 59,
+  "arch_order": 60,
   "delivered": "2026-05-18",
   "categories": [
    "Commercial"
@@ -3783,7 +3783,7 @@
   "number": "W158",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 60,
+  "arch_order": 61,
   "delivered": "2026-05-18",
   "categories": [
    "Commercial"
@@ -3810,7 +3810,7 @@
   "number": "W159",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 61,
+  "arch_order": 62,
   "delivered": "2026-05-18",
   "categories": [
    "Commercial"
@@ -3837,7 +3837,7 @@
   "number": "W160",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 55,
+  "arch_order": 56,
   "categories": [
    "Commercial"
   ]
@@ -3863,7 +3863,7 @@
   "number": "W161",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 64,
+  "arch_order": 65,
   "carousel": false,
   "delivered": "2025-05-07",
   "categories": [
@@ -3891,7 +3891,7 @@
   "number": "W162",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 65,
+  "arch_order": 66,
   "carousel": false,
   "delivered": "2025-05-07",
   "categories": [
@@ -3919,7 +3919,7 @@
   "number": "W163",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 66,
+  "arch_order": 67,
   "carousel": false,
   "delivered": "2025-05-07",
   "categories": [
@@ -3947,7 +3947,7 @@
   "number": "W164",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 69,
+  "arch_order": 70,
   "delivered": "2025-03-24",
   "categories": [
    "Commercial"
@@ -3974,7 +3974,7 @@
   "number": "W165",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 44,
+  "arch_order": 45,
   "delivered": "2025-04-10",
   "categories": [
    "Commercial"
@@ -4001,7 +4001,7 @@
   "number": "W166",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 28,
+  "arch_order": 29,
   "carousel": false,
   "categories": [
    "Commercial"
@@ -4028,7 +4028,7 @@
   "number": "W167",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 73,
+  "arch_order": 74,
   "delivered": "2025-04-06",
   "categories": [
    "Music Video"
@@ -4055,7 +4055,7 @@
   "number": "W168",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 52,
+  "arch_order": 53,
   "categories": [
    "Commercial"
   ]
@@ -4081,7 +4081,7 @@
   "number": "W169",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 77,
+  "arch_order": 78,
   "categories": [
    "Commercial"
   ]
@@ -4107,7 +4107,7 @@
   "number": "W170",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 41,
+  "arch_order": 42,
   "categories": [
    "Commercial"
   ]
@@ -4133,7 +4133,7 @@
   "number": "W171",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 79,
+  "arch_order": 80,
   "categories": [
    "Commercial"
   ]
@@ -4159,7 +4159,7 @@
   "number": "W172",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 80,
+  "arch_order": 81,
   "categories": [
    "Commercial"
   ]
@@ -4185,7 +4185,7 @@
   "number": "W173",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 81,
+  "arch_order": 82,
   "categories": [
    "Commercial"
   ]
@@ -4211,7 +4211,7 @@
   "number": "W174",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 82,
+  "arch_order": 83,
   "delivered": "2026-04-10",
   "categories": [
    "Commercial",
@@ -4239,7 +4239,7 @@
   "number": "W175",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 80,
+  "arch_order": 81,
   "categories": [
    "Long Form"
   ]
@@ -4265,7 +4265,7 @@
   "number": "W176",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 85,
+  "arch_order": 86,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -4292,7 +4292,7 @@
   "number": "W177",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 86,
+  "arch_order": 87,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -4319,7 +4319,7 @@
   "number": "W178",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 87,
+  "arch_order": 88,
   "delivered": "2025-01-15",
   "categories": [
    "Beauty"
@@ -4346,7 +4346,7 @@
   "number": "W179",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 28,
+  "arch_order": 29,
   "carousel": true,
   "gallery": true,
   "categories": []
@@ -4372,7 +4372,7 @@
   "number": "W180",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 89,
+  "arch_order": 90,
   "categories": [
    "Long Form"
   ]
@@ -4398,7 +4398,7 @@
   "number": "W181",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 90,
+  "arch_order": 91,
   "categories": [
    "Long Form"
   ]
@@ -4424,7 +4424,7 @@
   "number": "W182",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 91,
+  "arch_order": 92,
   "categories": [
    "Long Form"
   ]
@@ -4450,7 +4450,7 @@
   "number": "W183",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 92,
+  "arch_order": 93,
   "categories": [
    "Long Form"
   ]
@@ -4476,7 +4476,7 @@
   "number": "W184",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 93,
+  "arch_order": 94,
   "delivered": "2024-09-30",
   "categories": [
    "Long Form"
@@ -4503,7 +4503,7 @@
   "number": "W185",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 94,
+  "arch_order": 95,
   "carousel": false,
   "delivered": "2024-09-30",
   "categories": [
@@ -4531,7 +4531,7 @@
   "number": "W186",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 95,
+  "arch_order": 96,
   "categories": [
    "Long Form"
   ]
@@ -4557,7 +4557,7 @@
   "number": "W187",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 96,
+  "arch_order": 97,
   "categories": [
    "Long Form"
   ]
@@ -4583,7 +4583,7 @@
   "number": "W188",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 97,
+  "arch_order": 98,
   "categories": [
    "Commercial"
   ]
@@ -4609,7 +4609,7 @@
   "number": "W189",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 98,
+  "arch_order": 99,
   "categories": [
    "Commercial"
   ]
@@ -4635,7 +4635,7 @@
   "number": "W191",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 1,
+  "arch_order": 2,
   "delivered": "2026-07-08",
   "carousel": false,
   "categories": [
@@ -4664,7 +4664,7 @@
   "number": "W192",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 66,
+  "arch_order": 67,
   "delivered": "2026-06-16",
   "categories": [
    "Beauty"
@@ -4691,7 +4691,7 @@
   "number": "W193",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 85,
+  "arch_order": 86,
   "categories": [
    "Commercial",
    "Car"
@@ -4719,7 +4719,7 @@
   "number": "W194",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 64,
+  "arch_order": 65,
   "categories": [
    "Commercial",
    "Car"
@@ -4747,7 +4747,7 @@
   "number": "W195",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 47,
+  "arch_order": 48,
   "categories": [
    "Car"
   ],
@@ -4774,7 +4774,7 @@
   "number": "W196",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 54,
+  "arch_order": 55,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -4802,7 +4802,7 @@
   "number": "W197",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 36,
+  "arch_order": 37,
   "delivered": "2026-02-09",
   "carousel": true,
   "gallery": true,
@@ -4829,7 +4829,7 @@
   "number": "W198",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 71,
+  "arch_order": 72,
   "delivered": "2026-04-10",
   "categories": [],
   "carousel": false
@@ -4855,7 +4855,7 @@
   "number": "W199",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 58,
+  "arch_order": 59,
   "categories": [
    "Commercial",
    "Car"
@@ -4883,7 +4883,7 @@
   "number": "W200",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 74,
+  "arch_order": 75,
   "categories": [
    "Commercial"
   ]
@@ -4909,7 +4909,7 @@
   "number": "W201",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 89,
+  "arch_order": 90,
   "categories": [],
   "carousel": false
  },
@@ -4934,7 +4934,7 @@
   "number": "W203",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 30,
+  "arch_order": 31,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -4961,7 +4961,7 @@
   "number": "W204",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 57,
+  "arch_order": 58,
   "delivered": "2024-11-30",
   "categories": [
    "Commercial"
@@ -4988,7 +4988,7 @@
   "number": "W205",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 65,
+  "arch_order": 66,
   "delivered": "2024-09-30",
   "categories": [
    "Car"
@@ -5016,7 +5016,7 @@
   "number": "W206",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 60,
+  "arch_order": 61,
   "categories": [
    "Commercial"
   ]
@@ -5042,7 +5042,7 @@
   "number": "W207",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 43,
+  "arch_order": 44,
   "categories": [
    "Commercial"
   ]
@@ -5068,7 +5068,7 @@
   "number": "W208",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 26,
+  "arch_order": 27,
   "delivered": "2024-09-30",
   "carousel": true,
   "gallery": true,
@@ -5097,7 +5097,7 @@
   "number": "W209",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 39,
+  "arch_order": 40,
   "delivered": "2024-09-30",
   "carousel": false,
   "categories": []
@@ -5123,7 +5123,7 @@
   "number": "W210",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 132,
+  "arch_order": 133,
   "carousel": false,
   "delivered": "2024-09-30",
   "categories": [
@@ -5151,7 +5151,7 @@
   "number": "W212",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 77,
+  "arch_order": 78,
   "categories": [
    "Beauty"
   ],
@@ -5178,7 +5178,7 @@
   "number": "W213",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 142,
+  "arch_order": 143,
   "categories": [
    "Commercial"
   ]
@@ -5204,7 +5204,7 @@
   "number": "W214",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 88,
+  "arch_order": 89,
   "categories": [
    "Commercial"
   ]
@@ -5230,7 +5230,7 @@
   "number": "W215",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 31,
+  "arch_order": 32,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -5256,7 +5256,7 @@
   "number": "W216",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 79,
+  "arch_order": 80,
   "categories": [
    "Commercial"
   ]
@@ -5282,7 +5282,7 @@
   "number": "W217",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 80,
+  "arch_order": 81,
   "delivered": "2024-09-30",
   "categories": [],
   "carousel": false
@@ -5308,7 +5308,7 @@
   "number": "W218",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 83,
+  "arch_order": 84,
   "categories": [
    "Beauty"
   ],
@@ -5335,7 +5335,7 @@
   "number": "W219",
   "selected": false,
   "slate_th": "https://images.slatecdn.net/JRMpIgKX91ZPlGUbrXxH0jZvj9bXvdFss8RarEI_D8c/h:54/q:80/aHR0cHM6Ly9zMy11/cy13ZXN0LTEuYW1h/em9uYXdzLmNvbS9t/ZWRpYS11cy13ZXN0/c2xhdGVhcHBjb20v/cmFyZW1lZGl1bS9w/cm9kdWN0aW9uL2Ns/aXBzLzEwYTliNWMy/LWMyZjItNGJkNC04/YTI2LWZhNDBiOGNm/ZDg1My9ybS13b3Jk/bWFyay1ob3Jpei1z/aWx2ZXIucG5n?v=1",
-  "arch_order": 42,
+  "arch_order": 43,
   "delivered": "2024-09-30",
   "categories": [
    "Commercial"
@@ -5360,7 +5360,7 @@
    "ollie-healthy-boys",
    "ollie-mom-mode"
   ],
-  "arch_order": 9,
+  "arch_order": 10,
   "delivered": "2026-05-26",
   "selected": false,
   "categories": [
@@ -5387,7 +5387,7 @@
    "homesense-too-bright",
    "homesense-spinning-pillows"
   ],
-  "arch_order": 34,
+  "arch_order": 35,
   "selected": false,
   "carousel": false,
   "delivered": "2025-09-02",
@@ -5411,7 +5411,7 @@
   "children": [
    "rivian-milk-run"
   ],
-  "arch_order": 21,
+  "arch_order": 22,
   "selected": true,
   "sel_order": 9,
   "delivered": "2025-05-01",
@@ -5441,7 +5441,7 @@
    "oscar-mayer-neighbor",
    "oscar-mayer-knock-knock"
   ],
-  "arch_order": 58,
+  "arch_order": 59,
   "selected": false,
   "carousel": false,
   "delivered": "2026-05-18",
@@ -5465,7 +5465,7 @@
   "vimeo": "https://vimeo.com/1210616392",
   "credits": "@maybelline\nBe You\n\nDirector: Madeline Clayton\nProd Co: Mustache\nDP: @carella\nEdit: Dylan J Edwards\nColor: @nick__metcalf",
   "number": "W224",
-  "arch_order": 91
+  "arch_order": 92
  },
  {
   "slug": "agcf-unita",
@@ -5482,7 +5482,7 @@
   "vimeo": "https://vimeo.com/1210344062",
   "credits": "@agcfbrand\nUnità\n\nDirector: @xaviernunezv\nDP: @mchlkttnbl\nProd Co: @action_lines\nGaffer: @ryanwinnicki\n1st AC: @douglas_l_birch\nCamera: @panavisionofficial\nColor: @nick__metcalf\nFeaturing: @victoriajaiani, @jeraldm",
   "number": "W225",
-  "arch_order": 32,
+  "arch_order": 33,
   "carousel": true,
   "gallery": true
  },
@@ -5501,7 +5501,7 @@
   "vimeo": "https://vimeo.com/261934588",
   "credits": "Tommy Hilfiger | Drive\n\nDirector: @baron_films\nCinematographer (US): Garrett Hardy Davis\nCinematographer (UK): Simon Lakos\nExecutive Producer: Michael Karbelnikoff\nProducer: Andrew Runkle, Zein Zubi\nExecutive Creative Director: Trey Laird\nEditor: Will Town\nColor: @nick__metcalf\nMusic: Stelios Phili",
   "number": "W226",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "adidas-james-harden",
@@ -5518,7 +5518,7 @@
   "vimeo": "https://vimeo.com/1210616309",
   "credits": "Adidas | James Harden\n\nDirector: @baron_films\nDP: Minka Farthing Kohl\nExecutive Producer: Arrow Kruse\nProducer: Ross Levine, Alldayeveryday\nEditor: Rob Paglia, The Company\nColor: @nick__metcalf\nMusic: Stelios Phili",
   "number": "W227",
-  "arch_order": 86
+  "arch_order": 87
  },
  {
   "slug": "moncler-passion-for-sport-snowboard",
@@ -5535,7 +5535,7 @@
   "vimeo": "https://vimeo.com/191218941",
   "credits": "Moncler | Passion For Sport — Snowboard\n\nDirector: @baron_films\nCinematographer: Alexander Hankoff\nDrone Op: Matt Guion\nProducer: Andrew Runkle\nCreative Director: Francesco Ragazzi\nEditor: Will Town\nColor: @nick__metcalf\nMusic: Stelios Phili",
   "number": "W228",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "moncler-passion-for-sport-ski",
@@ -5552,7 +5552,7 @@
   "vimeo": "https://vimeo.com/195096217",
   "credits": "Moncler | Passion For Sport — Ski\n\nDirector: @baron_films\nCinematographer: Alexander Hankoff\nDrone Op: Matt Guion\nProducer: Andrew Runkle\nCreative Director: Francesco Ragazzi\nEditor: Will Town\nColor: @nick__metcalf\nMusic: Stelios Phili",
   "number": "W229",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "vogue-teyana-taylor",
@@ -5569,7 +5569,7 @@
   "vimeo": "https://vimeo.com/226174453",
   "credits": "Vogue | Teyana Taylor\n\nDirector: @baron_films\nCinematographer: Mathieu Plainfosse\nProducer: Sydney Fisher\nFashion Editor: Jordan Bickhem\nEditor: Bobby Wagnerman\nColor: @nick__metcalf",
   "number": "W230",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "sebastian-mikael-acid-pt-ii",
@@ -5586,7 +5586,7 @@
   "vimeo": "https://vimeo.com/348352521",
   "credits": "Sebastian Mikael | Acid Pt. II\n\nDirector: Nathan R. Smith\nProducer: Oliver Finley\nProduction Design: Perry Mateson\nColor: @nick__metcalf",
   "number": "W231",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "tokischa-perreo-llorando",
@@ -5603,7 +5603,7 @@
   "vimeo": "https://vimeo.com/1210616306",
   "credits": "Tokischa | Perreo Llorando\n\nDirector: Bertram\nProduction: Jenzar Films\nExecutive Producer: Jennifer Zarzuela\nDP: Gaul Porat\nProduction Designer: Gabriel Duque\nStylist: Paula Machado\nColor: @nick__metcalf",
   "number": "W232",
-  "arch_order": 29,
+  "arch_order": 30,
   "carousel": false
  },
  {
@@ -5619,7 +5619,7 @@
   "vimeo": "https://vimeo.com/1210616378",
   "credits": "Lotus\n\nDIRECTOR: @shanapurnama\nDP: @gabrielconnelly\nEP: bigkid\nPRODUCER: @willnoyce\nSTARRING: Zhong Mei, Rachel Lv, Alison Ho\nGAFFER: Ezra Robinson\nKEY GRIP: Luke Peterson\n1AC: Alex Han\n2AC: Steven Xie\nSTEADICAM: Garet Jatsek\nSTYLIST: Kaitlyn Vitug\nHMU: Denise Bugarín-Escamilla\nCOLORIST: @nick__metcalf\nEDITOR: James Dayton\nSOUND DESIGN AND MIX: Joseph Kennemer",
   "number": "W900",
-  "arch_order": 58,
+  "arch_order": 59,
   "carousel": false
  },
  {
@@ -5637,7 +5637,7 @@
   "vimeo": "https://vimeo.com/626861747",
   "credits": "Gone Viral | Short Documentary\n\nDirector &\nEditor: Savannah O'Leary\nProducers: Savannah O'Leary & Artem Agafonov\nDP: Brennan Full\nProduction Designer: Mikael Taylor\nColorist: @nick__metcalf",
   "number": "W901",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "new-balance-esteban",
@@ -5654,7 +5654,7 @@
   "vimeo": "https://vimeo.com/311182736",
   "credits": "New Balance | ESTEBAN\n\nProd Company: BWGTBLD\nEP: Sebastian Cordes\nProducer: Klaudia Podsiadlo\nDP: Jakob Preischl\nEditor: Matthias Graatz\nColorist: @nick__metcalf\nSound Design & Mix: Moritz Staub",
   "number": "W902",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "kyle-mcneil-skys-song",
@@ -5671,7 +5671,7 @@
   "vimeo": "https://vimeo.com/1210616365",
   "credits": "Kyle McNeil | Sky's Song\n\nDirected by @elielford\nProduced by Brendan Garrett\nDP: @embo920\nColor: @nick__metcalf\nLab: Metropolis Post",
   "number": "W903",
-  "arch_order": 48,
+  "arch_order": 49,
   "carousel": false
  },
  {
@@ -5689,7 +5689,7 @@
   "vimeo": "https://vimeo.com/1210616398",
   "credits": "Stuart Weitzman | How Lovely To Be A Woman\n\nDirector: @fiksey\nDP: Matt Ballard\nStylist: Camilla Nickerson\nEdit: Cabin Edit\nEditor: Matt Schaff\nColorist: @nick__metcalf\nTalent: Issa Rae, Lucy Liu, Aly Raisman, Ming Xi, Christy Turlington",
   "number": "W904",
-  "arch_order": 50,
+  "arch_order": 51,
   "carousel": false
  },
  {
@@ -5707,7 +5707,7 @@
   "vimeo": "https://vimeo.com/237138750",
   "credits": "SoundCloud - Next Wave | New York\n\nDirector: Scott Perry\nProduced By: The FADER\nDP: Mikey Van Bueren\nEditor: Chris Beckman\nColor: @nick__metcalf at The Mill",
   "number": "W905",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "google-pay-camping-trip",
@@ -5724,7 +5724,7 @@
   "vimeo": "https://vimeo.com/282570784",
   "credits": "Google Pay | Camping Trip\n\nDirector: Tucker Bliss\nDP: Todd Martin\nProducer: Lisa Villamil\nColor: @nick__metcalf\nAgency: Mono\nProduction Company: 1st Ave Machine",
   "number": "W906",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "kaytee-small-in-show",
@@ -5741,7 +5741,7 @@
   "vimeo": "https://vimeo.com/723461305",
   "credits": "Kaytee | Small in Show\n\nAgency: Droga5 NY\nProduction Company: M ss ng P eces\nDirector: Nick & Charles\nEditorial: Work Editorial\nColorist: @nick__metcalf",
   "number": "W907",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "monse-fall-2021",
@@ -5758,7 +5758,7 @@
   "vimeo": "https://vimeo.com/574194043",
   "credits": "MONSE Fall 2021\n\nDirected and Edited by David Johnston\n1st AC: Patrick Scanlon\nColorist: @nick__metcalf",
   "number": "W908",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "hummer-ev-vb",
@@ -5775,7 +5775,7 @@
   "vimeo": "https://vimeo.com/1210616364",
   "credits": "Hummer\n'EV'\n\nDir: @josh_hayward_\nDP: @tommydag\nColor: @nick__metcalf\nExecutive Producer: Scott Dodoro\nAdditional Cinematographer: Eric Ulbrich\nProducer: Andrew Denyer\nStarring: Victor Ross\nDrone: Override Films\nCamera Car: Filmotechnic\nAdditional Score, Sound Design: Mount\nProduced By: Local Boy\nAgency: Leo Burnett\nExecutive Creative Director: Steve Glinski\nAssociate Creative Director: Kris Layher\nSenior Copywriter: Joe Rinaldi\nSenior Producer: Joan DiSalvo\nVP Account Director: Stacey Kogler",
   "number": "W909",
-  "arch_order": 62,
+  "arch_order": 63,
   "carousel": false
  },
  {
@@ -5793,7 +5793,7 @@
   "vimeo": "https://vimeo.com/803216832",
   "credits": "Woolrich SS23 | Unorthodox Outsiders\n\nDirector: @logansrice\nProd Company: @pbj_inc\nDoP: @embo920\nColorist: @nick__metcalf",
   "number": "W910",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "orangetheory-fitness-made-for-more",
@@ -5810,7 +5810,7 @@
   "vimeo": "https://vimeo.com/576871351",
   "credits": "Orangetheory Fitness | Made For More\n\nAgency: Tombras\nProduction Co: Partizan\nDirector: Matt Baron\nDP: Garrett Hardy Davis\nEditor: Paul La Calandra\nColor: @nick__metcalf\nVFX: I Love Dust",
   "number": "W911",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "a-living-wage-johns-story",
@@ -5827,7 +5827,7 @@
   "vimeo": "https://vimeo.com/995093416",
   "credits": "A Living Wage | John's Story\n\nFor Merit America.\nDirector: Savannah O'Leary\nProducer: Kieran Altmann\nDP: Jon Bregel\nEditor: Ethan Mitchell, Cut&Run\nColorist: @nick__metcalf\nComposer: Michael Dragovic\nFeaturing: John Wells",
   "number": "W912",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "adidas-originals-forum-by-nyc",
@@ -5844,7 +5844,7 @@
   "vimeo": "https://vimeo.com/576545571",
   "credits": "adidas Originals | Forum by NYC\n\nDirectors: JamsxBash\nProduction: ArtClass Content\nAgency: Grow\nDP: Shannon Palmer\nEditor: Tyrone Rhabb\nColor: @nick__metcalf",
   "number": "W913",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "dan-auerbach-waiting-on-a-song",
@@ -5861,7 +5861,7 @@
   "vimeo": "https://vimeo.com/217775903",
   "credits": "Dan Auerbach | Waiting On A Song\n\nDirector: Bryan Schlam\nProducer: W. Ian Ross\nDP: Ben Carey\nColorist: @nick__metcalf\nStarring: Tony Vogel, Hayley Orrantia",
   "number": "W914",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "free-people-moving-together",
@@ -5878,7 +5878,7 @@
   "vimeo": "https://vimeo.com/265808125",
   "credits": "Free People | Moving Together\n\nDirected by Steven Brahms\nDP: Garrett Hardy Davis\nEditor: Drew Blatman\nColor: @nick__metcalf\nProducer: Cassidy Ellis",
   "number": "W915",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "stooper",
@@ -5895,7 +5895,7 @@
   "vimeo": "https://vimeo.com/1091044142",
   "credits": "Stooper\n\nStarring: Emile Hirsch, Valor Hirsch Written and Directed by Bennett Watanabe\nProducers: Eliel Ford, Brendan Garrett\nDP: Emerson Duggan\nEditor: Neal Farmer\nColorist: @nick__metcalf",
   "number": "W916",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "h-r-block-life-outside-the-box",
@@ -5912,7 +5912,7 @@
   "vimeo": "https://vimeo.com/1168840427",
   "credits": "H&R Block | Life Outside The Box\n\nAgency: Ogilvy\nProduced by: Reset Content\nDOP: Anthony Carella\nEditor: Dylan Edwards\nEdit House: Cabin\nColor: @nick__metcalf\nVFX: Framestore",
   "number": "W917",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "madden-rmx",
@@ -5929,7 +5929,7 @@
   "vimeo": "https://vimeo.com/214505269",
   "credits": "Madden RMX\n\nDirector: Travis Hanour\nDP: Jeremiah Pitman\nAnimation: RUFFMERCY\nColor: @nick__metcalf, The Mill",
   "number": "W918",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "xfinity-shipyard",
@@ -5946,7 +5946,7 @@
   "vimeo": "https://vimeo.com/171625920",
   "credits": "Xfinity | Shipyard\n\nAgency: Brownstein Group\nDirector: Ricky Staub\nDP: Minka Farthing-Kohl\nEditor: Ricky Staub\nColor: The Mill\nColorist: @nick__metcalf",
   "number": "W919",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "nutrafol-balance",
@@ -5963,7 +5963,7 @@
   "vimeo": "https://vimeo.com/1161665069",
   "credits": "Nutrafol | Balance\n\nDirector: Jane Qian\nAgency: Unentitled Studio\nProduction: Unentitled Studio x PaperNY\nCinematographer: Matt Pothier\nEditor: Jason Beattie\nColorist: @nick__metcalf",
   "number": "W920",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "trillium-life-lessons-alfredo",
@@ -5980,7 +5980,7 @@
   "vimeo": "https://vimeo.com/1073284892",
   "credits": "Trillium Gift of Life Network | Life Lessons\n\nProduction: Alfredo Films\nDirector: Savannah O'Leary\nProducer: Todd Huskisson\nDP: James Arthurs\nEditor: Leah Lalich, Nimiopere\nColorist: @nick__metcalf",
   "number": "W921",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "onni-boi-tides",
@@ -5997,7 +5997,7 @@
   "vimeo": "https://vimeo.com/330371893",
   "credits": "Onni Boi | Tides\n\nProduction company: TIISTAI\nDirector: Kristian Lindén\nDP: Max Smeds\nColor Grade: @nick__metcalf",
   "number": "W922",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "insight-global-the-call",
@@ -6014,7 +6014,7 @@
   "vimeo": "https://vimeo.com/511786385",
   "credits": "Insight Global | The Call\n\nAgency: D&S CoLab\nDirector: Ashkan Memarian\nProduction Company: Namesake\nDP: Sean Bagley\nEditor: Jai Shukla\nColor: @nick__metcalf",
   "number": "W923",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "charles-fauna-another-good-person",
@@ -6031,7 +6031,7 @@
   "vimeo": "https://vimeo.com/317754257",
   "credits": "Charles Fauna | Another Good Person\n\nDirector+DP: Clean Fresh Air\nEditor: Gianluigi Carella\nColorist: @nick__metcalf",
   "number": "W924",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "onni-boi-tides-v2",
@@ -6048,7 +6048,7 @@
   "vimeo": "https://vimeo.com/330992102",
   "credits": "Onni Boi | Tides (v2)\n\nProduction company: TIISTAI\nDirector: Kristian Lindén\nDOP: Max Smeds\nColor Grade: @nick__metcalf",
   "number": "W925",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "the-salvation-army-love-beyond",
@@ -6065,7 +6065,7 @@
   "vimeo": "https://vimeo.com/784841563",
   "credits": "The Salvation Army | Love Beyond\n\nDirector: Ashkan Memarian\nAgency: Lerma\nProducer: John Hilton\nDP: Chris Lew\nEditor: Jai Shukla\nColor: @nick__metcalf",
   "number": "W926",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "estrella-jalisco-vive-tu-estrella-dc",
@@ -6082,7 +6082,7 @@
   "vimeo": "https://vimeo.com/717693675",
   "credits": "Estrella Jalisco | Vive Tu Estrella\n\nDirectors Cut. Directors: tomboy\nAgency: Pereira O'Dell\nProduction Company: Greenpoint Pictures\nDP: Marcell Rev\nEditor: Nick Rondeau, Cabin Edit\nColor: @nick__metcalf",
   "number": "W927",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "mahally",
@@ -6099,7 +6099,7 @@
   "vimeo": "https://vimeo.com/860053539",
   "credits": "Mahally\n\nProduction House: @done_house\nDirector: @souhail.things\nDOP: @alattas0_0\nEditor: @0fadi0\nColor Grading: @company_3 @nick__metcalf",
   "number": "W928",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "a-journey-of-perpetual-wonderment-ep-3",
@@ -6116,7 +6116,7 @@
   "vimeo": "https://vimeo.com/247039905",
   "credits": "A Journey of Perpetual Wonderment | Ep. 3\n\nFor Marriott.\nDirector: Shern Sharma\nProduced by: NBTV Studios\nDP: Anna Franquesa Solano Edited by: Filipe Zapelini\nColorist: @nick__metcalf",
   "number": "W929",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "toy-soldier-soldier",
@@ -6133,7 +6133,7 @@
   "vimeo": "https://vimeo.com/1155325427",
   "credits": "Toy Soldier | Soldier\n\nDirectors: Lulu Syracuse & Augie Syracuse\nEditor: Sid Williams\nProduction Company: Florence\nDP: Jeremy Herron\nColor: @nick__metcalf",
   "number": "W930",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "oculus-play-for-real",
@@ -6150,7 +6150,7 @@
   "vimeo": "https://vimeo.com/471211002",
   "credits": "Oculus | Play for Real\n\nDirected by Ryan Staake (Director's Cut)\nAgency: TBWA NY\nDP: Kevin Hayden\nEdit: Arcade VFX/CG: Ntropic\nColor: The Mill Senior\nColorist: @nick__metcalf",
   "number": "W931",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "samsung-more-than-a-ringtone-brickhead",
@@ -6167,7 +6167,7 @@
   "vimeo": "https://vimeo.com/844049026",
   "credits": "Samsung | More Than A Ringtone (Brickhead)\n\nDir: Henry DaCosta\nProd Co: BrickHead\nDP: @gabrielconnelly\nEdit/VFX: Henry DaCosta\nColor: @nick__metcalf\nFeaturing: Yaeji",
   "number": "W932",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "filmsupply-dont-forget-to-breathe",
@@ -6184,7 +6184,7 @@
   "vimeo": "https://vimeo.com/1210616354",
   "credits": "Filmsupply | Don't Forget To Breathe\n\nDirector: @frickneeman\nDOP: @gabrielconnelly\nEdit: @frickneeman\nColorist: @nick__metcalf",
   "number": "W933",
-  "arch_order": 12
+  "arch_order": 13
  },
  {
   "slug": "tokischa-perreo-llorando-trailer",
@@ -6201,7 +6201,7 @@
   "vimeo": "https://vimeo.com/1181223333",
   "credits": "Tokischa | Perreo Llorando (Trailer)\n\nDir. Bertram\nProd. Jennifer Zarzuela\nDP Miami Unit: Gaul Porat\nDP Montreal Unit: @gabrielconnelly\nEdit: Theo Le Sourd\nColor: @nick__metcalf",
   "number": "W934",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "opium-ink-porcelain-doll",
@@ -6218,7 +6218,7 @@
   "vimeo": "https://vimeo.com/262664903",
   "credits": "Opium Ink | Porcelain Doll\n\nDirector: Sophy Holland\nDP: Casey Showalter\nEditor: Matt Posey / PS260\nColor: @nick__metcalf",
   "number": "W935",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "vicis-the-ice",
@@ -6235,7 +6235,7 @@
   "vimeo": "https://vimeo.com/396510817",
   "credits": "VICIS | The Ice\n\nProduction: Monk\nDirector: Travis Hanour\nDP: Travis Hanour\nEditor: Travis Hanour\nColor: The Mill\nColorist: @nick__metcalf",
   "number": "W936",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "psychic-twin-stop-in-time",
@@ -6252,7 +6252,7 @@
   "vimeo": "https://vimeo.com/190676072",
   "credits": "Psychic Twin | Stop In Time\n\nDirected by Ashley Robicheaux and Jake Saner\nCinematography: Jake Saner\nEditor: Stephen Michael Simon\nColorist: @nick__metcalf",
   "number": "W937",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "gmc-the-official-vehicle-of-nowhere",
@@ -6269,7 +6269,7 @@
   "vimeo": "https://vimeo.com/743291259",
   "credits": "GMC | The Official Vehicle of Nowhere\n\nDirector: Cameron Goold\nDP: Tobia Sempi and Sidney Unga\nEditor: Tyler Packard\nColorist: @nick__metcalf Agency\nCreative Directors: Steve Glinski, Andy Ozark, Kevin Pereira",
   "number": "W938",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "ritz-medal-moment",
@@ -6286,7 +6286,7 @@
   "vimeo": "https://vimeo.com/580427933",
   "credits": "Ritz | Medal Moment\n\nDirector: Nicole Ackermann\nProduction Company: Merman\nEditorial: Billy Sacdalan, MediaMonks\nColor: @nick__metcalf, The Mill\nVFX: The Mill\nAgency: The Martin Agency & MediaMonks",
   "number": "W939",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "ford-x-google-taking-street-view-off-road",
@@ -6303,7 +6303,7 @@
   "vimeo": "https://vimeo.com/1140153829",
   "credits": "Ford x Google | Taking Street View Off-Road\n\nAgency: @wknyc\nProduction: @farmleague\nDirector: @nicksokoloff\nDP: @calebhawkinsss\nEdit: @mattburke.edit\nVFX: @shepherd_vfx\nColorist: @nick__metcalf",
   "number": "W940",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "gmc-canyon-nowhere",
@@ -6320,7 +6320,7 @@
   "vimeo": "https://vimeo.com/743567530",
   "credits": "GMC Canyon | Nowhere\n\nDirector: Cameron Goold\nDP: Tobia Sempi and Sydney Unga Editor &\nSound Design: Tyler Packard\nColorist: @nick__metcalf\nVO: Will Arnett",
   "number": "W941",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "hera-age-your-way-vb",
@@ -6337,7 +6337,7 @@
   "vimeo": "https://vimeo.com/1144734723",
   "credits": "Hera | Age Your Way\n\nProducer: Taylor Russo\nDirector: Savannah O'Leary\nDP: Steve McCord\nEditor: Ethan Mitchell\nOriginal\nMusic: Mike Dragovic\nColorist: @nick__metcalf",
   "number": "W942",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "red-camera-the-frozen-few",
@@ -6354,7 +6354,7 @@
   "vimeo": "https://vimeo.com/683038942",
   "credits": "RED Camera | The Frozen Few\n\nDirected By Jason Momoa\nDOP: @odeumfilms.tv\nColor: @nick__metcalf @mill_ny Mix: @decibelny",
   "number": "W943",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "gq-x-lululemon-jordan-clarkson",
@@ -6371,7 +6371,7 @@
   "vimeo": "https://vimeo.com/1136120334",
   "credits": "GQ x Lululemon | Jordan Clarkson\n\n24 Hours to the Fullest.\nDirector: @__henrydacosta__\nProduction: @fieldunit\nDP: @gabrielconnelly\nEditor: @tobyheard\nColor: @nick__metcalf",
   "number": "W944",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "lexus-lifes-roads-directors-cut",
@@ -6388,7 +6388,7 @@
   "vimeo": "https://vimeo.com/197895656",
   "credits": "Lexus | Life's Roads (Director's Cut)\n\nDirector: Rob Chiu\nDP: Khalid Mohtaseb\nEditor: Rob Chiu\nProduction Company: Iconoclast\nColourist: Mark Wilenkin (Note: verify color credit)",
   "number": "W945",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "valley-forge-arts",
@@ -6405,7 +6405,7 @@
   "vimeo": "https://vimeo.com/736518344",
   "credits": "Valley Forge | Arts\n\nDirector/Editor: Steve Perrong\nProducer: Karl Leisch\nDP: Michael Faller\nColorist: @nick__metcalf",
   "number": "W946",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "bandit-sin-prisa-summer-26",
@@ -6422,7 +6422,7 @@
   "vimeo": "https://vimeo.com/1198887518",
   "credits": "Bandit | Sin Prisa (Summer 26)\n\nDirector: @henrykornaros\nDP: @gaulporat\nEdit: @astridxcedeno\nEdit House: @cabinedit\nColor: @nick__metcalf @raremedium.tv",
   "number": "W947",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "urban-stems-the-motherload",
@@ -6439,7 +6439,7 @@
   "vimeo": "https://vimeo.com/1185870737",
   "credits": "Urban Stems | The Motherload\n\nDirector: Beau Sam\nDP: Peter Pascucci\nEditor: Kevin Tadge\nColorist: @nick__metcalf, Rare Medium",
   "number": "W948",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "red-bull-symphonic-trailer",
@@ -6456,7 +6456,7 @@
   "vimeo": "https://vimeo.com/1173787453",
   "credits": "Red Bull Symphonic (Trailer)\n\nDirector/Producer: Mia Jamilano\nDP: Jeremy Herron\nEditor: Michael Del Rosario\nColorist: @nick__metcalf Artist: Asake",
   "number": "W949",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "nutrafol-women",
@@ -6473,7 +6473,7 @@
   "vimeo": "https://vimeo.com/1161658046",
   "credits": "Nutrafol | Women\n\nDirector: Jane Qian\nAgency: Unentitled Studio\nProduction: Unentitled Studio x PaperNY\nCinematographer: Matt Pothier\nEditor: Jason Beattie\nColorist: @nick__metcalf",
   "number": "W950",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "weekend-at-torys",
@@ -6490,7 +6490,7 @@
   "vimeo": "https://vimeo.com/1161444646",
   "credits": "Weekend at Tory's\n\nStarring Alex Consani, Awar Odhiang and Hejia Li Directed by Talia Collis\nDOP: Cory Fraiman-Lott\nEditor: Talia Pasqua\nColorist: @nick__metcalf",
   "number": "W951",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "a-living-wage-amys-story",
@@ -6507,7 +6507,7 @@
   "vimeo": "https://vimeo.com/995093072",
   "credits": "A Living Wage | Amy's Story\n\nFor Merit America.\nDirector: Savannah O'Leary\nProducer: Kieran Altmann\nDP: Jon Bregel\nEditor: Ethan Mitchell, Cut&Run\nColorist: @nick__metcalf\nComposer: Michael Dragovic\nFeaturing: Amy Laird",
   "number": "W952",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "corvette-e-ray-one-like-none",
@@ -6524,7 +6524,7 @@
   "vimeo": "https://vimeo.com/1210616307",
   "credits": "Corvette E-Ray | One Like None\n\nClient: Chevrolet\nAgency: Commonwealth\nProduction: Local Boy\nDirector: @directorlukeh\nDP: @tommydag\nEditor: @robfrenetteedits\nColour: @nick__metcalf\nCGI: AFX Creative",
   "number": "W953",
-  "arch_order": 65,
+  "arch_order": 66,
   "carousel": false
  },
  {
@@ -6542,7 +6542,7 @@
   "vimeo": "https://vimeo.com/757683385",
   "credits": "Vacations | Short Film\n\nFeaturing: Scott Kruse\nDirector: Danny Corey\nDP: Kyle Messina\nProducer: Adam Battaglia Color by: @nick__metcalf",
   "number": "W954",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "harley-davidson-pan-america",
@@ -6559,7 +6559,7 @@
   "vimeo": "https://vimeo.com/683032420",
   "credits": "Harley-Davidson | Pan America\n\nCreated by: @odeumfilms For @harleydavidson and @prideofgypsies\nEditor: @chrissyrabe Color and Mix: @nick_metcalf @mill_ny @decibelny",
   "number": "W955",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "samsung-more-than-a-ringtone",
@@ -6576,7 +6576,7 @@
   "vimeo": "https://vimeo.com/805576563",
   "credits": "Samsung | More Than A Ringtone\n\nDir: Henry DaCosta\nProd Co: BrickHead\nDP: @gabrielconnelly\nEdit/VFX: Henry DaCosta\nColor: @nick__metcalf\nFeaturing: Yaeji",
   "number": "W956",
-  "arch_order": 0
+  "arch_order": 1
  },
  {
   "slug": "thorne-now-you-know",
@@ -6593,7 +6593,7 @@
   "vimeo": "https://vimeo.com/1210616403",
   "credits": "Thorne | Now You Know\n\nDir: @jackbegert\nDP: @gabrielconnelly\nProd: Biscuit\nColor: @nick__metcalf\nShot on 35mm",
   "number": "W957",
-  "arch_order": 17
+  "arch_order": 18
  },
  {
   "slug": "hill-s-pet-nutrition-try-again",
@@ -6640,11 +6640,12 @@
   ],
   "number": "W958",
   "selected": false,
-  "carousel": true,
+  "carousel": false,
   "gallery": true,
   "delivered": "2026-08-27",
   "categories": [
    "Commercial"
-  ]
+  ],
+  "arch_order": 0
  }
 ]

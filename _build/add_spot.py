@@ -269,7 +269,10 @@ def main():
     ap.add_argument('--thumb', default=None)
     ap.add_argument('--client', default=None, help='override the client name')
     ap.add_argument('--title', default=None, help='override the spot title')
-    ap.add_argument('--carousel', type=int, default=10)
+    ap.add_argument('--carousel', type=int, default=10,
+                    help='how many carousel stills to build (0 to skip)')
+    ap.add_argument('--carousel-card', action='store_true',
+                    help='let the stills replace the thumbnail on the archive card')
     ap.add_argument('--commit', action='store_true')
     args = ap.parse_args()
 
@@ -357,7 +360,13 @@ def main():
         'stills': found['stills'],
         'number': f'W{max(numbers, default=0) + 1:03d}',
         'selected': False,
-        'carousel': bool(carousel), 'gallery': bool(carousel),
+        # The carousel REPLACES the card thumbnail with the stills, so it is opt-in
+        # (--carousel-card) even when the stills exist. The gallery is separate: it
+        # hangs the stills below the credits on the spot's own page.
+        'carousel': bool(carousel) and args.carousel_card,
+        'gallery': bool(carousel),
+        # Newest goes to the top of /archive/, which sorts on arch_order ascending.
+        'arch_order': 0,
         'delivered': time.strftime('%Y-%m-%d', time.localtime(os.path.getmtime(video))),
         'categories': [category],
     }
@@ -365,6 +374,11 @@ def main():
     if args.dry_run:
         print('\n-- dry run, nothing written --')
         return
+
+    # Make room at the top of the archive: everything already ordered slides down one.
+    for p in projects:
+        if isinstance(p.get('arch_order'), int):
+            p['arch_order'] += 1
 
     projects.append(entry)
     json.dump(projects, open(DATA, 'w'), indent=1, ensure_ascii=False)
