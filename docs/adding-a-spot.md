@@ -20,30 +20,22 @@ On the Studio itself, just the inner half.
 
 ### Getting the result onto GitHub
 
-**The Studio has no GitHub credentials.** It can commit but not push, so `--commit` ends
-in `fatal: could not read Username for 'https://github.com'` **after** the Vimeo upload
-and the commit have both succeeded. Nothing is lost when that happens — the work is
-sitting in a local commit on the Studio.
-
-The reliable sequence is to let the Studio commit, then push from the Air over SSH:
+`--commit` commits and pushes on its own. The Studio's `origin` is
+`git@github.com:nrm461/nrm461.github.io.git` and its `~/.ssh/id_ed25519` is registered on
+the account, so the push authenticates without `gh` (which isn't installed there, and
+can't be — no Homebrew).
 
 ```
-# on the Studio — everything except the push
-ssh studio 'cd ~/dev/nrm461.github.io && python3 _build/add_spot.py Hills --commit'   # push step fails, fine
-
-# from the Air — collect that commit and push it
-cd ~/dev/nrm461.github.io
-git fetch ssh://studio/Users/nicholasmetcalf/dev/nrm461.github.io main
-git merge --ff-only FETCH_HEAD
-git push
+ssh studio 'cd ~/dev/nrm461.github.io && git pull -q && python3 _build/add_spot.py Hills --commit'
 ```
 
 If the push is rejected as non-fast-forward, the Action's `[auto-build]` commit landed
 first: `git fetch origin main && git rebase origin/main`, then push again. **Never resolve
 a `data/projects.json` conflict with `-X theirs`** — it drops admin edits.
 
-**To remove this step entirely, run `gh auth login` on the Studio once.** Then `--commit`
-finishes on its own and none of the above is needed. Deliberately not done yet.
+> Until 2026-09-01 the remote was HTTPS with nothing to authenticate it, so `--commit` died
+> at the push and the commit had to be relayed to the Air over SSH. That relay is no longer
+> needed.
 
 ## What it does
 
@@ -97,7 +89,7 @@ Then `add_spot.py Hills --credits-file /tmp/credits.txt`.
 | `--category C` | override the guessed category; must be one of `site.json`'s |
 | `--carousel-card` | let the stills replace the thumbnail on the grid card |
 | `--thumb PATH` | pick the thumbnail frame yourself |
-| `--commit` | commit and push when everything worked — the push half fails on the Studio until `gh auth login` is run there; see above |
+| `--commit` | commit and push when everything worked |
 
 ## Gotchas
 
@@ -116,9 +108,6 @@ Then `add_spot.py Hills --credits-file /tmp/credits.txt`.
 - **Vimeo privacy must be `disable`, not `unlisted`.** Unlisted URLs carry a secret hash;
   the site embeds by bare id, so both the link and the player break. The script gets this
   right — worth knowing if you upload by hand.
-- **The Studio cannot push.** `--commit` fails at the last step; the commit is safe locally
-  and gets relayed from the Air. See *Getting the result onto GitHub* above. This is a
-  known, accepted state — not a bug to re-diagnose.
 
 ## Afterwards, in `/admin/`
 

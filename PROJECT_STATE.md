@@ -172,9 +172,11 @@ Adding `father-son` (W959) turned up three things in `add_spot.py`, all fixed in
 - **`SHORT_HINTS` returned `Short Film`**, which is not one of `site.json`'s categories — no
   page filters on it. It returns `Long Form` now.
 
-Still open, and still the cost of every push: **the Studio has no `gh` credentials**, so each
-change is commit-on-Studio → `git fetch ssh://studio/...` from the Air → push. One
-`gh auth login` there removes it. See `docs/adding-a-spot.md`.
+**The Studio can push now** (2026-09-01). It was never a credentials problem: its
+`~/.ssh/id_ed25519` is already registered on the account, the clone's `origin` was just
+HTTPS. Switched to `git@github.com:...`, so `--commit` finishes on its own and the
+commit-on-Studio → fetch-from-the-Air → push relay is retired. `gh` is *not* installed
+there and can't easily be — no Homebrew — so don't reach for it.
 
 ## Next steps
 
