@@ -602,6 +602,16 @@ $('#m-save').addEventListener('click', async()=>{
     const {sha,data}=await ghGetJson('data/projects.json');
     const q=data.find(x=>x.slug===p.slug);
     if(!q) throw new Error('slug not found');
+    /* Stale-modal guard. The fields were seeded from whatever projects.json looked
+       like when this page loaded; if it has changed underneath us since, saving
+       would silently write those stale values back. Blanking credits that were
+       added elsewhere is the case that bit. */
+    const drifted=['credits','director','client','title','vimeo']
+      .filter(k=>String(p[k]??'')!==String(q[k]??''));
+    if(drifted.length){
+      M.st.textContent=`stale — ${drifted.join(', ')} changed on the site since you opened this. Reload and redo.`;
+      return;
+    }
     q.client=M.client.value.trim(); q.title=M.title.value.trim(); q.director=M.director.value.trim();
     q.categories=selectedCats(); q.category=q.categories[0]||''; q.vimeo=M.vimeo.value.trim(); q.credits=M.credits.value;
     const ig=M.ig.value.trim();
