@@ -267,6 +267,9 @@ def main():
     ap.add_argument('--no-vimeo', action='store_true')
     ap.add_argument('--group', default='hidden')
     ap.add_argument('--thumb', default=None)
+    ap.add_argument('--credits-file', default=None,
+                    help='use this credits file instead of one in the folder '
+                         '(e.g. one built by crm_credits.mjs)')
     ap.add_argument('--client', default=None, help='override the client name')
     ap.add_argument('--title', default=None, help='override the spot title')
     ap.add_argument('--carousel', type=int, default=10,
@@ -297,6 +300,9 @@ def main():
     # Credits are the one thing we cannot guess. Missing ones are not fatal:
     # the spot stages without them and gets flagged for a later pass.
     needs_review = False
+    if args.credits_file:
+        found['credits'] = args.credits_file
+        print('   NOTE     using the credits file given on the command line')
     if found['credits']:
         client, title, extra, director, production, credits_text = parse_credits(found['credits'])
         if not title and client:
