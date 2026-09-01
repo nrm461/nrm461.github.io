@@ -13,21 +13,23 @@ Edit either file, rebuild, publish. Never edit the HTML files directly — they 
 
 ## Common tasks (or just ask Claude)
 
-**Add a new job** (new folder in _MASTERS with a `_credits.txt`):
+**Add a new spot** — credits, thumbs, stills, Vimeo upload and the entry, in one
+command. Runs on the Mac Studio, where the masters are mounted:
 ```
-python3 _build/add_work.py --masters "/Volumes/Suite/rare_medium/_Personal_Folders/nick_m/_MASTERS"
-python3 _build/build_site.py
-bash _build/publish.sh "Add <job name>"
+ssh studio 'cd ~/dev/nrm461.github.io && git pull -q && python3 _build/add_spot.py Hills --commit'
 ```
+It stages into `group: "hidden"` — the page builds but stays off the work grid until
+you UNHIDE it in `/admin/`. Full runbook: **[docs/adding-a-spot.md](docs/adding-a-spot.md)**.
 
-**Add a Vimeo link to a project:** put the URL in that project's `"vimeo"` field
-in `data/projects.json`, then rebuild + publish. The project page switches from
-the thumbnail to the video player automatically.
+`_build/add_work.py` is the older, partial version of this (no Vimeo, no stills, no
+staging) and is kept only for bulk backfills.
 
-**Fix a name/title/credit:** edit the project's entry in `data/projects.json`,
-rebuild + publish.
+**Add a Vimeo link, fix a title or credit, hide a spot, reorder stills:** use
+**`/admin/`**. It writes `data/projects.json` through the GitHub API and the Action
+rebuilds the pages. Hand-editing the JSON still works, but admin is the maintained path.
 
-**Hide a project:** add `"hidden": true` to its entry.
+**Don't run `_build/build_site.py` yourself** — the Action regenerates pages on push,
+and a local rebuild collides with its own commit.
 
 ## The Deck (frame library)
 

@@ -1,5 +1,16 @@
 # WORKFLOW — how we work on this site
 
+> **Superseded in places (2026-09-01).** This was written for the cloud-sandbox era,
+> before the repo moved into `~/dev` with real clones on both machines. Still true:
+> the change loop, the Action's trigger paths, the deck being generated, the
+> documentation discipline. **No longer true: the deploy mechanics.** There is no
+> sandbox and no token in `token/git-token`; commits are ordinary `git push` from a
+> clone, or `/admin/` writing through the GitHub API. Nothing has to go through a
+> browser tab. `_build/publish.sh` is dead for the same reason.
+>
+> For adding a spot, see [`docs/adding-a-spot.md`](../docs/adding-a-spot.md).
+> For current state, see [`PROJECT_STATE.md`](../PROJECT_STATE.md).
+
 Treat this like an app project: every change is researched, built, verified, deployed, and **documented**. The documentation step is not optional — it's what lets the next chat continue without re-discovery.
 
 ## The loop for every change
