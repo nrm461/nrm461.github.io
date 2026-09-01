@@ -213,7 +213,7 @@ def vimeo_upload(path, name, description):
         'upload': {'approach': 'tus', 'size': str(size)},
         'name': name,
         'description': description,
-        'privacy': {'view': 'unlisted', 'embed': 'public', 'download': False},
+        'privacy': {'view': 'disable', 'embed': 'public', 'download': False},
     })
     url = v['upload']['upload_link']
     offset, t0 = 0, time.time()
