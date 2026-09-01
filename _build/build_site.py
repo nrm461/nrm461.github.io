@@ -458,7 +458,10 @@ def build_projects():
             gdir = os.path.join(ROOT, 'assets', 'carousel', slug)
             gimgs = sorted(f for f in (os.listdir(gdir) if os.path.isdir(gdir) else [])
                            if f.lower().endswith(('.jpg', '.jpeg', '.png')) and not f.startswith('00'))
-            gimgs = gimgs[:(len(gimgs) // 3) * 3]  # complete rows of 3 only
+            # Cap what the page shows; the rest stay in the repo as the pool the
+            # admin carousel panel picks from. Complete rows of 3 only.
+            gimgs = gimgs[:SITE.get('gallery_max', 9)]
+            gimgs = gimgs[:(len(gimgs) // 3) * 3]
             if gimgs:
                 tiles = '\n'.join(f'<img class="lazy" data-src="../assets/carousel/{slug}/{esc(f)}" alt="">' for f in gimgs)
                 credits_html += f'\n<div class="project-gallery">\n{tiles}\n</div>'

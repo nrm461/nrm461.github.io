@@ -57,6 +57,7 @@
  ],
  "linkify_handles": true,
  "mobile_gallery": false,
+ "gallery_max": 9,
  "categories": [
   "Commercial",
   "Music Video",
