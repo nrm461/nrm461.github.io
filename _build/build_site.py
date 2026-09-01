@@ -463,7 +463,11 @@ def build_projects():
             gimgs = gimgs[:SITE.get('gallery_max', 9)]
             gimgs = gimgs[:(len(gimgs) // 3) * 3]
             if gimgs:
-                tiles = '\n'.join(f'<img class="lazy" data-src="../assets/carousel/{slug}/{esc(f)}" alt="">' for f in gimgs)
+                # Reordering rewrites 00.jpg.. in place, so the tiles need the same
+                # content-hash buster the card carousel has or browsers keep the old order.
+                tiles = '\n'.join(
+                    f'<img class="lazy" data-src="../{img_bust(f"assets/carousel/{slug}/{f}")}" alt="">'
+                    for f in gimgs)
                 credits_html += f'\n<div class="project-gallery">\n{tiles}\n</div>'
 
         director = p.get('director') or ''

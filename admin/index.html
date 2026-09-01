@@ -456,7 +456,9 @@ async function loadCarousel(slug){
   const g=await fetch(API+'assets/carousel/'+slug,{headers:tok()?hdrs():{}});
   if(g.status===200){
     const files=(await g.json()).filter(f=>/\.(jpe?g|png)$/i.test(f.name)).sort((a,b)=>a.name.localeCompare(b.name));
-    carItems=files.map(f=>({name:f.name,url:f.download_url}));
+    /* raw.githubusercontent caches hard, and reordering rewrites these filenames
+       in place — without a buster the panel shows the pre-reorder images. */
+    carItems=files.map(f=>({name:f.name,url:f.download_url+'?t='+Date.now()}));
     carHadFiles=carItems.length>0;
   }
   renderCar();
