@@ -1,6 +1,6 @@
 # Project State — nrm461.github.io
 
-_Last updated 2026-07-29._
+_Last updated 2026-09-01._
 
 ## What this is
 
@@ -102,6 +102,47 @@ Still present and still publicly served: `_ig/slate.json`, `_ig/slate_assets.jso
 `AWSAccessKeyId`/`Signature` hits), but all three carry client asset metadata: client
 names, project titles, dates, and CloudFront source URLs. Left in place — that is a
 separate question from the credential one, and it is Nick's call.
+
+## Adding a spot (2026-09-01)
+
+`_build/add_spot.py <job>` is the whole add: it resolves the folder under the Studio's
+`_MASTERS`, picks the deliverable (**ProRes > mp4 > GEN**, **16x9 > FulRes**), builds the
+three thumbs and every carousel still with `sips` (**no ffmpeg or Homebrew needed**),
+uploads to Vimeo over tus, and appends to `data/projects.json`.
+
+**It runs on the Mac Studio** — `/Volumes/Suite` doesn't mount on the Air, but the Studio
+is reachable over SSH as `studio`, so an Air session drives it remotely. A clone lives at
+`~/dev/nrm461.github.io` there. **`gh auth login` on the Studio is still outstanding**;
+until then `--commit` uploads and commits but cannot push, and the commit has to be
+fetched over SSH and pushed from the Air.
+
+New spots land in **`group: "hidden"`** — the page builds at `/<slug>/` and is listed only
+on the unlinked `/hidden/` index, until UNHIDE in admin.
+
+**Vimeo:** token in `~/.vimeo-token` on the Studio (Pro account, ~4.3 TB free). Uploads must
+use **`privacy.view: "disable"`**, never `unlisted` — unlisted URLs carry a secret hash and
+`vimeo_id()` embeds by bare id, so the link and the player both break.
+
+**Credits resolve in three tiers:** a credits file in the folder, then the director's or DP's
+Instagram (post captions come out of the `og:description` meta with a plain fetch), then
+`_build/crm_credits.mjs` for a partial director/DP/editor block out of the C41 CRM. Missing
+credits are not fatal — the spot stages with `needs_review: true`.
+
+## Admin traps (2026-09-01)
+
+**Do not write `data/projects.json` while `/admin/` is open.** The edit modal seeds from the
+copy fetched at page load and writes it back verbatim, so a stale tab blanks anything added
+since — this is how the Hill's credits were lost. The save now aborts when
+`credits/director/client/title/vimeo` have drifted, but after any scripted write, reload admin.
+
+**A "lost" carousel reorder is almost always caching.** Reordering rewrites `00.jpg..` in
+place — same filenames, new bytes. The gallery tiles were emitted without `img_bust` and the
+admin panel read uncached raw URLs, so both showed the pre-reorder images. Both now carry
+busters. Check committed blob hashes before suspecting the drag code.
+
+`gallery_max` in `site.json` caps the spot-page gallery (**12**); extra stills stay in the repo
+as the picking pool. `carousel: true` makes stills **replace** the card thumbnail — now an
+explicit checkbox, because the save handler used to derive it from "are there any files".
 
 ## Next steps
 
