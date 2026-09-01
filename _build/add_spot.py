@@ -158,13 +158,14 @@ def make_thumbs(slug, src, dry):
 
 
 def make_carousel(slug, stills, count, dry):
-    if count <= 0 or not stills:
+    """count None means every still; 0 means none; N caps at N, spread evenly."""
+    if count == 0 or not stills:
         return []
     pool = [f for f in stills if not re.match(r'_?thumb', os.path.basename(f), re.I)]
     if not pool:
         return []
     # Spread the picks across the spot rather than taking the first N.
-    if len(pool) > count:
+    if count is not None and len(pool) > count:
         step = len(pool) / count
         pool = [pool[int(i * step)] for i in range(count)]
     cdir = os.path.join(ROOT, 'assets', 'carousel', slug)
@@ -272,8 +273,9 @@ def main():
                          '(e.g. one built by crm_credits.mjs)')
     ap.add_argument('--client', default=None, help='override the client name')
     ap.add_argument('--title', default=None, help='override the spot title')
-    ap.add_argument('--carousel', type=int, default=10,
-                    help='how many carousel stills to build (0 to skip)')
+    ap.add_argument('--carousel', type=int, default=None,
+                    help='cap the number of carousel stills (default: all of them; '
+                         '0 to skip)')
     ap.add_argument('--carousel-card', action='store_true',
                     help='let the stills replace the thumbnail on the archive card')
     ap.add_argument('--commit', action='store_true')
