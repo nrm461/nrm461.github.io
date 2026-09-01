@@ -112,9 +112,15 @@ uploads to Vimeo over tus, and appends to `data/projects.json`.
 
 **It runs on the Mac Studio** — `/Volumes/Suite` doesn't mount on the Air, but the Studio
 is reachable over SSH as `studio`, so an Air session drives it remotely. A clone lives at
-`~/dev/nrm461.github.io` there. **`gh auth login` on the Studio is still outstanding**;
-until then `--commit` uploads and commits but cannot push, and the commit has to be
-fetched over SSH and pushed from the Air.
+`~/dev/nrm461.github.io` there.
+
+**The Studio has no GitHub credentials, deliberately, as of 2026-09-01** (Nick's call —
+not yet worth doing). So `--commit` uploads and commits fine and then fails on the push
+with `could not read Username for 'https://github.com'`. **That failure is expected and
+nothing is lost** — the commit is local on the Studio and gets relayed:
+`git fetch ssh://studio/Users/nicholasmetcalf/dev/nrm461.github.io main && git merge
+--ff-only FETCH_HEAD && git push` from the Air. Don't re-diagnose it; the runbook has the
+sequence. One `gh auth login` on the Studio removes the step whenever he wants it gone.
 
 New spots land in **`group: "hidden"`** — the page builds at `/<slug>/` and is listed only
 on the unlinked `/hidden/` index, until UNHIDE in admin.

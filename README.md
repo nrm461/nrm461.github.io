@@ -16,7 +16,11 @@ Edit either file, rebuild, publish. Never edit the HTML files directly — they 
 **Add a new spot** — credits, thumbs, stills, Vimeo upload and the entry, in one
 command. Runs on the Mac Studio, where the masters are mounted:
 ```
-ssh studio 'cd ~/dev/nrm461.github.io && git pull -q && python3 _build/add_spot.py Hills --commit'
+ssh studio 'cd ~/dev/nrm461.github.io && git pull -q && python3 _build/add_spot.py Hills'
+```
+Then push the result from the Air (the Studio has no GitHub credentials yet):
+```
+git fetch ssh://studio/Users/nicholasmetcalf/dev/nrm461.github.io main && git merge --ff-only FETCH_HEAD && git push
 ```
 It stages into `group: "hidden"` — the page builds but stays off the work grid until
 you UNHIDE it in `/admin/`. Full runbook: **[docs/adding-a-spot.md](docs/adding-a-spot.md)**.
