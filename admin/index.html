@@ -167,6 +167,8 @@ Every save republishes the site itself in ~2 min.
   <div class="frow"><label>Hidden</label><input type="checkbox" id="m-hidden"></div>
   <div class="frow"><label>Gallery</label><input type="checkbox" id="m-gallery">
     <div class="note">show carousel stills under the credits on desktop (rows of 3) — auto-enabled when you add a carousel</div></div>
+  <div class="frow"><label>Card carousel</label><input type="checkbox" id="m-carousel">
+    <div class="note">let the stills replace the thumbnail on the grid card, as a slideshow. Off = the card shows the curated thumbnail.</div></div>
   <div class="frow"><label>Carousel</label><input type="file" id="m-car" multiple accept="image/*">
     <div class="note">your curated thumbnail is always the card hero — these stills follow it (card swipe + desktop gallery). Drag to reorder, &times; to delete. Applied on save.</div>
     <div id="car-list"></div></div>
@@ -420,7 +422,7 @@ async function replaceThumb(el,file){
 /* ---- modal ---- */
 const M={ov:$('#overlay'),box:$('#modal'),t:$('#m-title'),client:$('#m-client'),title:$('#m-titlef'),
   director:$('#m-director'),catsBox:$('#m-cats'),vimeo:$('#m-vimeo'),ig:$('#m-ig'),credits:$('#m-credits'),
-  sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status'),
+  sel:$('#m-selected'),hid:$('#m-hidden'),gal:$('#m-gallery'),carCard:$('#m-carousel'),car:$('#m-car'),carList:$('#car-list'),st:$('#m-status'),
   thumb:$('#m-thumb'),kidsRow:$('#m-kids-row'),kidsList:$('#kids-list'),kidsAdd:$('#kids-add'),slugList:$('#all-slugs'),
   fileinfo:$('#m-fileinfo')};
 /* campaign spots (children) editing */
@@ -512,7 +514,7 @@ function openModal(p){
   M.client.value=p.client||''; M.title.value=p.title||''; M.director.value=p.director||'';
   renderCatChecks(catsOf(p)); M.vimeo.value=p.vimeo||''; M.ig.value=p.ig_url||'';
   M.credits.value=p.credits||''; M.sel.checked=!!p.selected; M.hid.checked=(p.group==='hidden');
-  M.gal.checked=!!p.gallery;
+  M.gal.checked=!!p.gallery; M.carCard.checked=!!p.carousel;
   M.car.value=''; M.thumb.value=''; M.st.textContent='';
   kids=(p.children||[]).slice();
   M.kidsRow.style.display=p.children?'flex':'none';
@@ -606,7 +608,9 @@ $('#m-save').addEventListener('click', async()=>{
     if(M.sel.checked && q.sel_order===undefined) q.sel_order=999;
     if(!M.sel.checked) delete q.sel_order;
     q.group=M.hid.checked?'hidden':(q.group==='hidden'?'posted':q.group);
-    q.carousel=carAdded;
+    // Explicit checkbox, not "there are files" — otherwise every save re-enabled
+    // the card slideshow and clobbered a spot set to show its thumbnail.
+    if(carAdded && M.carCard.checked) q.carousel=true; else delete q.carousel;
     // a carousel's stills should always show on desktop too, so enabling a carousel auto-enables the gallery
     if((carAdded && carItems.length>1) || M.gal.checked) q.gallery=true; else delete q.gallery;
     // campaign spots: apply add/remove/reorder
