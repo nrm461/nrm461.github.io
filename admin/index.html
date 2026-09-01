@@ -459,6 +459,15 @@ async function loadCarousel(slug){
   }
   renderCar();
 }
+/* Read the tile order back out of the DOM and re-render from it. dataset.i is
+   the item's index at render time, so the DOM is the source of truth after a drag. */
+function commitCarOrder(){
+  const order=[...M.carList.children].map(el=>Number(el.dataset.i));
+  if(order.length!==carItems.length || order.some(isNaN)) return;
+  if(order.every((v,i)=>v===i)) return;          // nothing moved
+  carItems=order.map(i=>carItems[i]);
+  renderCar();
+}
 function renderCar(){
   M.carList.innerHTML='';
   carItems.forEach((it,i)=>{
@@ -466,15 +475,19 @@ function renderCar(){
     d.className='car-tile'; d.draggable=true; d.dataset.i=i;
     d.innerHTML=`<img src="${it.url}"><button class="x">&times;</button>`+(i===0?'<span class="badge">HERO</span>':'');
     d.querySelector('.x').addEventListener('click',e=>{ e.stopPropagation(); carItems.splice(i,1); renderCar(); });
+    /* Reorder on drop, never on dragover: re-rendering mid-drag destroys the
+       node being dragged, which aborts the drag and loses the rearrangement.
+       dragover only moves the DOM node so the drop target is visible. */
     d.addEventListener('dragstart',()=>{ d.classList.add('dragging'); M.carList._drag=i; });
-    d.addEventListener('dragend',()=>d.classList.remove('dragging'));
+    d.addEventListener('dragend',()=>{ d.classList.remove('dragging'); commitCarOrder(); });
     d.addEventListener('dragover',e=>{
       e.preventDefault();
-      const from=M.carList._drag, to=i;
-      if(from===undefined||from===to) return;
-      const [m]=carItems.splice(from,1); carItems.splice(to,0,m);
-      M.carList._drag=to; renderCar();
+      const src=M.carList.querySelector('.car-tile.dragging');
+      if(!src||src===d) return;
+      const tiles=[...M.carList.children];
+      M.carList.insertBefore(src, tiles.indexOf(src)<tiles.indexOf(d) ? d.nextSibling : d);
     });
+    d.addEventListener('drop',e=>{ e.preventDefault(); commitCarOrder(); });
     M.carList.appendChild(d);
   });
 }
