@@ -36,7 +36,8 @@ PROD_MAP = {'smugglersite':'SMUGGLER','iconoclast':'Iconoclast','resetcontent':'
 'greenpointpictures':'Greenpoint Pictures','aftrhrs':'AFTRHRS','afterhrs':'AFTRHRS',
 'thegatefilms':'The Gate Films','partizan':'Partizan','casino':'Casino Productions','slmbr_prty':'SLMBR PRTY',
 'fieldunit':'Field Unit','41westproductions':'41 West','apstudioinc':'AP Studio','aguitainc':'Aguita',
-'lotumn_':'Lotumn','broadwaytwothousand':'Broadway 2000','echobendpictures':'Echo Bend'}
+'lotumn_':'Lotumn','broadwaytwothousand':'Broadway 2000','echobendpictures':'Echo Bend',
+'strikeanywhere':'Strike Anywhere'}
 MV_HINTS = ['mv_', 'mv ', 'music_video', 'music video']
 SHORT_HINTS = ['short', 'film']
 

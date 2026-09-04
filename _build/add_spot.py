@@ -84,14 +84,24 @@ def resolve_folder(name):
 
 
 def rank_video(path):
-    """Lower sorts better. ProRes over mp4 over GEN; 16x9 over FulRes."""
+    """Lower sorts better. Deliverables first, then ProRes > mp4 > GEN, 16x9 > FulRes.
+
+    ig_selects/ and stills/ hold short reference clips — never the deliverable, but
+    they are .mov files in the same tree, and sorted by path they come first.
+    """
     p = path.lower()
+    if '/ig_select' in p or '/stills/' in p:
+        deliverable = 2          # reference clips: only if there is nothing else
+    elif '/master/' in p:
+        deliverable = 0          # an explicit master/ folder is the answer
+    else:
+        deliverable = 1
     if 'prores' in p:   src = 0
     elif '/mp4/' in p:  src = 1
     elif '/gen/' in p:  src = 2
     else:               src = 3
     fmt = 0 if '16x9' in p else (2 if 'fulres' in p else 1)
-    return (fmt, src, path)
+    return (deliverable, fmt, src, path)
 
 
 def natural_key(path):
@@ -110,7 +120,9 @@ def scan(folder):
         # The IG selects are the frames actually posted — a curated set, and a
         # better gallery than every still in the folder. Kept in their own bucket
         # so --all-stills can still fall back to the raw stills.
-        in_ig = 'ig_select' in rel
+        # Only ig_selects/ itself — a subfolder inside it is a second set cut for
+        # someone else, not what went out on the account.
+        in_ig = os.path.basename(rel).startswith('ig_select')
         in_stills = 'still' in rel
         for f in files:
             if f.startswith('.'):
@@ -288,6 +300,8 @@ def main():
     ap.add_argument('--all-stills', action='store_true',
                     help='build the gallery from every still, ignoring ig_selects/')
     ap.add_argument('--thumb', default=None)
+    ap.add_argument('--video', default=None,
+                    help='the file to upload, when the pick is wrong')
     ap.add_argument('--credits-file', default=None,
                     help='use this credits file instead of one in the folder '
                          '(e.g. one built by crm_credits.mjs)')
@@ -310,12 +324,19 @@ def main():
         die(f'"{name}" is already in projects.json — nothing to do.')
 
     found = scan(folder)
-    if not found['videos']:
+    if args.video:
+        video = args.video if os.path.isabs(args.video) else os.path.join(folder, args.video)
+        if not os.path.isfile(video):
+            die(f'--video {video} is not a file.')
+    elif not found['videos']:
         die('no video file found in that folder.')
-    video = found['videos'][0]
+    else:
+        video = found['videos'][0]
     print(f'   video    {os.path.relpath(video, folder)}'
           f'  ({os.path.getsize(video) / 1e9:.2f} GB)')
-    if len(found['videos']) > 1:
+    if args.video:
+        print('            (given on the command line)')
+    elif len(found['videos']) > 1:
         print(f'            (chose 1 of {len(found["videos"])}; '
               f'next best was {os.path.relpath(found["videos"][1], folder)})')
 
