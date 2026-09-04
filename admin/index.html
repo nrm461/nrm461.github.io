@@ -69,6 +69,8 @@ button:disabled{ opacity:.4; cursor:default; }
 .car-tile .x{ position:absolute; top:2px; right:2px; background:#fff; border:1px solid #000; width:16px; height:16px;
   line-height:14px; text-align:center; padding:0; font-size:11px; }
 .car-tile .badge{ position:absolute; bottom:2px; left:2px; background:#fff; font-size:9px; padding:0 3px; border:1px solid #000; }
+.car-tile .mk{ position:absolute; bottom:2px; right:2px; background:#fff; border:1px solid #000; font-size:9px; padding:0 3px; line-height:14px; }
+.car-tile .mk:hover{ background:#000; color:#fff; }
 .kid{ display:flex; align-items:center; gap:8px; border:1px solid var(--line); padding:3px 8px; margin-bottom:4px; cursor:grab; }
 .kid.dragging{ opacity:.35; }
 .kid .rm{ margin-left:auto; border:1px solid #000; background:#fff; padding:0 6px; font-size:11px; }
@@ -170,7 +172,7 @@ Every save republishes the site itself in ~2 min.
   <div class="frow"><label>Card carousel</label><input type="checkbox" id="m-carousel">
     <div class="note">let the stills replace the thumbnail on the grid card, as a slideshow. Off = the card shows the curated thumbnail.</div></div>
   <div class="frow"><label>Carousel</label><input type="file" id="m-car" multiple accept="image/*">
-    <div class="note">your curated thumbnail is always the card hero — these stills follow it (card swipe + desktop gallery). Drag to reorder, &times; to delete. Applied on save.</div>
+    <div class="note">your curated thumbnail is always the card hero — these stills follow it (card swipe + desktop gallery). Drag to reorder, &times; to delete, <b>THUMB</b> to make a still the card thumbnail (it moves to the hero slot). Applied on save.</div>
     <div id="car-list"></div></div>
   <div id="m-actions">
     <button id="m-save">Save project</button>
@@ -451,8 +453,10 @@ M.kidsAdd&&M.kidsAdd.addEventListener('change',()=>{
 });
 /* carousel working set: [{name?:'03.jpg' (existing), blob?:Blob (new), url:preview}] */
 let carItems=[], carHadFiles=false;
+/* set by the THUMB button on a still: rebuild the card thumbnail from carItems[0] on save */
+let thumbFromCar=false;
 async function loadCarousel(slug){
-  carItems=[]; carHadFiles=false; M.carList.innerHTML='';
+  carItems=[]; carHadFiles=false; thumbFromCar=false; M.carList.innerHTML='';
   const g=await fetch(API+'assets/carousel/'+slug,{headers:tok()?hdrs():{}});
   if(g.status===200){
     const files=(await g.json()).filter(f=>/\.(jpe?g|png)$/i.test(f.name)).sort((a,b)=>a.name.localeCompare(b.name));
@@ -477,8 +481,18 @@ function renderCar(){
   carItems.forEach((it,i)=>{
     const d=document.createElement('div');
     d.className='car-tile'; d.draggable=true; d.dataset.i=i;
-    d.innerHTML=`<img src="${it.url}"><button class="x">&times;</button>`+(i===0?'<span class="badge">HERO</span>':'');
+    d.innerHTML=`<img src="${it.url}"><button class="x">&times;</button>`
+      +(i===0?`<span class="badge">${thumbFromCar?'NEW THUMB':'HERO'}</span>`:'')
+      +'<button class="mk" title="make this still the card thumbnail">THUMB</button>';
     d.querySelector('.x').addEventListener('click',e=>{ e.stopPropagation(); carItems.splice(i,1); renderCar(); });
+    /* The curated thumbnail is always the hero, so promoting a still to thumbnail
+       moves it to slot 0 as well — one rule instead of two things to keep in step. */
+    d.querySelector('.mk').addEventListener('click',e=>{
+      e.stopPropagation();
+      carItems.unshift(carItems.splice(i,1)[0]);
+      thumbFromCar=true; renderCar();
+      M.st.textContent='thumbnail will be rebuilt from this still on save';
+    });
     /* Reorder on drop, never on dragover: re-rendering mid-drag destroys the
        node being dragged, which aborts the drag and loses the rearrangement.
        dragover only moves the DOM node so the drop target is visible. */
@@ -583,6 +597,17 @@ $('#m-save').addEventListener('click', async()=>{
         if(carHadFiles) carItems[0]=hero;   // existing carousel: replace the hero slot
         else carItems.unshift(hero);         // brand-new carousel: lead with the thumbnail, stills follow
       }
+    } else if(thumbFromCar && carItems.length){
+      // A still promoted with THUMB. Same three sizes as an uploaded file; the still
+      // is already the hero, so the carousel itself needs nothing beyond the reorder.
+      M.st.textContent='building thumbnail from the still…';
+      const it=carItems[0];
+      if(!it.blob){ const r=await fetch(it.url); it.blob=await r.blob(); }
+      const img=await loadImg(it.blob);
+      await ghPutBlob(`assets/thumbs/${p.slug}-1600.jpg`,await fit(img,1600,900,false),'admin: thumb '+p.slug);
+      await ghPutBlob(`assets/thumbs/${p.slug}-600.jpg`, await fit(img,600,338,true),'admin: thumb '+p.slug);
+      await ghPutBlob(`assets/thumbs/${p.slug}-100.jpg`, await fit(img,100,56,true),'admin: thumb '+p.slug);
+      thumbPreview=URL.createObjectURL(await fit(img,600,338,true));
     } else if(!carHadFiles && carItems.length){
       // Brand-new carousel without a fresh thumbnail upload: seed the hero (00.jpg) from the existing
       // curated thumbnail so newly uploaded stills don't hijack the landing-grid card.
